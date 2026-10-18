@@ -1,5 +1,0 @@
-四组：独立单训DFLASH、FULL15、REPAIR_STOP、VERIFY_STOP。没有BODY_ONLY。
-GPU7，C1=200／C40=1319，T0/T1，nonthinking，max2096，block16。
-顺序C1 smoke→C40 smoke→C1正式→C40正式；两组smoke全部通过才跑正式。
-所有组同样FULL_AND_PIECEWISE图配置，分别记录真实full/piecewise/eager次数与验证位置直方图。
-v1启动失败证据保留；v2单独源码冻结。进度status.json，日志single_card_C1_smoke.log/single_card_C40_smoke.log及formal.log。完成看COMPLETE.json。不要重复launch。

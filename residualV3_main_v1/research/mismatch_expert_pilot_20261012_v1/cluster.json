@@ -1,9 +1,0 @@
-{
-  "train_only": true,
-  "signed_restricted_logit_gradient": true,
-  "blocks_per_cluster": [
-    51,
-    45
-  ],
-  "semantic_types_unclaimed": true
-}

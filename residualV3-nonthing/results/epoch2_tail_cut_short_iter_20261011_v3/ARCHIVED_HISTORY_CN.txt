@@ -1,1 +1,0 @@
-本root是尾部停修负结果历史。旧迭代/微测中63个淘汰子目录已校验归档后删除。选用iter20/21、NOFILL iter26/27、最新iter28/29及关键报告保留。原报告里的历史路径可能已归档，按原路径查 archives/residualV3_research_cleanup_20261012_v4/INDEX.csv；完整SHA与恢复方法见同目录RESTORE.json。不要重启旧队列。

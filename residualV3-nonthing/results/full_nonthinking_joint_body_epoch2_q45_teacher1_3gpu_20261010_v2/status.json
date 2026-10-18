@@ -1,7 +1,0 @@
-{
-  "status": "paused",
-  "cursor": 8847,
-  "continuation_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v3",
-  "reason": "complete checkpoint committed; teacher retained for continuation",
-  "utc": "2026-10-10T03:30:20.391150+00:00"
-}

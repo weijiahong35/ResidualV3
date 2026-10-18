@@ -1,8 +1,0 @@
-{
-  "C1": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_head_structure_fusion_20261009_v2/C1_recovery_gpu5/status.json",
-  "C1_formal_log": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_head_structure_fusion_20261009_v2/C1_recovery_gpu5/single_card_C1_formal.log",
-  "C40": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_head_structure_fusion_20261009_v2/C40/formal/status.json",
-  "C40_formal_log": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_head_structure_fusion_20261009_v2/single_card_C40_formal.log",
-  "verified_report": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/research/head_structure_fusion_20261009_v1/RESULTS_CN.txt",
-  "structure_audit": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/research/head_structure_fusion_20261009_v1/STRUCTURE_AUDIT_CN.txt"
-}

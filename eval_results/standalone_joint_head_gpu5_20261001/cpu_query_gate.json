@@ -1,7 +1,0 @@
-{
-  "status": "passed",
-  "formula_parity": true,
-  "finite_difference_error": 3.750749710818013e-13,
-  "frozen_parameters": true,
-  "overlap_greedy_counterexample": true
-}

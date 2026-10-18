@@ -1,9 +1,0 @@
-显存换时间探针：不产生新训练权重，全数据长训仍暂停，旧权重完整保存。
-teacher DP2/TP1卡0+3，联合learner4、纯DFlash learner5；GPU1、2排除。
-每包65536输入token/1536anchor整块/15预测位置；头no-soft3/CE+D-PACE+OUTPUT，主体raw CE+D-PACE；BF16大张量，FP32 master与归约。
-两个训练端建立74GiB可复用CUDA allocator缓存池，Tensor释放后池内存可供真实训练分配；上限76GiB，预留CUDA上下文与临时分配空间，不持有无用dummy张量。
-同一实际在线包先比较checkpoint5、保留全部主体激活、保留输出候选basis；OOM时测试checkpoint1/2。全部参数梯度在裁剪前拷贝到CPU内存比对，hidden/logits绝不持久化。
-优化器执行完整计算但lr=0，moment会变化，BF16模型参数需前后全量hash一致；探针不是新训练质量实验，也不等于实际长训。
-每种可行策略额外预热后计3次core时间，按校验通过后的最快策略选择，再进行24包fresh在线吞吐探针，前8包不计性能。
-评价以真实计算/整包耗时为主，allocated/reserved/nvidia占用分开报告。
-各占用只属于本次有效探针，结束后释放自有进程，不停止其他进程。

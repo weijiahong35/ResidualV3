@@ -1,8 +1,0 @@
-{
-  "pid": 806570,
-  "kind": "unified_five_arm_gpu5",
-  "command": [
-    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/controller.py"
-  ],
-  "utc": "2026-10-02T08:37:43.167309+00:00"
-}

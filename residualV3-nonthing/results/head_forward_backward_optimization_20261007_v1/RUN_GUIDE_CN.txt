@@ -1,7 +1,0 @@
-修复头前后向计算优化短测；GPU1、2已明确排除。
-卡3在线teacher，卡4联合训练，卡5纯DFlash。baseline和optimized同卡、同数据、同anchor、同loss、同初始化及优化器。
-no-soft3层，CE+D-PACE+OUTPUT头损失，raw CE+D-PACE本体损失；65536输入token/包、1536anchor全块、15预测位置、一包一次更新。
-优化：保持15次同形状BF16网络前向，拼接候选修正后只scatter一次；输出候选basis前向用完释放、反向重算；CE/TV梯度共用一份全词表BF16缓冲区，分别保持原来的BF16舍入。
-先合成状态逐位校验，已通过numeric_gate.json；再完整1536真实在线状态校验，见optimized/joint/full1536_online_gradient_gate.json。未通过时不会继续优化组更新。
-24包每组，前8包不计性能，保存新BF16权重。不改native递推、不并行实际未知前驱。
-所有旧源码/权重/结果保留；全数据长训仍暂停；hidden在线获取、文件读取即删，无持久hidden/logits缓存。

@@ -1,6 +1,0 @@
-{
-  "status": "failed",
-  "error": "AssertionError('CE_DPACE failed: 1')",
-  "traceback": "Traceback (most recent call last):\n  File \"/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/controller.py\", line 159, in main\n    assert worker.returncode==0, f'{arm} failed: {worker.returncode}'\n           ^^^^^^^^^^^^^^^^^^^^\nAssertionError: CE_DPACE failed: 1\n",
-  "utc": "2026-10-07T05:30:07.134586+00:00"
-}

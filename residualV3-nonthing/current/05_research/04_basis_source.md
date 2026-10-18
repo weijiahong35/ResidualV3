@@ -1,1 +1,0 @@
-../../../residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/results/RESULTS_CN.md

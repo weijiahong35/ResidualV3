@@ -1,6 +1,0 @@
-候选回写优化：不训练、不换权重。先PILOT，再C1/C40分卡各跑BASE_HEAD/FAST_HEAD。
-状态：status.json；预实验：pilot.log/pilot_summary.json。
-正式日志：C1/single_card_C1_formal.log、C40/single_card_C40_formal.log。
-每个正式日志有T0/T1 AL和TPS；smoke仅校验、不用于性能结论。
-C1=200，C40=1319；GSM8K nonthinking，block16，max2096。
-原模型目录不修改，新内核只作用于新冻结副本。

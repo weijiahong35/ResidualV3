@@ -1,8 +1,0 @@
-{
-  "pid": 4016353,
-  "gpu_uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
-  "bytes_reserved": 25769803776,
-  "state": "holding_for_authorized_pipeline",
-  "launcher_sha256": "6b7c1eb218fb5ab254f8ca9d5a68465b4925d2bc116ae05101d1c9885469d6b1",
-  "utc": "2026-10-03T12:16:37.190336+00:00"
-}

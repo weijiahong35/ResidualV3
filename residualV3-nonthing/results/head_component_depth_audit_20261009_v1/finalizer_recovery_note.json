@@ -1,7 +1,0 @@
-{
-  "original_code": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/head_component_depth_finalize_20261009_v1/finalize.py",
-  "new_code": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/head_component_depth_finalize_20261009_v2/finalize.py",
-  "fix": "Validate actual per-request seed=42+index used by the frozen benchmark, rather than assuming constant42. Native experiments unchanged; old failure log retained.",
-  "sha256": "7941015354267e7f81b93917b369ad055a37a71864045168edba2f8955181109",
-  "utc": "2026-10-09T00:53:03.192785+00:00"
-}

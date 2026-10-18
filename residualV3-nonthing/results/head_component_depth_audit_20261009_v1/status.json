@@ -1,8 +1,0 @@
-{
-  "status": "complete",
-  "utc": "2026-10-09T00:53:05.805352+00:00",
-  "formal_windows": 16,
-  "component_profile_recovered": true,
-  "original_launcher_status": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_component_depth_audit_20261009_v1/launcher_failed_status.json",
-  "summary": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_component_depth_audit_20261009_v1/summary.json"
-}

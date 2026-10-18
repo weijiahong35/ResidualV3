@@ -1,6 +1,0 @@
-{
-  "previous_run": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_basis_objective_short_gpu3_shared_20261003_v2",
-  "previous_failure": "startup reservation plus new foreign job left34672MiB; no native collection/training started",
-  "panels_and_architecture_unchanged": true,
-  "gpu": 0
-}

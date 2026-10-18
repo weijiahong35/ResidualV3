@@ -1,8 +1,0 @@
-{
-  "status": "complete",
-  "seed": 6101204,
-  "arm": "SPECIALIZED2",
-  "physical_gpu": 1,
-  "shared_gpu": true,
-  "utc": "2026-10-12T09:19:31.909325+00:00"
-}

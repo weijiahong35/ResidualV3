@@ -1,9 +1,0 @@
-{
-  "python_available": true,
-  "numpy": "2.4.6",
-  "scipy": "1.17.1",
-  "matplotlib": "3.11.1",
-  "numerical_libraries_imported": false,
-  "science_executed": false,
-  "environment_installed_or_modified": false
-}

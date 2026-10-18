@@ -2,8 +2,8 @@
   "assets": [
     {
       "name": "ResidualV3_project.tar.gz",
-      "bytes": 67862960,
-      "sha256": "54728e1d9233915bc431e72e7df3a25153eb57b4bc6f7ea55e6c96a95e821546",
+      "bytes": 33013857,
+      "sha256": "5e60c7e6f1ae1712c5ba833fae935e8cb6c8519c0003cf686fa03b281620a174",
       "kind": "source_archive"
     },
     {

@@ -1,9 +1,0 @@
-{
-  "passed": true,
-  "exact_shared_rows": {
-    "OUTPUT": 123,
-    "TARGET_KL": 123,
-    "ORACLE_KL": 123
-  },
-  "scope": "formal per-block states, oracle labels, outputs and losses; not full optimizer master identity"
-}

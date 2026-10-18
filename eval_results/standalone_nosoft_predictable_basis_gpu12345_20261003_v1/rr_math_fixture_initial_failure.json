@@ -1,7 +1,0 @@
-{
-  "stage": "CPU test fixture before launch",
-  "reason": "float32 identity matrices in reference calculation under 1e-12 assertion; production rr_math uses explicit float64/device identity",
-  "production_code_changed": false,
-  "corrected_fixture": "rr_validation_fixture.py",
-  "corrected_result": "rr_math_validation.json"
-}

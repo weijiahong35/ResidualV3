@@ -1,8 +1,0 @@
-当前融合版块长度/深度正式消融
-卡6：BLOCK12，完成后BLOCK16_DEPTH2。卡7：BLOCK8。每组先C1后C40。
-每组都包含单训DFLASH和联合三层HEAD3；BLOCK16_DEPTH2另有HEAD2。
-HEAD2保留前两层、跳过已训练的第3层；没有重新训练两层头。
-GSM8K nonthinking；C1=200/C40=1319；T0/T1；最大输出2096；block8/12/16分别anchor+7/11/15 proposal。
-目标batch invariance开启，完整CUDA Graph，统一KV预算；外部进程只标记，不终止。
-各组single_card_C1_formal.log和single_card_C40_formal.log看AL/TPS；smoke不作为测速成绩。
-status.json看整体状态，RESULTS_CN.txt和FORMAL_COMPARISON.csv按完成的正式窗口更新。

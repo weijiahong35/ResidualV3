@@ -1,8 +1,0 @@
-{
-  "status": "superseded_by_created_B_LOCK",
-  "lock_sha256": "96d74b326d751747c7ed56cd8ed5554efa0d976f8529af5d5b2b5cf761343d45",
-  "reason": "HF18 numerical and native54 mechanical gate now passed",
-  "old_partial_record_preserved": "archive/partial_20261014T0926",
-  "fresh_main_suite_not_opened_at_B_lock": true,
-  "current_fresh_main_suite": "single fixed analysis completed"
-}

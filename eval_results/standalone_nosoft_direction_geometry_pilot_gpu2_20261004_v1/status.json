@@ -1,9 +1,0 @@
-{
-  "status": "failed",
-  "stage": "C1_smoke",
-  "gpu": 2,
-  "uuid": "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824",
-  "controller_pid": 3689099,
-  "utc": "2026-10-04T16:19:53.445877+00:00",
-  "error": "AssertionError('C1_smoke failed; see single_card_C1_smoke.log.')"
-}

@@ -1,8 +1,0 @@
-{
-  "pid": 1400845,
-  "gpu": 4,
-  "concurrency": 40,
-  "training": "/data/weijiahong/speculators-main-lora/eval_results/standalone_d1_dual_feedback_ab_gpu45_v1_20260930_attempt3/native",
-  "training_summary_sha256": "af38b734c2bee77f999f32082baa8e3954382b3934bd1966b2d2eb902932ffa9",
-  "utc": "2026-09-30T05:38:46.144380+00:00"
-}

@@ -1,8 +1,0 @@
-{
-  "passed": true,
-  "matched_updates": 384,
-  "all_anchor_answer_hashes_match_old_Top256": true,
-  "all_initial_tensors_match_old_Top256": true,
-  "both_fresh_reset_verified": true,
-  "utc": "2026-10-01T21:33:54.321630+00:00"
-}

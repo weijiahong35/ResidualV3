@@ -1,3 +1,0 @@
-旧正式结果保留。后续诊断已复现target自身的批次相关数值波动，并验证批次不变对照可消除所测文本差异。
-详细证据：/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_greedy_divergence_audit_20261009_v1/RESULTS_CN.txt
-范围：40题max512的机制复现；未逐条重建原732条的历史target状态。

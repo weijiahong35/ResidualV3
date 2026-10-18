@@ -1,1 +1,0 @@
-本轮固定CPU机制发现工作已完成，最终零候选。先读results/RESULTS_CN.md、protocol/FINAL_SELECTION.json、qa/NUMERICAL_AUDIT.json及COMPLETION。不要恢复已完成扫描/诊断，不换阈值救覆盖，不从C改善反选候选，不自动训练/采样/下一轮。旧R1–R9、冻结资产及原警报保持只读。若有新用户授权另界定范围，不把本轮D2 unavailable说成来源反证。

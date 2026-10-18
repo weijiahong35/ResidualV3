@@ -1,8 +1,0 @@
-{
-  "error": "Fusion is LayerNorm+Linear Sequential; first micro attempted .weight on Sequential. No scientific or native performance result.",
-  "preserved": [
-    "micro.log",
-    "controller.log",
-    "preregistration.json"
-  ]
-}

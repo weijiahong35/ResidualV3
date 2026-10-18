@@ -1,7 +1,0 @@
-{
-  "status": "complete_with_failed_additional_attempt",
-  "valid_comparison": "baseline vs transport_optimized",
-  "failed_attempt": "transport128_read16 APIConnectionError, evidence preserved",
-  "continuation": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/shared_teacher_fusion_registered_timing_20261007_v4",
-  "full_data_queue": "paused"
-}

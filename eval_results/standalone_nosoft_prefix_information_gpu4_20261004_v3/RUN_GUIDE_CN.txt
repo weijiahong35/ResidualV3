@@ -1,9 +1,0 @@
-本轮已完成；实际GPU4，UUID GPU-b69b3699-6c78-06df-49e1-81ef44cf415b。
-status.json=complete，RESULTS.json=complete，VERIFICATION.json=passed。
-smoke_checks.json验证观察器开关不改变实际生成。
-cleanup.json确认本轮拥有的服务器退出，其他进程未干预。
-详细判断见INTERPRETATION_CN.txt；逐对统计见native/pairs.jsonl。
-predictability.status=skipped是预先规定的证据门槛未满足，不是训练失败。
-本轮没有学习探针权重、没有新生产头训练、没有正式AL/TPS成绩。
-v1/v2为本次新观察器的失败尝试，源码与日志保留；有效整体诊断在本v3目录。
-hidden/logits仅在进程内存中使用，不形成持久逐状态缓存。

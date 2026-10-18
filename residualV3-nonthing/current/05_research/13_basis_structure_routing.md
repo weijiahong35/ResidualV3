@@ -1,1 +1,0 @@
-../../../residualV3_main_v1/research/mismatch_basis_structure_routing_20261017_v1/runs/20261017T022013Z_basis_structure_routing/results/RESULTS_CN.md

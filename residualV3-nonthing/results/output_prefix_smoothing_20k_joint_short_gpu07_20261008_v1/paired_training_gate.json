@@ -1,9 +1,0 @@
-{
-  "status": "passed",
-  "same_initial_weights": true,
-  "same_input_order": true,
-  "same_anchors": true,
-  "same_optimizer_schedule": true,
-  "updates_per_arm": 298,
-  "utc": "2026-10-08T04:37:39.197463+00:00"
-}

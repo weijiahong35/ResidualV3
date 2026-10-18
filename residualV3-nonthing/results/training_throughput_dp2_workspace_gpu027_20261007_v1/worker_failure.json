@@ -1,6 +1,0 @@
-{
-  "status": "failed",
-  "error": "ImportError('dynamic module does not define module export function (PyInit_arena)')",
-  "traceback": "Traceback (most recent call last):\n  File \"/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/training_throughput_v9_20261007/worker.py\", line 24, in main\n    import arena\nImportError: dynamic module does not define module export function (PyInit_arena)\n",
-  "utc": "2026-10-07T09:03:45.631121+00:00"
-}

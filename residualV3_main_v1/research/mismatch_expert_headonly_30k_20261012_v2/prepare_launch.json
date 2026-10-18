@@ -1,9 +1,0 @@
-{
-  "pid": 147343,
-  "uid": 1024,
-  "cmd": [
-    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
-    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/prepare.py"
-  ],
-  "utc": "2026-10-12T07:33:20.001489+00:00"
-}

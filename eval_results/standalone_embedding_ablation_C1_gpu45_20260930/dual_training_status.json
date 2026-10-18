@@ -1,6 +1,0 @@
-{
-  "status": "superseded",
-  "training_complete": true,
-  "current_evaluation_status": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_ablation_C1_gpu45_20260930/unified_RAW_A_G_C1/status.json",
-  "log": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_ablation_C1_gpu45_20260930/unified_RAW_A_G_C1/C1.log"
-}

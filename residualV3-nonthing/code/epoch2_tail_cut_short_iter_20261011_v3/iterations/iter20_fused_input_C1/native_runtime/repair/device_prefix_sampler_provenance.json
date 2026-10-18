@@ -1,6 +1,0 @@
-{
-  "source": "/data/weijiahong/miniconda3/envs/llm_dflash_eval_v026/lib/python3.11/site-packages/vllm/v1/worker/gpu/spec_decode/rejection_sampler_utils.py",
-  "sha256": "bfaec14e220cf669ddfd2b3ef6d2c556dc8fae60ef71e65a2e7ae068fb386a2a",
-  "changes": "device cut limit for local stats, rejection, residual/bonus resampling and insert; original RNG/math retained",
-  "not_physical_target_compaction": true
-}

@@ -1,5 +1,0 @@
-{
-  "current": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5",
-  "old_stopped_after_updates": 8,
-  "speed_audit": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5/training_speed_audit.json"
-}

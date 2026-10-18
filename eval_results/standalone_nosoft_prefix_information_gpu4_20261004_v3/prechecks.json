@@ -1,7 +1,0 @@
-{
-  "status": "passed",
-  "source_count": 148,
-  "asset_count": 6,
-  "scope": "Frozen source/asset checks and prior CPU weighted-overlap identity, not GPU correctness or speed.",
-  "prior_cpu_math_checks": "../standalone_nosoft_prefix_information_gpu5_20261004_v1/prechecks.json"
-}

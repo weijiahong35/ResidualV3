@@ -1,9 +1,0 @@
-{
-  "status": "complete",
-  "stage": "joint_gpu5_evaluation_complete",
-  "training_complete": true,
-  "standalone_testing_cancelled": true,
-  "joint_results": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/comparison_5arms/results.json",
-  "joint_status": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/comparison_5arms/status.json",
-  "utc": "2026-10-02T10:30:06.731164+00:00"
-}

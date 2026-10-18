@@ -1,8 +1,0 @@
-{
-  "instruction": "那开始训练吧，这回就是有卡就占，因为每张卡都被占了，可以分片",
-  "supersedes_prior_two_card_limit": true,
-  "shared_available_memory_inferred_from_all_cards_occupied_and_sharding_instruction": true,
-  "never_stop_other_users": true,
-  "training_only_no_native_TPS_on_shared_cards": true,
-  "utc": "2026-10-12T08:46:31.122917+00:00"
-}

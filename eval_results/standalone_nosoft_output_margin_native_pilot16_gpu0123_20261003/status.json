@@ -1,5 +1,0 @@
-{
-  "status": "not_launched",
-  "reason": "GPU assignment revised before any GPU/server launch",
-  "replacement": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_output_margin_native_pilot16_gpu2345_20261003"
-}

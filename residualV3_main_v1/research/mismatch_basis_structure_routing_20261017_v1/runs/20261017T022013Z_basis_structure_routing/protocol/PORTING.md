@@ -1,1 +1,0 @@
-Ported inspected common/data/control/supervisor functions from basis_source source; no old module is imported or executed. RUN derives from new source path. Old results are read only. Old eig helper is unused; new data-matrix SVD required.

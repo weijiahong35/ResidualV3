@@ -1,4 +1,0 @@
-当前阶段：固定权重推理头预实验，不训练、不改变实际硬前驱。
-前驱编码GPU查表：普通批量表与原batch形状表分别校验。表不保存至磁盘，不进入checkpoint。
-整头计时和bitwise门槛见pilot.log、pilot_progress.json与pilot_summary.json；不等同native TPS。
-GPU启动仅空卡；运行后额外进程记录，不停止他人进程。

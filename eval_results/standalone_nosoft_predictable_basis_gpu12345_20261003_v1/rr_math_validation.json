@@ -1,9 +1,0 @@
-{
-  "status": "passed",
-  "augmented_ridge_matrix_exact": true,
-  "rank_truncation_projector_exact": true,
-  "heldout_quadratic_error_exact": true,
-  "equal_temperature_aggregation_exact": true,
-  "rr_math_sha256": "4a3986c0ec4ffca765dfe1361aad7c823a015e21e60219f6da9fb3f25907a066",
-  "utc": "2026-10-03T12:57:49.492987+00:00"
-}

@@ -1,5 +1,0 @@
-domain,expected_slots,valid_slots,NA_slots,weight,requested_weight,questions,C,unique_H,point,numeric_lower,numeric_upper,CI_lower,CI_upper,bootstrap_NA
-ALL,9936,9936,0,1.0,1.0,36,69,2571,0.0,0.0,0.0,0.0,0.0,0
-alpaca,3024,3024,0,0.3333333333333333,0.3333333333333333,12,21,886,0.0,0.0,0.0,0.0,0.0,0
-gsm8k,3456,3456,0,0.3333333333333333,0.3333333333333333,12,24,792,0.0,0.0,0.0,0.0,0.0,0
-humaneval,3456,3456,0,0.3333333333333333,0.3333333333333333,12,24,893,0.0,0.0,0.0,0.0,0.0,0

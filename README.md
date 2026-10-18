@@ -12,7 +12,7 @@
 | 推理与正式评测 | [冻结实现](residualV3-nonthing/code/epoch2_dspark_code_chat_C1_C32_20261013_v1/) · [原修复头](residualV3-nonthing/code/epoch2_dspark_code_chat_C1_C32_20261013_v1/native_runtime/repair/model.py) |
 | 六数据集正式结果 | [48 窗 / 24 配对报告](residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/RESULTS_CN.md) |
 | E1/E2 同实现对照 | [结果报告](residualV3-nonthing/results/epoch1_epoch2_native_compare_gsm8k_20261010_v1/RESULTS_CN.md) |
-| 机制与基底研究 | [研究目录](residualV3_main_v1/research/) · [项目导航](PROJECT_MAP_CN.md) |
+| 机制与基底研究 | [关键证据](docs/research/README_CN.md) · [负结果与未知](docs/research/LIMITATIONS_CN.md) |
 
 ## 获取代码和权重
 
@@ -29,8 +29,8 @@ python scripts/restore_release_weights.py --repo weijiahong35/ResidualV3 --epoch
 
 当前训练/推理代码、必要依赖与配置/basis、重要报告和表格已展开。完整训练数据、概率银行、优化器恢复断点、退役研究源码及临时模型不在仓库。大权重继续从 Release 下载。
 
-原始正结果、负结果、不确定性和概率警报均保留。部分历史题面中的凭据已脱敏；原协议的 SHA/token ID 指向原始输入。旧启动提示、NEXT_CHAT 和进程快照只是历史记录，不代表当前授权。AC/AL 指接受长度，不是答题准确率。
+关键正结果和来源阴性报告保留，其他必要负结果、不确定性和概率警报集中在研究限制记录。部分历史题面中的凭据已脱敏；原协议的 SHA/token ID 指向原始输入。冗余预实验启动包、旧交接和过程快照已从当前版本移除。AC/AL 指接受长度，不是答题准确率。
 
-`PACKAGE_MANIFEST.json` 记录既有压缩包的文件身份；Git 首页等导航文字已单独更新，见 [发布说明](PACKAGE_README_CN.md)。本次仅调整展示方式，没有新增训练、推理或科学结论。GitHub Actions 保持关闭。
+本次精简范围见 [清理说明](CLEANUP_NOTES_CN.md)，发布边界见 [发布说明](PACKAGE_README_CN.md)。没有新增训练、推理或科学结论。GitHub Actions 保持关闭。
 
 本项目基于 Speculators/DFlash，许可证见 [LICENSE](LICENSE)。

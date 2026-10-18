@@ -1,5 +1,0 @@
-{
-  "reason": "User requested higher training hidden concurrency after checking residualV2; replace with prefetch6 before formal training",
-  "formal_training_started": false,
-  "controller_pid": 769265
-}

@@ -1,6 +1,0 @@
-主体/三层no-soft头/基底保持不变。block16仍生成15个proposal。
-先拟合修复后q最大概率的小预测器，判断已修复前缀是否发生拒绝；与下一位置repair流水线重叠，允许一位置延迟。
-尾部停修后继续使用raw proposal，target仍验证完整块。训练/校准/研究留出按提示分组；GSM8K有历史开发使用。
-先数值与真正省计算校验，再正式C1=200/C40=1319，T0/T1，max2096。
-主status.json记录阶段；calibration/probe.log和calibration/native/vllm.log记录信号采集。
-不改长训权重、不重训修复头、不保存hidden/logit缓存、不停止其他人的进程。

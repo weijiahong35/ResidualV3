@@ -1,6 +1,0 @@
-version = "0.6.0.dev0"
-build_type = "dev"
-build_iteration = "0"
-git_commit = "None"
-git_branch = "None"
-git_last_tag = "None"

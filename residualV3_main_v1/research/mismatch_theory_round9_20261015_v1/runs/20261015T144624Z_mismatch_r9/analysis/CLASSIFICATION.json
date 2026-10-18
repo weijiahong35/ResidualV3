@@ -1,0 +1,598 @@
+{
+  "P/D/I0": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 30,
+      "material_mean_requires_tradeoff": 3,
+      "safe_mean_without_all_large_margin": 2,
+      "no_material_mean_room": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 24,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.8333333333333334,
+        0.8333333333333334
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.05555555555555555,
+        0.05555555555555555
+      ],
+      "material_mean_requires_tradeoff": [
+        0.08333333333333333,
+        0.08333333333333333
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "tradeoff": [
+        0.6666666666666666,
+        0.6944444444444443
+      ]
+    }
+  },
+  "P/D/I1": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 35,
+      "no_material_mean_room": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 2,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9722222222222222,
+        0.9722222222222222
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.0,
+        0.0
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.0
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "tradeoff": [
+        0.05555555555555555,
+        0.05555555555555555
+      ]
+    }
+  },
+  "P/D/I2": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 35,
+      "no_material_mean_room": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 1,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9722222222222222,
+        0.9722222222222222
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.0,
+        0.0
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.0
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "tradeoff": [
+        0.027777777777777776,
+        0.027777777777777776
+      ]
+    }
+  },
+  "P/J/I0": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 34,
+      "material_mean_requires_tradeoff": 1,
+      "no_material_mean_room": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 24,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9444444444444443,
+        0.9444444444444443
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.0,
+        0.0
+      ],
+      "material_mean_requires_tradeoff": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "tradeoff": [
+        0.6666666666666666,
+        0.6944444444444443
+      ]
+    }
+  },
+  "P/J/I1": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 34,
+      "safe_mean_without_all_large_margin": 1,
+      "no_material_mean_room": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 2,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9444444444444443,
+        0.9444444444444443
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.0
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "tradeoff": [
+        0.05555555555555555,
+        0.05555555555555555
+      ]
+    }
+  },
+  "P/J/I2": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 34,
+      "safe_mean_without_all_large_margin": 1,
+      "no_material_mean_room": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 1,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9444444444444443,
+        0.9444444444444443
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.0
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "tradeoff": [
+        0.027777777777777776,
+        0.027777777777777776
+      ]
+    }
+  },
+  "D/D/I0": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 22,
+      "safe_mean_without_all_large_margin": 1,
+      "unresolved": 11,
+      "no_material_mean_room": 1,
+      "material_mean_requires_tradeoff": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 18,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.611111111111111,
+        0.9166666666666666
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.027777777777777776,
+        0.3333333333333333
+      ],
+      "material_mean_requires_tradeoff": [
+        0.027777777777777776,
+        0.3333333333333333
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.3333333333333333
+      ],
+      "tradeoff": [
+        0.5,
+        0.6944444444444443
+      ]
+    }
+  },
+  "D/D/I1": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 34,
+      "safe_mean_without_all_large_margin": 1,
+      "unresolved": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 4,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9444444444444445,
+        0.9722222222222222
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.027777777777777776,
+        0.05555555555555555
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.027777777777777776
+      ],
+      "no_material_mean_room": [
+        0.0,
+        0.027777777777777776
+      ],
+      "tradeoff": [
+        0.1111111111111111,
+        0.16666666666666666
+      ]
+    }
+  },
+  "D/D/I2": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 35,
+      "safe_mean_without_all_large_margin": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 1,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9722222222222222,
+        0.9722222222222222
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.0
+      ],
+      "no_material_mean_room": [
+        0.0,
+        0.0
+      ],
+      "tradeoff": [
+        0.027777777777777776,
+        0.027777777777777776
+      ]
+    }
+  },
+  "D/J/I0": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 21,
+      "safe_mean_without_all_large_margin": 2,
+      "unresolved": 11,
+      "no_material_mean_room": 2
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 17,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.5833333333333334,
+        0.8888888888888888
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.05555555555555555,
+        0.3611111111111111
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.3055555555555555
+      ],
+      "no_material_mean_room": [
+        0.05555555555555555,
+        0.3611111111111111
+      ],
+      "tradeoff": [
+        0.47222222222222215,
+        0.6388888888888888
+      ]
+    }
+  },
+  "D/J/I1": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 33,
+      "unresolved": 1,
+      "safe_mean_without_all_large_margin": 2
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 2,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9166666666666666,
+        0.9444444444444443
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.05555555555555555,
+        0.08333333333333333
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.027777777777777776
+      ],
+      "no_material_mean_room": [
+        0.0,
+        0.027777777777777776
+      ],
+      "tradeoff": [
+        0.05555555555555555,
+        0.08333333333333333
+      ]
+    }
+  },
+  "D/J/I2": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 34,
+      "safe_mean_without_all_large_margin": 2
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 1,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9444444444444443,
+        0.9444444444444443
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.05555555555555555,
+        0.05555555555555555
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.0
+      ],
+      "no_material_mean_room": [
+        0.0,
+        0.0
+      ],
+      "tradeoff": [
+        0.027777777777777776,
+        0.027777777777777776
+      ]
+    }
+  },
+  "F/D/I0": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 26,
+      "material_mean_requires_tradeoff": 3,
+      "unresolved": 5,
+      "safe_mean_without_all_large_margin": 1,
+      "no_material_mean_room": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 21,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.7222222222222222,
+        0.861111111111111
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.027777777777777776,
+        0.16666666666666666
+      ],
+      "material_mean_requires_tradeoff": [
+        0.08333333333333333,
+        0.2222222222222222
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.16666666666666666
+      ],
+      "tradeoff": [
+        0.5833333333333334,
+        0.6944444444444443
+      ]
+    }
+  },
+  "F/D/I1": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 35,
+      "no_material_mean_room": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 4,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9722222222222222,
+        0.9722222222222222
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.0,
+        0.0
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.0
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "tradeoff": [
+        0.1111111111111111,
+        0.1111111111111111
+      ]
+    }
+  },
+  "F/D/I2": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 35,
+      "no_material_mean_room": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 1,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9722222222222222,
+        0.9722222222222222
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.0,
+        0.0
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.0
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "tradeoff": [
+        0.027777777777777776,
+        0.027777777777777776
+      ]
+    }
+  },
+  "F/J/I0": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 26,
+      "material_mean_requires_tradeoff": 1,
+      "safe_mean_without_all_large_margin": 3,
+      "unresolved": 5,
+      "no_material_mean_room": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 22,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.7222222222222222,
+        0.861111111111111
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.08333333333333333,
+        0.2222222222222222
+      ],
+      "material_mean_requires_tradeoff": [
+        0.027777777777777776,
+        0.16666666666666666
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.16666666666666666
+      ],
+      "tradeoff": [
+        0.611111111111111,
+        0.6944444444444443
+      ]
+    }
+  },
+  "F/J/I1": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 34,
+      "safe_mean_without_all_large_margin": 1,
+      "no_material_mean_room": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 4,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9444444444444443,
+        0.9444444444444443
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.0
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "tradeoff": [
+        0.1111111111111111,
+        0.1111111111111111
+      ]
+    }
+  },
+  "F/J/I2": {
+    "panel_count": 36,
+    "counts": {
+      "all_history_improvement": 34,
+      "safe_mean_without_all_large_margin": 1,
+      "no_material_mean_room": 1
+    },
+    "unresolved_in_denominator": true,
+    "near_optimum_tradeoff_count": 1,
+    "nearly_correct_branch_count": 1,
+    "rate_bounds": {
+      "all_history_improvement": [
+        0.9444444444444443,
+        0.9444444444444443
+      ],
+      "safe_mean_without_all_large_margin": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "material_mean_requires_tradeoff": [
+        0.0,
+        0.0
+      ],
+      "no_material_mean_room": [
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "tradeoff": [
+        0.027777777777777776,
+        0.027777777777777776
+      ]
+    }
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "pid": 4004778,
-  "command": [
-    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
-    "-B",
-    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/shared_teacher_fusion_transport_timing_20261007_v3/shared_pin_gate.py"
-  ]
-}

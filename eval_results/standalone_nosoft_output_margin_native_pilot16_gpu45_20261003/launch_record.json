@@ -1,8 +1,0 @@
-{
-  "controller_pid": 3364032,
-  "gpus": [
-    4,
-    5
-  ],
-  "code": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/output_margin_native_v3"
-}

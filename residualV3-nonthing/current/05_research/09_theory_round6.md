@@ -1,1 +1,0 @@
-../../../residualV3_main_v1/research/mismatch_theory_round6_20261015_v1/runs/20261015T050613Z_mismatch_r6/results/RESULTS_CN.md

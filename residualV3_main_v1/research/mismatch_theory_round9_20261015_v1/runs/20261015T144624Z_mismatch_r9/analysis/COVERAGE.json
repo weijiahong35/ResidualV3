@@ -1,0 +1,93 @@
+{
+  "risk_prompts": 36,
+  "risk_contexts": 69,
+  "target_panels": 621,
+  "slots_by_source": {
+    "P": 9936,
+    "D": 9936,
+    "F": 9936
+  },
+  "certificate_prompts": [
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:0019309e83e7cf0e6e90",
+      "group_sha256": "0019309e83e7cf0e6e90506fed1044a3d7199e27fb5d772b061842afbd9a5dc4"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:061501956468e82c7701",
+      "group_sha256": "061501956468e82c77012647889111bf1af73b2f143f180a6e35fa567c1df02d"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:39fda382b145630d85ef",
+      "group_sha256": "39fda382b145630d85efba7c8b2a9538a4665d91a29e10a7f9ee9577460e01f1"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:3aa8d4c8f02f9dcd55d4",
+      "group_sha256": "3aa8d4c8f02f9dcd55d42e831bf0512b6c491733af0ba40657604376ae6239a7"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:17f6178e393cb29f00e1",
+      "group_sha256": "17f6178e393cb29f00e197d84907ecda35b3e1fa38d46677ecc7e110bd94512c"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:18d5fc1fa5c042718343",
+      "group_sha256": "18d5fc1fa5c042718343ec590842f9ec30b3b06de1e28f1bf72e7bca36290fed"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:2c604d6231f8160f7733",
+      "group_sha256": "2c604d6231f8160f7733285f27d8ea886f34b5b8c380c5ba173023d33b2b9b76"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:34aa525ccaced7f94dfc",
+      "group_sha256": "34aa525ccaced7f94dfcfb169871dd58e17fe28b61e81191851ad6aefe0506b3"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:04ce139694b5d8900256",
+      "group_sha256": "04ce139694b5d8900256910e90021fbee3bc82ae50a441fb40deaaac453ea2d9"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:141c521796a45116e2fc",
+      "group_sha256": "141c521796a45116e2fcfe9f3c129eaed2f7e49f30a57d3ff0984325b8b23e90"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:2f2c7f26f46d75a845a5",
+      "group_sha256": "2f2c7f26f46d75a845a5a06e835170406bd9951d3a7661ce66927c25693dab02"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:3831e7709c2d89249d46",
+      "group_sha256": "3831e7709c2d89249d46285c482c3ff9cf7bf783552e5392ab5d7a1956632681"
+    }
+  ],
+  "certificate_raw_info_panels": 648,
+  "certificate_general_groups": 892,
+  "M_gap_closed_panels": 539,
+  "S_gap_closed_panels": 508,
+  "M_group_closed": 5242,
+  "S_group_closed": 5318,
+  "unresolved_panels": 34,
+  "by_domain": {
+    "gsm8k": {
+      "risk_panels": 216,
+      "certificate_panels": 216
+    },
+    "humaneval": {
+      "risk_panels": 216,
+      "certificate_panels": 216
+    },
+    "alpaca": {
+      "risk_panels": 189,
+      "certificate_panels": 216
+    }
+  }
+}

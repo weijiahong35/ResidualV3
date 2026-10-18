@@ -1,8 +1,0 @@
-status.json 是总流程；probe_status.json 显示当前阶段和请求进度。
-smoke_RAW/summary.json 与 smoke_NL/summary.json complete + instrumentation_sequence_parity=true 表示新观察器没有改变native输出序列。
-calibration.json complete 表示固定dose只用训练提示选定。
-diagnostic_RAW/requests.json 和 diagnostic_NL/requests.json 各应有64次请求。
-两个 diagnostic 的 progress.json 显示块数和实际到达状态数，block_checks.jsonl 验证实际q/lag1/RNG/权重。
-诊断结束后 RESULTS_CN.txt 是中文汇总；ALL_REACHED_METRICS.csv 看所有实际到达状态，ORACLE_COHORT_METRICS.csv 看固定平衡子集。
-最终 status.json 与 RESULTS.json complete；若 failed，根据 log 和对应 capture_error.json 查错，不重复launch覆盖目录。
-所有本实验数据都是诊断，不是正式AL/TPS，oracle成绩也不是可部署收益。

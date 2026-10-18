@@ -1,9 +1,0 @@
-{
-  "pid": 242089,
-  "sources": {
-    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/recovery_train.py": "f8c0eb0233bc0e85ba1513a1208d88cf87cfffb1bd1e18a4e98ef0f47d79c5ca",
-    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/bounded_eval_entry.py": "b31b250dabcdb842155f3ee00b5a867a2889774cfd4887c27efefc81ee1cc130",
-    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/recovery_controller.py": "b46da2e96a448478b210ffe18f44ddf84671b0873d143722f9f79f772610ee21"
-  },
-  "utc": "2026-10-03T13:49:18.426569+00:00"
-}

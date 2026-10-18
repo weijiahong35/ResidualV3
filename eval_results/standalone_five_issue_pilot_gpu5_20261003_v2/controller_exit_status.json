@@ -1,6 +1,0 @@
-{
-  "status": "failed",
-  "error": "CalledProcessError(1, ['/data/weijiahong/miniconda3/envs/dflash/bin/python', '-B', '/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/five_issue_pilot_v2/report.py', '/data/weijiahong/speculators-main-lora/eval_results/standalone_five_issue_pilot_gpu5_20261003_v2'])",
-  "controller_pid": 3154885,
-  "utc": "2026-10-03T09:27:18.787092+00:00"
-}

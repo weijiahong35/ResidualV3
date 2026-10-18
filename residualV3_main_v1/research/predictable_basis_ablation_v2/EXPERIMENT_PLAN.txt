@@ -1,4 +1,0 @@
-输入可预测的 mismatch 输出基底。五卡共同分片原生RAW采集，聚合XTX/XG/GG；按训练提示奇偶crossfit。RRR矩阵Cgx(Cxx+lambda I)^-1Cxg，rank512。
-五新组：KL/OVERLAP/MARGIN lambda1，OVERLAP lambda0.1及10。128×3=384步，OUTPUT，原no-soft2架构。普通GG三个控制复用现有v3头，不重训。
-五卡UUID绑定；启动预留在实际模型加载前释放。隐层/全logits不持久化，只保存聚合矩阵和标量。
-正式C1=20/C40=300，全部10组RAW+LONG+GG3+RR5各T0/T1，共40窗口。额外进程记录并标记污染。

@@ -1,7 +1,0 @@
-{
-  "status": "failed_or_checkpointed_stop",
-  "pid": 385006,
-  "physical_gpu": 1,
-  "error": "AssertionError(('SPECIALIZED2', 'initial reconstruction differs'))",
-  "utc": "2026-10-12T07:50:00.293031+00:00"
-}

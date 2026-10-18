@@ -1,9 +1,0 @@
-{
-  "pid": 2325498,
-  "command": [
-    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
-    "-B",
-    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/research/native_head_optimization_audit_20261009_v1/finalize_when_complete.py"
-  ],
-  "utc": "2026-10-09T02:23:44.036863+00:00"
-}

@@ -1,9 +1,0 @@
-{
-  "status": "running",
-  "panel": "replication",
-  "example": 8,
-  "total_examples": 16,
-  "completed_examples": 16,
-  "elapsed_seconds": 47.77195571921766,
-  "utc": "2026-10-01T04:58:05.346118+00:00"
-}

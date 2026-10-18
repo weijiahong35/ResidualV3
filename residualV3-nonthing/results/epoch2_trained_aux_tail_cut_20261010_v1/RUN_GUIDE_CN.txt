@@ -1,5 +1,0 @@
-第二轮已训练预测头尾部截断；冻结DFlash/repair/预测头。
-目前仅卡6空闲，先卡6顺序C1=200、C40=1319；T0/T1；block16含15个proposal；max2096；nonthinking；BF16；同卡target+draft。
-四组：单训DFlash、完整修复、q45预测截断、q45+repair末层预测截断。截断同时缩短修复与target验证前缀。
-GSM8K train 64题校准+32题只作检查，与正式test问句不重叠。至少修8位置、连续2次低前缀生存概率、一位置延迟；仅在校准集选阈值，固定全修路径保留率>=99.5%不是正式成绩保证。
-权重复用现有验证导出，不新建大权重；即时日志single_card_C1_formal.log、single_card_C40_formal.log；校准calibration.log；门槛micro.log。

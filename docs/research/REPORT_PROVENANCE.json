@@ -1,0 +1,81 @@
+{
+  "base_commit": "378d1470ff249ccdbbb3f9b68d5871b5f2393cc7",
+  "scope": "original report identities and historical links; no new scientific result",
+  "reports": [
+    {
+      "path": "residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/results/RESULTS_CN.md",
+      "sha256": "3517d5234a80fb467b9ae6fdbd3f4f67e7b30ead6a1d1aaefaa52254e3688bc0",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/results/RESULTS_CN.md",
+      "sha256": "b33c34342a0e04b83e7941a5e7ee416c27b22f762887d1bae5676be2a96a9a70",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_basis_structure_routing_20261017_v1/runs/20261017T022013Z_basis_structure_routing/results/RESULTS_CN.md",
+      "sha256": "0150cfa0deb031d436c9e7c34a91f2fb68b27b64e696888a23e32a26b5fe6949",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_basis_structure_routing_20261017_v1/runs/20261017T022013Z_basis_structure_routing/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_basis_structure_routing_20261017_v1/runs/20261017T034303Z_basis_structure_routing_redo/results/RESULTS_CN.md",
+      "sha256": "acf0e637c115302b6ef75a960af6973c7998c0b6e38ad2af0edb4feb870687f9",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_basis_structure_routing_20261017_v1/runs/20261017T034303Z_basis_structure_routing_redo/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_mechanism_discovery_20261016_v1/runs/20261016T061522Z_mechanism_discovery/results/RESULTS_CN.md",
+      "sha256": "0e9c874846f951c9ef7f582dc029735bc920264862c900f8e742e818a49b8a30",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_mechanism_discovery_20261016_v1/runs/20261016T061522Z_mechanism_discovery/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_execution_20261013_v1/runs/20261013T154124Z_mismatch_e2/results/RESULTS_CN.md",
+      "sha256": "ac8782f887da7e428d130e0a61dfc6323af7f5d1c6697426e54c865cb59be314",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_theory_execution_20261013_v1/runs/20261013T154124Z_mismatch_e2/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round2_20261014_v1/runs/20261014T040004Z_mismatch_r2/results/RESULTS_CN.md",
+      "sha256": "219074312713780d67d76190e1f6ba81eb49f14b16e72ec1e674f1f5ae3624d6",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_theory_round2_20261014_v1/runs/20261014T040004Z_mismatch_r2/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round3_20261014_v1/runs/20261014T073622Z_mismatch_r3/results/RESULTS_CN.md",
+      "sha256": "6041278d28bd9c6e309d4440c9e5791c61b43f2d5ac7ed0987ec0cc1987ae1c2",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_theory_round3_20261014_v1/runs/20261014T073622Z_mismatch_r3/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round4_20261014_v1/runs/20261014T131428Z_mismatch_r4/results/RESULTS_CN.md",
+      "sha256": "d9035fa80968c3ebb99fcebfc6befca6e2735c65c1d4ce202478d30d9d1b6057",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_theory_round4_20261014_v1/runs/20261014T131428Z_mismatch_r4/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round5_20261015_v1/runs/20261015T030446Z_mismatch_r5/results/RESULTS_CN.md",
+      "sha256": "148cba31e4b1c7df2b97900c32616d7c7613233c836d55fb1e43eac00e8ce6cd",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_theory_round5_20261015_v1/runs/20261015T030446Z_mismatch_r5/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round6_20261015_v1/runs/20261015T050613Z_mismatch_r6/results/RESULTS_CN.md",
+      "sha256": "0fbe44e4269ac5b221082776a1803a26c7f7c026ebca3ffb80b14bbbabd80267",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_theory_round6_20261015_v1/runs/20261015T050613Z_mismatch_r6/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round7_20261015_v1/runs/20261015T075350Z_mismatch_r7/results/RESULTS_CN.md",
+      "sha256": "c657765b93a94b57a54e9d34a680c22fffaadc18aedec18d64aa4a23e57f2731",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_theory_round7_20261015_v1/runs/20261015T075350Z_mismatch_r7/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/results/RESULTS_CN.md",
+      "sha256": "98c127584d694f78cec55b503c584c429875e0aefa554784d97624bd6ea06d75",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round9_20261015_v1/runs/20261015T144624Z_mismatch_r9/results/RESULTS_CN.md",
+      "sha256": "fbe122b76c4cc47cb8eb80f25b17fc7f901a1937421af02fe5cd5a685882b5ad",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_theory_round9_20261015_v1/runs/20261015T144624Z_mismatch_r9/results/RESULTS_CN.md"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_weight_intervention_20261016_v1/runs/20261016T071044Z_weight_intervention/results/RESULTS_CN.md",
+      "sha256": "f82eeea02949ee828f5633a4177664deaec0330911b83ffe882907ba4b2a5d14",
+      "historical_url": "https://github.com/weijiahong35/ResidualV3/blob/378d1470ff249ccdbbb3f9b68d5871b5f2393cc7/residualV3_main_v1/research/mismatch_weight_intervention_20261016_v1/runs/20261016T071044Z_weight_intervention/results/RESULTS_CN.md"
+    }
+  ]
+}

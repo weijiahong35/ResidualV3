@@ -1,5 +1,0 @@
-{
-  "status": "preparation_failed",
-  "stage": "port_selection",
-  "reason": "sandbox denies socket creation; no training or controller launched; preserved attempt; fresh preparation uses host access"
-}

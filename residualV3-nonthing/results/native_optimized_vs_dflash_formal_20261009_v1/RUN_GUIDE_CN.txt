@@ -1,7 +1,0 @@
-正式对照：单训 DFlash 主体 DFLASH vs 联合训练主体+最新优化头 OPTIMIZED。两种权重均为同833176条数据的一轮训练最终权重；不重训。
-C1=200，C40=1319个独立GSM8K test样本；T0/T1；nonthinking；block16=anchor+15proposal；max2096；context4096；BF16；同target batch invariance。
-同并发的两个方法在同一物理卡顺序测试；仅空卡启动，额外进程只记录，不停止他人。
-先smoke通过真实原生采样/修复q/Graph门槛，再无分段计时正式窗口；计时profile另做，不能用profile TPS作正式结论。
-正式日志：single_card_C1_formal.log和single_card_C40_formal.log；Graph计数器必须零eager/fallback。
-完整草稿时间含实际DFlash query、raw LM projection与stock采样；联合版额外含修复头；context KV prepare另列。
-用户要求提高评测显存占用：真实KV预算C1 smoke/formal=52GiB，C40 smoke=38GiB/formal=46GiB；同并发同阶段两臂一致。gpu_memory_utilization=0.92，KV显式字节数优先；预计实际总量70–74GiB，启动/Graph峰值仍需观察。

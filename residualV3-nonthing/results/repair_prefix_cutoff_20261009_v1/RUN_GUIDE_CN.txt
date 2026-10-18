@@ -1,6 +1,0 @@
-块内停止后续修复：block16依旧产生15个proposal；已知anchor不算修复位置。
-FULL15修复1–15；PREFIX12修复1–12、13–15用raw q；PREFIX10修复1–10、11–15用raw q。
-三组使用完全相同主体、修复头、基底、面板与采样seed；不重新训练，不删旧证据。
-先GPU微基准通过完整原实现参考、原始后缀、采样和verifier q校验，再native smoke，之后正式C1 200/C40 1319，T0/T1、最多2096输出。
-micro.log不是服务TPS；正式窗口single_card_C1_formal.log/single_card_C40_formal.log和C1/formal/summary.json、C40/formal/summary.json。
-status.json查看整体状态。这里只检验固定停止点，q自适应决定停止点尚未实现。

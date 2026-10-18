@@ -1,8 +1,0 @@
-{
-  "utc": "2026-09-30T11:37:14.445325+00:00",
-  "reason": "User requested one comparison suite RAW,A,B,C,D,E,F,G and one combined log; no repeated RAW per variant",
-  "paused_scheduler": 2907622,
-  "stopped_evaluator": 3225995,
-  "stopped_server": 3275149,
-  "all_training_preserved": true
-}

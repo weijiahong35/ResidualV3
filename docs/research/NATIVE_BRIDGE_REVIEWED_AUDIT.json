@@ -1,0 +1,75 @@
+{
+  "schema": "round2.native_bridge_reviewed.v1",
+  "passed": true,
+  "created_utc": "2026-10-14T04:56:23.691366+00:00",
+  "authorization": "Root explicitly reviewed the authorized engineering6×B0/B1/B2 bridge. No extra GPU/sample to force probability CI containing0.",
+  "reviewed_gate_scope": "Mechanical measurement identity, actual sampler input p/q, slot/token/round mapping, fixed parity, S/U arithmetic and exact poststop/HTTP accounting. Allows prespecified native measurement; does not establish ideal RNG-independent expected-acceptance law or scientific H_N success.",
+  "mechanical_checks": {
+    "six_engineering_prompts_two_each_domain": true,
+    "all18_successful_complete_requests": true,
+    "real_B0_verifier_rows_positive": true,
+    "each_request_actual_proposal_validation": true,
+    "integer_output_and_HTTP_partition_closed": true,
+    "explicit_scheduler_completions_audited": true,
+    "every_B2_engineering_request_fixed_parity": true,
+    "CPU_negative_and_stop_fixtures_passed": true,
+    "geometry_same_actual_p_q_tail_invariant": true,
+    "raw_actual_q_identity_checked": true
+  },
+  "successful_requests": 18,
+  "verifier_rounds": 1758,
+  "RNG_realized_first_reject_matches": 1758,
+  "RNG_reached_min_uniform_threshold_margin_B2": 0.0009816884994506836,
+  "original_probability_bootstrap_warning": {
+    "preserved_original_passed": false,
+    "status": "requires_review_preserved; not established bug and not expectation equality evidence",
+    "B2_request_total_difference": {
+      "prompts": 6,
+      "mean": 8.438778989874626,
+      "CI95": [
+        3.705636960868882,
+        13.171921018880369
+      ],
+      "CI97_5": [
+        2.003097230724203,
+        14.874460749025047
+      ]
+    },
+    "original_source_and_CI_unchanged": true
+  },
+  "review_reason": [
+    "Every1758 first-reject count independently reconstructs from actual seed/position Philox and captured threshold; no token/q/U mapping mismatch localized.",
+    "Domain-stratified bootstrap resamples only2prompts/domain and does not estimate fixed-setting conditional RNG-repeat uncertainty; the warning needs interpretation, not deterministic equality.",
+    "Working ideal-independent-U cumulative variance and approximate Student sensitivity are compatible with0; they remain explicitly auxiliary and do not replace original CI.",
+    "The head/local and actual count H_N estimands do not require claiming Gproduct exact expectation under this actual deterministic RNG implementation."
+  ],
+  "RNG_source_assumption": "Same seed and derived hierarchical Philox key is a source fact; ideal independence conditional on full proposal H is a modeling/pseudorandomness assumption, not proven here. Shared key alone does not establish a correctness bug, nor causally explain B2 residual.",
+  "expected_Gproduct_runtime_law_established": false,
+  "working_variance_not_proof_of_independence": true,
+  "scientific_HN_supported_by_bridge": false,
+  "new_GPU_after_warning": false,
+  "resampling_to_pass_gate": false,
+  "RNG_modified": false,
+  "fresh_test_opened": false,
+  "old_run_modified": false,
+  "current_report_source_sha256": "99454c14aa6cbe916bb4b89347eaecf7ac04c4e950ece0a32cfc843ca102bede",
+  "evidence_sha256": {
+    "analysis/NATIVE_BRIDGE_AUDIT.json": "310e34cf38cd79930178eda7caec2956efee782b30b1949aa4bdeb5cc0117c10",
+    "analysis/NATIVE_BRIDGE_AUDIT_v1.json": "d5c02959d5e3bd8b33cad1c6c1933fdd7164e68be00773560b219087b2397508",
+    "analysis/NATIVE_PROBABILITY_FORENSIC_DEV_AUDIT.json": "e4e36d1437d3a557eed886928e49f5782f52b6f6ab532b0032e2db30f0e69dc8",
+    "analysis/NATIVE_PROBABILITY_UNCERTAINTY_DEV_AUDIT.json": "8d09575d29d2df41d8c9f22d4b3b8a07c9687c76de75674fd91b0fab0d6cbd9d",
+    "analysis/NATIVE_RNG_SOURCE_AUDIT.json": "7cdca300243b76133f75334d35b1e93beb32c765fe6786542f644ec773ba8611",
+    "analysis/NATIVE_REPORT_CPU_AUDIT.json": "71587f981beb1241c8ff5364bf50537336f0412bbe2ebacd67fbee3bbcf714ae"
+  },
+  "numerical_thresholds": {
+    "head_original_optimized_TV": 2e-05,
+    "raw_sameq_TV": 2e-06,
+    "S_U_geometry": 1e-06,
+    "token_b_survival": 2e-06,
+    "FP32_TV_overlap_closure": 5e-06,
+    "FP32_vs_FP64_geometry_distance": 5e-06
+  },
+  "old_engineering_geometry_distance_threshold2e6_also_passed": true,
+  "current32CPUfixtures_passed": true,
+  "no_service_TPS_claim": true
+}

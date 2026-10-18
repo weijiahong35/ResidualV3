@@ -1,6 +1,0 @@
-恢复原因：v2 C40 VERIFY_STOP正式启动读取最后捕获批量的tail stats，N不一致而触发断言；原14正式窗口保留。
-新v3按每个Graph批量保存并绑定输出引用，不改权重、算法或阈值。
-先关闭诊断检查走正式startup路径，再做独立原生概率契约smoke，最后只补C40 VERIFY_STOP的T0/T1正式窗口。
-GPU7只在空卡且空闲>=78000MiB时启动，绝不停止其他人的进程。
-即时状态：status.json；恢复控制器：controller.log；正式日志：single_card_C40_formal.log（启动正式阶段后生成）；工程诊断：single_card_C40_startup_smoke.log、single_card_C40_formal_smoke.log。
-对比汇总复用原14窗口、另列v3新增2窗口来源；不宣称同一SHA测得所有结果。

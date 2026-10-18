@@ -1,7 +1,0 @@
-{
-  "status": "complete_offline_pilot",
-  "pid": 1437038,
-  "physical_gpu": 7,
-  "results": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_pilot_20261012_v1/RESULTS.json",
-  "utc": "2026-10-12T04:47:05.177189+00:00"
-}

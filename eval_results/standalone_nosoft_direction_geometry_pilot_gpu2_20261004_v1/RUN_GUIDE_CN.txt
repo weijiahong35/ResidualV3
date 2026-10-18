@@ -1,9 +1,0 @@
-本轮三组：OUTPUT、EUCLIDEAN、FISHER，各两个采样/顺序种子。
-同一已有Parallel_TF权重复制，重建FP32 master/Adam，16条新训练提示×3轮＝每头48步，最多16锚点，微批4锚点。
-留出16条提示做训练前后诊断。随后自动测RAW＋BASE_TF＋六个新头：C1=20/C40=300、T0/T1、七proposal、max4096。
-新面板是开发使用，不称独立最终测试。
-训练：training.log；进度：training/live_progress.json；各头training/名字/metrics.jsonl。
-总状态：status.json。结束须status=complete且RESULTS.json/FORMAL_RESULTS.csv存在。
-AL和TPS只看C1/formal/summary.json、C40/formal/summary.json或最终FORMAL_RESULTS.csv；smoke不用于性能结论。
-逐窗口检查execution counters captures/fallbacks/eager=0、replays>0；performance_contaminated=true的窗口不给干净吞吐结论。
-所有epoch权重保留；不自动长训、不修改旧基底/旧权重/旧冻结源码、不干预其他GPU和进程。
