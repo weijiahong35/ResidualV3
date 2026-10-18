@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-18T03:04:06.688119+00:00",
+  "created_at": "2026-10-18T03:23:40.779599+00:00",
   "scope": "trimmed current V3 source, dependencies, formal results and essential evidence; weights separate",
-  "base_commit": "567079429b2ed649d4f89be3821b8aea2d93e01a",
+  "base_commit": "7ef4892c50ccb200923855d9b46ed7c4cdbfe579",
   "source_files": [
     {
       "path": ".gitignore",
@@ -290,8 +290,8 @@
     },
     {
       "path": "CLEANUP_NOTES_CN.md",
-      "bytes": 1511,
-      "sha256": "ca25251b3dfe88ab8f390f84f94cee8fbf439f3fef3e6675292c144b43daeb73"
+      "bytes": 2048,
+      "sha256": "d8d93b6956020b91f0b7aab4952d5a6488e251bde49031623dc677bf5266cc58"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -354,8 +354,8 @@
     },
     {
       "path": "docs/research/LIMITATIONS_CN.md",
-      "bytes": 2256,
-      "sha256": "e9dba7b520bb6c473571bb0d67b68e8da2e046c06725a90ce8d1b5c8cbf20c40"
+      "bytes": 2361,
+      "sha256": "7f9b6dceb4d67ad4bc8d3ddf5bd2e2e58fde1c486d9d029571bce7a30f662539"
     },
     {
       "path": "docs/research/NATIVE_BRIDGE_AUDIT.json",

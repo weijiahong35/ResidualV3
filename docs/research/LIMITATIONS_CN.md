@@ -15,4 +15,4 @@
 
 原[NATIVE_BRIDGE_AUDIT.json](NATIVE_BRIDGE_AUDIT.json)的passed=false原样保留。[reviewed审计](NATIVE_BRIDGE_REVIEWED_AUDIT.json)仅认可机械准入，不能覆盖原概率警报。R3随机源区间含0也不证明无偏。
 
-完整旧报告仍在服务器原项目和Git历史中。保留的是已做过什么、哪些不能声称；本次没有重跑实验、补造证据或启动下一轮。
+必要旧报告在服务器维护目录和Git历史中保留；部分原始诊断数据、缓存和实验模型已按用户指令删除，不能从报告恢复。保留的是已做过什么、哪些不能声称；本次没有重跑实验、补造证据或启动下一轮。
