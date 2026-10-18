@@ -11,7 +11,7 @@ AC为包含bonus的平均接受长度；吞吐为整窗输出token/s，不是任
 引擎仍为本项目vLLM，proposal仍为15（DSpark原论文为7），并额外测T0及C32；这不是DSpark完整方法复现。
 未重复扩充题目；MBPP作者选出的256个来源行中有255个不同题面，按原样保留。
 
-[即时控制器log](parallel/controller.log) · [状态](status.json) · [数据审计](DATASET_AUDIT.json) · [固定协议](plan.json)
+[48窗口紧凑指标](FORMAL_WINDOWS.json) · [24配对主表](COMPARISON.json) · [数据审计](DATASET_AUDIT.json) · [原最终审计](FINAL_AUDIT.json)
 
 | 领域 | 数据集 | 每窗来源行数 | 不同题面数 | 上下文上限 |
 |---|---|---:|---:|---:|
@@ -30,7 +30,6 @@ AC为包含bonus的平均接受长度；吞吐为整窗输出token/s，不是任
 
 ## humaneval
 
-[C1 smoke](humaneval_C1_smoke.log) · [C1 formal](humaneval_C1_formal.log) · [C32 smoke](humaneval_C32_smoke.log) · [C32 formal](humaneval_C32_formal.log)
 
 | 数据集 | 设置 | AC：单训→联合头 | AC增长 | 吞吐：单训→联合头 | 吞吐增长 |
 |---|---|---:|---:|---:|---:|
@@ -41,7 +40,6 @@ AC为包含bonus的平均接受长度；吞吐为整窗输出token/s，不是任
 
 ## mbpp
 
-[C1 smoke](mbpp_C1_smoke.log) · [C1 formal](mbpp_C1_formal.log) · [C32 smoke](mbpp_C32_smoke.log) · [C32 formal](mbpp_C32_formal.log)
 
 | 数据集 | 设置 | AC：单训→联合头 | AC增长 | 吞吐：单训→联合头 | 吞吐增长 |
 |---|---|---:|---:|---:|---:|
@@ -52,7 +50,6 @@ AC为包含bonus的平均接受长度；吞吐为整窗输出token/s，不是任
 
 ## livecodebench
 
-[C1 smoke](livecodebench_C1_smoke.log) · [C1 formal](livecodebench_C1_formal.log) · [C32 smoke](livecodebench_C32_smoke.log) · [C32 formal](livecodebench_C32_formal.log)
 
 | 数据集 | 设置 | AC：单训→联合头 | AC增长 | 吞吐：单训→联合头 | 吞吐增长 |
 |---|---|---:|---:|---:|---:|
@@ -63,7 +60,6 @@ AC为包含bonus的平均接受长度；吞吐为整窗输出token/s，不是任
 
 ## mt-bench
 
-[C1 smoke](mt-bench_C1_smoke.log) · [C1 formal](mt-bench_C1_formal.log) · [C32 smoke](mt-bench_C32_smoke.log) · [C32 formal](mt-bench_C32_formal.log)
 
 | 数据集 | 设置 | AC：单训→联合头 | AC增长 | 吞吐：单训→联合头 | 吞吐增长 |
 |---|---|---:|---:|---:|---:|
@@ -74,7 +70,6 @@ AC为包含bonus的平均接受长度；吞吐为整窗输出token/s，不是任
 
 ## alpaca
 
-[C1 smoke](alpaca_C1_smoke.log) · [C1 formal](alpaca_C1_formal.log) · [C32 smoke](alpaca_C32_smoke.log) · [C32 formal](alpaca_C32_formal.log)
 
 | 数据集 | 设置 | AC：单训→联合头 | AC增长 | 吞吐：单训→联合头 | 吞吐增长 |
 |---|---|---:|---:|---:|---:|
@@ -85,7 +80,6 @@ AC为包含bonus的平均接受长度；吞吐为整窗输出token/s，不是任
 
 ## arena-hard-v2
 
-[C1 smoke](arena-hard-v2_C1_smoke.log) · [C1 formal](arena-hard-v2_C1_formal.log) · [C32 smoke](arena-hard-v2_C32_smoke.log) · [C32 formal](arena-hard-v2_C32_formal.log)
 
 | 数据集 | 设置 | AC：单训→联合头 | AC增长 | 吞吐：单训→联合头 | 吞吐增长 |
 |---|---|---:|---:|---:|---:|
@@ -94,3 +88,7 @@ AC为包含bonus的平均接受长度；吞吐为整窗输出token/s，不是任
 | arena-hard-v2 | C32 T0 | 3.340→3.542 | +6.05% | 1213.7→1220.9 | +0.59% |
 | arena-hard-v2 | C32 T1 | 2.674→2.912 | +8.91% | 957.8→977.7 | +2.08% |
 
+
+## 公开结果精简说明
+
+重复题面和逐窗协议副本已移除；FORMAL_WINDOWS.json保留全部48个数值窗口、必要协议及原公开summary的SHA，COMPARISON.json的24配对数值未改动。FINAL_AUDIT对应当时完整原始存档，原始结果在服务器与Git历史中保留；这不是重新评测。

@@ -1,8 +1,0 @@
-全数据1epoch三卡训练已运行并通过启动检查。
-卡3 teacher；卡4 DFlash+no-soft3头（CE+D-PACE+OUTPUT）；卡5纯DFlash。
-两组各833176条/15847包，实际更新，输入与anchor匹配；fc与5层主体梯度非零，联合头梯度非零。
-第一包实际CUDA完整断点恢复通过：BF16、FP32 masters、全部MuOn/Adam状态和RNG均一致。
-手动checkpoint请求已在第54包共同提交到slot1，随后两组继续训练。
-每200更新自动保存，可用control.sh checkpoint/pause/resume。
-完整断点空间已预留；删除39.24GiB旧吞吐短测优化器状态，所有对应BF16权重、消融和长训权重保留。
-无验证、无推理测试，结束一轮即停。
