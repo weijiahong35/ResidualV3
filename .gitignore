@@ -1,0 +1,3 @@
+*.gz
+*.partial
+__pycache__/

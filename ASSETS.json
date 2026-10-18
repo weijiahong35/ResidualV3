@@ -1,0 +1,50 @@
+{
+  "assets": [
+    {
+      "name": "ResidualV3_project.tar.gz",
+      "bytes": 67862960,
+      "sha256": "54728e1d9233915bc431e72e7df3a25153eb57b4bc6f7ea55e6c96a95e821546",
+      "kind": "source_archive"
+    },
+    {
+      "name": "body_epoch_01.safetensors.gz",
+      "bytes": 1693579831,
+      "sha256": "64b627b1465b036cf78ee738e26d8d466850f754cab2fdfe1ceec31b6bff6bc0",
+      "kind": "gzip_final_weight",
+      "restored_path": "residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/final/body_epoch_01.safetensors",
+      "restored_bytes": 2097267648,
+      "restored_sha256": "ac2ced8c85a4afd280b15ac319e4787c0ccbb522976904efa6c2385f44e21a45",
+      "epoch": "E1"
+    },
+    {
+      "name": "joint_epoch_01.safetensors.gz",
+      "bytes": 1700267395,
+      "sha256": "a2e1bd60523d2f4f57ef3b09c1bdc7511ef5571452b6c522000c07c4d85c5d26",
+      "kind": "gzip_final_weight",
+      "restored_path": "residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/final/joint_epoch_01.safetensors",
+      "restored_bytes": 2105978602,
+      "restored_sha256": "ee831357959ec3f8de4d95a62f6caf0619a8b1d4942dbe174313601b88b4cafb",
+      "epoch": "E1"
+    },
+    {
+      "name": "body_epoch_02.safetensors.gz",
+      "bytes": 1693618711,
+      "sha256": "ed0bd58553f4c75f6bd859256ecbe41625deb8f8e3dfbfe91cc0ec66cf5ced46",
+      "kind": "gzip_final_weight",
+      "restored_path": "residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/body_epoch_02.safetensors",
+      "restored_bytes": 2097267648,
+      "restored_sha256": "3ec7b0b39bcbd983f7a1acd3fb0eda6317ebc6bea1a0d5d5ef4f3f09147ff23b",
+      "epoch": "E2"
+    },
+    {
+      "name": "joint_epoch_02.safetensors.gz",
+      "bytes": 1700254950,
+      "sha256": "cfb990ffd3a587ec93c2f40a53aec66f03a0f129d2c56adcc0e68a56f7da359a",
+      "kind": "gzip_final_weight",
+      "restored_path": "residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/joint_epoch_02.safetensors",
+      "restored_bytes": 2105978602,
+      "restored_sha256": "7fad88ba97c5fc424483eb56b78ca83a2ba806e79b2541f4e617bb985be8449d",
+      "epoch": "E2"
+    }
+  ]
+}
