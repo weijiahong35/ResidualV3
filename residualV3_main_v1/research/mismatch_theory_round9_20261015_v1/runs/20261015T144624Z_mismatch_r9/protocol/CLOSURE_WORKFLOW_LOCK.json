@@ -1,0 +1,15 @@
+{
+  "UTC": "2026-10-15T15:24:40.672155+00:00",
+  "purpose": "finish existing authorized R9 stages sequentially, preserve durable progress; no retries, new experiment, numerical worker overlap or next round",
+  "files": {
+    "code/completion_watch.py": "792019ce42b9d530e8387773b636373262552ed8029ebde3fe76b0aa4902e03e",
+    "code/finalize.py": "2c32e919f57b0ec8f9886577c6295e2cfa720dd469de78e394b9a6497309cc64",
+    "code/verify_archive.py": "a2c1dd98f6d7fb4eed339faab994d575a78564c47e35f931aa41e13d9ee79f67"
+  },
+  "CPU_control_accounting": "covered by 120s initial control +600s closure reserve; numerical children counted in main ledger, not twice",
+  "static_manifest_dynamic_exceptions_explicit": true,
+  "final_review_note": "archive and verification preserve partial/pending root report review; ROOT_FINAL_REVIEW is declared closure exception; primary agent must read actual report/cases and only then mark complete",
+  "revised_UTC": "2026-10-15T18:35:39.618949+00:00",
+  "repair2_note": "External wall supervision, historical overrun explicitly disclosed; no scientific estimand or selection change",
+  "root_editorial_revision_note": "before final archive: plain-language interpretation of existing fixed cases, preserved prior draft/manifest; correct solver wall wording; no numerical source or outputs changed"
+}

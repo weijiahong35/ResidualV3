@@ -1,0 +1,2 @@
+question,result,status,reason
+Q4,NA,not_tested,All four valid groups and out-of-fold crossover absent; domain composition is not task fit.

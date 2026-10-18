@@ -1,0 +1,10 @@
+{
+  "c_rule": "intersect d+ with fit common underestimation and d- with fit common overestimation; mass balance m=min(A,B), proportional sides",
+  "zero_m_threshold": 1e-12,
+  "rho": "effective_m / TV(qh,q0); rho0 ifm0",
+  "fit_qualification": "at least2 complete H INSIDE exact sameC/i/Z",
+  "primary_population": "matched eval novel vs ALL fit H at sameC/i, including otherZ; m0 retained",
+  "access": "independent exporter and raw SHA audit allowed raw full reads; constructor fit-only numeric reads; seal all eligible fit actions before eval evaluation",
+  "sign_band": 1e-05,
+  "no_basis_reachability_claim": true
+}

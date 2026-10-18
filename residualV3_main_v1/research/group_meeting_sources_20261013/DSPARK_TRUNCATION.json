@@ -1,0 +1,54 @@
+{
+  "verified_at_utc": "2026-10-13T04:27:35.103718+00:00",
+  "source_snapshot": "dspark_v1.html",
+  "source_sha256": "d26ba29059c512f60eb02bed40f28a1214747c714cb82f996f0dc0eca591caea",
+  "offline_table_1": {
+    "source": "https://arxiv.org/html/2607.05147v1#S4.SS2",
+    "scheduler_enabled": false
+  },
+  "static_threshold_diagnostic": {
+    "source": "https://arxiv.org/html/2607.05147v1#S4.SS3.SSS3",
+    "target": "Qwen3-4B",
+    "metric": "acceptance rate percent, not accepted length or TPS",
+    "math": [
+      76.9,
+      92.5
+    ],
+    "code": [
+      67.6,
+      92.0
+    ],
+    "chat": [
+      45.7,
+      95.7
+    ]
+  },
+  "production_comparison": {
+    "source": "https://arxiv.org/html/2607.05147v1#S5.SS4",
+    "baseline": "MTP-1",
+    "method": "DSpark-5, scheduler enabled",
+    "workload": "live user traffic",
+    "rows": [
+      {
+        "target": "DeepSeek-V4-Flash preview",
+        "sla_token_s_user": 80,
+        "aggregate_throughput_gain_pct": 51,
+        "user_speed_gain_pct_at_matched_aggregate": [
+          60,
+          85
+        ]
+      },
+      {
+        "target": "DeepSeek-V4-Pro preview",
+        "sla_token_s_user": 35,
+        "aggregate_throughput_gain_pct": 52,
+        "user_speed_gain_pct_at_matched_aggregate": [
+          57,
+          78
+        ]
+      }
+    ],
+    "scope": "full system vs MTP-1; neither a standalone scheduler ablation nor a DFlash comparison"
+  },
+  "does_not_supply": "Qwen3-8B C1/C32 three-dataset paired AC/TPS vs DFlash with scheduler enabled"
+}

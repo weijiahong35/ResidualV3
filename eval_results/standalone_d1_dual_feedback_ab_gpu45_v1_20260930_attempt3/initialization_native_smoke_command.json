@@ -1,0 +1,28 @@
+{
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "-m",
+    "residualV3_d1_dual_feedback_ab_v1.evaluate",
+    "--training",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_d1_dual_feedback_ab_gpu45_v1_20260930_attempt3/initialization_native",
+    "--gpu",
+    "5",
+    "--concurrency",
+    "1",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_d1_dual_feedback_ab_gpu45_v1_20260930_attempt3/initialization_native/C1_smoke",
+    "--tokens",
+    "32",
+    "--prompts",
+    "1",
+    "--rounds",
+    "1",
+    "--arms",
+    "LMHEAD",
+    "EMBEDDING",
+    "--smoke"
+  ],
+  "CUDA_VISIBLE_DEVICES": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+  "utc": "2026-09-30T04:30:16.311546+00:00"
+}

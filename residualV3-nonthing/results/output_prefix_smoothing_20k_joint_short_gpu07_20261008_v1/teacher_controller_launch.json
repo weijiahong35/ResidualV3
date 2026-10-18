@@ -1,0 +1,44 @@
+{
+  "pid": 2817357,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/output_prefix_smoothing_20261008_v1/teacher_service.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/output_prefix_smoothing_20k_joint_short_gpu07_20261008_v1/teacher",
+    "--protocol",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/output_prefix_smoothing_20k_joint_short_gpu07_20261008_v1/teacher_input_protocol.json",
+    "--exclude-gpus",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "--dp-size",
+    "1",
+    "--kv-gib",
+    "48"
+  ],
+  "initial_gpu_rows": [
+    "0, GPU-6708ee11-1afa-f173-d74b-59daf320d901, 81151",
+    "1, GPU-250cd769-9b6a-e76d-92cb-681686776938, 50742",
+    "2, GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824, 50740",
+    "3, GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd, 673",
+    "4, GPU-b69b3699-6c78-06df-49e1-81ef44cf415b, 4671",
+    "5, GPU-6b9e070b-a9db-7515-5b45-999392d3bb49, 4833",
+    "6, GPU-16d48373-c956-39a9-3989-4676fb6aa22c, 41157",
+    "7, GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f, 81151"
+  ],
+  "initial_apps": [
+    "GPU-250cd769-9b6a-e76d-92cb-681686776938, 2296896",
+    "GPU-250cd769-9b6a-e76d-92cb-681686776938, 2302955",
+    "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824, 2296897",
+    "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824, 2303008",
+    "GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd, 734973",
+    "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b, 738289",
+    "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49, 738290",
+    "GPU-16d48373-c956-39a9-3989-4676fb6aa22c, 2357128"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "UTC": "2026-10-16T06:18:17.360897+00:00",
+  "status": "locked_before_probability_scan",
+  "code": {
+    "code/common.py": "db44058b8489b25237d226d353381260af9e8cb1d41d26bffe1f35edd935fa2f",
+    "code/supervise.py": "36f193f0206961c113081b9f1b3b03d22cdcd2121d3799c991aa21783d276641",
+    "code/inventory.py": "6dbaab394184a0d90e8f94bbffb4eabebf8cf2ded9a936115154b86f8ddac495",
+    "code/contracts.py": "186056ab2d71058eac9ce67c33e0fe53d18c642052b2ec508a74217ed7ae81ad",
+    "code/scan.py": "c1b031a5fd4f5f6ee8173cb8ac24ae4187ca48723722378d49ae8280e07067c6"
+  },
+  "input_manifest_SHA": "f600d5ae62e1d1de1e5237652c98a70fac1b8bdb439c54337b5ff39ea86feb5b",
+  "pool": "fresh_eval",
+  "positions": [
+    1,
+    2,
+    3,
+    8,
+    15
+  ],
+  "panel": "36 prompts 69 contexts P D F eval all valid, D/J; no head/fit/novel/reached filters",
+  "metrics": "execution guide exact A/B",
+  "weights": [
+    "natural slots within C",
+    "equal valid C per prompt",
+    "equal prompts per domain",
+    "equal three domains"
+  ],
+  "sensitivity": "unique H equal within C only",
+  "performance_contexts": [
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_0019309e83e7cf0e6e90/C1",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_3831e7709c2d89249d46/C65"
+  ],
+  "head_C": "sealed scalar extraction, no result read before FINAL_SELECTION",
+  "diagnostics": "not chosen before AB; maximum3 candidates2diagnostics each",
+  "CPU_threads": 1,
+  "numeric_workers": 1,
+  "GPU": 0,
+  "plan_core_review": "qa/CORE_QUESTION_REVIEW_CN.md",
+  "aggregation_code_SHA256": "5dc2350451573828fa5024cdc1730a95c264e2a02742212ad70d61bef77a1849",
+  "aggregation_locked_UTC": "2026-10-16T06:19:26.381004+00:00",
+  "aggregation_before_full_scan_and_effect_read": true
+}

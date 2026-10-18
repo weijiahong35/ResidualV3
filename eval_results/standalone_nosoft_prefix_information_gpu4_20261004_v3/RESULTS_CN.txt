@@ -1,0 +1,10 @@
+冻结Parallel_TF输入信息与target hidden来源诊断（T1，非测速）
+实际在线输入中的target context来自target辅助层，经冻结DFlash fc与RMSNorm压缩；位置是anchor之前一token，七个proposal共用。
+分支当前位置teacher hidden使用额外前向取得，仅作诊断，不是可免费部署的信息。
+配对数=23，提示数=14，teacher请求=129。
+参考/native分布差异超过TV=0.02门限而排除的配对=10；配对尝试=64。排除产生选择限制，不能推广为全部native状态。
+平均target TV=0.051380；有限动作库分别修正相比共用修正的平均overlap差=0.000279；配对存活质量加权差=0.000283。
+差值>=0.005的配对=1。分支质量只刻画当前块的两个所选分支，不是全局AL估计。
+target不同不足以单独证明修复输入不够；有限动作库上的冲突也不证明任意动作都无法兼顾。
+跨提示探针：{"status": "skipped", "reason": "Useful non-negligible paired-action conflicts did not cover four prompts; no automatic prediction probe.", "useful_conflict_prompts": 0}
+所有hidden/logits/逐状态向量仅在当前进程内存，结束释放；只保存统计、token/hash元数据与探针模型参数。

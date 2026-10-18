@@ -1,0 +1,12 @@
+{
+  "pid": 667976,
+  "identity": {
+    "physical_gpu": 7,
+    "uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+    "pci_bus_id": "00000000:D3:00.0",
+    "name": "NVIDIA A100-SXM4-80GB",
+    "cuda_device": 0
+  },
+  "initial_free_mib": 81151,
+  "utc": "2026-10-09T08:00:02.008438+00:00"
+}

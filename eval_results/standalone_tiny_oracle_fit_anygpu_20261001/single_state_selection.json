@@ -1,0 +1,8 @@
+{
+  "block_index": 0,
+  "position": 5,
+  "source_index": 5539,
+  "selection_rule": "First frozen-N argmax mismatch in prompt-index then position order; fallback first state if none. Independent of oracle fit success.",
+  "selected_from_actual_mismatch": true,
+  "actual_mismatches": 10
+}

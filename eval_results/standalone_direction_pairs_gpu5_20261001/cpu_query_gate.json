@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "pair_identity_max_error": 1.7763568394002505e-15,
+  "pair_sum_identity": true,
+  "common_component_decomposition": true
+}

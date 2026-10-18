@@ -1,0 +1,38 @@
+{
+  "status": "running_verified",
+  "utc": "2026-10-03T12:25:44.617465+00:00",
+  "controller_pid": 4016527,
+  "gpu": 0,
+  "gpu_uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+  "stage": "native_basis_collection",
+  "progress": {
+    "status": "collecting",
+    "phase": "fit",
+    "blocks": 1600,
+    "reached_states": {
+      "0": 6396,
+      "1": 0
+    },
+    "oracle_counts": {
+      "0_False": 0,
+      "0_True": 0,
+      "1_False": 0,
+      "1_True": 0
+    },
+    "last_block": {
+      "phase": "fit",
+      "temperature": 0,
+      "prompt_index": 99,
+      "source_index": 7284,
+      "verification_block": 16,
+      "accepted_draft_tokens": 1,
+      "source": "graph"
+    },
+    "utc": "2026-10-03T12:25:44.034849+00:00"
+  },
+  "checked_blocks": 1600,
+  "all_checked_blocks_passed": true,
+  "source_files_checked": 153,
+  "native_collection_smoke_passed": true,
+  "startup_reservation_released": true
+}

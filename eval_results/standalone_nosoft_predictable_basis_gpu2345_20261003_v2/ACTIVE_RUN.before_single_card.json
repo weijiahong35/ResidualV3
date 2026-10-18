@@ -1,0 +1,31 @@
+{
+  "active_root": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2",
+  "controller_pid": 84169,
+  "physical_gpus": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "previous_root": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu12345_20261003_v1",
+  "previous_status": "failed_before_new_training",
+  "method": "Reduced-rank ridge basis fitted from deployment-input/task-gradient joint sufficient statistics",
+  "arms": [
+    "RR_KL_B512",
+    "RR_OVERLAP_B512",
+    "RR_MARGIN_B512",
+    "RR_OVERLAP_LOW_B512",
+    "RR_OVERLAP_HIGH_B512"
+  ],
+  "rank": 512,
+  "input_dimension": 1537,
+  "fixed_input_projections": true,
+  "actual_hard_lag1": true,
+  "no_target_inputs": true,
+  "training": "128 prompts x3 epochs; 384 updates each; no-soft2, Top256, OUTPUT; scratch weights",
+  "reference_control": "Reuse current GPU0 v3 three newly trained task-gradient basis heads; old N untouched",
+  "formal": "C1 GPU4=20/C40 GPU5=300, 10 arms xT0/T1=40 windows; same fresh research panels as v3",
+  "hidden_logit_cache": false,
+  "foreign_processes": "Observe, annotate, never kill; memory-race retries affect only the failing worker",
+  "utc": "2026-10-03T13:25:38.453959+00:00"
+}

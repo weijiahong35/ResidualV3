@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "cpu_lifetime_cases": [
+    {
+      "tokens": 1,
+      "hidden_after_unlink_bitwise_equal": true,
+      "packed_aux_and_final_bitwise_equal": true
+    },
+    {
+      "tokens": 37,
+      "hidden_after_unlink_bitwise_equal": true,
+      "packed_aux_and_final_bitwise_equal": true
+    },
+    {
+      "tokens": 4096,
+      "hidden_after_unlink_bitwise_equal": true,
+      "packed_aux_and_final_bitwise_equal": true
+    },
+    {
+      "tokens": 17,
+      "hidden_after_unlink_bitwise_equal": true,
+      "packed_aux_and_final_bitwise_equal": true
+    }
+  ],
+  "head_loss_optimizer_and_body_math_sources_unchanged": [
+    "optimized_repair.py",
+    "combined_ce_tv.py",
+    "joint_features.py",
+    "joint_model.py",
+    "losses.py",
+    "fused_kernels.py",
+    "host_pipeline.py",
+    "concurrent_driver.py"
+  ],
+  "prior_full1536_online_gradient_gate": "residualV3-nonthing/results/head_forward_backward_optimization_20261007_v1/optimized/joint/full1536_online_gradient_gate.json",
+  "no_hidden_logits_saved": true,
+  "temporary_files_removed": true
+}

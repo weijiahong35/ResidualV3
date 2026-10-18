@@ -1,0 +1,17 @@
+{
+  "index": 74,
+  "source": "/data/weijiahong/speculators-main-lora/regeneration_standalone/open_perfectblend_regen/pool_500k_seed42/regenerated_ctx4096/nonthinking/train/shard-074.jsonl",
+  "source_sha256": "71790da7138910d501b4c5b6671fe98bd157a0bb6b5aa5526942fcc57a92105d",
+  "directory": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/all_nonthinking_ctx4096_20261006_v1/shard_074",
+  "records": 9899,
+  "tokens": 12098106,
+  "rejected": {
+    "no_complete_supervised_block": 39,
+    "not_final_conversation_row": 4613
+  },
+  "files": {
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/all_nonthinking_ctx4096_20261006_v1/shard_074/tokens.u32": "3dc87d3c318f51d34865bfa2c2492925766fa5c03954ecd471d1bc4911826d09",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/all_nonthinking_ctx4096_20261006_v1/shard_074/masks.u8": "c1bf784fe04d231a5e13f4737fde1f6e739743347a7fad795cbe9cecaca3f4cb",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/all_nonthinking_ctx4096_20261006_v1/shard_074/records.npy": "67f4bc42caa65ce4c682c045ef3f798f488abeb56692a43b6f03fbe0d78dcaa7"
+  }
+}

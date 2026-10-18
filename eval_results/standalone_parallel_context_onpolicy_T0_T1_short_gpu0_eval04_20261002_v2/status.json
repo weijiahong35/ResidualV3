@@ -1,0 +1,103 @@
+{
+  "status": "failed",
+  "stage": "training_Parallel_T0",
+  "gpus": [
+    0,
+    4
+  ],
+  "utc": "2026-10-02T05:37:33.325737+00:00",
+  "progress": {
+    "Parallel_T0": {
+      "training/status.json": {
+        "status": "training",
+        "step": 8,
+        "total": 384,
+        "latest": {
+          "EMBEDDING": {
+            "step": 8,
+            "epoch": 1,
+            "index": 61,
+            "anchors": 1536,
+            "anchor_sha256": "5f427a46e67aec3df4715f2baf0220b688f0ee8dec5f65ed4f7a2eaf91b6231c",
+            "answer_sha256": "bc98eb70c1c819b871e7ff3634970f8153a393203ea37168e1f5a2ca8f5cba88",
+            "hidden_requests": 9178,
+            "hidden_deleted": 9178,
+            "hidden_norm_sum": 688128.0,
+            "hidden_norm_count": 10752,
+            "utc": "2026-10-02T05:36:07.934086+00:00",
+            "arm": "EMBEDDING",
+            "non_top1_choices": 0,
+            "rollout_temperature": 0,
+            "sampled_tokens_different_from_dataset": 4281,
+            "teacher_relabel_requests": 1104,
+            "rollout_sha256": "5b2da0e875875c0334f575d856df548307d905ff343aa3af23b8e76d1b05d4ac",
+            "loss": 0.5557335652410985,
+            "grad_norm": 0.06513150036334991,
+            "gradient_sums": {
+              "hidden_proj.0.weight": 0.009577715769410133,
+              "hidden_proj.0.bias": 0.015054808929562569,
+              "hidden_proj.1.weight": 16.906742095947266,
+              "hidden_proj.1.bias": 0.006469832267612219,
+              "previous_proj.0.weight": 0.005710381083190441,
+              "previous_proj.0.bias": 0.010224362835288048,
+              "previous_proj.1.weight": 9.467219352722168,
+              "previous_proj.1.bias": 0.004030940122902393,
+              "q_proj.0.weight": 0.004934403114020824,
+              "q_proj.0.bias": 0.005340630654245615,
+              "q_proj.1.weight": 2.962341785430908,
+              "q_proj.1.bias": 0.0065529197454452515,
+              "fusion.0.weight": 0.0070337774232029915,
+              "fusion.0.bias": 0.00805024616420269,
+              "fusion.1.weight": 3.995687246322632,
+              "fusion.1.bias": 0.009646990336477757,
+              "blocks.0.norm.weight": 0.0011895920615643263,
+              "blocks.0.norm.bias": 0.0012998107122257352,
+              "blocks.0.up.weight": 1.0102405548095703,
+              "blocks.0.up.bias": 0.004701029509305954,
+              "blocks.0.down.weight": 0.8610021471977234,
+              "blocks.0.down.bias": 0.009224374778568745,
+              "blocks.1.norm.weight": 0.00109585328027606,
+              "blocks.1.norm.bias": 0.0012707833666354418,
+              "blocks.1.up.weight": 1.0025815963745117,
+              "blocks.1.up.bias": 0.004628362134099007,
+              "blocks.1.down.weight": 0.8747102618217468,
+              "blocks.1.down.bias": 0.009151557460427284,
+              "output_norm.weight": 0.005795179400593042,
+              "output_norm.bias": 0.006287970580160618,
+              "direction_head.weight": 6.436479091644287,
+              "direction_head.bias": 0.023495255038142204,
+              "dose_head.weight": 0.48892146348953247,
+              "dose_head.bias": 0.0027475059032440186
+            },
+            "fusion_gradient_sums": {
+              "hidden": 1.939529538154602,
+              "q": 2.0561575889587402
+            },
+            "zero_gradient_parameters": [],
+            "zero_gradient_fusion_branches": [],
+            "seconds": 62.657253097742796
+          }
+        }
+      },
+      "training/live_progress.json": {
+        "step": 9,
+        "epoch": 1,
+        "index": 105,
+        "chunk_start": 1088,
+        "anchors": 1536,
+        "phase": "proposal_and_teacher_relabel",
+        "utc": "2026-10-02T05:37:30.837863+00:00"
+      },
+      "pipeline_status.json": {
+        "status": "running",
+        "stage": "training",
+        "mode": "training",
+        "gpu": 0,
+        "utc": "2026-10-02T05:24:05.838406+00:00",
+        "pid": 4154519,
+        "log": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v2/Parallel_T0/training.log"
+      }
+    }
+  },
+  "error": "KeyboardInterrupt('15')"
+}

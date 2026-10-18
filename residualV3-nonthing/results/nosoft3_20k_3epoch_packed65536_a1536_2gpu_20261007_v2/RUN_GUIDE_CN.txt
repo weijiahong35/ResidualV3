@@ -1,0 +1,10 @@
+20k×3轮打包对照v2：两张低负载GPU，一张vLLM在线hidden，一张冻结DFlash+可训练no-soft三层修复头。
+65536输入token/包，整包最多1536 anchor，1包/optimizer更新；298包/轮，3轮894更新。
+沿用原20k数据、每轮顺序、冻结target/draft、原basis和逐tensor相同的初始头、OUTPUT、Adam/FP32 master及学习率配方；只变更已授权的整包预算和更新频率，v2只改变硬件分工。
+优先低利用率和足够空闲显存的卡；本轮允许共享剩余资源。初始外部PID、GPU UUID和持续foreign_pids均记录，绝不因有别人进程就退出、绝不停止别人任务。
+卡0原20k训练继续，自动评测控制器仍被暂停。旧训练完成并退出后回收其自有vLLM，但不启动旧自动测试。新旧两组全部完成后统一RAW/旧逐条/新打包C1=200、C40=2000，各T0/T1，max2096。优先空卡正式评测；如有其他进程，则标记performance_contaminated，不能作为干净吞吐证据。
+hidden在线计算，只用RAM及/dev/shm即读即删；不持久保存hidden/logit数据集。每epoch权重与Adam/FP32 master/RNG断点保留。
+日志：controller.log、teacher_vllm.log、training.log；训练进度training/status.json和training/metrics.jsonl。
+正确性：training/initialization.json、training/packed_alignment_check.json、hidden_cleanup.json。
+正式结果：C1/formal/summary.json、C40/formal/summary.json及FORMAL_RESULTS.csv、RESULTS_CN.txt。
+旧单卡等待版未开始训练，已停止其等待控制器，源码与证据全部保留。本v2不修改卡0运行中SHA源码。全数据长训暂缓，等本轮效果后决定。

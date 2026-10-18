@@ -1,0 +1,67 @@
+{
+  "schema": "r9.completion.v1",
+  "run_id": "20261015T144624Z_mismatch_r9",
+  "UTC": "2026-10-15T18:30:40Z",
+  "status": "partial",
+  "required_work_remaining": [
+    "root_read_report_and_review_core_answers"
+  ],
+  "fixed_work_complete": true,
+  "scientific_interpretation": "finite-family conclusions per numerical intervals; unresolved preserved",
+  "resources": {
+    "GPU_hours": 0,
+    "CPU_hours_conservative_including_control_closure_reserves": 3.8525198333333335,
+    "CPU_measured_jobs_hours": 3.6525198333333337,
+    "control_reserve_seconds": 120,
+    "closure_reserve_seconds": 600,
+    "new_allocated_GiB_before_small_closure_files": 0.4472312927246094,
+    "peak_owned_RSS_GiB": 0.8610687255859375,
+    "numeric_workers": 1,
+    "library_and_HiGHS_threads": 1,
+    "GPU_reservation": "not applicable; no GPU used/requested"
+  },
+  "risk_prompts": 36,
+  "contexts": 69,
+  "risk_target_panels": 621,
+  "certificate_prompts": 12,
+  "raw_information_panels": 648,
+  "optimization_groups": 5488,
+  "general_groups": 892,
+  "all_data_previously_exposed": true,
+  "GPU_used": false,
+  "models_loaded": false,
+  "own_experiment_processes_exited": true,
+  "archive_closure_verification_pending": false,
+  "static_manifest_SHA256": "0f39892a5d37c9bc3cb7392e8b94ec9bdbc2e1f0221ff05baa490ea6efa702b5",
+  "static_core_SHA256": {
+    "results/RESULTS_CN.md": "a91b78322e62b6c42a1e19b98c690c24b9e9984ff6d76b45e2b49e455108aea9",
+    "results/RUN_AUDIT.json": "7af12b0513bd9584a0ee087e66de8f19cc6073396c537915bc39151b99b68ea4",
+    "NEXT_CHAT.md": "4843a50e821a3514e9fbef3ecde8a212d8bc3eeea1bde402705c7ce65fa87ead",
+    "protocol/LOCK.json": "626152f691d888bb473cdd736943b4cb9c9ad331a660ac5c352e476d727c9283",
+    "protocol/EXECUTION_AMENDMENT_1.json": "de3bd3923c47a7a7c8675b40c23560d2d0b4f99f3ef955398f544d50ac77042d",
+    "analysis/CERTIFICATE_AUDIT.json": "72e5181b3159acfe4b794060e0def5a61faa5769b07acdf3d120d91decada070",
+    "analysis/FINAL_CORE_REVIEW.json": "fff99cec5b5907e361f1c5488d119b3758cad826675c0269a2a6f77bde8ba40b"
+  },
+  "warnings": [
+    "all data exposed: retrospective finite history families",
+    "S_tau permits per-history harm <=1e-7, not exact zero",
+    "incomplete interrupted group retained broad initial interval without resetting solver budget",
+    "guarded floating numerical certificates, not exact rational arithmetic",
+    "risk shams do not control all M/S group-count effects",
+    "R2 original native bridge passed=false retained",
+    "R1 conditional dominance / R2 geometric increment / R3 half-dose / R4 general metric increment / R6 history-risk-direction advantage not established",
+    "no head outcome attribution, model-size/training causality, unseen-H learning or native/TPS claim",
+    "Measured HiGHS call overhead exceeded per-objective wall cap by up to 143.07583336089738 seconds; disclosed, not reset/retried"
+  ],
+  "do_not_automatically_start_next_round": true,
+  "final_root_core_review_pending": true,
+  "archive_writer_exited": true,
+  "independent_static_SHA_verified": true,
+  "closure_SHA256": {
+    "analysis/CLOSURE_EXIT_AUDIT.json": "a6ec08895e1b1aedc2ff89920501baf932972a3d4f39f180dc41989c4458d4db",
+    "analysis/ARCHIVE_VERIFICATION.json": "8be819d751e9285e88f55992ccb093989937d43bda0555aeb6ec7f503779272b",
+    "analysis/CLOSURE_CPU.json": "9c1ba48105b29eba811f0ccf0bea125c0271dc868ddb5d1755f96d100d1f8e0e",
+    "logs/CPU_BUDGET.json": "eaffa07155ac47adaea7c5688260ae3a76b0f28258984117e6f0a2c69b2ccdbd",
+    "logs/archive_finalizer.log": "e5df9aad50eb1cf4def8e0df7e2f2679df81115fff73699a15e9d6df35d9cb93"
+  }
+}

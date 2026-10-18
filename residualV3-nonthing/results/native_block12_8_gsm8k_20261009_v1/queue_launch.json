@@ -1,0 +1,11 @@
+{
+  "pid": 3466454,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/native_experiment_queue_20261009_v1/queue.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_block12_8_gsm8k_20261009_v1"
+  ],
+  "utc": "2026-10-08T17:11:15.117378+00:00"
+}

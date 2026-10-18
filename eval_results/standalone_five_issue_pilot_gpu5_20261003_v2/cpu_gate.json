@@ -1,0 +1,7 @@
+{
+  "cpu_initial_output_exact": true,
+  "inference_tensor_to_gradient_replay": true,
+  "finite_full_head_gradients": true,
+  "fp32_master_actual_adam_update": true,
+  "pcgrad_two_task_fixture": true
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "matched_updates": 384,
+  "all_anchor_answer_hashes_match_old_Top256": true,
+  "same_initial_weights_as_v5": true,
+  "teacher_relabel_requests": 0,
+  "fresh_reset_verified": true,
+  "utc": "2026-10-02T07:59:52.149564+00:00"
+}

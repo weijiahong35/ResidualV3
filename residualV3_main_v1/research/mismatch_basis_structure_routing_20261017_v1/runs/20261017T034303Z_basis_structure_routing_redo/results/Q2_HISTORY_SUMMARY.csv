@@ -1,0 +1,25 @@
+measure,domain,population,expected_slots,valid_slots,NA_slots,weight,requested_weight,questions,C,unique_H,point,numeric_lower,numeric_upper,CI_lower,CI_upper,bootstrap_NA
+mean_direction_cos,ALL,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,9936,0,9936,0.0,1.0,0,0,0,,,,,,5000
+mean_direction_cos,alpaca,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3024,0,3024,0.0,0.3333333333333333,0,0,0,,,,,,5000
+mean_direction_cos,gsm8k,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3456,0,3456,0.0,0.3333333333333333,0,0,0,,,,,,5000
+mean_direction_cos,humaneval,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3456,0,3456,0.0,0.3333333333333333,0,0,0,,,,,,5000
+near_parallel_fraction,ALL,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,9936,0,9936,0.0,1.0,0,0,0,,,,,,5000
+near_parallel_fraction,alpaca,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3024,0,3024,0.0,0.3333333333333333,0,0,0,,,,,,5000
+near_parallel_fraction,gsm8k,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3456,0,3456,0.0,0.3333333333333333,0,0,0,,,,,,5000
+near_parallel_fraction,humaneval,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3456,0,3456,0.0,0.3333333333333333,0,0,0,,,,,,5000
+near_antiparallel_fraction,ALL,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,9936,0,9936,0.0,1.0,0,0,0,,,,,,5000
+near_antiparallel_fraction,alpaca,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3024,0,3024,0.0,0.3333333333333333,0,0,0,,,,,,5000
+near_antiparallel_fraction,gsm8k,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3456,0,3456,0.0,0.3333333333333333,0,0,0,,,,,,5000
+near_antiparallel_fraction,humaneval,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3456,0,3456,0.0,0.3333333333333333,0,0,0,,,,,,5000
+amplitude_ratio_gt1_10,ALL,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,9936,0,9936,0.0,1.0,0,0,0,,,,,,5000
+amplitude_ratio_gt1_10,alpaca,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3024,0,3024,0.0,0.3333333333333333,0,0,0,,,,,,5000
+amplitude_ratio_gt1_10,gsm8k,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3456,0,3456,0.0,0.3333333333333333,0,0,0,,,,,,5000
+amplitude_ratio_gt1_10,humaneval,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3456,0,3456,0.0,0.3333333333333333,0,0,0,,,,,,5000
+mean_amplitude_ratio,ALL,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,9936,0,9936,0.0,1.0,0,0,0,,,,,,5000
+mean_amplitude_ratio,alpaca,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3024,0,3024,0.0,0.3333333333333333,0,0,0,,,,,,5000
+mean_amplitude_ratio,gsm8k,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3456,0,3456,0.0,0.3333333333333333,0,0,0,,,,,,5000
+mean_amplitude_ratio,humaneval,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3456,0,3456,0.0,0.3333333333333333,0,0,0,,,,,,5000
+mean_logit_direction_cos,ALL,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,9936,0,9936,0.0,1.0,0,0,0,,,,,,5000
+mean_logit_direction_cos,alpaca,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3024,0,3024,0.0,0.3333333333333333,0,0,0,,,,,,5000
+mean_logit_direction_cos,gsm8k,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3456,0,3456,0.0,0.3333333333333333,0,0,0,,,,,,5000
+mean_logit_direction_cos,humaneval,C/i with at least one eligible distinct-H pair; original weights conditioned on coverage,3456,0,3456,0.0,0.3333333333333333,0,0,0,,,,,,5000

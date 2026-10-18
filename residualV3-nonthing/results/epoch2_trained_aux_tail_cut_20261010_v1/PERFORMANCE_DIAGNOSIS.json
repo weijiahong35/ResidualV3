@@ -1,0 +1,112 @@
+{
+  "utc": "2026-10-10T15:28:39.122728+00:00",
+  "scope": "Completed C1 formal windows; C40 is running, conclusions do not cover C40",
+  "rows": [
+    {
+      "arm": "FULL15",
+      "T": 0,
+      "acceptance_length": 8.515069661643446,
+      "tps": 192.10015068091175,
+      "al_change_pct": 0.0,
+      "tps_change_pct": 0.0,
+      "mean_repair": 15,
+      "decode_logical_rows_per_call": 16.0,
+      "decode_graph_rows_per_call": 16.0,
+      "piecewise_fraction": 0.0,
+      "wall_ms_per_decode_call": 44.40538677179597,
+      "eager_calls": 0,
+      "speed_evidence": true,
+      "performance_contaminated": false
+    },
+    {
+      "arm": "FULL15",
+      "T": 1,
+      "acceptance_length": 7.488576664630422,
+      "tps": 169.5266059540367,
+      "al_change_pct": 0.0,
+      "tps_change_pct": 0.0,
+      "mean_repair": 15,
+      "decode_logical_rows_per_call": 16.0,
+      "decode_graph_rows_per_call": 16.0,
+      "piecewise_fraction": 0.0,
+      "wall_ms_per_decode_call": 44.25633790070463,
+      "eager_calls": 0,
+      "speed_evidence": true,
+      "performance_contaminated": false
+    },
+    {
+      "arm": "Q45_CUT",
+      "T": 0,
+      "acceptance_length": 8.483994334277622,
+      "tps": 172.92377883693536,
+      "al_change_pct": -0.3649450750333294,
+      "tps_change_pct": -9.982486622735308,
+      "mean_repair": 13.13099173553719,
+      "decode_logical_rows_per_call": 14.186118980169972,
+      "decode_graph_rows_per_call": 16.0,
+      "piecewise_fraction": 0.4572237960339943,
+      "wall_ms_per_decode_call": 49.148051891338724,
+      "eager_calls": 0,
+      "speed_evidence": true,
+      "performance_contaminated": false
+    },
+    {
+      "arm": "Q45_CUT",
+      "T": 1,
+      "acceptance_length": 7.44579913085466,
+      "tps": 152.2284028995067,
+      "al_change_pct": -0.5712371748533562,
+      "tps_change_pct": -10.203827863586213,
+      "mean_repair": 12.665016501650165,
+      "decode_logical_rows_per_call": 13.712337035248671,
+      "decode_graph_rows_per_call": 16.0,
+      "piecewise_fraction": 0.5482858522452921,
+      "wall_ms_per_decode_call": 49.00559498211221,
+      "eager_calls": 0,
+      "speed_evidence": true,
+      "performance_contaminated": false
+    },
+    {
+      "arm": "Q45_LATENT_CUT",
+      "T": 0,
+      "acceptance_length": 8.490007087172218,
+      "tps": 172.0896528747274,
+      "al_change_pct": -0.2943319957101953,
+      "tps_change_pct": -10.416700734099283,
+      "mean_repair": 13.164989662301862,
+      "decode_logical_rows_per_call": 14.221686746987952,
+      "decode_graph_rows_per_call": 16.0,
+      "piecewise_fraction": 0.45216158752657687,
+      "wall_ms_per_decode_call": 49.42127551981146,
+      "eager_calls": 0,
+      "speed_evidence": true,
+      "performance_contaminated": false
+    },
+    {
+      "arm": "Q45_LATENT_CUT",
+      "T": 1,
+      "acceptance_length": 7.519465934614424,
+      "tps": 153.35861667974496,
+      "al_change_pct": 0.4124851940142005,
+      "tps_change_pct": -9.537139721109822,
+      "mean_repair": 12.491964937910884,
+      "decode_logical_rows_per_call": 13.541677065136012,
+      "decode_graph_rows_per_call": 16.0,
+      "piecewise_fraction": 0.5859745445470427,
+      "wall_ms_per_decode_call": 49.128735717362765,
+      "eager_calls": 0,
+      "speed_evidence": true,
+      "performance_contaminated": false
+    }
+  ],
+  "T0_final_text_differences": {
+    "Q45_CUT": 0,
+    "Q45_LATENT_CUT": 0
+  },
+  "source_files_verified": 167,
+  "source_changed": [],
+  "limitations": [
+    "wall_ms_per_decode_call includes prefill and HTTP; not an isolated CUDA kernel time",
+    "No formal per-component profiling or repeated windows; precise cost attribution remains unmeasured"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "augmented_ridge_matrix_exact": true,
+  "reduced_rank_projector_exact": true,
+  "heldout_error_matches_direct_prediction": true,
+  "linear_expansion_moments_exact": true,
+  "equal_temperature_pool_exact": true,
+  "fixed_map_deterministic_rng_unchanged": true,
+  "map_sha256": "d519aa56e834fbd04bebd4c113a81a4e052aecf254f3413ae8973e94a6bb4b81",
+  "rr_math_sha256": "e62ade8328efb3a923afb82302c4cf9835d9c9d8ee5f9bc7f2168c6edd7b4b37",
+  "utc": "2026-10-03T17:23:27.515963+00:00"
+}

@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "capacity_cells": 118266,
+  "wide_intervals_retained": 118266,
+  "analytic_optima_checked_by_FW_and_reconstruction": 0,
+  "maximum_radius_ratio": 1.0000000000000004,
+  "maximum_delta_reconstruction_error": 4.654054919228656e-13,
+  "minimum_raw_FW_gap": 0.0,
+  "natural_repeats_retained": true,
+  "padding_statistical_samples": 0,
+  "full_vocabulary_TV": true,
+  "FP64_guards_not_directed_rounding": true,
+  "math_contract": {
+    "passed": true,
+    "cases": [
+      {
+        "dim": 3,
+        "batch_scalar_objective_max_error": 1.1102230246251565e-16,
+        "analytic_count_large_radius": 0
+      },
+      {
+        "dim": 8,
+        "batch_scalar_objective_max_error": 2.220446049250313e-16,
+        "analytic_count_large_radius": 9
+      }
+    ],
+    "same_convex_objective_and_ball": true,
+    "analytic_path_checked_by_original_FW_gap": true,
+    "zero_mapping": true,
+    "matrix_operations_FP64": true
+  },
+  "all_group_ranks": {
+    "0": 128,
+    "1": 128,
+    "2": 128
+  }
+}

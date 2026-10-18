@@ -1,0 +1,11 @@
+{
+  "status": "before_fresh_collection",
+  "action_eligibility": "At least two distinct complete fit H in the exact same C/i/full Z; construct every such group even without eval match.",
+  "qualified_matched": "Eval matches one eligible fit group. Five-distribution comparisons are defined on qualified matched states only; seen and all qualified matched are descriptive.",
+  "unqualified": "Any-fit-Z matched but single-fit-H states have coverage counts only. New component metrics are NA, not zero. Original head raw/head TV remains available on all eval main states.",
+  "novel": "Complete eval H absent from every fit branch at same C/i, including all other Z groups.",
+  "zero": "m=0 remains in the eligible matched population and primary intervals; internal rho=0, displayed rho is NA when t=0.",
+  "access": "Independent identity/export readers read full original bytes, including eval and old effect fields. The action constructor does not read eval values, mixed effect records, or effect summaries; its full bank is signed before the eval scorer reads eval target.",
+  "audit_scope": "Recorded Python open paths, whitelist schema, source review and file SHA; not an OS isolation guarantee between same-UID processes.",
+  "no_scientific_rule_change_from_dev_effects": true
+}

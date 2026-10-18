@@ -1,0 +1,14 @@
+{
+  "project": "mismatch_theory_round5_20261015_v1",
+  "mode": "compose",
+  "text_type": "bounded_research_execution_handoff",
+  "language": "zh",
+  "target_reader": "user and execution chat",
+  "current_round": 1,
+  "scores": [{"role": "mechanism_statistics", "foundation": 8.25}, {"role": "scope_feasibility", "foundation": 8.25}],
+  "technical_debts": ["fresh branch coverage unknown before execution", "diagnostic probability probes are not deployable head actions", "causes in capacity/training/optimization are not identified by this round"],
+  "status": "ready_for_handoff",
+  "model_experiments_started": false,
+  "gpu_jobs_launched": false,
+  "output_format": "repository Markdown as requested; no paper or doctoral proposal export"
+}

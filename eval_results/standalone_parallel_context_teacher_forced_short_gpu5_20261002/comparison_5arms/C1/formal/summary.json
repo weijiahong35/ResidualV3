@@ -1,0 +1,986 @@
+{
+  "status": "complete",
+  "windows": [
+    {
+      "round": 1,
+      "arm": "RAW",
+      "T": 0,
+      "requests": 20,
+      "completion_tokens": 66563,
+      "wall_seconds": 260.41816672869027,
+      "tokens_per_second": 255.60044768054485,
+      "native_metrics": {
+        "num_drafts": 16834.0,
+        "num_draft_tokens": 117838.0,
+        "num_accepted_tokens": 49736.0,
+        "acceptance_length": 3.954496851609837,
+        "acceptance_at_pos_0": 0.8503623618866579,
+        "acceptance_at_pos_1": 0.6648449566353808,
+        "acceptance_at_pos_2": 0.49893073541641914,
+        "acceptance_at_pos_3": 0.3675299988119282,
+        "acceptance_at_pos_4": 0.26684091719139835,
+        "acceptance_at_pos_5": 0.18379470119995248,
+        "acceptance_at_pos_6": 0.12219318046810028
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 16854,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 16834,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    },
+    {
+      "round": 1,
+      "arm": "RAW",
+      "T": 1,
+      "requests": 20,
+      "completion_tokens": 65548,
+      "wall_seconds": 316.85755269788206,
+      "tokens_per_second": 206.86898400209142,
+      "native_metrics": {
+        "num_drafts": 20452.0,
+        "num_draft_tokens": 143164.0,
+        "num_accepted_tokens": 45099.0,
+        "acceptance_length": 3.205114414238216,
+        "acceptance_at_pos_0": 0.8171816937218854,
+        "acceptance_at_pos_1": 0.5570115392137688,
+        "acceptance_at_pos_2": 0.35556424799530606,
+        "acceptance_at_pos_3": 0.22071191081556815,
+        "acceptance_at_pos_4": 0.13421670252298062,
+        "acceptance_at_pos_5": 0.07671621357324467,
+        "acceptance_at_pos_6": 0.043712106395462545
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 20472,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 20452,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    },
+    {
+      "round": 1,
+      "arm": "Top256",
+      "T": 0,
+      "requests": 20,
+      "completion_tokens": 66563,
+      "wall_seconds": 275.45504665002227,
+      "tokens_per_second": 241.64741510280336,
+      "native_metrics": {
+        "num_drafts": 16311.0,
+        "num_draft_tokens": 114177.0,
+        "num_accepted_tokens": 50258.0,
+        "acceptance_length": 4.081233523389123,
+        "acceptance_at_pos_0": 0.847464900987064,
+        "acceptance_at_pos_1": 0.6710195573539329,
+        "acceptance_at_pos_2": 0.5173809085892955,
+        "acceptance_at_pos_3": 0.39292501992520384,
+        "acceptance_at_pos_4": 0.29415731714793697,
+        "acceptance_at_pos_5": 0.21083931089448837,
+        "acceptance_at_pos_6": 0.14744650849120225
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 16331,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 16311,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    },
+    {
+      "round": 1,
+      "arm": "Top256",
+      "T": 1,
+      "requests": 20,
+      "completion_tokens": 65495,
+      "wall_seconds": 301.7119776569307,
+      "tokens_per_second": 217.07789166551672,
+      "native_metrics": {
+        "num_drafts": 17770.0,
+        "num_draft_tokens": 124390.0,
+        "num_accepted_tokens": 47722.0,
+        "acceptance_length": 3.685537422622397,
+        "acceptance_at_pos_0": 0.819189645469893,
+        "acceptance_at_pos_1": 0.6180078784468205,
+        "acceptance_at_pos_2": 0.4473832301631964,
+        "acceptance_at_pos_3": 0.31828925154755205,
+        "acceptance_at_pos_4": 0.22706809229037703,
+        "acceptance_at_pos_5": 0.15498030388294878,
+        "acceptance_at_pos_6": 0.10061902082160945
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 17790,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 17770,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    },
+    {
+      "round": 1,
+      "arm": "Parallel_TF",
+      "T": 0,
+      "requests": 20,
+      "completion_tokens": 66563,
+      "wall_seconds": 270.3272046688944,
+      "tokens_per_second": 246.23122960017486,
+      "native_metrics": {
+        "num_drafts": 16345.0,
+        "num_draft_tokens": 114415.0,
+        "num_accepted_tokens": 50221.0,
+        "acceptance_length": 4.072560416029367,
+        "acceptance_at_pos_0": 0.8479045579687978,
+        "acceptance_at_pos_1": 0.6715203426124197,
+        "acceptance_at_pos_2": 0.5168553074334659,
+        "acceptance_at_pos_3": 0.39070052003670847,
+        "acceptance_at_pos_4": 0.29201590700520036,
+        "acceptance_at_pos_5": 0.20887121443866627,
+        "acceptance_at_pos_6": 0.14469256653410828
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 16365,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 16345,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    },
+    {
+      "round": 1,
+      "arm": "Parallel_TF",
+      "T": 1,
+      "requests": 20,
+      "completion_tokens": 65626,
+      "wall_seconds": 294.5135572142899,
+      "tokens_per_second": 222.82845184016475,
+      "native_metrics": {
+        "num_drafts": 17723.0,
+        "num_draft_tokens": 124061.0,
+        "num_accepted_tokens": 47906.0,
+        "acceptance_length": 3.7030412458387407,
+        "acceptance_at_pos_0": 0.8152118715793037,
+        "acceptance_at_pos_1": 0.6138351294927495,
+        "acceptance_at_pos_2": 0.4483439598262145,
+        "acceptance_at_pos_3": 0.327089093268634,
+        "acceptance_at_pos_4": 0.23139423348191615,
+        "acceptance_at_pos_5": 0.16013090334593466,
+        "acceptance_at_pos_6": 0.10703605484398804
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 17743,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 17723,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    },
+    {
+      "round": 1,
+      "arm": "Parallel_T0",
+      "T": 0,
+      "requests": 20,
+      "completion_tokens": 66563,
+      "wall_seconds": 270.30508000962436,
+      "tokens_per_second": 246.2513837980033,
+      "native_metrics": {
+        "num_drafts": 16301.0,
+        "num_draft_tokens": 114107.0,
+        "num_accepted_tokens": 50260.0,
+        "acceptance_length": 4.083246426599596,
+        "acceptance_at_pos_0": 0.848966321084596,
+        "acceptance_at_pos_1": 0.6732715784307711,
+        "acceptance_at_pos_2": 0.5198454082571622,
+        "acceptance_at_pos_3": 0.39150972332985706,
+        "acceptance_at_pos_4": 0.29495122998589046,
+        "acceptance_at_pos_5": 0.2096190417765781,
+        "acceptance_at_pos_6": 0.1450831237347402
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 16321,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 16301,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    },
+    {
+      "round": 1,
+      "arm": "Parallel_T0",
+      "T": 1,
+      "requests": 20,
+      "completion_tokens": 67477,
+      "wall_seconds": 303.58911987021565,
+      "tokens_per_second": 222.26422352963905,
+      "native_metrics": {
+        "num_drafts": 18250.0,
+        "num_draft_tokens": 127750.0,
+        "num_accepted_tokens": 49243.0,
+        "acceptance_length": 3.698246575342466,
+        "acceptance_at_pos_0": 0.8192876712328767,
+        "acceptance_at_pos_1": 0.6187397260273972,
+        "acceptance_at_pos_2": 0.448986301369863,
+        "acceptance_at_pos_3": 0.32394520547945205,
+        "acceptance_at_pos_4": 0.2258082191780822,
+        "acceptance_at_pos_5": 0.15835616438356165,
+        "acceptance_at_pos_6": 0.10312328767123288
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 18270,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 18250,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    },
+    {
+      "round": 1,
+      "arm": "Parallel_T1",
+      "T": 0,
+      "requests": 20,
+      "completion_tokens": 66563,
+      "wall_seconds": 271.15031869895756,
+      "tokens_per_second": 245.4837608872628,
+      "native_metrics": {
+        "num_drafts": 16363.0,
+        "num_draft_tokens": 114541.0,
+        "num_accepted_tokens": 50204.0,
+        "acceptance_length": 4.068141538837621,
+        "acceptance_at_pos_0": 0.8496608201430056,
+        "acceptance_at_pos_1": 0.6705983010450406,
+        "acceptance_at_pos_2": 0.5158589500702805,
+        "acceptance_at_pos_3": 0.38978182484874413,
+        "acceptance_at_pos_4": 0.2908390881867628,
+        "acceptance_at_pos_5": 0.20815253926541588,
+        "acceptance_at_pos_6": 0.14325001527837194
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 16383,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 16363,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    },
+    {
+      "round": 1,
+      "arm": "Parallel_T1",
+      "T": 1,
+      "requests": 20,
+      "completion_tokens": 68164,
+      "wall_seconds": 305.24898439086974,
+      "tokens_per_second": 223.3062302763188,
+      "native_metrics": {
+        "num_drafts": 18323.0,
+        "num_draft_tokens": 128261.0,
+        "num_accepted_tokens": 49849.0,
+        "acceptance_length": 3.7205697756917537,
+        "acceptance_at_pos_0": 0.8242100092779566,
+        "acceptance_at_pos_1": 0.6222234350270153,
+        "acceptance_at_pos_2": 0.4552202150302898,
+        "acceptance_at_pos_3": 0.3266386508759483,
+        "acceptance_at_pos_4": 0.2299841728974513,
+        "acceptance_at_pos_5": 0.15717950117338864,
+        "acceptance_at_pos_6": 0.10511379140970366
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 18343,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 18323,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    }
+  ],
+  "protocol": {
+    "diagnostic_only": false,
+    "smoke": false,
+    "unpaired": false,
+    "repair_graph_redundant_fill": true,
+    "gpu": 5,
+    "device_assignment": {
+      "physical_gpu": 5,
+      "uuid": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+      "pci_bus_id": "00000000:B1:00.0",
+      "name": "NVIDIA A100-SXM4-80GB",
+      "cuda_device": 0
+    },
+    "concurrency": 1,
+    "max_tokens": 4096,
+    "max_model_len": 8192,
+    "prompt_count": 20,
+    "panel_sha256": "4dae7ed6da67e925c55c62b2f37e38b9c292dc5999f797d6724a8a89da14f282",
+    "prompts": [
+      {
+        "index": 0,
+        "split": "final_C1",
+        "source_index": 2993,
+        "group_key": "hash_bb63dd5b6081ce3eec59c9fa77388b644f8f78f50c3d3f13875a78f73e871579",
+        "prompt_sha256": "58a40f29d605988007912a44a1d9734ad4abc936a008c6dbc200aaede2d4c071",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Let's use a reference frame like the one shown below.\n![](https://github.com/SophiaZheng07/SophiaZheng07.github.io/blob/master/images/Geo.png?raw=true)\n\nA figure consisting of seven congruent circles that touch externally is drawn on a 50 cm x 50 cm square paper. Their radius is 4 cm.\nIf points A, B, C, D, E, F, G and H lie on the centres of these circles,\nwhat is the area of hexagon BEFGHD?"
+          }
+        ],
+        "prompt_tokens": 122,
+        "sequence_tokens": 8192,
+        "row_sha256": "bf6e89783fc4d078af62978a7403a717e270e324028c74d7d19d61ecc2990ab8"
+      },
+      {
+        "index": 1,
+        "split": "final_C1",
+        "source_index": 5467,
+        "group_key": "hash_5f73a07dfb27eb6abcfb28fbd01923c3e2f3cea8f379ce5d66c3dfb05f6289c3",
+        "prompt_sha256": "232d632244afa1fb59ca4858922bf9e242d66fe650f7dd5967691ab41a0061b1",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Let $a_n=\\frac{n!!}{(n+1)!!}$. Prove that the series $\\sum_{n=1}^\\infty a_n$ is convergent and find its sum."
+          }
+        ],
+        "prompt_tokens": 51,
+        "sequence_tokens": 8192,
+        "row_sha256": "8922deb858294ca6433f4dbea1793a4da3631ff44d3d4bc3991d00e375a1a2d7"
+      },
+      {
+        "index": 2,
+        "split": "final_C1",
+        "source_index": 9905,
+        "group_key": "hash_795e638b374635fd133fb0b8513e3b28622ee9c1ef71a7e9efd6591592fba1e9",
+        "prompt_sha256": "4977e67098ae933c0a0ab55c1f93a96d2635a898111e4ac9eeffda1a1ee9d017",
+        "messages": [
+          {
+            "role": "user",
+            "content": "A water tank can be filled by two pipes, A and B, working together in 6 hours. Pipe A alone can fill the tank in 12 hours. How many hours would it take pipe B alone to fill the tank if pipe A's rate of filling is reduced by 25% due to a malfunction? Express your answer as a decimal to the nearest tenth."
+          }
+        ],
+        "prompt_tokens": 85,
+        "sequence_tokens": 6305,
+        "row_sha256": "ab5b75d64364103d1ad06c56c1bee38b34ba44f17bcbdbc18c61b9d60e49b6ca"
+      },
+      {
+        "index": 3,
+        "split": "final_C1",
+        "source_index": 9582,
+        "group_key": "hash_ebe918b9e28c1365f88b31ffddb7f23f65e5a18c4a242185af45efeef4bf6548",
+        "prompt_sha256": "49eb998e7e32c75a903c5a3f307992302717ecf640886f0dab1840fb2b7b0518",
+        "messages": [
+          {
+            "role": "user",
+            "content": "There are 4 small rings, 3 medium rings and 2 large rings in the ring toy set. In how many orders can all nine rings be placed on the toy rod if the rings of the same size are indistinguishable?"
+          }
+        ],
+        "prompt_tokens": 56,
+        "sequence_tokens": 2255,
+        "row_sha256": "d40d6c5d78848fd75ea9fbf19f96507422b53faed79441a77f775d7e0fa907aa"
+      },
+      {
+        "index": 4,
+        "split": "final_C1",
+        "source_index": 1391,
+        "group_key": "hash_e970230c03fdbac39d8aa3adb2314e8b457d5dc5bbc4321fd4a45a04ccd1c026",
+        "prompt_sha256": "3ec291523acfa17a43660e884bba2f5e31150f68cf09099889ea317eae745de2",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Let \\(A = \\begin{pmatrix} 1 & a \\\\ b & 1 \\end{pmatrix}\\), where \\(a\\) and \\(b\\) are the roots of the equation \\(x^2 - mx + 2 = 0\\). Suppose that the eigenvalues of \\(A\\) are the roots of the equation \\(x^2 - px + q = 0\\). What is \\(q\\)?"
+          }
+        ],
+        "prompt_tokens": 96,
+        "sequence_tokens": 2226,
+        "row_sha256": "b60ed3ddb5ace0e7966786e2d0f029c06be16cf4e54d6069df243ae136cb9724"
+      },
+      {
+        "index": 5,
+        "split": "final_C1",
+        "source_index": 3937,
+        "group_key": "hash_5159643f8ef797b40e7488d6bc4a5ab4db2196e17f37cde739d79370bf7d5868",
+        "prompt_sha256": "0933d1f25d0c0e9be863c5dbff7121d3403d71cc8639399c32b127e1a152cc53",
+        "messages": [
+          {
+            "role": "user",
+            "content": "When Jeffrey walks, for every three steps forward, he takes two steps backwards.  Therefore, if the distance between the house and the mailbox is 66 steps, what is the total number of steps Jeffrey takes when he goes from the house to the mailbox?"
+          }
+        ],
+        "prompt_tokens": 61,
+        "sequence_tokens": 8192,
+        "row_sha256": "702c923dae3e920aefa9fce0e1cce8ca819c9addc73ae2777f942e8fed5c16a4"
+      },
+      {
+        "index": 6,
+        "split": "final_C1",
+        "source_index": 4290,
+        "group_key": "hash_049fca28b3676a803c9eac3af0b5713ac40ffcb560c3bf7ec7471f1f973bfbb7",
+        "prompt_sha256": "a57c734bd0e015d8afb930862ec4d8268f7ce1a6502757d8e9cab60193180657",
+        "messages": [
+          {
+            "role": "user",
+            "content": "In triangle $ABC$, $AB=AC=15$, and $\\angle B=60^\\circ$.  Points $D$ and $E$ are the midpoints of $\\overline{AB}$ and $\\overline{AC}$ respectively.  Compute $DE^2$ (the square of the length of $DE$)."
+          }
+        ],
+        "prompt_tokens": 78,
+        "sequence_tokens": 6329,
+        "row_sha256": "ce3790c6139f3c80fe841f17d25e12a980db05959a2a9d2013af20cf4d8e376b"
+      },
+      {
+        "index": 7,
+        "split": "final_C1",
+        "source_index": 9290,
+        "group_key": "hash_745f89c6919e40070f39ffc821f42960555c930e2b02db8c487e86df6679dc48",
+        "prompt_sha256": "12bce5bd87970795d632a23d04f1cb286aa8441e3b5c5aea5de20f2a5b7a7895",
+        "messages": [
+          {
+            "role": "user",
+            "content": "The two solutions to the equation $x^2 + 15x - 54 = 0$ are $x = -18$ and $x = 3$.\n\nThe sum of the two solutions is $-18 + 3 = -15$."
+          }
+        ],
+        "prompt_tokens": 66,
+        "sequence_tokens": 2394,
+        "row_sha256": "b4a6c978b0b21c69e9c7a65f04db098b43850bdf80026d66175a7a17a5c4df23"
+      },
+      {
+        "index": 8,
+        "split": "final_C1",
+        "source_index": 5149,
+        "group_key": "hash_2e6793f11a10b3ce2443056200c573e654b39d4529e50318ec4f5a203e090954",
+        "prompt_sha256": "f7ab0ea12533b47b064ed51f9cf4f07a150efc1f08e08f8278e74b36ddcf79c3",
+        "messages": [
+          {
+            "role": "user",
+            "content": "In a particular sequence, each term is obtained by taking the previous term and replacing each digit with the sum of its digits. For example, starting with 123, the next term would be 321, since 1+2=3, 2+1=3, and 3+0=3. What is the maximum possible value of the third term if the first term is a three-digit number?"
+          }
+        ],
+        "prompt_tokens": 96,
+        "sequence_tokens": 8192,
+        "row_sha256": "d2d98d8c0a55ba96f51b7507b75b94dc259a926324bf9e2793a9270eff8e4612"
+      },
+      {
+        "index": 9,
+        "split": "final_C1",
+        "source_index": 2992,
+        "group_key": "hash_3499b413300d3e956bb11c1200ea17098041f87b6b02427d8406756b40a352a2",
+        "prompt_sha256": "49de45493d32acce2c0732709f40ccab72bc30bc96e9d486c14da76edd323c20",
+        "messages": [
+          {
+            "role": "user",
+            "content": "A set of 10 points is given in the plane, such that no three of them are collinear. How many different quadrilaterals can be formed if the diagonals of each quadrilateral must intersect inside the figure?"
+          }
+        ],
+        "prompt_tokens": 54,
+        "sequence_tokens": 8192,
+        "row_sha256": "c07534a4e4f9a6f25a886dc7506bb8c4feb3f7b19789187679bb1d872b76dc2a"
+      },
+      {
+        "index": 10,
+        "split": "final_C1",
+        "source_index": 777,
+        "group_key": "hash_f2ff62fc434aed55c52fff2f8baf2463fd532563a2fb16a7d2016e9006be5d85",
+        "prompt_sha256": "852beb1aa961d434e08db12cb986589e2746df78911cf13146aa13f49d89d97f",
+        "messages": [
+          {
+            "role": "user",
+            "content": "How many positive integers less than 1000 are there such that their greatest common divisor with 1000 is 20?"
+          }
+        ],
+        "prompt_tokens": 38,
+        "sequence_tokens": 6731,
+        "row_sha256": "fa6139609954168239025ff74a51f8f20177c469cb425dd2c1c7214b3821c6c7"
+      },
+      {
+        "index": 11,
+        "split": "final_C1",
+        "source_index": 6467,
+        "group_key": "hash_ef734b37653a444a3471d22370092a706c613de259d66805a802f6e5f6415380",
+        "prompt_sha256": "de6f1666f896f41577b55978f5f875526b945818ec92525de260214cb787c408",
+        "messages": [
+          {
+            "role": "user",
+            "content": "The operation $*$ is defined for non-zero integers as follows: $a * b = a + \\frac{1}{b}$. If $a+b = 12$ and $ a - b = 4$, what is the value of $a*b$? Express your answer as a common fraction."
+          }
+        ],
+        "prompt_tokens": 72,
+        "sequence_tokens": 1536,
+        "row_sha256": "a61b8d79a59b8ce3a4ca224f221d2bf83202a1cdfdbdf43de5dfa9adca8103dd"
+      },
+      {
+        "index": 12,
+        "split": "final_C1",
+        "source_index": 2440,
+        "group_key": "hash_aa86b4079357a4b8cc05c0c56e5456554759602218b71f293e9b6c7bbfb7ded5",
+        "prompt_sha256": "09d04f1e249879ced42579a613d86e9810aecc729c2026762f61b68dbf67b043",
+        "messages": [
+          {
+            "role": "user",
+            "content": "The Bookworm is a bookstore that sells a variety of books and gifts. The store's sales for June are broken down as follows: What percentage of its sales were not fiction or non-fiction books? \\begin{tabular}{|l|c|}\n\\multicolumn{2}{c}{}\\\\\\hline\n\\textbf{Item}&\\textbf{$\\%$~of June Sales}\\\\\\hline\nFiction Books&42\\\\\\hline\nNon-Fiction Books&30\\\\\\hline\nOther&?\\\\\\hline\n\\end{tabular}"
+          }
+        ],
+        "prompt_tokens": 129,
+        "sequence_tokens": 1003,
+        "row_sha256": "72b476cd893d4897ef1cbf3e055b11e1227294de14b3469063dff401329df845"
+      },
+      {
+        "index": 13,
+        "split": "final_C1",
+        "source_index": 4239,
+        "group_key": "hash_ba7970d7a0118fe624f36e5b1ae36dd276b20c9e4c54147e4ba33b4a0bc863aa",
+        "prompt_sha256": "a0ab6238bf12f4edf679a4364ad384e16a9c9424bebbe0116a9f71fb3d13bb95",
+        "messages": [
+          {
+            "role": "user",
+            "content": "John starts at an elevation of 400 feet.  He travels downward at a rate of 10 feet down per minute for 5 minutes.  What is his elevation now?"
+          }
+        ],
+        "prompt_tokens": 47,
+        "sequence_tokens": 1271,
+        "row_sha256": "87e067ea9e91d35654b218216891b46323e8e56c09f1028d6a4594660f9fbf39"
+      },
+      {
+        "index": 14,
+        "split": "final_C1",
+        "source_index": 3067,
+        "group_key": "hash_0aa591687ea33c54f44db6cfef942003b00f35c84904a8c8e135e3035846b7c8",
+        "prompt_sha256": "c54c0625556406e8a51a3593011dbbae24351ae906d4aa4346c542b2208377aa",
+        "messages": [
+          {
+            "role": "user",
+            "content": "The equation $x^4+ax^3+bx^2+cx+d=0$ has four non-real roots, $r_1, r_2, r_3, r_4$, such that $r_1r_2 = 13 + i$ and $r_3 + r_4 = 3 + 4i$. \n\nFind the value of $b$ such that the product of the real and imaginary parts of $r_1 + r_2$ is equal to $8$."
+          }
+        ],
+        "prompt_tokens": 118,
+        "sequence_tokens": 8192,
+        "row_sha256": "0a4838c057c26ecda34444103d480bcca5be1cf7c645abfdf49ed670f7e0ad2e"
+      },
+      {
+        "index": 15,
+        "split": "final_C1",
+        "source_index": 1509,
+        "group_key": "hash_691fa620bfb8923c295a0afce894259d8561cbcd70903f9728dfc9df5b943c4d",
+        "prompt_sha256": "85bcbf85a19625fa246b4b6c11546b7b63e5461ff0efda20e9fa2cb37e687c10",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Let $\\mathbf{A}$ be a square matrix of order $n$ and $\\det \\mathbf{A} = -3$. If $\\mathbf{B}$ is the transpose of the inverse of $\\mathbf{A}$, find $\\det \\mathbf{B}$."
+          }
+        ],
+        "prompt_tokens": 68,
+        "sequence_tokens": 1925,
+        "row_sha256": "a96a98e901af7ee4133301da90afe67b48d3ef04c75795c21648c9a07c1bc41d"
+      },
+      {
+        "index": 16,
+        "split": "final_C1",
+        "source_index": 5515,
+        "group_key": "hash_0c37171a2909088b49ce879f0bbafada37b7fb17befee4bb4fb764308970326a",
+        "prompt_sha256": "7019b50a3cacb81e50a1fdd244c6dd6e0a2f9462750d302e9d8162768709f1be",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is the smallest number $k$ such that every terminating decimal $0.\\overline{c_1c_2c_3\\dots c_n}$ ($c_i$ are digits) with a denominator less than $k$ in its reduced form can be written as a finite sum $\\sum_{i=1}^m \\frac{1}{n_i}$, where all $n_i$ are distinct integers greater than 1?"
+          }
+        ],
+        "prompt_tokens": 99,
+        "sequence_tokens": 8192,
+        "row_sha256": "ba3d2955e49439dcdde8a6af5cc5515a980a3ce9725a85a3c4508e9b8e385ed4"
+      },
+      {
+        "index": 17,
+        "split": "final_C1",
+        "source_index": 7396,
+        "group_key": "hash_efb38faae31cfba12706e6cbc9eb7b5b883986fd20f014f7e2868aed80e99dac",
+        "prompt_sha256": "061c921f726f851a782f1d0dab727c5d5f59668eb76d88b14c8451df6ff85786",
+        "messages": [
+          {
+            "role": "user",
+            "content": "In the coordinate plane, consider points $A = (0, 0)$, $B = (11, 0)$, and $C = (18, 0)$.  Line $\\ell_A$ has slope 1 and passes through $A$.  Line $\\ell_B$ is vertical and passes through $B$.  Line $\\ell_C$ has slope $-1$ and passes through $C$.  The three lines $\\ell_A$, $\\ell_B$, and $\\ell_C$ begin rotating clockwise about points $A$, $B$, and $C$, respectively.  They rotate at the same angular rate.  At any given time, the three lines form a triangle.  Determine the largest possible area of such a triangle.\n\nNew Problem:\n\nIn the coordinate plane, consider points $D = (0, 0)$, $E = (15, 0)$, and $F = (20, 0)$.  A line $m_D$ is drawn through $D$ with slope 1.  Line $m_E$ is drawn through $E$ with slope -1.  Line $m_F$ is drawn through $F$ with slope 2.  The three lines $m_D$, $m_E$, and $m_F$ begin moving in the following way: $m_D$ translates to the right at a constant rate, $m_E$ rotates clockwise about point $E$ at a constant angular rate, and $m_F$ translates upwards at a constant rate.  At any given time, the three lines form a triangle.  Determine the largest possible area of such a triangle."
+          }
+        ],
+        "prompt_tokens": 348,
+        "sequence_tokens": 8192,
+        "row_sha256": "4a326624492e295674307f721b18f43201d055f21196a09b6e18145eb5a9d457"
+      },
+      {
+        "index": 18,
+        "split": "final_C1",
+        "source_index": 7243,
+        "group_key": "hash_c1618b2967f96defba25017f839c47c823149c8de392dc16130f0e8eba58f59a",
+        "prompt_sha256": "3189f369a3c3519617a223e64151655a7ea56536286564cda9ae50d497b79b9a",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Find the coefficient of $x^5$ in the expansion of $(x^2+3x+1)^4$."
+          }
+        ],
+        "prompt_tokens": 33,
+        "sequence_tokens": 6859,
+        "row_sha256": "fd2ef6b63b378a4c6afd5915f4ac3eca542dcca45d29fbbc387cedd4ff08b1b4"
+      },
+      {
+        "index": 19,
+        "split": "final_C1",
+        "source_index": 1475,
+        "group_key": "hash_932934fd8d48a9d5760a3ac8213ac6f16909172d4c7d09fa0daa3370c39a92b6",
+        "prompt_sha256": "798f0878be2986db4f648b330ca9960695944c37332a80321fd9bafcd46afba9",
+        "messages": [
+          {
+            "role": "user",
+            "content": "In a rectangular box, there are four cylindrical containers filled with different amounts of liquid. Each container has a different height, and the liquid in each container fills a different percentage of its capacity. The containers are placed in such a way that the liquid levels in the three containers on one side of the box are at the same height, while the liquid level in the container on the opposite side of the box is higher than the other three. If the container with the highest liquid level has 3.5 times the liquid of the container with the lowest liquid level, and the percentage of liquid in each container is a prime number, what is the average of the prime numbers representing the percentage of liquid in the four containers?"
+          }
+        ],
+        "prompt_tokens": 151,
+        "sequence_tokens": 8192,
+        "row_sha256": "e85934141358f8a028c4de96acaec897c14ea6cb5685ea0937e9d79758993194"
+      }
+    ],
+    "temperatures": [
+      0,
+      1
+    ],
+    "orders": [
+      [
+        "RAW",
+        "Top256",
+        "Parallel_TF",
+        "Parallel_T0",
+        "Parallel_T1"
+      ]
+    ],
+    "training_completion_sha256": {
+      "Top256": "a2b6ad96e3db4f3a8e04d21a58d0c99a155287300ac0015fba48a3d4022ecb7c",
+      "Parallel_TF": "1ac97fc7a191a489ebbdbcbc236bd6c6d7eabfcc14b3fced53d85397ef074404",
+      "Parallel_T0": "d3861c0360e78c5856b12e8ab242adfd55a237257c5b9f5af3fac325b7062ef3",
+      "Parallel_T1": "c123457fb20e38ecbc2eead63f8b3e09a1e9a03dcff5408335724879d511d2e1"
+    },
+    "training_protocol_sha256": "b5a33a8b498a50905c5f5fefc6f739a5e9f703d35a473e4a9bfcc6981ea43758",
+    "checkpoints": {
+      "Top256": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/Top256_reference/EMBEDDING.safetensors",
+        "sha256": "999c7f35ac5c10d7d4cc526f1c4f366fdb2c71e902a57f144afaf222ab75b035",
+        "original": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/Top256_reference/epoch_03.safetensors",
+        "original_sha256": "bcc391b88e546ab4e45189e45e624a06045c53948e81e584603aa70873467a2d",
+        "head_config_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/Top256_reference/head_config.json",
+        "head_config_sha256": "072d2abaaa48aebabd6bc24263249461918690304df5f1eacdc9d6d2b01c1e00"
+      },
+      "Parallel_TF": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/Parallel_TF/native/EMBEDDING.safetensors",
+        "sha256": "2c33142cda0211e2d474a1093b51ac0f90f1a3b2778a19aaf474813a3e530725",
+        "original": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/Parallel_TF/training/EMBEDDING/epoch_03.safetensors",
+        "original_sha256": "5720c7ea5943b59e8cc77a7683b8d1b8dff44aac8796e7718e15f9f5d4f9b84a",
+        "head_config_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/Parallel_TF/head_config.json",
+        "head_config_sha256": "7a55f5d90c50893d2d98573579ca2b6e867ae46b46fdff317bb452855de985a7"
+      },
+      "RAW": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/Top256_reference/EMBEDDING.safetensors",
+        "sha256": "999c7f35ac5c10d7d4cc526f1c4f366fdb2c71e902a57f144afaf222ab75b035",
+        "original": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/Top256_reference/epoch_03.safetensors",
+        "original_sha256": "bcc391b88e546ab4e45189e45e624a06045c53948e81e584603aa70873467a2d",
+        "head_config_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/Top256_reference/head_config.json",
+        "head_config_sha256": "072d2abaaa48aebabd6bc24263249461918690304df5f1eacdc9d6d2b01c1e00"
+      },
+      "Parallel_T0": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5/Parallel_T0/native/EMBEDDING.safetensors",
+        "sha256": "43ef63f71fad9fdc5dd5202c7b28492103ecb5562801a751b346bfbe5b7e67bb",
+        "original": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5/Parallel_T0/training/EMBEDDING/epoch_03.safetensors",
+        "original_sha256": "92ed513329c9de45c0bbddc1410ec918d8b85c744013dd2ef144649603f10141",
+        "head_config_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5/Parallel_T0/head_config.json",
+        "head_config_sha256": "7a55f5d90c50893d2d98573579ca2b6e867ae46b46fdff317bb452855de985a7"
+      },
+      "Parallel_T1": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5/Parallel_T1/native/EMBEDDING.safetensors",
+        "sha256": "2d4b34b9bc7ed05bf55b44d35d9332cacf3d5f41942213c57921561812e12d0c",
+        "original": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5/Parallel_T1/training/EMBEDDING/epoch_03.safetensors",
+        "original_sha256": "d62db942976c3e4cd310bb89452aaae9b3f299183340ef629b7f4a8735740cc3",
+        "head_config_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5/Parallel_T1/head_config.json",
+        "head_config_sha256": "7a55f5d90c50893d2d98573579ca2b6e867ae46b46fdff317bb452855de985a7"
+      }
+    },
+    "sources": {
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/__init__.py": "81918b3eaeb3cfa6b5e3a772b6c33c144cb699afefc9eba2f96d2180e3a4a220",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/pipeline.py": "9ebd1855eccb7258e115c33993076e0c17977b90d41dca43cb368fba09b25c59",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/evaluate.py": "d24ecb50e7904dd2a33b13adfce7c949dfcf26732b52c5eae8065379a7e14e76",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/native_launch.py": "bbe73771610df91e041faa7018a1c0118fc3b4f00912aa34c941fc12f058368e",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/causality.py": "774d819d1cd5444ed11dd101570bdcc5b9c368b7aa4e11639c990f260e19acd1",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/model.py": "06fc79483520e6f91426c7bf8aea1d3a4695c589d060b8c2f9489f1b49f9e2a9",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/run.py": "1b90536ee98e8169e55568cc499b0f97fe7577b0ff9d5f710c69e307f2c06ece",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/protocol.py": "2024e9b2f1e03dbb4b1e93232694e9938c359ae3f04265972d4ba9ad415f5dbe",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/validate.py": "1cb23afef276da5dfde256c32dda6d8d917d08ecaaad5bd19982524a9db8060b",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/prepare_native.py": "e016a90eab0123c25a9ed5c5af79b8c8ef4d5b2eba32c9566ad1cbb50541631a",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/report.py": "e5cd44ce732a3b7ef5bb62d3ce58f2ccbe0fa714e72b08d1415ca574fb6665e5",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/isolation.py": "e0bd38719fe6dfb3d149cadcd2813ff12c051ca4f2f13dbfd2e4d69466e8fc3c",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/gradient_audit.py": "0d404cefcef1c624d4e574b1de82a21058e0186150705f573e891822e7837b2b",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/test_gradient_audit.py": "ca802f614779f4351b3aa6392e12456f81996e86ac58e7736bcde28b61642db7",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/reference_model.py": "a350a84243dda1fd7b1e298fd5943c0ca417150feed41673ef33b040c91f7bf8",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/reference_validate.py": "def88df30d68946d3adc0d7da55c5a3ef12eddf2e347249cf0155f17e957a3f4",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/repair/onpolicy.py": "dd9513cbef02ea73230f96e052111931050ba1c0ddb7b0f88be6865230f0a402",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/precision.py": "18176736f13da730a150106cb07b4a40d82caa36d32587dac094de154ec0a6d0",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/master_optimizer.py": "6ab029af81a4c676701723789c02675f922591116e7616a48dcca620cb3fa87c",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/utils.py": "f045e6887a63bf7bfe4887a983154aa99fd1c9df26fa2cae9fb95f3f1f475a0c",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/vllm_hidden.py": "59cd9ee8aaf11d768faab34e3038727d05a3c4e8477e2ab7414aed1d6fe3612f",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/check_vllm_hidden.py": "b3a526530cc7cd3a567e2770b85a4ecf1a18490a235e6ea43a54c4727c6958f7",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/native.py": "fbdbb9f07d1e0519ec200ae2d20e0f00afb3a8335f8c5c97db7a6cd97eb38c73",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/native_graph.py": "6ad3fbb09d2dbc46694cc1839d59515591c363d949588b58fe840c9f3a1176de",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/observe.py": "cbfcdb38d675b6f7cba699215a6ce786ed30898397c067f5ec94012fa61a26e4",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/events.py": "e48e95f627abcc247e6ea6b607e0e03f50e7d746f7487f0db17c4d3f5f68c053",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/counters.py": "f4f7d3b634a27a63bd6fe6f941ab5dfecf3f12461447d164cb51bb611d394472",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/http.py": "a9c4fa1f1e8d4096201cc926beb4df06d8e9107d7eba0a9d676257490b87f34b",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/benchmark.py": "7ec9b91a5ae75432b7a90ca5c35f9a6e82e5793903fb5ac4a79439aaa092799e",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/batch_preheat.py": "f195217291c73ad6e11bbd91116f315d2cb1b3eec65b72810319a51528a70e19",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/execution.py": "3831819ddbd7bdc20d80a99bcef0fde9418f3d229fcefb3b00cfc9a592d6e9f8",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/components.py": "8483bb55ca0e03561acdb53d99c0bb8864d7a6d8fb2d30500b1349d7fe175cfd",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/live_run.py": "b1752af9a36025379a1f84351feb8a3e597c12a8ce318a2dfbb1f338e5974d9e",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/data.py": "bfc26e7e1e52c4485103595264cd54032e28ea3176ae740bdc255c368b2c51ef",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/live_trainer.py": "16b89b67174f04ae9bf711080b4146ee44e0e3cb9fcf9c974fef8733910e481a",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/static_vocab.py": "eaea3e76b070e0de92fbb3b948b89d391a165a134ca5581405937de526b5dd22",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/runtime/tail_hidden_connector.py": "66d0226ec0eaf8db1fa40a6d6e2e31c2f0e2c83300897ec702afed3167f86775",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/config.py": "ea0d361434dd62b25cdd243e6eebf89181ee4c5e6149ea476a7b01ad5481d6be",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/model.py": "7ad1901803c5d6eeb538326a89171763fabafcb229c00052b0acb65b6a1de72f",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/__init__.py": "1e0e83848504bf80a00028f0d1cac045f27f6d3b8071d350d766932b22a38d72",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/__main__.py": "72f6d4338c649feb5b0971b4654c60ab019b9c5ac1de39681604483dea5f2d30",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/version.py": "1dfea1187121bd053e79000e33c058a7bfb2b37868e8df30a6ee0e31e7c6b86b",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/convert/entrypoints.py": "34cfbc66131b332c7b00a23c846c974d2f03ea3ba4a5d78656807375ffe57e29",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/convert/utils.py": "e76d981a7e44581da1e9d9c1f5dc47556063baca1b7a0f0e4873ad1cb6ec718b",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/convert/__init__.py": "bbadb6ba6200a12297124a577d344195679f0987ccb2cea198a47f7221194d87",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/convert/dflash/converter.py": "120c106dbbbdaaac7f80648435f0ccc47b098b979b93060bc13d484d0428c3f7",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/convert/dflash/__init__.py": "5cd49dc2f896cd23e0c9ea907b3f7e547eb4e6ab3281c5fb9d0303441b30793c",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/convert/eagle/eagle3_converter.py": "a79b54b306f3290b541e39b0ae1fe866d50399f7e8efd2736d9dba91d8341d58",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/convert/eagle/eagle3_legacy_model.py": "81a941e1ecf7ce9a9b6c209743c5a93d5f02ff9c43995f5627fffa0a171fdd99",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/convert/eagle/utils.py": "d82a901a5fe36187e1e688684551d3ac915d5aa50cb1511f12ed794e312bb173",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/convert/eagle/__init__.py": "a762dd1343aa876e3581d7311d3dcefbd7f8c9ae3f3174468008c24960de65ae",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/convert/mtp/converter.py": "6e04a670a77830a81711a410e41b592dad7213a6877d6b1e1ce33dc8e8522c35",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/convert/mtp/__init__.py": "13cecd304e7b1dde45c4bb181d8d604ea40f15f7811de82df9fcdd3b35ecf513",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/data_generation/configs.py": "c0afe48958cebd912f405004514d08b42b2d00576466fe40d901c4ba1f2ebbf5",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/data_generation/logging_utils.py": "0f0bccfb75785d3d167b2ca06c46f6660820b679085fe733517ec8f695507017",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/data_generation/offline.py": "6225d0c24f57b9f51ec37658763e3def112119190ba09c8f972f650fbff3beb2",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/data_generation/preprocessing.py": "c5a11d38a1eb66f403df6d64a28376526820385b2bf8da2e183dc59056d76e36",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/data_generation/torch_utils.py": "e0b72be153552b86289f61fd119bc194400ed1aa18faca037139b9f36e6c0f17",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/data_generation/vllm_client.py": "0cd0ded36ddbdd15e185e07d0ae171b95748f03915d11fa8171f10c29707b6aa",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/data_generation/__init__.py": "1f083db8ffca23bf45e651999be23287e291b7e651d3fe632e03aaad300866aa",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/attention.py": "5f3a459b4c1bdbdcfe74f6ca0d38ac862386e99973470815b43af7adc820a9f6",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/base_components.py": "1df6d057813ef895af038123ecaf5cf7637264695851f9b7ec6ca401b432bbc0",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/fused_tv_loss.py": "b893830ae84708a3d087d1a39c24852e052c22b5fe86793749bbe08a33c81093",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/metrics.py": "de4642d51b573fc3c57833c3c61813f1467bad8ce31f187743b0b2334ee6c39d",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/utils.py": "f8f07b975a68f108ee15ee1aa423c77c35d0a0c9440dbb89178c45f20f702ea1",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/__init__.py": "0200c7c6c6c7879e4590b24be99d93260c682ccf9e75667fee319787d2930cad",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dflash/attention.py": "166ddad80b67096f36bd490869cde2c650d5d35a5c3c4e7d940d561da8256bde",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dflash/config.py": "32472ecb2eb6b34c15d37d3a6c2a1a19bfd18f2c96fdeca530365ddcb1a42784",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dflash/core.py": "e5cec92a3641a0442c9650f4b4bd201f8a9f35ea004e6df55412cd0a6e2d9e22",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dflash/metrics.py": "09bc58ecb3e1812417952fed9ddac86ff086c404d426f2bbfba4fa46be1585c0",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dflash/model_definitions.py": "da8a7a0d3ea5e37256c14def4af12003de30a44d138ff45122f9a9fa7bf04039",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dflash/utils.py": "3b8470b8f6efb18f13b00eb85f5f652f48814fa67126d7acc41de0de1d184bc8",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dflash/__init__.py": "a11a7d9fbb34e0ec057024e91ab52d27fa2e6b780486a8dfaf9d720631219ad1",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dflash/model_definitions_specmole.py": "b355479cc87d22d2612b8bf7ec53f4e6e093dfcbe35cfa37c38cdfca71c97a42",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dflash/vllm_native_specmole.py": "86cc6240aea9f5882a8823da32bbdf7752cf7baa470494f45a54caeab64f2c24",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dflash/vllm_native_specmole_v026.py": "e31b94b26a31cb70670610054261fc1c3305b3bc0a884bcbc38a4eb3782015d2",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dspark/config.py": "2f4381ff2eb9de506c6ba09bc17f83d0aee871f75651f6303b2e4b581e9b4ca1",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dspark/core.py": "3bc375110964efc0046d32fbebd7bd41ae53dc031b393df196f6146739e7178e",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dspark/metrics.py": "46448d13f9c54b3a26c30cd9c065a8bfd41fb7ef8eee7223645da858a30957cc",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dspark/model_definitions.py": "5112d4541577032d103b43afa41d0f6ee273d40b52757ac31e7a98ef07d8d70f",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/dspark/__init__.py": "af674ba3b6d47abc82506f5307ffe0221195e854d4b1ce115ae4bd0b59cb5026",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/eagle3/attention.py": "499ffc032db95eb3023f88472064a65c8e856965834b95bf808b0f83c6aebc74",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/eagle3/config.py": "1de5cd5a43571a4bd4d7de1a2491be2b101f00602bc21fdc48683d737dec8a4d",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/eagle3/core.py": "5bedc53f9988c63f736cf1baf876cd51e98f56dcb24175e9bff7eeb99ace4730",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/eagle3/data.py": "226076428b6d862f357b71b5cec4887fc4850ff78c2369f161699f7f611248b0",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/eagle3/metrics.py": "ff0f2981372cbbc24061a69f8c2a8762b53c088f96292ba36b63aeddcf9d274b",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/eagle3/model_definitions.py": "5b04c33f11e715c4ccc767b85f2aa86f04df86761399bc2f5ad77cca5f6ec40c",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/eagle3/rotary_partial.py": "e828a9854b5191d029255035a975f0f9fef10a1041deae95af40f69d537c6715",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/eagle3/__init__.py": "6e680e16185df374f4afbe24e002efe3bf4c333eec1f57c11ed959009b464104",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/mtp/config.py": "c3b299194babf1b79764492e33b2f457349fab0adada2353fc2a9e1891fae9e8",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/mtp/core.py": "32d3e5c2be7c602c9d9e00a5f097f6d8287dcadee659e56dc31eeae46f3c4984",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/mtp/data.py": "3130c7f5cc77a963988dbf6ad075e2a75352e3ab6f26351e9d781ae81064e661",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/mtp/model_definitions.py": "e486fe8bbc3923232c644ab8f61cbc23e8e3783bcd89d5f0c2d5272ed10bc46b",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/mtp/__init__.py": "e447d27c948e5d252ed7e2e628f230cb9d5a3c6e61d65f812c23a0e64cdcb2bc",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/peagle/attention.py": "027fcffa58267238c916afc6ce2fd39a6a480de8f0b04c8635ba2010ac97d1b4",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/peagle/config.py": "fb19a3a66170d9be048df903b8b0b9df0ba4ce1fd8bc6fb8d8b5423183b8fb6d",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/peagle/core.py": "2ffb9a00797f4a23dd82a296b3ce3b01a78e240ff5daece85826d20ae417597d",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/peagle/data.py": "3ff87236b9d0cbf538e095d12df15b89dbf208d2603ea48bcdfecf799173e732",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/peagle/metrics.py": "33d6929cca2511c4fafe0ad472af809b69a5d21ab35194d7cc0753b0a02f7993",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/models/peagle/__init__.py": "542c9645e48188640ccbf13959f3e723beb67269d0959523453c012d178be153",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/proposals/base.py": "20b3d50061abf691a2636e3b38cf2941c5e9c1955db67a16f5a2d89e2ebd1bb9",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/proposals/greedy.py": "b2fd4840c370923771a3f506723b987bec76460cfd9644d253f23cc5eb32eb4d",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/proposals/__init__.py": "97f372d811cd51046cb8e9ad4e6067f2e74e528f39a365778e3cae528738ff82",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/checkpointer.py": "6197734c6d607df4fe51e32d6979bd5fae763ee666df2b1a557a04031cb19476",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/data.py": "6da24ebd320b8f2341691b77cee8be42e49c9d1419486172e8e22d853de9d469",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/dataloader.py": "eef88872e4346d46fe8943d0a42026c378eb0bfae6cdc2e236d711a9ba2cf6bb",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/distributed.py": "4ed0bef511326428b64344388ae59a305b04030f9d4fae6575c806a9a6ae0484",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/distributed_batch_sampler.py": "0e0bff7c23ff50bcf27cc4085fa332b065b59f411952dfe98d48fa5acab8cfb5",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/graceful_shutdown.py": "7515c1872d1ddbe8358e87555f51eac2928f11e3268d5b200bfdfd061f4683b9",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/logger.py": "e6a82235ad372a0ca1b11c1ff52728a0990c1c0c979e9eb4258466d7c776c1a1",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/lora_utils.py": "e303237332e25e797933c31a37388b5909dbd16b6b32501bd0a7c7b83bab6fa0",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/noise_transforms.py": "8c706ed598f0b358736283f8373b6e3ef4f8d5031292608dcbb22439711d554c",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/optimizers.py": "860648eafacb9e2cd605a2d09bacbf53f9f05901522c787fe4af30780a9c0da0",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/trainer.py": "34e09cf5d6c9a6b5a7cd15d62aeeea02dcab808d7d16279aa4adffb93392d242",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/trainerlora.py": "9ac42229ee3d3d445a0c149c448d1842cfed68e635ea67f0c1fe40c8a303b632",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/utils.py": "cf7aba3af79ebaa26f89e4243ab1f5c2485e799ba9f994e917a72070cbc2bfc4",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/vocab_mapping.py": "26270e1920a029a0429a2eaa5584332296a7d00a4f1639b44ba00a7e296ab467",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/lora_utils copy.py": "c9c70a5ef1fafa4e44999e01df41f700d4f649a4a84c1b75d8d9406390ed4eff",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/config/artifacts.py": "d68ce58227e9472b7cffa831da75d3825614dff7f33bed92e79b7547c6699383",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/config/artifactslora.py": "4e9ce49368dd2641708d49d95ca2d6db27a5ef38d8e86a213f9f324bd8b8d1e6",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/config/resolution.py": "95e04b8aa53422b923301b074a89bf9af72958fc587de2f75b0c5a33e8133946",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/config/resolutionlora.py": "c22fedfc5451c1070713684bff6c74bd2f1a67a6ab2c97b5e9520d4a7110f8b6",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/config/schema.py": "4b53a48d1c1013a3f7592fe65931fd65e55089ee4132b654ec7de4c1013f9ea8",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/config/schemalora.py": "33de8a107ffcdf006e8c658390a5ee5bac0693be03cc5965d96074ddf502851c",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/train/config/__init__.py": "96a2f2e855fc92a940ac32e8c0ba64d61546f35bcc8376bc74d234f73c000c0e",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/utils/loading.py": "afb4206a189fd7ea1c218a774f46de9584e993009c7b1b5396fbf69d5b207c7b",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/utils/pydantic_utils.py": "e455865b10e68b4cef9640f7cba226a8024e3b2f447c4b3a7bcd2bfe34538ad4",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/utils/registry.py": "7f35c1a7360a03794643a95ac6fcd69df9c1b31ced60cbe9e7af08cb3215e4e9",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/utils/util.py": "cd5208dda26e7efd6c18de07bd3aff9b8eff148bdd4b61f55bb9b6d616a20336",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/src/speculators/utils/__init__.py": "7331370aa3bcf5e893352ffd81ddc639f6583ca6d3e944e9747bd434be50f2bd",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/hs_connectors/src/hs_connectors/mooncake_hidden_states_connector.py": "7b576d0ed8f22e2a9f4eff7ae32f4c890401842c9ac09564366509e9158bab95",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/hs_connectors/src/hs_connectors/mooncake_store.py": "f9b39b2446b157cfb082ed6f736b494de46e280129ba1769b5f25ff92d1db9ec",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/hs_connectors/src/hs_connectors/transfer.py": "ae22913cffa16cf9a86fb89bc9f4810770492e20bf08124c0d66ce88290e480c",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/hs_connectors/src/hs_connectors/__init__.py": "1fb732c6e3e6355360736d235912cb2573b5ac033f62729f228a7d241ff392bc",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/scripts/launch_vllm.py": "d047f449d28774b987d6ab68b57dbe1398f7fddf89b9ca15b2b612fb7f85685f",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/device.py": "88dd1015a0451dc1c78f2987ba31ca54f973abefb420fe167169a836a3a3af73",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/native_raw_bridge.py": "7e695c06e32c37e6eba525e4c0c35d697a74b7779bb5efd969f5f5e603faaf36",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/suite.py": "3551bfbaad57d4d8fcb5c400c88357568f25a80de680845bd3906483e270d232",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/parallel_suite.py": "3f95cd3e26f2833a432be672a56f65c4be482241ae2be8d09cdf6761f9bbb40b",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/runtime_bundle/check_parallel.py": "653dc5ddd5ac17c96a2a5af01c7ba14d9bf4c6c96292cfac95e98b9b4ee08453",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/evaluate.py": "c214e2861a17589b0b3348ccc66d0e3937e65ca32e6b4696a0729b9bbcd37d25",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/prepare.py": "bf6b80b9b41485a5a1a8c81774c4b3928514da9bebb928daa4c0ddb97bbcc420",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/report.py": "1528cf2954211c05d24b8d27afe6a8737edf410e48ccf9c87f85ba7e9a0f54d7",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_five_arm_eval_v1/controller.py": "414756d1e7d0348e7705cad337b44325cbe58937e1be05ff832674eea9867bc0"
+    },
+    "environment": {
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+      "TORCHINDUCTOR_DETERMINISTIC": "1",
+      "VLLM_USE_AOT_COMPILE": "1",
+      "PYTHONHASHSEED": "0",
+      "CUDA_VISIBLE_DEVICES": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+      "CUDA_DEVICE_ORDER": "PCI_BUS_ID"
+    },
+    "memory_utilization": 0.93,
+    "acceptance_only": false,
+    "speed_evidence": true,
+    "shared_gpu_allowed": false,
+    "inductor_compile_config": {
+      "combo_kernels": false,
+      "benchmark_combo_kernel": false
+    },
+    "deterministic_algorithms": true,
+    "graphs": "FULL_DECODE_ONLY; all request counts 1..C",
+    "repeats_are_not_independent_samples": true,
+    "colocated_training_on_evaluation_gpu": false,
+    "training_may_overlap_test": false,
+    "all_training_complete_before_test": true,
+    "unrelated_long_training_on_other_cards": true,
+    "development_panel": false,
+    "scope": "C1, 20 prompts, max4096; fixed final C1/C40 evaluation; repeats are not independent samples",
+    "target_counter_limit": "target eager/fallback zero does not prove prefill/mixed graph; FULL_DECODE_ONLY",
+    "tf32_enabled": false,
+    "comparison": "five-arm continuation; existing C1 windows carried without rerunning",
+    "architecture_changed": true,
+    "training_changed": true,
+    "warmup_unique_prompts": 30,
+    "warmup_requests": 2,
+    "warmup_repeated_to_reach_concurrency": false,
+    "carried_protocol_sha256": "7ce398a1887c0e5349adcadc3f892f274d8c979bb508337ef972185770ceaa26"
+  },
+  "source_summaries": {
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/C1/formal/summary.json": "2fbf6c67853418ecae6366a1d40bf58302e384c0c6edba7381d3d4198857e2e9",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/C1/added_T0_T1/formal/summary.json": "5e8865de58d5c38ba2125abed77acd2e115ad240e405357ef065c6f2abdf2451"
+  },
+  "utc": "2026-10-02T10:30:06.695679+00:00"
+}

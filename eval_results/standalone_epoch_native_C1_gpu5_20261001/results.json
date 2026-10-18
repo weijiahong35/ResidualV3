@@ -1,0 +1,103 @@
+{
+  "status": "complete",
+  "rows": [
+    {
+      "arm": "RAW",
+      "T": 0,
+      "acceptance_length": 3.954496851609837,
+      "tokens_per_second": 256.0301581637418,
+      "acceptance_ratio_vs_RAW": 1.0,
+      "throughput_ratio_vs_RAW": 1.0,
+      "completion_tokens": 66563,
+      "wall_seconds": 259.98109159246087
+    },
+    {
+      "arm": "E1",
+      "T": 0,
+      "acceptance_length": 4.046137012947542,
+      "tokens_per_second": 239.7211826218576,
+      "acceptance_ratio_vs_RAW": 1.023173658944854,
+      "throughput_ratio_vs_RAW": 0.9363005684218889,
+      "completion_tokens": 66563,
+      "wall_seconds": 277.6684115771204
+    },
+    {
+      "arm": "E2",
+      "T": 0,
+      "acceptance_length": 4.082985770363101,
+      "tokens_per_second": 241.78108863179492,
+      "acceptance_ratio_vs_RAW": 1.0324918500569693,
+      "throughput_ratio_vs_RAW": 0.9443461284633741,
+      "completion_tokens": 66563,
+      "wall_seconds": 275.30275579728186
+    },
+    {
+      "arm": "E3",
+      "T": 0,
+      "acceptance_length": 4.081233523389123,
+      "tokens_per_second": 241.80541439328096,
+      "acceptance_ratio_vs_RAW": 1.0320487476751166,
+      "throughput_ratio_vs_RAW": 0.9444411397763401,
+      "completion_tokens": 66563,
+      "wall_seconds": 275.27506018429995
+    },
+    {
+      "arm": "RAW",
+      "T": 1,
+      "acceptance_length": 3.205114414238216,
+      "tokens_per_second": 207.38495752529207,
+      "acceptance_ratio_vs_RAW": 1.0,
+      "throughput_ratio_vs_RAW": 1.0,
+      "completion_tokens": 65548,
+      "wall_seconds": 316.0692114904523
+    },
+    {
+      "arm": "E1",
+      "T": 1,
+      "acceptance_length": 3.5897867259998915,
+      "tokens_per_second": 211.86720340582605,
+      "acceptance_ratio_vs_RAW": 1.1200182776792083,
+      "throughput_ratio_vs_RAW": 1.021613167772727,
+      "completion_tokens": 66140,
+      "wall_seconds": 312.17667924426496
+    },
+    {
+      "arm": "E2",
+      "T": 1,
+      "acceptance_length": 3.671652460819357,
+      "tokens_per_second": 216.28424735511894,
+      "acceptance_ratio_vs_RAW": 1.1455604968448612,
+      "throughput_ratio_vs_RAW": 1.042911935060389,
+      "completion_tokens": 66749,
+      "wall_seconds": 308.61702050082386
+    },
+    {
+      "arm": "E3",
+      "T": 1,
+      "acceptance_length": 3.685537422622397,
+      "tokens_per_second": 217.17866449996484,
+      "acceptance_ratio_vs_RAW": 1.149892623567501,
+      "throughput_ratio_vs_RAW": 1.0472247702607764,
+      "completion_tokens": 65495,
+      "wall_seconds": 301.5719806123525
+    }
+  ],
+  "E1_E3_contrasts": [
+    {
+      "T": 0,
+      "acceptance_E3_minus_E1": 0.035096510441581685,
+      "throughput_E3_over_E1": 1.0086943996714344
+    },
+    {
+      "T": 1,
+      "acceptance_E3_minus_E1": 0.09575069662250568,
+      "throughput_E3_over_E1": 1.0250697654415386
+    }
+  ],
+  "limitations": [
+    "\u5355\u8f6e\u540c\u5361\u6d4b\u8bd5\uff0c\u4e0d\u80fd\u636e\u6b64\u58f0\u79f0\u7edf\u8ba1\u663e\u8457\u6027\u3002",
+    "C1 \u9762\u677f\u66fe\u7528\u4e8e\u5386\u53f2\u8bc4\u4f30\uff0c\u4e0d\u80fd\u79f0\u4e3a\u65b0\u7684\u5bc6\u5c01\u6d4b\u8bd5\u96c6\u3002",
+    "\u672c\u5b9e\u9a8c\u8bc6\u522b epoch \u7684\u5728\u7ebf\u53d8\u5316\uff0c\u4e0d\u5355\u72ec\u8bc1\u660e dose\u3001direction \u6216\u76ee\u6807\u51fd\u6570\u7684\u56e0\u679c\u4f5c\u7528\u3002"
+  ],
+  "utc": "2026-10-01T06:15:05.212785+00:00"
+}

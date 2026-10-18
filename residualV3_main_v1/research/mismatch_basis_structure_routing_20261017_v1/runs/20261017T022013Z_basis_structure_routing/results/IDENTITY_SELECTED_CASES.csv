@@ -1,0 +1,7 @@
+domain,group,anchor,i,slot,target_row,status,scientific_effect
+alpaca,04ce139694b5d8900256910e90021fbee3bc82ae50a441fb40deaaac453ea2d9,1,3,0,2,not_evaluated,NA
+alpaca,141c521796a45116e2fcfe9f3c129eaed2f7e49f30a57d3ff0984325b8b23e90,1,3,0,2,not_evaluated,NA
+gsm8k,0019309e83e7cf0e6e90506fed1044a3d7199e27fb5d772b061842afbd9a5dc4,1,3,0,2,not_evaluated,NA
+gsm8k,061501956468e82c77012647889111bf1af73b2f143f180a6e35fa567c1df02d,1,3,0,2,not_evaluated,NA
+humaneval,17f6178e393cb29f00e197d84907ecda35b3e1fa38d46677ecc7e110bd94512c,1,3,0,2,not_evaluated,NA
+humaneval,18d5fc1fa5c042718343ec590842f9ec30b3b06de1e28f1bf72e7bca36290fed,1,3,0,2,not_evaluated,NA

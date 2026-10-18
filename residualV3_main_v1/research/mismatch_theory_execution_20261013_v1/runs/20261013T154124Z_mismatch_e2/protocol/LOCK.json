@@ -1,0 +1,67 @@
+{
+  "locked_utc": "2026-10-14T01:52:07.028646+00:00",
+  "scientific_scope": [
+    "A",
+    "B"
+  ],
+  "execution_scope": "AB_only_native_C_inconclusive",
+  "native_collection_allowed": false,
+  "native_C_status": "inconclusive",
+  "native_C_exit_evidence": {
+    "status": "inconclusive",
+    "technical_status": "cap_exhausted",
+    "attempts": 3,
+    "technical_retries": 2,
+    "successful_requests": 0,
+    "path": "analysis/NATIVE_BRANCH_EXIT.json",
+    "sha256": "50d8417537bf970c7a2ce0cbc5548a559218a777f6f35cf13c7bcc26b2913acc"
+  },
+  "native_C_pilot_required": false,
+  "protocol_sha256": "ced1aa5eb03da72f0f76a42a1695fd416ce5c41aab3ee6fec4ba573e305d92a6",
+  "sample_manifest_sha256": "41d41232901f77cdc59af39fd982f14916a89146ca4c8fd9e1c54dfdea80350d",
+  "pilot_sha256": "561793e6d823523eade20379e951467f461ce5cde184373285b550bddd58ad61",
+  "calibration_sha256": "3cec84d49866e31d23799a4bf450621b4bba7c43a7596bc900b2bba3adb39689",
+  "calibration_source_path": "data/target_branch/DEV_CAL_GRID_COMBINED.jsonl",
+  "calibration_source_sha256": "bb7a232d8202c98ae99297d77720c7ae22a1a54b6bd3714a641f4e4a87de4197",
+  "calibration_validation": {
+    "dev_only": true,
+    "source_rows": 4320,
+    "independently_recomputed": true,
+    "domains": [
+      "gsm8k",
+      "humaneval",
+      "mt-bench"
+    ],
+    "parameters_per_body": 1
+  },
+  "code_sha256": {
+    "code/ab_position.py": "0729d38e37c11974f2932626fc8b9185d100d26c007afdcf09d45436ab116b9b",
+    "code/audit_training_overlap.py": "10ba618331d58646b3a481d71c132cd089566bc68edc97dd9360ec2e1e5da8b2",
+    "code/collect_ab.py": "5c9e92d159d7f6d599304024d3920e0ec85d7b15ffe71761e006de5f7689cf00",
+    "code/dev_cache_probe.py": "2a86acf6dead3aab17c72f67eeca64d0b45deccb6dcc023fa0262f14af77c8d5",
+    "code/gpu_budget.py": "05f60a76cc79aad4cd505a08e4956714c803a227f34154e8d43875877ac0e792",
+    "code/hf_frozen_adapter.py": "bfb9395f89a6cbe5482da1564d9fd5a872435b1f28bb513feade877357725120",
+    "code/lock_protocol.py": "fc15d0bf5547969726b0720bda968311382905dd15e37bb70391435967f156fd",
+    "code/mismatch_math.py": "b991650fa815b7c32542d1c620658c8218c7cb76674427b776675e97f39f00cc",
+    "code/native_accounting.py": "a8ae32366bcc8c3a0a628c548bb507ce33bb5e077637a1d45cf7ee94b65314f7",
+    "code/native_diagnostic_launch.py": "93356a6bca9a987bb04eedc9bc30cb9bdca4a5055a94a0edf15c758e9744bb6d",
+    "code/native_scheduler_capture.py": "5b723703a3b2155fee596ca9ba678a7a1129a121887da77d5a1958ae9aca75d7",
+    "code/native_verifier_capture.py": "f76f102526122e9893de6daca0242fb58fd66aa32759cce606ad6be6c64ed53d",
+    "code/prepare_cpu.py": "76533c5b880cbdf3dee91b37cfeac4564a6dfd3535b7743eef03b393973aec55",
+    "code/repair_replay.py": "273ca11f0f1249cc0c6f4edd2c438048500e4ef2fa04a2f7ab342ed069131b63",
+    "code/resource_preflight.py": "21ac751547aed486efba3bf6ceca1fead39986718e621b9dd20bb89b102a0b50",
+    "code/run_native_stage.py": "cf3ed42133c5a6c945264f301194447cbd0011ffe9ef2add97787e67a063ecf0",
+    "code/test_ab_analysis.py": "08b7a64a29d4c644b07cefc2664c463c8c1efc12b44e83682260f032788995fc",
+    "code/test_mismatch_math.py": "838eeee850b8c56d0e0bb3e1082e2142ae658453345a4655238fecd2ea3343b0",
+    "code/test_native_accounting.py": "e346d884648610f1554b680923d0ee4c13b40b0225aeb83d520ce033a7757b08",
+    "code/test_native_scheduler_capture.py": "527c1e5899817a91ff2ee0eade22a547dcc7ab708efa1cc250a33640c43162e6",
+    "analysis/aggregate_ab.py": "e2cd06281f8fb080634e94c35e5ea8df0da11d954ea425e72c5cf1377b4b5fd0",
+    "analysis/audit_existing.py": "ebf125cc61c55b0486b2ab8ddf035aaf346c05ac6bfae86d92737c8090e8d3a0",
+    "analysis/fit_temperature.py": "7390d2525eb5b5972b3a6dc9331c5834436e521aa3849a089581c752edf6c424",
+    "analysis/report_experiments.py": "61c8e5d3a22e9613d21b8854a19f2eab1a744413ec4899c72b753af77a2e9923",
+    "analysis/test_lock_and_report_contracts.py": "7cafbb220fbfe5c97d083c302be50e32d1a9ede7d501fa19fa5557bb92730546"
+  },
+  "python_source_hash_scope": "recursive code/**/*.py and analysis/**/*.py",
+  "effect_threshold": 0.005,
+  "test_label_reads_before_lock": 0
+}

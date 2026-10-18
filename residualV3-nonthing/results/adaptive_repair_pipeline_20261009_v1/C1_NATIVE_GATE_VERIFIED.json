@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "arms": {
+    "BODY_ONLY": {
+      "native_sampling_checks": 80,
+      "real_T0_T1_witnesses": [
+        0.0,
+        0.9,
+        1.0
+      ],
+      "source_summary_sha256": "81dfc91f51c645769d4538174b0a2d0e2928ad9c2fc127dc32792d99ce13b880"
+    },
+    "FULL15": {
+      "native_sampling_checks": 69,
+      "real_T0_T1_witnesses": [
+        0.0,
+        0.9,
+        1.0
+      ],
+      "source_summary_sha256": "81dfc91f51c645769d4538174b0a2d0e2928ad9c2fc127dc32792d99ce13b880"
+    },
+    "SEQUENTIAL": {
+      "native_sampling_checks": 69,
+      "real_T0_T1_witnesses": [
+        0.0,
+        0.9,
+        1.0
+      ],
+      "source_summary_sha256": "81dfc91f51c645769d4538174b0a2d0e2928ad9c2fc127dc32792d99ce13b880",
+      "native_head_parity_checks": 69,
+      "observed_stop_positions": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "PIPELINE": {
+      "native_sampling_checks": 69,
+      "real_T0_T1_witnesses": [
+        0.0,
+        0.9,
+        1.0
+      ],
+      "source_summary_sha256": "81dfc91f51c645769d4538174b0a2d0e2928ad9c2fc127dc32792d99ce13b880",
+      "native_head_parity_checks": 69,
+      "observed_stop_positions": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  },
+  "scope": "Real C1 T0/T1 parity only; smoke TPS not performance evidence; does not certify C40 or cross-run final text equivalence."
+}

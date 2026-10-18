@@ -1,0 +1,20 @@
+{
+  "old": {
+    "pid": 86086,
+    "state": "S",
+    "pgid": 86086,
+    "start_ticks": 966912582,
+    "command": "/data/weijiahong/miniconda3/envs/dflash/bin/python -B /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_onpolicy_short_v5/launch.py --output /data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5"
+  },
+  "t0": {
+    "pid": 88013,
+    "state": "S",
+    "pgid": 88013,
+    "start_ticks": 966915146,
+    "command": "/data/weijiahong/miniconda3/envs/dflash/bin/python -B -m repair.pipeline --output /data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5/Parallel_T0 --training-only"
+  },
+  "t0_protocol_sha256": "5e0d7c3b0ea4a422fde1a1f51e4b085236d51ad314d9235b5098617fea929b2e",
+  "t1_original_protocol_sha256": "45dfb57a1f8f56e3210432386885120838d3bd0f1b33787a2e95e319a636947c",
+  "action": "retire only stopped coordinator PID; do not signal its independent child sessions",
+  "utc": "2026-10-02T06:26:53.287157+00:00"
+}

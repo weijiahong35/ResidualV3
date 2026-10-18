@@ -1,0 +1,76 @@
+{
+  "stable": true,
+  "controller_pid": 3364032,
+  "source_hashes_unchanged": true,
+  "suites": [
+    {
+      "concurrency": 1,
+      "gpu": 4,
+      "smoke_windows_passed": 8,
+      "sampling_contracts": [
+        {
+          "arm": "RAW",
+          "checks": 122,
+          "real_T1_non_argmax_witness": true
+        },
+        {
+          "arm": "LONG_BASE",
+          "checks": 103,
+          "real_T1_non_argmax_witness": true
+        },
+        {
+          "arm": "OUTPUT16",
+          "checks": 103,
+          "real_T1_non_argmax_witness": true
+        },
+        {
+          "arm": "MARGIN16",
+          "checks": 114,
+          "real_T1_non_argmax_witness": true
+        }
+      ],
+      "formal_request_progress": [
+        {
+          "file": "eval_results/standalone_nosoft_output_margin_native_pilot16_gpu45_20261003/C1/formal/round_1/RAW/T0_request_progress.jsonl",
+          "completed_requests": 9
+        }
+      ]
+    },
+    {
+      "concurrency": 40,
+      "gpu": 5,
+      "smoke_windows_passed": 8,
+      "sampling_contracts": [
+        {
+          "arm": "RAW",
+          "checks": 135,
+          "real_T1_non_argmax_witness": true
+        },
+        {
+          "arm": "LONG_BASE",
+          "checks": 101,
+          "real_T1_non_argmax_witness": true
+        },
+        {
+          "arm": "OUTPUT16",
+          "checks": 108,
+          "real_T1_non_argmax_witness": true
+        },
+        {
+          "arm": "MARGIN16",
+          "checks": 110,
+          "real_T1_non_argmax_witness": true
+        }
+      ],
+      "formal_request_progress": [
+        {
+          "file": "eval_results/standalone_nosoft_output_margin_native_pilot16_gpu45_20261003/C40/formal/round_1/RAW/T0_request_progress.jsonl",
+          "completed_requests": 68
+        }
+      ]
+    }
+  ],
+  "formal_performance_results_pending": true,
+  "new_training": false,
+  "foreign_processes_never_stopped": true
+}

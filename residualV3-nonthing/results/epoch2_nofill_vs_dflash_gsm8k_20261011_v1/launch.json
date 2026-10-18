@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_nofill_vs_dflash_gsm8k_20261011_v1/run.py",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1"
+  ],
+  "pid": 3636012,
+  "utc": "2026-10-11T03:46:27.066541+00:00",
+  "user_requested_formal": true
+}

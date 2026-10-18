@@ -1,0 +1,56 @@
+V20.6 Dual-V10 Soft-Logit Build Audit
+======================================
+
+Reference source used:
+  SpecLoRA_residual_V10_independent_branches_no_lmhead.zip
+
+Architecture checks:
+  PASS shared V10 information stem parameter shapes exactly match V10
+  PASS p2/p3/p4 Risk/Bias branch V10 fusion-core shapes exactly match V10
+  PASS p2/p3/p4 Repair branch V10 fusion-core shapes exactly match V10
+  PASS Risk severity-head shapes match V10 severity head
+  PASS Repair direction-head shapes match V10 repair head
+  PASS Risk/Repair shared parameter objects per pK = 0
+  Predictor parameters = 43,556,178
+
+Target numerical equivalence against real V10 (T_dist=1):
+  tv                       max_abs_diff = 0
+  severity/NLA             max_abs_diff = 0
+  overlap                  max_abs_diff = 0
+  reach_prob               max_abs_diff = 0
+  first_reject_prob        max_abs_diff = 0
+  severity_weight          max_abs_diff = 0
+  repair_direction         max_abs_diff ~= 8.94e-08
+
+Training semantics:
+  PASS no greedy_acceptance / greedy_reject / hard AUF fields in training targets
+  PASS Stage1 = V10 soft NLA loss + V10 soft repair cosine loss
+  PASS Stage2/3 = soft Target->Draft KL; no argmax CE
+  PASS corrected mismatch teacher uses logits.detach(); KL keeps gradient to corrected logits
+  PASS greedy argmax is isolated to evaluation/runtime files/tests
+
+Execution-path checks:
+  PASS Base D1+D2 fused compiled probe retained
+  PASS Base D3..D5 fused compiled tail retained
+  PASS final norm/lm_head outside Base tail compile graph
+  PASS Base DFlash parameters frozen
+  PASS lm_head unchanged/frozen
+  PASS external ResidualMoLE after complete frozen MLP
+  PASS anchor-level Draft history [A,L,H], no Predictor attention over [A,B,K,H]
+
+Tests run in build container:
+  PASS python compileall residual/
+  PASS bash -n residual/*.sh
+  PASS test_softlogit_train.py
+  PASS test_eval_greedy.py
+  PASS V10 target numerical equivalence script
+  PASS V10 branch/stem parameter-shape equivalence script
+
+Not runnable in build container:
+  test_modules_residual.py requires transformers/speculators integration runtime.
+  Build container error: ModuleNotFoundError: No module named 'transformers'.
+  Run this test in the user's dflash environment before long training if desired.
+
+Checkpoint compatibility:
+  Old V20.5.x checkpoints are intentionally incompatible with this Predictor head layout.
+  Retrain Stage1 -> Stage2 -> Stage3 from scratch.

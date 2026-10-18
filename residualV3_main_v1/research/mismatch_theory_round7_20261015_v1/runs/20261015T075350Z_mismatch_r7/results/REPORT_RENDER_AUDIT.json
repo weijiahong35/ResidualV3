@@ -1,0 +1,50 @@
+{
+  "UTC": "2026-10-15T09:20:44.011225+00:00",
+  "figures": [
+    {
+      "path": "results/figures/01_coverage_and_mass.png",
+      "sha256": "515c3dc02f50044beac1d42d7e054b69c28bdd73f64071c58da51bbe93cbaf66",
+      "type": "01_coverage_and_mass"
+    },
+    {
+      "path": "results/figures/01_coverage_and_mass.pdf",
+      "sha256": "f1365529340ae5c6cac400d70c9b7ca9785d00c33e704b0d3b8e78cd9490ec24",
+      "type": "01_coverage_and_mass"
+    },
+    {
+      "path": "results/figures/02_primary_paired_contrasts.png",
+      "sha256": "ad6bda6b66340e866b2e52741299ec9fde5fba8180d4788f18eafce249d0f32f",
+      "type": "02_primary_paired_contrasts"
+    },
+    {
+      "path": "results/figures/02_primary_paired_contrasts.pdf",
+      "sha256": "8855104a3bc4fdf3260e10522a140e2cec07bf0fec5ce3ecf2666b0b3e791b46",
+      "type": "02_primary_paired_contrasts"
+    },
+    {
+      "path": "results/figures/03_losses_and_failures.png",
+      "sha256": "54dd59c919072a0ac7bb5754a2ccd65920b131bc23be98240726c65916b9d10b",
+      "type": "03_losses_and_failures"
+    },
+    {
+      "path": "results/figures/03_losses_and_failures.pdf",
+      "sha256": "5d253468ada53dce5f4bc2a6558d2ae4c3426328cd0c84ec2a940188a63209c2",
+      "type": "03_losses_and_failures"
+    },
+    {
+      "path": "results/figures/04_fixed_cases_and_compensation.png",
+      "sha256": "3490bef4cdb52f5475fab0337d7e9f9bbee460a95c7dd0259b9f8b58bb457b79",
+      "type": "04_fixed_cases_and_compensation"
+    },
+    {
+      "path": "results/figures/04_fixed_cases_and_compensation.pdf",
+      "sha256": "710e38776b5958f98eb11220cccb4f8e8e0925e0300e8c14f59fc3f0df048d7d",
+      "type": "04_fixed_cases_and_compensation"
+    }
+  ],
+  "figure_types": 4,
+  "real_sealed_results_only": true,
+  "statistics_recomputed_or_tuned": false,
+  "cases_reselected": false,
+  "source_SHA256": "ae3286e8fbe169bd72412d17e0ea20500fb7ec94abd9d59ffd90e9293e61d934"
+}

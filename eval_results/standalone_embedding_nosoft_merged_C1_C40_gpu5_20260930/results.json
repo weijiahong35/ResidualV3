@@ -1,0 +1,114 @@
+{
+  "status": "complete",
+  "rows": [
+    {
+      "concurrency": 1,
+      "arm": "RAW",
+      "T": 0,
+      "acceptance": 3.954496851609837,
+      "tps": 255.85000625336113,
+      "acceptance_ratio": 1.0,
+      "throughput_ratio": 1.0
+    },
+    {
+      "concurrency": 1,
+      "arm": "N_no_soft_2layer",
+      "T": 0,
+      "acceptance": 4.081233523389123,
+      "tps": 241.3780098163771,
+      "acceptance_ratio": 1.0320487476751166,
+      "throughput_ratio": 0.9434356221095699
+    },
+    {
+      "concurrency": 1,
+      "arm": "M_no_soft_2layer_merged",
+      "T": 0,
+      "acceptance": 4.0207175646291375,
+      "tps": 238.52868988452005,
+      "acceptance_ratio": 1.0167456734710365,
+      "throughput_ratio": 0.9322989409987027
+    },
+    {
+      "concurrency": 1,
+      "arm": "RAW",
+      "T": 1,
+      "acceptance": 3.205114414238216,
+      "tps": 207.28451786061217,
+      "acceptance_ratio": 1.0,
+      "throughput_ratio": 1.0
+    },
+    {
+      "concurrency": 1,
+      "arm": "N_no_soft_2layer",
+      "T": 1,
+      "acceptance": 3.685537422622397,
+      "tps": 216.8882240374513,
+      "acceptance_ratio": 1.149892623567501,
+      "throughput_ratio": 1.0463310346376042
+    },
+    {
+      "concurrency": 1,
+      "arm": "M_no_soft_2layer_merged",
+      "T": 1,
+      "acceptance": 3.705062040188866,
+      "tps": 218.82423701809114,
+      "acceptance_ratio": 1.155984330459378,
+      "throughput_ratio": 1.0556709168469534
+    },
+    {
+      "concurrency": 40,
+      "arm": "RAW",
+      "T": 0,
+      "acceptance": 4.047408681990761,
+      "tps": 2610.072718878518,
+      "acceptance_ratio": 1.0,
+      "throughput_ratio": 1.0
+    },
+    {
+      "concurrency": 40,
+      "arm": "N_no_soft_2layer",
+      "T": 0,
+      "acceptance": 4.192561845741238,
+      "tps": 2550.303638167465,
+      "acceptance_ratio": 1.035863233776304,
+      "throughput_ratio": 0.9771006070908499
+    },
+    {
+      "concurrency": 40,
+      "arm": "M_no_soft_2layer_merged",
+      "T": 0,
+      "acceptance": 4.134469204533288,
+      "tps": 2514.9628142632764,
+      "acceptance_ratio": 1.0215101882174413,
+      "throughput_ratio": 0.9635604387849745
+    },
+    {
+      "concurrency": 40,
+      "arm": "RAW",
+      "T": 1,
+      "acceptance": 3.326981700353568,
+      "tps": 2105.5482299417185,
+      "acceptance_ratio": 1.0,
+      "throughput_ratio": 1.0
+    },
+    {
+      "concurrency": 40,
+      "arm": "N_no_soft_2layer",
+      "T": 1,
+      "acceptance": 3.862828653002088,
+      "tps": 2313.2537161740893,
+      "acceptance_ratio": 1.161060985875448,
+      "throughput_ratio": 1.0986467482809072
+    },
+    {
+      "concurrency": 40,
+      "arm": "M_no_soft_2layer_merged",
+      "T": 1,
+      "acceptance": 3.8165524879581225,
+      "tps": 2276.5303116394057,
+      "acceptance_ratio": 1.1471516322294548,
+      "throughput_ratio": 1.0812054928337689
+    }
+  ],
+  "utc": "2026-09-30T18:19:53.246139+00:00"
+}

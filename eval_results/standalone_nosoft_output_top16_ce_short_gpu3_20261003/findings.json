@@ -1,0 +1,208 @@
+{
+  "status": "complete",
+  "rows": [
+    {
+      "concurrency": 1,
+      "gpu": 3,
+      "T": 0,
+      "arm": "N_OUTPUT_TOP16_CE",
+      "acceptance": 4.118866406781759,
+      "tps": 244.26007644644835,
+      "completion_tokens": 66563,
+      "wall_seconds": 272.508716808632,
+      "performance_contaminated": false,
+      "foreign_pids": [],
+      "speed_evidence": true,
+      "native_metrics": {
+        "num_drafts": 16161.0,
+        "num_draft_tokens": 113127.0,
+        "num_accepted_tokens": 50404.0,
+        "acceptance_length": 4.118866406781759,
+        "acceptance_at_pos_0": 0.848400470267929,
+        "acceptance_at_pos_1": 0.6760720252459625,
+        "acceptance_at_pos_2": 0.5246581275911144,
+        "acceptance_at_pos_3": 0.39935647546562714,
+        "acceptance_at_pos_4": 0.29948641791968317,
+        "acceptance_at_pos_5": 0.21718953035084462,
+        "acceptance_at_pos_6": 0.15370335994059772
+      }
+    },
+    {
+      "concurrency": 1,
+      "gpu": 3,
+      "T": 1,
+      "arm": "N_OUTPUT_TOP16_CE",
+      "acceptance": 3.5885185585975545,
+      "tps": 212.01119597366815,
+      "completion_tokens": 66318,
+      "wall_seconds": 312.8042351510376,
+      "performance_contaminated": false,
+      "foreign_pids": [],
+      "speed_evidence": true,
+      "native_metrics": {
+        "num_drafts": 18482.0,
+        "num_draft_tokens": 129374.0,
+        "num_accepted_tokens": 47841.0,
+        "acceptance_length": 3.5885185585975545,
+        "acceptance_at_pos_0": 0.8187425603289687,
+        "acceptance_at_pos_1": 0.6117303322151282,
+        "acceptance_at_pos_2": 0.4376149767341197,
+        "acceptance_at_pos_3": 0.30218591061573424,
+        "acceptance_at_pos_4": 0.20484796017746998,
+        "acceptance_at_pos_5": 0.13218266421382968,
+        "acceptance_at_pos_6": 0.08121415431230386
+      }
+    },
+    {
+      "concurrency": 40,
+      "gpu": 3,
+      "T": 0,
+      "arm": "N_OUTPUT_TOP16_CE",
+      "acceptance": 4.21062560035182,
+      "tps": 2512.5364757523243,
+      "completion_tokens": 1091245,
+      "wall_seconds": 434.32006282545626,
+      "performance_contaminated": false,
+      "foreign_pids": [],
+      "speed_evidence": true,
+      "native_metrics": {
+        "num_drafts": 259223.0,
+        "num_draft_tokens": 1814561.0,
+        "num_accepted_tokens": 832268.0,
+        "acceptance_length": 4.21062560035182,
+        "acceptance_at_pos_0": 0.8506266805028875,
+        "acceptance_at_pos_1": 0.6853674249584335,
+        "acceptance_at_pos_2": 0.5390301014956235,
+        "acceptance_at_pos_3": 0.4159854642527862,
+        "acceptance_at_pos_4": 0.3158593180389086,
+        "acceptance_at_pos_5": 0.23460495403571444,
+        "acceptance_at_pos_6": 0.16915165706746702
+      }
+    },
+    {
+      "concurrency": 40,
+      "gpu": 3,
+      "T": 1,
+      "arm": "N_OUTPUT_TOP16_CE",
+      "acceptance": 3.7409363555243185,
+      "tps": 2207.60774693616,
+      "completion_tokens": 1085706,
+      "wall_seconds": 491.8020429611206,
+      "performance_contaminated": false,
+      "foreign_pids": [],
+      "speed_evidence": true,
+      "native_metrics": {
+        "num_drafts": 290253.0,
+        "num_draft_tokens": 2031771.0,
+        "num_accepted_tokens": 795565.0,
+        "acceptance_length": 3.7409363555243185,
+        "acceptance_at_pos_0": 0.8280879095134245,
+        "acceptance_at_pos_1": 0.6308634191550131,
+        "acceptance_at_pos_2": 0.46246205896235354,
+        "acceptance_at_pos_3": 0.3301636847853424,
+        "acceptance_at_pos_4": 0.23077453118486285,
+        "acceptance_at_pos_5": 0.15640837476270703,
+        "acceptance_at_pos_6": 0.10217637716061505
+      }
+    }
+  ],
+  "objective": "OUTPUT_PLUS_TOP16_CANDIDATE_CE",
+  "candidate_loss": {
+    "k": 16,
+    "alpha": 1.0,
+    "candidate_source": "original_raw_logits",
+    "missing_label": "zero_no_injection",
+    "denominator": "all_positions",
+    "label_source": "regenerated_answer_ids",
+    "position_weights": "uniform",
+    "warmup": 0,
+    "ramp": 0,
+    "probabilities": "softmax of corrected logits within the original Top16, solely for candidate CE",
+    "source": "SpecForge DFlash2 selector CE adapted to our existing repaired logits; not an author-published training recipe",
+    "source_commit": "53398a8f01ae47175bee8459c5b5cca3848c8a7e",
+    "source_url": "https://github.com/sgl-project/SpecForge/blob/53398a8f01ae47175bee8459c5b5cca3848c8a7e/specforge/algorithms/common/dflash_family_model.py",
+    "alpha_source": "https://github.com/sgl-project/SpecForge/blob/53398a8f01ae47175bee8459c5b5cca3848c8a7e/examples/configs/online/disaggregated/external/qwen3.8-27b-dflash2-disaggregated.yaml",
+    "k_source": "https://inco.ai/blog/dflash2/",
+    "position_weight_decision": "uniform to isolate this auxiliary CE; no additional position-decay or D-PACE intervention"
+  },
+  "train_count": 128,
+  "epochs": 3,
+  "steps": 384,
+  "basis_refitted": false,
+  "baseline_retrained": false,
+  "baseline_remeasured": false,
+  "training_pairing": {
+    "passed": true,
+    "matched_updates": 384,
+    "all_anchor_answer_hashes_match_old_N": true,
+    "all_initial_tensor_hashes_match_old_N": true,
+    "all_fresh_reset_verified": true,
+    "baseline_retrained": false,
+    "baseline_remeasured": false,
+    "ce_positions": 4100880,
+    "ce_covered": 3776627,
+    "utc": "2026-10-03T04:57:43.306310+00:00"
+  },
+  "training_diagnostics": [
+    {
+      "epoch": 1,
+      "coverage": 0.9205594896705097,
+      "covered_count": 1258368,
+      "position_count": 1366960,
+      "covered_accuracy": 0.7082832684874377,
+      "mean_output_loss": 0.5549141773988755,
+      "mean_candidate_ce_loss": 0.8256277041681592,
+      "covered_by_position": [
+        194901,
+        192362,
+        187465,
+        181366,
+        174259,
+        167641,
+        160374
+      ]
+    },
+    {
+      "epoch": 2,
+      "coverage": 0.921236905249605,
+      "covered_count": 1259294,
+      "position_count": 1366960,
+      "covered_accuracy": 0.7480747148799248,
+      "mean_output_loss": 0.5308418095796943,
+      "mean_candidate_ce_loss": 0.6953440441141183,
+      "covered_by_position": [
+        194920,
+        192441,
+        187650,
+        181439,
+        174585,
+        167722,
+        160537
+      ]
+    },
+    {
+      "epoch": 3,
+      "coverage": 0.9209962252004448,
+      "covered_count": 1258965,
+      "position_count": 1366960,
+      "covered_accuracy": 0.7640188567593221,
+      "mean_output_loss": 0.5185867183387883,
+      "mean_candidate_ce_loss": 0.6447451584293729,
+      "covered_by_position": [
+        194943,
+        192421,
+        187609,
+        181360,
+        174482,
+        167477,
+        160673
+      ]
+    }
+  ],
+  "limitations": [
+    "Only improved head measured; no same-round RAW/N improvement ratio.",
+    "Historical panels; one round; GPU/host sharing can affect timings.",
+    "Uniform-position CE adapted to old repair head; not full DFlash2 architecture/author recipe."
+  ],
+  "utc": "2026-10-03T05:31:13.973952+00:00"
+}

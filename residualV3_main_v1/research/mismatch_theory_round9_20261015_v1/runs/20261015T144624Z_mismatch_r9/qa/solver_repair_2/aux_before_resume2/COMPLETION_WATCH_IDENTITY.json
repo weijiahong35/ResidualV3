@@ -1,0 +1,14 @@
+{
+  "identity": {
+    "pid": 1304562,
+    "ppid": 1304561,
+    "pgid": 1304562,
+    "uid": 1024,
+    "startticks": 28822602,
+    "CMD": "/data/weijiahong/miniconda3/envs/dflash/bin/python -B /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round9_20261015_v1/runs/20261015T144624Z_mismatch_r9/code/completion_watch.py ",
+    "CPU_seconds": 0.02,
+    "RSS_bytes": 13230080
+  },
+  "run": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round9_20261015_v1/runs/20261015T144624Z_mismatch_r9",
+  "role": "non-numerical ordered completion watcher; own CPU covered by closure/control reserve"
+}

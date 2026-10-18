@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "fresh_model_restore_and_next_update_bitwise_equal": true,
+  "all_weights_masters_muon_adam_states_checked": true,
+  "unused_preallocated_tail_decodes_correctly": true,
+  "uncommitted_generation_does_not_change_latest_cursor": true,
+  "storage_gate_device": "CPU",
+  "actual_full_cuda_roundtrip_required_at_first_update": true
+}

@@ -1,0 +1,20 @@
+20k×3轮：逐条训练与65536输入token/整包1536 anchor训练的正式对比。
+两组均冻结相同target/draft、相同no-soft三层头、相同basis和初始头。
+采样预算、样本权重和更新频率同时变化，不能称纯打包工程消融。
+RAW/旧逐条/新打包：C1=200、C40=2000，各T0/T1，max2096；block16=已知锚点+15 proposal。
+其他进程污染的窗口有明确标记；smoke不计作性能结果。开发面板不等于独立最终测试。
+
+C1 T0 RAW: AL=3.782508, TPS=253.085; 相对旧逐条 AL -6.43%, TPS +15.57%; 污染=True
+C1 T0 N_per_sequence_20k: AL=4.042507, TPS=218.988; 相对旧逐条 AL +0.00%, TPS +0.00%; 污染=True
+C1 T0 N_packed65536_a1536_20k: AL=3.995837, TPS=215.872; 相对旧逐条 AL -1.15%, TPS -1.42%; 污染=True
+C1 T1 RAW: AL=3.255867, TPS=218.085; 相对旧逐条 AL -10.13%, TPS +11.20%; 污染=True
+C1 T1 N_per_sequence_20k: AL=3.622723, TPS=196.117; 相对旧逐条 AL +0.00%, TPS +0.00%; 污染=True
+C1 T1 N_packed65536_a1536_20k: AL=3.619443, TPS=195.642; 相对旧逐条 AL -0.09%, TPS -0.24%; 污染=True
+C40 T0 RAW: AL=3.900470, TPS=2141.706; 相对旧逐条 AL -5.57%, TPS +4.91%; 污染=False
+C40 T0 N_per_sequence_20k: AL=4.130342, TPS=2041.566; 相对旧逐条 AL +0.00%, TPS +0.00%; 污染=False
+C40 T0 N_packed65536_a1536_20k: AL=4.088444, TPS=2022.920; 相对旧逐条 AL -1.01%, TPS -0.91%; 污染=False
+C40 T1 RAW: AL=3.277807, TPS=1782.460; 相对旧逐条 AL -12.14%, TPS -1.90%; 污染=False
+C40 T1 N_per_sequence_20k: AL=3.730786, TPS=1817.028; 相对旧逐条 AL +0.00%, TPS +0.00%; 污染=False
+C40 T1 N_packed65536_a1536_20k: AL=3.664743, TPS=1795.517; 相对旧逐条 AL -1.77%, TPS -1.18%; 污染=False
+
+{"N_per_sequence_20k": {"updates": 60000, "sampled_anchors": 33983946, "input_tokens": 57740211, "sum_logged_update_seconds": 50748.32507392578, "scope": "update timers, including hidden wait; exclude startup, basis fitting and checkpoint save overhead"}, "N_packed65536_a1536_20k": {"updates": 894, "sampled_anchors": 1373184, "input_tokens": 57740211, "sum_logged_update_seconds": 7409.409282634035, "scope": "update timers, including hidden wait; exclude startup, basis fitting and checkpoint save overhead"}}

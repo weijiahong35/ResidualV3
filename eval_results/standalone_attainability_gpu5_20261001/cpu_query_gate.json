@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "known_minimum_norm": true,
+  "outside_ball_dual_certificate": true,
+  "contradictory_constraints_certificate": true,
+  "zero_row_infeasibility": true
+}

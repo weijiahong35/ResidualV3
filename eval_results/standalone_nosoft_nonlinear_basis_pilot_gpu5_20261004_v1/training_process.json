@@ -1,0 +1,13 @@
+{
+  "pid": 1498050,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nonlinear_predictable_basis_v1/paired_train.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_nonlinear_basis_pilot_gpu5_20261004_v1",
+    "--arm",
+    "KRR_OVERLAP_B512"
+  ],
+  "utc": "2026-10-03T17:51:58.589322+00:00"
+}

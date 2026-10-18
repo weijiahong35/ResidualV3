@@ -1,0 +1,15 @@
+{
+  "owned_pids": [
+    3506568,
+    3507846,
+    3515306,
+    3515307
+  ],
+  "unattributed_samples": [],
+  "sampled_gpu_memory_peak_mib": {
+    "1": 78741,
+    "2": 34105,
+    "4": 66491
+  },
+  "monitor_interval_seconds": 5
+}

@@ -1,0 +1,220 @@
+{
+  "UTC": "2026-10-16T05:20:57.363554+00:00",
+  "purpose": "authoring input feasibility only; no probability values or scientific outcomes recomputed",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "exists": true,
+      "bytes": 2759,
+      "sha256": "66513c6f44eb9febfca54593974e52b36eeb9ddd563df2997f845f00c24eac9f"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/collect_r8.py",
+      "exists": true,
+      "bytes": 12319,
+      "sha256": "35bc7edece3c6d7a464c5227748849af45290608bd6cc3de03a2e84835bd9564"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/common.py",
+      "exists": true,
+      "bytes": 2545,
+      "sha256": "1be767acd7e5e56d23b5ad470679f6502e9c08dfaefd6f33234959a7f9a02b49"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/evaluate.py",
+      "exists": true,
+      "bytes": 4835,
+      "sha256": "5a60be8d81869dceb0fa8b267049774471b56ef6b92ecc05f8fc82ce6bf5fae8"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/protocol/SAMPLE_MANIFEST.json",
+      "exists": true,
+      "bytes": 141885,
+      "sha256": "85e029072253b598734c763fa67c31236b73b9afe8cb159cbcf441e1c5759458"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/COMPLETION.json",
+      "exists": true,
+      "bytes": 29777,
+      "sha256": "0d33d81cbceb5cda97c3ff7d8cf0ab5d50ff0730a05f591e146538c0f0f72dd7"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round9_20261015_v1/runs/20261015T144624Z_mismatch_r9/COMPLETION.json",
+      "exists": true,
+      "bytes": 6139,
+      "sha256": "6e81948677f4c82ec35069c8f3523ee28cd03661d4b1f934c10f079b47825cbb"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_round9_20261015_v1/runs/20261015T144624Z_mismatch_r9/results/RESULTS_CN.md",
+      "exists": true,
+      "bytes": 12574,
+      "sha256": "fbe122b76c4cc47cb8eb80f25b17fc7f901a1937421af02fe5cd5a685882b5ad"
+    },
+    {
+      "path": "residualV3_main_v1/research/mismatch_theory_followup_20261016_v1/MECHANISM_SOURCE_SCAN_20261016_CN.md",
+      "exists": true,
+      "bytes": 9938,
+      "sha256": "b2b74b529b6ffbf694b49544e20351fdaab2f298fe72add3a9e1379647a66b65"
+    },
+    {
+      "path": "residualV3-nonthing/code/full_joint_body_shared_teacher_1epoch_20261008_v1/losses.py",
+      "exists": true,
+      "bytes": 1966,
+      "sha256": "7510aa7e842f6a1da9b790ed4f2adaaca459acf924dd3058aeefe4c13acb5203"
+    }
+  ],
+  "r8_context_meta_files": 69,
+  "r8_prompt_directories": 36,
+  "one_context_relative": "residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_04ce139694b5d8900256/C1",
+  "npz_header_inspection": {
+    "raw.npz": [
+      {
+        "member": "D.npy",
+        "shape": [
+          15,
+          151936
+        ],
+        "dtype": "<u2",
+        "fortran_order": false,
+        "uncompressed_bytes": 4558208
+      },
+      {
+        "member": "J.npy",
+        "shape": [
+          15,
+          151936
+        ],
+        "dtype": "<u2",
+        "fortran_order": false,
+        "uncompressed_bytes": 4558208
+      },
+      {
+        "member": "J_hidden.npy",
+        "shape": [
+          15,
+          4096
+        ],
+        "dtype": "<u2",
+        "fortran_order": false,
+        "uncompressed_bytes": 123008
+      }
+    ],
+    "target.npz": [
+      {
+        "member": "logits.npy",
+        "shape": [
+          147,
+          151936
+        ],
+        "dtype": "<u2",
+        "fortran_order": false,
+        "uncompressed_bytes": 44669312
+      }
+    ],
+    "F.npz": [
+      {
+        "member": "logits.npy",
+        "shape": [
+          112,
+          151936
+        ],
+        "dtype": "<u2",
+        "fortran_order": false,
+        "uncompressed_bytes": 34033792
+      },
+      {
+        "member": "candidate_ids.npy",
+        "shape": [
+          112,
+          256
+        ],
+        "dtype": "<i8",
+        "fortran_order": false,
+        "uncompressed_bytes": 229504
+      },
+      {
+        "member": "selected.npy",
+        "shape": [
+          112,
+          256
+        ],
+        "dtype": "<u2",
+        "fortran_order": false,
+        "uncompressed_bytes": 57472
+      },
+      {
+        "member": "previous.npy",
+        "shape": [
+          112
+        ],
+        "dtype": "<i8",
+        "fortran_order": false,
+        "uncompressed_bytes": 1024
+      },
+      {
+        "member": "position.npy",
+        "shape": [
+          112
+        ],
+        "dtype": "<i2",
+        "fortran_order": false,
+        "uncompressed_bytes": 352
+      }
+    ]
+  },
+  "meta_keys": [
+    "schema",
+    "domain",
+    "prompt_id",
+    "group_sha256",
+    "anchor",
+    "C",
+    "C_SHA256",
+    "records",
+    "head_rows",
+    "target_unique_H_selected_positions",
+    "raw_checks",
+    "head_parity",
+    "target_cache",
+    "measure",
+    "source_q"
+  ],
+  "record_keys_example": [
+    "position",
+    "H",
+    "previous",
+    "token",
+    "source",
+    "pool",
+    "slot",
+    "target_row",
+    "F_head_row",
+    "generation_BF16_SHA256",
+    "target_buffer_SHA256",
+    "generation_q_at_token",
+    "target_p_at_token",
+    "round_initial_budget",
+    "prior_EOS",
+    "current_EOS",
+    "valid",
+    "seed_uint128",
+    "buffer_SHA256",
+    "selected_probability",
+    "buffer_dtype",
+    "buffer_length",
+    "actual_path_length",
+    "first_reject",
+    "accepted_proposals"
+  ],
+  "r8_completion_status": "complete",
+  "r9_completion_status": "complete",
+  "limitations": [
+    "schema inspected in one context and producer code; full input validation belongs to execution",
+    "no probability archives fully hashed this authoring turn",
+    "J_hidden exists in sampled archive; D_hidden not present",
+    "all R8 data are previously exposed",
+    "earlier output-adaptation priority explicitly withdrawn by user correction",
+    "all 69 META files later checked separately; full probability-array identity and numeric reconstruction still not performed"
+  ],
+  "supplemental_all_META_audit": "qa/METADATA_FEASIBILITY.json"
+}

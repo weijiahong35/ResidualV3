@@ -1,0 +1,35 @@
+OUTPUT+Top16候选CE 运行检查
+
+本轮控制器PID 2029309，物理GPU3；随机初始化旧N_no_soft_2layer架构，128条×3轮=384步。
+用户明确允许在稳定运行后结束对话；后台控制器继续完成训练→C1/C40→报告。
+
+1. 总进度
+读取本目录status.json：status=running表示仍在进行；stage表示当前阶段；status=failed时先读error及相应日志，勿重复launch。
+status=complete表示训练、384步配对、4个正式窗口和报告流程全部完成。
+
+2. 训练进度
+N_OUTPUT_TOP16_CE/training/status.json：step从1增长到384；结束时status=complete。
+N_OUTPUT_TOP16_CE/training.log：分别打印总loss、OUTPUT、候选CE、Top16覆盖率。
+training_pairing.json：passed=true、matched_updates=384，确认与旧N的anchor/answer逐步配对和随机初始化一致。
+训练loss/覆盖率改善不是性能收益证据。
+
+3. 正式测试
+C1/formal/summary.json和C40/formal/summary.json：各status=complete，各2个窗口：仅EMBEDDING，T0/T1。
+C1=20请求，C40=300请求，max4096/8192，7个proposal。
+本轮正式总4窗口，smoke不计性能。
+每个窗口execution_counters/target_execution_counters要求replays>0，captures=eager=fallbacks=0；控制器自动检查。
+performance_contaminated=false且speed_evidence=true才可作为未观察到同卡污染的正式吞吐记录。
+额外GPU进程/监控异常仅标污染，不会因此停跑，也不杀外部进程。
+
+4. 结果
+完成后自动生成REPORT.txt、results.json、findings.json；results.json.rows恰好4行，列出AL、TPS和污染信息。
+本轮只测新头，没有同轮RAW/旧N，不能仅凭这4行判定修复提升百分比。
+若与历史旧N比较，需要注明跨轮/可能跨卡与宿主负载差异；严格收益需同口径的正式配对基线，不能用smoke比较。
+metadata_annotation.json解释evaluate模板遗留unpaired字段；实际无本轮配对性能比较，报告不生成收益比。
+
+快速查看：
+cat /data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_output_top16_ce_short_gpu3_20261003/status.json
+tail -f /data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_output_top16_ce_short_gpu3_20261003/N_OUTPUT_TOP16_CE/training.log
+
+2026-10-03 04:50 UTC核实：248/384更新，当前248次anchor/answer全部与旧N配对；PID存活；未观察到GPU3外部PID。
+同期三输入消融旧控制器PID1735331存活，C1 10/10完成、C40 6/10进行中；其结果仍在自己的v2目录，勿混成本轮新loss结果。

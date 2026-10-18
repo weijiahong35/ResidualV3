@@ -1,0 +1,169 @@
+{
+  "run_id": "20261013T154124Z_mismatch_e2",
+  "three_levels": [
+    "literature knowledge",
+    "project falsifiable hypotheses",
+    "actual experimental conclusions"
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "status": "supported",
+      "claim": "correct predecessor correspondence reduces same-state TV vs permutation and joint raw",
+      "effect": {
+        "permuted_minus_correct": 0.1790895789457765,
+        "joint_raw_minus_correct": 0.25088175010485325,
+        "independent_raw_minus_correct": 0.2563617595169619,
+        "joint_calibrated_minus_correct": 0.23658612886123565,
+        "joint_raw_minus_joint_calibrated": 0.014295621243617608,
+        "independent_calibrated_minus_correct": 0.24056855465961713,
+        "independent_raw_minus_independent_calibrated": 0.015793204857344707
+      },
+      "CI95": {
+        "permuted_minus_correct": [
+          0.16485009302969114,
+          0.19311419770160715
+        ],
+        "joint_raw_minus_correct": [
+          0.23438980563501027,
+          0.2673292951226312
+        ],
+        "independent_raw_minus_correct": [
+          0.23738053540265877,
+          0.2741097861071164
+        ],
+        "joint_calibrated_minus_correct": [
+          0.21942375623557095,
+          0.2535743851167141
+        ],
+        "joint_raw_minus_joint_calibrated": [
+          0.011206780337331036,
+          0.017587692867729345
+        ],
+        "independent_calibrated_minus_correct": [
+          0.21994723355848528,
+          0.25916493512640526
+        ],
+        "independent_raw_minus_independent_calibrated": [
+          0.011505083876949018,
+          0.020890221146409312
+        ]
+      },
+      "evidence": [
+        "analysis/EXPERIMENT_REPORT_test.json",
+        "protocol/LOCK.json"
+      ],
+      "scope": "HF target-branch/alive-at-i; available test120, i2..15",
+      "boundary": "no native or whole-gain causal percentage"
+    },
+    {
+      "id": "C02",
+      "status": "supported",
+      "claim": "the dev-frozen single-temperature comparator does not explain all observed local improvement",
+      "evidence": [
+        "protocol/CALIBRATION.json",
+        "analysis/EXPERIMENT_REPORT_test.json"
+      ],
+      "boundary": "does not exclude all general refitting"
+    },
+    {
+      "id": "C03",
+      "status": "weakened",
+      "claim": "conditional mismatch must dominate",
+      "evidence": [
+        "analysis/EXPERIMENT_REPORT_test.json",
+        "analysis/EXPERIMENT_REPORT_dev.json"
+      ],
+      "boundary": "weakened for empirical K8; population ranking and capacity allocation inconclusive"
+    },
+    {
+      "id": "C04",
+      "status": "supported",
+      "claim": "benefit is heterogeneous; low raw-TV calibration outperforms head; low Top256 target mass gives smaller nonzero gains",
+      "evidence": [
+        "analysis/EXPERIMENT_REPORT_test.json"
+      ],
+      "scope": "prespecified exploratory strata, different available populations",
+      "boundary": "no oracle gate deployment or causal support attribution"
+    },
+    {
+      "id": "C05",
+      "status": "supported",
+      "claim": "TV and KL rankings of permuted vs raw differ in requested descriptive secondary",
+      "evidence": [
+        "analysis/SECONDARY_B_KL_TEST.json",
+        "protocol/SECONDARY_KL_REPORT_SPEC.json"
+      ],
+      "boundary": "details declared after lock before effect analysis; no new primary hypothesis"
+    },
+    {
+      "id": "C06",
+      "status": "inconclusive",
+      "claim": "local effects transport to native reached-prefix and continuous survival",
+      "evidence": [
+        "analysis/NATIVE_BRANCH_EXIT.json",
+        "analysis/EOS_RUNTIME_IDENTITY.json",
+        "analysis/DEV_TARGET_CACHE_PROBE.json"
+      ],
+      "boundary": "zero native completed request/verifier rows; technical failure is not falsification"
+    },
+    {
+      "id": "C07",
+      "status": "supported",
+      "claim": "original final full recipe AC/TPS gains are descriptive across different bodies",
+      "evidence": [
+        "analysis/EXISTING_RESULT_AUDIT_FINAL.json"
+      ],
+      "boundary": "not current inference-head causal share; no cross-paper ranking"
+    },
+    {
+      "id": "C08",
+      "status": "inconclusive",
+      "claim": "new theoretical or method novelty beyond neighboring work",
+      "evidence": [
+        "sources/LITERATURE_MATRIX.md",
+        "analysis/THEORY_CARDS_CN.md"
+      ],
+      "boundary": "standard identities and architecture are known; only project evidence added"
+    }
+  ],
+  "Q1_Q7": {
+    "Q1": {
+      "status": "supported",
+      "claim": "Distances compare the declared same-state full-vocabulary sampling distributions and prefix measure.",
+      "boundary": "HF reference labels are not automatically native vLLM labels; rejection is not semantic error."
+    },
+    "Q2": {
+      "status": "supported",
+      "claim": "Empirical fixed-C/i conditional/fitting KL components and finite-K coverage are measured.",
+      "boundary": "No population dominance or parameter-capacity causal fraction is identified."
+    },
+    "Q3": {
+      "status": "supported",
+      "claim": "Correct predecessor correspondence improves the frozen same-state mapping relative to permutation and joint raw under the locked criterion.",
+      "boundary": "Only corresponding input information is implicated; calibration effects and missing coverage remain explicit."
+    },
+    "Q4": {
+      "status": "supported",
+      "claim": "B isolates the existing head's local effect on one fixed joint body/state.",
+      "boundary": "Different-body official gains cannot be apportioned into training/inference percentages."
+    },
+    "Q5": {
+      "status": "inconclusive",
+      "claim": "Native expected/observed emittable proposal survival is separately audited if actual emission records are available.",
+      "boundary": "No native mechanism claim follows from target-branch improvements alone; no teacher/proposal overlap-product substitution."
+    },
+    "Q6": {
+      "status": "supported",
+      "claim": "The prespecified effect is evaluated once on this analysis's held-out prompt groups.",
+      "boundary": "Available-sample scope; test is not guaranteed unused in historical training/project work; no predictive probe was fitted here."
+    },
+    "Q7": {
+      "status": "inconclusive",
+      "claim": "Only source-grounded empirical mismatch patterns could add knowledge beyond the existing standard tools.",
+      "boundary": "KL/TV identities, prefix objectives and sparse-logit architecture are not themselves new contributions."
+    }
+  },
+  "new_head_or_body_fit": false,
+  "native_C_falsified": false
+}

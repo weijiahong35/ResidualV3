@@ -1,0 +1,87 @@
+{
+  "status": "complete",
+  "rows": [
+    {
+      "arm": "RAW",
+      "T": 0,
+      "acceptance_length": 3.954496851609837,
+      "tokens_per_second": 255.8753041861265,
+      "acceptance_ratio_vs_RAW": 1.0,
+      "throughput_ratio_vs_RAW": 1.0,
+      "acceptance_ratio_vs_ADDITIVE": 0.9685306474281841,
+      "throughput_ratio_vs_ADDITIVE": 1.070104497479899
+    },
+    {
+      "arm": "E3",
+      "T": 0,
+      "acceptance_length": 4.081233523389123,
+      "tokens_per_second": 241.63056761751724,
+      "acceptance_ratio_vs_RAW": 1.0320487476751166,
+      "throughput_ratio_vs_RAW": 0.9443293810087765,
+      "acceptance_ratio_vs_ADDITIVE": 0.9995708417632271,
+      "throughput_ratio_vs_ADDITIVE": 1.010531117719901
+    },
+    {
+      "arm": "ADDITIVE",
+      "T": 0,
+      "acceptance_length": 4.082985770363101,
+      "tokens_per_second": 239.11244629726724,
+      "acceptance_ratio_vs_RAW": 1.0324918500569693,
+      "throughput_ratio_vs_RAW": 0.9344881760192623,
+      "acceptance_ratio_vs_ADDITIVE": 1.0,
+      "throughput_ratio_vs_ADDITIVE": 1.0
+    },
+    {
+      "arm": "INTERACTION",
+      "T": 0,
+      "acceptance_length": 4.080983325159392,
+      "tokens_per_second": 239.21524125601334,
+      "acceptance_ratio_vs_RAW": 1.0319854783796485,
+      "throughput_ratio_vs_RAW": 0.9348899145108804,
+      "acceptance_ratio_vs_ADDITIVE": 0.9995095635115252,
+      "throughput_ratio_vs_ADDITIVE": 1.0004299021666916
+    },
+    {
+      "arm": "RAW",
+      "T": 1,
+      "acceptance_length": 3.205114414238216,
+      "tokens_per_second": 206.87844188793798,
+      "acceptance_ratio_vs_RAW": 1.0,
+      "throughput_ratio_vs_RAW": 1.0,
+      "acceptance_ratio_vs_ADDITIVE": 0.8666829800738789,
+      "throughput_ratio_vs_ADDITIVE": 0.9598527406738985
+    },
+    {
+      "arm": "E3",
+      "T": 1,
+      "acceptance_length": 3.685537422622397,
+      "tokens_per_second": 217.20663019754807,
+      "acceptance_ratio_vs_RAW": 1.149892623567501,
+      "throughput_ratio_vs_RAW": 1.04992394671652,
+      "acceptance_ratio_vs_ADDITIVE": 0.996592365758453,
+      "throughput_ratio_vs_ADDITIVE": 1.0077723777550078
+    },
+    {
+      "arm": "ADDITIVE",
+      "T": 1,
+      "acceptance_length": 3.6981393288293276,
+      "tokens_per_second": 215.53143843991285,
+      "acceptance_ratio_vs_RAW": 1.1538244352216962,
+      "throughput_ratio_vs_RAW": 1.041826477776075,
+      "acceptance_ratio_vs_ADDITIVE": 1.0,
+      "throughput_ratio_vs_ADDITIVE": 1.0
+    },
+    {
+      "arm": "INTERACTION",
+      "T": 1,
+      "acceptance_length": 3.6225372154115587,
+      "tokens_per_second": 211.49447722332167,
+      "acceptance_ratio_vs_RAW": 1.1302364743420725,
+      "throughput_ratio_vs_RAW": 1.022312790512431,
+      "acceptance_ratio_vs_ADDITIVE": 0.9795567157709817,
+      "throughput_ratio_vs_ADDITIVE": 0.9812697337993379
+    }
+  ],
+  "limits": "One seed and forward round; historical C1 panel; no statistical significance claim",
+  "utc": "2026-10-01T08:04:13.211780+00:00"
+}

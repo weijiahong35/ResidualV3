@@ -1,0 +1,236 @@
+{
+  "overlap": {
+    "holdout_states": 720,
+    "A_beats_B_margin_fraction": 0.16805555555555557,
+    "B_beats_A_margin_fraction": 0.20972222222222223,
+    "margin": 0.005,
+    "two_experts_without_KEEP_oracle": 0.5874277949333191,
+    "two_experts_oracle_versus_best_expert_diagnostic": {
+      "mean": 0.008958671241998672,
+      "ci95": [
+        0.006787657295353711,
+        0.011389285884797573
+      ],
+      "unit": "prompt",
+      "groups": 24
+    },
+    "two_experts_oracle_versus_general": {
+      "mean": 0.007125782314687967,
+      "ci95": [
+        0.004130018223077059,
+        0.010342342499643564
+      ],
+      "unit": "prompt",
+      "groups": 24
+    },
+    "KEEP_increment_to_two_expert_oracle": {
+      "mean": 0.004281884059309959,
+      "ci95": [
+        0.002277667715679854,
+        0.006714087608270344
+      ],
+      "unit": "prompt",
+      "groups": 24
+    },
+    "learned_versus_general": {
+      "mean": -0.001819917932152748,
+      "ci95": [
+        -0.005421991355251521,
+        0.00201460270909592
+      ],
+      "unit": "prompt",
+      "groups": 24
+    },
+    "learned_versus_original": {
+      "mean": 0.0034630580339580774,
+      "ci95": [
+        0.0005909360028454102,
+        0.006510032853111624
+      ],
+      "unit": "prompt",
+      "groups": 24
+    },
+    "randomized_same_action_frequency_mean": 0.5720269288420677,
+    "randomized_same_action_frequency_interval95": [
+      0.5675632804632187,
+      0.5758169233798981
+    ],
+    "matched_frequency_randomization_one_sided_p": 0.000999000999000999,
+    "feature_ablations": {
+      "POSITION_ONLY": {
+        "alpha_selected_on_validation": 1000.0,
+        "holdout_mean": 0.5784691572189331,
+        "versus_general": {
+          "mean": -0.0018328884616494179,
+          "ci95": [
+            -0.005392584926448762,
+            0.0016288705344777547
+          ],
+          "unit": "prompt",
+          "groups": 24
+        }
+      },
+      "RAW_Q45_ONLY": {
+        "alpha_selected_on_validation": 100.0,
+        "holdout_mean": 0.5794454216957092,
+        "versus_general": {
+          "mean": -0.0008566280012018979,
+          "ci95": [
+            -0.004394275322556496,
+            0.003007863566745072
+          ],
+          "unit": "prompt",
+          "groups": 24
+        }
+      },
+      "SHARED_PHI16_ONLY": {
+        "alpha_selected_on_validation": 1000.0,
+        "holdout_mean": 0.578229546546936,
+        "versus_general": {
+          "mean": -0.002072442090138793,
+          "ci95": [
+            -0.005538129503838718,
+            0.0017322506726486601
+          ],
+          "unit": "prompt",
+          "groups": 24
+        }
+      },
+      "ALL_VISIBLE": {
+        "alpha_selected_on_validation": 1000.0,
+        "holdout_mean": 0.5784820914268494,
+        "versus_general": {
+          "mean": -0.001819917932152748,
+          "ci95": [
+            -0.005303022777661681,
+            0.002185138629283753
+          ],
+          "unit": "prompt",
+          "groups": 24
+        }
+      }
+    }
+  },
+  "agreement": {
+    "holdout_states": 720,
+    "A_beats_B_margin_fraction": 0.0125,
+    "B_beats_A_margin_fraction": 0.0125,
+    "margin": 0.5,
+    "two_experts_without_KEEP_oracle": 0.6180555555555556,
+    "two_experts_oracle_versus_best_expert_diagnostic": {
+      "mean": 0.012500000000000002,
+      "ci95": [
+        0.004166666666666667,
+        0.022222222222222227
+      ],
+      "unit": "prompt",
+      "groups": 24
+    },
+    "two_experts_oracle_versus_general": {
+      "mean": 0.012500000000000002,
+      "ci95": [
+        0.004166666666666667,
+        0.022222222222222223
+      ],
+      "unit": "prompt",
+      "groups": 24
+    },
+    "KEEP_increment_to_two_expert_oracle": {
+      "mean": 0.009722222222222222,
+      "ci95": [
+        0.004166666666666667,
+        0.016666666666666666
+      ],
+      "unit": "prompt",
+      "groups": 24
+    },
+    "learned_versus_general": {
+      "mean": 0.002777777777777777,
+      "ci95": [
+        -0.008333333333333333,
+        0.01388888888888889
+      ],
+      "unit": "prompt",
+      "groups": 24
+    },
+    "learned_versus_original": {
+      "mean": 0.0,
+      "ci95": [
+        -0.006979166666666665,
+        0.008333333333333333
+      ],
+      "unit": "prompt",
+      "groups": 24
+    },
+    "randomized_same_action_frequency_mean": 0.5984069444444444,
+    "randomized_same_action_frequency_interval95": [
+      0.5902777777777778,
+      0.6055555555555555
+    ],
+    "matched_frequency_randomization_one_sided_p": 0.006993006993006993,
+    "feature_ablations": {
+      "POSITION_ONLY": {
+        "alpha_selected_on_validation": 10.0,
+        "holdout_mean": 0.6055555555555555,
+        "versus_general": {
+          "mean": 2.8912057932946783e-19,
+          "ci95": [
+            -0.012500000000000002,
+            0.012500000000000002
+          ],
+          "unit": "prompt",
+          "groups": 24
+        }
+      },
+      "RAW_Q45_ONLY": {
+        "alpha_selected_on_validation": 1000.0,
+        "holdout_mean": 0.6069444444444444,
+        "versus_general": {
+          "mean": 0.0013888888888888894,
+          "ci95": [
+            -0.011111111111111113,
+            0.01388888888888889
+          ],
+          "unit": "prompt",
+          "groups": 24
+        }
+      },
+      "SHARED_PHI16_ONLY": {
+        "alpha_selected_on_validation": 1000.0,
+        "holdout_mean": 0.6069444444444444,
+        "versus_general": {
+          "mean": 0.0013888888888888883,
+          "ci95": [
+            -0.009722222222222224,
+            0.01388888888888889
+          ],
+          "unit": "prompt",
+          "groups": 24
+        }
+      },
+      "ALL_VISIBLE": {
+        "alpha_selected_on_validation": 1000.0,
+        "holdout_mean": 0.6083333333333333,
+        "versus_general": {
+          "mean": 0.002777777777777777,
+          "ci95": [
+            -0.008333333333333333,
+            0.01388888888888889
+          ],
+          "unit": "prompt",
+          "groups": 24
+        }
+      }
+    }
+  },
+  "scope": "single pilot; local teacher-prefix scores, not native accepted length or throughput",
+  "split_groups_disjoint": true,
+  "E2_training_data_reused": true,
+  "decision": "Pipeline shakedown only: 24 held-out prompts from E2-used short training sequences cannot support or refute specialist routing. Observed local scores are not robust mechanism evidence. Larger independent data and controls are required; no native speed claim.",
+  "artifact_sha256": {
+    "analyze.py": "d88f63fe6eeda50931fd858c843a3014ffb6a2d5b9ae839244d8d5fbc45148d5",
+    "state_scores.npz": "3419bc6804bb37b562a94b1deaf5d7edb5ed53a77e483430d3d27067e27a9bfb",
+    "router_parameters.json": "8c28554b5f859ee4e645143b4ef54e609e5c1baa9dc1881bdf94fac485beef4d",
+    "RESULTS.json": "b91e6c4a4fc6e7ed9c7a5b1e690210a3e603c5d09d964feb4434c8d62fa75b07"
+  }
+}

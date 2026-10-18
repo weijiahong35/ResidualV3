@@ -1,0 +1,18 @@
+{
+  "time_unix": 1792286973.0834115,
+  "user_authorized": true,
+  "before": {
+    "enabled": true,
+    "allowed_actions": "all",
+    "sha_pinning_required": false
+  },
+  "after": {
+    "enabled": false,
+    "sha_pinning_required": false
+  },
+  "running": 0,
+  "queued": 0,
+  "account_notifications_changed": false,
+  "project_uploaded": false,
+  "prs_closed": false
+}

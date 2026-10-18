@@ -1,0 +1,28 @@
+{
+  "UTC": "2026-10-16T06:26:20.623024+00:00",
+  "status": "sealed_before_C_results",
+  "selected_candidate_ids": [],
+  "candidate_lock_SHA": "e0b9310925462226d3be2df5ad618da0425170765759db14b8f58530efa62fe9",
+  "diagnostics_SHA": "c3135e941a966d10abff9eccc710ffe77bad8e2f66ed78e0903d08876020a0fe",
+  "head_C_read": false,
+  "decisions": [
+    {
+      "id": "K1",
+      "label": "data_cannot_distinguish",
+      "reason": "P主场景0/36题有定义，必要预测未被检验；不是反证，不放宽全历史同意/0.9/两H条件。D2缺匹配干预。"
+    },
+    {
+      "id": "K2",
+      "label": "novelty_covered_by_prior_work",
+      "reason": "三域各12/12题欠量方向成立，但候选存在/条件重选的宽泛机制已经被DCOCO、Domino、DSpark覆盖；D2不能分离本地条件缺失与映射拟合。没有可定位的新增来源证据。"
+    },
+    {
+      "id": "K3",
+      "label": "necessary_prediction_not_observed",
+      "reason": "三域4/12、4/12、0/12满足冻结硬频数靠近方向；域均值均反向。只削弱此档案预测版本，不否定真实硬监督的所有影响。"
+    }
+  ],
+  "stop_reason": "没有同时具备足够场景覆盖、未被近邻覆盖的具体增量与可区分来源证据的候选；零候选完成，不换阈值/候选/域，不自动训练。",
+  "next_controlled_test": null,
+  "C_may_not_change_selection": true
+}

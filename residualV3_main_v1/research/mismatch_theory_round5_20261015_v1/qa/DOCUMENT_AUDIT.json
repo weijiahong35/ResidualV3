@@ -1,0 +1,19 @@
+{
+  "documents_only": true,
+  "model_experiments_started": false,
+  "local_link_targets_checked": 9,
+  "missing_links": [],
+  "changed_R4_key_files": [],
+  "missing_prerequisite_theory_files": [],
+  "math_contracts": true,
+  "documents": {
+    "README_CN.md": "73f3ee6cc808557b40fe5eb24131cf2c4a468fa09879a42353c7526140997e6c",
+    "THEORY_PLAN_CN.md": "7cb1c5b7cea08d501e1bd43f9734e2e766033772906bfca207bbb8459df1c60d",
+    "EXECUTION_GUIDE_CN.md": "70584abea00e7911a12c80a02e267138c6fdc63daec783243802e14865fc9afd",
+    "START_PROMPT_CN.md": "5ab08798b736171432eca77be873032e39909c1cccca24a91dc1075df75747f4",
+    "sources/READING_GUIDE_CN.md": "97347b8ac9641737507ae184c345150406b619ebd08c12568f0bcc3eb8ffa260",
+    "qa/REVIEW_NOTES_CN.md": "bd8801a4f016fe0d71b0f7de661c45833f8c27b06841392c7b7f3e53fc93f23a"
+  },
+  "review_status": "ready_for_handoff",
+  "final_validation_passed": true
+}

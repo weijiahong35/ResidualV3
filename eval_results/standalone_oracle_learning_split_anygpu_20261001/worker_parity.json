@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "workers": 7,
+  "max_iter": 120,
+  "starts": 3,
+  "all_solver_tensors_and_scalar_records_exact": true,
+  "fixture": "check_worker_parity.py"
+}

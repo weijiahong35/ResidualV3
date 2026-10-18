@@ -1,0 +1,123 @@
+{
+  "status": "passed",
+  "device": "cpu",
+  "new_training": false,
+  "gpu_jobs_started": 0,
+  "checks": {
+    "density_ratio_and_three_term_decomposition": {
+      "passed": true,
+      "max_error": 0.0
+    },
+    "parallel_KL_decomposition_and_Markov_projection": {
+      "passed": true,
+      "parallel_KL": 0.22215332331766918,
+      "total_correlation": 0.027761842719276997,
+      "sum_marginal_KL": 0.19439148059839229,
+      "optimal_Markov_KL": 0.008452456042982729,
+      "remaining_conditional_mutual_information": 0.00845245604298274,
+      "scope": "exact finite-distribution identities; no claim these values measure real DFlash"
+    },
+    "lag1_information_limit": {
+      "passed": true,
+      "two_matching_lag1_targets": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.1,
+          0.9
+        ]
+      ],
+      "minimum_mean_forward_KL": 0.36806420716849714,
+      "interpretation": "no deterministic identical-input repair can match both targets; this is a constructed theorem witness, not measured real-data CMI"
+    },
+    "OUTPUT_not_exact_expected_acceptance": {
+      "passed": true,
+      "first_survival": 0.2,
+      "second_survival_exact": 0.12000000000000002,
+      "second_survival_teacher_product": 0.18400000000000002,
+      "normalized_expected_accepted_draft_count": 0.16000000000000003,
+      "real_code_teacher_objective_score": 0.19199998974800112,
+      "bonus_token_excluded": true
+    },
+    "overlap_improves_while_greedy_worsens": {
+      "passed": true,
+      "target": [
+        0.4,
+        0.35,
+        0.25
+      ],
+      "before": [
+        0.41,
+        0.2,
+        0.39
+      ],
+      "after": [
+        0.37,
+        0.38,
+        0.25
+      ],
+      "overlap_before": 0.8500000000000001,
+      "overlap_after": 0.97
+    },
+    "basis_direction_is_negative_forward_KL_hidden_gradient": {
+      "passed": true,
+      "error": 2.220446049250313e-16
+    },
+    "OUTPUT_analytic_gradient": {
+      "passed": true,
+      "max_error": 6.938893903907228e-18,
+      "not_equal_to_KL_gradient": true
+    },
+    "candidate_Fisher_geometry": {
+      "passed": true,
+      "hessian_error": 1.1102230246251565e-16,
+      "small_step_exact_KL": 2.6876549201612036e-07,
+      "quadratic_KL": 2.6882156101499163e-07
+    },
+    "support_and_gauge": {
+      "passed": true,
+      "outside_odds_preserved": true,
+      "outside_probabilities_change": true,
+      "candidate_only_constant_is_not_global_gauge": true
+    },
+    "q_moment_not_necessarily_lossy_with_fixed_ids": {
+      "passed": true,
+      "rank": 3,
+      "input_dimension": 3,
+      "output_dimension": 5,
+      "recovery_error": 1.3877787807814457e-16
+    },
+    "actual_checkpoint_output_span": {
+      "passed": true,
+      "checkpoint_sha256": "999c7f35ac5c10d7d4cc526f1c4f366fdb2c71e902a57f144afaf222ab75b035",
+      "direction_weight_shape": [
+        512,
+        256
+      ],
+      "direction_matrix_rank": 256,
+      "final_LN_affine_direction_span_rank": 256,
+      "rank_threshold": 1e-09,
+      "smallest_augmented_singular_values": [
+        0.06827269486986222,
+        0.020279441586217327,
+        6.532787446710905e-17
+      ],
+      "rank_bound": 256,
+      "interpretation": "relaxed C_I full-rank oracle did not enforce this learned span, LN manifold or input mapping; BF16 introduces additional rounding"
+    },
+    "basis_orthogonality_after_BF16": {
+      "passed": true,
+      "shape": [
+        512,
+        4096
+      ],
+      "stored_dtype": "torch.float32",
+      "gram_eigenvalue_min": 0.9983237127620777,
+      "gram_eigenvalue_max": 1.0016535621975697,
+      "max_gram_entry_error": 0.0002956371728961571
+    }
+  },
+  "check_count": 12
+}

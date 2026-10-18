@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "diagnostic_only": true,
+  "old_small_sources_unchanged": true,
+  "E2_large_asset_sha_verified_at_pilot_start_and_end": true,
+  "old_design_sha_unchanged": true,
+  "split_groups_disjoint": true,
+  "score_recomputed_by_cpu_audit": true,
+  "pilot_host_and_gpu_process_exited": true,
+  "formal_windows_unchanged": true,
+  "ledger_counts": {
+    "thinking": {
+      "experiments": 71,
+      "formal_windows": 322
+    },
+    "nonthinking": {
+      "experiments": 70,
+      "formal_windows": 315
+    }
+  },
+  "user_system_update_stop_record": "SYSTEM_UPDATE_STOP.json",
+  "research_evidence_level": "pipeline_only_insufficient_sample",
+  "large_sample_run_started": false,
+  "large_sample_plan_sha256": "2ed0a89d23c4757e27ffc439d88213ecf53e34c4ccf8453e040913dbf2b028c4",
+  "data_availability_audit_sha256": "9f545d1a2639fb1b58a6af17a2208fc3b1e0a6a5667d16d68328a7d48ca0343e"
+}

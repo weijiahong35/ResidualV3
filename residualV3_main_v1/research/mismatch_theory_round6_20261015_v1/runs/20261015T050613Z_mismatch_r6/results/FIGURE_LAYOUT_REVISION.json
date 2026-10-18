@@ -1,0 +1,63 @@
+{
+  "UTC": "2026-10-15T06:40:56.394165+00:00",
+  "reason": "visual inspection found overlapping subplot labels; layout-only revision",
+  "old_figures_preserved": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round6_20261015_v1/runs/20261015T050613Z_mismatch_r6/data/tmp/figure_layout_v0",
+  "old_SHA256": {
+    "01_history_coverage_and_stability.png": "fb88495b9723edc7d625ee915eadd9c64c3402413b3956c78766d6227d309487",
+    "01_history_coverage_and_stability.pdf": "912381b5e6acfdee5f051f0cb1c389f0b58c01a5109209357d4ac8320ec4c396",
+    "02_damage_prediction_and_calibration.png": "2c2bf16b16f0020747b1cab391785a681d5d5e9ba82c1048c87faa4fde079c00",
+    "02_damage_prediction_and_calibration.pdf": "95e1758e32ed247f7837af8c582a8307efa1ce7af1fbd65b1c95198d4d4209e9",
+    "03_secondary_gain_and_direction.png": "a4150fac532c9028dcf68457f9f5b711d6fe8bcba9965d81962d930d9f0c9ce6",
+    "03_secondary_gain_and_direction.pdf": "832d767d08a0ed5a00386ca2cf52d950b91f9779aa479460e8366efcec5c0ab3",
+    "04_fixed_natural_pair_and_relaxed_space.png": "f727c54ab724a9300cf9f5cf475dc931829f41f5044d32e7c2d4cbb5e14fe144",
+    "04_fixed_natural_pair_and_relaxed_space.pdf": "d8b3d6714d98d3afd1abf430a24f3649070a458614f817c6bbfecb6e403c09cb"
+  },
+  "summary_SHA256": "bb98ef28403166a6bdea0e135868c7dda6ac2119b98c39ac93d0bd90d1decfdd",
+  "pairs_SHA256": "af49b9046f7f138b4dfe86cee818edec32f8dfb108daf246647da6ead4b560ba",
+  "scientific_values_models_predictions_unchanged": true,
+  "new_plot_categories": 0,
+  "plot_categories": 4,
+  "figures": [
+    {
+      "path": "results/figures/01_history_coverage_and_stability.pdf",
+      "sha256": "9c92a47911e8179d0121194969333f24a0c284afbb7aa41989358ac05e194e86",
+      "bytes": 17702
+    },
+    {
+      "path": "results/figures/01_history_coverage_and_stability.png",
+      "sha256": "ea3d628ae827513a42f05e012783632b5311a49619563702439e6a50611f87be",
+      "bytes": 66466
+    },
+    {
+      "path": "results/figures/02_damage_prediction_and_calibration.pdf",
+      "sha256": "a77f6dcf1961f04552d0cf80f3222b124e6ae3e71684ae34563ce1d95c3183f1",
+      "bytes": 26308
+    },
+    {
+      "path": "results/figures/02_damage_prediction_and_calibration.png",
+      "sha256": "f6885f495d1eb4fc5a767cb9ff564ba400e23b0f899da6d320e4f0d859e6dfba",
+      "bytes": 192849
+    },
+    {
+      "path": "results/figures/03_secondary_gain_and_direction.pdf",
+      "sha256": "32dd50084c7d4fe541dd16d334e95aef624d67b7b3dc52795727b3343c58b81d",
+      "bytes": 17667
+    },
+    {
+      "path": "results/figures/03_secondary_gain_and_direction.png",
+      "sha256": "ecc59733ff3e3b8119872febd37cf4b21061005d96b6115976106e5e0e44b51c",
+      "bytes": 63677
+    },
+    {
+      "path": "results/figures/04_fixed_natural_pair_and_relaxed_space.pdf",
+      "sha256": "ef69e1e961928d64e40607c683b7b742a0699815b0bc25420dbfac5e1c55c942",
+      "bytes": 19897
+    },
+    {
+      "path": "results/figures/04_fixed_natural_pair_and_relaxed_space.png",
+      "sha256": "445018ed5953a452b2f2e1374eeac1580349368888d62c6a0547b15603cc4c7a",
+      "bytes": 84933
+    }
+  ],
+  "source_code_sha256": "8acd68afa5950648bf9fdf22f4506f273220f2103e7123b954638a37dc0f2ce4"
+}

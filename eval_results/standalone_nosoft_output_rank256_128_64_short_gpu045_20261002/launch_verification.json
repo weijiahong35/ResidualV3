@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "scope": "Launch verification; experiments remain in progress",
+  "matched_completed_updates": 87,
+  "anchor_answer_pairing_against_old_Top64": true,
+  "common_initial_tensor_hashes_identical": true,
+  "arms": {
+    "256": {
+      "gpu": 0,
+      "completed_steps": 87,
+      "total_steps": 384,
+      "random_reset_verified": true,
+      "feature_table_training_native_parity": true,
+      "real_q_effect_and_gradient_passed": true
+    },
+    "128": {
+      "gpu": 4,
+      "completed_steps": 89,
+      "total_steps": 384,
+      "random_reset_verified": true,
+      "feature_table_training_native_parity": true,
+      "real_q_effect_and_gradient_passed": true
+    },
+    "64": {
+      "gpu": 5,
+      "completed_steps": 90,
+      "total_steps": 384,
+      "random_reset_verified": true,
+      "feature_table_training_native_parity": true,
+      "real_q_effect_and_gradient_passed": true
+    }
+  },
+  "utc": "2026-10-02T02:17:35.220232+00:00"
+}

@@ -1,0 +1,17 @@
+{
+  "pid": 177152,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/full_joint_body_shared_teacher_epoch2_20261009_v1/outer_controller.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_teacher1_3gpu_20261009_v1"
+  ],
+  "utc": "2026-10-09T15:33:01.618236+00:00",
+  "user_authorized_wait_for_empty_cards": true,
+  "epochs_to_run": 1,
+  "training_epoch": 2,
+  "teacher_dp": 1,
+  "teacher_tp": 1,
+  "learners": 2
+}

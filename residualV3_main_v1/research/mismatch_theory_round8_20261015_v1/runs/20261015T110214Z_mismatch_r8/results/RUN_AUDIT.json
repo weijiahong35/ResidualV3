@@ -1,0 +1,1007 @@
+{
+  "UTC": "2026-10-15T12:58:06.177523+00:00",
+  "status": "passed",
+  "scientific_work_complete": true,
+  "resources": {
+    "GPU_hours": 1.3879860799180137,
+    "GPU_limit_hours": 8,
+    "CPU_hours_booked": 1.8174279075000002,
+    "CPU_limit_hours": 24,
+    "CPU_includes_conservative_closure_seconds": 600,
+    "actual_allocated_disk_GiB_before_small_closure_files": 21.02373504638672,
+    "disk_limit_GiB": 700,
+    "gross_disk_conservative_upper_GiB": 46.223106384277344,
+    "own_peak_observed_GPU_MiB": 26796,
+    "GPU_jobs": [
+      {
+        "job_id": "dev6_f7b2680da9",
+        "status": "failed",
+        "GPU_UUID": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+        "GPU_index": 5,
+        "GPU_hours": 0.011800917519463433,
+        "reason": "worker_exit_1"
+      },
+      {
+        "job_id": "dev6_retry1_0e854eeba8",
+        "status": "complete",
+        "GPU_UUID": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+        "GPU_index": 7,
+        "GPU_hours": 0.0716380187537935,
+        "reason": null
+      },
+      {
+        "job_id": "fresh36_a220abf723",
+        "status": "complete",
+        "GPU_UUID": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+        "GPU_index": 5,
+        "GPU_hours": 1.3045471436447567,
+        "reason": null
+      }
+    ],
+    "one_GPU_at_a_time": true,
+    "shared_GPU_allowed_and_used": true,
+    "no_TPS_reported": true
+  },
+  "prior_formal_terminal_audit": {
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/status.json": {
+      "status": "complete",
+      "sha256": "43b4b1f43ace75efa0896aab19f9b8be71e2798a785a1fddd23a4c987e9867dc"
+    },
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/FINAL_AUDIT.json": {
+      "status": "passed",
+      "sha256": "d2802606daac9b2ed88e6a23b62dd0c4754b0da6b3aa50ff78bff0493171abcb"
+    },
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/maintenance/complete_dspark_eval_20261013_v1/status.json": {
+      "status": "complete",
+      "sha256": "9404ab96b278f6257c0ec1edc8ee7749b18ec88eef01a873a9bdc1ab5ff597a6"
+    },
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/maintenance/complete_dspark_eval_20261013_v1/COMPLETION_AUDIT.json": {
+      "status": "passed",
+      "sha256": "aee1d4e2ea4607b8b3012cf9e44e954ec1c89204aeb1de09731edf03ab255376"
+    }
+  },
+  "all_recorded_experiment_and_workflow_processes_exited": true,
+  "owned_identity_records": [
+    {
+      "pid": 3921475,
+      "ppid": 3921205,
+      "pgid": 3921475,
+      "uid": 1024,
+      "start_ticks": 27276934,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/collect_r8.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 4
+    },
+    {
+      "pid": 3921205,
+      "ppid": 1,
+      "pgid": 3921205,
+      "uid": 1024,
+      "start_ticks": 27276798,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/gpu_budget.py",
+        "--stage",
+        "dev6",
+        "--stage-hours",
+        "1.5",
+        "--expected-peak-mib",
+        "28000",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/collect_r8.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3941430,
+      "ppid": 3940986,
+      "pgid": 3941430,
+      "uid": 1024,
+      "start_ticks": 27289803,
+      "state": "R",
+      "command": [],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3940986,
+      "ppid": 1,
+      "pgid": 3940986,
+      "uid": 1024,
+      "start_ticks": 27289619,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/gpu_budget.py",
+        "--stage",
+        "dev6_retry1",
+        "--stage-hours",
+        "1.5",
+        "--expected-peak-mib",
+        "28000",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/collect_r8.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 4009395,
+      "ppid": 4009023,
+      "pgid": 4009395,
+      "uid": 1024,
+      "start_ticks": 27335010,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/collect_r8.py",
+        "--split",
+        "fresh_test"
+      ],
+      "OS_threads": 6
+    },
+    {
+      "pid": 4009023,
+      "ppid": 4009018,
+      "pgid": 4009018,
+      "uid": 1024,
+      "start_ticks": 27334802,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/gpu_budget.py",
+        "--stage",
+        "fresh36",
+        "--stage-hours",
+        "7.5",
+        "--expected-peak-mib",
+        "29000",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/collect_r8.py",
+        "--split",
+        "fresh_test"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3887893,
+      "ppid": 3887885,
+      "pgid": 3887893,
+      "uid": 1024,
+      "start_ticks": 27256910,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/prepare_inputs.py"
+      ],
+      "OS_threads": 2
+    },
+    {
+      "pid": 3887885,
+      "ppid": 2734910,
+      "pgid": 3887885,
+      "uid": 1024,
+      "start_ticks": 27256904,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_runner.py",
+        "--stage",
+        "inputs",
+        "--wall-seconds",
+        "600",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/prepare_inputs.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3918586,
+      "ppid": 3918577,
+      "pgid": 3918586,
+      "uid": 1024,
+      "start_ticks": 27275359,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/check_contracts.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3918577,
+      "ppid": 2734910,
+      "pgid": 3918577,
+      "uid": 1024,
+      "start_ticks": 27275350,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_runner.py",
+        "--stage",
+        "contracts",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/check_contracts.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3921205,
+      "ppid": 3921201,
+      "pgid": 3921205,
+      "uid": 1024,
+      "start_ticks": 27276798,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/gpu_budget.py",
+        "--stage",
+        "dev6",
+        "--stage-hours",
+        "1.5",
+        "--expected-peak-mib",
+        "28000",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/collect_r8.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3921205,
+      "ppid": 1,
+      "pgid": 3921205,
+      "uid": 1024,
+      "start_ticks": 27276798,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/gpu_budget.py",
+        "--stage",
+        "dev6",
+        "--stage-hours",
+        "1.5",
+        "--expected-peak-mib",
+        "28000",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/collect_r8.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3938575,
+      "ppid": 3938541,
+      "pgid": 3938575,
+      "uid": 1024,
+      "start_ticks": 27287800,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/check_head_fix.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3938541,
+      "ppid": 2734910,
+      "pgid": 3938541,
+      "uid": 1024,
+      "start_ticks": 27287794,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_runner.py",
+        "--stage",
+        "head_fix_contract",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/check_head_fix.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3940986,
+      "ppid": 3940975,
+      "pgid": 3940986,
+      "uid": 1024,
+      "start_ticks": 27289619,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/gpu_budget.py",
+        "--stage",
+        "dev6_retry1",
+        "--stage-hours",
+        "1.5",
+        "--expected-peak-mib",
+        "28000",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/collect_r8.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3940986,
+      "ppid": 1,
+      "pgid": 3940986,
+      "uid": 1024,
+      "start_ticks": 27289619,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/gpu_budget.py",
+        "--stage",
+        "dev6_retry1",
+        "--stage-hours",
+        "1.5",
+        "--expected-peak-mib",
+        "28000",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/collect_r8.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3988374,
+      "ppid": 3988363,
+      "pgid": 3988374,
+      "uid": 1024,
+      "start_ticks": 27320781,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_runner.py",
+        "--stage",
+        "dev_identity_pipeline",
+        "--wall-seconds",
+        "1800",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_pipeline.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3988421,
+      "ppid": 3988374,
+      "pgid": 3988421,
+      "uid": 1024,
+      "start_ticks": 27320789,
+      "state": "S",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_pipeline.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3988438,
+      "ppid": 3988421,
+      "pgid": 3988421,
+      "uid": 1024,
+      "start_ticks": 27320798,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/audit_capture.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3992768,
+      "ppid": 3988421,
+      "pgid": 3988421,
+      "uid": 1024,
+      "start_ticks": 27324015,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/export_banks.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3993232,
+      "ppid": 3988421,
+      "pgid": 3988421,
+      "uid": 1024,
+      "start_ticks": 27324308,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/build_actions.py",
+        "--split",
+        "dev",
+        "--source",
+        "P"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3993587,
+      "ppid": 3988421,
+      "pgid": 3988421,
+      "uid": 1024,
+      "start_ticks": 27324425,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/build_actions.py",
+        "--split",
+        "dev",
+        "--source",
+        "D"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3993727,
+      "ppid": 3988421,
+      "pgid": 3988421,
+      "uid": 1024,
+      "start_ticks": 27324536,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/build_actions.py",
+        "--split",
+        "dev",
+        "--source",
+        "F"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3993799,
+      "ppid": 3988421,
+      "pgid": 3988421,
+      "uid": 1024,
+      "start_ticks": 27324635,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/seal_actions.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3993815,
+      "ppid": 3988421,
+      "pgid": 3988421,
+      "uid": 1024,
+      "start_ticks": 27324653,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/evaluate.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 3988374,
+      "ppid": 1,
+      "pgid": 3988374,
+      "uid": 1024,
+      "start_ticks": 27320781,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_runner.py",
+        "--stage",
+        "dev_identity_pipeline",
+        "--wall-seconds",
+        "1800",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_pipeline.py",
+        "--split",
+        "dev"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 4004237,
+      "ppid": 4004229,
+      "pgid": 4004237,
+      "uid": 1024,
+      "start_ticks": 27330956,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/lock_protocol.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 4004229,
+      "ppid": 2734910,
+      "pgid": 4004229,
+      "uid": 1024,
+      "start_ticks": 27330946,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_runner.py",
+        "--stage",
+        "pre_fresh_lock",
+        "--wall-seconds",
+        "600",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/lock_protocol.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 4009018,
+      "ppid": 4009017,
+      "pgid": 4009018,
+      "uid": 1024,
+      "start_ticks": 27334794,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/workflow.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 4009023,
+      "ppid": 4009018,
+      "pgid": 4009018,
+      "uid": 1024,
+      "start_ticks": 27334802,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/gpu_budget.py",
+        "--stage",
+        "fresh36",
+        "--stage-hours",
+        "7.5",
+        "--expected-peak-mib",
+        "29000",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/collect_r8.py",
+        "--split",
+        "fresh_test"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 64876,
+      "ppid": 64869,
+      "pgid": 64876,
+      "uid": 1024,
+      "start_ticks": 27484785,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/evidence_tools/check_remaining_fixtures.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 64869,
+      "ppid": 2734910,
+      "pgid": 64869,
+      "uid": 1024,
+      "start_ticks": 27484775,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_runner.py",
+        "--stage",
+        "extra_mathematical_contracts",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/evidence_tools/check_remaining_fixtures.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 404284,
+      "ppid": 404279,
+      "pgid": 404284,
+      "uid": 1024,
+      "start_ticks": 27804451,
+      "state": "S",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_pipeline.py",
+        "--split",
+        "fresh_test"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 404288,
+      "ppid": 404284,
+      "pgid": 404284,
+      "uid": 1024,
+      "start_ticks": 27804459,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/audit_capture.py",
+        "--split",
+        "fresh_test"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 428681,
+      "ppid": 404284,
+      "pgid": 404284,
+      "uid": 1024,
+      "start_ticks": 27831070,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/export_banks.py",
+        "--split",
+        "fresh_test"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 434273,
+      "ppid": 404284,
+      "pgid": 404284,
+      "uid": 1024,
+      "start_ticks": 27836535,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/build_actions.py",
+        "--split",
+        "fresh_test",
+        "--source",
+        "P"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 434626,
+      "ppid": 404284,
+      "pgid": 404284,
+      "uid": 1024,
+      "start_ticks": 27837664,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/build_actions.py",
+        "--split",
+        "fresh_test",
+        "--source",
+        "D"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 435613,
+      "ppid": 404284,
+      "pgid": 404284,
+      "uid": 1024,
+      "start_ticks": 27838997,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/build_actions.py",
+        "--split",
+        "fresh_test",
+        "--source",
+        "F"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 436312,
+      "ppid": 404284,
+      "pgid": 404284,
+      "uid": 1024,
+      "start_ticks": 27840380,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/seal_actions.py",
+        "--split",
+        "fresh_test"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 436488,
+      "ppid": 404284,
+      "pgid": 404284,
+      "uid": 1024,
+      "start_ticks": 27840656,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/evaluate.py",
+        "--split",
+        "fresh_test"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 448802,
+      "ppid": 404284,
+      "pgid": 404284,
+      "uid": 1024,
+      "start_ticks": 27852313,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/summarize.py",
+        "--split",
+        "fresh_test"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 448867,
+      "ppid": 404284,
+      "pgid": 404284,
+      "uid": 1024,
+      "start_ticks": 27852478,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/export_cases.py"
+      ],
+      "OS_threads": 2
+    },
+    {
+      "pid": 404279,
+      "ppid": 4009018,
+      "pgid": 4009018,
+      "uid": 1024,
+      "start_ticks": 27804446,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_runner.py",
+        "--stage",
+        "fresh_analysis",
+        "--wall-seconds",
+        "14400",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_pipeline.py",
+        "--split",
+        "fresh_test"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 467247,
+      "ppid": 467244,
+      "pgid": 467247,
+      "uid": 1024,
+      "start_ticks": 27868386,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_runner.py",
+        "--stage",
+        "reporting",
+        "--wall-seconds",
+        "3600",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/evidence_tools/report_driver.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 467258,
+      "ppid": 467247,
+      "pgid": 467258,
+      "uid": 1024,
+      "start_ticks": 27868397,
+      "state": "S",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/evidence_tools/report_driver.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 467261,
+      "ppid": 467258,
+      "pgid": 467258,
+      "uid": 1024,
+      "start_ticks": 27868399,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/evidence_tools/audit_post_exposure.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 467309,
+      "ppid": 467258,
+      "pgid": 467258,
+      "uid": 1024,
+      "start_ticks": 27868512,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/evidence_tools/final_supplements.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 467521,
+      "ppid": 467258,
+      "pgid": 467258,
+      "uid": 1024,
+      "start_ticks": 27868870,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/evidence_tools/audit_science.py"
+      ],
+      "OS_threads": 1
+    },
+    {
+      "pid": 468748,
+      "ppid": 467258,
+      "pgid": 467258,
+      "uid": 1024,
+      "start_ticks": 27870739,
+      "state": "R",
+      "command": [],
+      "OS_threads": 1
+    },
+    {
+      "pid": 467247,
+      "ppid": 1,
+      "pgid": 467247,
+      "uid": 1024,
+      "start_ticks": 27868386,
+      "state": "R",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/code/cpu_runner.py",
+        "--stage",
+        "reporting",
+        "--wall-seconds",
+        "3600",
+        "--",
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "-B",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/evidence_tools/report_driver.py"
+      ],
+      "OS_threads": 1
+    }
+  ],
+  "shared_lease_released": "GPU supervisor finally closed shared flock and all verified supervisor/worker identities are terminal; no exclusive-lock test against foreign reservations",
+  "managed_foreign_processes": false,
+  "GPU_peak_measurement_scope": "observed per-process nvidia-smi at supervisor polling; not a fractional hard quota",
+  "numeric_thread_scope": "library env set1 before imports; GPU Torch intra/inter1; driver/IO OS threads separately observed",
+  "archive_writer_current_identity": {
+    "pid": 548026,
+    "ppid": 1,
+    "pgid": 548026,
+    "uid": 1024,
+    "start_ticks": 27942732,
+    "state": "R",
+    "command": [
+      "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+      "-B",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/evidence_tools/finalize_archive.py"
+    ],
+    "OS_threads": 1
+  },
+  "archive_writer_is_not_a_running_experiment": true,
+  "native_probability_warning_cleared": false,
+  "old_rounds_frozen_and_unchanged_scoped_source_stat_verification": true,
+  "static_SHA_scope": "all stable files except manifest itself, COMPLETION, ongoing closure files and mutable disk bookkeeping; explicit exceptions in RUN_FILE_MANIFEST",
+  "closure_CPU_scope": "600 seconds conservatively booked for finalizer/verifier and short unsupervised control; actual finalizer CPU also recorded separately"
+}

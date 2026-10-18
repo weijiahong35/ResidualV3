@@ -1,0 +1,15 @@
+{
+  "pid": 3087288,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/c40_loss_eval_recovery_20261007_v2/controller.py",
+    "--source",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2",
+    "--previous",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2/evaluation_recovery_20261007_v1",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2/evaluation_recovery_20261007_v2"
+  ],
+  "utc": "2026-10-07T12:41:11.604300+00:00"
+}

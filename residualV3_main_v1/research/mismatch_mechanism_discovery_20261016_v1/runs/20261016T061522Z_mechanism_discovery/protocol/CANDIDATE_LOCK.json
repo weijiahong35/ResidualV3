@@ -1,0 +1,106 @@
+{
+  "UTC": "2026-10-16T06:25:03.971186+00:00",
+  "status": "frozen_before_D1",
+  "candidates": {
+    "K1": {
+      "question": "同C后部自然历史已一致指向高概率token时，前缀加权训练是否仍导致该token概率被稀释？",
+      "scene": "每C/source/body/i，i为8或15；至少2种完整H，全部合法eval H的target top1相同，按自然频数mean p(top1)>=0.9；不含q/头成败阈值",
+      "direction": "原raw对此共同token欠量；主量mean[p(a)-q(a)]",
+      "approximation": "losses.py dpace_loss smooth cumprod suffix sum detached weights；具体来源假说是后部有效监督预算不足；不是固定衰减，不宣称已证",
+      "competing_sources": [
+        "动态prefix权重使后部有效监督不足（源码事实仅说明权重，未实测训练梯度）",
+        "共享target融合或有限主体拟合不足（DFlare结构干预提供外部竞争依据）",
+        "历史分布变化/未采历史混合仍可能造成，有限同意不代表全分布一致"
+      ],
+      "D1": {
+        "metric": "P来源每题：场景内自然槽均值欠量，先位置/C等权再两主体等权",
+        "prediction": "每题欠量>0.1；跨域至少2域各4定义题且2/3题同向",
+        "falsifiable": "q(a)可高于p(a)，场景本身不保证欠量；未达门槛为局部/未观察",
+        "already_seen": "A/B总体熵与位置趋势已见；此场景新诊断未读"
+      },
+      "D2": {
+        "comparison": "同数据、同信息、同参数和更新/计算预算，仅更换原动态位置权重为逐block等总权的均匀分配，检验场景后部欠量是否有特异下降；固定条件融合时的预算解释与融合限制预测不同",
+        "status": "unavailable",
+        "missing": "没有同起点同预算的位置权重干预模型/逐训练位置梯度账；本包不训练，单纯相关不能确认"
+      },
+      "nearest": "D-PACE已有权重分配动机；DSpark已有条件碰撞；DFlare已有融合限制。可能的增量仅是高置信同意自然历史的剩余欠量边界，尚非新原因",
+      "independent_of_head": true
+    },
+    "K2": {
+      "question": "正确首选已在Top16而raw选错时，是否普遍低估该target token，具体缺实际前驱还是映射拟合不足？",
+      "scene": "i=3/8/15；target top1在相应raw Top16内且不同于raw top1，不筛头",
+      "direction": "p(a)-q(a)>0.1的题级稳定欠量",
+      "approximation": "hf_frozen_adapter.py body_states anchor+mask并行一次，raw不读实际H；另一来源为共享LM投影/有限拟合",
+      "competing_sources": [
+        "未见实际块内条件，已有Domino/DSpark/DCOCO直接背景",
+        "相同可见信息的概率映射或监督拟合误差；覆盖不证明隐藏状态充分"
+      ],
+      "D1": {
+        "metric": "同K1层级的p(a)-q(a)",
+        "prediction": "P每题>0.1，同一跨域门槛",
+        "falsifiable": "p=(.4,.35,.25),q=(.45,.5,.05)满足场景却p(a)-q(a)<0",
+        "already_seen": "A总体TopK覆盖已见，题级此场景欠量未读"
+      },
+      "D2": {
+        "comparison": "同监督/参数预算比较真实条件注入与原信息再映射，分辨条件恢复和再拟合",
+        "status": "unavailable",
+        "missing": "没有同信息/同监督/同预算对照重放或干预；不能用原头收益代替"
+      },
+      "nearest": "候选存在而选择错误已被DCOCO §1–3覆盖，广义来源已被Domino/DSpark覆盖；不自动作为新切口",
+      "independent_of_head": true
+    },
+    "K3": {
+      "question": "teacher argmax监督是否让raw在target概率与argmax频数明显不同时更贴近后者？",
+      "scene": "i=3/8/15，每C/source/body自然eval TV(m,r)>=0.1；不以q距离/头选",
+      "direction": "TV(q,m)-TV(q,r)>0",
+      "approximation": "losses.py CE teacher.argmax，fused_kernels.py:376；这是argmax信息舍弃的具体监督假说，不等同实际标签频数r",
+      "competing_sources": [
+        "硬化监督丢概率幅度",
+        "有限表达/优化、D-PACE权重和训练历史不同；经验r不是加权真实标签分布"
+      ],
+      "D1": {
+        "metric": "P每题TV(q,m)-TV(q,r)",
+        "prediction": "每题>0，同跨域门槛",
+        "falsifiable": "场景只限制m/r，q可以等于m而使预测失败",
+        "already_seen": "B总体方向已见，场景题级筛选未读；全部是探索不是新留出"
+      },
+      "D2": {
+        "comparison": "同信息/数据/预算仅比较hard与full-prob supervision",
+        "status": "unavailable",
+        "missing": "缺匹配训练干预及真实训练加权标签统计，本包禁止训练"
+      },
+      "nearest": "DistillSpec/LK/AngelSpec已有监督/目标比较，广义主张不新",
+      "independent_of_head": true
+    }
+  },
+  "max_diagnostics": 6,
+  "planned_numeric_D1": 3,
+  "planned_unavailable_D2": 3,
+  "head_C_unopened": true,
+  "D1_thresholds": {
+    "K1": 0.1,
+    "K2": 0.1,
+    "K3": 0
+  },
+  "primary_source": "P",
+  "secondary_sources": "D/F full tables, cannot rescue P gate",
+  "cross_domain": {
+    "domains": 2,
+    "n": 4,
+    "fraction": 0.6666666666666666
+  },
+  "technical_tolerance": 1e-12,
+  "AB_SHA": {
+    "results/RAW_ERROR_MAP.csv": "e2f319f6b988e8350d02923c81645cc061a594f386e742ad0c247c8d7665a2c7",
+    "results/SUPERVISION_DIAGNOSTIC.csv": "5577de0d52e637cde2c612ab64708ed67d2bedd86178dafc70c09851ab2e729b"
+  },
+  "diagnostic_code_SHA": "af7c9367ce830924541f2cf49fcd7fcfca2be681ad9c5a82b48311287a4d6ba1",
+  "budget_recheck": {
+    "actual_full_scan_CPU_seconds": 126.47,
+    "estimated_additional_D1_seconds": 60,
+    "factor1_5": 90,
+    "remaining_CPU_seconds": 21000,
+    "passed": true
+  },
+  "cases": "if selected, first group SHA eligible positive and first negative per domain, max6; descriptive, not biggest effects"
+}

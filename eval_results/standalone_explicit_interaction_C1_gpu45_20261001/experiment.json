@@ -1,0 +1,30 @@
+{
+  "order": [
+    "RAW",
+    "E3",
+    "ADDITIVE",
+    "INTERACTION"
+  ],
+  "training_gpus": {
+    "ADDITIVE": 4,
+    "INTERACTION": 5
+  },
+  "test_gpu": 5,
+  "concurrency": 1,
+  "original_E3_retrained": false,
+  "new_repair_initialization": "fresh_random",
+  "train128_epochs3_maxanchors1536": true,
+  "native": {
+    "temperatures": [
+      0,
+      1
+    ],
+    "prompts": 20,
+    "max_tokens": 4096,
+    "max_model_len": 8192,
+    "memory": 0.93,
+    "graphs": true,
+    "rounds": 1
+  },
+  "utc": "2026-10-01T06:51:01.784933+00:00"
+}

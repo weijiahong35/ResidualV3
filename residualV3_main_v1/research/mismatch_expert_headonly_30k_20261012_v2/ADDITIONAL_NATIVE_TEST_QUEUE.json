@@ -1,0 +1,47 @@
+{
+  "status": "authorized_ready",
+  "source_trained_depth": 3,
+  "inference_depth": 2,
+  "new_expert_training_depth": 3,
+  "default_total_gpu_limit": 2,
+  "native_eval_is_not_training_teacher_exception": true,
+  "tasks": [
+    {
+      "kind": "eval",
+      "name": "eval_gsm8k_C1",
+      "dataset": "gsm8k",
+      "C": 1
+    },
+    {
+      "kind": "eval",
+      "name": "eval_gsm8k_C32",
+      "dataset": "gsm8k",
+      "C": 32
+    },
+    {
+      "kind": "eval",
+      "name": "eval_humaneval_C1",
+      "dataset": "humaneval",
+      "C": 1
+    },
+    {
+      "kind": "eval",
+      "name": "eval_humaneval_C32",
+      "dataset": "humaneval",
+      "C": 32
+    },
+    {
+      "kind": "eval",
+      "name": "eval_mt-bench_C1",
+      "dataset": "mt-bench",
+      "C": 1
+    },
+    {
+      "kind": "eval",
+      "name": "eval_mt-bench_C32",
+      "dataset": "mt-bench",
+      "C": 32
+    }
+  ],
+  "utc": "2026-10-12T08:12:35.816245+00:00"
+}

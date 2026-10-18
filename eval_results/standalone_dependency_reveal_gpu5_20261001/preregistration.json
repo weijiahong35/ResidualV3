@@ -1,0 +1,33 @@
+{
+  "scope": "read-only D0/D1/Dprefix sensitivity plus existing frozen repair; no optimizer/training",
+  "head_protocol": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_2layer_C1_C40_gpu5_20260930/N_no_soft_2layer/native/preregistration.json",
+  "head_protocol_sha256": "eab01af0b067ea4d20bc13886b7512fa058fe2edf21ac1fbf9de6df988e8d6bf",
+  "gpu": 5,
+  "examples": 8,
+  "anchors_per_example": 32,
+  "anchor_seed": 301101,
+  "conditions": [
+    "D0",
+    "REPAIR",
+    "D1",
+    "Dprefix"
+  ],
+  "candidate_support": "diagnostic full-vocabulary comparison plus original fixed Top256 ranking; no sampling/support change",
+  "target_labels": "same legal existing answer prefix for all conditions",
+  "data_audit_sha256": "bd23d65e25b97bcd455f71bf01caa808f560220ba7618a026c16215e83bc4d06",
+  "panel_sha256": {
+    "research_dev": "6fbf93a4542e8021552bf423ac4e34c131ec4c086c80c8edd108e52d05e60430",
+    "sealed_confirmation": "015b1a3a26ee119f6df60d76b743fdc66ab6dab5248a9b2ca241d6f1815253af",
+    "pilot": "325d25dd45b0bc8e42248bc61ae47f5792f8eb1e0042fdbc17127167110352ad"
+  },
+  "confirmation_evaluated": false,
+  "mask_training_audit_sha256": "00709bdea41a26b46afa020525d2b35c56e99a4718d0593d9f75b45ca6e3d801",
+  "hidden_source": "vLLM online, tmpfs immediate unlink; frozen DFlash online",
+  "output_files": "scalar metrics only; no hidden/logit cache",
+  "source_files": {
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/dependency_probe_v1/prepare_data.py": "f94a28c5b5decd5342dbe35d43e8bc3ad0f1fcb5c741685ff6a8be184f38ddee",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/dependency_probe_v1/probe.py": "fcf0e246f022224ee8c803b0d269730b473d93e8b9cfe1aca1101dec8910e0a7",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/dependency_probe_v1/launch.py": "0c88fa903dc0b458e08850182197f9c9c7244120ec4dad83077105236a83c393"
+  },
+  "utc": "2026-10-01T02:47:36.494587+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "check": "CPU official D-PACE CE value and gradient equivalence for excluded anchor",
+  "new_value": 1.6565899848937988,
+  "official_value": 1.6565895080566406,
+  "value_difference": 4.76837158203125e-07,
+  "max_gradient_difference": 1.1175870895385742e-08,
+  "passed": true,
+  "validation_corpus_used": false,
+  "inference_test_run": false,
+  "utc": "2026-10-06T04:03:54.765178+00:00"
+}

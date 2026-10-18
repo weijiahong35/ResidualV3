@@ -1,0 +1,24 @@
+{
+  "stage": "shared_seed_300933",
+  "step": 160,
+  "total_updates": 340,
+  "fit_streak": 2,
+  "last_evaluation": {
+    "step": 160,
+    "states": 28,
+    "mean_kl": 0.0014026627682466955,
+    "max_kl": 0.009753870777785778,
+    "mean_tv": 0.004736050267256685,
+    "max_tv": 0.033310748636722565,
+    "target_overlap": 0.9872375896998814,
+    "target_top1": 1.0,
+    "baseline_correct_to_wrong": 0,
+    "oracle_greedy_eligible": 28,
+    "oracle_greedy_margin_pass": 28,
+    "distribution_pass": true,
+    "greedy_pass": true,
+    "fit_pass": true,
+    "utc": "2026-10-01T14:42:22.256450+00:00"
+  },
+  "utc": "2026-10-01T14:42:22.256581+00:00"
+}

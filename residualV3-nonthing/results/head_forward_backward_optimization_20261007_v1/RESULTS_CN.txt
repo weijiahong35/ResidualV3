@@ -1,0 +1,22 @@
+修复头前后向优化已实测；卡1、2全程排除；teacher3/联合learner4/纯DFlash learner5。
+每包65536输入token预算，整块1536anchor，15个预测位置，一包一次更新。
+主体5层Transformer＋修复头no-soft3层；联合训练总损失raw D-PACE CE＋repaired D-PACE CE＋repaired OUTPUT，系数全1。
+TF的前驱是已知teacher答案；仅改变存储/反向实现；native实际采样递推不变。
+
+完整1536真实在线状态：loss误差0.0；候选logits逐位一致True；argmax逐位一致True。
+梯度relative L2：头0.0，raw logits0.0，hidden0.0。
+联合训练头/损失前后向：0.8622 -> 0.3860秒，下降55.23%。此项包含loss与LM投影反向，不是MLP单独时间。
+联合训练峰值allocated：57.691 -> 45.556GiB；不含单独梯度校验的额外retain_grad显存。
+两组一起完成每包周期：4.2194 -> 4.3153秒；耗时变化+2.27%，吞吐变化-2.22%。本轮没有验证端到端提速。
+去掉末尾4包的中间12包周期：4.5247 -> 4.8128秒。
+按833176条、15847包外推1epoch计算时间：{'baseline': 18.573446663146218, 'optimized': 18.99553357216219}；不含保存、资源等待、异常恢复。
+24次更新loss差异：{'joint': {'max_absolute_loss_difference': 0.006563425064086914, 'first_loss_baseline': 1.7668437957763672, 'first_loss_optimized': 1.7659679651260376}, 'body': {'max_absolute_loss_difference': 0.008877217769622803, 'first_loss_baseline': 0.5342009663581848, 'first_loss_optimized': 0.5337505340576172}}；不是训练质量评估。
+两版本重新在线取hidden，未证明逐位相同；纯主体控制组loss也不同。轨迹差异来源未定位，完整梯度等价只对校验所用的同一真实状态成立。
+
+实现：仅候选logits按15位置stack，再一次全词表scatter；反向重取冻结输出基底候选行；CE/TV共享反向缓冲区但保留分别BF16舍入再相加。
+15次头网络调用和矩阵形状保留，未替换此前梯度失败的flatten/grouped-bmm原型。
+两个版本都使用同一GPU、相同初始权重/数据/anchor/优化器；每版本两learner各24次真实更新，前8次排除编译和校验。
+每版本1701条fresh在线hidden获取一次共享给两个learner，cache_salt每请求随机，读取即删除，无持久hidden/logit缓存。
+四组最终BF16权重全部保存；只验证训练实现和吞吐，未证明全部native/backbone状态bitwise一致或长期质量不变。
+保存后CPU核验：两版本的fc与全部5层抽样权重实际改变，两份头权重实际改变；四份权重完整保留。
+全数据长训仍暂停，其他人的进程未停止。

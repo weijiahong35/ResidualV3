@@ -1,0 +1,38 @@
+2026-10-04：本次实际完成结果与边界
+
+已完成：GPU4，同卡native target/DFlash，冻结Parallel_TF，T1七proposal。
+16条新开发提示；观察器开关的完整输出与逐块token哈希一致。
+129个诊断块的前缀、RNG、参数哨兵、实际修正q进入stock verifier合同全部通过。
+所有旧头/旧基底/长训权重和v1/v2证据保留，未发生新生产修复头训练。
+
+target hidden来源确认：
+在native真实propose中，重新从target辅助层构造相同fc投影，与DFlash保存的所选投影逐位一致。
+选取位置在bonus/anchor前一token，排除已拒绝后缀；再使用已有RMSNorm。
+旧TargetHidden消融确实使用target来源的压缩context，不是把draft最后hidden误标为target。
+原no-soft/Parallel_TF修复头的hidden分支是draft输出；target辅助层信息经DFlash context间接进入draft。
+这份旧target context在同一个draft块内固定，不能区分同块A→X与B→X后的状态。
+分支生成后的当前位置target hidden是额外teacher前向结果，不是当前推理可免费取得的输入。
+
+信息诊断结果：
+79个实际到达第三proposal的位置；在预设每提示最多两对的规则下尝试64对。
+10对因HF参考/native target TV超过0.02排除；31对因共享最后token的替代分支存活质量不足1e-8跳过；23对有效、覆盖14提示。
+所选有效配对的平均target TV=0.051380；相同有限动作库内，分支分别选择相对共用修正的平均overlap差=0.000279；配对质量加权差=0.000283。
+差>=0.005只有1对，并且没有提示同时满足该差值及较小分支权重>=0.05。
+因此没有通过“四提示有价值冲突”的探针门槛，CURRENT/TARGET_CONTEXT/HISTORY/SHUFFLED学习比较未启动。
+没有产出学习探针权重，也没有生产头训练、native改进版AL或C1/C40吞吐测量。
+
+能说什么：
+确认了旧target hidden来源及其块内固定的位置语义。
+这次限定配对与动作预算没有给出足够证据支持为了较早prefix信息而追加训练。
+
+不能说什么：
+不证明当前输入充分，也不证明较早历史无用。
+没有完成新增target context或新增history的跨提示预测比较，不能说两者已验证失败。
+主要观察前8块中的第三位置；较后proposal、较长thinking段及其他模式未覆盖。
+两条分支不是全部路径；pair-survival加权不是全局AL估计。
+HF参考/native差异排除会产生选择限制；保留状态仍有最多0.02参考TV容差，平均0.00028差值不宜当可靠新增收益。
+有限动作库上的最优共用修正不是整个连续修正空间的上限；更强证据需越过unconstrained_common_overlap_ceiling。
+新发现的是HF参考与native数值路径的局部分布差异，不等于实际vLLM在线训练与native发生同样差异，不能据此宣布训练实现bug或重启8倍on-policy训练。
+
+工件：RESULTS.json / RESULTS_CN.txt / VERIFICATION.json；逐对标量见native/pairs.jsonl；参考差异见native/reference_parity_checks.jsonl。
+status.json=complete，cleanup.json确认本轮服务器退出，GPU4已释放；其他GPU任务未干预。

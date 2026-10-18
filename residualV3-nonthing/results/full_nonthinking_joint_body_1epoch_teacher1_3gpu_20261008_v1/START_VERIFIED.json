@@ -1,0 +1,57 @@
+{
+  "status": "running_verified",
+  "epochs": 1,
+  "training_rows": 833176,
+  "updates_per_arm": 15847,
+  "hardware": {
+    "teacher": 3,
+    "joint": 4,
+    "body": 5
+  },
+  "excluded_gpus": [
+    1,
+    2
+  ],
+  "first_full_gpu_state_restore_verified": true,
+  "manual_checkpoint_committed_cursor": 54,
+  "manual_checkpoint_slot": 1,
+  "continued_after_manual_checkpoint": true,
+  "full_source_and_protocol_hashes_match": true,
+  "matched_data_and_anchors_between_learners": true,
+  "arms": {
+    "joint": {
+      "latest_update": 119,
+      "last_loss": 1.879131555557251,
+      "first_full_gpu_state_restore_gate": {
+        "status": "passed",
+        "cursor": 1,
+        "all_bf16_parameters_bitwise_equal": true,
+        "all_fp32_masters_bitwise_equal": true,
+        "all_optimizer_tensors_and_groups_bitwise_equal": true,
+        "cpu_cuda_python_numpy_rng_restored": true
+      },
+      "all_five_layers_and_fc_live_gradients": true,
+      "head_live_gradients": true
+    },
+    "body": {
+      "latest_update": 119,
+      "last_loss": 0.5575517416000366,
+      "first_full_gpu_state_restore_gate": {
+        "status": "passed",
+        "cursor": 1,
+        "all_bf16_parameters_bitwise_equal": true,
+        "all_fp32_masters_bitwise_equal": true,
+        "all_optimizer_tensors_and_groups_bitwise_equal": true,
+        "cpu_cuda_python_numpy_rng_restored": true
+      },
+      "all_five_layers_and_fc_live_gradients": true,
+      "head_live_gradients": false
+    }
+  },
+  "disk_cleanup_manifest": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/storage_cleanup_20261008_v1/cleanup_manifest.json",
+  "old_bf16_ablation_and_long_weights_preserved": true,
+  "checkpoint_disk_slots_preallocated": true,
+  "validation": false,
+  "evaluation": false,
+  "verified_unix_time": 1791396918.5193224
+}

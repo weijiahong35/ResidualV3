@@ -1,0 +1,2606 @@
+{
+  "experiments": {
+    "eval_results/standalone_d1_dual_feedback_ab_gpu45_v1_20260930_attempt3": {
+      "mode": "thinking",
+      "title": "LMHEAD／EMBEDDING硬软反馈 · C1",
+      "purpose": "检查冻结token输入表的选择对修复效果及成本的影响。",
+      "comparison": "RAW、LMHEAD、EMBEDDING；两个新头共同初始张量、相同anchors/answers。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "两种输入表效果接近；完整硬软三层版本C1开销较高。后续EMBEDDING输入被选为消融基线。",
+      "category": "研究实验",
+      "order": 10
+    },
+    "eval_results/standalone_d1_dual_feedback_C40_gpu4_300prompts_20260930": {
+      "mode": "thinking",
+      "title": "LMHEAD／EMBEDDING硬软反馈 · C40",
+      "purpose": "验证完整硬软反馈在多并发下的接受收益和开销。",
+      "comparison": "RAW与两种冻结输入表。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "T1有接受及吞吐收益；不同并发的成本不同，不能用C1微测替代C40。",
+      "category": "研究实验",
+      "order": 11
+    },
+    "eval_results/standalone_embedding_ablation_C1_gpu45_20260930": {
+      "mode": "thinking",
+      "title": "A–G输入／深度／尺度消融",
+      "purpose": "逐项检查当前hidden、soft lag-1、层数、修正尺度。",
+      "comparison": "RAW；A完整三层，B无hidden，C无soft，D两者均无，E/F一／两层，G固定尺度。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "形成保留hidden、原始q、实际硬lag-1，去掉soft反馈的研究方向；各项单独结果见统一正式表，不能只按训练loss选结构。",
+      "category": "研究实验",
+      "order": 20,
+      "formal_sources": [
+        "unified_RAW_A_G_C1/formal/summary.json",
+        "unified_RAW_A_G_C40_gpu4_300prompts/formal/summary.json"
+      ]
+    },
+    "eval_results/standalone_embedding_nosoft_2layer_C1_C40_gpu5_20260930": {
+      "mode": "thinking",
+      "title": "原始短训基线 N_no_soft_2layer",
+      "purpose": "在较低串行成本下保留mismatch修复收益。",
+      "comparison": "同轮RAW、旧完整三层A、no-soft两层N。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "T1 C1/C40 TPS分别约+4.94%/+8.88%；T0接受长度略增而TPS仍亏。是有效正结果，不是全面失败。",
+      "category": "研究实验",
+      "order": 1
+    },
+    "eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930": {
+      "mode": "thinking",
+      "title": "No-soft 1／2／3层短训",
+      "purpose": "检查修复头加深是否换来更多实际收益。",
+      "comparison": "同预算重新训练的1/2/3层头与RAW。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "短训三种深度接受长度接近；浅层串行成本较小，两层作为重点基线，不意味着全局最优。",
+      "category": "研究实验",
+      "order": 21
+    },
+    "eval_results/standalone_embedding_nosoft_merged_C1_C40_gpu5_20260930": {
+      "mode": "thinking",
+      "title": "Direction／dose 分开与合并",
+      "purpose": "检查把方向与幅度合并预测是否更有效。",
+      "comparison": "旧分开N、合并M、RAW。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "合并没有一致优势，C40退化，未替换旧N。",
+      "category": "研究实验",
+      "order": 22
+    },
+    "eval_results/standalone_dependency_reveal_gpu5_20261001": {
+      "mode": "thinking",
+      "title": "冻结DFlash直接揭示前驱／前缀",
+      "purpose": "检查原冻结DFlash能否直接利用块内真实历史。",
+      "comparison": "全mask、只揭示前驱、揭示合法前缀及原修复头。",
+      "settings": "8提示×32 anchors×7位置=1792冻结状态；teacher-forced／兼容前缀代理；未重训backbone、无新native测速。",
+      "conclusion": "直接填入历史退化，说明原训练mask分布外敏感；不能证明历史信息无用。",
+      "category": "研究实验",
+      "order": 30
+    },
+    "eval_results/standalone_predecessor_response_gpu5_20261001_attempt2": {
+      "mode": "thinking",
+      "title": "前驱条件响应干预",
+      "purpose": "区分修复头是否已学到前驱响应、响应方向是否有益。",
+      "comparison": "同截断前缀的真实／替换前驱、原始q与修复q。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "已学到部分条件响应；仍有方向、幅度、第三候选竞争及误修。首次失败不是有效结果。",
+      "category": "研究实验",
+      "order": 31
+    },
+    "eval_results/standalone_attainability_gpu5_20261001": {
+      "mode": "thinking",
+      "title": "线性包络／dose-only 可达性",
+      "purpose": "判断错误能否在当前基底和冻结输出映射内修好。",
+      "comparison": "全基底包络、学到方向包络、固定方向只调dose。",
+      "settings": "8研究提示、128状态；最终错误41，主分析35；有限幅度、BF16实际argmax见证；逐状态oracle，无native AL/TPS。",
+      "conclusion": "所测41个错误加0.5 margin后均找到BF16正确包络见证；固定方向仅11/41。只证明好解存在，不证明输入足够或共享网络能预测。",
+      "category": "研究实验",
+      "order": 32
+    },
+    "eval_results/standalone_joint_head_gpu5_20261001": {
+      "mode": "thinking",
+      "title": "完整最终头 latent oracle",
+      "purpose": "去掉线性包络限制，检查完整LN/direction/dose头的表达上限。",
+      "comparison": "原latent与逐状态优化pre-LN latent。",
+      "settings": "冻结target/DFlash／既有头，研究状态诊断；具体样本数量及学习步数以原findings／preregistration为准。此项不沿用常规128×3训练预算；未产生learner native窗口时AL/TPS未测。",
+      "conclusion": "41/41错误找到BF16正确见证，主分析35/35；这是所测状态的存在性结论。",
+      "category": "研究实验",
+      "order": 33
+    },
+    "eval_results/standalone_direction_pairs_gpu5_20261001": {
+      "mode": "thinking",
+      "title": "条件方向配对分析",
+      "purpose": "检查前驱变化时目标修正动作是否发生变化。",
+      "comparison": "同状态的条件分支与方向/剂量。",
+      "settings": "冻结target/DFlash／既有头，研究状态诊断；具体样本数量及学习步数以原findings／preregistration为准。此项不沿用常规128×3训练预算；未产生learner native窗口时AL/TPS未测。",
+      "conclusion": "诊断前驱条件响应和修正动作冲突；不提供新的native接受长度或吞吐成绩。",
+      "category": "研究实验",
+      "order": 34
+    },
+    "eval_results/standalone_gradient_transport_gpu5_20261001": {
+      "mode": "thinking",
+      "title": "共享梯度传输诊断",
+      "purpose": "检查单状态改善是否被共享更新抵消。",
+      "comparison": "单状态、同提示和全研究batch平均梯度。",
+      "settings": "冻结target/DFlash／既有头，研究状态诊断；具体样本数量及学习步数以原findings／preregistration为准。此项不沿用常规128×3训练预算；未产生learner native窗口时AL/TPS未测。",
+      "conclusion": "共享参数梯度存在方向干扰；局部导数不是实际Adam训练成绩，也不是所有latent普遍坍缩。",
+      "category": "研究实验",
+      "order": 35
+    },
+    "eval_results/standalone_gradient_validation_v2_gpu5_20261001": {
+      "mode": "thinking",
+      "title": "梯度传输独立复核",
+      "purpose": "复核direction组共享梯度负贡献。",
+      "comparison": "独立梯度检查与原pilot。",
+      "settings": "冻结target/DFlash／既有头，研究状态诊断；具体样本数量及学习步数以原findings／preregistration为准。此项不沿用常规128×3训练预算；未产生learner native窗口时AL/TPS未测。",
+      "conclusion": "部分错误受到联合direction梯度负贡献；不同样本/参数组计数不能与全参数结果混用。",
+      "category": "研究实验",
+      "order": 36
+    },
+    "eval_results/standalone_epoch_learning_gpu5_20261001": {
+      "mode": "thinking",
+      "title": "Epoch学习／latent机制诊断",
+      "purpose": "检查训练阶段、输出权重及局部方向变化。",
+      "comparison": "epoch1/2/3冻结状态与梯度。",
+      "settings": "冻结target/DFlash／既有头，研究状态诊断；具体样本数量及学习步数以原findings／preregistration为准。此项不沿用常规128×3训练预算；未产生learner native窗口时AL/TPS未测。",
+      "conclusion": "OUTPUT前缀权重衰减及共享干扰可见，未发现普遍latent坍缩。冻结状态统计不等于native收益。",
+      "category": "研究实验",
+      "order": 37
+    },
+    "eval_results/standalone_epoch_native_C1_gpu5_20261001": {
+      "mode": "thinking",
+      "title": "Epoch1／2／3 native复测",
+      "purpose": "验证简单早停能否解决T0吞吐。",
+      "comparison": "RAW与三个epoch头。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "不支持简单早停即可解决T0；epoch3 T1仍有收益。",
+      "category": "研究实验",
+      "order": 38,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/epoch_native_C1_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_explicit_interaction_C1_gpu45_20261001": {
+      "mode": "thinking",
+      "title": "显式交互头",
+      "purpose": "检查输入交互结构能否改善方向学习。",
+      "comparison": "旧N、ADDITIVE、INTERACTION、RAW。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "两种新结构均未超过旧N；结构直觉不能替代native结果。",
+      "category": "研究实验",
+      "order": 39,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/explicit_interaction_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_gradient_objectives_C1_gpu45_20261001": {
+      "mode": "thinking",
+      "title": "PREFIX／TOKEN_TV／TOKEN_NLA损失",
+      "purpose": "检查改变位置梯度分配是否改善接受收益。",
+      "comparison": "原PREFIX-OUTPUT与TOKEN_TV/TOKEN_NLA。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "新目标没有超过旧N；削弱前缀权重不能自动改善greedy/native。",
+      "category": "研究实验",
+      "order": 40,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/gradient_objectives_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_native_oracle_pair_anygpu_20261001": {
+      "mode": "thinking",
+      "title": "Native轨迹最终头oracle",
+      "purpose": "在真实采样前驱上检查oracle上限及学习标签。",
+      "comparison": "T0/T1原修复和target可见的最终头oracle。",
+      "settings": "每个温度8提示×4块×7位置=224状态；冻结behavior轨迹；T0/T1到达状态分别141/139。",
+      "conclusion": "原生状态中存在可改善动作；oracle用到了target监督，不能直接作为部署输入或native测速结果。",
+      "category": "研究实验",
+      "order": 41
+    },
+    "eval_results/standalone_oracle_learning_split_anygpu_20261001": {
+      "mode": "thinking",
+      "title": "OUTPUT／TARGET_KL／ORACLE_KL学习",
+      "purpose": "验证oracle标签是否比直接target监督更易学。",
+      "comparison": "同初始头、同冻结状态三种目标，各384更新。",
+      "settings": "稀疏固定旧N native轨迹；teacher仅用于监督，learner不反馈前缀；分卡版与原32步版本重放校验通过。",
+      "conclusion": "ORACLE_KL相对TARGET_KL仅小幅开发overlap收益，未填平oracle差距；没有learner native AL/TPS，不能据此扩大蒸馏。",
+      "category": "研究实验",
+      "order": 42
+    },
+    "eval_results/standalone_tiny_oracle_fit_anygpu_20261001": {
+      "mode": "thinking",
+      "title": "28状态极小oracle拟合",
+      "purpose": "区分训练拟合能力与泛化限制。",
+      "comparison": "同28状态训练与oracle标签。",
+      "settings": "冻结target/DFlash／既有头，研究状态诊断；具体样本数量及学习步数以原findings／preregistration为准。此项不沿用常规128×3训练预算；未产生learner native窗口时AL/TPS未测。",
+      "conclusion": "极小集合可以拟合；不能证明跨提示的可预测性。",
+      "category": "研究实验",
+      "order": 43
+    },
+    "eval_results/standalone_tiny_oracle_coverage64_anygpu_20261001": {
+      "mode": "thinking",
+      "title": "64提示oracle覆盖",
+      "purpose": "扩大固定研究状态覆盖范围。",
+      "comparison": "target/oracle监督的覆盖与原修复。",
+      "settings": "冻结target/DFlash／既有头，研究状态诊断；具体样本数量及学习步数以原findings／preregistration为准。此项不沿用常规128×3训练预算；未产生learner native窗口时AL/TPS未测。",
+      "conclusion": "检查覆盖上限，不产生独立最终测试或新的native吞吐成绩。",
+      "category": "研究实验",
+      "order": 44
+    },
+    "eval_results/standalone_tiny_oracle_scale_anygpu_20261001": {
+      "mode": "thinking",
+      "title": "16／64提示oracle学习规模",
+      "purpose": "检查训练拟合优秀是否能迁移到提示留出。",
+      "comparison": "16/64提示训练与研究留出。",
+      "settings": "冻结target/DFlash／既有头，研究状态诊断；具体样本数量及学习步数以原findings／preregistration为准。此项不沿用常规128×3训练预算；未产生learner native窗口时AL/TPS未测。",
+      "conclusion": "训练拟合很好而研究留出未改善；留出有历史开发使用，不是封存最终测试；唯一原因未识别。",
+      "category": "研究实验",
+      "order": 45
+    },
+    "eval_results/standalone_nosoft_top128_top64_short_gpu45_20261002": {
+      "mode": "thinking",
+      "title": "Top256／128／64",
+      "purpose": "减小输入／修正候选支持以降低成本。",
+      "comparison": "RAW与重新训练的Top256/128/64。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "候选范围缩小基本保住AL，但没有稳定额外TPS收益。TopK不是输出基底rank。",
+      "category": "研究实验",
+      "order": 50,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/nosoft_topk_short_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_nosoft_output_rank256_128_64_short_gpu045_20261002": {
+      "mode": "thinking",
+      "title": "输出rank256／128／64",
+      "purpose": "检查低维输出动作空间能否额外加速。",
+      "comparison": "新rank头与旧512参考；固定Top64和输入512。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "无稳定额外提速；新输出基底重新拟合、全头重训，因此旧512对新组不是纯rank单因素。",
+      "category": "研究实验",
+      "order": 51,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/nosoft_output_rank_short_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_nosoft_lowrank_audit_20261002": {
+      "mode": "thinking",
+      "title": "输出头低秩审计",
+      "purpose": "检查已训练方向矩阵谱及实际动作包络。",
+      "comparison": "权重谱、线性包络及原始修复。",
+      "settings": "冻结target/DFlash／既有头，研究状态诊断；具体样本数量及学习步数以原findings／preregistration为准。此项不沿用常规128×3训练预算；未产生learner native窗口时AL/TPS未测。",
+      "conclusion": "权重能量谱未按真实激活／候选重要性加权，不能据其直接证明可压缩或接受收益。",
+      "category": "研究实验",
+      "order": 52
+    },
+    "eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002": {
+      "mode": "thinking",
+      "title": "Parallel_TF及五组统一对照",
+      "purpose": "把重SwiGLU搬到hidden/q上下文，推理仅以实际lag-1轻门控。",
+      "comparison": "RAW、旧Top256、Parallel_TF、独立训练Parallel_T0、Parallel_T1。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "TF较旧N有小幅提速；on-policy两组没有一致超过TF，训练慢约8倍；用户选择TF作为后续共同基线。",
+      "category": "研究实验",
+      "order": 60,
+      "formal_sources": [
+        "comparison_5arms/C1/formal/summary.json",
+        "comparison_5arms/C40/formal/summary.json"
+      ],
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/parallel_context_five_arm_eval_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5": {
+      "mode": "thinking",
+      "title": "Parallel_T0／T1真实前缀训练",
+      "purpose": "检查learner块内采样前缀重算teacher的训练配方。",
+      "comparison": "分别训练的T0头、T1头；有效五组评测见Parallel_TF条目。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "本配方训练约慢8倍且无一致native收益；不能推论所有on-policy训练无效。",
+      "category": "研究实验",
+      "order": 61,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/parallel_context_onpolicy_short_v3",
+          "residualV3_main_v1/research/parallel_context_onpolicy_short_v5"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002": {
+      "mode": "thinking",
+      "title": "Thinking 1万条×3轮层数长训",
+      "purpose": "验证数据规模与1/2/3层深度效果。",
+      "comparison": "每卡同轮RAW、旧短训N、新长训1/2/3层。",
+      "settings": "10k×3epoch=30000步；从epoch2 BF16恢复、重建FP32 master并重置Adam；1/2/3层卡0/1/2；C1=200、C40=2000，原dataset10000后；7proposal、max4096。",
+      "conclusion": "长训两层T1进一步受益，C40/T0也有正TPS收益；不能沿用短训T0全亏结论。20000步恢复重置Adam，非无损续训。",
+      "category": "研究实验",
+      "order": 2
+    },
+    "eval_results/standalone_nosoft_target_hidden_logits_short_gpu012_20261003_v2": {
+      "mode": "thinking",
+      "title": "目标hidden／logits／hidden+logits输入消融",
+      "purpose": "检查现有目标前缀信息和logits输入能否改善修复。",
+      "comparison": "同轮RAW、旧N及三个新随机初始化头；旧N不重训。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "TargetHidden C1/T1比N有小幅增益，C40未延续；logits和组合没有一致优势。目标hidden来自最后已验证前缀的DFlash压缩状态，不是未来teacher hidden。",
+      "category": "研究实验",
+      "order": 70,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/nosoft_target_hidden_logits_short_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_nosoft_output_top16_ce_short_gpu3_20261003": {
+      "mode": "thinking",
+      "title": "OUTPUT＋Top16候选CE",
+      "purpose": "给旧两层修复头加入硬候选监督。",
+      "comparison": "仅测试新头；没有本轮RAW/N复测。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "正式四窗口已完成；不可与历史绝对TPS直接相除。候选缺失标签CE为0且不补入标签；不是完整DFlash-2复现。",
+      "category": "研究实验",
+      "order": 71
+    },
+    "eval_results/standalone_longtrain_bottleneck_gpu45_20261003": {
+      "mode": "thinking",
+      "title": "长训权重：方向／dose瓶颈",
+      "purpose": "用长训最终权重检查错误是否由固定方向限制。",
+      "comparison": "长2实际路径上回放短2/长1/长3；最终头oracle及固定方向dose网格。",
+      "settings": "8新研究提示、T0/T1、冻结native状态；hidden/q/实际前驱匹配；不修改正式权重。",
+      "conclusion": "到达的39个argmax错误中38个找到完整头好解，只调dose修好5个；不能据此认定输入充分或泛化必然可学。",
+      "category": "研究实验",
+      "order": 72
+    },
+    "eval_results/standalone_longtrain_fullgradient_gpu45_20261003": {
+      "mode": "thinking",
+      "title": "长训共享全参数梯度",
+      "purpose": "检查同状态改善是否在跨提示平均梯度中被抵消。",
+      "comparison": "单状态gradient、8提示平均gradient与target margin。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "单状态均有益，平均梯度的局部SGD估计伤害12/39；不是实际Adam更新成绩，也不是唯一瓶颈证明。",
+      "category": "研究实验",
+      "order": 73
+    },
+    "eval_results/standalone_five_issue_pilot_gpu5_20261003_v2": {
+      "mode": "thinking",
+      "title": "五问题预实验",
+      "purpose": "联合检查目标信息、greedy监督、方向、梯度冲突和运行成本。",
+      "comparison": "OUTPUT、MARGIN、DIRECTION、MARGIN_PCGRAD、PAST_Q、PAST_MISMATCH。",
+      "settings": "长训两层副本、16步、固定behavior轨迹；历史target仅作监督；无learner真实rollout。",
+      "conclusion": "固定状态训练改善大于探针迁移；不能用局部小样本结果认定方案已解决native问题。计时是算子微基准。",
+      "category": "研究实验",
+      "order": 74
+    },
+    "eval_results/standalone_nosoft_output_margin_native_pilot16_gpu45_20261003": {
+      "mode": "thinking",
+      "title": "OUTPUT＋greedy margin native小试",
+      "purpose": "验证固定状态margin改善是否转化为闭环接受收益。",
+      "comparison": "RAW、LONG_BASE、OUTPUT16、MARGIN16。",
+      "settings": "长训两层副本16步；新研究提示，C1=20/C40=300、T0/T1、7proposal/max4096。",
+      "conclusion": "没有一致胜过LONG_BASE；margin16在T0反而低于OUTPUT16。不要扩大成greedy margin已解决方向学习。",
+      "category": "研究实验",
+      "order": 75,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1",
+          "residualV3_main_v1/research/output_margin_native_v3"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_nosoft_basis_objective_short_gpu0_20261003_v3": {
+      "mode": "thinking",
+      "title": "KL／overlap／margin 任务基底",
+      "purpose": "改变输出基底采集目标，检查大残差方向是否有接受价值。",
+      "comparison": "GG-KL／GG-OVERLAP／GG-MARGIN，新basis、新头；输入basis固定。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "basis拟合与训练完成，顶层failed是评测资源问题；有效复用正式评测在可预测基底实验，不把failed当科学负结果。",
+      "category": "研究实验",
+      "order": 80,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/basis_objective_ablation_v3"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2": {
+      "mode": "thinking",
+      "title": "线性可预测 mismatch 基底",
+      "purpose": "用输入-梯度低秩回归保留部署输入能预测的修正方向。",
+      "comparison": "GG_KL/OVERLAP/MARGIN、RR三目标、RR_OVERLAP正则0.1/1/10；旧短训N作历史参考，LONG_BASE只读。",
+      "settings": "X是h/q/硬lag1固定1537维特征；输出rank512，固定旧输入basis，五新头128×3 OUTPUT；C1=20/C40=300，7proposal、8GiB KV；正式40窗口。",
+      "conclusion": "C1/T1 RR_KL/RR_MARGIN有小收益，C40未稳定延续；部分C40窗口污染。不能只和更弱RR控制相比，也不能用污染RAW夸大TPS。",
+      "category": "研究实验",
+      "order": 81,
+      "formal_sources": [
+        "C1/formal/summary.json",
+        "C40/formal/summary.json"
+      ]
+    },
+    "eval_results/standalone_nosoft_nonlinear_basis_pilot_gpu5_20261004_v1": {
+      "mode": "thinking",
+      "title": "非线性可预测基底",
+      "purpose": "检查非线性预测梯度方向是否优于线性RR。",
+      "comparison": "两折OVERLAP预测、线性控制、GG_OVERLAP；同预算新头。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "梯度预测误差小幅改善约0.62%/0.73%，native AL相对GG变化不足0.25%；无稳定额外收益。C40/T1受污染。",
+      "category": "研究实验",
+      "order": 82,
+      "reports": [
+        "analysis_completed_20261004_v1/RESULTS_CN.txt"
+      ]
+    },
+    "eval_results/standalone_nosoft_bottleneck_probe_gpu4_20261004_v1": {
+      "mode": "thinking",
+      "title": "可达性／可学习性瓶颈probe",
+      "purpose": "区分动作空间上限、当前方向、误修及研究留出拟合。",
+      "comparison": "冻结旧N／长训、逐状态oracle及学习探针。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "所测好解存在与共享预测效果不同；不能把基底预实验不稳定归结为整个结构失败，唯一原因仍未识别。",
+      "category": "研究实验",
+      "order": 83,
+      "reports": [
+        "INTERPRETATION_20261004.txt",
+        "RESULTS_CN.txt"
+      ]
+    },
+    "eval_results/standalone_nosoft_prefix_information_gpu5_20261004_v1": {
+      "mode": "thinking",
+      "title": "输入充分性／目标hidden来源 v1",
+      "purpose": "核对部署目标hidden来源以及分支动作冲突。",
+      "comparison": "冻结Parallel_TF输入、实际分支、额外teacher未来hidden诊断。",
+      "settings": "T1冻结原生状态诊断；target context是辅助层经fc/RMSNorm的anchor前一token；未来teacher hidden仅为额外诊断。",
+      "conclusion": "v3有效23配对、14提示，有限动作冲突很小，跨提示学习探针门槛未通过；不证明输入充分。v1/v2为失败观察器尝试。",
+      "category": "研究实验",
+      "order": 85
+    },
+    "eval_results/standalone_nosoft_prefix_information_gpu4_20261004_v2": {
+      "mode": "thinking",
+      "title": "输入充分性／目标hidden来源 v2",
+      "purpose": "核对部署目标hidden来源以及分支动作冲突。",
+      "comparison": "冻结Parallel_TF输入、实际分支、额外teacher未来hidden诊断。",
+      "settings": "T1冻结原生状态诊断；target context是辅助层经fc/RMSNorm的anchor前一token；未来teacher hidden仅为额外诊断。",
+      "conclusion": "v3有效23配对、14提示，有限动作冲突很小，跨提示学习探针门槛未通过；不证明输入充分。v1/v2为失败观察器尝试。",
+      "category": "研究实验",
+      "order": 86
+    },
+    "eval_results/standalone_nosoft_prefix_information_gpu4_20261004_v3": {
+      "mode": "thinking",
+      "title": "输入充分性／目标hidden来源 v3",
+      "purpose": "核对部署目标hidden来源以及分支动作冲突。",
+      "comparison": "冻结Parallel_TF输入、实际分支、额外teacher未来hidden诊断。",
+      "settings": "T1冻结原生状态诊断；target context是辅助层经fc/RMSNorm的anchor前一token；未来teacher hidden仅为额外诊断。",
+      "conclusion": "v3有效23配对、14提示，有限动作冲突很小，跨提示学习探针门槛未通过；不证明输入充分。v1/v2为失败观察器尝试。",
+      "category": "研究实验",
+      "order": 87
+    },
+    "eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1": {
+      "mode": "thinking",
+      "title": "OUTPUT／Euclidean／Fisher方向学习",
+      "purpose": "检验不同动作几何监督是否能改善修正方向。",
+      "comparison": "同Parallel_TF权重副本的OUTPUT/EUCLIDEAN/FISHER，两套训练seed。",
+      "settings": "16新提示×3轮=48步／头；重新建立master/Adam；7proposal，C1=20/C40原计划300；有效评测recovery_v3。",
+      "conclusion": "用户在第一个seed C1未见收益后停止；保留18个epoch权重及10个C1正式窗口。第二seed未完成、C40未测，不自动恢复。",
+      "category": "研究实验",
+      "order": 89,
+      "status_note": "用户已授权停止，后续未完成窗口不算成绩",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/direction_geometry_evaluation_recovery_v1",
+          "residualV3_main_v1/research/direction_geometry_evaluation_recovery_v2",
+          "residualV3_main_v1/research/direction_geometry_evaluation_recovery_v3",
+          "residualV3_main_v1/research/direction_geometry_pilot_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "residualV3 eagle-3/runs/parallel_tf_180x3_gpu5_20261002": {
+      "mode": "thinking",
+      "title": "EAGLE-3 Thinking · 3 proposal",
+      "purpose": "检查相同mismatch思路迁移到原生EAGLE-3递推。",
+      "comparison": "下载的Thinking EAGLE-3 RAW与新basis、新随机Parallel_TF修复头。",
+      "settings": "180重生成提示×3轮=540步；no-soft两层／Top256／basis512／OUTPUT；3递推proposal；C1=20/C40=300，T0/T1。",
+      "conclusion": "三步版本仅小幅收益；七步独立重新拟合basis与训练，不能当纯推理长度消融。teacher全词表softmax后取64000子集，不重归一化；d2t是偏移。",
+      "category": "研究实验",
+      "order": 90,
+      "formal_sources": [
+        "evaluation_recovery_v1/test_C1/summary.json",
+        "evaluation_recovery_v1/test_C40/summary.json"
+      ]
+    },
+    "residualV3 eagle-3/runs/parallel_tf_180x3_steps7_gpu5_20261002": {
+      "mode": "thinking",
+      "title": "EAGLE-3 Thinking · 7 proposal",
+      "purpose": "检查相同mismatch思路迁移到原生EAGLE-3递推。",
+      "comparison": "下载的Thinking EAGLE-3 RAW与新basis、新随机Parallel_TF修复头。",
+      "settings": "180重生成提示×3轮=540步；no-soft两层／Top256／basis512／OUTPUT；7递推proposal；C1=20/C40=300，T0/T1。",
+      "conclusion": "三步版本仅小幅收益；七步独立重新拟合basis与训练，不能当纯推理长度消融。teacher全词表softmax后取64000子集，不重归一化；d2t是偏移。",
+      "category": "研究实验",
+      "order": 91,
+      "formal_sources": [
+        "test_C1/summary.json",
+        "test_C40/summary.json"
+      ]
+    },
+    "eval_results/residualV3_full_vocab_unified_lag1_v1_seed42": {
+      "mode": "thinking",
+      "title": "仍供其他基线使用的历史共享数据",
+      "purpose": "仍供其他基线使用的历史共享数据，保留研究链条及依赖。",
+      "comparison": "原协议中的冻结输入／输出与对照。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "共享数据不是独立的新训练胜负结论；原始依赖及审计证据保留。",
+      "category": "研究实验",
+      "order": 95
+    },
+    "eval_results/residualV3_full_vocab_unified_lag1_v3_seed42": {
+      "mode": "thinking",
+      "title": "全词表lag-1历史共享数据与协议",
+      "purpose": "全词表lag-1历史共享数据与协议，保留研究链条及依赖。",
+      "comparison": "原协议中的冻结输入／输出与对照。",
+      "settings": "冻结Qwen3-8B target/DFlash；thinking重生成128条×3轮=384更新；旧N为no-soft两层、Top256、basis512、OUTPUT、实际硬lag-1；常规评测7proposal，C1=20/C40=300，max4096/model8192。具体例外以本条协议为准。",
+      "conclusion": "共享数据不是独立的新训练胜负结论；原始依赖及审计证据保留。",
+      "category": "研究实验",
+      "order": 95
+    },
+    "eval_results/standalone_extra_head_diagnostic_gpu5_20260930": {
+      "mode": "thinking",
+      "title": "额外头数学／实现诊断",
+      "purpose": "额外头数学／实现诊断，保留研究链条及依赖。",
+      "comparison": "原协议中的冻结输入／输出与对照。",
+      "settings": "冻结target/DFlash／既有头，研究状态诊断；具体样本数量及学习步数以原findings／preregistration为准。此项不沿用常规128×3训练预算；未产生learner native窗口时AL/TPS未测。",
+      "conclusion": "共享数据不是独立的新训练胜负结论；原始依赖及审计证据保留。",
+      "category": "研究实验",
+      "order": 95
+    },
+    "eval_results/standalone_nosoft_depth_10k_3epoch_gpu123_20261002": {
+      "mode": "thinking",
+      "title": "退役记录 · standalone_nosoft_depth_10k_3epoch_gpu123_20261002",
+      "purpose": "记录失败阶段、恢复来源，防止重复启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "历史配置、错误日志及资产见原目录；不得重启旧控制器。",
+      "conclusion": "早期长训准备／失败，含权重，保留恢复来源。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/nosoft_depth_10k_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu123_20261002": {
+      "mode": "thinking",
+      "title": "退役记录 · standalone_nosoft_depth_10k_3epoch_prefetch6_gpu123_20261002",
+      "purpose": "记录失败阶段、恢复来源，防止重复启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "历史配置、错误日志及资产见原目录；不得重启旧控制器。",
+      "conclusion": "外部进程触发旧控制器错误连带全停，含epoch2权重；成功版本为gpu012 recovery。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_nosoft_output_margin_native_pilot16_gpu0123_20261003": {
+      "mode": "thinking",
+      "title": "退役记录 · standalone_nosoft_output_margin_native_pilot16_gpu0123_20261003",
+      "purpose": "记录失败阶段、恢复来源，防止重复启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "历史配置、错误日志及资产见原目录；不得重启旧控制器。",
+      "conclusion": "未启动的资源安排，保留资产，成功版本为gpu45。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_nosoft_output_margin_native_pilot16_gpu2345_20261003": {
+      "mode": "thinking",
+      "title": "退役记录 · standalone_nosoft_output_margin_native_pilot16_gpu2345_20261003",
+      "purpose": "记录失败阶段、恢复来源，防止重复启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "历史配置、错误日志及资产见原目录；不得重启旧控制器。",
+      "conclusion": "未启动的替代资源安排，成功版本为gpu45。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_nosoft_predictable_basis_gpu12345_20261003_v1": {
+      "mode": "thinking",
+      "title": "退役记录 · standalone_nosoft_predictable_basis_gpu12345_20261003_v1",
+      "purpose": "记录失败阶段、恢复来源，防止重复启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "历史配置、错误日志及资产见原目录；不得重启旧控制器。",
+      "conclusion": "资源／准备失败；有效结果为gpu2345 v2，含权重不可删除。",
+      "category": "失败与退役记录",
+      "order": 950
+    },
+    "eval_results/standalone_nosoft_target_hidden_logits_short_gpu012_20261003": {
+      "mode": "thinking",
+      "title": "退役记录 · standalone_nosoft_target_hidden_logits_short_gpu012_20261003",
+      "purpose": "记录失败阶段、恢复来源，防止重复启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "历史配置、错误日志及资产见原目录；不得重启旧控制器。",
+      "conclusion": "端口准备失败，未训练；有效版本为v2。",
+      "category": "失败与退役记录",
+      "order": 950
+    },
+    "eval_results/standalone_oracle_learning_anygpu_20261001": {
+      "mode": "thinking",
+      "title": "退役记录 · standalone_oracle_learning_anygpu_20261001",
+      "purpose": "记录失败阶段、恢复来源，防止重复启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "历史配置、错误日志及资产见原目录；不得重启旧控制器。",
+      "conclusion": "已被校验一致的分卡split版本主动替代，非数值失败。",
+      "category": "失败与退役记录",
+      "order": 950
+    },
+    "eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002": {
+      "mode": "thinking",
+      "title": "退役记录 · standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002",
+      "purpose": "记录失败阶段、恢复来源，防止重复启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "历史配置、错误日志及资产见原目录；不得重启旧控制器。",
+      "conclusion": "旧准备／资源故障；成功冻结版本v5，部分旧目录含权重，全部保留。",
+      "category": "失败与退役记录",
+      "order": 950
+    },
+    "eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v2": {
+      "mode": "thinking",
+      "title": "退役记录 · standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v2",
+      "purpose": "记录失败阶段、恢复来源，防止重复启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "历史配置、错误日志及资产见原目录；不得重启旧控制器。",
+      "conclusion": "旧准备／资源故障；成功冻结版本v5，部分旧目录含权重，全部保留。",
+      "category": "失败与退役记录",
+      "order": 950
+    },
+    "eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v3": {
+      "mode": "thinking",
+      "title": "退役记录 · standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v3",
+      "purpose": "记录失败阶段、恢复来源，防止重复启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "历史配置、错误日志及资产见原目录；不得重启旧控制器。",
+      "conclusion": "旧准备／资源故障；成功冻结版本v5，部分旧目录含权重，全部保留。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/parallel_context_onpolicy_short_v3"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v4": {
+      "mode": "thinking",
+      "title": "退役记录 · standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v4",
+      "purpose": "记录失败阶段、恢复来源，防止重复启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "历史配置、错误日志及资产见原目录；不得重启旧控制器。",
+      "conclusion": "旧准备／资源故障；成功冻结版本v5，部分旧目录含权重，全部保留。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3_main_v1/research/parallel_context_onpolicy_short_v3"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1": {
+      "mode": "nonthinking",
+      "title": "全数据一轮：单训DFlash与联合训练",
+      "purpose": "验证全数据训练主体与主体+修复头的效果。",
+      "comparison": "同预训练起点的独立单训主体、联合主体关头、联合主体开头；RAW是预训练DFlash。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 一张teacher在线获取hidden并共享给两张独立learner；全数据833176条、15847包；主体5层，修复头3层。联合损失为raw CE+D-PACE、repaired CE+D-PACE、repaired OUTPUT。GSM8K non-thinking；C1=200、C40=1319；T0/T1、max_new2096/model4096；block16含anchor，15个新proposal；CUDA Graph。单训主体与联合主体来自各自的一轮全数据训练，权重不同。",
+      "conclusion": "两条一轮长训已完成；GSM8K正式评测见本表。不同主体权重使该比较包含训练方式差异，不能解释成同主体纯加头收益。",
+      "category": "研究实验",
+      "order": 1,
+      "formal_sources": [
+        "evaluation_dspark_gsm8k_recovery_20261009_v2/C1/formal/summary.json",
+        "evaluation_dspark_gsm8k_recovery_20261009_v2/C40/formal/summary.json"
+      ],
+      "reference_arm": "DFLASH",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/code/full_nonthinking_long_native_eval_20261008_v1",
+          "residualV3-nonthing/code/full_nonthinking_long_native_eval_gsm8k_20261008_v3",
+          "residualV3-nonthing/code/full_nonthinking_long_native_eval_math_20261008_v2"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/nosoft3_20k_3epoch_block16_gpu0_20261006_v1": {
+      "mode": "nonthinking",
+      "title": "原20k逐条训练配方",
+      "purpose": "建立新non-thinking数据下的三层标准头。",
+      "comparison": "预训练RAW和冻结主体仅训练修复头；与后续packed配方比较需核对实际训练预算。",
+      "settings": "20k×3轮；no-soft3/Top256/basis512/OUTPUT；target/draft GPU0共卡，prompt+answer≤4096，block16；逐条anchor预算。",
+      "conclusion": "原每条最多1536 anchors，预算远大于每包1536；含已完成epoch权重及恢复来源。顶层failed不能当方法无效。",
+      "category": "研究实验",
+      "order": 10,
+      "code_archive": {
+        "roots": [
+          "preparation_attempt_1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv"
+      ]
+    },
+    "residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_2gpu_20261007_v3": {
+      "mode": "nonthinking",
+      "title": "20k打包65536／1536短训",
+      "purpose": "验证打包降低anchor总预算后的训练效率与接受效果。",
+      "comparison": "冻结主体只训头与预训练RAW；不能称主体+头联合训练。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 20k×3轮；OUTPUT，冻结DFlash只训练修复头；teacher/learner分卡、错误恢复与优化版本保留。",
+      "conclusion": "打包训练完成；raw/修复正式接受与吞吐见表。旧逐条配方更新数／anchor总量不同，不是只变batch大小的单因素。",
+      "category": "研究实验",
+      "order": 11,
+      "code_archive": {
+        "roots": [
+          "preparation_attempt_1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv"
+      ]
+    },
+    "residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2": {
+      "mode": "nonthinking",
+      "title": "OUTPUT／CE+D-PACE／三者融合",
+      "purpose": "检查greedy专门监督、接受代理及融合实现。",
+      "comparison": "OUTPUT、CE_DPACE、CE_DPACE_OUTPUT；训练头的配方消融。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 20k×3轮短训练，冻结主体；BF16大张量、融合TV内核FP32归约；teacher DP2与流水线优化有多个恢复版本。",
+      "conclusion": "原报告区分C1/C40正式结果和训练实现优化。后续采用CE+D-PACE+OUTPUT；当前条目不是全数据联合长训。",
+      "category": "研究实验",
+      "order": 12,
+      "evidence": [
+        "residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2/evaluation_recovery_20261007_v2/FORMAL_RESULTS_VERIFIED_20261007.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv"
+      ],
+      "code_archive": {
+        "roots": [
+          "fused_output_dpace_pipeline_v8",
+          "preparation_attempt_1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      }
+    },
+    "residualV3-nonthing/results/output_prefix_smoothing_20k_joint_short_gpu07_20261008_v1": {
+      "mode": "nonthinking",
+      "title": "OUTPUT前缀平滑短训",
+      "purpose": "检验D-PACE与OUTPUT位置权重联动／平滑。",
+      "comparison": "同起点的原OUTPUT与a→0.5+0.5a平滑OUTPUT；共同CE+D-PACE；RAW参照。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 20k×1轮=298包；从预训练DFlash与随机头同时训练主体+头，seed/输入/anchors配对；旧开发面板。",
+      "conclusion": "平滑没有一致收益：C1/T0 -0.87%、C1/T1 -3.31%、C40/T0 +0.75%、C40/T1 -0.57% AL；不动长训。",
+      "category": "研究实验",
+      "order": 13,
+      "code_archive": {
+        "roots": [
+          "output_prefix_smoothing_20261008_v1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv"
+      ]
+    },
+    "residualV3-nonthing/results/head_only_joint_matched_20k_1epoch_gpu07_20261008_v1": {
+      "mode": "nonthinking",
+      "title": "严格对齐：只训头 vs 联合训练",
+      "purpose": "修复此前不同训练预算导致不可比的问题。",
+      "comparison": "共同初始化、逐包输入/anchor/头Adam配对，只改变主体是否可训练；RAW、HEAD_ONLY、JOINT_BODY、JOINT_HEAD。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 20k×1轮、298包；HEAD_ONLY冻结主体，JOINT_BODY=联合主体关头而非独立单训；RAW/JOINT_HEAD复用上一实验。",
+      "conclusion": "在严格对齐的20k一轮配方中只训头比RAW AL提高约6.83%~9.18%；联合开头比联合关头有效，但联合模型整体未稳定超过RAW。复用和补测不同时段，不作配对TPS结论。",
+      "category": "研究实验",
+      "order": 14,
+      "result_tables": [
+        {
+          "source": "summary.json",
+          "key": "table",
+          "caption": "完整严格对齐AL比较：RAW／JOINT_HEAD复用已完成正式证据，HEAD_ONLY／JOINT_BODY本轮补测；来源跨时段，因此不计算对照TPS比例。",
+          "columns": [
+            [
+              "concurrency",
+              "C"
+            ],
+            [
+              "temperature",
+              "T"
+            ],
+            [
+              "RAW",
+              "RAW AL"
+            ],
+            [
+              "HEAD_ONLY",
+              "只训头 AL"
+            ],
+            [
+              "JOINT_BODY",
+              "联合关头 AL"
+            ],
+            [
+              "JOINT_HEAD",
+              "联合开头 AL"
+            ]
+          ]
+        }
+      ],
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/code/head_only_joint_matched_20261008_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/head_component_depth_audit_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "模块参数／时间／高层使用审计",
+      "purpose": "核实4.35M头的时间花在哪，高层是否参与预测。",
+      "comparison": "完整三层头、跳第2层、跳第3层、跳第2+3层；固定实际前驱模块微测和native跳层。",
+      "settings": "GSM8K non-thinking；C1=200、C40=1319；T0/T1、max_new2096/model4096；block16含anchor，15个新proposal；CUDA Graph。单训主体与联合主体来自各自的一轮全数据训练，权重不同。 完整头含递推与采样，不含主体与target；模块各15位置CUDA Graph微测；曾用原target数值路径。",
+      "conclusion": "新增头4353537参数；高层残差和token改变证明参与计算。跳层不是重训两层。独立模块时间不能机械相加；该轮目标数值路径后续由batch-invariance诊断补充。",
+      "category": "研究实验",
+      "order": 20,
+      "code_archive": {
+        "roots": [
+          "head_component_costs_20261009_v1",
+          "head_component_depth_audit_20261009_v1",
+          "head_component_depth_profile_recovery_20261009_v1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ],
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/code/full_nonthinking_long_native_eval_gsm8k_20261008_v3"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      }
+    },
+    "residualV3-nonthing/results/native_greedy_divergence_audit_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "C40 greedy文本分叉溯源",
+      "purpose": "核查732/1319跨运行文本差异是否由头优化引入。",
+      "comparison": "原native、target-only AR，各自重复C40/C1；再比较batch-invariant版本。",
+      "settings": "GSM8K前40题、max512，non-thinking/T0；同步scalar trace，因此诊断不能作TPS；AR不是项目RAW投机基线。",
+      "conclusion": "默认native18/40、AR22/40重复文本不同，C1均0/8；首次分叉处同前缀target argmax翻转。batch-invariant两者重复40题均一致。原732条缺历史logits，不能逐条溯源。",
+      "category": "研究实验",
+      "order": 21,
+      "archived": true,
+      "archive_original_root": "residualV3-nonthing/results/native_greedy_divergence_audit_20261009_v1",
+      "status_note": "已淘汰并归档：原始代码/日志经逐文件SHA256核验后删除工作目录；原结论和证据可恢复",
+      "archive_sha256": "9847bb8a3616bb66328afc8c47aeb7421500741fdfaee87400cb52d888b48e70",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/results/native_greedy_divergence_audit_20261009_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/native_optimized_vs_dflash_formal_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "优化头 vs 单训DFlash正式对照",
+      "purpose": "衡量优化实现对总体AL/TPS的实际价值。",
+      "comparison": "独立单训DFlash、联合主体关头、联合主体+优化头。",
+      "settings": "GSM8K non-thinking；C1=200、C40=1319；T0/T1、max_new2096/model4096；block16含anchor，15个新proposal；CUDA Graph。单训主体与联合主体来自各自的一轮全数据训练，权重不同。",
+      "conclusion": "使用正式窗口及计数器判定；组件profile另列。完整结果和C1恢复证据在关联目录，不把微测2ms当整轮解码时间。",
+      "category": "研究实验",
+      "order": 22,
+      "reference_arm": "DFLASH",
+      "code_archive": {
+        "roots": [
+          "native_optimized_vs_dflash_formal_20261009_v1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv"
+      ]
+    },
+    "residualV3-nonthing/results/native_optimized_vs_dflash_c1_recovery_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "优化头正式C1恢复测量",
+      "purpose": "补齐上一正式对照C1阶段，复用已完成权重。",
+      "comparison": "同轮单训DFlash／联合主体／联合+头。",
+      "settings": "GSM8K non-thinking；C1=200、C40=1319；T0/T1、max_new2096/model4096；block16含anchor，15个新proposal；CUDA Graph。单训主体与联合主体来自各自的一轮全数据训练，权重不同。",
+      "conclusion": "只是评测恢复，不重复训练；与原C40配对时保留各自运行条件。",
+      "category": "研究实验",
+      "order": 23,
+      "reference_arm": "DFLASH",
+      "code_archive": {
+        "roots": [
+          "native_optimized_vs_dflash_c1_recovery_20261009_v1",
+          "native_optimized_vs_dflash_formal_20261009_v1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv"
+      ]
+    },
+    "residualV3-nonthing/results/native_head_small_tile_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "Small tile头正式测评",
+      "purpose": "减少低并发小矩阵计算／启动开销。",
+      "comparison": "原实现与小tile实现，同一头、主体、basis。",
+      "settings": "GSM8K non-thinking；C1=200、C40=1319；T0/T1、max_new2096/model4096；block16含anchor，15个新proposal；CUDA Graph。单训主体与联合主体来自各自的一轮全数据训练，权重不同。",
+      "conclusion": "同状态校验通过后测native；只在同轮、同目标数值路径及干净窗口比较TPS；不能因参数没变直接宣称端到端全等价。",
+      "category": "研究实验",
+      "order": 24,
+      "code_archive": {
+        "roots": [
+          "native_head_small_tile_20261009_v1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv"
+      ]
+    },
+    "residualV3-nonthing/results/native_head_structure_fusion_20261009_v2": {
+      "mode": "nonthinking",
+      "title": "结构融合优化 v2正式测评",
+      "purpose": "合并前驱投影、融合及SwiGLU的冗余访存／启动。",
+      "comparison": "小tile基准与新融合实现；模型权重及实际前驱递推保留。",
+      "settings": "GSM8K non-thinking；C1=200、C40=1319；T0/T1、max_new2096/model4096；block16含anchor，15个新proposal；CUDA Graph。单训主体与联合主体来自各自的一轮全数据训练，权重不同。",
+      "conclusion": "有效正式及核验报告在research/head_structure_fusion；整体验证结合batch-invariant及正式窗口，不能从模块计时直接推出TPS。",
+      "category": "研究实验",
+      "order": 25,
+      "evidence": [
+        "residualV3-nonthing/research/head_structure_fusion_20261009_v1/RESULTS_CN.txt",
+        "residualV3-nonthing/research/head_structure_fusion_20261009_v1/VERIFIED_SUMMARY.json",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ],
+      "expected_windows": 8,
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/code/native_head_structure_fusion_20261009_v2"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      }
+    },
+    "residualV3-nonthing/results/native_fused_block_depth_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "最新融合：block12／8／16两层",
+      "purpose": "检查缩短草稿与推理跳第三层是否更划算。",
+      "comparison": "每个block内比较单训DFLASH、HEAD3；block16另测HEAD2，同一三层权重跳第三层。",
+      "settings": "no-soft三层、Top256、basis512；冻结EMBEDDING输入表；GSM8K non-thinking；C1=200、C40=1319；T0/T1、max_new2096/model4096；block16含anchor，15个新proposal；CUDA Graph。单训主体与联合主体来自各自的一轮全数据训练，权重不同。 block12=11、block8=7新proposal；HEAD2未经两层重训；最新融合与统一batch-invariant/KV预算。",
+      "conclusion": "6组28正式窗口完成。block8/C1的DFLASH污染，不下TPS结论。block16/HEAD2在C1 TPS更好而C40较HEAD3低，不能宣布两层全面胜出。",
+      "category": "研究实验",
+      "order": 2,
+      "reference_arm": "DFLASH",
+      "acceptance_histogram": true,
+      "histogram_case_contains": "BLOCK16_DEPTH2",
+      "histogram_baseline_arms": [
+        "HEAD3"
+      ],
+      "code_archive": {
+        "roots": [
+          "native_fused_block_depth_20261009_v1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ],
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/code/native_head_structure_fusion_20261009_v2"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      }
+    },
+    "residualV3-nonthing/results/repair_prefix_cutoff_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "块内尾部停修：前12／前10",
+      "purpose": "先还原完整修复的逐块1–16长度分布、到达概率和数学期望，再检查固定前12／前10停修的代价。",
+      "comparison": "FULL15、PREFIX12、PREFIX10，完全相同联合主体/三层头/basis；不重训。",
+      "settings": "no-soft三层、Top256、basis512；冻结EMBEDDING输入表；GSM8K non-thinking；C1=200、C40=1319；T0/T1、max_new2096/model4096；block16含anchor，15个新proposal；CUDA Graph。cut以新proposal位置计；修前12或10，其余3或5位置不执行修复头；实际前驱只用修正后的采样token；24组合成状态校验通过，不能扩张为所有真实批大小等价；C40真实状态后来失败。本次事后补真实频数，不宣称原10/12切点已按分布预先选择。",
+      "conclusion": "C1六个正式窗口完成。原固定停止点没有先按真实长度分布选择，只能作为固定切点对照，不能由平均AL约8推断尾部无价值。C40 smoke在08:50失败：PREFIX10批18的真实状态graph/eager logits及verifier q逐位校验不一致，采样ID和实际前驱相同；C40没有正式停修成绩。未跳过校验或覆盖失败证据。完整修复C40分布可查看同权重的最新block16/depth条目，来源独立标注。",
+      "category": "研究实验",
+      "order": 3,
+      "diagnostic_text": [
+        "微基准完整头+15proposal采样（ms/块，非服务TPS）：N1/T0 FULL15 2.2498、前12 1.7943、前10 1.4482；N1/T1 2.0761/1.7270/1.4842。",
+        "N40/T0 6.4434/5.8731/5.0491；N40/T1 7.2227/6.6159/5.7741；合成状态双seed，不能代替正式AL。"
+      ],
+      "expected_windows": 12,
+      "completion_conclusion": "12个正式窗口完成后，本表同时给出FULL15与固定前12/10停修的AL及TPS；模型权重不变。固定停止点仍不是q自适应门控，不能由微测推断正式收益。",
+      "acceptance_histogram": true,
+      "histogram_baseline_arms": [
+        "FULL15"
+      ],
+      "status_note": "C40 smoke校验失败，C1成绩仍保留；两层C40在最新block/depth实验已完成。",
+      "code_archive": {
+        "roots": [
+          "repair_prefix_cutoff_20261009_v1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv"
+      ]
+    },
+    "residualV3-nonthing/results/q_only_skip_probe_20261009_v4": {
+      "mode": "nonthinking",
+      "title": "q-only mismatch可预测性重新验证",
+      "purpose": "重新定义当前模型的mismatch并检查q是否能识别风险／修复价值。",
+      "comparison": "q_max、entropy、margin等特征，MISMATCH和BENEFICIAL标签；校准集选阈值、提示留出检查。",
+      "settings": "128提示、T0/T1共256请求、1536块、23040状态、10134到达状态；所有状态向量只存RAM，结束释放；没有部署q-gate正式AL/TPS。",
+      "conclusion": "q_max对T0 mismatch AUROC约0.8354，T1 TV≥0.1约0.9416；可预测风险不等于该位置值得修。原whole-block跳过0%不能回答用户的尾部停修，应由前12/10实验验证。",
+      "category": "研究实验",
+      "order": 4,
+      "diagnostic_text": [
+        "研究留出到达状态：T0 MISMATCH AUROC=0.8354248、AP=0.5867785；T1 TV≥0.1 AUROC≈0.9416、AP≈0.9459。",
+        "T0 BENEFICIAL AUROC≈0.7876，T1≈0.8681；AUROC与AP只评价分类，不构成部署提速证明。"
+      ],
+      "archived": true,
+      "archive_original_root": "residualV3-nonthing/results/q_only_skip_probe_20261009_v4",
+      "status_note": "已淘汰并归档：原始代码/日志经逐文件SHA256核验后删除工作目录；原结论和证据可恢复",
+      "archive_sha256": "9847bb8a3616bb66328afc8c47aeb7421500741fdfaee87400cb52d888b48e70",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/results/q_only_skip_probe_20261009_v4"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/head_chunk1536_memory_probe_20261007_v1": {
+      "mode": "nonthinking",
+      "title": "1536 anchors整块显存探针",
+      "purpose": "比较chunk64与整1536的内存／前后向时间。",
+      "comparison": "原chunk与整块，保持同一包和目标。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 参数、anchor与损失一致性看各自协议；时间为短测／微基准，不替代正式AL/TPS；hidden在线读取即删，无持久缓存。",
+      "conclusion": "旧FP32全词表中间量使整块显存高；后续融合TV减少临时张量。具体attempt02数值见报告，不是模型质量成绩。",
+      "category": "训练／实现计时诊断",
+      "order": 100,
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/head_chunk1536_memory_probe_20261007_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/head_forward_backward_optimization_20261007_v1": {
+      "mode": "nonthinking",
+      "title": "修复头前后向及融合loss",
+      "purpose": "校验融合TV与15位置并行的数值／梯度。",
+      "comparison": "旧loss、融合TV、并行头原型。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 参数、anchor与损失一致性看各自协议；时间为短测／微基准，不替代正式AL/TPS；hidden在线读取即删，无持久缓存。",
+      "conclusion": "loss优化保持数学目标；此前15位置并行未通过严格梯度校验，不直接替换。TF可用已知前驱，native实际前驱仍须递推。",
+      "category": "训练／实现计时诊断",
+      "order": 101
+    },
+    "residualV3-nonthing/results/teacher1_vs2_head_parallel_gpu016_20261007_v1": {
+      "mode": "nonthinking",
+      "title": "Teacher1／2与头并行初测",
+      "purpose": "实测hidden供给及头计算耗时。",
+      "comparison": "teacher1+learner1与teacher2+learner1。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 参数、anchor与损失一致性看各自协议；时间为短测／微基准，不替代正式AL/TPS；hidden在线读取即删，无持久缓存。",
+      "conclusion": "以CORRECTED报告为准；短测不能保证全数据耗时，未通过梯度门槛的并行版不采纳。",
+      "category": "训练／实现计时诊断",
+      "order": 102
+    },
+    "residualV3-nonthing/results/joint_teacher1_vs2_timing_20261007_v2": {
+      "mode": "nonthinking",
+      "title": "Teacher1／2联合训练计时",
+      "purpose": "实测同时训练DFlash主体+头时供数影响。",
+      "comparison": "teacher2张+learner1张 vs teacher1张+learner1张。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 参数、anchor与损失一致性看各自协议；时间为短测／微基准，不替代正式AL/TPS；hidden在线读取即删，无持久缓存。",
+      "conclusion": "角色是teacher数量对照，不是把learner拆成两张；分别报告wait与GPU计算。",
+      "category": "训练／实现计时诊断",
+      "order": 103
+    },
+    "residualV3-nonthing/results/shared_teacher_joint_body_timing_20261007_v1": {
+      "mode": "nonthinking",
+      "title": "共享teacher同时供两个learner v1",
+      "purpose": "一份hidden供独立主体与主体+头更新。",
+      "comparison": "teacher1、body learner1、joint learner1。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 参数、anchor与损失一致性看各自协议；时间为短测／微基准，不替代正式AL/TPS；hidden在线读取即删，无持久缓存。",
+      "conclusion": "共享一次teacher计算可减少重复供数；耗时是共同完成一包，不能把单端时间相加。",
+      "category": "训练／实现计时诊断",
+      "order": 104
+    },
+    "residualV3-nonthing/results/shared_teacher_joint_body_timing_20261007_v2": {
+      "mode": "nonthinking",
+      "title": "共享teacher供两端 v2",
+      "purpose": "修复供数／队列安排后复测。",
+      "comparison": "共同完成包周期、两端wait/compute。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 参数、anchor与损失一致性看各自协议；时间为短测／微基准，不替代正式AL/TPS；hidden在线读取即删，无持久缓存。",
+      "conclusion": "按真实833176条、15847包外推仅计算时间，保存/等待/故障另计。",
+      "category": "训练／实现计时诊断",
+      "order": 105
+    },
+    "residualV3-nonthing/results/shared_teacher_fusion_transport_timing_20261007_v3": {
+      "mode": "nonthinking",
+      "title": "传输／并发优化 v3",
+      "purpose": "降低hidden读取和CPU传输开销。",
+      "comparison": "旧传输与优化版，同loss/anchors/优化器。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 参数、anchor与损失一致性看各自协议；时间为短测／微基准，不替代正式AL/TPS；hidden在线读取即删，无持久缓存。",
+      "conclusion": "端到端4.4818→4.6556秒／共同包，没有提速；不能用单段改善掩盖总体退化。",
+      "category": "训练／实现计时诊断",
+      "order": 106
+    },
+    "residualV3-nonthing/results/shared_teacher_fusion_registered_timing_20261007_v4": {
+      "mode": "nonthinking",
+      "title": "固定内存注册／共享供数 v4",
+      "purpose": "避免每包pin_memory大复制。",
+      "comparison": "旧共享供数与两slot只读注册缓冲，同一包。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 参数、anchor与损失一致性看各自协议；时间为短测／微基准，不替代正式AL/TPS；hidden在线读取即删，无持久缓存。",
+      "conclusion": "共同包4.4818→4.0891秒，吞吐+9.60%；联合CPU固定内存0.240635→0.000729秒；仅短测，质量未评测。",
+      "category": "训练／实现计时诊断",
+      "order": 107
+    },
+    "residualV3-nonthing/results/hidden_supply_timing_20261008_v1": {
+      "mode": "nonthinking",
+      "title": "Hidden供给专项计时",
+      "purpose": "测单／双teacher及供数瓶颈。",
+      "comparison": "teacher复制数、wait、anchor计算阶段。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 参数、anchor与损失一致性看各自协议；时间为短测／微基准，不替代正式AL/TPS；hidden在线读取即删，无持久缓存。",
+      "conclusion": "等待时间取决于供给与消费重叠，不能把GPU空闲直接归因为DFlash慢；时长外推需按实际包数。",
+      "category": "训练／实现计时诊断",
+      "order": 108
+    },
+    "residualV3-nonthing/results/activation_memory_timing_20261008_v1": {
+      "mode": "nonthinking",
+      "title": "用显存换训练时间",
+      "purpose": "检查activation/checkpoint等实现取舍。",
+      "comparison": "同包、同目标的内存／重算策略。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 参数、anchor与损失一致性看各自协议；时间为短测／微基准，不替代正式AL/TPS；hidden在线读取即删，无持久缓存。",
+      "conclusion": "优先以共同包时间判断是否加速；更多显存占用本身不构成GPU隔离保证。",
+      "category": "训练／实现计时诊断",
+      "order": 109
+    },
+    "residualV3-nonthing/results/training_throughput_dp2_workspace_gpu027_20261007_v1": {
+      "mode": "nonthinking",
+      "title": "DP2／工作区／流水线训练吞吐",
+      "purpose": "检查teacher供给、读取线程及训练pipeline。",
+      "comparison": "单teacher、双独立teacher、DP2及恢复实现。",
+      "settings": "non-thinking重生成数据，prompt+answer≤4096；no-soft三层、Top256、basis512；每包最多65536输入token、1536 anchors；一包一次更新；不是每条1536。 参数、anchor与损失一致性看各自协议；时间为短测／微基准，不替代正式AL/TPS；hidden在线读取即删，无持久缓存。",
+      "conclusion": "DP2是两个完整模型处理不同请求，TP1；不代表拆一个模型。保留各版本有效短测与失败原因，不把未完成attempt当成绩。",
+      "category": "训练／实现计时诊断",
+      "order": 110
+    },
+    "residualV3-nonthing/results/native_optimized_vs_dflash_timing_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "Target／body／head整轮耗时",
+      "purpose": "区分验证、主体、头与草稿总体成本。",
+      "comparison": "独立单训草稿、联合草稿关头／开头。",
+      "settings": "A100/BF16；同已完成主体、修复头和basis；实际硬lag-1递推与原生采样；block16=anchor+15proposal，N1/N40、T0/T1。微测只报告算子毫秒；若有正式窗口，逐窗口设置另列。",
+      "conclusion": "组件profile不等于正式TPS，插计时标记会增开销；需优先看完整无标记计时。",
+      "category": "训练／实现计时诊断",
+      "order": 111,
+      "reference_arm": "DFLASH",
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/native_optimized_vs_dflash_timing_20261009_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/native_head_small_tile_timing_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "Small tile算子profile",
+      "purpose": "检查C1/C40小矩阵与采样成本。",
+      "comparison": "优化前后同状态完整头及分段。",
+      "settings": "A100/BF16；同已完成主体、修复头和basis；实际硬lag-1递推与原生采样；block16=anchor+15proposal，N1/N40、T0/T1。微测只报告算子毫秒；若有正式窗口，逐窗口设置另列。",
+      "conclusion": "算子微测用于筛选实现，正式性能在small_tile评测条目。",
+      "category": "训练／实现计时诊断",
+      "order": 112,
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/native_head_small_tile_timing_20261009_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/head_small_tile_probe_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "Small tile同状态校验",
+      "purpose": "校验不同tile前向／采样是否一致。",
+      "comparison": "原实现、候选小tile实现。",
+      "settings": "A100/BF16；同已完成主体、修复头和basis；实际硬lag-1递推与原生采样；block16=anchor+15proposal，N1/N40、T0/T1。微测只报告算子毫秒；若有正式窗口，逐窗口设置另列。",
+      "conclusion": "只有通过实际q、采样、Graph/eager门槛的实现进入正式测评。",
+      "category": "训练／实现计时诊断",
+      "order": 113,
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/head_small_tile_probe_20261009_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/head_structure_fusion_probe_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "结构融合微探针 v1",
+      "purpose": "定位前驱/fusion/SwiGLU融合的数值差异。",
+      "comparison": "分段原实现与融合候选。",
+      "settings": "A100/BF16；同已完成主体、修复头和basis；实际硬lag-1递推与原生采样；block16=anchor+15proposal，N1/N40、T0/T1。微测只报告算子毫秒；若有正式窗口，逐窗口设置另列。",
+      "conclusion": "保留原始梯度／前向检查，未通过候选不宣称正式性能。",
+      "category": "训练／实现计时诊断",
+      "order": 114,
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/head_structure_fusion_probe_20261009_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/head_structure_fusion_probe_20261009_v2": {
+      "mode": "nonthinking",
+      "title": "结构融合微探针 v2",
+      "purpose": "复核融合版本及完整头时间。",
+      "comparison": "候选融合与小tile基线。",
+      "settings": "A100/BF16；同已完成主体、修复头和basis；实际硬lag-1递推与原生采样；block16=anchor+15proposal，N1/N40、T0/T1。微测只报告算子毫秒；若有正式窗口，逐窗口设置另列。",
+      "conclusion": "模块校验和native评测分别报告，推理递推不能用teacher前驱替代。",
+      "category": "训练／实现计时诊断",
+      "order": 115,
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/head_structure_fusion_probe_20261009_v2",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/native_predecessor_lookup_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "硬前驱投影查表",
+      "purpose": "减少逐token大维度硬前驱编码。",
+      "comparison": "实际前驱embedding投影与预计算查表。",
+      "settings": "A100/BF16；同已完成主体、修复头和basis；实际硬lag-1递推与原生采样；block16=anchor+15proposal，N1/N40、T0/T1。微测只报告算子毫秒；若有正式窗口，逐窗口设置另列。",
+      "conclusion": "推理冻结权重允许预计算；按同状态q/采样校验，正式差异另列。",
+      "category": "训练／实现计时诊断",
+      "order": 116,
+      "code_archive": {
+        "roots": [
+          "native_predecessor_lookup_20261009_v1",
+          "native_predecessor_lookup_validation_20261009_v1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv"
+      ]
+    },
+    "residualV3-nonthing/results/native_predecessor_swiglu_fusion_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "前驱＋SwiGLU融合smoke",
+      "purpose": "降低硬前驱及逐位置启动成本。",
+      "comparison": "原头与融合kernel。",
+      "settings": "A100/BF16；同已完成主体、修复头和basis；实际硬lag-1递推与原生采样；block16=anchor+15proposal，N1/N40、T0/T1。微测只报告算子毫秒；若有正式窗口，逐窗口设置另列。",
+      "conclusion": "此条主要为micro/smoke，不能拿smoke吞吐作正式成绩。",
+      "category": "训练／实现计时诊断",
+      "order": 117,
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/native_predecessor_swiglu_fusion_20261009_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/native_candidate_write_triton_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "候选logit写回融合",
+      "purpose": "减少全词表scatter与重复写回。",
+      "comparison": "原候选更新与Triton融合。",
+      "settings": "A100/BF16；同已完成主体、修复头和basis；实际硬lag-1递推与原生采样；block16=anchor+15proposal，N1/N40、T0/T1。微测只报告算子毫秒；若有正式窗口，逐窗口设置另列。",
+      "conclusion": "候选外logits不变仍会影响概率归一化；必须把实际修正q送verifier。",
+      "category": "训练／实现计时诊断",
+      "order": 118
+    },
+    "residualV3-nonthing/results/native_head_latency_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "完整头低延迟初试（未采纳）",
+      "purpose": "压低完整形状头耗时且保持bitwise。",
+      "comparison": "多个优化候选与原实现。",
+      "settings": "A100/BF16；同已完成主体、修复头和basis；实际硬lag-1递推与原生采样；block16=anchor+15proposal，N1/N40、T0/T1。微测只报告算子毫秒；若有正式窗口，逐窗口设置另列。",
+      "conclusion": "未同时满足一致性和四种设置≥3%提速门槛；未替换原头，负结果保留。",
+      "category": "训练／实现计时诊断",
+      "order": 119,
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/native_head_latency_20261009_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/native_block12_8_gsm8k_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "原实现block12／8正式测试",
+      "purpose": "检查较短草稿对AL/TPS的影响。",
+      "comparison": "每种block的单训主体、联合主体关头及开头。",
+      "settings": "GSM8K non-thinking；C1=200、C40=1319；T0/T1、max_new2096/model4096；block16含anchor，15个新proposal；CUDA Graph。单训主体与联合主体来自各自的一轮全数据训练，权重不同。 block12=11，block8=7 proposal。",
+      "conclusion": "是最新融合版本之前的历史实现对照，保留原窗口，不与最新融合绝对TPS混用。",
+      "category": "研究实验",
+      "order": 30,
+      "reference_arm": "DFLASH",
+      "code_archive": {
+        "roots": [
+          "native_block12_8_gsm8k_20261009_v1",
+          "native_experiment_queue_20261009_v1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ],
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/code/full_nonthinking_long_native_eval_gsm8k_20261008_v3"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      }
+    },
+    "residualV3-nonthing/results/native_head_structure_fusion_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "结构融合正式尝试 v1",
+      "purpose": "检查早期融合实现的native行为和性能。",
+      "comparison": "小tile与结构融合。",
+      "settings": "GSM8K non-thinking；C1=200、C40=1319；T0/T1、max_new2096/model4096；block16含anchor，15个新proposal；CUDA Graph。单训主体与联合主体来自各自的一轮全数据训练，权重不同。",
+      "conclusion": "后续有效版本v2；旧状态可能仍显示native_evaluation，以完成窗口及verified报告判断。",
+      "category": "研究实验",
+      "order": 31,
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/native_head_structure_fusion_20261009_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/full_nonthinking_joint_then_dflash_1epoch_2gpu_20261006_v1": {
+      "mode": "nonthinking",
+      "title": "退役／维护 · full_nonthinking_joint_then_dflash_1epoch_2gpu_20261006_v1",
+      "purpose": "保留准备阶段与替代关系，避免误启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "见原日志／协议；没有合格正式窗口时AL/TPS为未测。",
+      "conclusion": "旧全数据计划已暂停；成功新安排为teacher1+两个learner，不恢复旧controller。含basis和权重，全部保留。",
+      "category": "失败与退役记录",
+      "order": 950
+    },
+    "residualV3-nonthing/results/full_nonthinking_packed65536_a1536_1epoch_2gpu_20261006_v2": {
+      "mode": "nonthinking",
+      "title": "退役／维护 · full_nonthinking_packed65536_a1536_1epoch_2gpu_20261006_v2",
+      "purpose": "保留准备阶段与替代关系，避免误启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "见原日志／协议；没有合格正式窗口时AL/TPS为未测。",
+      "conclusion": "用户优先短训验证，旧全数据计划deferred，不是科学负结果。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "archived": true,
+      "archive_original_root": "residualV3-nonthing/results/full_nonthinking_packed65536_a1536_1epoch_2gpu_20261006_v2",
+      "status_note": "已淘汰并归档：原始代码/日志经逐文件SHA256核验后删除工作目录；原结论和证据可恢复",
+      "archive_sha256": "9847bb8a3616bb66328afc8c47aeb7421500741fdfaee87400cb52d888b48e70",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/results/full_nonthinking_packed65536_a1536_1epoch_2gpu_20261006_v2"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_20261006_v1": {
+      "mode": "nonthinking",
+      "title": "退役／维护 · nosoft3_20k_3epoch_packed65536_a1536_20261006_v1",
+      "purpose": "保留准备阶段与替代关系，避免误启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "见原日志／协议；没有合格正式窗口时AL/TPS为未测。",
+      "conclusion": "打包初版资源／准备失败，恢复版v3有效。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_20261006_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_2gpu_20261007_v2": {
+      "mode": "nonthinking",
+      "title": "退役／维护 · nosoft3_20k_3epoch_packed65536_a1536_2gpu_20261007_v2",
+      "purpose": "保留准备阶段与替代关系，避免误启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "见原日志／协议；没有合格正式窗口时AL/TPS为未测。",
+      "conclusion": "打包分卡准备／资源失败，有效版v3保留。",
+      "category": "失败与退役记录",
+      "order": 950
+    },
+    "residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v1": {
+      "mode": "nonthinking",
+      "title": "退役／维护 · fused_output_dpace_20k_packed1536_2gpu_20261007_v1",
+      "purpose": "保留准备阶段与替代关系，避免误启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "见原日志／协议；没有合格正式窗口时AL/TPS为未测。",
+      "conclusion": "融合训练早期流程，后续v2为主；已有权重仍保留。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/q_only_skip_probe_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "退役／维护 · q_only_skip_probe_20261009_v1",
+      "purpose": "保留准备阶段与替代关系，避免误启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "见原日志／协议；没有合格正式窗口时AL/TPS为未测。",
+      "conclusion": "q诊断准备版本，未形成正式结果。 2026-10-09源码及失败记录已逐文件SHA验证归档，原失败目录已移除；没有模型资产。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "archived": true,
+      "evidence": [
+        "archives/residualV3_ledger_cleanup_20261009_v1/retired_q_probe_code_and_failures.tar.gz",
+        "archives/residualV3_ledger_cleanup_20261009_v1/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/q_only_skip_probe_20261009_v2": {
+      "mode": "nonthinking",
+      "title": "退役／维护 · q_only_skip_probe_20261009_v2",
+      "purpose": "保留准备阶段与替代关系，避免误启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "见原日志／协议；没有合格正式窗口时AL/TPS为未测。",
+      "conclusion": "q观察器失败，有效统计由v4重新采集。 2026-10-09源码及失败记录已逐文件SHA验证归档，原失败目录已移除；没有模型资产。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "archived": true,
+      "evidence": [
+        "archives/residualV3_ledger_cleanup_20261009_v1/retired_q_probe_code_and_failures.tar.gz",
+        "archives/residualV3_ledger_cleanup_20261009_v1/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/q_only_skip_probe_20261009_v3": {
+      "mode": "nonthinking",
+      "title": "退役／维护 · q_only_skip_probe_20261009_v3",
+      "purpose": "保留准备阶段与替代关系，避免误启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "见原日志／协议；没有合格正式窗口时AL/TPS为未测。",
+      "conclusion": "q观察器恢复失败，有效统计由v4重新采集。 2026-10-09源码及失败记录已逐文件SHA验证归档，原失败目录已移除；没有模型资产。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "archived": true,
+      "evidence": [
+        "archives/residualV3_ledger_cleanup_20261009_v1/retired_q_probe_code_and_failures.tar.gz",
+        "archives/residualV3_ledger_cleanup_20261009_v1/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/teacher1_vs2_activation_timing_20261008_v1": {
+      "mode": "nonthinking",
+      "title": "退役／维护 · teacher1_vs2_activation_timing_20261008_v1",
+      "purpose": "保留准备阶段与替代关系，避免误启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "见原日志／协议；没有合格正式窗口时AL/TPS为未测。",
+      "conclusion": "资源／数值门槛失败的计时尝试；不能作有效速度对照。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/teacher1_vs2_activation_timing_20261008_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/joint_dflash_head_card_timing_20261007_v1": {
+      "mode": "nonthinking",
+      "title": "退役／维护 · joint_dflash_head_card_timing_20261007_v1",
+      "purpose": "保留准备阶段与替代关系，避免误启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "见原日志／协议；没有合格正式窗口时AL/TPS为未测。",
+      "conclusion": "用户澄清卡数定义后主动替换，不是训练方法失败。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/joint_dflash_head_card_timing_20261007_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/storage_cleanup_20261008_v1": {
+      "mode": "nonthinking",
+      "title": "退役／维护 · storage_cleanup_20261008_v1",
+      "purpose": "保留准备阶段与替代关系，避免误启动。",
+      "comparison": "不作科学方法比较。",
+      "settings": "见原日志／协议；没有合格正式窗口时AL/TPS为未测。",
+      "conclusion": "磁盘清理及保护核验记录，非模型实验；所有权重留存。",
+      "category": "失败与退役记录",
+      "order": 950,
+      "archived": true,
+      "archive_original_root": "residualV3-nonthing/results/storage_cleanup_20261008_v1",
+      "status_note": "已淘汰并归档：原始代码/日志经逐文件SHA256核验后删除工作目录；原结论和证据可恢复",
+      "archive_sha256": "9847bb8a3616bb66328afc8c47aeb7421500741fdfaee87400cb52d888b48e70",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/results/storage_cleanup_20261008_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/research/q_tail_stop_design_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "q尾部停修设计：双阈值与额外2/4位置窗口",
+      "category": "研究设计；未启动GPU实验",
+      "order": 19,
+      "purpose": "根据用户要求，在一次mismatch预测后保留数值和位置缓冲，按接受价值设计尾部停修。",
+      "comparison": "SpecDec++/PABEE/LTT/CALM/HF机制与当前固定PREFIX10/12及q-only证据；不是正式新性能实验。",
+      "settings": "block16=15proposal；实际硬lag-1；保留raw后缀并全量target验证；候选双阈值、连续2次确认、额外2/4位置；小型q信号单独校准。",
+      "conclusion": "设计完成，具体阈值和延长窗口未测。先预测继续repair的接受价值，再考虑停止；存在C40真实状态逐位不一致，必须先定位。",
+      "evidence": [
+        "residualV3-nonthing/research/q_tail_stop_design_20261009_v1/RESULTS_CN.txt",
+        "residualV3-nonthing/research/q_tail_stop_design_20261009_v1/SOURCE_CHECKS.json",
+        "residualV3-nonthing/research/q_tail_stop_design_20261009_v1/IMPLEMENTATION_NOTES_CN.txt"
+      ],
+      "diagnostic_text": [
+        "相关主文已核对：SpecDec++ §4.2–4.4；PABEE §3.2；LTT §1.1/2；CALM §3/4；HF官方实现说明。",
+        "保留95%修复收益时用同一联合主体关头作对照；不是允许整个AL下降5%。",
+        "修复前/修复后q配对诊断已另行登记；本条仅文献和设计。"
+      ]
+    },
+    "residualV3-nonthing/results/q_pre_post_tail_signal_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "修复前q vs 修复后q：尾部停修信号配对",
+      "category": "native状态诊断；不部署截断",
+      "order": 18,
+      "purpose": "检验PRE先看再修和POST先修再看哪种信号更能预测修复后残余错误及尾部接受机会。",
+      "comparison": "同一native状态、同一target前缀、同一残余mismatch标签；PRE/POST各45维q统计与同规模logistic，另列位置控制及联合变化输入。",
+      "settings": "冻结联合长训主体/三层头/basis；GSM8K同128提示80/24/24研究分组；T0/T1；最多每请求6块、15proposal；GPU6为空卡启动；KV40GiB；只RAM采集，无重训。",
+      "conclusion": "配对诊断完成并复核：128提示/1536块/23040状态。预测实际拒绝时POST maxq明显优于PRE；尾部单点POST不占优，累计前缀POST观测更好但T1区间跨0。延长2位置仍超5%机会代理预算，4位置退化成固定13。没有部署截断或正式AL/TPS成绩。",
+      "diagnostic_text": [
+        "实际到达的native拒绝AUROC，T0 PRE/POST=0.7999/0.9088，T1=0.7686/0.8688。",
+        "尾部第8–15位置的累计置信度AUROC，T0 PRE/POST=0.8246/0.8883，T1=0.8355/0.8694；T1配对差值区间包含0。",
+        "POST单位置置信度算子0.05342ms；昂贵统计分类器未明显改善局部预测。只有省下的实际计算大于判断成本才可能提速。",
+        "连续2次确认+额外2位置的POST累计信号省约24%repair次数，但机会代理损失约5.5%；额外4位置退化成统一修13，不能宣称自适应贡献。"
+      ],
+      "result_tables": [
+        {
+          "source": "VERIFIED_SUMMARY.json",
+          "key": "primary",
+          "caption": "主要配对诊断：实际拒绝为实际到达位置；尾部为第8–15位置全体（非正式AL/TPS）：",
+          "columns": [
+            [
+              "T",
+              "T"
+            ],
+            [
+              "task",
+              "共同标签"
+            ],
+            [
+              "signal",
+              "信号"
+            ],
+            [
+              "zone",
+              "位置集合"
+            ],
+            [
+              "pre_AUROC",
+              "修复前AUROC"
+            ],
+            [
+              "post_AUROC",
+              "修复后AUROC"
+            ],
+            [
+              "delta",
+              "后减前"
+            ],
+            [
+              "paired_interval",
+              "prompt配对差值区间"
+            ]
+          ]
+        },
+        {
+          "source": "RESULTS.json",
+          "key": "paired_summary",
+          "caption": "同标签配对AUROC（诊断成绩；正式native AL/TPS未测）：",
+          "columns": [
+            [
+              "T",
+              "T"
+            ],
+            [
+              "task",
+              "任务"
+            ],
+            [
+              "signal",
+              "信号族"
+            ],
+            [
+              "zone",
+              "位置集合"
+            ],
+            [
+              "pre_AUROC",
+              "修复前AUROC"
+            ],
+            [
+              "post_AUROC",
+              "修复后AUROC"
+            ],
+            [
+              "delta_AUROC",
+              "后减前"
+            ],
+            [
+              "paired_prompt_interval",
+              "prompt配对区间"
+            ]
+          ]
+        }
+      ],
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ],
+      "archived": true,
+      "archive_original_root": "residualV3-nonthing/results/q_pre_post_tail_signal_20261009_v1",
+      "status_note": "已淘汰并归档：原始代码/日志经逐文件SHA256核验后删除工作目录；原结论和证据可恢复",
+      "archive_sha256": "9847bb8a3616bb66328afc8c47aeb7421500741fdfaee87400cb52d888b48e70",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/results/q_pre_post_tail_signal_20261009_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      }
+    },
+    "residualV3-nonthing/results/adaptive_repair_pipeline_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "修复后q风险驱动的一位置延迟尾部停修",
+      "category": "已完成／仅停止尾部修复",
+      "purpose": "判断已修复前缀的拒绝风险，与下一位置修复流水线重叠，减少无用尾部修复。",
+      "comparison": "同一联合主体及三层头：关闭头、FULL15、顺序预测停修、流水线预测停修；不混用不同主体。",
+      "settings": "nonthinking，GSM8K，block16/15proposal；先RAM-only提示分组80/48/48信号拟合及校准，后C1=200/C40=1319、T0/T1、max2096；主体/头/basis冻结。",
+      "conclusion": "四组C1/C40正式窗口全部完成且隔离核验通过。流水线相对FULL15：C1 T0/T1 TPS +1.63%/+2.13%，AL -0.22%/+0.13%；C40 TPS -0.65%/-0.53%，AL -0.27%/-0.17%。只停repair未形成C40提速。BODY_ONLY是联合主体关闭头，不能作为独立单训DFlash。后续正式对照按用户要求改用独立单训DFlash。",
+      "evidence": [
+        "RUN_GUIDE_CN.txt",
+        "status.json",
+        "RESULTS_CN.txt",
+        "ACTIVE_ATTEMPT.json",
+        "calibration/RESULTS_CN.txt",
+        "calibration/predictor.json",
+        "attempt_02/MICRO_GATE.json",
+        "attempt_02/C1/native_protocol.json",
+        "attempt_02/C40/native_protocol.json",
+        "attempt_01_failure.json",
+        "attempt_03/micro_lineage.json",
+        "attempt_03/C1/native_protocol.json",
+        "attempt_03/C40/native_protocol.json",
+        "STATS_RECOVERY_CN.txt",
+        "attempt_04/micro_lineage.json",
+        "attempt_04/C1/native_protocol.json",
+        "attempt_04/C40/native_protocol.json",
+        "EVIDENCE_AUDIT.json",
+        "C1_NATIVE_GATE_VERIFIED.json",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv"
+      ],
+      "diagnostic_text": [],
+      "formal_sources": [
+        "attempt_04/C1/formal/summary.json",
+        "attempt_04/C40/formal/summary.json"
+      ],
+      "reports": [
+        "RESULTS_CN.txt"
+      ],
+      "reference_arm": "FULL15",
+      "code_archive": {
+        "roots": [
+          "adaptive_repair_pipeline_20261009_v2",
+          "adaptive_repair_pipeline_20261009_v3",
+          "adaptive_repair_pipeline_20261009_v4",
+          "repair_prefix_cutoff_20261009_v1"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      }
+    },
+    "residualV3-nonthing/results/confidence_input_ablation_gpu7_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "置信度输入配对消融：q／DFlash hidden／实际前驱",
+      "purpose": "检验哪些推理时可得信息能够预测修复后的实际首拒绝及前缀存活，为尾部停修选择信号。",
+      "comparison": "14组输入，POST maxq旧小预测器为参考；PRE/POST q统计、位置控制、冻结hidden编码、实际前驱编码及组合，另测原始hidden；4组比较overlap软标签与真实拒绝标签。",
+      "settings": "联合长训主体、三层no-soft头与basis冻结；GSM8K non-thinking、block16=15proposal、T0/T1；176提示80/48/48，最多4块/请求；GPU7空卡启动；原始状态仅RAM。线性探针参数2–4353；拟合及正则选择仅训练提示。",
+      "conclusion": "176提示/1408块/21120状态，36小预测器完成并核验，旧maxq基准结果精确复现。真实拒绝排序仍支持POST maxq（T0/T1 AUROC=0.9059/0.8582）；hidden+前驱及其与q统计组合未胜出。更多POST q统计有概率校准改善，但未证明更早停修或净提速。T0部分留出代理损失超过校准预算。主体/头/basis冻结，AL/TPS未测，未变更卡6正式策略。",
+      "category": "已完成／置信度输入配对诊断",
+      "order": 21,
+      "formal_sources": [],
+      "reports": [
+        "RESULTS_VERIFIED_CN.txt"
+      ],
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ],
+      "result_tables": [
+        {
+          "source": "VERIFIED_SUMMARY.json",
+          "key": "primary",
+          "caption": "研究留出的真实首拒绝预测；AUROC越高排序越好，Brier越低概率预测越好。非正式AL/TPS：",
+          "columns": [
+            [
+              "T",
+              "T"
+            ],
+            [
+              "model",
+              "输入"
+            ],
+            [
+              "parameter_count",
+              "参数"
+            ],
+            [
+              "AUROC",
+              "AUROC"
+            ],
+            [
+              "AP",
+              "AP"
+            ],
+            [
+              "holdout_Brier",
+              "Brier"
+            ],
+            [
+              "prefix_Brier_after",
+              "前缀校准后Brier"
+            ]
+          ]
+        }
+      ],
+      "archived": true,
+      "archive_original_root": "residualV3-nonthing/results/confidence_input_ablation_gpu7_20261009_v1",
+      "status_note": "已淘汰并归档：原始代码/日志经逐文件SHA256核验后删除工作目录；原结论和证据可恢复",
+      "archive_sha256": "9847bb8a3616bb66328afc8c47aeb7421500741fdfaee87400cb52d888b48e70",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/results/confidence_input_ablation_gpu7_20261009_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      }
+    },
+    "residualV3-nonthing/results/repair_latent_confidence_pilot_gpu7_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "三层SwiGLU后共享latent预测头：冻结特征诊断",
+      "purpose": "验证修复网络完成融合后的表示是否有额外拒绝与存活预测信号，作为修复价值研究的第一步。",
+      "comparison": "POST maxq／POST q统计／最终latent256／latent+maxq／latent+q统计；真实首拒绝与overlap标签分开。",
+      "settings": "主体/三层头/basis冻结，GSM8K176提示80/48/48、T0/T1、15proposal；18小预测器；GPU7空卡启动；真实前驱重算latent必须逐元素重构native修复logits一致。",
+      "conclusion": "18个预测器完成；176提示/1408块与上次诊断严格配对。三层最终latent线性预测真实首拒绝AUROC=0.7459/0.7255，latent+q统计=0.8919/0.8477，均未形成胜过POST maxq(0.9059/0.8582)的拒绝排序证据。部分Brier改善，尚无实际停修AL/TPS成绩。主体/头/basis均冻结；不是联合辅助训练。修复价值双分支目前只有设计，未执行。",
+      "category": "已完成／三层后共享特征诊断",
+      "order": 22,
+      "formal_sources": [],
+      "reports": [
+        "RESULTS_VERIFIED_CN.txt"
+      ],
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/retired_diagnostics.tar.gz",
+        "residualV3-nonthing/research/repair_value_design_20261009_v1/DESIGN_CN.md",
+        "residualV3-nonthing/research/repair_value_design_20261009_v1/SOURCE_FACTCHECK.md",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ],
+      "result_tables": [
+        {
+          "source": "VERIFIED_SUMMARY.json",
+          "key": "primary",
+          "caption": "研究留出的真实首拒绝预测；AUROC越高排序越好，Brier越低概率误差越小。未测正式AL/TPS：",
+          "columns": [
+            [
+              "T",
+              "T"
+            ],
+            [
+              "model",
+              "输入"
+            ],
+            [
+              "parameter_count",
+              "参数"
+            ],
+            [
+              "AUROC",
+              "AUROC"
+            ],
+            [
+              "AP",
+              "AP"
+            ],
+            [
+              "holdout_Brier",
+              "Brier"
+            ],
+            [
+              "prefix_Brier_after",
+              "前缀校准后Brier"
+            ]
+          ]
+        }
+      ],
+      "archived": true,
+      "archive_original_root": "residualV3-nonthing/results/repair_latent_confidence_pilot_gpu7_20261009_v1",
+      "status_note": "已淘汰并归档：原始代码/日志经逐文件SHA256核验后删除工作目录；原结论和证据可恢复",
+      "archive_sha256": "9847bb8a3616bb66328afc8c47aeb7421500741fdfaee87400cb52d888b48e70",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/results/repair_latent_confidence_pilot_gpu7_20261009_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      }
+    },
+    "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "停修并截短target验证前缀：v1",
+      "category": "失败准备／证据保留",
+      "order": 23.1,
+      "purpose": "将少算repair与少算target分开，检验端到端截短收益。",
+      "comparison": "独立单训一轮DFLASH／FULL15／仅停止尾部REPAIR_STOP／停止尾部并截短target前缀VERIFY_STOP；不测BODY_ONLY。",
+      "settings": "冻结全量单轮主体、三层no-soft头/basis/4参数q预测器；GSM8K nonthinking，block16/15proposal，C1=200/C40=1319，T0/T1，max2096；两并发smoke通过后才正式。v1启动校验失败，无正式成绩。",
+      "conclusion": "启动dummy温度0.9时误把未缩放score与processed q比较，校验失败；原始冻结代码和日志保留。没有正式AL/TPS。",
+      "reference_arm": "DFLASH",
+      "formal_sources": [
+        "C1/formal/summary.json",
+        "C40/formal/summary.json"
+      ],
+      "diagnostic_text": [],
+      "reports": [
+        "RESULTS_VERIFIED_CN.txt"
+      ],
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ],
+      "expected_windows": 16,
+      "completion_conclusion": "见下表与原始窗口。只比较同并发、温度、面板及图配置的DFLASH对照；单轮GSM8K开发面板不能当独立最终测试。",
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a"
+    },
+    "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v2": {
+      "mode": "nonthinking",
+      "title": "停修并截短target验证前缀：v2",
+      "category": "失败准备／证据保留",
+      "order": 23.2,
+      "purpose": "将少算repair与少算target分开，检验端到端截短收益。",
+      "comparison": "独立单训一轮DFLASH／FULL15／仅停止尾部REPAIR_STOP／停止尾部并截短target前缀VERIFY_STOP；不测BODY_ONLY。",
+      "settings": "冻结全量单轮主体、三层no-soft头/basis/4参数q预测器；GSM8K nonthinking，block16/15proposal，C1=200/C40=1319，T0/T1，max2096；两并发smoke通过后才正式。四组统一FULL_AND_PIECEWISE，独立stock sampler核验processed q及实际保留proposal。",
+      "conclusion": "已核验14/16正式窗口。FULL15相对独立单训DFlash：C1 T0/T1 AL +13.53%/+17.34%、TPS +8.30%/+12.12%；C40 AL +12.78%/+20.16%、TPS +4.93%/+12.11%。REPAIR_STOP未进一步提速；VERIFY_STOP的C1明显更慢。C40 VERIFY_STOP因Graph批量状态引用错误未正式测得，恢复目录仅补这2窗口。",
+      "reference_arm": "DFLASH",
+      "formal_sources": [
+        "C1/formal/summary.json",
+        "C40/formal/summary.json"
+      ],
+      "diagnostic_text": [
+        "用户要求暂缓补测和截断扩展，先完成顶层设计；C40 VERIFY_STOP缺的两窗口不计成绩。"
+      ],
+      "reports": [
+        "RESULTS_VERIFIED_CN.txt"
+      ],
+      "evidence": [
+        "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v2/RUN_GUIDE_CN.txt",
+        "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v2/DESIGN_CN.md",
+        "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v2/preregistration.json",
+        "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v2/CPU_GATE.json",
+        "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v2/status.json",
+        "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v2/controller_pid.json",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv"
+      ],
+      "expected_windows": 16,
+      "completion_conclusion": "见下表与原始窗口。只比较同并发、温度、面板及图配置的DFLASH对照；单轮GSM8K开发面板不能当独立最终测试。",
+      "code_archive": {
+        "roots": [
+          "native_target_prefix_cut_20261009_v2"
+        ],
+        "archive": "archives/residualV3_research_cleanup_20261011_v3/retired_code.tar.gz",
+        "manifest": "archives/residualV3_research_cleanup_20261011_v3/retired_code.manifest.json"
+      }
+    },
+    "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v3_recovery": {
+      "mode": "nonthinking",
+      "title": "target前缀截短：v3仅补C40 VERIFY_STOP",
+      "purpose": "修复正式模式Graph输出引用的批量绑定，补齐原实验缺失窗口。",
+      "comparison": "独立单训DFLASH／FULL15／REPAIR_STOP／VERIFY_STOP；复用v2原14正式窗口，v3只补C40 VERIFY_STOP。",
+      "settings": "GSM8K nonthinking；C1=200/C40=1319；T0/T1；block16/15proposal；max2096；同权重/阈值/FULL_AND_PIECEWISE；先正式路径smoke再独立概率契约smoke；仅使用空闲GPU7。",
+      "conclusion": "用户明确暂不补测；后台控制器未启动。复用原14个正式窗口，缺C40 VERIFY_STOP T0/T1。已完成窗口中截断未额外提速；完整修复整体方案仍有AL/TPS正收益。CPU引用修复通过，GPU校验尚未进行。",
+      "category": "暂不启动／顶层设计优先",
+      "order": 23.3,
+      "reference_arm": "DFLASH",
+      "formal_sources": [
+        "C1/comparison.json",
+        "C40/comparison.json"
+      ],
+      "reports": [
+        "RESULTS_VERIFIED_CN.txt"
+      ],
+      "diagnostic_text": [
+        "不重跑v2的14个已核验正式窗口。新代码未改变模型参数、修复强度、停修阈值和采样算法。"
+      ],
+      "evidence": [
+        "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v3_recovery/RUN_GUIDE_CN.txt",
+        "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v3_recovery/preregistration.json",
+        "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v3_recovery/CPU_GATE.json",
+        "residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v3_recovery/status.json",
+        "residualV3-nonthing/research/repair_value_design_20261009_v1/TOP_LEVEL_DESIGN_CN.md"
+      ],
+      "expected_windows": 16
+    },
+    "residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_teacher1_3gpu_20261009_v1": {
+      "mode": "nonthinking",
+      "title": "全数据第二轮：共享teacher续训单训DFlash与主体+头",
+      "purpose": "从第一轮完成后的两组完整断点各追加全数据一轮；保存可随时暂停恢复的训练状态，并记录后续基线可对齐的训练预算。",
+      "comparison": "独立单训DFlash vs 主体+no-soft3头联合；分别承接各自第一轮权重/优化器，第二轮同pack与anchor。训练期间不自动测评。",
+      "settings": "833176条/1019443945输入token；shuffle43共15854包；65536 token/包、1536 anchor整块、block16含15 proposal、一包一次更新；teacher TP1/DP1一张卡，两独立learner各一张；头CE+D-PACE+OUTPUT，主体raw CE/D-PACE；FP32 master/Muon/Adam全部续接，新1%warmup+cosine周期；只等空卡，每200更新及请求保存两路共同断点。策略文件：residualV3-nonthing/TRAINING_STRATEGY_NONTHINKING.md；即时入口：controller.log/joint_training.log/dflash_training.log。",
+      "conclusion": "后台等待服务已启动；GPU实际进度以本目录status.json和current_attempt.json为准。源checkpoint校验和与CPU恢复后下一步一致性已通过；实际CUDA恢复校验在拿到卡后执行。第一轮源权重/完整状态不变。第二轮尚无AL/TPS结果；连续周期追加不等于预先规划两轮cosine。"
+    },
+    "residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_q45_teacher1_3gpu_20261010_v1": {
+      "mode": "nonthinking",
+      "title": "第二轮q45独立预测器：初次现场校验OOM（已保留并续至v2）",
+      "purpose": "给正在进行的联合长训练添加repair后q45独立线性预测器，核验速度和主梯度隔离。",
+      "comparison": "同实际在线包、同权重与1536 anchor的原第二轮实现。",
+      "settings": "完整断点cursor426；65536输入token/包，1536整块；一个teacher、joint和单训DFlash各一卡；92参数辅助分支。",
+      "conclusion": "v1在首次真实包主损失反向发生OOM，未提交新共同进度，已暂停。错误源码与日志保留；v2从原cursor426以expandable_segments重做校验通过并续训。不是正式AL/TPS结果。",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/code/full_joint_body_shared_teacher_epoch2_q45_20261010_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_q45_teacher1_3gpu_20261010_v2": {
+      "mode": "nonthinking",
+      "title": "第二轮续训：repair后q45独立预测器，主梯度逐位一致、计算开销+3.39%",
+      "purpose": "测量45维修复后q统计的独立预测器能否低开销加入第二轮长训练；通过后继续。",
+      "comparison": "同一真实在线包、同主权重/anchor/RNG的原实现；6对交替前后向，前2对warmup。",
+      "settings": "从原第二轮cursor426完整续训；GPU4 teacher、GPU5 joint、GPU7单训DFlash；65536输入token/包、1536 anchor整块、block16；45维到2个标量线性读出共92参数；输入/标签detach、独立AdamW(.003,.001)、独立clip1；T0 argmax一致/T1已有OUTPUT overlap。",
+      "conclusion": "现场通过：主前后向1.929856→1.995189秒，+3.3854%；辅助直接63.94ms。99个主参数张量梯度、主损失、CUDA RNG逐位一致；完整CUDA断点保存/恢复含预测器通过。已启用继续第二轮；不含主optimizer.step和teacher等待的配对计算比较，不是推理TPS/AL或预测质量结论。实时joint_training.log含AUX_Q45，详细证据见RESULTS_CN.txt与gates/auxiliary_live_gate.json。"
+    },
+    "residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v3": {
+      "mode": "nonthinking",
+      "title": "在线两种非线性辅助读出：v3计算开销校验未通过",
+      "purpose": "在第二轮长训练内公平比较q45非线性读出与q45+repair末层256维非线性读出；辅助梯度完全隔离。",
+      "comparison": "仅Q45_MLP与Q45_REPAIR_LATENT_MLP；共同样本、T0/T1标签、学习率和更新次数。",
+      "settings": "45→32→2与301→32→2，SiLU，各1538/9730参数；65536输入token、1536 anchors×15位置；两独立AdamW .003、wd .001、clip1；输入/标签detach，无native rollout。teacher4 retained，joint5，body7。主完整断点从8847续训。",
+      "conclusion": "主损失、99组梯度、CUDA RNG逐位一致，首次完整CUDA断点恢复通过；核心计算1.961815→2.213515秒（+12.83%），超过5%门槛，辅助未启用，主训练继续至8896完整断点。后续v4优化计算顺序和按需捕获表示，保留本版证据，不能据此判断预测能力。"
+    },
+    "residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4": {
+      "mode": "nonthinking",
+      "title": "第二轮内嵌两种非线性q预测器：现场校验通过、继续训练",
+      "purpose": "比较只给修复后q45与再给三层repair末层256维表示，是否提高独立置信度读出；直接嵌入当前长训练。",
+      "comparison": "仅Q45_MLP和Q45_REPAIR_LATENT_MLP；共同q45、样本、teacher-forcing T0/T1标签和更新次数；各自优化器，detach保证repair梯度不受影响。",
+      "settings": "45→32→2和301→32→2（SiLU），1538/9730参数；833176条nonthinking、max4096；每包65536输入token，1536anchor整块，15预测位置/block16；独立AdamW .003/wd .001/clip1；均值标准差固定首个新包；仅T0 argmax一致/T1已有OUTPUT overlap标签，无native rollout。teacher4 retained、joint5、单训DFlash7。从8896/global24743完整断点续训；旧92参数线性头不再更新。",
+      "conclusion": "已经嵌入并启用；同真实1536-anchor包主损失、99组参数梯度和CUDA RNG逐位一致，核心计算1.933626→1.999303秒（+3.3966%）；共享特征62.129ms，两个读出更新合计4.362ms。8897共同完整CUDA断点恢复通过，两支参数/Adam/normalizer/steps一起恢复，随后连续同步更新。主训练原状态继承，teacher未重启，卡5/7各约74GiB池，显存接力已正常退役。记录运行策略与即时日志；尚无held-out AUROC/接受长度/TPS结果，BCE不是这些指标。"
+    },
+    "residualV3-nonthing/results/epoch1_epoch2_native_compare_gsm8k_20261010_v1": {
+      "mode": "nonthinking",
+      "title": "epoch1与epoch2：单训DFlash及DFlash＋三层修复头正式对比",
+      "purpose": "比较增加一轮训练对单训DFlash和联合修复模型的接收长度与端到端吞吐的影响",
+      "comparison": "E1_DFLASH、E1_JOINT_HEAD、E2_DFLASH、E2_JOINT_HEAD；各自独立单训基线，不测联合主体关闭头；同一优化实现和同一固定面板",
+      "settings": "GSM8K nonthinking；C1=200/卡5，C40=1319/卡6，同时运行；T0/T1，block16含anchor+15 proposal，max_new2096/context4096，BF16，CUDA Graph，target+draft共卡；头为lean_combined优化三层no-soft，辅助预测器和截断关闭；先smoke再正式，各1轮；原权重及完整断点保留",
+      "conclusion": "已完整结束，16个正式窗口均通过请求数、吞吐隔离及target/draft图回放检查，未出现eager/fallback。epoch2联合模型相对同轮独立单训DFlash：C1 T0/T1接收长度+13.86%/+18.49%，吞吐+6.20%/+10.27%；C40 T0/T1接收长度+13.70%/+18.92%，吞吐+5.68%/+10.21%。epoch2相对epoch1联合模型，四个窗口接收长度增加0.56%–1.60%，吞吐增加0.51%–1.60%，本面板上的第二轮增量较小。单训DFlash第二轮增量也较小，C1 T1接收长度-0.08%、吞吐+0.01%，基本不变。本次为单训练seed、单正式轮次，不据此宣称已完全收敛或跨任务稳定收益。",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/code/epoch1_epoch2_native_compare_20261010_v1",
+          "residualV3-nonthing/code/native_head_structure_fusion_20261009_v2"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/epoch2_trained_aux_tail_cut_20261010_v1": {
+      "mode": "nonthinking",
+      "title": "第二轮已训练q45/末层预测头的自适应尾部截断",
+      "purpose": "验证第二轮内嵌训练的预测头能否在保留接收收益时减少repair和target验证工作，并获得真实端到端吞吐提升",
+      "comparison": "同轮独立单训DFLASH、联合模型FULL15、Q45_CUT、Q45_LATENT_CUT；两个CUT停修并截短实际target验证前缀，不测BODY_ONLY",
+      "settings": "第二轮权重和两个已训练MLP均冻结；GSM8K train64题校准＋32题检查，与正式test问句不重叠；至少修8位置、连续2次低前缀生存概率、一位置延迟；仅校准选阈值，固定全修路径保留率>=99.5%；C1=200/C40=1319，T0/T1，block16=anchor+15proposal，max2096/context4096，BF16，target+draft同卡，统一FULL_AND_PIECEWISE；当前仅空卡6，串行两路；GPU参考/图等价校验和native smoke通过才进入正式；无需重导出大权重",
+      "conclusion": "C1四组正式窗口已完成；Q45_CUT T0/T1接收长度相对FULL15 -0.36%/-0.57%，吞吐-9.98%/-10.20%；Q45_LATENT_CUT T0/T1接收长度-0.29%/+0.41%，吞吐-10.42%/-9.54%。核查发现target逻辑行虽下降但C1图行仍补到16，且停止后尾部仍计算q45和采样；属于性能实现未充分省计算，不能归因为预测未训练好。C1 T0文本两个CUT相对FULL15均0/200差异，冻结源码哈希核验通过。具体成本归因待逐模块计时；C40仍运行，当前不下C40结论。 [性能核查](residualV3-nonthing/results/epoch2_trained_aux_tail_cut_20261010_v1/PERFORMANCE_DIAGNOSIS_CN.md)。",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/code/epoch2_trained_aux_tail_cut_20261010_v1"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/epoch2_tail_cut_optimized_20261010_v2": {
+      "mode": "nonthinking",
+      "title": "第二轮尾部截断实现优化：精确q45统计、设备端跳过及细化target图",
+      "purpose": "修正截断未充分减少实际计算的问题，固定训练模型、预测器和阈值验证端到端吞吐",
+      "comparison": "同轮独立单训DFLASH、FULL15、Q45_CUT、Q45_LATENT_CUT；完整头与两种截断均复用第二轮同一联合模型；不测BODY_ONLY",
+      "settings": "GSM8K nonthinking；C1=200/卡7，C40=1319/卡6等待旧评测完成且空闲；T0/T1；block16=anchor+15proposal，max_new2096/context4096，BF16；至少修8、patience2、一位置延迟；同冻结校准阈值；C1 target图1–16行，C40 ragged总行最多补7；有效前缀保留原Gumbel数学；先GPU校验、smoke再正式",
+      "conclusion": "GPU逐值校验和8个服务smoke通过。正式C40 8/8完成：相对FULL15，Q45_CUT T0/T1接收长度−0.359%/−0.301%，TPS−6.920%/−5.835%；Q45_LATENT_CUT为−0.330%/−0.005%，TPS−7.468%/−5.914%，当前截断无端到端净收益；C1正式继续。独立流水线探针24项一致性检查、72项计时：C40/T0完整15位置6.50ms，已知停10且无预测6.24ms，当前预测双流8.55ms；去掉早期等待几乎无收益，再删末两次无用预测8.44ms，仍慢于完整头。探针未替换正式实现；详细报告在probes/wait_path_20261011/RESULTS_CN.md。",
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/code/epoch2_tail_cut_optimized_20261010_v2"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      },
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3": {
+      "mode": "nonthinking",
+      "title": "尾部截断短测迭代与CPU同步诊断",
+      "purpose": "修复尾部截断吞吐下降超过接受长度下降的问题。",
+      "comparison": "FULL15是固定联合模型控制；外部基线是独立训练epoch2 DFlash，见epoch1/epoch2正式比较。",
+      "settings": "GSM8K nonthinking，C1 16题/C40 80题，max256，block16，BF16；8题事件诊断只用于定位等待，不作为吞吐证据；模型权重/阈值不变。",
+      "conclusion": "最新完成的是iter28/29（C1=16/C40=80、max256）：共同概率准备融合/FULL15_NOFILL的TPS变化为C1 T0/T1 −0.487%/−0.065%、C40 +0.055%/+1.346%，AL不变；真正Q45截断/FULL15_PREPARED的TPS为−0.633%/−0.143%、−1.389%/−1.741%，AL为−0.699%/−0.300%、−0.375%/+0.290%，仍无截断净提速。12窗隔离与Graph通过，实际token/前驱/verifier q/后修q45/cut/bonus合同通过；KV为原生更新和发射计数等价，未独立比较KV字节，latent未核验。开发177份runtime及evaluator仍与iter21逐字节一致，选用C1 iter20/C40 iter21；NOFILL正式版与iter26–29均独立冻结。iter22–25等旧负结果保留在短测表及各报告；确定性empty调试预填充已局部取消，NOFILL真实服务头+采样C1为1.299/1.342ms、C40为5.371/6.143ms。probe33决策/熵prefix融合用于C1，probe34概率准备用于两臂，probe36精确缓存预取用于C40；probe35分片数值通过但C40慢37%–44%，未进入native。这些分段与微测不能代替TPS。DEVICE消除了旧D2H同步，但target仍执行固定补齐图；C40现有decode计数只覆盖子集，固定15槽直方图不是真实cut。尚缺iter28/29混合长度服务prepare/cache/跨流等待/target完整归因；当前不新增截断正式长测。2026-10-11本轮目录整理未产生新AL/TPS结果，完整旧追加笔记见整理前registry快照。",
+      "result_tables": [
+        {
+          "source": "SHORT_RESULTS.json",
+          "key": "rows",
+          "caption": "短测AL/TPS（不是完整正式测评；事件诊断排除）：",
+          "columns": [
+            [
+              "iteration",
+              "迭代"
+            ],
+            [
+              "C",
+              "C"
+            ],
+            [
+              "T",
+              "T"
+            ],
+            [
+              "full_AL",
+              "FULL15 AL"
+            ],
+            [
+              "cut_AL",
+              "截断 AL"
+            ],
+            [
+              "AL_percent",
+              "AL变化%"
+            ],
+            [
+              "full_TPS",
+              "FULL15 TPS"
+            ],
+            [
+              "cut_TPS",
+              "截断 TPS"
+            ],
+            [
+              "TPS_percent",
+              "TPS变化%"
+            ],
+            [
+              "isolated",
+              "隔离"
+            ]
+          ]
+        }
+      ],
+      "evidence": [
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/RESULTS_CN.md",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/status.json",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/single_card_C1_smoke.log",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/single_card_C1_short.log",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/single_card_C40_smoke.log",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/single_card_C40_short.log",
+        "residualV3_main_v1/maintenance/storage_cleanup_20261011_v2/RESULTS_CN.md",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/IMPLEMENTATION_REVIEW_CN.md",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/SELECTED_IMPLEMENTATION.json",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/RESTORED_RUNTIME_GATE.json",
+        "archives/residualV3_research_cleanup_20261012_v4/retired_tail_probes.tar.gz",
+        "archives/residualV3_research_cleanup_20261012_v4/retired_tail_results.tar.gz",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_29_no_empty_fill/FULL_GATE.json",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_29_no_empty_fill/SUMMARY.json",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_29_no_empty_fill/IMPLEMENTATION_COMPARISON.json",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_29_no_empty_fill/audit.log",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_32_native_cost_snapshot/ANALYSIS.json",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_32_native_cost_snapshot/INCREMENTAL_COST.json",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_32_native_cost_snapshot/RESULTS_CN.md",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_33_fused_tail_decision/RESULTS_CN.md",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_34_fused_probability_prepare/RESULTS_CN.md",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_35_sharded_histogram/RESULTS_CN.md",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_35_sharded_histogram/source_hashes.json",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/PARALLEL_OPTIMIZATION_CN.md",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/PARALLEL_OPTIMIZATION.json",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_37_native_fused_followup/RESULTS_CN.md",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_37_native_fused_followup/progress.json",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_37_native_fused_followup/CRITICAL_PATH_CN.md",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_37_native_fused_followup/CONTRACT_AUDIT.json",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_37_native_fused_followup/FINAL_REVIEW_CN.md",
+        "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_37_native_fused_followup/HANDOFF_PROCESS_SNAPSHOT.json",
+        "HANDOFF_20261011_CN.md",
+        "residualV3_main_v1/maintenance/residualv3_takeover_20261011_native_cost_v1/RESULTS_CN.txt",
+        "residualV3_main_v1/maintenance/residualv3_takeover_20261011_native_cost_v1/SOURCE_REAUDIT.json",
+        "residualV3_main_v1/maintenance/residualv3_takeover_20261011_native_cost_v1/WINDOW_ANALYSIS.json",
+        "residualV3_main_v1/maintenance/residualv3_takeover_20261011_native_cost_v1/RESOURCE_SNAPSHOT.json",
+        "residualV3_main_v1/maintenance/residualv3_takeover_20261011_native_cost_v1/inspection.log",
+        "residualV3-nonthing/current/START_HERE_CN.txt",
+        "residualV3_main_v1/maintenance/research_cleanup_20261011_v3/RESULTS_CN.txt",
+        "residualV3_main_v1/maintenance/research_cleanup_20261011_v3/before/registry.json",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ],
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/code/epoch2_tail_cut_optimized_20261010_v2",
+          "residualV3-nonthing/code/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter22_fused_export_C1",
+          "residualV3-nonthing/code/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter23_fused_export_C40",
+          "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_21_bounded_epilogue",
+          "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_23_sampled_max",
+          "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_24_input_assembly",
+          "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_26_state_export",
+          "residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/output_epilogue_02"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      }
+    },
+    "residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1": {
+      "mode": "nonthinking",
+      "title": "新FULL15_NOFILL与E2独立单训DFlash正式长测",
+      "purpose": "直接测量已优化FULL15联合模型对匹配epoch独立单训DFlash的接收长度及端到端吞吐。",
+      "comparison": "DFLASH=E2独立单训；FULL15_NOFILL=E2联合主体+三层头。不同主体权重的整体模型比较，禁止用联合主体关头替代。",
+      "settings": "用户明确要求长测；C1=200/C40=1319，max2096/context4096，T0/T1，BF16、batch-invariant、CUDA Graph；GPU7顺序独占；先smoke再正式；C1 KV52GiB/C40正式44GiB，两臂一致；单轮。",
+      "conclusion": "2026-10-11新FULL15正式对照：用户明确将短测改为长测；E2独立单训DFlash对新FULL15_NOFILL联合模型。状态complete，正式窗口8/8。C1 T0 AL+13.86% TPS+9.94% 隔离True；C1 T1 AL+18.19% TPS+14.09% 隔离True；C40 T0 AL+13.70% TPS+6.98% 隔离True；C40 T1 AL+18.75% TPS+12.04% 隔离True。三层头/权重未改，仅沿用已核验的局部取消调试预填充；不测尾部截断，不重训；不同主体权重的整体模型对比。",
+      "formal_sources": [
+        "C1/formal/summary.json",
+        "C40/formal/summary.json"
+      ],
+      "evidence": [
+        "residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1/RESULTS_CN.md",
+        "residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1/COMPARISON.json",
+        "residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1/native_protocol.json",
+        "residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1/PREFLIGHT.json",
+        "residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1/status.json",
+        "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      ],
+      "cleanup_archive_20261012": {
+        "roots": [
+          "residualV3-nonthing/code/epoch2_tail_cut_optimized_20261010_v2"
+        ],
+        "index": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+        "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json"
+      }
+    },
+    "residualV3-nonthing/results/aux_q45_training_20261010_v1": {
+      "mode": "nonthinking",
+      "title": "q45辅助训练的初始过渡记录",
+      "category": "失败与退役记录",
+      "purpose": "保留被epoch2 q45/latent联合训练替代的准备记录。",
+      "comparison": "无有效模型或正式AL/TPS比较。",
+      "settings": "原状态及日志见归档。",
+      "conclusion": "仅初始准备文件；有效epoch2训练及辅助权重在完整E2根中保留。",
+      "archived": true,
+      "status_note": "原始文件经逐文件SHA256校验后归档，原目录已删除；历史诊断解释保留",
+      "archive_original_root": "residualV3-nonthing/results/aux_q45_training_20261010_v1",
+      "archive_sha256": "773e02b3d4772d6196287c9b20c8c4b3d0a1d9457760e4e3876a4549a175b75a",
+      "evidence": [
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.tar.gz",
+        "archives/residualV3_research_cleanup_20261011_v3/INDEX.csv",
+        "archives/residualV3_research_cleanup_20261011_v3/retired_diagnostics.manifest.json",
+        "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json"
+      ]
+    },
+    "residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1": {
+      "mode": "nonthinking",
+      "title": "E2 HumanEval/MT-Bench：独立DFlash与联合完整修复头",
+      "purpose": "验证代码与聊天领域的native接受长度及端到端吞吐收益。",
+      "comparison": "E2独立单训DFLASH vs E2联合主体+完整FULL15_NOFILL头；仅两臂，无尾部截断/辅助预测。",
+      "settings": "DSpark全量HumanEval164/MT-Bench80第一轮唯一题；C1/C40、T0/T1、max2096/context4096、BF16、batch-invariant/CUDA Graph；单轮；先实际prompt smoke；所有GPU0–7允许，仅使用宿主空卡。",
+      "conclusion": "2026-10-11 E2跨域对照：HumanEval164题、MT-Bench80题，均为DSpark第一轮全量原题。状态complete，正式窗16/16。humaneval C1 T0 AL+14.48% TPS+10.85% 隔离True；humaneval C1 T1 AL+21.50% TPS+17.48% 隔离True；humaneval C40 T0 AL+14.46% TPS+7.47% 隔离True；humaneval C40 T1 AL+18.95% TPS+14.58% 隔离True；mt-bench C1 T0 AL+8.52% TPS+6.78% 隔离True；mt-bench C1 T1 AL+10.66% TPS+8.78% 隔离True；mt-bench C40 T0 AL+8.48% TPS+3.97% 隔离True；mt-bench C40 T1 AL+13.72% TPS+8.43% 隔离True。",
+      "formal_sources": [
+        "humaneval/C1/formal/summary.json",
+        "humaneval/C40/formal/summary.json",
+        "mt-bench/C1/formal/summary.json",
+        "mt-bench/C40/formal/summary.json"
+      ],
+      "evidence": [
+        "residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/RESULTS_CN.md",
+        "residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/COMPARISON.json",
+        "residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/plan.json",
+        "residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/PREFLIGHT.json",
+        "residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/DSPARK_PROTOCOL_AUDIT.json",
+        "residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/status.json",
+        "residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/FINAL_AUDIT.json",
+        "residualV3_main_v1/research/epoch2_three_domains_comparison_20261012/COMPARISON_CN.txt",
+        "residualV3_main_v1/research/epoch2_three_domains_comparison_20261012/SOURCE_AUDIT.json",
+        "residualV3_main_v1/research/epoch2_three_domains_comparison_20261012/HEAD_ONLY_COMPARISON.csv"
+      ]
+    },
+    "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1": {
+      "mode": "nonthinking",
+      "title": "E2三领域C32：独立DFlash vs 完整NOFILL头",
+      "purpose": "按用户新并发口径补测；保留历史C40。",
+      "comparison": "E2独立单训DFLASH vs E2联合主体+FULL15_NOFILL；仅两臂，无截断。",
+      "settings": "C32 T0/T1；GSM8K1319/HumanEval164/MT-Bench80首轮原题，同原C40面板和顺序；max2096/context4096；KV44GiB正式/38GiB smoke，BF16 batch-invariant CUDA Graph；宿主空卡，所有GPU允许。",
+      "conclusion": "C32新补测状态complete，同窗对照6/6、已成对报告窗口12/12；最终审计通过。gsm8k C32 T0 AC+13.70% TPS+6.86%；gsm8k C32 T1 AC+18.75% TPS+11.26%；humaneval C32 T0 AC+14.46% TPS+9.43%；humaneval C32 T1 AC+18.94% TPS+14.89%；mt-bench C32 T0 AC+8.48% TPS+3.17%；mt-bench C32 T1 AC+13.47% TPS+7.23%",
+      "formal_sources": [
+        "gsm8k/C32/formal/summary.json",
+        "humaneval/C32/formal/summary.json",
+        "mt-bench/C32/formal/summary.json"
+      ],
+      "evidence": [
+        "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/RESULTS_CN.md",
+        "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/plan.json",
+        "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/READY_AUDIT.json",
+        "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/PREFLIGHT.json",
+        "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/status.json",
+        "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/parallel/controller.log",
+        "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/gsm8k/C32/PARTIAL_AUDIT.json",
+        "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/FINAL_AUDIT.json",
+        "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/parallel/FINAL_PROCESS_SNAPSHOT.json"
+      ]
+    },
+    "residualV3_main_v1/research/mismatch_expert_pilot_20261012_v1": {
+      "mode": "nonthinking",
+      "title": "mismatch专家/可见router小规模预实验",
+      "category": "流程试跑，样本不足",
+      "purpose": "检验冻结E2主体上的修复动作互补性与可见输入选择价值",
+      "comparison": "原E2、KEEP、两聚类专门化suffix、激活/训练预算匹配通用suffix、学习router与离线oracle；随机和输入消融",
+      "settings": "96完整短序列64–256token，48/16/8/24 group分割，192块2880状态，BF16 HF/SDPA，原repair CE/D-PACE＋OUTPUT，GPU7宿主空卡；teacher-prefix代理，无native AC/TPS",
+      "conclusion": "96提示仅流程试跑，24条留出不足以判断路线；新计划按用户要求每领域>=10000头训练提示、冻结主体只训头，总量>=42288、3种子，尚未启动。原数值/权重保留，无新native AC/TPS。",
+      "evidence": [
+        "residualV3_main_v1/research/mismatch_expert_pilot_20261012_v1/RESULTS_CN.txt",
+        "residualV3_main_v1/research/mismatch_expert_pilot_20261012_v1/RESULTS.json",
+        "residualV3_main_v1/research/mismatch_expert_pilot_20261012_v1/EVIDENCE_AUDIT.json"
+      ]
+    },
+    "residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2": {
+      "mode": "nonthinking",
+      "title": "每领域一万条 · 冻结E2主体的mismatch专家头（三种子）",
+      "purpose": "验证可见mismatch线索的修复分工是否超过通用头、随机分工和同总参数对照。",
+      "comparison": "GENERAL_ACTIVE、SPECIALIZED2、RANDOM_SPLIT2、GENERAL_TOTAL；KEEP/A/B可见输入router；E2原头保留。",
+      "settings": "三领域各10000头训练，router6144/selection3072/独立测试3072，总42288groups缓存已齐；三种子四对照，每个3遍历，每32blocks更新/4blocks microbatch，原CE/D-PACE+OUTPUT；只训新三层头/router，冻结E2body/target/embedding/LM/basis/旧aux。CPU缓存分片进GPU，头allocator cap8GiB；用户最新允许所有卡显存余量共享训练，不停止他人。原生C1/C32另等独占空卡。",
+      "conclusion": "完成：三种子四对照12模型各3遍/5613更新，三领域各10000条头训练、3072锁定留出。mismatch双专家+router对同活跃通用头T0一致率−0.212pp、T1 overlap−0.098pp，95%区间均负；T1对随机分工−0.003pp且区间跨0。当前方案未过native候选门槛；静态前缀结果不是AC/TPS。导出异常已补评恢复，训练/router SHA不变，失败log保留。"
+    },
+    "residualV3-nonthing/results/epoch2_head2_three_domains_C1_C32_20261012_v1": {
+      "mode": "nonthinking",
+      "title": "E2前两层推理 · 三领域C1/C32",
+      "purpose": "验证固定E2三层权重在推理省去第三层后的同窗AC/TPS。",
+      "comparison": "E2独立单训DFLASH vs E2联合主体＋HEAD2_NOFILL；没有两层重训；新专家头训练仍保持三层。",
+      "settings": "GSM8K C1=200/C32=1319，HumanEval164、MT-Bench80首轮；T0/T1、max2096/context4096、15proposal、BF16/batch-invariant/CUDA Graph；两层参数3761409，原三层权重保留；采集最多2卡；1vLLM服务+2头训练允许3卡，每组先烟测合同再正式测。",
+      "conclusion": "4/6组共16正式窗已完成（GSM8K和MT-Bench C1/C32）；HumanEval C1/C32两组烟测重复被外部进程进入污染，未开有效正式配对，原始失败证据保留且不自动重试。当前无GPU worker，空轮询CPU控制器已退役；不把全局状态写成完成。",
+      "formal_sources": [
+        "gsm8k/C1/formal/summary.json",
+        "gsm8k/C32/formal/summary.json",
+        "humaneval/C1/formal/summary.json",
+        "humaneval/C32/formal/summary.json",
+        "mt-bench/C1/formal/summary.json",
+        "mt-bench/C32/formal/summary.json"
+      ]
+    },
+    "residualV3-nonthing/results/epoch2_head2_vs_head3_three_domains_C1_C32_20261012_v1": {
+      "mode": "nonthinking",
+      "title": "E2三领域C1/C32 · 三层头与仅推理前两层直接对照",
+      "purpose": "检查省去第三层后接受长度与原生吞吐的取舍。",
+      "comparison": "HEAD3_NOFILL→HEAD2_NOFILL；同一个E2联合DFlash主体，保留独立单训DFlash对照在原head2根。",
+      "settings": "GSM8K C1=200/C32=1319、HumanEval164、MT-Bench80首轮；T0/T1，max2096/context4096、BF16、batch-invariant、CUDA Graph、FULL15，两个头都NOFILL，无截断，C1 formal KV16GiB/C32 44GiB。只推理跳第三层，未做两层重训；独占空卡、24正式窗口。",
+      "conclusion": "完成三领域C1/C32、T0/T1共24正式窗/8028请求，179源码/12资产与隔离/Graph/T0逐题输出审计passed。同一个E2联合主体上三层→前两层AC12窗全降、TPS11窗下降，唯一正窗HumanEval C32 T1 +5.035%；各同窗数值见RESULTS_CN.md。没有两层重训；C1 KV16/C32 44GiB，不能与旧C1 KV52GiB报告绝对TPS相除。",
+      "formal_sources": [
+        "gsm8k/C1/formal/summary.json",
+        "gsm8k/C32/formal/summary.json",
+        "humaneval/C1/formal/summary.json",
+        "humaneval/C32/formal/summary.json",
+        "mt-bench/C1/formal/summary.json",
+        "mt-bench/C32/formal/summary.json"
+      ]
+    },
+    "residualV3-nonthing/results/epoch2_head3_module_latency_C1_C40_20261012_v1": {
+      "mode": "nonthinking",
+      "title": "E2三层 C1/C40 · 固定旧正式显存的模块耗时",
+      "purpose": "测量target验证、drafter主体、完整头以及头内模块的真实边界与耗时。",
+      "comparison": "仅原E2三层NOFILL；真实服务总体分段与同worker真实状态头模块重放分别报告，无模型效果或显存预算对照。",
+      "settings": "固定KV C1=52GiB/C40=44GiB、utilization0.92，GSM8K C1=16/C40=80、原生EOS、max2096/context4096，T0/T1、BF16/batch-invariant/Graph。当前三领域直接对照6组审计通过且现存GPU worker退出后才启动。只两项服务工作负载，无预算扫描；头细分使用同worker真实状态重放。",
+      "conclusion": "三层C1/C40 T0/T1计时采集完成，固定旧正式KV52/44GiB、0.92，无预算扫描。数值/Graph/隔离通过；覆盖复核：C40 T0满40组件仅3份，C40 T1满40主体/raw LM/头直接组件缺失，但有157份纯decode混合并发组件及同worker真实状态头模块重放。细事件约增加2.2ms扰动；重放/混合平均不得填补满40直接服务空项。未重跑，诊断不是AC/TPS。",
+      "formal_sources": []
+    },
+    "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1": {
+      "mode": "nonthinking",
+      "title": "E2代码与对话：DSpark六套数据C1/C32重测",
+      "purpose": "按用户要求补齐DSpark代码与对话的六套评测；只使用E2独立与联合三层权重。",
+      "comparison": "E2独立单训DFLASH vs E2联合主体＋三层FULL15_NOFILL，无专家路由、无截断。",
+      "settings": "HumanEval164/MBPP256/LiveCodeBench500/MT-Bench80/Alpaca500/Arena-Hard-v2 500；作者seed980406抽样与首轮，max2048；C1/C32 T0/T1。KV固定52/44GiB，util0.92；Arena上下文12288、其余4096；两张空卡上限。",
+      "conclusion": "complete；48/48正式窗、24/24配对、16000请求，整批最终审计通过。隔离、speed_evidence、target/draft Graph、12组T0逐题输出一致及源码/权重/依赖身份通过。E2独立单训与联合三层主体权重不同；新max2048/seed980406批次只作同窗比较，旧成绩保留。",
+      "formal_sources": [
+        "humaneval/C1/formal/summary.json",
+        "humaneval/C32/formal/summary.json",
+        "mbpp/C1/formal/summary.json",
+        "mbpp/C32/formal/summary.json",
+        "livecodebench/C1/formal/summary.json",
+        "livecodebench/C32/formal/summary.json",
+        "mt-bench/C1/formal/summary.json",
+        "mt-bench/C32/formal/summary.json",
+        "alpaca/C1/formal/summary.json",
+        "alpaca/C32/formal/summary.json",
+        "arena-hard-v2/C1/formal/summary.json",
+        "arena-hard-v2/C32/formal/summary.json"
+      ],
+      "evidence": [
+        "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/RESULTS_CN.md",
+        "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/plan.json",
+        "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/DATASET_AUDIT.json",
+        "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/READY_AUDIT.json",
+        "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/status.json",
+        "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/parallel/controller.log",
+        "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/COMPARISON.json",
+        "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/FINAL_AUDIT.json",
+        "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/parallel/DISPATCH_MANIFEST.json",
+        "residualV3_main_v1/maintenance/complete_dspark_eval_20261013_v1/COMPLETION_AUDIT.json"
+      ]
+    }
+  },
+  "notes": {
+    "thinking": [
+      "2026-10-12仅整理目录，无Thinking新训练/评测；全部322个正式测量窗及原始解释保留。",
+      "当前入口RESIDUALV3_START_HERE.txt；旧研究代码/诊断已校验归档，恢复索引archives/residualV3_research_cleanup_20261012_v4/INDEX.csv。完整整理前总账及registry在本轮maintenance/before。"
+    ],
+    "nonthinking": [
+      "当前主结果为E2三层FULL15_NOFILL vs 独立单训DFlash：三领域C1/C40正式与C32补测均完成；AC是接受长度，联合和独立主体权重不同。",
+      "同一E2联合主体两层/三层直接对照24窗完成，TPS两层11/12窗下降；该对照C1 KV16GiB，与原正式C1 KV52GiB不同，不能跨报告直接比较绝对TPS。",
+      "三层C1/C40模块计时采集结束，固定KV52/44GiB、util0.92。C40 T1缺满40直接主体/raw LM/头分段，只有不同活跃批大小的服务分段及同真实状态头重放；数值/Graph/隔离通过不代表计时覆盖完整。",
+      "每领域1万条的30k头训练/评估12模型完成，mismatch双专家相对通用头没有静态净收益，未进入native；全部新头/router/断点/缓存保留。尾部停修iter28/29也没有净TPS收益。",
+      "原两层vs独立DFlash仅16正式窗有效，HumanEval C1/C32隔离失败仍未完成，停止自动重试。所有本项目GPU worker及最新计时队列已退出，旧控制器不重启。",
+      "2026-10-12按授权删除淘汰工作目录，代码及负结果原始证据先逐文件SHA256校验归档；E1/E2完整资产、消融权重、全部正式测量行保留。日常只需RESIDUALV3_START_HERE.txt。"
+    ]
+  },
+  "directory_cleanup_20261012": {
+    "status": "complete",
+    "utc": "2026-10-12T15:15:20.668920+00:00",
+    "deleted_roots": 152,
+    "manifest": "archives/residualV3_research_cleanup_20261012_v4/INDEX.csv",
+    "audit": "residualV3_main_v1/maintenance/research_cleanup_20261012_v4/PROTECTION_AUDIT.json",
+    "weights_deleted": 0,
+    "no_new_gpu_experiments": true
+  }
+}

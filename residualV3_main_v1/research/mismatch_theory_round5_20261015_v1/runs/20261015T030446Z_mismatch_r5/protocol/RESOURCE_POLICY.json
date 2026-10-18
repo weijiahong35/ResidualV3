@@ -1,0 +1,30 @@
+{
+  "GPU_hours": 8,
+  "CPU_seconds": 86400,
+  "simultaneous_GPUs": 1,
+  "workers_limit": 4,
+  "compute_threads_total": 8,
+  "environment_before_import": {
+    "OMP_NUM_THREADS": 1,
+    "OPENBLAS_NUM_THREADS": 1,
+    "MKL_NUM_THREADS": 1,
+    "NUMEXPR_NUM_THREADS": 1
+  },
+  "torch_intra_inter_op": [
+    1,
+    1
+  ],
+  "new_disk_GiB": 700,
+  "GPU_own_memory_MiB": 32768,
+  "GPU_stage_expected_MiB": 26624,
+  "GPU_additional_free_reserve_MiB": 4096,
+  "shared_GPU_allowed": true,
+  "empty_card_gate": false,
+  "all_visible_cards_rechecked_per_launch": true,
+  "no_fixed_GPU_index": true,
+  "only_manage_verified_owned_identity": true,
+  "retries_per_technical_phase_max": 2,
+  "driver_IO_threads_separately_disclosed": true,
+  "all_failures_compilation_retries_shared_wall_charged": true,
+  "no_remaining_budget_scope_expansion": true
+}

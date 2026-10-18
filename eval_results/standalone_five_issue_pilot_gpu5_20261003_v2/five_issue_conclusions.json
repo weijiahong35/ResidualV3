@@ -1,0 +1,134 @@
+{
+  "status": "complete",
+  "priority_candidate": "OUTPUT + target argmax greedy margin, unchanged inference architecture",
+  "unique_cause_identified": false,
+  "gradient_observations": {
+    "OUTPUT": {
+      "negative_prompt_pairs": 44,
+      "total_prompt_pairs": 96,
+      "projections": 0,
+      "negative_prompt_dot_projected_unpreconditioned_gradient": 0
+    },
+    "MARGIN": {
+      "negative_prompt_pairs": 51,
+      "total_prompt_pairs": 96,
+      "projections": 0,
+      "negative_prompt_dot_projected_unpreconditioned_gradient": 1
+    },
+    "DIRECTION": {
+      "negative_prompt_pairs": 51,
+      "total_prompt_pairs": 96,
+      "projections": 0,
+      "negative_prompt_dot_projected_unpreconditioned_gradient": 3
+    },
+    "MARGIN_PCGRAD": {
+      "negative_prompt_pairs": 47,
+      "total_prompt_pairs": 96,
+      "projections": 93,
+      "negative_prompt_dot_projected_unpreconditioned_gradient": 0
+    },
+    "PAST_Q": {
+      "negative_prompt_pairs": 50,
+      "total_prompt_pairs": 96,
+      "projections": 0,
+      "negative_prompt_dot_projected_unpreconditioned_gradient": 1
+    },
+    "PAST_MISMATCH": {
+      "negative_prompt_pairs": 50,
+      "total_prompt_pairs": 96,
+      "projections": 0,
+      "negative_prompt_dot_projected_unpreconditioned_gradient": 2
+    }
+  },
+  "static_projection_check": {
+    "status": "complete",
+    "gpu_uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+    "checkpoint_sha256": "195438807627a210f5b856dc3d0636a8efc892cdf6bafaf08be26370e38b2c91",
+    "sampled_native_tokens": 140,
+    "full_table_rows": 151936,
+    "full_table_bytes": 77791232,
+    "precompute_batch": 512,
+    "precompute_seconds": 0.30999015644192696,
+    "parity": {
+      "1": {
+        "exact": false,
+        "differing_elements": 10046,
+        "total_elements": 35840,
+        "max_abs": 0.125,
+        "rms": 0.007401364389806986
+      },
+      "40": {
+        "exact": false,
+        "differing_elements": 12253,
+        "total_elements": 35840,
+        "max_abs": 0.0625,
+        "rms": 0.008126308210194111
+      },
+      "rowwise_cache_vs_batch40": {
+        "exact": false,
+        "max_abs": 0.125
+      }
+    },
+    "generated_hidden_or_logits_created": false,
+    "cache_table_persisted": false,
+    "deployment": false,
+    "static_tables_only": true,
+    "throughput_evidence": false,
+    "source_sha256": "6d4cd5ef6914bd11c41b385fa2d0413997ae2cc02f602bd48c62f615076e9b98",
+    "pid": 3195018
+  },
+  "five_issues": {
+    "target_information": {
+      "result": "Past mismatch feature did not consistently beat parameter-matched past q or plain margin.",
+      "interpretation": "Existing inputs can fit these training states; this does not prove sufficiency on all prefixes. Redundant hidden and previous verifier statistics are different tests.",
+      "next": "Prioritize turning full target distribution into task-aligned supervision; condition future target-feature changes on incremental evidence."
+    },
+    "overlap_vs_greedy": {
+      "result": "Probe T0: OUTPUT fixed0/harmed0; MARGIN fixed3/harmed0. Probe T1: MARGIN fixed1/harmed1, overlap +.011391 vs OUTPUT +.005766.",
+      "interpretation": "Direct greedy supervision is promising without adding inference parameters; it has not eliminated harms or established native AL/TPS gains.",
+      "next": "Carry this simple loss candidate to fresh native validation before any larger continuation."
+    },
+    "direction": {
+      "result": "DIRECTION has no probe T0 fixes; probe T1 fixed2/harmed1. MARGIN fixes all12 original argmax errors in T1 training states.",
+      "interpretation": "Analytic target-minus-current-competitor direction is not a complete target for all competitors/probability mass. Current input/network can learn some useful corrections.",
+      "next": "Use final corrected margin supervision as priority; investigate remaining competition rather than only increasing dose."
+    },
+    "shared_updates": {
+      "result": "PCGrad performs93 projections and has identical final correct/fixed/harmed counts to plain MARGIN in every panel.",
+      "interpretation": "Conflict exists, but projection alone was not superior here. Projected SGD-direction dot checks do not describe actual Adam parameter updates.",
+      "next": "Keep prompt balancing/conflict measurement diagnostic; do not select PCGrad based only on negative gradient cosine."
+    },
+    "latency": {
+      "result": "Head-only graph stages: serial prediction .9315ms and full-vocabulary scatter .5810ms at batch1; precomputed same-shape hard projection reduces prediction to .6808ms.",
+      "interpretation": "3.76M trainable parameters exclude two155.6MB frozen basis tables; small serial kernels and full-vocabulary traffic remain. Global static projection cache fails BF16 parity.",
+      "next": "Prioritize serial kernel fusion and projection/scatter execution. A cache variant changes floating arithmetic and needs explicit native sampler/proposal checks before speed conclusions."
+    }
+  },
+  "limitations": [
+    "4 training and4 previously used research-probe prompts;16 updates; single coefficient/lr; not an independent final test.",
+    "All heads evaluated on frozen long2 actual token paths. Native learner trajectories and their own historical feedback were not evaluated.",
+    "Training is T1 only; T0 evaluation has different conditional prefixes.",
+    "Profile uses repeated native frames at batch40, retains diagnostic logits/predecessor outputs (capture=True), excludes body/target/verifier, and does not estimate formal TPS.",
+    "Static projection cache changes BF16 arithmetic across GEMM batch shapes; failure is equivalence failure, not proof lossless speculative decoding cannot use a correctly verified new q."
+  ],
+  "literature": [
+    {
+      "name": "DSpark",
+      "url": "https://arxiv.org/html/2607.05147v1",
+      "section": "4.3.2",
+      "condition": "0.2-1.3% overhead is full-cycle at batch128, context-length mean512/1024/2048/4096. Default Markov head uses table lookup + low-rank vocabulary projection."
+    },
+    {
+      "name": "Domino",
+      "url": "https://arxiv.org/html/2605.29707v1",
+      "section": "4.3",
+      "condition": "Head latency2.64ms to1.20ms via fused Triton and CUDA Graphs under its Figure1 setting. Cannot directly compare to a7-proposal diagnostic with different outputs/contexts."
+    },
+    {
+      "name": "DFlash2 author comparison",
+      "url": "https://inco.ai/blog/dflash2/",
+      "section": "Table2",
+      "condition": "Five-layer Qwen3-4B/GSM8K: DSpark correction77.8M, draft-verify-cycle+9.6%; path selector2.0M,+.6%. Different conditions from our8B run and DSpark batch128 latency figure."
+    }
+  ]
+}

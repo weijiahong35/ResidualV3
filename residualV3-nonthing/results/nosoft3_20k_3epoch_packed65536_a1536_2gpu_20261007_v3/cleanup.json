@@ -1,0 +1,7 @@
+{
+  "complete": true,
+  "only_owned_processes_stopped": true,
+  "original_training_not_interrupted": true,
+  "old_and_new_weights_retained": true,
+  "utc": "2026-10-06T21:36:07.035206+00:00"
+}

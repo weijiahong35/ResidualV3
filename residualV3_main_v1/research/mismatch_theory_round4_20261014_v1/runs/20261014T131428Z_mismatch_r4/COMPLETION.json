@@ -1,0 +1,227 @@
+{
+  "schema": "r4.completion.v1",
+  "status": "complete",
+  "UTC": "2026-10-14T20:46:25.758241+00:00",
+  "run_id": "20261014T131428Z_mismatch_r4",
+  "core_scientific_work_complete": true,
+  "required_work_remaining": [],
+  "native_supplement": "excluded before lock; not an unfinished required branch",
+  "scientific_counts": {
+    "all_prompts": 48,
+    "all_groups": 7424,
+    "main_different_H_groups": 2358,
+    "mixed_sign_groups": 163,
+    "mixed_sign_prompts": 38,
+    "identity_excluded_groups": 0,
+    "certified_shared_groups": 7424,
+    "certified_safe_groups": 7405,
+    "legal_all_branch_strict_gain_groups": 2344,
+    "mixed_sign_with_safe_strict_gain_groups": 153,
+    "core_matched_groups": 1162,
+    "matched_groups": 3626,
+    "actual_extra_is_only_bounded": true,
+    "unmatched_not_filled_zero": true
+  },
+  "main_findings": {
+    "fit_safe_core_head_gain": {
+      "estimate": 0.3192108327722623,
+      "CI95": [
+        0.28098145281536024,
+        0.3576100736060811
+      ],
+      "CI97_5": [
+        0.2759855107411885,
+        0.36349542296422493
+      ],
+      "coverage": {
+        "gsm8k": {
+          "all_prompts": 16,
+          "defined_prompts": 16
+        },
+        "humaneval": {
+          "all_prompts": 16,
+          "defined_prompts": 16
+        },
+        "alpaca": {
+          "all_prompts": 16,
+          "defined_prompts": 14
+        }
+      },
+      "status": "estimated",
+      "domain_estimates": {
+        "gsm8k": 0.14668210707106744,
+        "humaneval": 0.3577363828731017,
+        "alpaca": 0.4532140083726179
+      },
+      "resampling_unit": "prompt, stratified domain; paired within-prompt values",
+      "remaining_uncertainty": "finite branches, numerical certificates and measurement population are not covered by bootstrap alone"
+    },
+    "fit_safe_core_raw_gain": {
+      "estimate": 0.5981825375363274,
+      "CI95": [
+        0.5570677434849887,
+        0.6379860657197298
+      ],
+      "CI97_5": [
+        0.5522250547540373,
+        0.6455476252081377
+      ],
+      "coverage": {
+        "gsm8k": {
+          "all_prompts": 16,
+          "defined_prompts": 16
+        },
+        "humaneval": {
+          "all_prompts": 16,
+          "defined_prompts": 16
+        },
+        "alpaca": {
+          "all_prompts": 16,
+          "defined_prompts": 14
+        }
+      },
+      "status": "estimated",
+      "domain_estimates": {
+        "gsm8k": 0.5327965329106578,
+        "humaneval": 0.6428313718792529,
+        "alpaca": 0.6189197078190717
+      },
+      "resampling_unit": "prompt, stratified domain; paired within-prompt values",
+      "remaining_uncertainty": "finite branches, numerical certificates and measurement population are not covered by bootstrap alone"
+    },
+    "fit_safe_core_damage": {
+      "estimate": 0.01918200992891927,
+      "CI95": [
+        0.009118313485593992,
+        0.033418493679818924
+      ],
+      "CI97_5": [
+        0.008148204988295561,
+        0.03600034778078577
+      ],
+      "coverage": {
+        "gsm8k": {
+          "all_prompts": 16,
+          "defined_prompts": 16
+        },
+        "humaneval": {
+          "all_prompts": 16,
+          "defined_prompts": 16
+        },
+        "alpaca": {
+          "all_prompts": 16,
+          "defined_prompts": 14
+        }
+      },
+      "status": "estimated",
+      "domain_estimates": {
+        "gsm8k": 0.0068414311383061385,
+        "humaneval": 0.014215195194762503,
+        "alpaca": 0.036489403453689166
+      },
+      "resampling_unit": "prompt, stratified domain; paired within-prompt values",
+      "remaining_uncertainty": "finite branches, numerical certificates and measurement population are not covered by bootstrap alone"
+    },
+    "Cg_conflict_fixed_strata": {
+      "estimate": null,
+      "CI95": null,
+      "CI97_5": null,
+      "coverage": {
+        "gsm8k": {
+          "all_prompts": 16,
+          "defined_prompts": 4
+        },
+        "humaneval": {
+          "all_prompts": 16,
+          "defined_prompts": 0
+        },
+        "alpaca": {
+          "all_prompts": 16,
+          "defined_prompts": 1
+        }
+      },
+      "status": "insufficient_domain_coverage",
+      "domain_estimates": {
+        "gsm8k": 0.20833333333333331,
+        "humaneval": null,
+        "alpaca": 0.0
+      }
+    },
+    "joint_confirmation_satisfied": false
+  },
+  "resources": {
+    "GPU_hours_booked": 2.7588430741098193,
+    "GPU_hours_limit": 8,
+    "native_GPU_hours_booked": 0.0,
+    "CPU_seconds_booked": 28485.65682176235,
+    "CPU_hours_booked": 7.912682450489542,
+    "CPU_hours_limit": 24,
+    "disk_authorized_GiB": 700,
+    "disk_observed_at_closure_bytes": 28704292864,
+    "disk_observed_at_closure_GiB": 26.732955932617188,
+    "sampled_peak_actual_bytes": 28704296960,
+    "continuous_peak_not_claimed": true,
+    "conservative_gross_disk_upper_bytes": 45460713472,
+    "conservative_gross_disk_upper_GiB": 42.33858871459961,
+    "closure_preflight_envelope_bytes": 1048576,
+    "all_gpu_failed_starts_and_shared_wall_included": true,
+    "turn_interruption_gap_is_conservatively_charged": true,
+    "peak_own_GPU_memory_MiB": 24610,
+    "within_time_and_disk_budgets": true,
+    "global_literal_thread_cap8_clean_audit": false,
+    "thread_exception": "historical collector NLWP10; stopped and retained complete shards. First recovery worker8 does not certify controller-inclusive total8. Later samples within8; not a continuous entire-run proof.",
+    "no_foreign_processes_managed": true,
+    "no_shared_TPS_reported": true
+  },
+  "global_clean_thread_audit": false,
+  "own_jobs_exited": true,
+  "foreign_processes_managed": false,
+  "probability_alarm_preserved": true,
+  "static_manifest_sha256": "f72926026f75998216a832a433e9fbe02d4c2497d82a219f6ef312f15bb43b3b",
+  "static_core_SHA256": {
+    "results/RESULTS_CN.md": "d9035fa80968c3ebb99fcebfc6befca6e2735c65c1d4ce202478d30d9d1b6057",
+    "results/CLAIM_EVIDENCE.json": "40715d3fdd8c9890b95a659444758b53c1a69ab11b65814ce2b488f5058964f4",
+    "results/METHODS_CN.md": "2cd5a4f9af9ccd0237a8efc9402511c3b262470ef999a5a6d708e4b38c5ca001",
+    "results/THEORY_CARDS_CN.md": "629f424584c0b5dd32bf7f0a9a17ce13f55e9de985fefd45adaabc9b322e8f6e",
+    "results/MECHANISM_CASES_CN.md": "bcf858fd62bc28c08da8d1ea6d9e9ab666ffae9325bf257c5c604d8745c5e425",
+    "results/METRIC_TABLES_CN.md": "417a305637a0154809612d8b45c5ac7528f2e82814da056512ee99d85ade2407",
+    "results/RESOURCE_HISTORY_CN.md": "20faac8c0162efc7c8bdfda5e2ed74c2fd2fa5d97570124e39e80afc27264c45",
+    "analysis/SUMMARY_fresh_test.json": "3358c1bee8db9e5bed102d3c62fa384ea9971c8b87184c2f580c0346d54b5b71",
+    "analysis/FINAL_FROZEN_PRESERVATION_AUDIT.json": "6486a304f5a82cdaa3c0f4315bb49fea8f59bad58ee3b004d96375aac6e32cac",
+    "analysis/FINAL_CLAIM_REVIEW.json": "325e2e8c0ae8d254151c7cc4ce0c2e237a2546a3b7821ecd018c838bfc4334a3",
+    "analysis/INPUT_OUTPUT_IDENTITY_AUDIT.json": "56ce35212b4e76d54e84d75242d69ef55712d46c70fcce1b4c4e2cdd88d8dfc4",
+    "analysis/ORACLE_CERTIFICATES_PROVENANCE_AUDIT.json": "225da61e655fe33c1ad109ea49c2af7e0c2397e4e5eb6e6d43ccb2c88d984784",
+    "analysis/FRESH_WITNESS_READONLY_AUDIT.json": "7cd2206e10389c4a0b3ae3ad19af01cb1ed8846ac649c7211f49652bd76dedd5",
+    "analysis/PHENOMENON_REPORT.json": "53d2044db4244569fc8946ef5b848e994e7fbd77479059e7d09421da1f375340",
+    "analysis/FIT_EVAL_REPORT.json": "4745ebd69545b64ab5b12bd0e24f59bd431e08c9c305f68901e1edf69ad83995",
+    "analysis/PRE_REPAIR_CONFLICT_REPORT.json": "8c38849960208daefd9fd0b3d74541e4c6b4f4fca9f76d6b716b047ca4564a1a",
+    "protocol/LOCK.json": "fa9d941ed95bf79a049decb5d7af220f89856a6d0a1fe1a1556d8089bca0335c",
+    "protocol/SAMPLE_MANIFEST.json": "7e3bb22f868af94026d5a02a48c7d6f1a15873627dbce043133e5bb4ce67247d",
+    "logs/FRESH_OPENING.json": "5c54aab1fe68e7959b01d2d34832a73f18381f656cfaaaa414fb018ea113f3ad",
+    "logs/DISK_AUTHORIZATION_700G.json": "e149c4901de803e2dc2a348a3b1f05244103d23cd34e64f45fb74ae80dd71bb3",
+    "logs/GPU_BUDGET.json": "aa97e1ee4d3b2d21eb37a6d224595de0865f1cb1f3a7b74203e457479f01a170",
+    "logs/FINAL_HOST_TERMINAL_INVENTORY.json": "5b5306774ac51a743af3032302f708f9bb1ad450eb98093e6c1cbd65d4ca5fe2",
+    "evidence_tools/close_round4_archive.py": "7cebd059ad2f201f1aa7e0e5c835f55228cb2ecb78a1ee72b972df0c63af10f2"
+  },
+  "closure_SHA256": {
+    "MANIFEST.json": "425a5c4ef343651c789f34ff3e1fe33f62a3b90be867c67c7412cc8a6b4e54f1",
+    "NEXT_CHAT.md": "51a438dde34ffbcfead1744d495e45ac71b0462866d81b62676de1e187d0394e",
+    "results/RUN_AUDIT.json": "76d036ce3500896a329dab0902a355bc7494c13cebabb2b4702750356ba75c0c",
+    "logs/ROOT_PROGRESS.json": "800fffd1b0e97298e103ee9d5d99f4e26acf6a0ce083d90439004405140f34df",
+    "logs/CPU_BUDGET.json": "71fdd3b76031983ab9e39fc4767c09941139b508d4456bd6659407d6f544b72a",
+    "logs/DISK_RESERVATION_CACHE.json": "338c62be1af567e21630f4670cc5b93192dd5f84af6b6a8b5fa6d474c84040a8",
+    "results/RUN_FILE_MANIFEST.json": "f72926026f75998216a832a433e9fbe02d4c2497d82a219f6ef312f15bb43b3b",
+    "logs/final_manifest_074b1b9bd3.json": "da7281375475f5d9324905bea5bea59302f4839c986f3135ce8c79d74fc0f05f",
+    "logs/final_manifest_074b1b9bd3.log": "a5ad642201508cb794d19301ba5d63850ed65dceb59f4af0592a33555827e144"
+  },
+  "integrity_scope": "full SHA of all static run files; declared final closure exceptions separately signed here. No self SHA; external large weights stat+inherited hash only.",
+  "new_training_executed": false,
+  "old_analysis_repeated": false,
+  "automatic_round5": false,
+  "conclusion_levels": [
+    "literature standard mathematics",
+    "project hypotheses",
+    "actual new finite-panel evidence"
+  ],
+  "closure_source_sha256": "7cebd059ad2f201f1aa7e0e5c835f55228cb2ecb78a1ee72b972df0c63af10f2"
+}

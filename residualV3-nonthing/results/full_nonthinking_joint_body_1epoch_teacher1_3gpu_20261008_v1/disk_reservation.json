@@ -1,0 +1,32 @@
+{
+  "status": "reserved",
+  "items": [
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/checkpoints/slot_0/joint.state.bin",
+      "bytes": 8858370048
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/checkpoints/slot_0/body.state.bin",
+      "bytes": 8858370048
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/checkpoints/slot_1/joint.state.bin",
+      "bytes": 8858370048
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/checkpoints/slot_1/body.state.bin",
+      "bytes": 8858370048
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/final/joint.weights.reserve",
+      "bytes": 2147483648
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/final/body.weights.reserve",
+      "bytes": 2147483648
+    }
+  ],
+  "complete_state_slots": 2,
+  "old_experiment_weights_preserved": true,
+  "format": "Bounded PyTorch state inside preallocated files; use restore()"
+}

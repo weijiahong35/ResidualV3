@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "current_and_future_input_invariance": true,
+  "lag1_absolute_slot_checked": true,
+  "anchor_unchanged": true
+}

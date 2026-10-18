@@ -1,0 +1,22 @@
+[
+  {
+    "gpu": 2,
+    "uuid": "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824",
+    "pid": 42751
+  },
+  {
+    "gpu": 3,
+    "uuid": "GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd",
+    "pid": 42752
+  },
+  {
+    "gpu": 4,
+    "uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+    "pid": 42753
+  },
+  {
+    "gpu": 5,
+    "uuid": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+    "pid": 42754
+  }
+]

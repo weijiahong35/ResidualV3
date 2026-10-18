@@ -1,0 +1,11 @@
+训练吞吐短测，非全数据长训。
+头CE+D-PACE+OUTPUT，本体raw CE+D-PACE；DFlash与头同时训练。损失/优化器/前后向实现与上一轮v3逐字节一致。
+卡1在线teacher共享一份hidden，卡4联合训练、卡2纯DFlash。全1536anchor，每包65536输入token预算、15预测位置，一包一次参数更新。
+优化：对两槽共享BF16 CPU缓冲区注册固定内存，直接H2D，去掉每包pin_memory的大张量复制。CPU读取线程限制16；HTTP请求并发128，不启用连接复用。
+先做完整首包aux逐位相等、target norm逐位相等校验，再真实前后向和更新；检查所有DFlash层、fc和头均有梯度。
+进度status.json；联合训练joint/training.log；纯DFlash body/training.log；teacher/attempt_01/vllm.log。
+24包/组，前8包预热不计速度；与v3 baseline同GPU、同数据和anchor、同初始权重、同loss作比较。
+hidden传输文件读完删除，仅保留两槽暂存，不持久缓存hidden或logits。所有旧权重和证据均保留。
+全数据长训队列依旧暂停。
+
+最新：24包/组全部完成，完整首包输入逐位校验、live gradient和实际权重更新核验通过。RESULTS_CN.txt为最终结果；FINAL_OPTIMIZATION_SUMMARY.json包含逐阶段均值与局限。自有进程已全部退出，旧权重和所有新短测BF16权重保留，全数据训练依旧暂停。

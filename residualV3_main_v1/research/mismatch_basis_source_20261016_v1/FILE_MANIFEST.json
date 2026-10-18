@@ -1,0 +1,110 @@
+{
+  "schema": "basis_source.authoring_files.v1",
+  "UTC": "2026-10-16T17:12:51.781375+00:00",
+  "excludes": [
+    "FILE_MANIFEST.json"
+  ],
+  "files": [
+    {
+      "path": "EXECUTION_GUIDE_CN.md",
+      "bytes": 10008,
+      "SHA256": "cb28583143d3e0c394e64b535e51cdfd48e796f626cab75e28990bb94563b479"
+    },
+    {
+      "path": "EXPERIMENT_METHOD_CN.md",
+      "bytes": 11123,
+      "SHA256": "a90a6038886298cbdd2ebfcf02473a0fa05802baac2e4aa14b97a40f2f88eb16"
+    },
+    {
+      "path": "README_CN.md",
+      "bytes": 2641,
+      "SHA256": "579414feba22b600d4f77a290592c61053fc0b5724766fb8bcdfcd2e95fce31b"
+    },
+    {
+      "path": "START_PROMPT_CN.md",
+      "bytes": 7115,
+      "SHA256": "b2c228089fb5977f84fb0305ca9ba02fe9c46f7580084e0cdd2fe6aabb82e153"
+    },
+    {
+      "path": "THEORY_CONTRACT_CN.md",
+      "bytes": 4600,
+      "SHA256": "6bc8c7b391ac9706153f165aeb64d1041695a9c6056abc50950ded30d4b02eac"
+    },
+    {
+      "path": "protocol/DESIGN_SPEC.json",
+      "bytes": 9046,
+      "SHA256": "523675cc6429370864dcb574ba822af73173318218873b9f7d54346cc879deea"
+    },
+    {
+      "path": "qa/CORE_QUESTION_REVIEW_CN.md",
+      "bytes": 3425,
+      "SHA256": "f28bcb1feaeaf39d124a78e352b42241a9609a3518e73a9073284ff5c8cbc637"
+    },
+    {
+      "path": "qa/FEASIBILITY_REVIEW_CN.md",
+      "bytes": 3060,
+      "SHA256": "7c420cae188eef447403647244a47be36e343bc07db52472def640f6b9e1b160"
+    },
+    {
+      "path": "qa/INPUT_AUDIT.json",
+      "bytes": 220295,
+      "SHA256": "7ea216c41d6154ec9e439871e73647472968a5be920e647ef66b94e19c888dd5"
+    },
+    {
+      "path": "qa/REVIEW_NOTES_CN.md",
+      "bytes": 2179,
+      "SHA256": "db2d6565aa4eabc9cf45865e681e93c4e3ecfa0b11bc7027b86b759176ab5d1d"
+    },
+    {
+      "path": "qa/VALIDATION.json",
+      "bytes": 479,
+      "SHA256": "1b0a521574c20141b95c7da658621786540848414e4ed946b16dff059f7e289a"
+    },
+    {
+      "path": "researchwrite/00_scope.md",
+      "bytes": 975,
+      "SHA256": "3833be03c0a6d10aab8191cb757fff3930538fd30a523f0bb93690d66b631bf9"
+    },
+    {
+      "path": "researchwrite/01_research_canon.md",
+      "bytes": 1245,
+      "SHA256": "87130903ff83e7e561fc60f5c3c7c097d3c39447010d2814aa75f7aa27f2c34a"
+    },
+    {
+      "path": "researchwrite/02_evidence_table.md",
+      "bytes": 1143,
+      "SHA256": "cd18ba78783d6c24ce5a5baad7f929828efc906dfbf904c88e8a02283867a0b5"
+    },
+    {
+      "path": "researchwrite/03_argument_map.md",
+      "bytes": 867,
+      "SHA256": "a1452e50a997d9008456fbc9e58f39ac2686657355dd9cdb05066bf716064dd7"
+    },
+    {
+      "path": "researchwrite/04_section_contracts.md",
+      "bytes": 955,
+      "SHA256": "403841b7ad0909a9c31b16075d1d051a06baea82b4a3c21953724b2a5ac9bc35"
+    },
+    {
+      "path": "researchwrite/05_style_guide.md",
+      "bytes": 722,
+      "SHA256": "1c6cdf95ea1770352bafb4680e61aa1b8ee207bc62a92f756ccda1dd91d2f081"
+    },
+    {
+      "path": "researchwrite/state.json",
+      "bytes": 560,
+      "SHA256": "12bd38e39a443f128e91c72b20c67ebc512086eb8e56be4b0631e487b21f7de8"
+    },
+    {
+      "path": "sources/READING_GUIDE_CN.md",
+      "bytes": 2557,
+      "SHA256": "b6582270b7b54876c6ad47d167a1424bd7f442d5399a018da7954053f04f2f66"
+    },
+    {
+      "path": "tools/audit_package_inputs.py",
+      "bytes": 8954,
+      "SHA256": "9e74f35e21bf046c42ed6da1b4f4d5003ca81883dc43d04d6b709f3347ae00d0"
+    }
+  ],
+  "total_bytes": 291949
+}

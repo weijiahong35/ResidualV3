@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "pilot_128_state_labels_and_correctness_unchanged": true,
+  "source_hashes_unchanged": true,
+  "parameters_unchanged": true,
+  "parameter_updates": 0,
+  "hidden_cleanup": {
+    "requests": 16,
+    "deleted": 16,
+    "remaining": []
+  },
+  "cleanup": {
+    "owned_processes_stopped": true,
+    "temporary_transfer_removed": true,
+    "remaining_before_cleanup": [],
+    "utc": "2026-10-01T04:58:12.172139+00:00"
+  },
+  "selection": {
+    "status": "passed",
+    "method": "pilot unchanged, independent replication is next8 entries of fixed research_dev ordering; no outcomes inspected",
+    "panels": {
+      "pilot": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_direction_pairs_gpu5_20261001/pilot.jsonl",
+        "sha256": "325d25dd45b0bc8e42248bc61ae47f5792f8eb1e0042fdbc17127167110352ad"
+      },
+      "replication": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_direction_pairs_gpu5_20261001/replication.jsonl",
+        "sha256": "387c3d575cd3b03ca7e1e5a85e5eac5e880e6f550692b63a20fdb29d2e4f8712"
+      },
+      "combined": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_direction_pairs_gpu5_20261001/combined.jsonl",
+        "sha256": "c634e531369bd253799a5957e1f74e6928a0371ed31cbb8b625c56a6ce1c796c"
+      }
+    },
+    "replication_source_indices": [
+      4030,
+      5375,
+      4698,
+      4919,
+      2576,
+      3257,
+      3639,
+      4071
+    ],
+    "disjoint_fields": [
+      "source_index",
+      "group_key",
+      "normalized_prompt_sha256"
+    ],
+    "research_dev_source_sha256": "6fbf93a4542e8021552bf423ac4e34c131ec4c086c80c8edd108e52d05e60430",
+    "sealed_confirmation_evaluated": false,
+    "limits": "inherits original available-history audit limitations; research-dev replication not sealed final confirmation"
+  }
+}

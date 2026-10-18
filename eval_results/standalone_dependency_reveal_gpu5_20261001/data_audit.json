@@ -1,0 +1,203 @@
+{
+  "status": "passed_available_history_checks",
+  "source": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/assets/data/regenerated.jsonl",
+  "data_sha256": "40811609776764f22e36706b3f7ae0b461eb6436f186558ebb6109f5ca381137",
+  "source_rows": 10000,
+  "valid_eligible_rows": 10000,
+  "available_unique_groups": 5486,
+  "excluded_groups": 4501,
+  "excluded_normalized_prompts": 4475,
+  "historical_roots": [
+    "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930",
+    "/data/weijiahong/speculators-main-lora/eval_results",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/assets",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/provenance"
+  ],
+  "metadata_files_scanned": 11127,
+  "unique_metadata_contents": 6676,
+  "contributing_files": [
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/result_sources_and_metadata/d1_three_input_audit_20260929/audit.json",
+      "sha256": "0229379f657f68b5ee1cf730f31776fea5df2b4dd9e0e552c077bd017be73778"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/result_sources_and_metadata/d1_three_input_audit_20260929/basis_provenance.json",
+      "sha256": "ee0d1f63ce3ce67fcddee6528e014101a336c532fca22b38f442ef17cc58d362"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/result_sources_and_metadata/residualV3_p1_baseline_validation_v1_seed42/collection_progress.json",
+      "sha256": "61e8f95c2092758dbb40696da29b7ea1969db421eb6cfddee8e110b9cbded229"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/result_sources_and_metadata/residualV3_predecessor_adapter_v1_seed42/snapshot_manifest.json",
+      "sha256": "10c997747d09bf5a88015875b77d93fbd681b33b0c57419d205463e7e0bb5cfd"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/result_sources_and_metadata/standalone_compact_candidate_scratch_gpu45_v1_20260929/initialization_native/C1_smoke/protocol.json",
+      "sha256": "3a401d485c8478c7e9de2390fdb2a9883d5d88a11dbe3d17bee588e4b480b223"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/result_sources_and_metadata/standalone_d1_three_input_top256_scratch_gpu45_v1_20260929/native/C1/protocol.json",
+      "sha256": "db4037a31ad7bc6f17b08a0736caca0e32ee43611da16c6549691c7f7c25d713"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/result_sources_and_metadata/standalone_decision_cost_gpu3_v1_20260929/C30/protocol.json",
+      "sha256": "fb02585074b2a5dac26e1118817b92e0adb2939d264e488a359c4ce5bf304738"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/result_sources_and_metadata/standalone_dense_joint_rank_dose_v1_20260926/data_lineage.json",
+      "sha256": "bde2d5fce6bb54eed6b96d64e5429fcf5eaf5fb15b7f036cb72bdceea49249cc"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/result_sources_and_metadata/standalone_dense_joint_rank_dose_v1_20260926/collection/protocol.json",
+      "sha256": "043add8797cc90f54a792fd21fc4809a2352e2ffb8a4596c85e62f8807b96599"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/result_sources_and_metadata/standalone_direct_dose_native_gpu3_v1_20260928/C30/protocol.json",
+      "sha256": "df60c2629db81879a3ae9527a4657f6f76814b7db47e08cae39cc327a504d6c0"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/result_sources_and_metadata/standalone_greedy_dose_v1_gpu3_r2_20260928/long_C30_T0/native_smoke/protocol.json",
+      "sha256": "8d590384977546a6d4c24031a485db278a1aac0fb9108273aa7cfca42a26a17a"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/code/residualV3_dense_joint_rank_dose_v1/assets/collection_prompts.jsonl",
+      "sha256": "87026e4f985d6dc3ba2c81108ba67cb4a473118d9e9482dea4f292cac75c61d9"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/code/residualV3_dense_joint_rank_dose_v1/assets/prompts.jsonl",
+      "sha256": "dce9996dce00c5a1557d7c5a4a042c031c5e38b80c5018cd2f84e36b037df7cf"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/code/residualV3_dense_joint_rank_dose_v1/assets/train_prompts.jsonl",
+      "sha256": "7d76651d153c966ae5dd95ad21d43e462df372cf269e29e613ae240e1f28413b"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/code/residualV3_dense_joint_rank_dose_v1/assets/joint_prompts/train.jsonl",
+      "sha256": "dbfebde0207bf216a7086d0dda59906527f6ef945b800aea87c1f05f216f8158"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/code/residualV3_dense_joint_rank_dose_v1/assets/joint_prompts/dev.jsonl",
+      "sha256": "533be2d56abfea16b94d9c7171a3a133209a7183af8da5fe51714e8d12536d55"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/code/residualV3_dense_joint_rank_dose_v1/assets/joint_prompts/final.jsonl",
+      "sha256": "3b42b56c763ece12cac0e60ce91dde5a8c6039956414275941dfa3267dcb2560"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/code/residualV3_static_vocab_online_joint_v1/assets/joint_prompts/dev.jsonl",
+      "sha256": "551ff562bb469d7fe2b09422c2cc63efd2c6683fe0b96a079d8ecfd222401a40"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/dflash/opencode_pretrained_10000_12000_20260824_165941_pid2063315/selected_prompts.jsonl",
+      "sha256": "c078e44e150a9c80015e2a7772e6bb3e466e36ea356ec115c69364c63fee3d9e"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/openmath/openmath_10000_12000_20260827_014351_pid2371108/selected_prompts.jsonl",
+      "sha256": "74a63110b2f937e1260cc316f7d063a56f6050f02ceb219cca808967a54c7be5"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/outputresidualV2_basis_collect/runtime_basis_20260906_160615_pid269342/selected_prompts.jsonl",
+      "sha256": "4aa1e240abe95df3e3d002986de186f942ae471cb4c0e8fd103eb3f5c71eb8e1"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_extra_head_diagnostic_gpu5_20260930/train_probe.jsonl",
+      "sha256": "83ee6eaad8de1fad8fd04392d93f83a180a6544cc935117d7cb8eb5d6d46c28f"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_extra_head_diagnostic_gpu5_20260930/dev.jsonl",
+      "sha256": "4286a373c0870916a86b43f434a282e06da5e4e28c6254cf3de2e96c40f7ad2f"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/assets/panels/train.jsonl",
+      "sha256": "705196d6d1d6b71235d6af7944b94e0bd472a2e9b119cb81be3117938a6a31b5"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/assets/panels/warmup.jsonl",
+      "sha256": "d6d79c8ec67da412d7f66c45aab32e9e37822fdd52eb3524086d5405be75ed38"
+    }
+  ],
+  "skipped": [
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/code/residualV3_static_vocab_online_joint_v1/assets/head_config.json",
+      "reason": "broken historical symlink"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/archives/residualV3_legacy_20260930/code/residualV3_static_vocab_online_joint_v1/assets/parent_config.json",
+      "reason": "broken historical symlink"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/dflash/opencode_pretrained_10000_12000_20260824_165941_pid2063315/responses.jsonl",
+      "bytes": 25079612,
+      "reason": "large artifact; not assumed audited"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/dflash/opencode_pretrained_10000_12000_20260825_022104_pid3281073/responses.jsonl",
+      "bytes": 25031048,
+      "reason": "large artifact; not assumed audited"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/dflash/opencode_pretrained_10000_12000_20260825_053156_pid3817987/responses.jsonl",
+      "bytes": 25049387,
+      "reason": "large artifact; not assumed audited"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/openmath/openmath_10000_12000_20260827_014351_pid2371108/responses.jsonl",
+      "bytes": 23594504,
+      "reason": "large artifact; not assumed audited"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/openmath/openmath_10000_12000_20260827_015409_pid2392150/responses.jsonl",
+      "bytes": 23592523,
+      "reason": "large artifact; not assumed audited"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/openmath/openmath_10000_12000_20260901_123915_pid950008/responses.jsonl",
+      "bytes": 23641660,
+      "reason": "large artifact; not assumed audited"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/residual_runtime/openmath_base_dflash_10000_12000_20260902_063559_pid1163972/responses.jsonl",
+      "bytes": 23561335,
+      "reason": "large artifact; not assumed audited"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/residual_runtime/openmath_base_native_10000_12000_20260904_013904_pid3592854/responses.jsonl",
+      "bytes": 23531926,
+      "reason": "large artifact; not assumed audited"
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/residual_runtime/openmath_residual_native_optimized_10000_12000_20260904_final/responses.jsonl",
+      "bytes": 23486846,
+      "reason": "large artifact; not assumed audited"
+    }
+  ],
+  "unresolved_original_references": [
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_static_vocab_online_answers_v3_20260927/panels/train.jsonl"
+  ],
+  "panels": {
+    "research_dev": {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_dependency_reveal_gpu5_20261001/research_dev.jsonl",
+      "count": 32,
+      "sha256": "6fbf93a4542e8021552bf423ac4e34c131ec4c086c80c8edd108e52d05e60430"
+    },
+    "sealed_confirmation": {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_dependency_reveal_gpu5_20261001/sealed_confirmation.jsonl",
+      "count": 32,
+      "sha256": "015b1a3a26ee119f6df60d76b743fdc66ab6dab5248a9b2ca241d6f1815253af"
+    },
+    "pilot": {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_dependency_reveal_gpu5_20261001/pilot.jsonl",
+      "count": 8,
+      "sha256": "325d25dd45b0bc8e42248bc61ae47f5792f8eb1e0042fdbc17127167110352ad"
+    }
+  },
+  "selection": "outcome-independent deterministic group hash; dedup normalized prompt; no benchmark labels inspected",
+  "domain": "source is existing OpenMath regenerated data; no cross-domain claim",
+  "sealed": "confirmation membership fixed; no model states or outcomes will be computed for this panel",
+  "limitations": [
+    "Excludes recoverable historical metadata; deleted/unrecorded uses cannot be proved absent.",
+    "This is research-dev/confirmation separation for repair; does not establish absence from pretrained target or DFlash training.",
+    "Large skipped artifacts and unresolved references are reported; no universal clean-heldout claim."
+  ]
+}

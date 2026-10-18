@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "syntax_files": 167,
+  "causal_cutoff_cases": 3,
+  "calibration": 64,
+  "holdout": 32,
+  "formal_question_overlap": 0,
+  "auxiliary_weights_finite": true,
+  "normalizer_positive": true,
+  "auxiliary_training_steps": 6958,
+  "auxiliary_parameter_counts": {
+    "Q45_MLP": 1538,
+    "Q45_REPAIR_LATENT_MLP": 9730
+  }
+}

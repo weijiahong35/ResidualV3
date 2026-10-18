@@ -1,0 +1,337 @@
+{
+  "status": "complete",
+  "training_performed": false,
+  "scope": "Frozen original N_no_soft_2layer epoch3; 8 historical research prompts per temperature; paired native-state diagnostics only",
+  "temperatures": {
+    "T0": {
+      "states": 224,
+      "blocks": 32,
+      "prompts": 8,
+      "all_formal_block_checks_passed": true,
+      "smoke_sequence_parity": true,
+      "server_stopped": true,
+      "source_cases_sha256": "04526f25d2ee9a5e0b807867837d0a4b62761252e514342bd4e3cfaf80790b59",
+      "groups": {
+        "reached": {
+          "states": 141,
+          "argmax_mismatches": 31,
+          "mismatches_with_jointly_realizable_correction": 31,
+          "dose_grid_corrects_mismatch": 7,
+          "actual_overlap": 0.7442592793920749,
+          "independent_dose_grid_overlap": 0.7823249182584596,
+          "joint_margin_feasible_count": 141,
+          "joint_margin_constrained_overlap": 0.984475462571949,
+          "best_found_overlap": 0.9848785692072929,
+          "pure_soft_search_overlap": 0.9807847285947056,
+          "pure_soft_search_top1_correct": 140,
+          "pure_soft_harms_previously_correct": 0,
+          "negative_latent_gradient_pairs": 18,
+          "mean_latent_gradient_cosine": 0.699018012442747,
+          "dose_partial_conflicts": 20,
+          "joint_mean_direction_cosine_to_actual": 0.8138576044522702,
+          "joint_mean_absolute_dose_change": 0.11381065422761524,
+          "joint_mean_candidate_logit_rms_change": 1.5750063052731202
+        },
+        "first_rejection": {
+          "states": 31,
+          "argmax_mismatches": 31,
+          "mismatches_with_jointly_realizable_correction": 31,
+          "dose_grid_corrects_mismatch": 7,
+          "actual_overlap": 0.13597139397261931,
+          "independent_dose_grid_overlap": 0.23793680657963118,
+          "joint_margin_feasible_count": 31,
+          "joint_margin_constrained_overlap": 0.9600574777972314,
+          "best_found_overlap": 0.9618909628160538,
+          "pure_soft_search_overlap": 0.9451066217114849,
+          "pure_soft_search_top1_correct": 30,
+          "pure_soft_harms_previously_correct": 0,
+          "negative_latent_gradient_pairs": 0,
+          "mean_latent_gradient_cosine": 0.9155751545493973,
+          "dose_partial_conflicts": 0,
+          "joint_mean_direction_cosine_to_actual": 0.681445890977498,
+          "joint_mean_absolute_dose_change": 0.11271421370967742,
+          "joint_mean_candidate_logit_rms_change": 2.1342685828285832
+        },
+        "accepted": {
+          "states": 110,
+          "argmax_mismatches": 0,
+          "mismatches_with_jointly_realizable_correction": 0,
+          "dose_grid_corrects_mismatch": 0,
+          "actual_overlap": 0.9156858652830124,
+          "independent_dose_grid_overlap": 0.9357433860952203,
+          "joint_margin_feasible_count": 110,
+          "joint_margin_constrained_overlap": 0.9913568946448239,
+          "best_found_overlap": 0.9913568946448239,
+          "pure_soft_search_overlap": 0.9908394678072496,
+          "pure_soft_search_top1_correct": 110,
+          "pure_soft_harms_previously_correct": 0,
+          "negative_latent_gradient_pairs": 18,
+          "mean_latent_gradient_cosine": 0.6379882723945092,
+          "dose_partial_conflicts": 20,
+          "joint_mean_direction_cosine_to_actual": 0.8511736327951605,
+          "joint_mean_absolute_dose_change": 0.11411965110085227,
+          "joint_mean_candidate_logit_rms_change": 1.4173960270529444
+        },
+        "unreached": {
+          "states": 83,
+          "argmax_mismatches": 50,
+          "mismatches_with_jointly_realizable_correction": 50,
+          "dose_grid_corrects_mismatch": 10,
+          "actual_overlap": 0.3906612137441764,
+          "independent_dose_grid_overlap": 0.451984343395978,
+          "joint_margin_feasible_count": 83,
+          "joint_margin_constrained_overlap": 0.9496190540761833,
+          "best_found_overlap": 0.9531485502978405,
+          "pure_soft_search_overlap": 0.943425634539271,
+          "pure_soft_search_top1_correct": 82,
+          "pure_soft_harms_previously_correct": 0,
+          "negative_latent_gradient_pairs": 8,
+          "mean_latent_gradient_cosine": 0.7592881723192989,
+          "dose_partial_conflicts": 10,
+          "joint_mean_direction_cosine_to_actual": 0.8283119165753744,
+          "joint_mean_absolute_dose_change": 0.05915850903614458,
+          "joint_mean_candidate_logit_rms_change": 1.6891429950314831
+        }
+      },
+      "by_prompt": [
+        {
+          "prompt": 0,
+          "first_rejections": 4,
+          "argmax_mismatches": 4,
+          "joint_feasible": 4,
+          "actual_overlap": 0.07140665051701944,
+          "joint_overlap": 0.9175032675266266
+        },
+        {
+          "prompt": 1,
+          "first_rejections": 4,
+          "argmax_mismatches": 4,
+          "joint_feasible": 4,
+          "actual_overlap": 0.08982384391129017,
+          "joint_overlap": 0.897810772061348
+        },
+        {
+          "prompt": 2,
+          "first_rejections": 4,
+          "argmax_mismatches": 4,
+          "joint_feasible": 4,
+          "actual_overlap": 0.11522888751278515,
+          "joint_overlap": 0.9643204212188721
+        },
+        {
+          "prompt": 3,
+          "first_rejections": 4,
+          "argmax_mismatches": 4,
+          "joint_feasible": 4,
+          "actual_overlap": 0.19306911720195785,
+          "joint_overlap": 0.9696964472532272
+        },
+        {
+          "prompt": 4,
+          "first_rejections": 3,
+          "argmax_mismatches": 3,
+          "joint_feasible": 3,
+          "actual_overlap": 0.10846503203113873,
+          "joint_overlap": 0.9929252862930298
+        },
+        {
+          "prompt": 5,
+          "first_rejections": 4,
+          "argmax_mismatches": 4,
+          "joint_feasible": 4,
+          "actual_overlap": 0.13606202485971153,
+          "joint_overlap": 0.9979332983493805
+        },
+        {
+          "prompt": 6,
+          "first_rejections": 4,
+          "argmax_mismatches": 4,
+          "joint_feasible": 4,
+          "actual_overlap": 0.1308428540942259,
+          "joint_overlap": 0.9994253814220428
+        },
+        {
+          "prompt": 7,
+          "first_rejections": 4,
+          "argmax_mismatches": 4,
+          "joint_feasible": 4,
+          "actual_overlap": 0.23599615116745554,
+          "joint_overlap": 0.9490619003772736
+        }
+      ]
+    },
+    "T1": {
+      "states": 224,
+      "blocks": 32,
+      "prompts": 8,
+      "all_formal_block_checks_passed": true,
+      "smoke_sequence_parity": true,
+      "server_stopped": true,
+      "source_cases_sha256": "bc8ebd93267bafc095b34479e568b6ca56dc241c03ec3b9e60f2c3358bd07521",
+      "groups": {
+        "reached": {
+          "states": 139,
+          "argmax_mismatches": 23,
+          "mismatches_with_jointly_realizable_correction": 23,
+          "dose_grid_corrects_mismatch": 4,
+          "actual_overlap": 0.8070813232470427,
+          "independent_dose_grid_overlap": 0.837123830487831,
+          "joint_margin_feasible_count": 139,
+          "joint_margin_constrained_overlap": 0.985092293015487,
+          "best_found_overlap": 0.9866997668211409,
+          "pure_soft_search_overlap": 0.9809478371263408,
+          "pure_soft_search_top1_correct": 138,
+          "pure_soft_harms_previously_correct": 0,
+          "negative_latent_gradient_pairs": 18,
+          "mean_latent_gradient_cosine": 0.6941580229026404,
+          "dose_partial_conflicts": 23,
+          "joint_mean_direction_cosine_to_actual": 0.8392137601542816,
+          "joint_mean_absolute_dose_change": 0.11260678956834533,
+          "joint_mean_candidate_logit_rms_change": 1.5917587590892968
+        },
+        "first_rejection": {
+          "states": 29,
+          "argmax_mismatches": 19,
+          "mismatches_with_jointly_realizable_correction": 19,
+          "dose_grid_corrects_mismatch": 3,
+          "actual_overlap": 0.32008641827871603,
+          "independent_dose_grid_overlap": 0.39136067007122366,
+          "joint_margin_feasible_count": 29,
+          "joint_margin_constrained_overlap": 0.9685043158202336,
+          "best_found_overlap": 0.9742491717996269,
+          "pure_soft_search_overlap": 0.9620498439361309,
+          "pure_soft_search_top1_correct": 29,
+          "pure_soft_harms_previously_correct": 0,
+          "negative_latent_gradient_pairs": 2,
+          "mean_latent_gradient_cosine": 0.8017144494459469,
+          "dose_partial_conflicts": 3,
+          "joint_mean_direction_cosine_to_actual": 0.7237474330026528,
+          "joint_mean_absolute_dose_change": 0.11844187769396551,
+          "joint_mean_candidate_logit_rms_change": 1.9863152545073937
+        },
+        "accepted": {
+          "states": 110,
+          "argmax_mismatches": 4,
+          "mismatches_with_jointly_realizable_correction": 4,
+          "dose_grid_corrects_mismatch": 1,
+          "actual_overlap": 0.9354708891023289,
+          "independent_dose_grid_overlap": 0.9546432091431184,
+          "joint_margin_feasible_count": 110,
+          "joint_margin_constrained_overlap": 0.9894654870033264,
+          "best_found_overlap": 0.9899821964177218,
+          "pure_soft_search_overlap": 0.9859300353310325,
+          "pure_soft_search_top1_correct": 109,
+          "pure_soft_harms_previously_correct": 0,
+          "negative_latent_gradient_pairs": 16,
+          "mean_latent_gradient_cosine": 0.6658022377230414,
+          "dose_partial_conflicts": 20,
+          "joint_mean_direction_cosine_to_actual": 0.8696548827669838,
+          "joint_mean_absolute_dose_change": 0.11106844815340909,
+          "joint_mean_candidate_logit_rms_change": 1.487739319388162
+        },
+        "unreached": {
+          "states": 85,
+          "argmax_mismatches": 52,
+          "mismatches_with_jointly_realizable_correction": 51,
+          "dose_grid_corrects_mismatch": 6,
+          "actual_overlap": 0.3796829815397092,
+          "independent_dose_grid_overlap": 0.4273404280134641,
+          "joint_margin_feasible_count": 84,
+          "joint_margin_constrained_overlap": 0.9278212452218646,
+          "best_found_overlap": 0.9289117721950306,
+          "pure_soft_search_overlap": 0.9067267007687513,
+          "pure_soft_search_top1_correct": 81,
+          "pure_soft_harms_previously_correct": 0,
+          "negative_latent_gradient_pairs": 9,
+          "mean_latent_gradient_cosine": 0.6926656324782771,
+          "dose_partial_conflicts": 12,
+          "joint_mean_direction_cosine_to_actual": 0.8253731426915952,
+          "joint_mean_absolute_dose_change": 0.06243024553571429,
+          "joint_mean_candidate_logit_rms_change": 1.6652822833330858
+        }
+      },
+      "by_prompt": [
+        {
+          "prompt": 0,
+          "first_rejections": 4,
+          "argmax_mismatches": 2,
+          "joint_feasible": 4,
+          "actual_overlap": 0.36753659462556243,
+          "joint_overlap": 0.976827085018158
+        },
+        {
+          "prompt": 1,
+          "first_rejections": 2,
+          "argmax_mismatches": 2,
+          "joint_feasible": 2,
+          "actual_overlap": 0.048304639756679535,
+          "joint_overlap": 0.910364419221878
+        },
+        {
+          "prompt": 2,
+          "first_rejections": 4,
+          "argmax_mismatches": 2,
+          "joint_feasible": 4,
+          "actual_overlap": 0.48561068903654814,
+          "joint_overlap": 0.9966610968112946
+        },
+        {
+          "prompt": 3,
+          "first_rejections": 3,
+          "argmax_mismatches": 2,
+          "joint_feasible": 3,
+          "actual_overlap": 0.2630520549913247,
+          "joint_overlap": 0.9992937644322714
+        },
+        {
+          "prompt": 4,
+          "first_rejections": 4,
+          "argmax_mismatches": 1,
+          "joint_feasible": 4,
+          "actual_overlap": 0.5417123362421989,
+          "joint_overlap": 0.9521797299385071
+        },
+        {
+          "prompt": 5,
+          "first_rejections": 4,
+          "argmax_mismatches": 3,
+          "joint_feasible": 4,
+          "actual_overlap": 0.39517840184271336,
+          "joint_overlap": 0.9492759257555008
+        },
+        {
+          "prompt": 6,
+          "first_rejections": 4,
+          "argmax_mismatches": 3,
+          "joint_feasible": 4,
+          "actual_overlap": 0.2051673571113497,
+          "joint_overlap": 0.999363124370575
+        },
+        {
+          "prompt": 7,
+          "first_rejections": 4,
+          "argmax_mismatches": 4,
+          "joint_feasible": 4,
+          "actual_overlap": 0.1039797925404855,
+          "joint_overlap": 0.9426967948675156
+        }
+      ]
+    }
+  },
+  "caveats": [
+    "Oracle uses target logits and independently optimizes the pre-final-LayerNorm latent; upstream-network reachability/generalization from available inputs is not established.",
+    "Finite multistart witnesses, not certified global optima. The dose grid is a 65-point independent-dose relaxation, not an exhaustive scalar feasibility proof.",
+    "T1 argmax mismatch is not equivalent to rejection; a probabilistically accepted proposal may have a nonmatching argmax.",
+    "Formal summary instrumentation_sequence_parity=false means no off/on duplicate formal run; the preceding smoke passed token-sequence parity. All formal states independently passed replay and verifier-q alignment.",
+    "States within a prompt are correlated; no independent-token statistical significance claim.",
+    "No throughput or repaired native acceptance-length claim; oracle updates did not affect the generation trajectory."
+  ],
+  "coverage_complete": true,
+  "conclusions_zh": [
+    "真实 native 已到达状态中，现有冻结最终头能够表达成功修正：T0 的31个、T1的23个argmax错配都找到了同时满足greedy margin约束的实例。",
+    "首次拒绝位置实际输出到可实现实例的差距很大；仅调整dose的有限网格搜索收益较小，优先研究方向和联合修正的可学习性。",
+    "首次拒绝位置局部目标冲突不普遍：T0 0/31、T1 2/29；其他已接受状态仍有局部梯度反向，不能宣称完全无冲突。",
+    "发现好修正存在，不等于现有三路输入足以预测它，更不等于训练已经学会或真实接受长度会相应提升。"
+  ],
+  "next_proposal_zh": "在固定训练划分的native状态上生成oracle修正监督，冻结原基底/输入/头结构，做受控的修正预测可学习性检验；按prompt独立划分开发集，对比现有OUTPUT训练。先检查是否能拟合训练状态及泛化，再决定修改输入、结构或梯度方法。本轮不自动启动。"
+}

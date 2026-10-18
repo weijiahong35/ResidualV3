@@ -1,0 +1,47 @@
+{
+  "status": "passed_observation",
+  "utc": "2026-10-01T06:59:55.971365+00:00",
+  "paired_training_steps_checked": 36,
+  "initial_tensors_equal": true,
+  "training_complete": false,
+  "runs": {
+    "ADDITIVE": {
+      "steps": 37,
+      "latest_loss": 0.5440255701541901,
+      "extra_gradients": {
+        "extra.context.weight": 0.024542197585105896,
+        "extra.context.bias": 7.086455298122019e-05,
+        "extra.predecessor.weight": 0.01789875328540802,
+        "extra.candidate.weight": 0.4353981018066406
+      },
+      "extra_q_effect": 4.00543212890625e-05,
+      "fresh_reset": {
+        "passed": true,
+        "matches_fresh_seed": true,
+        "differs_from_smoke_initial": true,
+        "differs_from_smoke_final": true
+      },
+      "hidden_requests": 41,
+      "hidden_deleted": 41
+    },
+    "INTERACTION": {
+      "steps": 36,
+      "latest_loss": 0.5699533832569917,
+      "extra_gradients": {
+        "extra.context.weight": 0.015598844736814499,
+        "extra.context.bias": 4.5791282900609076e-05,
+        "extra.predecessor.weight": 0.013481147587299347,
+        "extra.candidate.weight": 0.16480329632759094
+      },
+      "extra_q_effect": 1.71661376953125e-05,
+      "fresh_reset": {
+        "passed": true,
+        "matches_fresh_seed": true,
+        "differs_from_smoke_initial": true,
+        "differs_from_smoke_final": true
+      },
+      "hidden_requests": 40,
+      "hidden_deleted": 40
+    }
+  }
+}

@@ -1,0 +1,2515 @@
+{
+  "status": "complete",
+  "temperatures": {
+    "T0": {
+      "status": "complete",
+      "prompts": 8,
+      "blocks": 24,
+      "errors": 18,
+      "effects": {
+        "own_overlap_loss": {
+          "cases": 18,
+          "helps": 18,
+          "harms": 0,
+          "near_zero": 0
+        },
+        "same_block_prefix_proxy": {
+          "cases": 18,
+          "helps": 17,
+          "harms": 1,
+          "near_zero": 0
+        },
+        "same_block_equal_overlap": {
+          "cases": 18,
+          "helps": 14,
+          "harms": 4,
+          "near_zero": 0
+        },
+        "own_prompt_prefix_proxy": {
+          "cases": 18,
+          "helps": 14,
+          "harms": 4,
+          "near_zero": 0
+        },
+        "other_prompts_prefix_proxy": {
+          "cases": 18,
+          "helps": 5,
+          "harms": 13,
+          "near_zero": 0
+        },
+        "global_prefix_proxy": {
+          "cases": 18,
+          "helps": 14,
+          "harms": 4,
+          "near_zero": 0
+        },
+        "global_equal_overlap": {
+          "cases": 18,
+          "helps": 14,
+          "harms": 4,
+          "near_zero": 0
+        }
+      },
+      "supported_errors_effects": {
+        "own_overlap_loss": {
+          "cases": 18,
+          "helps": 18,
+          "harms": 0,
+          "near_zero": 0
+        },
+        "same_block_prefix_proxy": {
+          "cases": 18,
+          "helps": 17,
+          "harms": 1,
+          "near_zero": 0
+        },
+        "same_block_equal_overlap": {
+          "cases": 18,
+          "helps": 14,
+          "harms": 4,
+          "near_zero": 0
+        },
+        "own_prompt_prefix_proxy": {
+          "cases": 18,
+          "helps": 14,
+          "harms": 4,
+          "near_zero": 0
+        },
+        "other_prompts_prefix_proxy": {
+          "cases": 18,
+          "helps": 5,
+          "harms": 13,
+          "near_zero": 0
+        },
+        "global_prefix_proxy": {
+          "cases": 18,
+          "helps": 14,
+          "harms": 4,
+          "near_zero": 0
+        },
+        "global_equal_overlap": {
+          "cases": 18,
+          "helps": 14,
+          "harms": 4,
+          "near_zero": 0
+        }
+      },
+      "per_prompt": {
+        "0": {
+          "own_overlap_loss": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 2,
+            "helps": 0,
+            "harms": 2,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          }
+        },
+        "1": {
+          "own_overlap_loss": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 3,
+            "helps": 1,
+            "harms": 2,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          }
+        },
+        "2": {
+          "own_overlap_loss": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          }
+        },
+        "3": {
+          "own_overlap_loss": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 3,
+            "helps": 1,
+            "harms": 2,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 3,
+            "helps": 1,
+            "harms": 2,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          }
+        },
+        "4": {
+          "own_overlap_loss": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 2,
+            "helps": 1,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          }
+        },
+        "5": {
+          "own_overlap_loss": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 2,
+            "helps": 0,
+            "harms": 2,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          }
+        },
+        "6": {
+          "own_overlap_loss": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 2,
+            "helps": 1,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 2,
+            "helps": 1,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 2,
+            "helps": 0,
+            "harms": 2,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 2,
+            "helps": 1,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 2,
+            "helps": 1,
+            "harms": 1,
+            "near_zero": 0
+          }
+        },
+        "7": {
+          "own_overlap_loss": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 1,
+            "helps": 0,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          }
+        }
+      },
+      "cases": [
+        {
+          "temperature": 0,
+          "prompt_index": 0,
+          "block": 2,
+          "position": 2,
+          "target_in_candidates": true,
+          "actual_overlap": 0.006269956007599831,
+          "dose": 0.73046875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.543558657169342,
+          "margin_gradient_norm": 91.60813903808594,
+          "block_proxy_gradient_norm": 0.4254990220069885,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 49.64266727695161,
+            "cosine": -0.9969529066782645
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 38.85343737325458,
+            "cosine": -0.9967743188472018
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 6.985097993424414,
+            "cosine": -0.24534475805481062
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 12.685497786468263,
+            "cosine": -0.07346817718168563
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.04436884429416856,
+            "cosine": 0.0009023899833969093
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 1.5468644823521205,
+            "cosine": -0.03244900862874625
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 0.40387147154703823,
+            "cosine": -0.006634184948193024
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 0,
+          "block": 14,
+          "position": 7,
+          "target_in_candidates": true,
+          "actual_overlap": 0.3398134410381317,
+          "dose": 0.796875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 39.80198669433594,
+          "margin_gradient_norm": 182.54776000976562,
+          "block_proxy_gradient_norm": 5.615823745727539,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 7265.988600728358,
+            "cosine": -1.0000309573588566
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 1025.000748210828,
+            "cosine": -0.9998485521738549
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 1037.624350670088,
+            "cosine": -1.0000200799677086
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 342.34411545202795,
+            "cosine": -0.9949749800265013
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -2.3220489179911055,
+            "cosine": 0.023699821468437625
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 40.761221630347045,
+            "cosine": -0.4290954369368339
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 46.35682421497959,
+            "cosine": -0.3821339354842441
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 1,
+          "block": 2,
+          "position": 2,
+          "target_in_candidates": true,
+          "actual_overlap": 0.19007079303264618,
+          "dose": 0.76171875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.3876636326313019,
+          "margin_gradient_norm": 133.51181030273438,
+          "block_proxy_gradient_norm": 0.055543847382068634,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 50.82544101929625,
+            "cosine": -0.981988484828114
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 7.268541345526683,
+            "cosine": -0.9801479246111169
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 7.105343468158336,
+            "cosine": -0.3486262662119256
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 2.5803493663017734,
+            "cosine": -0.011538766171373211
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.2805385777302643,
+            "cosine": 0.003838571631715662
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 0.07707241588440757,
+            "cosine": -0.001109334474670824
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 0.18271101427355596,
+            "cosine": -0.0020593184386473854
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 1,
+          "block": 14,
+          "position": 6,
+          "target_in_candidates": true,
+          "actual_overlap": 0.025692356750369072,
+          "dose": 0.7890625,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 5.017136096954346,
+          "margin_gradient_norm": 202.9325408935547,
+          "block_proxy_gradient_norm": 1.3618978261947632,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 1018.2531474722754,
+            "cosine": -1.0001109372939192
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 274.76707515164605,
+            "cosine": -0.9941879083948469
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 145.44985693432764,
+            "cosine": -0.9987104444385407
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 88.46943976180815,
+            "cosine": -0.26028079244023544
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.23920429609337765,
+            "cosine": 0.002153346936992626
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 10.849376210295704,
+            "cosine": -0.10273923021340685
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 5.9396579136047665,
+            "cosine": -0.04404414684051802
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 1,
+          "block": 30,
+          "position": 4,
+          "target_in_candidates": true,
+          "actual_overlap": 0.0005366273690015078,
+          "dose": 0.79296875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.062296438962221146,
+          "margin_gradient_norm": 133.0763702392578,
+          "block_proxy_gradient_norm": 4.850416660308838,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 8.220778135487317,
+            "cosine": -0.9916279439234404
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": -62.04304349601846,
+            "cosine": 0.09611985546927311
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": -30.525597728850737,
+            "cosine": 0.09397712167882671
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": -20.37293849834635,
+            "cosine": 0.091401484662326
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 0.46610733740232874,
+            "cosine": -0.006398552344261515
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": -2.138773391248176,
+            "cosine": 0.030884960628026193
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": -2.0901860642199304,
+            "cosine": 0.02363537328529343
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 2,
+          "block": 2,
+          "position": 7,
+          "target_in_candidates": true,
+          "actual_overlap": 0.4577944576740265,
+          "dose": 0.80078125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 38.57154846191406,
+          "margin_gradient_norm": 161.3827362060547,
+          "block_proxy_gradient_norm": 5.857335567474365,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 6224.928436904891,
+            "cosine": -1.000023488426915
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 831.7072640698469,
+            "cosine": -0.8798594862594551
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 889.9514552716156,
+            "cosine": -0.9774772527446255
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 274.9115216767199,
+            "cosine": -0.8199274252200962
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.44610949277708745,
+            "cosine": 0.0053201203111105135
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 33.973594402073786,
+            "cosine": -0.4045457305600004
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 36.00833708518908,
+            "cosine": -0.33575649699704824
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 2,
+          "block": 14,
+          "position": 5,
+          "target_in_candidates": true,
+          "actual_overlap": 0.0009111311519518495,
+          "dose": 0.78125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.12810920178890228,
+          "margin_gradient_norm": 140.13189697265625,
+          "block_proxy_gradient_norm": 0.45568323135375977,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 17.955068153344445,
+            "cosine": -1.0001606197948762
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 6.240342935978971,
+            "cosine": -0.09772561534059915
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 1.752815162854498,
+            "cosine": -0.0028416288651777776
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": -40.608532886783806,
+            "cosine": 0.13948254447066144
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 0.041885931222554726,
+            "cosine": -0.0005752653810933516
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": -5.03941642336318,
+            "cosine": 0.06910770394490968
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": -5.716248632359404,
+            "cosine": 0.06138362692917427
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 2,
+          "block": 30,
+          "position": 4,
+          "target_in_candidates": true,
+          "actual_overlap": 0.12710067629814148,
+          "dose": 0.53125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 5.2992472648620605,
+          "margin_gradient_norm": 65.23688507080078,
+          "block_proxy_gradient_norm": 2.2144317626953125,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 134.31609457697215,
+            "cosine": -0.3885265020094022
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 52.05144366016995,
+            "cosine": -0.360310782231904
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 21.0573424217843,
+            "cosine": -0.06304470267022015
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 16.696250099774275,
+            "cosine": -0.12318711080365476
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 0.6033593544337215,
+            "cosine": -0.017799994914203303
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 2.614970698585924,
+            "cosine": -0.07702945168426305
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 0.9796625641411635,
+            "cosine": -0.022597570248687828
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 3,
+          "block": 2,
+          "position": 4,
+          "target_in_candidates": true,
+          "actual_overlap": 0.0014826740371063352,
+          "dose": 0.80078125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.2536725401878357,
+          "margin_gradient_norm": 223.61231994628906,
+          "block_proxy_gradient_norm": 0.03624240681529045,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 49.75181473476052,
+            "cosine": -0.8770810931418308
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 7.106414889233421,
+            "cosine": -0.8768751908723115
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": -39.95631606060476,
+            "cosine": 0.3542648941742146
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": -6.405695441568973,
+            "cosine": 0.045770771382185035
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -4.231520215299014,
+            "cosine": 0.032021850298587125
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": -4.5032921118927005,
+            "cosine": 0.03870059171784244
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": -9.291842324535509,
+            "cosine": 0.06252944372282497
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 3,
+          "block": 14,
+          "position": 1,
+          "target_in_candidates": true,
+          "actual_overlap": 0.0871928408741951,
+          "dose": 0.6953125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 5.337711811065674,
+          "margin_gradient_norm": 110.6876220703125,
+          "block_proxy_gradient_norm": 0.7846553325653076,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 384.8337272157415,
+            "cosine": -0.6513568207328191
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 56.484683741780024,
+            "cosine": -0.6503583523349498
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 59.51464407431514,
+            "cosine": -0.10245096597963599
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 17.571591256707556,
+            "cosine": -0.2536469647354877
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 0.19948744696680856,
+            "cosine": -0.0030497358868034016
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 2.371000424518305,
+            "cosine": -0.041163832650966244
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 2.2113536005017838,
+            "cosine": -0.030063363469830667
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 3,
+          "block": 30,
+          "position": 2,
+          "target_in_candidates": true,
+          "actual_overlap": 0.0025177544448524714,
+          "dose": 0.6875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.27415362000465393,
+          "margin_gradient_norm": 133.34884643554688,
+          "block_proxy_gradient_norm": 1.7152564525604248,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 32.20657517281336,
+            "cosine": -0.880970399483568
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 6.870450376618543,
+            "cosine": -0.03003771516309186
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": -0.8605635964425864,
+            "cosine": 0.0018216235773028779
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 6.813635852967378,
+            "cosine": -0.08164080775940873
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.2663891262398156,
+            "cosine": 0.00338043769236151
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 0.618613996353371,
+            "cosine": -0.008914842815143093
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 0.47515361918448656,
+            "cosine": -0.005361955689502002
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 4,
+          "block": 14,
+          "position": 1,
+          "target_in_candidates": true,
+          "actual_overlap": 0.386149525642395,
+          "dose": 0.353515625,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.8976036310195923,
+          "margin_gradient_norm": 117.48722076416016,
+          "block_proxy_gradient_norm": 1.027037262916565,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 105.16818400987543,
+            "cosine": -0.99726171738697
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 91.46684780020874,
+            "cosine": -0.758030827387887
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 15.821616245602536,
+            "cosine": -0.08539930871396569
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 27.856565379510116,
+            "cosine": -0.19317401857806027
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 0.16935074795274901,
+            "cosine": -0.0025292157755497616
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 3.6302525754223094,
+            "cosine": -0.05937852864823056
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 0.23993913027941113,
+            "cosine": -0.0030731863262923697
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 4,
+          "block": 30,
+          "position": 1,
+          "target_in_candidates": true,
+          "actual_overlap": 0.5136816501617432,
+          "dose": 0.421875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 6.8782877922058105,
+          "margin_gradient_norm": 97.59132385253906,
+          "block_proxy_gradient_norm": 3.3157176971435547,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 671.4127977221665,
+            "cosine": -1.0002257947376323
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 255.21291712524052,
+            "cosine": -0.7887037632791821
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 90.63280721180129,
+            "cosine": -0.2515965360266289
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 84.56344005136755,
+            "cosine": -0.7059651036067889
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.0905844026370709,
+            "cosine": 0.0016286644720988853
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 10.491168654652633,
+            "cosine": -0.20658362017395196
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 3.281482298786084,
+            "cosine": -0.05059846112730181
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 5,
+          "block": 14,
+          "position": 7,
+          "target_in_candidates": true,
+          "actual_overlap": 0.7298148274421692,
+          "dose": 0.76953125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 14.743188858032227,
+          "margin_gradient_norm": 79.99622344970703,
+          "block_proxy_gradient_norm": 1.9737120866775513,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 1173.8936019609657,
+            "cosine": -0.9953316815017151
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 157.12536183891044,
+            "cosine": -0.9951602277812909
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 167.47776276881595,
+            "cosine": -0.9952386871212366
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 52.50313507451621,
+            "cosine": -0.674685833018736
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.1342442590570725,
+            "cosine": 0.002887870968181294
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 6.445428156374935,
+            "cosine": -0.15483369821521542
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 6.535464078544033,
+            "cosine": -0.12293778495238131
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 5,
+          "block": 30,
+          "position": 1,
+          "target_in_candidates": true,
+          "actual_overlap": 0.14252324402332306,
+          "dose": 0.265625,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 4.502675533294678,
+          "margin_gradient_norm": 52.37228775024414,
+          "block_proxy_gradient_norm": 1.945862889289856,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 235.8484186212552,
+            "cosine": -1.0001399577403547
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 100.42668533279613,
+            "cosine": -0.9854516822209212
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 33.42644844689957,
+            "cosine": -0.25665762674838394
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 33.3664236855624,
+            "cosine": -0.6549285916440649
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.7265457094713915,
+            "cosine": 0.023873326761072816
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 3.5350754655329357,
+            "cosine": -0.12971206011366804
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 0.21725296507170772,
+            "cosine": -0.006242271225196311
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 6,
+          "block": 14,
+          "position": 5,
+          "target_in_candidates": true,
+          "actual_overlap": 0.0026205878239125013,
+          "dose": 0.79296875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.09850560128688812,
+          "margin_gradient_norm": 155.264404296875,
+          "block_proxy_gradient_norm": 0.18854476511478424,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 14.119645183560419,
+            "cosine": -0.9231897072801001
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 1.2856336157669968,
+            "cosine": -0.04391681615646849
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": -26.527790258788894,
+            "cosine": 0.024686149841289445
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": -2.1586910723286206,
+            "cosine": 0.008361202324681299
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.8655156075034717,
+            "cosine": 0.010290013908401851
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": -1.0271625386345156,
+            "cosine": 0.012713071002293491
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": -5.222306053146306,
+            "cosine": 0.050613792766222084
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 6,
+          "block": 30,
+          "position": 1,
+          "target_in_candidates": true,
+          "actual_overlap": 0.5259026885032654,
+          "dose": 0.3046875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 9.45241641998291,
+          "margin_gradient_norm": 39.41563034057617,
+          "block_proxy_gradient_norm": 5.0353875160217285,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 372.5971663702945,
+            "cosine": -1.0000650325242892
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 174.69311546351932,
+            "cosine": -0.8801858992680706
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 53.71710975320973,
+            "cosine": -0.3297536231765388
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 58.070910047096554,
+            "cosine": -0.8860133343918087
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.042585428826992684,
+            "cosine": 0.0019943690487091276
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 7.221601504991936,
+            "cosine": -0.3520856032500658
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 2.922712101949837,
+            "cosine": -0.11158247915793859
+          }
+        },
+        {
+          "temperature": 0,
+          "prompt_index": 7,
+          "block": 30,
+          "position": 4,
+          "target_in_candidates": true,
+          "actual_overlap": 0.4623374044895172,
+          "dose": 0.52734375,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 21.374399185180664,
+          "margin_gradient_norm": 87.15322875976562,
+          "block_proxy_gradient_norm": 3.8755853176116943,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 1862.71095274153,
+            "cosine": -0.9999264847929527
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 311.62468800905145,
+            "cosine": -0.9225949469536249
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 268.70730115501533,
+            "cosine": -0.8666511720260129
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 103.81011349989424,
+            "cosine": -0.9225607355113381
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -1.1164404210397672,
+            "cosine": 0.022448840317460427
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 11.99937882197757,
+            "cosine": -0.26458091242469006
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 10.24067062458298,
+            "cosine": -0.1768167366928999
+          }
+        }
+      ],
+      "parameters_updated": false,
+      "hidden_or_logits_persisted": false,
+      "scope": "Actual BF16 full repair-head VJPs; infinitesimal unpreconditioned SGD direction only, not Adam or an actual model update. Native seven-position prefix overlap is still a proxy; unseen suffix included in the loss, errors restricted to reached states.",
+      "same_native_states_as_first_run": true
+    },
+    "T1": {
+      "status": "complete",
+      "prompts": 8,
+      "blocks": 24,
+      "errors": 21,
+      "effects": {
+        "own_overlap_loss": {
+          "cases": 21,
+          "helps": 21,
+          "harms": 0,
+          "near_zero": 0
+        },
+        "same_block_prefix_proxy": {
+          "cases": 21,
+          "helps": 20,
+          "harms": 1,
+          "near_zero": 0
+        },
+        "same_block_equal_overlap": {
+          "cases": 21,
+          "helps": 19,
+          "harms": 2,
+          "near_zero": 0
+        },
+        "own_prompt_prefix_proxy": {
+          "cases": 21,
+          "helps": 17,
+          "harms": 4,
+          "near_zero": 0
+        },
+        "other_prompts_prefix_proxy": {
+          "cases": 21,
+          "helps": 9,
+          "harms": 12,
+          "near_zero": 0
+        },
+        "global_prefix_proxy": {
+          "cases": 21,
+          "helps": 13,
+          "harms": 8,
+          "near_zero": 0
+        },
+        "global_equal_overlap": {
+          "cases": 21,
+          "helps": 13,
+          "harms": 8,
+          "near_zero": 0
+        }
+      },
+      "supported_errors_effects": {
+        "own_overlap_loss": {
+          "cases": 20,
+          "helps": 20,
+          "harms": 0,
+          "near_zero": 0
+        },
+        "same_block_prefix_proxy": {
+          "cases": 20,
+          "helps": 19,
+          "harms": 1,
+          "near_zero": 0
+        },
+        "same_block_equal_overlap": {
+          "cases": 20,
+          "helps": 19,
+          "harms": 1,
+          "near_zero": 0
+        },
+        "own_prompt_prefix_proxy": {
+          "cases": 20,
+          "helps": 16,
+          "harms": 4,
+          "near_zero": 0
+        },
+        "other_prompts_prefix_proxy": {
+          "cases": 20,
+          "helps": 9,
+          "harms": 11,
+          "near_zero": 0
+        },
+        "global_prefix_proxy": {
+          "cases": 20,
+          "helps": 13,
+          "harms": 7,
+          "near_zero": 0
+        },
+        "global_equal_overlap": {
+          "cases": 20,
+          "helps": 13,
+          "harms": 7,
+          "near_zero": 0
+        }
+      },
+      "per_prompt": {
+        "0": {
+          "own_overlap_loss": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 3,
+            "helps": 2,
+            "harms": 1,
+            "near_zero": 0
+          }
+        },
+        "1": {
+          "own_overlap_loss": {
+            "cases": 4,
+            "helps": 4,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 4,
+            "helps": 3,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 4,
+            "helps": 3,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 4,
+            "helps": 2,
+            "harms": 2,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 4,
+            "helps": 1,
+            "harms": 3,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 4,
+            "helps": 2,
+            "harms": 2,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 4,
+            "helps": 2,
+            "harms": 2,
+            "near_zero": 0
+          }
+        },
+        "2": {
+          "own_overlap_loss": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 3,
+            "helps": 1,
+            "harms": 2,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 3,
+            "helps": 3,
+            "harms": 0,
+            "near_zero": 0
+          }
+        },
+        "3": {
+          "own_overlap_loss": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 2,
+            "helps": 1,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 2,
+            "helps": 1,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 2,
+            "helps": 1,
+            "harms": 1,
+            "near_zero": 0
+          }
+        },
+        "4": {
+          "own_overlap_loss": {
+            "cases": 4,
+            "helps": 4,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 4,
+            "helps": 4,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 4,
+            "helps": 3,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 4,
+            "helps": 3,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 4,
+            "helps": 0,
+            "harms": 4,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 4,
+            "helps": 0,
+            "harms": 4,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 4,
+            "helps": 0,
+            "harms": 4,
+            "near_zero": 0
+          }
+        },
+        "5": {
+          "own_overlap_loss": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 2,
+            "helps": 1,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          }
+        },
+        "6": {
+          "own_overlap_loss": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 2,
+            "helps": 1,
+            "harms": 1,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 2,
+            "helps": 2,
+            "harms": 0,
+            "near_zero": 0
+          }
+        },
+        "7": {
+          "own_overlap_loss": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_prefix_proxy": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "same_block_equal_overlap": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "own_prompt_prefix_proxy": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "other_prompts_prefix_proxy": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "global_prefix_proxy": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          },
+          "global_equal_overlap": {
+            "cases": 1,
+            "helps": 1,
+            "harms": 0,
+            "near_zero": 0
+          }
+        }
+      },
+      "cases": [
+        {
+          "temperature": 1,
+          "prompt_index": 0,
+          "block": 2,
+          "position": 1,
+          "target_in_candidates": true,
+          "actual_overlap": 0.017721595242619514,
+          "dose": 0.73828125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 1.5821495056152344,
+          "margin_gradient_norm": 93.50122833251953,
+          "block_proxy_gradient_norm": 0.6788679957389832,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 147.8676985369905,
+            "cosine": -0.9995590986424876
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 63.40040755220048,
+            "cosine": -0.9988249971912792
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 20.18303687068246,
+            "cosine": -0.06340663932917386
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 22.8199268381041,
+            "cosine": -0.032560656779971886
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 0.011870132517226063,
+            "cosine": -0.0001955366747104817
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 2.8628772175397046,
+            "cosine": -0.02792787773051619
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 0.7949336073674746,
+            "cosine": -0.013343148513058418
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 0,
+          "block": 14,
+          "position": 5,
+          "target_in_candidates": true,
+          "actual_overlap": 6.173037945700344e-06,
+          "dose": 0.79296875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.0015381778357550502,
+          "margin_gradient_norm": 258.2652893066406,
+          "block_proxy_gradient_norm": 22.195158004760742,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 0.30785546692985477,
+            "cosine": -0.7749510460931652
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 128.57280178322767,
+            "cosine": -0.0224297708020529
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 32.1969597948909,
+            "cosine": -0.022467295969293914
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 41.593164689308814,
+            "cosine": -0.02148582977143793
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 0.7541057316190161,
+            "cosine": -0.004497344670246674
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 5.858988115764934,
+            "cosine": -0.020692316045276198
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": -1.1067592578275627,
+            "cosine": 0.006725613582288772
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 0,
+          "block": 30,
+          "position": 7,
+          "target_in_candidates": true,
+          "actual_overlap": 0.060394950211048126,
+          "dose": 0.7578125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 3.7912018299102783,
+          "margin_gradient_norm": 156.442626953125,
+          "block_proxy_gradient_norm": 3.2526657581329346,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 543.7267941871145,
+            "cosine": -0.9167453529397638
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 22.070827554754963,
+            "cosine": -0.04337345988313732
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 34.91036703438027,
+            "cosine": -0.07054325997552895
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": -13.91682964668782,
+            "cosine": 0.011868106461271597
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 0.23693342173690096,
+            "cosine": -0.002332712419224397
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": -1.5322869651245634,
+            "cosine": 0.008933826981574565
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 3.012616780456534,
+            "cosine": -0.03022272131962102
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 1,
+          "block": 2,
+          "position": 2,
+          "target_in_candidates": true,
+          "actual_overlap": 0.19007079303264618,
+          "dose": 0.76171875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.3876636326313019,
+          "margin_gradient_norm": 133.51181030273438,
+          "block_proxy_gradient_norm": 0.055543847382068634,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 50.82544101929625,
+            "cosine": -0.981988484828114
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 7.268541345526683,
+            "cosine": -0.9801479246111169
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 7.105343468158336,
+            "cosine": -0.3486262662119256
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": -0.6012204808506858,
+            "cosine": 0.002034109583349064
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.9415378184939698,
+            "cosine": 0.005851644745931591
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": -0.8989981558213714,
+            "cosine": 0.0061417433799729314
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": -0.8231637296758764,
+            "cosine": 0.00967634432573355
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 1,
+          "block": 14,
+          "position": 6,
+          "target_in_candidates": true,
+          "actual_overlap": 0.09503278881311417,
+          "dose": 0.79296875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 17.17243194580078,
+          "margin_gradient_norm": 199.8995819091797,
+          "block_proxy_gradient_norm": 4.892333030700684,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 3433.254906581305,
+            "cosine": -1.0001435997298993
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 973.4602308442414,
+            "cosine": -0.995383205731611
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 488.41945255998087,
+            "cosine": -0.9990596278872661
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 321.1769966422866,
+            "cosine": -0.7257596534594878
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 8.248709446258816,
+            "cosine": -0.03424001965205084
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 47.36474532064956,
+            "cosine": -0.21612045483692702
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 20.808949682103762,
+            "cosine": -0.163374041974355
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 1,
+          "block": 30,
+          "position": 2,
+          "target_in_candidates": true,
+          "actual_overlap": 0.43221014738082886,
+          "dose": 0.59375,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 32.1534538269043,
+          "margin_gradient_norm": 149.207275390625,
+          "block_proxy_gradient_norm": 4.541024684906006,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 4798.438474904746,
+            "cosine": -1.0001895096357907
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 677.4128167160818,
+            "cosine": -0.9997917843464154
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 687.9559522424197,
+            "cosine": -0.9920326774954402
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 223.3431518109664,
+            "cosine": -0.6761497580185575
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.47400169371761214,
+            "cosine": 0.0026360264822666976
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 27.50314252081909,
+            "cosine": -0.16812986303925598
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 28.559277666131216,
+            "cosine": -0.30040144583601774
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 1,
+          "block": 30,
+          "position": 3,
+          "target_in_candidates": true,
+          "actual_overlap": 0.034947510808706284,
+          "dose": 0.703125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.46538519859313965,
+          "margin_gradient_norm": 57.338111877441406,
+          "block_proxy_gradient_norm": 4.541024684906006,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 22.779735962716412,
+            "cosine": -0.8536753174990822
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": -1.5739592491432937,
+            "cosine": 0.006044999052491705
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": -0.8360531989008813,
+            "cosine": 0.003137226323309471
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": -2.0162341089781686,
+            "cosine": 0.015883925067005183
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.7494048928337438,
+            "cosine": 0.010845086495766453
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": -0.907758560434261,
+            "cosine": 0.014440409210978004
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": -0.44539838316210656,
+            "cosine": 0.012191300792188537
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 2,
+          "block": 2,
+          "position": 7,
+          "target_in_candidates": true,
+          "actual_overlap": 0.4577944576740265,
+          "dose": 0.80078125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 38.57154846191406,
+          "margin_gradient_norm": 161.3827362060547,
+          "block_proxy_gradient_norm": 5.857335567474365,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 6224.928436904891,
+            "cosine": -1.000023488426915
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 831.7072640698469,
+            "cosine": -0.8798594862594551
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 889.9514552716156,
+            "cosine": -0.9774772527446255
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 277.00296234286736,
+            "cosine": -0.8013982630652151
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -6.912346852751317,
+            "cosine": 0.034988703652474695
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 28.577066783695905,
+            "cosine": -0.16151509566289626
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 35.41485004232564,
+            "cosine": -0.3444079247624356
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 2,
+          "block": 14,
+          "position": 4,
+          "target_in_candidates": true,
+          "actual_overlap": 0.03013038821518421,
+          "dose": 0.640625,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 2.109097957611084,
+          "margin_gradient_norm": 125.73787689208984,
+          "block_proxy_gradient_norm": 2.0041961669921875,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 265.19156609071075,
+            "cosine": -0.9999926624442451
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 109.07907885961272,
+            "cosine": -0.4328476952933005
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 69.64566540293873,
+            "cosine": -0.11486121192720472
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 38.35116216920016,
+            "cosine": -0.14240768782271726
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -4.67795889208677,
+            "cosine": 0.030391328453645592
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 0.7006812503811045,
+            "cosine": -0.0050828457284721965
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 0.7437934592287525,
+            "cosine": -0.009283911725488541
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 2,
+          "block": 30,
+          "position": 3,
+          "target_in_candidates": true,
+          "actual_overlap": 0.015257678925991058,
+          "dose": 0.578125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.46559467911720276,
+          "margin_gradient_norm": 113.89385223388672,
+          "block_proxy_gradient_norm": 1.6767313480377197,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 47.37868633383756,
+            "cosine": -0.893459226070852
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 2.6496419617998246,
+            "cosine": -0.013874694524293992
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 5.598655204687198,
+            "cosine": -0.008596930867617095
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 2.5545035657119737,
+            "cosine": -0.010471943554278072
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 0.9063198599168271,
+            "cosine": -0.006500408415461442
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 1.1123428224710192,
+            "cosine": -0.008908219524733736
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 3.511191197350178,
+            "cosine": -0.04838369162317088
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 3,
+          "block": 2,
+          "position": 4,
+          "target_in_candidates": true,
+          "actual_overlap": 0.0014826740371063352,
+          "dose": 0.80078125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.2536725401878357,
+          "margin_gradient_norm": 223.61231994628906,
+          "block_proxy_gradient_norm": 0.03624240681529045,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 49.75181473476052,
+            "cosine": -0.8770810931418308
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 7.106415145433839,
+            "cosine": -0.8768752224854095
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 7.95183813320924,
+            "cosine": -0.617828047446632
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 3.269286638765828,
+            "cosine": -0.006591942909062498
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 3.2139114860170523,
+            "cosine": -0.011778319361699626
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 3.2208333829955462,
+            "cosine": -0.013137873414409109
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 1.3790300736905468,
+            "cosine": -0.009678829077937165
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 3,
+          "block": 30,
+          "position": 2,
+          "target_in_candidates": true,
+          "actual_overlap": 0.05259527266025543,
+          "dose": 0.47265625,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 1.9379538297653198,
+          "margin_gradient_norm": 103.20719909667969,
+          "block_proxy_gradient_norm": 1.6352624893188477,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 60.35037837306628,
+            "cosine": -0.3017356163007009
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 42.68541889504604,
+            "cosine": -0.252919367759875
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 6.641803935204927,
+            "cosine": -0.01855852079275117
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 10.084553052369873,
+            "cosine": -0.0440557729976901
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -2.083747178858806,
+            "cosine": 0.016545511437814898
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": -0.5627096943485201,
+            "cosine": 0.004973097379332079
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": -0.5107235922107095,
+            "cosine": 0.007766417361081031
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 4,
+          "block": 14,
+          "position": 1,
+          "target_in_candidates": true,
+          "actual_overlap": 0.24860481917858124,
+          "dose": 0.333984375,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.39077651500701904,
+          "margin_gradient_norm": 101.63339233398438,
+          "block_proxy_gradient_norm": 0.39498791098594666,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 37.78365058718335,
+            "cosine": -0.9513472001493948
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 38.14108657010157,
+            "cosine": -0.9501076588530779
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 5.651195290957297,
+            "cosine": -0.8910246497016046
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 12.630902383496466,
+            "cosine": -0.2261096605570447
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -2.8233454738312203,
+            "cosine": 0.02218876101569766
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": -0.8915644961861653,
+            "cosine": 0.008001453613386248
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": -1.3102676534533464,
+            "cosine": 0.020233378814426026
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 4,
+          "block": 30,
+          "position": 1,
+          "target_in_candidates": true,
+          "actual_overlap": 0.32644277811050415,
+          "dose": 0.302734375,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.43931707739830017,
+          "margin_gradient_norm": 85.09387969970703,
+          "block_proxy_gradient_norm": 0.8993508815765381,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 37.38918267062452,
+            "cosine": -1.0001601976787433
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 14.396286139496567,
+            "cosine": -0.1881147992123986
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 3.8496469759005647,
+            "cosine": -0.015577384599207975
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 4.679804404290215,
+            "cosine": -0.10005770003000258
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -1.3713217194127878,
+            "cosine": 0.012872012996405766
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": -0.6149309716323942,
+            "cosine": 0.006591444192202129
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": -0.23156201974706372,
+            "cosine": 0.0042708448499030535
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 4,
+          "block": 30,
+          "position": 4,
+          "target_in_candidates": false,
+          "actual_overlap": 0.12440425902605057,
+          "dose": 0.79296875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 4.0076397453958634e-06,
+          "margin_gradient_norm": 110.04228210449219,
+          "block_proxy_gradient_norm": 0.8993508815765381,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 0.0003299385161429949,
+            "cosine": -0.7481432428415377
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 0.524180739517377,
+            "cosine": -0.0052965407135043075
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": -0.36086724242557605,
+            "cosine": 0.0011291713262106542
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 0.15454857109057363,
+            "cosine": -0.0025552097897975556
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.3415737627142772,
+            "cosine": 0.0024793073112073286
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": -0.27955846800253936,
+            "cosine": 0.002317211182655596
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": -0.03302942473896789,
+            "cosine": 0.00047107082704839226
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 4,
+          "block": 30,
+          "position": 5,
+          "target_in_candidates": true,
+          "actual_overlap": 0.09311947971582413,
+          "dose": 0.796875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 1.669469020271208e-05,
+          "margin_gradient_norm": 185.63961791992188,
+          "block_proxy_gradient_norm": 0.8993508815765381,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 0.002827356527624071,
+            "cosine": -0.912287130649064
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 0.04606319759531985,
+            "cosine": -0.0002759016201424495
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 2.224866719015881,
+            "cosine": -0.004126722683023593
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": -1.6503303746726243,
+            "cosine": 0.016174146924600855
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -13.015083227594491,
+            "cosine": 0.05599918737316293
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": -11.5944892420076,
+            "cosine": 0.05696833326504914
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": -0.11751817695558164,
+            "cosine": 0.0009935258417996045
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 5,
+          "block": 2,
+          "position": 5,
+          "target_in_candidates": true,
+          "actual_overlap": 0.1480627804994583,
+          "dose": 0.71875,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 14.975115776062012,
+          "margin_gradient_norm": 119.25253295898438,
+          "block_proxy_gradient_norm": 5.098819732666016,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 1786.255793088082,
+            "cosine": -1.0002437862784757
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 608.1732249835397,
+            "cosine": -1.0002072944532396
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 256.97115972312497,
+            "cosine": -0.9979945084438054
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 203.07693359790616,
+            "cosine": -0.7923016345370242
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.17305636404579994,
+            "cosine": 0.001187394951137133
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 25.233192404272856,
+            "cosine": -0.1929999120487193
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 10.56492456017095,
+            "cosine": -0.13904122561228416
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 5,
+          "block": 30,
+          "position": 2,
+          "target_in_candidates": true,
+          "actual_overlap": 0.01799306645989418,
+          "dose": 0.7265625,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.0005283366190269589,
+          "margin_gradient_norm": 130.77841186523438,
+          "block_proxy_gradient_norm": 9.657048212829977e-05,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 0.0684044238884574,
+            "cosine": -0.9900050820132592
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 0.010666626198959622,
+            "cosine": -0.8445913535372723
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 2.938320489759164,
+            "cosine": -0.051520667377281476
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 8.921506257126172,
+            "cosine": -0.03173947059902002
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 1.7139915110471449,
+            "cosine": -0.010723778451273517
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 2.6149308723885776,
+            "cosine": -0.01823797876396809
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 1.0427090846399472,
+            "cosine": -0.012513301407659985
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 6,
+          "block": 30,
+          "position": 3,
+          "target_in_candidates": true,
+          "actual_overlap": 0.61728435754776,
+          "dose": 0.7578125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 19.169824600219727,
+          "margin_gradient_norm": 108.41500854492188,
+          "block_proxy_gradient_norm": 4.224687099456787,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 2074.2926752194917,
+            "cosine": -0.9980734436170319
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 457.0347757351583,
+            "cosine": -0.9978500369619876
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 297.95855337998285,
+            "cosine": -0.9978154948593936
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 152.4456571420431,
+            "cosine": -0.9117832160836886
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 0.1719486335039827,
+            "cosine": -0.001285196105246634
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 19.206162198619623,
+            "cosine": -0.1615859965931288
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 12.109910247593156,
+            "cosine": -0.17530580863381937
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 6,
+          "block": 30,
+          "position": 5,
+          "target_in_candidates": true,
+          "actual_overlap": 0.004629783798009157,
+          "dose": 0.78125,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 0.39671608805656433,
+          "margin_gradient_norm": 174.0976104736328,
+          "block_proxy_gradient_norm": 4.224687099456787,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 43.85519092435521,
+            "cosine": -0.6349629578186582
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 11.058464348896104,
+            "cosine": -0.015035139431033488
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 8.650439119986096,
+            "cosine": -0.01803969422526341
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 4.454292862958022,
+            "cosine": -0.01659021074266494
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": -0.00017348399633889539,
+            "cosine": 8.074705082493371e-07
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 0.5566348274067487,
+            "cosine": -0.0029162859759102266
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 1.5130278788596825,
+            "cosine": -0.01363951418658601
+          }
+        },
+        {
+          "temperature": 1,
+          "prompt_index": 7,
+          "block": 30,
+          "position": 3,
+          "target_in_candidates": true,
+          "actual_overlap": 0.07768743485212326,
+          "dose": 0.78515625,
+          "full_head_bf16_replay_exact": true,
+          "local_loss_gradient_norm": 2.4679007530212402,
+          "margin_gradient_norm": 143.8041229248047,
+          "block_proxy_gradient_norm": 0.7069664001464844,
+          "own_overlap_loss": {
+            "sgd_margin_effect": 354.9396347303341,
+            "cosine": -1.000127691825792
+          },
+          "same_block_prefix_proxy": {
+            "sgd_margin_effect": 101.67848971241065,
+            "cosine": -1.000135831159733
+          },
+          "same_block_equal_overlap": {
+            "sgd_margin_effect": 50.73414739933857,
+            "cosine": -0.9937332894972579
+          },
+          "own_prompt_prefix_proxy": {
+            "sgd_margin_effect": 33.84147188364696,
+            "cosine": -0.9882456402850562
+          },
+          "other_prompts_prefix_proxy": {
+            "sgd_margin_effect": 8.226764853097757,
+            "cosine": -0.04573070725246961
+          },
+          "global_prefix_proxy": {
+            "sgd_margin_effect": 11.428603293738032,
+            "cosine": -0.07248937539502574
+          },
+          "global_equal_overlap": {
+            "sgd_margin_effect": 3.767674830754303,
+            "cosine": -0.041119410327218754
+          }
+        }
+      ],
+      "parameters_updated": false,
+      "hidden_or_logits_persisted": false,
+      "scope": "Actual BF16 full repair-head VJPs; infinitesimal unpreconditioned SGD direction only, not Adam or an actual model update. Native seven-position prefix overlap is still a proxy; unseen suffix included in the loss, errors restricted to reached states.",
+      "same_native_states_as_first_run": true
+    }
+  },
+  "hidden_or_logits_persisted": false,
+  "parameter_updates": 0,
+  "scope": "Full BF16 repair-head VJP, local unpreconditioned SGD transport, not Adam. Repeated first-run diagnostic prompts, not new independent testing."
+}

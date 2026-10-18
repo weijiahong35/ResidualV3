@@ -1,0 +1,658 @@
+[
+  {
+    "source_index": 8586,
+    "training_index": 93,
+    "intersection_size": 155,
+    "selected_anchors": [
+      1311,
+      3132,
+      4672,
+      4892
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 53,
+        "anchors": 1536,
+        "anchor_hash": "818df50054e767127b2029317b89c39a2d44cec0e59aa9e8645a537804550684",
+        "answer_hash": "82424475df98512d90592f0a648aa8e2fa0b5b8e8209b4f597d5b1355f122807",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 238,
+        "anchors": 1536,
+        "anchor_hash": "71be30a5485780e8c056e9dc2d215f47ae9a927b0d0aed444189dce41f27cbec",
+        "answer_hash": "2b4b67c69febaf78585c50d4ce8cb3a92c2673594d7dd67569d8def784251f9e",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 286,
+        "anchors": 1536,
+        "anchor_hash": "0d3a32f07aafe8e53115fe3f2c0252d40587d5ca5e38733e111f169439bc7c32",
+        "answer_hash": "35b0a459a61b3e5056abfc8d46ba0f03f0c7f87d675bfb8a5c7e2054b6109f98",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 9742,
+    "training_index": 10,
+    "intersection_size": 52,
+    "selected_anchors": [
+      1222,
+      2233,
+      6336,
+      7606
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 75,
+        "anchors": 1536,
+        "anchor_hash": "d1d69170f622170169282824fe319f25ea437c971801ef436564e6726ff25884",
+        "answer_hash": "120ac038105ccabde3421cc2cdbc652cef4c71c41ea7e2c55d72c2b22d76cf2f",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 188,
+        "anchors": 1536,
+        "anchor_hash": "00fdf8abae51a32fda2418b03937f82027abd3f7f9e901de3c72ef4db220bd3b",
+        "answer_hash": "b3ebbcf92e678c559da60e6d0865070f6671501c74cae6a58170fd8b03a87a17",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 366,
+        "anchors": 1536,
+        "anchor_hash": "b743cb1cb148ee1b0e5eaef6d0ff4b88daf3c1ca4b56abf6286be813210c9e91",
+        "answer_hash": "ce01b3cbe40fdce7147597bd2f5a06f5fe1e4f734c29bc3d16d7351e8eb7ef36",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 1982,
+    "training_index": 121,
+    "intersection_size": 58,
+    "selected_anchors": [
+      559,
+      2488,
+      3619,
+      7674
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 86,
+        "anchors": 1536,
+        "anchor_hash": "c4179f898e1dea06d0038cd3159746d7ddcfc80e45e358598e79a46ccb8633b2",
+        "answer_hash": "e712bac5f83a44c1faf907fc1033738835ace0d4ead7a2ba36e1977fd8193e05",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 175,
+        "anchors": 1536,
+        "anchor_hash": "23217200deeaaf83771138441cd2e67c5b56260dea339f22397ff3020dd49f58",
+        "answer_hash": "020190ec82598cd2b7a45104751fad90ce15fcb598c513fcc439a9ca74aa47df",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 331,
+        "anchors": 1536,
+        "anchor_hash": "0384de79db960ae981dd038ff7d3179d13b7aa2bc058721aad66ac4035a1e727",
+        "answer_hash": "d62b11e05342c7c08ef1b197e5df509b0ab5f189b31baca36ada971dbcf765aa",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 4171,
+    "training_index": 114,
+    "intersection_size": 250,
+    "selected_anchors": [
+      1162,
+      1544,
+      2745,
+      3531
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 72,
+        "anchors": 1536,
+        "anchor_hash": "ad155811c98a87bb407f677e87d630d37efe5e2a18aaa5c08cdb68ac740628d8",
+        "answer_hash": "243d5fee6445e52f5aad4799e41dde4f04c0ce6bd4561b5ea9ad5ee9265d38da",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 198,
+        "anchors": 1536,
+        "anchor_hash": "7f5c8532f1f5aacdc5b9205407d14a521989d941003178eecd18b75334b7d6da",
+        "answer_hash": "acaf2364b911df064a16c28284dc178ee24b268495592133782d41aefe9863f9",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 333,
+        "anchors": 1536,
+        "anchor_hash": "97124f11fcc4ac7b73c08cfae31c1e49650d254f7fdf2492f80fbe33d159e79f",
+        "answer_hash": "d5039f0c436ff132499e529783810809d4463fdbb897fdd5e299949e5a6b6df8",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 1615,
+    "training_index": 115,
+    "intersection_size": 60,
+    "selected_anchors": [
+      2874,
+      6158,
+      7105,
+      7389
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 96,
+        "anchors": 1536,
+        "anchor_hash": "24ee89967e00862a8cba775e8ad0b1d02989da2f6e6961e2362709b99c9ba81d",
+        "answer_hash": "2174ae2b6c48a328ff1c252d54e9449f475f64bb2428bf6e9ce8570c1adcd200",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 224,
+        "anchors": 1536,
+        "anchor_hash": "ff54265acab47ae46495a0aab8c7af017eb6f6f662a7f4e523674f4edb7e8953",
+        "answer_hash": "d3dc24930fe08f3c67a0080dbb32d9f61fb3465521b59268c20b10aeba2c0535",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 294,
+        "anchors": 1536,
+        "anchor_hash": "4f969d7793feeeb6ec9e817808ff437cba7cd82619520d4492e21704e2d46d2b",
+        "answer_hash": "4f6cb0a1bc51f3f46fb8c7bd1ebae2de005046e1919d6847aeda004b6ecacc40",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 2754,
+    "training_index": 16,
+    "intersection_size": 1490,
+    "selected_anchors": [
+      213,
+      230,
+      549,
+      1513
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 126,
+        "anchors": 1490,
+        "anchor_hash": "a6023cd44802c2000e34b74fa68c2485266158da9bdfad00aabf35c16e805cef",
+        "answer_hash": "04691d7d76ba1f4ecce75cc3fc6eda9620fc7799365b01f48fee2e05f00ae588",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 190,
+        "anchors": 1490,
+        "anchor_hash": "a6023cd44802c2000e34b74fa68c2485266158da9bdfad00aabf35c16e805cef",
+        "answer_hash": "04691d7d76ba1f4ecce75cc3fc6eda9620fc7799365b01f48fee2e05f00ae588",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 374,
+        "anchors": 1490,
+        "anchor_hash": "a6023cd44802c2000e34b74fa68c2485266158da9bdfad00aabf35c16e805cef",
+        "answer_hash": "04691d7d76ba1f4ecce75cc3fc6eda9620fc7799365b01f48fee2e05f00ae588",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 6973,
+    "training_index": 21,
+    "intersection_size": 57,
+    "selected_anchors": [
+      808,
+      2904,
+      4453,
+      7357
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 25,
+        "anchors": 1536,
+        "anchor_hash": "6edef47475ea182fc39c3356cee7ad9328a6279d3b58a06171b6451653a73299",
+        "answer_hash": "d996b9d6e40877ae1212d1afc3a18d02c512ba60f2252822ee95c42569c5302f",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 132,
+        "anchors": 1536,
+        "anchor_hash": "e859aac8dffcb757680b6377767d11aae49288f4c335761d7226b784cdf0bebe",
+        "answer_hash": "928565fc7f728ec6762e1faae41811e3e3bfb3e0a569300d67c589b93ea7d1c9",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 315,
+        "anchors": 1536,
+        "anchor_hash": "504d10b5e663465125962aff7b29798b6c5a320137ee5917bde2cf86a099777a",
+        "answer_hash": "ad426ddc463ce800589d73809dac1f2372ead0d1b3f9182d8a1c15fbf2a0287a",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 745,
+    "training_index": 44,
+    "intersection_size": 58,
+    "selected_anchors": [
+      1053,
+      2140,
+      6274,
+      8131
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 108,
+        "anchors": 1536,
+        "anchor_hash": "d2ff7924998adfad856fa6d94eb2481ff80d9f3bbd5a712de6adb6d42a136498",
+        "answer_hash": "a83841ec2217b48836c46df9cacc1951b2eca3ceb003a1dac154272658ec5b28",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 151,
+        "anchors": 1536,
+        "anchor_hash": "e8daacdee7ab1035f1fca439f5c83699b07d839f476b58f7aa468bcd130b84ca",
+        "answer_hash": "ba6ae08e816c22bf126ba1deb4bf360451afc7d796bb231cd2444351d4892e15",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 292,
+        "anchors": 1536,
+        "anchor_hash": "651855f8858e6d67d0a777d749e3e0b1e9597195071c5008db905425de664e1e",
+        "answer_hash": "47862ee2a1d809c02268a48613160bfdc5a60bcea9f71d9e498bccb1596d5ccb",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 8810,
+    "training_index": 70,
+    "intersection_size": 64,
+    "selected_anchors": [
+      1989,
+      2537,
+      2675,
+      3006
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 121,
+        "anchors": 1536,
+        "anchor_hash": "6366ab0f034c1439b515451db15c9d1a63d0f0a8cd572e1312934d18759b3946",
+        "answer_hash": "86c78b762e3dbcf513189ee180d0577042ea77b0cef648716912994a029f6db5",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 222,
+        "anchors": 1536,
+        "anchor_hash": "c229c1d3e7143d9b7129c8e149a5ef08b805381a503cd24efd76a535ee44e156",
+        "answer_hash": "c0012c816d04e7df37cca7f13a5de5142787bf129dc1b8ba7d17c3fa9fcc0037",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 270,
+        "anchors": 1536,
+        "anchor_hash": "162a57d7d013ad273c59b09cc2cde6ecab92c3cadfda890b3bb528ebfd023f7b",
+        "answer_hash": "253c83cbde7cf7443952be61597ae3ab22bac791a7f7056ef1fb935062c2f358",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 3465,
+    "training_index": 112,
+    "intersection_size": 59,
+    "selected_anchors": [
+      3324,
+      4695,
+      5083,
+      6431
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 5,
+        "anchors": 1536,
+        "anchor_hash": "4d8f8c838dbc31c090669e012a6a1f08d096b78abd14a8cde0aa1f34620ac11c",
+        "answer_hash": "45daba9df0425c1d5ba855a6719c7f11bb0553ef4c2b4b5e04879e0c3d6844a7",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 158,
+        "anchors": 1536,
+        "anchor_hash": "a87ca2b5c6adfed45947f781896ff9a003c55cc8b9d54ad8f4837c6a4dae8541",
+        "answer_hash": "20225c67fff7305250034531616850da6b02d8d2fcd73ab42ae208b62991931b",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 306,
+        "anchors": 1536,
+        "anchor_hash": "471f65aaae51cc3dc03677e89d3c0d087c282a53b3642b39ad2285b93661f1d5",
+        "answer_hash": "01915dc03fb95a83604874eed3d687fbbfc1ebb94c25c851659e32b9b31b6881",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 7819,
+    "training_index": 64,
+    "intersection_size": 56,
+    "selected_anchors": [
+      2371,
+      3833,
+      5781,
+      7108
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 102,
+        "anchors": 1536,
+        "anchor_hash": "18e38b72392196760811fc1b0f7b503643cd684a4c51f8fe59a1390dc61758a3",
+        "answer_hash": "ba4efaf368c26db173605cb36924c200363cc309e5b3d913cc033af36ab89dcb",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 157,
+        "anchors": 1536,
+        "anchor_hash": "66f8857260e4d451dab733c8447a69dfb768a8a8836c89e754ff76c1adb51305",
+        "answer_hash": "cc300525021c86f8578361023b5d8c4edd2fe3f65c6189fa339f3877b4703630",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 310,
+        "anchors": 1536,
+        "anchor_hash": "cf930183958050b2bb2d70a6c5969ebbeea26f88bbe171ef72588029f887cad6",
+        "answer_hash": "99de05132d854e88a8970821c2af2e64f2d1f92dc2254f20ac5193bb26e827ed",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 8058,
+    "training_index": 105,
+    "intersection_size": 46,
+    "selected_anchors": [
+      1280,
+      2621,
+      3214,
+      5100
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 9,
+        "anchors": 1536,
+        "anchor_hash": "0c519fd089a9c67355188f9c27cd57144952885ece3b45c8d19d8790678a55c1",
+        "answer_hash": "4d83babb86f07d25a9212b6b8575d17c16d8c4a38df3b000be2f8f64b7ad756f",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 163,
+        "anchors": 1536,
+        "anchor_hash": "b9e5d5208c40a1a5021bddf25935ae1319eba95424df771ef38bf9ef9caaf4bb",
+        "answer_hash": "28d839581638230a539460d289c004bb445f5fdd1734f2af04bab6abe7325460",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 274,
+        "anchors": 1536,
+        "anchor_hash": "8e01c90445c9f744bbe81ac6ed81e804fda417aa97d54cbcfbcc27634140231c",
+        "answer_hash": "69235940747f0c7694067caa919de264efb2449a24db54edf1c1813ee176b9fd",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 611,
+    "training_index": 13,
+    "intersection_size": 94,
+    "selected_anchors": [
+      1818,
+      3825,
+      4605,
+      5812
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 111,
+        "anchors": 1536,
+        "anchor_hash": "4cf91fd933e4c6d8b21e4bc5d2f56302915502feb27944c72f74d005adc48be0",
+        "answer_hash": "406b9cda3f04b589f361105aba93196ee81b012c45c3cf64a36f91a62c46aea6",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 193,
+        "anchors": 1536,
+        "anchor_hash": "666590cbe77bf1727d721f01ac3a9461c2518014fe6a237146c3ee3a99023600",
+        "answer_hash": "0a299e3e9ee07c599e909825704ca76a770d01f28339ac8eb44957d8349d2dcd",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 348,
+        "anchors": 1536,
+        "anchor_hash": "0bbb0d78a07e304a2dcfef60653b0a5ecdeddac9c12a72610227c7ac0f7253ba",
+        "answer_hash": "b391200a42632d13b51c71d28fea3d3dcc0c91c80f4ae6b14381e4601075ad8b",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 9051,
+    "training_index": 106,
+    "intersection_size": 121,
+    "selected_anchors": [
+      172,
+      1674,
+      5263,
+      5544
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 112,
+        "anchors": 1536,
+        "anchor_hash": "fcf3b675ee91b1b709967ccadf33ac231265873ccd619d0f4711fb4cbf516a17",
+        "answer_hash": "798a7dbee0e2f2376dc4118f694b2156963aaded39e2a1afdda55136d1ea8707",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 219,
+        "anchors": 1536,
+        "anchor_hash": "328416b3e3e4876dfcbf1a225ae20705ffa2149cf671d219c743c3d237cca07e",
+        "answer_hash": "e071ed72be9c64ab5c18e4b3ca6c5ff2c8a0d9db1bd695023ec34088424f059d",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 312,
+        "anchors": 1536,
+        "anchor_hash": "29e030d205894a6c04b55503255b51188b61c38decb0f153bcf655e090712bad",
+        "answer_hash": "bc767c3c563182a8c52e2cf1ea90a36910c6c692c6022629ebddaeedd2a7f78e",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 5457,
+    "training_index": 89,
+    "intersection_size": 57,
+    "selected_anchors": [
+      683,
+      866,
+      4416,
+      6785
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 116,
+        "anchors": 1536,
+        "anchor_hash": "c94d3c1506e3205820d490d87a6b456c0b334581e86118d9592167c5fe589239",
+        "answer_hash": "cadab9b0fafc257f96e0209eefd5bbd8f7ada4c1d5ae0c65423e336da97fb324",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 243,
+        "anchors": 1536,
+        "anchor_hash": "6146c59cf1996565e89ab0809f73c6216c98f9ae5e11df148d54ac4c74e71cb7",
+        "answer_hash": "d61baf86ba83bbed12b6f089fbf96a9b75f3d853e2a592304e5ad83e8014bc25",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 368,
+        "anchors": 1536,
+        "anchor_hash": "8f8a7b245fa63209adf37235f7710e9f05e3fcaedc42f122026302f4bb21ca81",
+        "answer_hash": "8bdfaf700c20c3e0718ad96cd1949f092a3103d49dc866985dba07c12581fa9b",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  },
+  {
+    "source_index": 2459,
+    "training_index": 12,
+    "intersection_size": 187,
+    "selected_anchors": [
+      956,
+      2022,
+      2984,
+      4558
+    ],
+    "all_epochs_exposure_verified": true,
+    "epochs": [
+      {
+        "epoch": 1,
+        "step": 36,
+        "anchors": 1536,
+        "anchor_hash": "2abd7e10feed9ab92066b4ae4db0d4a960841b88b2ceb512c998ca1f47b1a8c0",
+        "answer_hash": "0a1063f489ab10ba160a29677f0fbaabecfbebb6f5943b7eef30cd9d61217b04",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 2,
+        "step": 227,
+        "anchors": 1536,
+        "anchor_hash": "ebd04e75e53b18684be6680381120fb7c11efbff067e791babb2ef7bcd96e008",
+        "answer_hash": "1ab102ebef5b6f5fbbfea1bb2507e290401fcd217b413bf68854b2f6e4645231",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      },
+      {
+        "epoch": 3,
+        "step": 361,
+        "anchors": 1536,
+        "anchor_hash": "5d3dcdb34d47d6c6a26a7b40f6a97471b3ca355b8e129f94c1c937168ed130f1",
+        "answer_hash": "15b7eb770e7ade6bd6e4fed24313c4ac8d2ba5daa2c30785b6eaf86ac2c1ba3f",
+        "anchor_hash_matches": true,
+        "answer_hash_matches": true
+      }
+    ]
+  }
+]

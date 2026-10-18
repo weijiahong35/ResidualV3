@@ -1,0 +1,20 @@
+{
+  "reference": "/data/weijiahong/speculators-main-lora/eval_results/standalone_oracle_learning_anygpu_20261001",
+  "unchanged_protocol_fields": [
+    "architecture",
+    "seed",
+    "smoke_seed",
+    "train_count",
+    "epochs",
+    "selected_blocks",
+    "temperatures",
+    "optimizer",
+    "oracle",
+    "frozen_behavior_checkpoint",
+    "losses",
+    "arms"
+  ],
+  "prompt_bytes_identical": true,
+  "optimizer_continuation": "Original learner has no optimizer export operation; replacement replays from identical fresh seed and compares all completed state/label signatures and losses before switching. Original continues until replacement catches up.",
+  "old_process_kept_running": true
+}

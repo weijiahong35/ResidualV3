@@ -1,0 +1,169 @@
+{
+  "schema": "r5.completion.v1",
+  "status": "complete",
+  "UTC": "2026-10-15T04:08:33.683073+00:00",
+  "run_id": "20261015T030446Z_mismatch_r5",
+  "core_scientific_work_complete": true,
+  "required_work_remaining": [],
+  "new_prompts": 36,
+  "old_dev_prompts": 18,
+  "H_shared": {
+    "verdict": "supported_within_predefined_subset",
+    "coverage_gate": true,
+    "metric": "E2_gain"
+  },
+  "H_match": {
+    "verdict": "supported_within_predefined_subset",
+    "coverage_gate": true,
+    "metric": "E3_gain"
+  },
+  "primary_E2": {
+    "estimate": 0.30777343433916055,
+    "CI95": [
+      0.275073625905266,
+      0.33940327730453607
+    ],
+    "CI97_5": [
+      0.27031005685731935,
+      0.3439462048691711
+    ],
+    "domain_estimates": {
+      "gsm8k": 0.3317989288452256,
+      "humaneval": 0.318445245299906,
+      "alpaca": 0.27307612887235
+    },
+    "coverage": {
+      "gsm8k": {
+        "all_prompts": 12,
+        "defined_prompts": 12,
+        "nonzero_pair_prompts": 12
+      },
+      "humaneval": {
+        "all_prompts": 12,
+        "defined_prompts": 12,
+        "nonzero_pair_prompts": 11
+      },
+      "alpaca": {
+        "all_prompts": 12,
+        "defined_prompts": 12,
+        "nonzero_pair_prompts": 10
+      }
+    },
+    "status": "estimated",
+    "bootstrap_valid_draws": 2000,
+    "bootstrap_requested_draws": 2000,
+    "resample_unit": "whole prompt, domain stratified; undefined stays undefined, no replacement draws",
+    "remaining_uncertainty": "conditional on fixed branch collection and8 fixed permutations; does not separately cover branch/Monte Carlo or numerical uncertainty"
+  },
+  "primary_E3": {
+    "estimate": 0.018342339758719347,
+    "CI95": [
+      0.00870701461594042,
+      0.02913981407623192
+    ],
+    "CI97_5": [
+      0.007512705392137742,
+      0.031062088618267335
+    ],
+    "domain_estimates": {
+      "gsm8k": 0.0386530874682407,
+      "humaneval": 0.006323429670302254,
+      "alpaca": 0.010050502137615089
+    },
+    "coverage": {
+      "gsm8k": {
+        "all_prompts": 12,
+        "defined_prompts": 12,
+        "nonzero_pair_prompts": 12
+      },
+      "humaneval": {
+        "all_prompts": 12,
+        "defined_prompts": 12,
+        "nonzero_pair_prompts": 11
+      },
+      "alpaca": {
+        "all_prompts": 12,
+        "defined_prompts": 12,
+        "nonzero_pair_prompts": 10
+      }
+    },
+    "status": "estimated",
+    "bootstrap_valid_draws": 2000,
+    "bootstrap_requested_draws": 2000,
+    "resample_unit": "whole prompt, domain stratified; undefined stays undefined, no replacement draws",
+    "remaining_uncertainty": "conditional on fixed branch collection and8 fixed permutations; does not separately cover branch/Monte Carlo or numerical uncertainty"
+  },
+  "resources": {
+    "GPU_hours_booked": 0.3677127527528339,
+    "GPU_hours_limit": 8,
+    "CPU_seconds_booked": 2881.4964939999995,
+    "CPU_hours_booked": 0.8004156927777777,
+    "CPU_hours_limit": 24,
+    "disk_limit_GiB": 700,
+    "disk_allocated_at_closure_bytes": 25412612096,
+    "disk_allocated_at_closure_GiB": 23.667339324951172,
+    "sampled_disk_peak_bytes": 25412612096,
+    "gross_preflight_disk_upper_bytes": 93144571904,
+    "gross_preflight_disk_upper_GiB": 86.74764251708984,
+    "continuous_exact_disk_peak_claimed": false,
+    "peak_own_GPU_memory_MiB": 21768,
+    "GPU_stage_peak_observed_OS_threads": 7,
+    "numerical_workers_configured_single_thread": true,
+    "global_all_instant_thread_cap_certified": false,
+    "thread_scope": "supervised numerical jobs set OMP/MKL/OPENBLAS/NUMEXPR1, GPU Torch intra/inter-op1; driver/IO helpers observed separately. One prelock direct metadata import lacked explicit env wrapper and full lifecycle thread record; no demonstrated numerical parallel cap overrun, no unconditional clean certificate.",
+    "thread_gap_record": "logs/METADATA_THREAD_RECORD_GAP.json",
+    "own_experiments_exited": true,
+    "shared_leases_released": true,
+    "foreign_processes_managed": false,
+    "all_GPU_launch_failure_retry_shared_wall_charged": true,
+    "no_native_RNG_TPS_or_training": true,
+    "within_GPU_CPU_disk_caps": true
+  },
+  "identity_audit_passed": true,
+  "own_experiments_exited": true,
+  "old_probability_and_resource_warnings_preserved": true,
+  "static_core_SHA256": {
+    "results/RESULTS_CN.md": "148cba31e4b1c7df2b97900c32616d7c7613233c836d55fb1e43eac00e8ce6cd",
+    "results/MECHANISM_CASES_CN.md": "6631c1803c8d78662bcb89745fb8ff7d8bf6c2955cb439be2c448d8c9c74d39a",
+    "results/METHODS_CN.md": "bc386729309cfc0e85ea003354a014541765b92b5df98af320c509c64e8e8836",
+    "results/THEORY_CARDS_CN.md": "286e19a0f604c7fc942368a39d4eec12f344145b7cfb0b8bd727c5a200af4e58",
+    "results/CLAIM_EVIDENCE.json": "b8df01939cf60394e1315015b14aba74fcb35e922ff84a5c13c674973962a403",
+    "results/RESOURCE_HISTORY_CN.md": "e1558bec9a429b98945df1c848e94677dd2a268391198acf8f3eddfce125617f",
+    "analysis/SUMMARY_fresh_test.json": "2220eb75bf052b391bcc7e7b3582ba06d3620fc27331a98c318c8e7d6eb20f48",
+    "analysis/SUMMARY_dev.json": "929a12ea09246a1a211b2399b180eee81f827fa4b4befc4b93010cd6de56dfe9",
+    "analysis/IDENTITY_AND_MEASURE_AUDIT.json": "5cebf0a74cea6a0ac9c1c318a88a170a3ed24d69bda7f68855098b3e1d6caf2b",
+    "analysis/FINAL_PRIOR_PRESERVATION_AUDIT.json": "cef6391911c95d6546b51a4caeab959026e2169cacd64fc260d90a0509a3cc89",
+    "analysis/SOURCE_DECOMPOSITION.json": "ce101cdbd5da4a6634676ae0cd91f52e58463e0137d6f2712ed69e75e94855cc",
+    "analysis/FIT_PROBE_ARTIFACTS.json": "ae9261629c50b2d94b0182b6e1cf727d9bc937665c97b244f6d3a207c547698e",
+    "analysis/HELDOUT_COMMON_FLOW.json": "36a9537de9407dc03522fb6ee4567c1cb2c3b2a001f2432d0412af1252d5cca7",
+    "analysis/MATCHED_PERMUTATION.json": "c3db5861007179d79e73a9f94469354b4fb382b925afa824877813883a58a734",
+    "analysis/ACTUAL_HEAD_TOKEN_LEDGER.json": "e3ab049fd9c347f7060e55a24a928e2e506c4c04bac35d63950c65bc04d22017",
+    "analysis/COVERAGE.json": "5ebefcd3c136d443d61df57412676a36287bc9fd6daa10731a5df42f10f91be6",
+    "protocol/LOCK.json": "03cb26c1530e67c00d35b08c341b65401f4ffd4dccca9fc9631bb0afa463c694",
+    "protocol/SAMPLE_MANIFEST.json": "c05ae677fcd34959349af8cdca3abb67165f02f0aab85d335d4ebe410551f959",
+    "protocol/EXPOSURE_LEDGER.json": "6c5c493ff63a0431195d62eea2bb11d5c60357388daa70ade36bf3aff2c54b75",
+    "protocol/SEED_TABLE.json": "b8e284089639f2731cd1f7f476db83021b9444991594c72a96b2e5568a899104",
+    "logs/FRESH_OPENING.json": "1d2c66ab5a024975ea8f8c99a9eb46ff95ee7c985b10ace695db934c8b89c71d",
+    "logs/GPU_BUDGET.json": "550231f277b29358d45b5a078af1da344d8f0ea8c7ae2166ddfcb528a17eb156",
+    "logs/FINAL_HOST_TERMINAL_AUDIT.json": "d0414fdf8266b11b3e4a487e4a7ac89559680e9a4a400dbecd5492571446eae7",
+    "logs/METADATA_THREAD_RECORD_GAP.json": "9a019569ee437ad7aa09526704bab93d82271abfc2265cc3e53ce2c45dc8ddf0",
+    "sources/R5_READING_RECORD.json": "d52ef702e3a4caf97c4be59bbea70bb557d56a583fcae1d8489d28a8edf54a28",
+    "sources/R5_READING_CN.md": "42c28710e4fae50d9586767bbe6fb4fa49d59fc8d2556c316700443ce27d8539",
+    "evidence_tools/close_archive.py": "3d2fdf6658da238253b0d9043cc15a97fe28b709d35aad2a3f70ed4b8b72ed70"
+  },
+  "closure_SHA256": {
+    "MANIFEST.json": "d20046bb5e34f8e3fc8cca6c57b19deb598820ab8af86f854f6673be0c4fcc12",
+    "NEXT_CHAT.md": "85bb6c39236936246f18c941d5263421e961eba96e2de4b6985b75ebda7273fb",
+    "logs/ROOT_PROGRESS.json": "c2908074f5b69056b570394586d2f124f298479a3c8579d2dc06cc42e6981b49",
+    "logs/CPU_BUDGET.json": "86e7ba476dff3026cd81f5c66911a6af057b4c0766a4b43eb66ed1c180440050",
+    "logs/DISK_BUDGET.json": "c89c57362872ca8748d0ce27bacd3abbecb3febf604912afbab3531de780efed",
+    "results/RUN_AUDIT.json": "a30c56361c484875fda8b234eca07266e57e5f794b496035c6a352054769fc0e",
+    "results/RUN_FILE_MANIFEST.json": "ceb876ea7a9a8aad10ed309694f65577ee4e5639009ff107d9ef66684b246561",
+    "logs/final_manifest_r5_0d2fe8b350.json": "92040019c4136b853ef9bcd79939feae9bd45f27770be0999b9f4380c4956127",
+    "logs/final_manifest_r5_0d2fe8b350.log": "bd09741988b2d6c8fa2cff2be6aae149de59ff205c28bd7adcd6c2fc028773ea"
+  },
+  "static_file_manifest_SHA256": "ceb876ea7a9a8aad10ed309694f65577ee4e5639009ff107d9ef66684b246561",
+  "integrity_scope": "complete static run SHA manifest plus named final volatile exceptions; no self SHA; external old weights stat+inherited hash scope",
+  "method_claim": "offline full-vocabulary probability diagnosis only, not new learned/deployed head",
+  "training_or_sixth_round_started": false
+}

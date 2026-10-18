@@ -1,0 +1,18 @@
+全数据nonthinking两卡训练。controller等待regeneration completion.json的all_processed=true、remaining=0，然后选择两张空整卡，一张target vLLM在线hidden，一张DFlash learner。
+当前2万条组不修改、不停止。新各组从同一下载的nonthinking pretrained DFlash初始化，不加载旧修复头；附加头随机初始化。
+顺序：DFlash+no-soft3联合 -> 原始DFlash本体 -> 若磁盘容量允许，DSpark头迁移联合 -> DFlash-2候选选择头迁移联合。每组1epoch，无验证、无推理测试。DFlash-2此处仅候选头，未包含论文的decoder内部dynamic convolution，不能称完整DFlash-2复现。DSpark头迁移使用共同DFlash15proposal口径，不是默认sample_from_anchor=true的完整DSpark实验。
+全数据只过滤无法用于完整15proposal监督的行及重复对话组，不过滤有效的length截断前缀；源数据完整最终对话行+token/mask转紧凑只读二进制索引，不存hidden/logit。
+每对话输入最多4096；打包最多65536 token并用document IDs隔离、每对话位置重置，不能把打包长度当单条context长度。1536锚点/包；目标输入262144token/update，默认累积4包。
+Teacher独卡：maxseq64，maxbatched65536，KV48GiB；hidden预取64，HTTP32线程，token读取8线程。
+本体Muon矩阵lr1e-3，norm/mask Adam2e-4；新头Adam3e-4，FP32 masters/optimizer、BF16 forward，cosine 1%warmup，clip1。RedHat从零训练参考lr6e-4/Muon3e-3；这里是pretrained微调，缩小本体lr。不是已验证最优超参。
+联合loss=target-top1 D-PACE CE(raw)+OUTPUT(repaired)。原始DFlash仅D-PACE CE。真实teacher lag1，无昂贵块内on-policy teacher重算。分块损失的hidden叶梯度随后传回live backbone；首更新记录fc、5层、本体和头的实际梯度。
+GPU额外进程只记录，不触发退出；真OOM保留日志和最后完整断点后换空卡恢复，必要时checkpoint activation/减pack和锚点但维持目标有效批量。
+看status.json（队列/阶段）、controller.log；每组status.json、metrics.jsonl、first_update_gradients.json、capacity.json；训练日志<arm>_attempt_XXX.log。
+每组保留一个原子rolling resume_latest.pt完整BF16参数+FP32 master+Muon/Adam+cursor+RNG；每个1epoch结果保留epoch_01.safetensors、body_only_draft、附加头和完整恢复状态。旧权重绝不删除。
+磁盘当前约66GiB，紧凑token副本和完整恢复状态都占空间；可选头队列磁盘不足则记录deferred，不删除旧实验来腾空间。
+完成：主联合组和原始DFlash组summary.json status=complete且train_examples=完整manifest count；没有验证/测试文件。
+
+2026-10-06 04:01 UTC 控制器PID733871已挂起等待：启动时重生成还剩5947条，尚未开始全数据训练。通过根status.json确认最新阶段，不以本条历史记录代替实时状态。
+
+2026-10-06 12:48 UTC 触发链修复：生成完成校验已核对85分片，838344成功对话+4684明确跳过，remaining=0。修复JSONL读取splitlines对Unicode分隔符的误拆及顶层剩余计数字段；源码备份和逐分片证据在trigger_recovery_20261006。当前用户明确仍只用空卡。
+运行阶段日志run.log每分钟记录真实状态和存活；data_preparation.log是真实CPU数据整理日志。训练启动后latest_training.log指向最新实际learner日志，当前未启动则不存在该指针。不要把run.log等待记录当训练成绩。

@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "syntax": true,
+  "initial_head_tensor_hashes_match": true,
+  "basis_reused_sha256": "66456e529780d78a4fedf11a1931e610468adf94f3907f324458ea9b35817c9e",
+  "epoch_pack_plan": [
+    {
+      "epoch": 1,
+      "packs": 298,
+      "examples": 20000,
+      "input_tokens": 19246737,
+      "sampled_anchor_budget": 457728,
+      "doc_safe": true
+    },
+    {
+      "epoch": 2,
+      "packs": 298,
+      "examples": 20000,
+      "input_tokens": 19246737,
+      "sampled_anchor_budget": 457728,
+      "doc_safe": true
+    },
+    {
+      "epoch": 3,
+      "packs": 298,
+      "examples": 20000,
+      "input_tokens": 19246737,
+      "sampled_anchor_budget": 457728,
+      "doc_safe": true
+    }
+  ],
+  "optimizer_updates": 894,
+  "scope": "CPU data organization and exact initial head hashes; no GPU training or native score",
+  "cuda_packed_alignment_pending": true,
+  "cpu_training_checks_reused_from": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_20261006_v1/preparation_checks.json",
+  "learner_math_identical_sha256": null,
+  "hardware_change_only": "two shared GPUs for target and learner; sampling/initialization/loss/schedule unchanged",
+  "utc": "2026-10-06T16:54:52.150355+00:00",
+  "learner_change": "only pre-update parity probe anchors 2->8 per document; actual packed training untouched",
+  "compile_fix": "Q=64,GQA=4 triggered flex_decoding BLOCK_M=256 while sparse Q block=128; probe now Q>=128 selects regular flex kernel",
+  "first_probe_eligible_counts": [
+    414,
+    63
+  ]
+}

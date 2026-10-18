@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "stage": "complete",
+  "gpus": [
+    0,
+    1,
+    2
+  ],
+  "utc": "2026-10-03T05:15:51.588863+00:00",
+  "progress": {
+    "TargetHidden": {
+      "training/status.json": {
+        "status": "complete",
+        "step": 384,
+        "total": 384,
+        "utc": "2026-10-03T03:45:04.241078+00:00"
+      },
+      "pipeline_status.json": {
+        "status": "complete",
+        "stage": "prepare_native",
+        "mode": "training",
+        "gpu": 0,
+        "utc": "2026-10-03T03:45:42.263681+00:00",
+        "summary": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_target_hidden_logits_short_gpu012_20261003_v2/TargetHidden/training/summary.json"
+      }
+    },
+    "Logits": {
+      "training/status.json": {
+        "status": "complete",
+        "step": 384,
+        "total": 384,
+        "utc": "2026-10-03T03:44:42.975884+00:00"
+      },
+      "pipeline_status.json": {
+        "status": "complete",
+        "stage": "prepare_native",
+        "mode": "training",
+        "gpu": 1,
+        "utc": "2026-10-03T03:45:20.114791+00:00",
+        "summary": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_target_hidden_logits_short_gpu012_20261003_v2/Logits/training/summary.json"
+      }
+    },
+    "TargetHiddenLogits": {
+      "training/status.json": {
+        "status": "complete",
+        "step": 384,
+        "total": 384,
+        "utc": "2026-10-03T03:44:35.172550+00:00"
+      },
+      "pipeline_status.json": {
+        "status": "complete",
+        "stage": "prepare_native",
+        "mode": "training",
+        "gpu": 2,
+        "utc": "2026-10-03T03:45:13.444154+00:00",
+        "summary": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_target_hidden_logits_short_gpu012_20261003_v2/TargetHiddenLogits/training/summary.json"
+      }
+    },
+    "C1": {
+      "status": "complete",
+      "utc": "2026-10-03T04:46:46.741704+00:00"
+    },
+    "C40": {
+      "status": "complete",
+      "utc": "2026-10-03T05:15:44.692633+00:00"
+    }
+  }
+}

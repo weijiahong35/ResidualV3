@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "scope": "CPU formula checks only",
+  "forward_KL_negative_hidden_gradient_matches": true,
+  "reached_includes_first_mismatch_and_excludes_later": true,
+  "weighted_uncentered_second_moment_matches_explicit_outer_products": true
+}

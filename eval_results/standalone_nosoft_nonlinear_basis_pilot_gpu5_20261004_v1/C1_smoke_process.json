@@ -1,0 +1,22 @@
+{
+  "pid": 1613829,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nonlinear_predictable_basis_v1/evaluate.py",
+    "--training",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_nonlinear_basis_pilot_gpu5_20261004_v1/native",
+    "--gpu",
+    "5",
+    "--concurrency",
+    "1",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_nonlinear_basis_pilot_gpu5_20261004_v1/C1/formal_smoke",
+    "--tokens",
+    "64",
+    "--prompts",
+    "1",
+    "--smoke"
+  ],
+  "utc": "2026-10-03T18:13:33.285533+00:00"
+}

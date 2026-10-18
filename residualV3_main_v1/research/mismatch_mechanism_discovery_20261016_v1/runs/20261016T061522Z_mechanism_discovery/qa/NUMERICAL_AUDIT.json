@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "UTC": "2026-10-16T06:27:52.033312+00:00",
+  "all_old_input_files_rehashed": 276,
+  "independent_full_vector_reconstruction_scope": "the 2 identity-selected benchmark contexts; no effect selection",
+  "overlap_TV_checks": 2252,
+  "max_independent_error": 9.992007221626409e-16,
+  "all_scalar_invariants_rows": 26128,
+  "all_C_algebra_rows": 4613,
+  "expected_prompt_contexts": 72,
+  "available_contexts": 69,
+  "missing_contexts": [
+    {
+      "prompt": "alpaca:4cc7641d09244a4ace7d",
+      "anchor": 65,
+      "reason": "EOS_or_missing"
+    },
+    {
+      "prompt": "alpaca:6af97e412e162dbb9cc3",
+      "anchor": 65,
+      "reason": "EOS_or_missing"
+    },
+    {
+      "prompt": "alpaca:df993fac56b31cf22017",
+      "anchor": 65,
+      "reason": "EOS_or_missing"
+    }
+  ],
+  "NA_not_zero": true,
+  "FINAL_SELECTION_unchanged_after_C": true,
+  "no_claim_of_all_vectors_independent_recomputation": true,
+  "initial_scan_all_49680_eval_target_buffer_checks": true
+}

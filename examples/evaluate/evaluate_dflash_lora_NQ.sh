@@ -1,0 +1,233 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SPEC_PYTHON="${SPEC_PYTHON:-/data/weijiahong/miniconda3/envs/dflash/bin/python}"
+VLLM_ENV="${VLLM_ENV:-/data/weijiahong/miniconda3/envs/llm_dflash_eval}"
+VLLM_PYTHON="${VLLM_PYTHON:-${VLLM_ENV}/bin/python}"
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+EVAL_PY="${EVAL_PY:-${SCRIPT_DIR}/evaluate_dflash_lora.py}"
+
+VERIFIER_MODEL="${VERIFIER_MODEL:-Qwen/Qwen3-8B}"
+DRAFT_MODEL="${DRAFT_MODEL:-RedHatAI/Qwen3-8B-speculator.dflash}"
+
+USE_LORA="${USE_LORA:-0}"
+LORA_PATH="${LORA_PATH:-${PROJECT_ROOT}/output/natural_questions/onpolicy/checkpoints/lora/final}"
+MERGE_DTYPE="${MERGE_DTYPE:-bfloat16}"
+
+# Raw Natural Questions validation split.
+# evaluate_dflash_lora.py converts row["question"] to row["question"]["text"].
+DATA="${DATA:-google-research-datasets/natural_questions}"
+DATA_FILE="${DATA_FILE:-}"
+DATASET_CONFIG="${DATASET_CONFIG:-}"
+SPLIT="${SPLIT:-validation}"
+PROMPT_COLUMN="${PROMPT_COLUMN:-question}"
+
+# Exactly raw validation[0:2000].
+START_INDEX="${START_INDEX:-0}"
+NUM_SAMPLES="${NUM_SAMPLES:-2000}"
+
+MAX_NEW_TOKENS="${MAX_NEW_TOKENS:-4096}"
+CONCURRENCY="${CONCURRENCY:-6}"
+REQUEST_TIMEOUT="${REQUEST_TIMEOUT:-600}"
+
+SEED="${SEED:-42}"
+ENABLE_THINKING="${ENABLE_THINKING:-true}"
+SYSTEM_PROMPT="${SYSTEM_PROMPT:-}"
+
+VLLM_GPU="${VLLM_GPU:-7}"
+VLLM_PORT="${VLLM_PORT:-18083}"
+NUM_SPEC_TOKENS="${NUM_SPEC_TOKENS:-7}"
+
+MAX_MODEL_LEN="${MAX_MODEL_LEN:-9216}"
+MAX_NUM_SEQS="${MAX_NUM_SEQS:-6}"
+MAX_NUM_BATCHED_TOKENS="${MAX_NUM_BATCHED_TOKENS:-55296}"
+GPU_MEMORY_UTILIZATION="${GPU_MEMORY_UTILIZATION:-0.90}"
+
+RESULT_ROOT="${RESULT_ROOT:-${PROJECT_ROOT}/eval_results/natural_questions}"
+RUN_TAG="${RUN_TAG:-natural_questions_validation}"
+RUN_ID="${RUN_TAG}_$(date '+%Y%m%d_%H%M%S')_pid$$"
+RUN_DIR="${RESULT_ROOT}/${RUN_ID}"
+
+MERGED_ROOT="${MERGED_ROOT:-${PROJECT_ROOT}/output/eval_merged_dflash_lora/natural_questions}"
+MERGED_DIR="${MERGED_DIR:-${MERGED_ROOT}/${RUN_ID}}"
+
+[[ -f "${EVAL_PY}" ]] || { echo "ERROR: ${EVAL_PY} not found"; exit 1; }
+[[ -x "${SPEC_PYTHON}" ]] || { echo "ERROR: ${SPEC_PYTHON} not found"; exit 1; }
+[[ -x "${VLLM_PYTHON}" ]] || { echo "ERROR: ${VLLM_PYTHON} not found"; exit 1; }
+[[ "${USE_LORA}" == "0" || "${USE_LORA}" == "1" ]] || {
+    echo "ERROR: USE_LORA must be 0 or 1"
+    exit 1
+}
+[[ ! -e "${RUN_DIR}" ]] || { echo "ERROR: ${RUN_DIR} already exists"; exit 1; }
+
+mkdir -p "${RUN_DIR}"
+
+RUN_DIR="$(cd "${RUN_DIR}" && pwd)"
+RUN_LOG="${RUN_DIR}/run.log"
+VLLM_LOG="${RUN_DIR}/vllm.log"
+EVAL_LOG="${RUN_DIR}/evaluate.log"
+CONFIG_LOG="${RUN_DIR}/run_config.env"
+
+exec > >(tee -a "${RUN_LOG}") 2>&1
+export PYTHONUNBUFFERED=1
+
+SERVER_URL="http://127.0.0.1:${VLLM_PORT}"
+VLLM_PID=""
+
+cat > "${CONFIG_LOG}" <<EOF
+USE_LORA=${USE_LORA}
+LORA_PATH=${LORA_PATH}
+DATA=${DATA}
+DATA_FILE=${DATA_FILE}
+DATASET_CONFIG=${DATASET_CONFIG}
+SPLIT=${SPLIT}
+PROMPT_COLUMN=${PROMPT_COLUMN}
+START_INDEX=${START_INDEX}
+NUM_SAMPLES=${NUM_SAMPLES}
+VERIFIER_MODEL=${VERIFIER_MODEL}
+DRAFT_MODEL=${DRAFT_MODEL}
+NUM_SPEC_TOKENS=${NUM_SPEC_TOKENS}
+MAX_NEW_TOKENS=${MAX_NEW_TOKENS}
+CONCURRENCY=${CONCURRENCY}
+REQUEST_TIMEOUT=${REQUEST_TIMEOUT}
+SEED=${SEED}
+ENABLE_THINKING=${ENABLE_THINKING}
+VLLM_GPU=${VLLM_GPU}
+VLLM_PORT=${VLLM_PORT}
+MAX_MODEL_LEN=${MAX_MODEL_LEN}
+MAX_NUM_SEQS=${MAX_NUM_SEQS}
+MAX_NUM_BATCHED_TOKENS=${MAX_NUM_BATCHED_TOKENS}
+GPU_MEMORY_UTILIZATION=${GPU_MEMORY_UTILIZATION}
+MERGED_DIR=${MERGED_DIR}
+EOF
+
+cleanup() {
+    EXIT_CODE=$?
+
+    if [[ -n "${VLLM_PID}" ]] && kill -0 "${VLLM_PID}" 2>/dev/null; then
+        kill "${VLLM_PID}" 2>/dev/null || true
+        wait "${VLLM_PID}" 2>/dev/null || true
+    fi
+
+    echo "EXIT_CODE=${EXIT_CODE}" >> "${CONFIG_LOG}" 2>/dev/null || true
+
+    trap - EXIT
+    exit "${EXIT_CODE}"
+}
+
+trap cleanup EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
+if [[ "${USE_LORA}" == "1" ]]; then
+    echo "[1/3] Merge Natural Questions LoRA"
+
+    CUDA_VISIBLE_DEVICES="" \
+    "${SPEC_PYTHON}" "${EVAL_PY}" inspect-lora \
+        --lora-path "${LORA_PATH}" \
+        | tee "${RUN_DIR}/lora_inspect.json"
+
+    CUDA_VISIBLE_DEVICES="" \
+    "${SPEC_PYTHON}" "${EVAL_PY}" merge \
+        --draft-model "${DRAFT_MODEL}" \
+        --verifier "${VERIFIER_MODEL}" \
+        --lora-path "${LORA_PATH}" \
+        --output-dir "${MERGED_DIR}" \
+        --dtype "${MERGE_DTYPE}" \
+        --overwrite \
+        | tee "${RUN_DIR}/merge.log"
+
+    SERVE_DRAFT="${MERGED_DIR}"
+else
+    echo "[1/3] Use pretrained DFlash"
+    SERVE_DRAFT="${DRAFT_MODEL}"
+fi
+
+SPEC_CONFIG="$(
+"${VLLM_PYTHON}" - "${SERVE_DRAFT}" "${NUM_SPEC_TOKENS}" <<'PY'
+import json
+import sys
+
+print(json.dumps({
+    "method": "dflash",
+    "model": sys.argv[1],
+    "num_speculative_tokens": int(sys.argv[2]),
+}))
+PY
+)"
+
+echo "[2/3] Start vLLM"
+
+VLLM_ARGS=(
+    -m vllm.entrypoints.cli.main
+    serve "${VERIFIER_MODEL}"
+    --speculative-config "${SPEC_CONFIG}"
+    --port "${VLLM_PORT}"
+    --tensor-parallel-size 1
+    --dtype bfloat16
+    --max-model-len "${MAX_MODEL_LEN}"
+    --max-num-seqs "${MAX_NUM_SEQS}"
+    --max-num-batched-tokens "${MAX_NUM_BATCHED_TOKENS}"
+    --gpu-memory-utilization "${GPU_MEMORY_UTILIZATION}"
+    --no-enable-prefix-caching
+)
+
+CUDA_VISIBLE_DEVICES="${VLLM_GPU}" \
+"${VLLM_PYTHON}" "${VLLM_ARGS[@]}" \
+    > "${VLLM_LOG}" 2>&1 &
+
+VLLM_PID=$!
+
+READY=0
+
+for _ in $(seq 1 180); do
+    if curl -sf "${SERVER_URL}/health" >/dev/null 2>&1; then
+        READY=1
+        break
+    fi
+
+    if ! kill -0 "${VLLM_PID}" 2>/dev/null; then
+        echo "ERROR: vLLM exited during startup"
+        tail -n 100 "${VLLM_LOG}" || true
+        exit 1
+    fi
+
+    sleep 2
+done
+
+if [[ "${READY}" != "1" ]]; then
+    echo "ERROR: vLLM did not become ready"
+    tail -n 100 "${VLLM_LOG}" || true
+    exit 1
+fi
+
+echo "[3/3] Evaluate raw Natural Questions validation[${START_INDEX}:$((START_INDEX + NUM_SAMPLES))]"
+
+EVAL_ARGS=(
+    evaluate
+    --endpoint "${SERVER_URL}/v1"
+    --data "${DATA}"
+    --split "${SPLIT}"
+    --prompt-column "${PROMPT_COLUMN}"
+    --start-index "${START_INDEX}"
+    --num-samples "${NUM_SAMPLES}"
+    --output-dir "${RUN_DIR}"
+    --max-new-tokens "${MAX_NEW_TOKENS}"
+    --concurrency "${CONCURRENCY}"
+    --request-timeout "${REQUEST_TIMEOUT}"
+    --seed "${SEED}"
+    --enable-thinking "${ENABLE_THINKING}"
+)
+
+[[ -n "${DATA_FILE}" ]] && EVAL_ARGS+=(--data-file "${DATA_FILE}")
+[[ -n "${DATASET_CONFIG}" ]] && EVAL_ARGS+=(--dataset-config "${DATASET_CONFIG}")
+[[ -n "${SYSTEM_PROMPT}" ]] && EVAL_ARGS+=(--system-prompt "${SYSTEM_PROMPT}")
+
+"${SPEC_PYTHON}" "${EVAL_PY}" "${EVAL_ARGS[@]}" \
+    2>&1 | tee "${EVAL_LOG}"
+
+echo
+echo "Done."
+echo "Results: ${RUN_DIR}"

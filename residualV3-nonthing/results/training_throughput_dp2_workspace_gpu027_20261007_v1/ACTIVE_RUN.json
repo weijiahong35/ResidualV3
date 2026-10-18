@@ -1,0 +1,17 @@
+{
+  "controller_pid": 1706945,
+  "learner_pid": 1707351,
+  "gpu": 4,
+  "log": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/training_throughput_dp2_workspace_gpu027_20261007_v1/native_gpu4_v14/native_training.log",
+  "output": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/training_throughput_dp2_workspace_gpu027_20261007_v1/native_gpu4_v14/native",
+  "service": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/training_throughput_dp2_workspace_gpu027_20261007_v1/teacher_service_v14",
+  "teacher_dp": 2,
+  "teacher_tp": 1,
+  "teacher_kv_gib_each": 48,
+  "workspace_gib": null,
+  "unique_request_cache_salt": true,
+  "status": "complete",
+  "teacher_status": "stopped",
+  "result": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/training_throughput_dp2_workspace_gpu027_20261007_v1/RESULTS_CN.txt",
+  "utc": "2026-10-07T10:01:47.595299+00:00"
+}

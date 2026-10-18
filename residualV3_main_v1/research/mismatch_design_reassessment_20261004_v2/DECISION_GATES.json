@@ -1,0 +1,154 @@
+{
+  "date": "2026-10-04",
+  "status": "proposed_not_started",
+  "scope": "Design reassessment and inexpensive conditional diagnostics; no GPU experiment or new training launched by this research request.",
+  "shared_architecture_baseline": "User-selected Parallel_TF",
+  "preserved_references": [
+    "Original short no-soft2",
+    "10k x 3 epoch recovery no-soft1/2/3",
+    "Existing bases",
+    "All ablation weights",
+    "EAGLE3 three/seven-proposal evidence"
+  ],
+  "gates": [
+    {
+      "id": "G0",
+      "purpose": "Optional frozen training/native numerical implementation sanity check; distinct from already-tested actual-prefix teacher-relabel training",
+      "budget": {
+        "existing_development_prompts": 8,
+        "maximum_blocks": 48,
+        "new_head_training": false
+      },
+      "readout": [
+        "same prefix/anchor/mask/RoPE/dtype",
+        "within-path rounding controls",
+        "TopK/argmax differences",
+        "finite repaired action differences"
+      ],
+      "decision": "Investigate identified material discrepancies without inferring a bug from bitwise inequality alone. No repeat of Parallel_T0/T1 training.",
+      "reuse": "Prior P0 numerical-check design remains unstarted; completed actual-prefix training evidence is already available.",
+      "condition": "Concrete evidence of a material implementation discrepancy; otherwise skip. Not a prerequisite for G1/G2."
+    },
+    {
+      "id": "G1",
+      "purpose": "Does earlier actual prefix distinguish otherwise identical current-X states with valuable T1 target differences?",
+      "budget": {
+        "fresh_development_prompts_max": 16,
+        "paired_positions_max": 32,
+        "teacher_requests_max": 256,
+        "new_head_training": false
+      },
+      "method": "Keep the initial DFlash forward unchanged; compare plausible earlier branches sharing the last token at j>=2. Current hidden/raw q/support must remain equal. Obtain teacher only online, report branch probability/reach and target/action separation. Do not inject tokens into the frozen draft mask.",
+      "readout": [
+        "pair TV and actual action disagreement",
+        "branch reach mass",
+        "bounded correction value",
+        "fraction of reached errors affected"
+      ],
+      "stop_if": "Branches have negligible reach or low incremental task value; do not fabricate conflicts to consume the request budget.",
+      "boundary": "Balanced-pair TV bound is conditional, not a global AL estimate. T0 has one correct reached path from fixed context; off-path pairs do not establish its bottleneck."
+    },
+    {
+      "id": "G2",
+      "purpose": "Predict finite task value using deployment-visible inputs",
+      "condition": "G1 shows non-negligible useful prefix information; otherwise select a different information probe. G0 is optional and only triggered by concrete implementation-discrepancy evidence.",
+      "method": "Cross-prompt current-X versus short actual-prefix-X+ lightweight probe with matched capacity and shuffled-older-prefix control; retain the actual last token. Evaluate finite action value and harm, not coefficient MSE only.",
+      "new_training": "Small auxiliary probes only if this later experiment is authorized; online states released, no persistent vectors",
+      "decision": "No promotion for training fit or gradient-MSE reduction alone.",
+      "secondary_checks": [
+        "multiplicative gate response/saturation and error association",
+        "same-state T0/T1 finite-action tradeoff before adding mode conditioning"
+      ]
+    },
+    {
+      "id": "GS",
+      "purpose": "Is explicit NO_EDIT predictable and does it justify its execution cost?",
+      "method": "Fixed SHORT/LONG/Parallel_TF diagnostic first; compare realized RAW versus REPAIR incremental task value, include correct states and first position. Calibrate by mode on separate development prompts.",
+      "new_head_training": false,
+      "readout": [
+        "teacher-visible upper bound",
+        "held-out visible-input gain-risk discrimination",
+        "prefix effect",
+        "actual bypass versus masked-but-still-computed cost"
+      ],
+      "stop_if": "Optimistic selection ceiling is small, benefit is not predictable, or branch/compaction cost consumes it.",
+      "boundary": "Oracle gating is not deployable performance; dose approaching zero does not remove compute; C40 routing can cost more."
+    },
+    {
+      "id": "G3",
+      "purpose": "Matched short learning comparison",
+      "condition": "Incremental finite-action value and cross-prompt prediction evidence from G2 or GS",
+      "maximum_updates_per_new_head": 384,
+      "method": "Keep existing basis and Parallel_TF context backbone; vary one justified factor. Match data, order, anchors, precision and initialization contract. No original short-N retraining implied.",
+      "stop_if": "Only training fit improves or originally-correct states are increasingly harmed.",
+      "boundary": "Fresh pilot controls and historical N are not automatically the same-panel causal comparison. Do not conflate structural, basis and loss changes."
+    },
+    {
+      "id": "G4",
+      "purpose": "Native rollout and production execution value",
+      "condition": "G3 or a justified training-free execution change passes correctness",
+      "method": "Candidate follows its own actual prefixes. Separate instrumented capture=False cost attribution from clean observer-free formal C1/C40. Verifier consumes the actual chosen proposal.",
+      "decision": "Promotion depends on native task gain and net TPS in the claimed mode; T1-only gain can support a T1-only claim, not universal improvement.",
+      "constraints": [
+        "Use an empty whole card; target and draft colocated",
+        "Record foreign processes and contamination without terminating them",
+        "Do not use smoke as a speed result",
+        "Preserve frozen sources and weights"
+      ]
+    },
+    {
+      "id": "G5",
+      "purpose": "Stage a single candidate before full long training",
+      "condition": "G4 passes and source/conversation split contract fixed",
+      "method": "Measure throughput on the new data and obtain early learning curves; reuse intermediate checkpoints, expand one candidate conditionally. Reserve an untouched final test. No automatic 500k x 3 or multi-arm full launch.",
+      "stop_if": "New data does not show transfer of finite/native value, curve plateaus or cost dominates gain.",
+      "boundary": "Old 10k recovery run is a meaningful positive reference, not a pure dataset-scaling experiment."
+    }
+  ],
+  "already_tested_not_new_launches": [
+    "Past verified p-q versus past q",
+    "OUTPUT plus greedy margin native pilot",
+    "Actual Adam/PCGrad",
+    "TOKEN_TV and TOKEN_NLA",
+    "KL/OVERLAP/MARGIN bases",
+    "Linear/nonlinear predictable bases",
+    "TopK/output rank",
+    "Parallel_T0/T1 teacher relabeling",
+    "Frozen DFlash token insertion interventions"
+  ],
+  "math_checks": "MATH_CHECKS.json",
+  "paper_evidence": "LITERATURE_MATRIX.csv",
+  "cost_scenario": "COST_SCENARIO.json",
+  "priority_revision": {
+    "date": "2026-10-04",
+    "reason": "User reminded us that actual-prefix teacher relabeling was already tested at approximately eight times TF training cost with no consistent formal improvement.",
+    "priority": [
+      "G1",
+      "G2 or GS conditional on information/action evidence",
+      "G3",
+      "G4",
+      "G5"
+    ],
+    "G0": "Optional implementation sanity check triggered by concrete discrepancy evidence; not a mandatory research prerequisite.",
+    "do_not_repeat": "Parallel_T0/T1 actual-prefix teacher-relabel training",
+    "completed_evidence": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_teacher_forced_short_gpu5_20261002/comparison_5arms/REPORT.txt",
+    "training_cost_evidence": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/HANDOFF_20261002_FULL_PROJECT.txt:233",
+    "new_experiments_started": 0
+  },
+  "authorized_followup_execution": {
+    "user_authorized": true,
+    "experiment": "prefix_information_probe_v3",
+    "preferred_gpu": 4,
+    "root": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_prefix_information_gpu4_20261004_v3",
+    "scope": "G1 plus conditional lightweight G2; frozen TF; no production head retraining; no formal TPS test",
+    "attempts_preserved": [
+      "prefix_information_probe_v1",
+      "prefix_information_probe_v2"
+    ],
+    "actual_status_source": "status.json",
+    "status": "completed",
+    "results": "RESULTS.json",
+    "G2": "Not started: useful paired-conflict gate did not pass.",
+    "gpu_released": true
+  }
+}

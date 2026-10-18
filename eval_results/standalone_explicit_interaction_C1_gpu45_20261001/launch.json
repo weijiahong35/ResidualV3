@@ -1,0 +1,9 @@
+{
+  "pid": 148166,
+  "command": [
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/explicit_interaction_v1/launch.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_explicit_interaction_C1_gpu45_20261001"
+  ],
+  "utc": "2026-10-01T06:50:58.436112+00:00"
+}

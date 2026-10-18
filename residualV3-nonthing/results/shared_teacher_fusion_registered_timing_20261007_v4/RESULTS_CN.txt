@@ -1,0 +1,23 @@
+修复头已按用户最新要求改为CE+D-PACE+OUTPUT；CE由D-PACE前缀权重加权，再加OUTPUT。
+联合训练总损失：raw CE+D-PACE + repaired CE+D-PACE + repaired OUTPUT，系数全1；本体和头都更新。
+一张teacher，两张独立learner；目标hidden每条在线获取一次，共享给DFlash+头与纯DFlash。
+每包65536输入token预算，1536anchor整块，15个预测位置，一包一次参数更新。
+
+两组共同完成1包：4.4818 -> 4.0891秒。
+耗时变化：下降8.76%；吞吐提高9.60%。
+去掉末尾4包的中间12包周期：4.7973 -> 4.3072秒。
+联合训练CPU固定内存拷贝/注册均值：0.240635 -> 0.000729秒。
+联合训练共享供数队列等待：0.8820 -> 0.7689秒。
+峰值allocated显存GiB：{'joint': 57.69137477874756, 'body': 30.540907859802246}。
+按实际833176条、15847包外推1epoch计算时间：{'baseline': 19.72858333784259, 'registered': 18.00019628593905}。不含保存、资源排队与异常恢复，不是完整长训保证。
+
+优化只涉及供数和共享CPU缓冲区的固定内存注册/H2D；两slot在flight时只读，两个learner都完成H2D后才能复用。
+完整首包aux和target norm逐位一致；body/head/loss/optimizer代码与基准逐字节一致；所有DFlash层/fc和头实际有梯度，保存所有新BF16权重。
+基准128HTTP并发/128读取线程；新方案128HTTP并发/16读取线程，并取消每包BF16大tensor的pin_memory复制。均未复用HTTP连接。
+上一轮64请求并发未提速；128请求+连接复用发生RemoteProtocolError，没有有效测速成绩，旧报错证据保留。
+每组1701个hidden请求都读取删除；无持久hidden/logits缓存；两slot暂存最大容量不变。
+本轮不替换未通过严格梯度校验的15位置修复头并行实现。
+仅训练吞吐短测，未进行模型质量/native评测；不宣称全backbone逐状态bitwise一致。
+全数据长训仍暂停。
+实际参数更新核验：两组fc及全部5层q_proj的BF16采样值均改变；联合头4,269,796个BF16参数值改变。详情PARAMETER_UPDATE_WITNESSES.json。
+两组参与测量的GPU均未采到未归属的额外进程；其余GPU上的他人任务仅记录、未操作。所有本轮teacher/learner均已退出。

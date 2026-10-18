@@ -1,0 +1,11 @@
+{
+  "pid": 1549474,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/training_throughput_controlled_v11_20261007/pilot_controller.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/training_throughput_dp2_workspace_gpu027_20261007_v1"
+  ],
+  "sha256": "67bc5be3b8996970473df77a33d2a12a828a6bb08bfd9d30b4aac2c15380f9be"
+}

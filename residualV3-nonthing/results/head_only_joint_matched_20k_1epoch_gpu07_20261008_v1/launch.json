@@ -1,0 +1,36 @@
+{
+  "teacher_controller_pid": 3533641,
+  "controller_pid": 3533642,
+  "teacher_command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/head_only_joint_matched_20261008_v1/teacher_service.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_only_joint_matched_20k_1epoch_gpu07_20261008_v1/teacher",
+    "--protocol",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_only_joint_matched_20k_1epoch_gpu07_20261008_v1/teacher_input_protocol.json",
+    "--exclude-gpus",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "--dp-size",
+    "1",
+    "--kv-gib",
+    "48"
+  ],
+  "controller_command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/head_only_joint_matched_20261008_v1/matched_controller.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_only_joint_matched_20k_1epoch_gpu07_20261008_v1"
+  ],
+  "teacher_gpu": 0,
+  "learner_gpu": 7,
+  "long_training_untouched": true,
+  "utc": "2026-10-08T05:49:33.584605+00:00"
+}

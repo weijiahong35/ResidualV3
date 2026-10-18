@@ -1,0 +1,52 @@
+{
+  "status": "tuning",
+  "head_rows": [
+    {
+      "chunk_anchors": 16,
+      "seconds": 0.5773350335657597,
+      "loss": 0.6987444534897804,
+      "peak_allocated_bytes": 7377007616,
+      "passed": true
+    },
+    {
+      "chunk_anchors": 32,
+      "seconds": 0.24751315265893936,
+      "loss": 0.6987490057945251,
+      "peak_allocated_bytes": 8470927872,
+      "passed": true
+    },
+    {
+      "chunk_anchors": 64,
+      "seconds": 0.15727906860411167,
+      "loss": 0.6987389326095581,
+      "peak_allocated_bytes": 10664681984,
+      "passed": true
+    }
+  ],
+  "prefetch_rows": [
+    {
+      "prefetch": 4,
+      "examples": 16,
+      "seconds": 9.793871212750673,
+      "examples_per_second": 1.6336747392766966
+    },
+    {
+      "prefetch": 8,
+      "examples": 16,
+      "seconds": 9.137352719902992,
+      "examples_per_second": 1.7510542156426534
+    },
+    {
+      "prefetch": 12,
+      "examples": 16,
+      "seconds": 8.911612562835217,
+      "examples_per_second": 1.795410189478617
+    },
+    {
+      "prefetch": 16,
+      "examples": 16,
+      "seconds": 9.02163709141314,
+      "examples_per_second": 1.7735140349669924
+    }
+  ]
+}

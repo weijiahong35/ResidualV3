@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "large_artifacts_scanned": [
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/dflash/opencode_pretrained_10000_12000_20260824_165941_pid2063315/responses.jsonl",
+      "sha256": "07ae4b359b60c2be54a342d880fcebd0b5644067cd46d3c3d3cf1e0b363ebb03",
+      "rows": 2000
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/dflash/opencode_pretrained_10000_12000_20260825_022104_pid3281073/responses.jsonl",
+      "sha256": "5030b5646e580d96c3359b06f787d46d8b87cbe49339de61f0864240d4b3f675",
+      "rows": 2000
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/dflash/opencode_pretrained_10000_12000_20260825_053156_pid3817987/responses.jsonl",
+      "sha256": "445c9ba17a8671b3f5bcadd5dd38ed486406b1d4189d6ce4ff6edc7745434caf",
+      "rows": 2000
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/openmath/openmath_10000_12000_20260827_014351_pid2371108/responses.jsonl",
+      "sha256": "77f79300419e3d43aec07fee2ca8c4012927251810e4d67c2384808ab319bc02",
+      "rows": 2000
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/openmath/openmath_10000_12000_20260827_015409_pid2392150/responses.jsonl",
+      "sha256": "8258971682e739e253a7651312a24513c58a464e4756225555eb72f086f1d3f9",
+      "rows": 2000
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/openmath/openmath_10000_12000_20260901_123915_pid950008/responses.jsonl",
+      "sha256": "dc224c70e457ed5b997ae32af6510d21cef56e3f4d035a517673bae7cfafc041",
+      "rows": 2000
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/residual_runtime/openmath_base_dflash_10000_12000_20260902_063559_pid1163972/responses.jsonl",
+      "sha256": "fb4c692b9517ec5b8edd02a778d32cce93e7781a62073907d5611b39f907e1c1",
+      "rows": 2000
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/residual_runtime/openmath_base_native_10000_12000_20260904_013904_pid3592854/responses.jsonl",
+      "sha256": "72260f27b03b38de560eaf8fe69d57b4d7e6dad8541f765bed64ce6d0dd611a5",
+      "rows": 2000
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/residual_runtime/openmath_residual_native_optimized_10000_12000_20260904_final/responses.jsonl",
+      "sha256": "2f87002019c3e201bcc7ec75a78b4ca8a62b625f11ebed3736e78a0868c5c479",
+      "rows": 2000
+    }
+  ],
+  "selected_group_prompt_matches": [],
+  "missing_basis_train_reference_resolved_to": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/assets/panels/train.jsonl",
+  "basis_train_hash_matches": true,
+  "broken_symlinks": "two legacy head configs; not data panels",
+  "remaining_limitations": "Cannot recover completely deleted/unrecorded historical usage; no clean-pretraining-heldout claim."
+}

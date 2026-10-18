@@ -1,0 +1,29 @@
+{
+  "arms": [
+    "OUTPUT",
+    "CE_DPACE",
+    "CE_DPACE_OUTPUT"
+  ],
+  "output_baseline": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_2gpu_20261007_v3",
+  "output_baseline_retrained": false,
+  "new_train_arms": [
+    "CE_DPACE",
+    "CE_DPACE_OUTPUT"
+  ],
+  "train_count": 20000,
+  "epochs": 3,
+  "max_anchors_per_pack": 1536,
+  "pack_tokens": 65536,
+  "head_chunk_anchors": 1536,
+  "head_mode": "sequential",
+  "teacher_forced_only_parallel": true,
+  "native_predecessors_recursive": true,
+  "ce_label": "current teacher full-vocabulary argmax",
+  "dpace_alpha": 0.5,
+  "combined_coefficients": {
+    "CE_DPACE": 1.0,
+    "OUTPUT": 1.0
+  },
+  "limitation": "new groups use validated fused loss/full-head block; old OUTPUT had chunk64; finite-precision accumulation can differ",
+  "utc": "2026-10-07T05:29:08.704582+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "pid": 931170,
+  "physical_gpu": 0,
+  "error": "AssertionError(('foreign process entered', [955925]))",
+  "utc": "2026-10-12T08:31:29.022306+00:00"
+}

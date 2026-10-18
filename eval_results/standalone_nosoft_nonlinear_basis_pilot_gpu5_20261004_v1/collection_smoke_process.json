@@ -1,0 +1,13 @@
+{
+  "pid": 1322597,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nonlinear_predictable_basis_v1/native_collect.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_nonlinear_basis_pilot_gpu5_20261004_v1",
+    "--phase",
+    "smoke"
+  ],
+  "utc": "2026-10-03T17:17:45.852571+00:00"
+}

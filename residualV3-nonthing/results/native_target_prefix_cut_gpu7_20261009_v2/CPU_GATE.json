@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checks": [
+    "prefix length bounds",
+    "bonus rows retained",
+    "heterogeneous lengths",
+    "discarded future ID independence",
+    "malformed rejection",
+    "all source AST parse"
+  ],
+  "native_gpu_gates_pending": true,
+  "utc": "2026-10-09T12:46:37.716029+00:00"
+}

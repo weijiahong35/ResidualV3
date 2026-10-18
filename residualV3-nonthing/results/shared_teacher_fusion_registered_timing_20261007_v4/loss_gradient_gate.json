@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "full_vocabulary": 151936,
+  "positions": 15,
+  "anchors": 2,
+  "body_raw_loss": "CE with detached D-PACE prefix weights",
+  "head_repaired_loss": "CE with detached D-PACE prefix weights plus OUTPUT",
+  "body_weight": 1.0,
+  "head_ce_dpace_weight": 1.0,
+  "head_output_weight": 1.0,
+  "value": 4.310462951660156,
+  "eager_value": 4.310462951660156,
+  "absolute_value_error": 0.0,
+  "gradients": [
+    {
+      "relative_gradient_l2": 2.5666317071681988e-08,
+      "cosine": 1.0000001192092896,
+      "max_absolute_gradient_error": 4.656612873077393e-10
+    },
+    {
+      "relative_gradient_l2": 1.0564942698465529e-07,
+      "cosine": 1.0,
+      "max_absolute_gradient_error": 9.313225746154785e-10
+    }
+  ],
+  "bf16_large_tensors": true,
+  "fp32_reductions": true,
+  "scope": "loss and logit gradient gate, not full-backbone bitwise proof"
+}

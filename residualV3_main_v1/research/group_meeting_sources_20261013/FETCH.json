@@ -1,0 +1,29 @@
+{
+  "retrieved_at_utc": "2026-10-13T03:19:44.222196+00:00",
+  "sources": {
+    "domino_v1": {
+      "url": "https://arxiv.org/html/2605.29707v1",
+      "path": "residualV3_main_v1/research/group_meeting_sources_20261013/domino_v1.html",
+      "bytes": 333788,
+      "sha256": "a2fd3ab9eeb8c2633140794c9115d857fee63af6864223107a675658ac15f450"
+    },
+    "dspark_v1": {
+      "url": "https://arxiv.org/html/2607.05147v1",
+      "path": "residualV3_main_v1/research/group_meeting_sources_20261013/dspark_v1.html",
+      "bytes": 362897,
+      "sha256": "d26ba29059c512f60eb02bed40f28a1214747c714cb82f996f0dc0eca591caea"
+    },
+    "dflash2_author_blog": {
+      "url": "https://inco.ai/blog/dflash2/",
+      "path": "residualV3_main_v1/research/group_meeting_sources_20261013/dflash2_author_blog.html",
+      "bytes": 307769,
+      "sha256": "df0adf6c29c620c91d57b7128db69e962176a0fe4b87cf6a288c9b80364b9cf6"
+    },
+    "dflash2_muse_model_card": {
+      "url": "https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2/raw/main/README.md",
+      "path": "residualV3_main_v1/research/group_meeting_sources_20261013/dflash2_muse_model_card.md",
+      "bytes": 5840,
+      "sha256": "114a257e48f472f3e4d8b4d9c96bb29b958cc040d189130a9695f1cc63ac1fff"
+    }
+  }
+}

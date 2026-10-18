@@ -1,0 +1,9 @@
+{
+  "pid": 2874961,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/native_optimized_vs_dflash_c1_recovery_20261009_v1/run_recovery.py",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_optimized_vs_dflash_c1_recovery_20261009_v1"
+  ]
+}

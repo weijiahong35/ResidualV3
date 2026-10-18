@@ -1,0 +1,144 @@
+{
+  "utc": "2026-10-07T12:35:42.080111+00:00",
+  "status": "verified_complete",
+  "original_checkpoint_sha256": "1452489a5b28e6ef7c78ba45cd6413f809fa2be45c6b3b3eac6aec10b0ac0fb8",
+  "source_freeze_unchanged": true,
+  "all_96_updates_matched_inputs_and_anchor_indices": true,
+  "all_hidden_request_delete_counts_match": true,
+  "hidden_cleanups": [
+    {
+      "path": "dp1/phase_01_sequential_requests128/hidden_cleanup.json",
+      "requests": 862,
+      "deleted": 862,
+      "no_persistent_hidden": true,
+      "utc": "2026-10-07T12:23:23.685667+00:00"
+    },
+    {
+      "path": "dp1/phase_02_parallel_tf_requests128/hidden_cleanup.json",
+      "requests": 862,
+      "deleted": 862,
+      "no_persistent_hidden": true,
+      "utc": "2026-10-07T12:24:52.611836+00:00"
+    },
+    {
+      "path": "dp1/phase_03_parallel_position_bmm_requests128/hidden_cleanup.json",
+      "requests": 862,
+      "deleted": 862,
+      "no_persistent_hidden": true,
+      "utc": "2026-10-07T12:26:09.660830+00:00"
+    },
+    {
+      "path": "dp1/phase_04_sequential_requests128/hidden_cleanup.json",
+      "requests": 862,
+      "deleted": 862,
+      "no_persistent_hidden": true,
+      "utc": "2026-10-07T12:27:21.251846+00:00"
+    },
+    {
+      "path": "dp2/phase_01_sequential_requests128/hidden_cleanup.json",
+      "requests": 862,
+      "deleted": 862,
+      "no_persistent_hidden": true,
+      "utc": "2026-10-07T12:28:56.026044+00:00"
+    },
+    {
+      "path": "dp2/phase_02_parallel_tf_requests128/hidden_cleanup.json",
+      "requests": 862,
+      "deleted": 862,
+      "no_persistent_hidden": true,
+      "utc": "2026-10-07T12:30:05.202681+00:00"
+    },
+    {
+      "path": "dp2/phase_03_parallel_position_bmm_requests128/hidden_cleanup.json",
+      "requests": 862,
+      "deleted": 862,
+      "no_persistent_hidden": true,
+      "utc": "2026-10-07T12:31:12.685176+00:00"
+    },
+    {
+      "path": "dp2/phase_04_sequential_requests128/hidden_cleanup.json",
+      "requests": 862,
+      "deleted": 862,
+      "no_persistent_hidden": true,
+      "utc": "2026-10-07T12:32:16.129149+00:00"
+    }
+  ],
+  "sequential_aggregate": {
+    "1": {
+      "seconds": 3.5484366374504237,
+      "hidden_wait_seconds": 1.3411533403106861,
+      "draft_seconds": 1.0602282783430483,
+      "head_seconds": 1.0587770422506664,
+      "measured_updates": 18,
+      "input_tokens_per_second": 18296.790004583276
+    },
+    "2": {
+      "seconds": 3.168843403665556,
+      "hidden_wait_seconds": 0.6350842045827044,
+      "draft_seconds": 0.8473391431487269,
+      "head_seconds": 1.6480299479638536,
+      "measured_updates": 18,
+      "input_tokens_per_second": 20488.54794304385
+    }
+  },
+  "single_teacher_slowdown_percent_vs_dp2": 11.978920553340489,
+  "single_teacher_hidden_wait_increase_seconds": 0.7060691357279817,
+  "paired_pack_seconds_difference_bootstrap_95_percent_interval": [
+    -1.212797578631176,
+    1.5813114231633436
+  ],
+  "bootstrap_scope": "Exploratory matched-pack bootstrap over 9 packs, averaging beginning/end sequential runs. Phases are ordered in time and not randomized; this interval does not eliminate host/time confounding.",
+  "numeric_parallel_flat_combined_gradient_relative_l2": 0.004684160463511944,
+  "head_fixed_state_sequential_seconds": 0.19447922855615615,
+  "head_fixed_state_parallel_seconds": 0.15221718624234198,
+  "head_fixed_state_time_reduction_percent": 21.73087718805453,
+  "main_gpus_foreign_process_records": [
+    {
+      "utc": "2026-10-07T12:26:04.384442+00:00",
+      "gpu_uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+      "pid": 3009105,
+      "memory_mib": "884"
+    },
+    {
+      "utc": "2026-10-07T12:26:09.745756+00:00",
+      "gpu_uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+      "pid": 3009105,
+      "memory_mib": "884"
+    },
+    {
+      "utc": "2026-10-07T12:26:15.127382+00:00",
+      "gpu_uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+      "pid": 3009105,
+      "memory_mib": "1924"
+    },
+    {
+      "utc": "2026-10-07T12:28:13.981639+00:00",
+      "gpu_uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+      "pid": 3020521,
+      "memory_mib": "3870"
+    },
+    {
+      "utc": "2026-10-07T12:28:19.353793+00:00",
+      "gpu_uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+      "pid": 3020521,
+      "memory_mib": "3870"
+    },
+    {
+      "utc": "2026-10-07T12:28:24.737677+00:00",
+      "gpu_uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+      "pid": 3020521,
+      "memory_mib": "3870"
+    }
+  ],
+  "main_gpu_peak_process_memory_mib": {
+    "GPU-6708ee11-1afa-f173-d74b-59daf320d901": 79176,
+    "GPU-250cd769-9b6a-e76d-92cb-681686776938": 74796,
+    "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824": 72976,
+    "GPU-16d48373-c956-39a9-3989-4676fb6aa22c": 69274
+  },
+  "pilot_full_state_count": 8,
+  "joint_backbone_not_tested": true,
+  "production_head_not_replaced": true,
+  "extra_bias_check": "grouped_bias_check.json; isolated random BF16 Linear arithmetic, not whole-head parity",
+  "c40_status_note": "Host process inspection at 12:31 UTC found prior C40 controller 2335646 and client 2369789 absent; server 2369932/2372854 was idle. Evaluating status file is stale. No old C40 TPS used in this study."
+}

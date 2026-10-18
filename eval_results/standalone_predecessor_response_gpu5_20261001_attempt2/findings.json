@@ -1,0 +1,84 @@
+{
+  "conclusion": "当前修复头已学到部分真实前驱条件更新，但更新方向、幅度及候选间相对排序都有缺陷；本诊断不支持把问题单独归因于 dose、层数或固定基底。",
+  "design": "8条已使用的研究prompt、每条4个锚点、位置1/3/6，共96个上下文；每个上下文原前驱+3个替代前驱。hidden/q/Top256/残差基底固定，目标分布对每条替换后截断前缀在线重算。",
+  "scope": "这是冻结模型条件干预，非训练、非native接受长度或吞吐测试。",
+  "observations": [
+    {
+      "finding": "前驱确实影响修复方向，不只是dose。",
+      "direction_cosine_before_after_mean": 0.5225662192614335,
+      "dose_absolute_change_mean": 0.05937057071261936
+    },
+    {
+      "finding": "修复响应与目标条件响应有正向关联，但远未完全对齐。",
+      "all_q_weighted_response_cosine_mean": 0.44037844059979153,
+      "both_predecessors_probability_ge_001_count": 75,
+      "both_predecessors_probability_ge_001_cosine_mean": 0.5831012651262184,
+      "interpretation": "这支持模型确实学到部分条件修正，不证明当前通用融合网络是最佳结构。"
+    },
+    {
+      "finding": "原前驱40个RAW错误不是单纯幅度不足。",
+      "counts": {
+        "count": 96,
+        "raw_correct": 56,
+        "correct": 61,
+        "fixed": 10,
+        "harmed": 5,
+        "raw_wrong": 40,
+        "wrong_nonpositive": 12,
+        "wrong_positive_insufficient": 8,
+        "wrong_pair_crossed": 20,
+        "crossed_raw_but_lost_to_third": 10,
+        "target_outside_fixed_top256": 0
+      },
+      "interpretation": "12个目标相对原赢家不升分，8个正向但未严格越过原赢家，20个已严格越过其中10个最终修复成功、另10个输给第三候选；此外5个原本正确被误修。"
+    },
+    {
+      "finding": "原前驱96个位置目标赢家都在固定Top256，当前样本不能把这些失败归因于候选漏召回。",
+      "alternate_target_outside_top256": 12,
+      "alternate_count": 288
+    },
+    {
+      "finding": "首位置对照32个，RAW和repair均正确26个，没有修复也没有误修；样本小，不能覆盖历史更大诊断。"
+    }
+  ],
+  "numerical_controls": {
+    "repeat_same_truncated_prefix": "96组逐项logits完全一致",
+    "full_vs_truncated_target": "平均TV约0.00343，最大约0.07967，96组有1组top1不同；具体来源未完全归因，干预比较全部使用相同长度的截断路径，因此不将此差异作为前驱效应。",
+    "first_attempt": "首次运行因完整序列与截断重算TV>0.04保护停止；证据保留。修订版增加相同前缀重复对照及一致LM-head计算形状。"
+  },
+  "limitations": [
+    "只有8个研究prompt和每位置4个前驱，不能证明总体机制或选择低秩维度。",
+    "均匀平均的公共修正/交互能量依赖所选前驱和度量；不是概率混合分布的分解，也不是全体mismatch的因果占比。",
+    "q加权仅用于分析度量；修复输入及采样分布没有改动。",
+    "存在BF16平局：替代前驱组有1个修复成功案例与原赢家分数相等，由argmax平局规则胜出；strict crossing只表示严格越过，最终correct以实际argmax为准。"
+  ],
+  "next_falsifiable_experiment": {
+    "question": "显式前驱-候选交互是否比同等计算量的通用MLP更准确地学习条件更新，尤其减少第三候选误抬和原本正确位置误修？",
+    "comparison": "原no-soft-2layer基线；等参数/成本的通用MLP对照；显式前驱×候选交互对照。q和hidden仍进入条件，固定候选几何与训练目标，所有新训练repair参数随机初始化。",
+    "diagnostic_endpoints": [
+      "前驱干预响应对齐",
+      "原前驱greedy修复/误修",
+      "越过原赢家但输给第三候选的比例",
+      "同卡native C1/C40接受长度和吞吐"
+    ],
+    "not_yet_done": "未实现或启动结构训练；这些结果只为下一项结构对照提供可检验的动机。"
+  },
+  "verification": {
+    "status": "passed",
+    "source_hashes_unchanged": true,
+    "checkpoint_hash_unchanged": true,
+    "original_predecessor_repair_exact_rollout_checks": 96,
+    "repeated_identical_target_prefix_exact_checks": 96,
+    "hidden_requests": 488,
+    "hidden_unlinks": 488,
+    "remaining_hidden_files": 0,
+    "trained_parameters": 0,
+    "sealed_confirmation_evaluated": false,
+    "cleanup": {
+      "owned_processes_stopped": true,
+      "temporary_transfer_removed": true,
+      "remaining_before_cleanup": [],
+      "utc": "2026-10-01T03:17:09.716182+00:00"
+    }
+  }
+}

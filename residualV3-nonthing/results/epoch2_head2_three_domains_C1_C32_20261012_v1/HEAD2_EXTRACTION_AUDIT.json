@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch1_epoch2_native_compare_gsm8k_20261010_v1/models/E2_JOINT_HEAD/head.safetensors",
+  "source_sha256": "6635f429a363ba9928da653f3337ce991e644c379cb7ac4e159ac1413b71944f",
+  "derived": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head2_three_domains_C1_C32_20261012_v1/derived_head2/head.safetensors",
+  "derived_sha256": "730680dc784d1a0aa65ca5e2a60e3316cc582a366ed17e4b40a528f12180af39",
+  "retained_tensors_identical": true,
+  "removed_keys": [
+    "blocks.2.down.bias",
+    "blocks.2.down.weight",
+    "blocks.2.norm.bias",
+    "blocks.2.norm.weight",
+    "blocks.2.up.bias",
+    "blocks.2.up.weight"
+  ],
+  "source_depth": 3,
+  "inference_depth": 2,
+  "parameters": 3761409,
+  "two_layer_retrained": false,
+  "source_unchanged": true,
+  "utc": "2026-10-12T08:09:21.805977+00:00"
+}

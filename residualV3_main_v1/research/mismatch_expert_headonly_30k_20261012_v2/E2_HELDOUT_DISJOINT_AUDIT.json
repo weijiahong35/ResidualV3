@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "E2_unique_training_groups": 833176,
+  "locked_holdout_groups": 3072,
+  "intersection": 0,
+  "actual_E2_records_checked": true,
+  "utc": "2026-10-12T07:53:39.587341+00:00"
+}

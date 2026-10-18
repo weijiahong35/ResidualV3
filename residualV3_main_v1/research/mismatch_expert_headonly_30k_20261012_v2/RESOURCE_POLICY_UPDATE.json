@@ -1,0 +1,15 @@
+{
+  "normal_gpu_limit": 2,
+  "maximum_exception": 3,
+  "exception_roles": [
+    "vllm_service",
+    "head_trainer",
+    "head_trainer"
+  ],
+  "third_collector_forbidden": true,
+  "third_gate_forbidden": true,
+  "live_roles": [],
+  "current_physical_gpus": [],
+  "user_instruction": "如果是一张卡提供vllm，另两张训练，可以占3卡",
+  "utc": "2026-10-12T08:24:44.814727+00:00"
+}

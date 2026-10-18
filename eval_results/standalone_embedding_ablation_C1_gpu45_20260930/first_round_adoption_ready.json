@@ -1,0 +1,164 @@
+{
+  "status": "ready",
+  "windows": [
+    {
+      "round": 1,
+      "arm": "RAW",
+      "T": 0,
+      "requests": 20,
+      "completion_tokens": 66563,
+      "wall_seconds": 260.10429391637444,
+      "tokens_per_second": 255.90888561570816,
+      "native_metrics": {
+        "num_drafts": 16834.0,
+        "num_draft_tokens": 117838.0,
+        "num_accepted_tokens": 49736.0,
+        "acceptance_length": 3.954496851609837,
+        "acceptance_at_pos_0": 0.8503623618866579,
+        "acceptance_at_pos_1": 0.6648449566353808,
+        "acceptance_at_pos_2": 0.49893073541641914,
+        "acceptance_at_pos_3": 0.3675299988119282,
+        "acceptance_at_pos_4": 0.26684091719139835,
+        "acceptance_at_pos_5": 0.18379470119995248,
+        "acceptance_at_pos_6": 0.12219318046810028
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 16854,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 16834,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    },
+    {
+      "round": 1,
+      "arm": "RAW",
+      "T": 1,
+      "requests": 20,
+      "completion_tokens": 65548,
+      "wall_seconds": 316.2534421645105,
+      "tokens_per_second": 207.26414723385957,
+      "native_metrics": {
+        "num_drafts": 20452.0,
+        "num_draft_tokens": 143164.0,
+        "num_accepted_tokens": 45099.0,
+        "acceptance_length": 3.205114414238216,
+        "acceptance_at_pos_0": 0.8171816937218854,
+        "acceptance_at_pos_1": 0.5570115392137688,
+        "acceptance_at_pos_2": 0.35556424799530606,
+        "acceptance_at_pos_3": 0.22071191081556815,
+        "acceptance_at_pos_4": 0.13421670252298062,
+        "acceptance_at_pos_5": 0.07671621357324467,
+        "acceptance_at_pos_6": 0.043712106395462545
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 20472,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 20452,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    },
+    {
+      "round": 1,
+      "arm": "EMBEDDING",
+      "T": 0,
+      "requests": 20,
+      "completion_tokens": 66563,
+      "wall_seconds": 287.5428063124418,
+      "tokens_per_second": 231.48901150972682,
+      "native_metrics": {
+        "num_drafts": 16311.0,
+        "num_draft_tokens": 114177.0,
+        "num_accepted_tokens": 50255.0,
+        "acceptance_length": 4.081049598430507,
+        "acceptance_at_pos_0": 0.8479553675433756,
+        "acceptance_at_pos_1": 0.6721231071056343,
+        "acceptance_at_pos_2": 0.5186683832996137,
+        "acceptance_at_pos_3": 0.39359941144013244,
+        "acceptance_at_pos_4": 0.2930537673962357,
+        "acceptance_at_pos_5": 0.2092452945864754,
+        "acceptance_at_pos_6": 0.14640426705903992
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 16331,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 16311,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    },
+    {
+      "round": 1,
+      "arm": "EMBEDDING",
+      "T": 1,
+      "requests": 20,
+      "completion_tokens": 68731,
+      "wall_seconds": 331.1114780381322,
+      "tokens_per_second": 207.57661560764333,
+      "native_metrics": {
+        "num_drafts": 18697.0,
+        "num_draft_tokens": 130879.0,
+        "num_accepted_tokens": 50034.0,
+        "acceptance_length": 3.6760442851794406,
+        "acceptance_at_pos_0": 0.8155853880301652,
+        "acceptance_at_pos_1": 0.6156067818366583,
+        "acceptance_at_pos_2": 0.4455795047333797,
+        "acceptance_at_pos_3": 0.31502380060972346,
+        "acceptance_at_pos_4": 0.2251163288228058,
+        "acceptance_at_pos_5": 0.15435631384714124,
+        "acceptance_at_pos_6": 0.10477616729956678
+      },
+      "execution_counters": {
+        "captures": 0,
+        "replays": 18717,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 18697,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "diagnostic_only": false,
+      "smoke": false,
+      "isolation_observed": true,
+      "speed_evidence": true,
+      "acceptance_only": false
+    }
+  ],
+  "source": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_ablation_C1_gpu45_20260930/A_full_3layer/native/C1",
+  "reason": "User requested one round, no reverse order; original partial evaluation artifacts retained",
+  "utc": "2026-09-30T09:44:57.112100+00:00"
+}

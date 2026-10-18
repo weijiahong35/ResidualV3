@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "math_checks": 12,
+  "sections": 13,
+  "model_source_and_evidence_unchanged": true,
+  "report_self_contained": true,
+  "report_links_checked": true,
+  "gpu_jobs_started": 0,
+  "new_repair_training": false,
+  "files": {
+    "check_math.py": "62a12aedf81255dab870d4e385ddd4b6b9e08a88d6c66215fafc01fcbfced7d6",
+    "math_checks.json": "db9ea7c47fa3114c4f9d317f7d92959f20aa407371438792a3a7ccdcb06dc90b",
+    "check_math.log": "db9ea7c47fa3114c4f9d317f7d92959f20aa407371438792a3a7ccdcb06dc90b",
+    "build_audit.py": "4d6ab9b54afd52c4e81087a31476b89f8fd961c01c9c999d6d02105fd831de7a",
+    "audit.json": "f098caeaa88201545a7a449b6426cd2d65fb2b4bb83f8163b9a35e6411ab764d",
+    "AUDIT.html": "6b8a280f28889f0274dbfa9a173d5b7488d871db1d178e9e8621b1941baebc57"
+  }
+}

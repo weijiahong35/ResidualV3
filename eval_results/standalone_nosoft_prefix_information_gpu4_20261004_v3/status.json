@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "stage": "finished",
+  "controller_pid": 3130393,
+  "gpu": 4,
+  "uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+  "utc": "2026-10-04T14:13:21.772662+00:00",
+  "results": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_prefix_information_gpu4_20261004_v3/RESULTS_CN.txt"
+}

@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "stage": "complete",
+  "controller_pid": 3475719,
+  "baseline_evaluation_held": true,
+  "full_data_training_deferred": true,
+  "recovery_attempt": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_2gpu_20261007_v3/optimization_20261007_v1",
+  "utc": "2026-10-06T21:36:07.034689+00:00",
+  "results": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_2gpu_20261007_v3/RESULTS_CN.txt"
+}

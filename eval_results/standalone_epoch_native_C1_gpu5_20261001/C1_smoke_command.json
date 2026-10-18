@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/epoch_native_C1_v1/evaluate.py",
+    "--training",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_epoch_native_C1_gpu5_20261001/models",
+    "--gpu",
+    "5",
+    "--concurrency",
+    "1",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_epoch_native_C1_gpu5_20261001/formal_smoke",
+    "--tokens",
+    "32",
+    "--prompts",
+    "1",
+    "--rounds",
+    "1",
+    "--smoke"
+  ],
+  "utc": "2026-10-01T05:27:46.103362+00:00"
+}

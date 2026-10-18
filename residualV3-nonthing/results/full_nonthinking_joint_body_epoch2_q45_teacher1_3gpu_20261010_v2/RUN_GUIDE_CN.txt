@@ -1,0 +1,18 @@
+第二轮全数据训练：保留原DFlash与联合修复头配方，添加独立修复后q预测分支。
+从旧第二轮共同cursor426/global_step16273完整断点继续；不是重跑第二轮，不重置主体/修复头优化器、master、RNG、shuffle或学习率。
+仍为一个vLLM teacher、一个单训DFlash、一个DFlash+三层no-soft头。1536 anchor整块、65536输入token/更新、block16。
+预测器输入：repair后的全词表单位温度q所提取的45维统计；4个基本统计、9个TopK累计概率、前32项log概率，与既有预实验定义一致。
+两个45->1线性输出（共92参数），分别预测teacher前缀下的T0 argmax一致与T1分布重合度；两个输出均用BCE软/硬标签。
+输入与标签detach；独立AdamW、lr.003、weight_decay.001、clip1；预测器不加入主体或修复头optimizer及全局clip。
+45维特征在首个实际训练包估计固定mean/std，无独立验证集拟合；初始化不消耗主模型RNG。
+复用现有OUTPUT overlap生成T1标签，不重新查询teacher；BF16大张量不复制成全词表FP32概率张量。仅临时小张量为FP32。
+正式更新前在同一个实际在线包、同一权重/anchor检查旧主损失及全部主体/修复头参数梯度、CUDA RNG，再交替测6对前后向（前2对warmup）。不执行主体optimizer.step，探针预测器更新丢弃。
+仅当主梯度/RNG校验通过，且计算时间开销与直接辅助成本均不超过5%，才启用预测器继续训练；否则原主体/头继续训练，预测器禁用。
+这是训练开销实验，没有启用推理停修/target截断，没有新的AL/TPS成绩。Teacher forcing标签须后续native独立校准，不能称实际首拒绝标签。
+首次恢复后真实更新即保存、恢复完整CUDA状态检查；之后每200共同更新保存，支持control.sh checkpoint/pause/resume。
+预测器的模型、固定normalizer、Adam状态、步数、enabled标志均加入联合完整checkpoint；最终单独导出预测器，旧模型证据保留。
+实时入口：joint_training.log、dflash_training.log、teacher.log；辅助训练记录为AUX_Q45，单独报告feature_seconds与predictor_seconds。
+现场完整校验：gates/auxiliary_live_gate.json；每次真实更新见current_attempt.json指向目录的joint/metrics.jsonl。
+
+现场结论：同包主前后向开销+3.39%，全部99个主参数梯度和主RNG逐位一致，已启用。详细证据见RESULTS_CN.txt和gates/auxiliary_live_gate.json。
+当前续训目录为本v2；v1已暂停且未提交新的共同进度，禁止同时恢复旧控制器。

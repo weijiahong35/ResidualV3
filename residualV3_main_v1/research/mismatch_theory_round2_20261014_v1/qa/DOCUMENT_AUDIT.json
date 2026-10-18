@@ -1,0 +1,167 @@
+{
+  "created_beijing": "2026-10-14T11:36:42.906765+08:00",
+  "status": "passed_document_and_archive_checks",
+  "scope": "Round2 handoff, full round1 archive and CPU math validation only",
+  "documents": [
+    {
+      "path": "ARCHIVE_INDEX_CN.md",
+      "sha256": "d48dc8eabfa6a03be5db310d7ded2b5d03063e73c1e9fac53bfe39437e5b4077",
+      "lines": 34
+    },
+    {
+      "path": "EXECUTION_GUIDE_CN.md",
+      "sha256": "a74c272571a8baf3cc1755556064c097b777b6b2984db9f2a63717ae9eb946c5",
+      "lines": 151
+    },
+    {
+      "path": "START_PROMPT_CN.md",
+      "sha256": "81456783ce1ad1abdd701cda62361cb4841560a8624e48060897cb01f704f69c",
+      "lines": 36
+    },
+    {
+      "path": "THEORY_PLAN_CN.md",
+      "sha256": "30f2745228d7a37122ab910761ff89c625961880911a708e6d40de6cf4821921",
+      "lines": 128
+    },
+    {
+      "path": "qa/REVIEW_NOTES_CN.md",
+      "sha256": "337bc981c6e54f72ddeb8d9109b96489ef11040ea7c96ee54c7a1d01c9fe35da",
+      "lines": 24
+    }
+  ],
+  "local_links": [
+    {
+      "source": "ARCHIVE_INDEX_CN.md",
+      "target": "archive/ROUND1_20261013T154124Z_mismatch_e2.tar.gz",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "ARCHIVE_INDEX_CN.md",
+      "target": "archive/ARCHIVE_MANIFEST.json",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "ARCHIVE_INDEX_CN.md",
+      "target": "../mismatch_theory_execution_20261013_v1/runs/20261013T154124Z_mismatch_e2/results/RESULTS_CN.md",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "ARCHIVE_INDEX_CN.md",
+      "target": "../mismatch_theory_execution_20261013_v1/runs/20261013T154124Z_mismatch_e2/results/RUN_AUDIT.json",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "ARCHIVE_INDEX_CN.md",
+      "target": "../mismatch_theory_execution_20261013_v1/runs/20261013T154124Z_mismatch_e2/NEXT_CHAT.md",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "ARCHIVE_INDEX_CN.md",
+      "target": "EXECUTION_GUIDE_CN.md",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "ARCHIVE_INDEX_CN.md",
+      "target": "THEORY_PLAN_CN.md",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "ARCHIVE_INDEX_CN.md",
+      "target": "START_PROMPT_CN.md",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "EXECUTION_GUIDE_CN.md",
+      "target": "ARCHIVE_INDEX_CN.md",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "EXECUTION_GUIDE_CN.md",
+      "target": "THEORY_PLAN_CN.md",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "EXECUTION_GUIDE_CN.md",
+      "target": "START_PROMPT_CN.md",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "THEORY_PLAN_CN.md",
+      "target": "EXECUTION_GUIDE_CN.md",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "THEORY_PLAN_CN.md",
+      "target": "ARCHIVE_INDEX_CN.md",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "qa/REVIEW_NOTES_CN.md",
+      "target": "THEORY_CPU_SANITY.json",
+      "exists_or_this_audit": true
+    },
+    {
+      "source": "qa/REVIEW_NOTES_CN.md",
+      "target": "DOCUMENT_AUDIT.json",
+      "exists_or_this_audit": true
+    }
+  ],
+  "referenced_round1_paths_checked": [
+    "results/RESULTS_CN.md",
+    "results/RUN_AUDIT.json",
+    "results/CLAIM_EVIDENCE.json",
+    "NEXT_CHAT.md",
+    "protocol/PROTOCOL.json",
+    "protocol/LOCK.json",
+    "protocol/SAMPLE_MANIFEST.json",
+    "protocol/CALIBRATION.json",
+    "analysis/EXPERIMENT_REPORT_test.json",
+    "analysis/FINAL_INTERPRETATION_REVIEW_CN.md",
+    "analysis/NATIVE_BRANCH_EXIT_CN.md",
+    "analysis/NATIVE_BRANCH_EXIT.json",
+    "analysis/NATIVE_C_IMPLEMENTATION_CN.md",
+    "analysis/EOS_RUNTIME_IDENTITY_CN.md",
+    "analysis/RESUME_METHOD_AUDIT_CN.md",
+    "analysis/DEV_TARGET_CACHE_PROBE.json",
+    "code/native_scheduler_capture.py",
+    "code/native_verifier_capture.py",
+    "code/native_accounting.py",
+    "code/run_native_stage.py",
+    "code/native_diagnostic_launch.py",
+    "sources/ASSET_AUDIT.json",
+    "code/hf_frozen_adapter.py",
+    "code/repair_replay.py",
+    "code/ab_position.py",
+    "code/collect_ab.py",
+    "code/mismatch_math.py",
+    "analysis/aggregate_ab.py",
+    "analysis/report_experiments.py",
+    "sources/LITERATURE_MATRIX.md",
+    "sources/SOURCE_AUDIT.json",
+    "sources/SOURCE_BOUNDARIES_CN.md",
+    "analysis/HISTORICAL_EVIDENCE_CN.md"
+  ],
+  "prior_source_content_unchanged_files": 1929,
+  "archive_bundle_SHA_matches": true,
+  "archive_members_verified_at_creation": 1929,
+  "new_available_prompt_counts_readonly_verified": {
+    "gsm8k": 136,
+    "humaneval": 100,
+    "mt-bench": 16
+  },
+  "new_proposed_test_prompts_per_domain": 16,
+  "new_budget_GPU_hours_total": 8,
+  "bridge_GPU_hours_included_in_total": 2,
+  "CPU_math_audit": {
+    "path": "qa/THEORY_CPU_SANITY.json",
+    "sha256": "bba13b3e5880edd8d1b3168bc637765a00cd34ac671bddd8447261c181ee0b73"
+  },
+  "new_model_experiments_started": false,
+  "prior_sources_or_weights_or_reports_modified": false,
+  "future_checks": [
+    "Live GPU/lease identity",
+    "Final exposure and deduplication audit",
+    "Native runtime probability and accounting parity",
+    "Statistical precision and substantive value of new theory metrics"
+  ]
+}

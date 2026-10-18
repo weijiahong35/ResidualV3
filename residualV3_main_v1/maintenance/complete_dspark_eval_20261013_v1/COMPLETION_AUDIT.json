@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "completed_groups": [
+    {
+      "dataset": "humaneval",
+      "concurrency": 1,
+      "windows": 4,
+      "summary_sha256": "c5d063f26998e2688e5f8ff5f823c63c4cdebf2b1e8539a9484d5e2b7f30cd34",
+      "isolation": true,
+      "Graph": true,
+      "T0_equal_outputs": true
+    },
+    {
+      "dataset": "humaneval",
+      "concurrency": 32,
+      "windows": 4,
+      "summary_sha256": "35c836bd887032dd20fe591cd1e3e0c51a973f1c9810a0d07359407cd9931b7c",
+      "isolation": true,
+      "Graph": true,
+      "T0_equal_outputs": true
+    },
+    {
+      "dataset": "mbpp",
+      "concurrency": 1,
+      "windows": 4,
+      "summary_sha256": "f8ec22d2f02c056c36bdc77c638581901d782dea3852986d3f9faa3a87b604be",
+      "isolation": true,
+      "Graph": true,
+      "T0_equal_outputs": true
+    },
+    {
+      "dataset": "mbpp",
+      "concurrency": 32,
+      "windows": 4,
+      "summary_sha256": "d4546f40a771f181e70e051026e5d7f725c778905bbbc9a21752bc69fb420450",
+      "isolation": true,
+      "Graph": true,
+      "T0_equal_outputs": true
+    },
+    {
+      "dataset": "livecodebench",
+      "concurrency": 1,
+      "windows": 4,
+      "summary_sha256": "01d637851db2a408072c95b61fec594a2be2347584f708add004d502d3b945db",
+      "isolation": true,
+      "Graph": true,
+      "T0_equal_outputs": true
+    },
+    {
+      "dataset": "livecodebench",
+      "concurrency": 32,
+      "windows": 4,
+      "summary_sha256": "15fa31fd56b5224eaaca7841a97de40e18c334737b71703f23f80adff2567333",
+      "isolation": true,
+      "Graph": true,
+      "T0_equal_outputs": true
+    },
+    {
+      "dataset": "mt-bench",
+      "concurrency": 1,
+      "windows": 4,
+      "summary_sha256": "729257e2f540003e47b3e6e3a6423836d682a1db58a75db59b39d7a3ade540b6",
+      "isolation": true,
+      "Graph": true,
+      "T0_equal_outputs": true
+    },
+    {
+      "dataset": "mt-bench",
+      "concurrency": 32,
+      "windows": 4,
+      "summary_sha256": "00074402cfc66c51844a9603c3320dc63d6177f7ad11c66d1a743b8781b59942",
+      "isolation": true,
+      "Graph": true,
+      "T0_equal_outputs": true
+    },
+    {
+      "dataset": "alpaca",
+      "concurrency": 1,
+      "windows": 4,
+      "summary_sha256": "01ebdf866473bf46085567cc7e4069c0ef18cb514bbb79c2491b93c207d74a8e",
+      "isolation": true,
+      "Graph": true,
+      "T0_equal_outputs": true
+    },
+    {
+      "dataset": "alpaca",
+      "concurrency": 32,
+      "windows": 4,
+      "summary_sha256": "229cc2b1c0c42cab9f0a8b09cb2325c8c33a78665e3cf0d9c00d9be589015bb6",
+      "isolation": true,
+      "Graph": true,
+      "T0_equal_outputs": true
+    },
+    {
+      "dataset": "arena-hard-v2",
+      "concurrency": 1,
+      "windows": 4,
+      "summary_sha256": "63c6faf951cba1b598c030fc75e564f8e042bd3e0e754c6cc2c24a82694d3de6",
+      "isolation": true,
+      "Graph": true,
+      "T0_equal_outputs": true
+    },
+    {
+      "dataset": "arena-hard-v2",
+      "concurrency": 32,
+      "windows": 4,
+      "summary_sha256": "918edef19bc09ed518c366905d31feedfd84d22d5f6aa850d8c9c53c6c035979",
+      "isolation": true,
+      "Graph": true,
+      "T0_equal_outputs": true
+    }
+  ],
+  "formal_windows": 48,
+  "paired_comparisons": 24,
+  "requests": 16000,
+  "sources_checked": 183,
+  "dispatch_sources_checked": 3,
+  "beijing": "2026-10-14T07:39:22.249173+08:00",
+  "controller_final_audit_sha256": "d2802606daac9b2ed88e6a23b62dd0c4754b0da6b3aa50ff78bff0493171abcb",
+  "ledger_windows": 48,
+  "historical_ledger_rows_preserved": true,
+  "weekly_sha256": "9f7ae4abd68ff9e2a780f1ba83722bcd7b55526859a1f435a96ee67736b8a174",
+  "weekly_before_sha256": "adca87918b00dd7610f35e728d174ab3c61eadf4a914018717f0af230e7468f4",
+  "no_gpu_processes_started_or_stopped": true
+}

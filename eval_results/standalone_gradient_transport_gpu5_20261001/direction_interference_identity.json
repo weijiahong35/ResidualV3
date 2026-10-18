@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "absolute_error": 2.842170943040401e-14,
+  "equation": "-<grad_(A,b) m_i,grad_(A,b) L_k> = -(ell_i dot ell_k + 1) * <grad_ti m_i,grad_tk L_k>",
+  "meaning": "direction-head cross-state interference separates latent similarity from required output-gradient agreement",
+  "scope": "real-valued identity; frozen BF16 gradient groups motivate checking these factors, but no latent-similarity diagnosis has yet been run"
+}

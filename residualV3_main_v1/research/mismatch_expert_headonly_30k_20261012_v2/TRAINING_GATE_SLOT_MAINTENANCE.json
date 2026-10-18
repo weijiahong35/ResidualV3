@@ -1,0 +1,18 @@
+{
+  "reason": "Make room for head training gate while using at most two GPUs; resume committed cache shards",
+  "stopped": [
+    {
+      "name": "controller",
+      "pid": 294509,
+      "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/controller.py ",
+      "ownership_verified": true
+    },
+    {
+      "name": "train_collector_1",
+      "pid": 221948,
+      "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/collect.py --gpu 1 --worker 1 --workers 6 --panel train ",
+      "ownership_verified": true
+    }
+  ],
+  "utc": "2026-10-12T07:49:48.696223+00:00"
+}

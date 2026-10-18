@@ -1,0 +1,103 @@
+{
+  "UTC": "2026-10-15T06:38:00.068018+00:00",
+  "claims": [
+    {
+      "id": "HN",
+      "status": "已支持",
+      "claim": "fit共同方向在预定同C/Z真正novel人群上的TV改善",
+      "estimate": 0.25937115564182783,
+      "CI98_1_3": [
+        0.2095802625430688,
+        0.3104230511338766
+      ],
+      "coverage_gate": true,
+      "verdict": "supported_within_predefined_population",
+      "evidence": [
+        "analysis/SUMMARY.json",
+        "analysis/COVERAGE.json",
+        "analysis/PREDICTIONS_SEALED.json"
+      ],
+      "scope": "fixed model seed/branches/permutations and prespecified population; not general theory",
+      "not_claimed": "online gate, optimal repair distribution, absence of information after negative result"
+    },
+    {
+      "id": "HP",
+      "status": "不确定",
+      "claim": "加入有序更早历史相对A的全eval Brier增量",
+      "estimate": -0.0034874643017817077,
+      "CI98_1_3": [
+        -0.02503449407495782,
+        0.017126899324501798
+      ],
+      "coverage_gate": true,
+      "verdict": "uncertain_interval_includes_zero",
+      "evidence": [
+        "analysis/SUMMARY.json",
+        "analysis/COVERAGE.json",
+        "analysis/PREDICTIONS_SEALED.json"
+      ],
+      "scope": "fixed model seed/branches/permutations and prespecified population; not general theory",
+      "not_claimed": "online gate, optimal repair distribution, absence of information after negative result"
+    },
+    {
+      "id": "HC",
+      "status": "不确定",
+      "claim": "同一B在精确同Z内真实历史对应的价值",
+      "estimate": 0.0006764240811061173,
+      "CI98_1_3": [
+        -8.008350149641198e-05,
+        0.002235379994811327
+      ],
+      "coverage_gate": true,
+      "verdict": "uncertain_interval_includes_zero",
+      "evidence": [
+        "analysis/SUMMARY.json",
+        "analysis/COVERAGE.json",
+        "analysis/PREDICTIONS_SEALED.json"
+      ],
+      "scope": "fixed model seed/branches/permutations and prespecified population; not general theory",
+      "not_claimed": "online gate, optimal repair distribution, absence of information after negative result"
+    },
+    {
+      "id": "T3",
+      "status": "次要描述",
+      "claim": "固定ridge与线性方向预测，完整报告基线和每域类别覆盖",
+      "evidence": [
+        "analysis/SECONDARY_PREDICTIONS.json",
+        "results/DESCRIPTIVE_TABLES.json",
+        "predictors/MODEL_SELECTION.json"
+      ],
+      "limitations": [
+        "not primary substitute",
+        "ridge_B reached maxiter1000 stop7; convergence not established",
+        "no output repair distribution"
+      ]
+    },
+    {
+      "id": "T4",
+      "status": "有限案例已支持",
+      "claim": "固定选择自然分支中是否仍有S/U松弛共同严格改善raw候选",
+      "selected_pairs": 12,
+      "strict_safe_pairs": 11,
+      "evidence": [
+        "analysis/PAIR_SELECTION.json",
+        "analysis/LIMITED_SHARED_SPACE.json",
+        "results/MECHANISM_CASES_CN.md"
+      ],
+      "not_claimed": "actual basis/dose reachability, general prevalence, semantic causation or irreparability if not found"
+    },
+    {
+      "id": "OLD_BOUNDARIES",
+      "status": "保留",
+      "claim": "R1条件主导、R2几何增量、R3统一半强度、R4一般解释增量及旧资源披露不由本轮覆盖；R2原概率audit passed=false",
+      "evidence": [
+        "sources/PRIOR_INPUT_AUDIT.json",
+        "sources/R6_READING_RECORD.json",
+        "results/THEORY_CARDS_CN.md"
+      ],
+      "native_or_runtime_probability_retested": false
+    }
+  ],
+  "known_formula_is_not_new_contribution": true,
+  "no_general_theory_passed": true
+}

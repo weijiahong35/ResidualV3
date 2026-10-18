@@ -1,0 +1,6 @@
+{
+  "pid": 206867,
+  "uid": 1024,
+  "utc": "2026-10-12T07:37:35.400995+00:00",
+  "reason": "Transformers chat-template return_dict compatibility; no training or heldout labels used"
+}

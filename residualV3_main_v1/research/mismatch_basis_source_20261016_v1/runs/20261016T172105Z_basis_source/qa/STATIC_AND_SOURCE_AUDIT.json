@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "old_dependencies_rehashed": 428,
+  "old_cache_and_source_stat_unchanged": true,
+  "W_tensor_SHA_after": "6e46ee56769d64b9a338f350100bdfca5f26a91c3fb5bf479ffcb36c733f7939",
+  "W_stat_unchanged": true,
+  "fixed_E_and_12_new_bases_orthogonality_rechecked": true,
+  "old_E_reestimated": false,
+  "locked_code_SHA_passed": true,
+  "old_assets_written": false,
+  "LLM_forward": false
+}

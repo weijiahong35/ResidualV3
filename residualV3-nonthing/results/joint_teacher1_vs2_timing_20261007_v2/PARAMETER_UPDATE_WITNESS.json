@@ -1,0 +1,62 @@
+{
+  "teacher1_learner1": {
+    "body.fc.weight": {
+      "sample_changed_elements": 451,
+      "max_abs_delta": 0.000244140625
+    },
+    "body.layers.0.self_attn.q_proj.weight": {
+      "sample_changed_elements": 460,
+      "max_abs_delta": 0.0029296875
+    },
+    "body.layers.1.self_attn.q_proj.weight": {
+      "sample_changed_elements": 480,
+      "max_abs_delta": 0.002685546875
+    },
+    "body.layers.2.self_attn.q_proj.weight": {
+      "sample_changed_elements": 481,
+      "max_abs_delta": 0.002899169921875
+    },
+    "body.layers.3.self_attn.q_proj.weight": {
+      "sample_changed_elements": 470,
+      "max_abs_delta": 0.00341796875
+    },
+    "body.layers.4.self_attn.q_proj.weight": {
+      "sample_changed_elements": 485,
+      "max_abs_delta": 0.003662109375
+    },
+    "head.direction_head.weight": {
+      "sample_changed_elements": 504,
+      "max_abs_delta": 0.00347900390625
+    }
+  },
+  "teacher2_learner1": {
+    "body.fc.weight": {
+      "sample_changed_elements": 458,
+      "max_abs_delta": 0.000244140625
+    },
+    "body.layers.0.self_attn.q_proj.weight": {
+      "sample_changed_elements": 464,
+      "max_abs_delta": 0.003173828125
+    },
+    "body.layers.1.self_attn.q_proj.weight": {
+      "sample_changed_elements": 478,
+      "max_abs_delta": 0.002685546875
+    },
+    "body.layers.2.self_attn.q_proj.weight": {
+      "sample_changed_elements": 472,
+      "max_abs_delta": 0.002960205078125
+    },
+    "body.layers.3.self_attn.q_proj.weight": {
+      "sample_changed_elements": 473,
+      "max_abs_delta": 0.00341796875
+    },
+    "body.layers.4.self_attn.q_proj.weight": {
+      "sample_changed_elements": 473,
+      "max_abs_delta": 0.00390625
+    },
+    "head.direction_head.weight": {
+      "sample_changed_elements": 507,
+      "max_abs_delta": 0.0035400390625
+    }
+  }
+}

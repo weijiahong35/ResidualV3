@@ -1,0 +1,10 @@
+{
+  "torch_version": "2.11.0+cu130",
+  "cuda_version": "13.0",
+  "gpu_uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+  "physical_gpu": 4,
+  "model_dtype": "bfloat16",
+  "compile_emulate_precision_casts": true,
+  "tf32": false,
+  "scope": "inference only; no parameters updated"
+}

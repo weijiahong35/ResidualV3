@@ -1,0 +1,91 @@
+{
+  "status": "complete",
+  "utc": "2026-09-30T07:24:44.489242+00:00",
+  "summary_sha256": "dc0c41bba177e9218673903d19f80b2b0f0ad7168308ff9f0e2d11a6de268688",
+  "paired": [
+    {
+      "T": 0,
+      "round": 1,
+      "arm": "RAW",
+      "acceptance_ratio": 1.0,
+      "throughput_ratio": 1.0
+    },
+    {
+      "T": 0,
+      "round": 1,
+      "arm": "LMHEAD",
+      "acceptance_ratio": 1.035730808824818,
+      "throughput_ratio": 0.9570377048469405
+    },
+    {
+      "T": 0,
+      "round": 1,
+      "arm": "EMBEDDING",
+      "acceptance_ratio": 1.0375947511637014,
+      "throughput_ratio": 0.9590525718722195
+    },
+    {
+      "T": 0,
+      "round": 2,
+      "arm": "RAW",
+      "acceptance_ratio": 1.0,
+      "throughput_ratio": 1.0
+    },
+    {
+      "T": 0,
+      "round": 2,
+      "arm": "LMHEAD",
+      "acceptance_ratio": 1.0396443777291209,
+      "throughput_ratio": 0.9673748793117951
+    },
+    {
+      "T": 0,
+      "round": 2,
+      "arm": "EMBEDDING",
+      "acceptance_ratio": 1.039012722009228,
+      "throughput_ratio": 0.9659290952503791
+    },
+    {
+      "T": 1,
+      "round": 1,
+      "arm": "RAW",
+      "acceptance_ratio": 1.0,
+      "throughput_ratio": 1.0
+    },
+    {
+      "T": 1,
+      "round": 1,
+      "arm": "LMHEAD",
+      "acceptance_ratio": 1.1554276687165883,
+      "throughput_ratio": 1.0746946244812483
+    },
+    {
+      "T": 1,
+      "round": 1,
+      "arm": "EMBEDDING",
+      "acceptance_ratio": 1.1518813426530645,
+      "throughput_ratio": 1.0760377194393205
+    },
+    {
+      "T": 1,
+      "round": 2,
+      "arm": "RAW",
+      "acceptance_ratio": 1.0,
+      "throughput_ratio": 1.0
+    },
+    {
+      "T": 1,
+      "round": 2,
+      "arm": "LMHEAD",
+      "acceptance_ratio": 1.1495811103794413,
+      "throughput_ratio": 1.0667785264892968
+    },
+    {
+      "T": 1,
+      "round": 2,
+      "arm": "EMBEDDING",
+      "acceptance_ratio": 1.150790653930956,
+      "throughput_ratio": 1.063693275698909
+    }
+  ]
+}

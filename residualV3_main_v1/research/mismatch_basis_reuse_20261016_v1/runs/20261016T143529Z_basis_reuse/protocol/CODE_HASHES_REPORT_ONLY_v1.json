@@ -1,0 +1,8 @@
+{
+  "scope": "fixed table/plot/case/report and final audit; no training or endpoint change",
+  "code_SHA": {
+    "deliver.py": "e251cce1c2a9b3f1b4453bcf26a7e5d26baa07bdac9b7b3fb4d42074718b5a03",
+    "report.py": "2e4be0c68ad4f02b8518e7427a44db32a999a4c0d0b4d2097f2623d793da2da7",
+    "finish.py": "d3a80df396077a41be9231e16385a579e0c73d229609401ef869df276ba02644"
+  }
+}

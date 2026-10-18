@@ -1,0 +1,8 @@
+{
+  "reason": "User requested GPU4 colocated training and GPU5 single-round C1 overlapped evaluation",
+  "paused_controllers": [
+    2473296,
+    2476348
+  ],
+  "evaluator_allowed_to_finish_round_1": 2643785
+}

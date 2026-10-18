@@ -1,0 +1,20 @@
+{
+  "changes": [
+    {
+      "path": "code/stats_core.py",
+      "formal_SHA256": "9ac970d0abe69e9ed7db2ba6eac50f6118fbbc6a76e492f7cd13221bc492a430",
+      "pre_outcome_analysis_lock_SHA256": "9a70d554b22287f4b3e2524a44b947d83758a45d864fd35dd2191d559838cbc1",
+      "current_SHA256": "9a70d554b22287f4b3e2524a44b947d83758a45d864fd35dd2191d559838cbc1"
+    },
+    {
+      "path": "code/analyze.py",
+      "formal_SHA256": "5d266da8a4f0d57bc2bc14038889bd6f651a37dbbba75cd4d626163013f91459",
+      "pre_outcome_analysis_lock_SHA256": "a30a6699dae0a6b3e00778e4dd71a97b92cf04494d3449092fe1354e72f1e94a",
+      "current_SHA256": "a30a6699dae0a6b3e00778e4dd71a97b92cf04494d3449092fe1354e72f1e94a"
+    }
+  ],
+  "all_current_statistical_source_matches_pre_outcome_lock": true,
+  "scientific_effects_opened_after_analysis_lock": true,
+  "primary_statistics_source_reviewed_against_STATISTICS_LOCK": true,
+  "no_post_outcome_solver_or_statistic_edit": true
+}

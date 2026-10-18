@@ -1,0 +1,55 @@
+{
+  "UTC": "2026-10-15T06:38:08.154713+00:00",
+  "summary_SHA256": "bb98ef28403166a6bdea0e135868c7dda6ac2119b98c39ac93d0bd90d1decfdd",
+  "pairs_SHA256": "af49b9046f7f138b4dfe86cee818edec32f8dfb108daf246647da6ead4b560ba",
+  "seal_SHA256": "d9542c2030140379ebd95241100dc3e5ec51750cc04325e1f34900d3e4fb996c",
+  "plot_categories": 4,
+  "figures": [
+    {
+      "path": "results/figures/01_history_coverage_and_stability.pdf",
+      "sha256": "9c92a47911e8179d0121194969333f24a0c284afbb7aa41989358ac05e194e86",
+      "bytes": 17702
+    },
+    {
+      "path": "results/figures/01_history_coverage_and_stability.png",
+      "sha256": "ea3d628ae827513a42f05e012783632b5311a49619563702439e6a50611f87be",
+      "bytes": 66466
+    },
+    {
+      "path": "results/figures/02_damage_prediction_and_calibration.pdf",
+      "sha256": "a77f6dcf1961f04552d0cf80f3222b124e6ae3e71684ae34563ce1d95c3183f1",
+      "bytes": 26308
+    },
+    {
+      "path": "results/figures/02_damage_prediction_and_calibration.png",
+      "sha256": "f6885f495d1eb4fc5a767cb9ff564ba400e23b0f899da6d320e4f0d859e6dfba",
+      "bytes": 192849
+    },
+    {
+      "path": "results/figures/03_secondary_gain_and_direction.pdf",
+      "sha256": "32dd50084c7d4fe541dd16d334e95aef624d67b7b3dc52795727b3343c58b81d",
+      "bytes": 17667
+    },
+    {
+      "path": "results/figures/03_secondary_gain_and_direction.png",
+      "sha256": "ecc59733ff3e3b8119872febd37cf4b21061005d96b6115976106e5e0e44b51c",
+      "bytes": 63677
+    },
+    {
+      "path": "results/figures/04_fixed_natural_pair_and_relaxed_space.pdf",
+      "sha256": "ef69e1e961928d64e40607c683b7b742a0699815b0bc25420dbfac5e1c55c942",
+      "bytes": 19897
+    },
+    {
+      "path": "results/figures/04_fixed_natural_pair_and_relaxed_space.png",
+      "sha256": "445018ed5953a452b2f2e1374eeac1580349368888d62c6a0547b15603cc4c7a",
+      "bytes": 84933
+    }
+  ],
+  "fixed_pairs_rendered": 12,
+  "all_labels_and_models_unchanged": true,
+  "no_new_fit_or_effect_selected_cases": true,
+  "source_code_sha256": "d37d6c8dbab703ad79feaa4437cf1997f7ce4bf6ed80d41aa61ea43bc9724df8",
+  "layout_revision": "results/FIGURE_LAYOUT_REVISION.json",
+  "old_render_audit_preserved": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round6_20261015_v1/runs/20261015T050613Z_mismatch_r6/data/tmp/figure_layout_v0/REPORT_RENDER_AUDIT.json"
+}

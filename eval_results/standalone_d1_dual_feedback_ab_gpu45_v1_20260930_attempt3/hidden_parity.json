@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "gpu": 0,
+  "tokens": 128,
+  "layers": [
+    {
+      "layer": 2,
+      "relative_l2": 0.004689308814704418,
+      "mean_cosine": 0.9999901056289673,
+      "max_abs": 0.25
+    },
+    {
+      "layer": 10,
+      "relative_l2": 0.005812466610223055,
+      "mean_cosine": 0.9999487400054932,
+      "max_abs": 128.0
+    },
+    {
+      "layer": 18,
+      "relative_l2": 0.005740864668041468,
+      "mean_cosine": 0.9999168515205383,
+      "max_abs": 128.0
+    },
+    {
+      "layer": 26,
+      "relative_l2": 0.005877385847270489,
+      "mean_cosine": 0.9999202489852905,
+      "max_abs": 128.0
+    },
+    {
+      "layer": 34,
+      "relative_l2": 0.007280056830495596,
+      "mean_cosine": 0.9999071955680847,
+      "max_abs": 128.0
+    },
+    {
+      "layer": 36,
+      "relative_l2": 0.017066776752471924,
+      "mean_cosine": 0.9997395277023315,
+      "max_abs": 192.0
+    }
+  ],
+  "normalized_relative_l2": 0.017672156915068626,
+  "last_32_argmax_agreement": 1.0,
+  "thresholds": {
+    "relative_l2_max": 0.1,
+    "mean_cosine_min": 0.995
+  },
+  "hidden_transfer_files_remaining": 0,
+  "hidden_requests": 4,
+  "hidden_deleted": 4,
+  "peak_inflight": 4,
+  "scope": "short target hidden layer/norm numerical sanity; not bitwise or native draft parity"
+}

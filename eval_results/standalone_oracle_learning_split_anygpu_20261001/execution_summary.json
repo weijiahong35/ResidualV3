@@ -1,0 +1,24 @@
+{
+  "matched_first_32_training_steps": {
+    "old": {
+      "steps": 32,
+      "median_step_seconds": 32.265309,
+      "mean_step_seconds": 31.96950112903226,
+      "seconds_step1_to32": 991.054535
+    },
+    "split": {
+      "steps": 32,
+      "median_step_seconds": 17.651326,
+      "mean_step_seconds": 17.015291451612903,
+      "seconds_step1_to32": 527.474035
+    }
+  },
+  "median_step_speedup": 1.827925505426618,
+  "weights_and_training_replay_verified": true,
+  "protocol_changed": false,
+  "old_optimizer_preserved_in_paused_process": false,
+  "approval_pending_for_terminating_original": false,
+  "active_training": "/data/weijiahong/speculators-main-lora/eval_results/standalone_oracle_learning_split_anygpu_20261001/training/training.log",
+  "timing_scope": "Training execution, not native inference throughput",
+  "original_stopped_with_user_approval": true
+}

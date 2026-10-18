@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "full_data_queue": "paused",
+  "excluded_gpus": [
+    1,
+    2
+  ]
+}

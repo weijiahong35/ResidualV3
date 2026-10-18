@@ -1,0 +1,19 @@
+{
+  "joint": {
+    "body.fc.weight": 493,
+    "body.layers.0.self_attn.q_proj.weight": 476,
+    "body.layers.1.self_attn.q_proj.weight": 496,
+    "body.layers.2.self_attn.q_proj.weight": 489,
+    "body.layers.3.self_attn.q_proj.weight": 492,
+    "body.layers.4.self_attn.q_proj.weight": 489,
+    "head.direction_head.weight": 511
+  },
+  "body": {
+    "body.fc.weight": 485,
+    "body.layers.0.self_attn.q_proj.weight": 481,
+    "body.layers.1.self_attn.q_proj.weight": 500,
+    "body.layers.2.self_attn.q_proj.weight": 491,
+    "body.layers.3.self_attn.q_proj.weight": 494,
+    "body.layers.4.self_attn.q_proj.weight": 493
+  }
+}

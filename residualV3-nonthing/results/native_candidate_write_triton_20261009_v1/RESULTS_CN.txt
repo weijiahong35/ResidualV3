@@ -1,0 +1,17 @@
+Top256候选专用回写内核：同权重实现优化（已核验）
+只改变回写内核及私有logits存储；BF16候选计算、三层no-soft头、全词表stock采样、实际lag-1、verifier读取值保持相同。
+没有训练；现有权重和冻结源码未改。新代码独立目录。
+微测人工输入、固定正式权重；不是native接受长度或端到端TPS。
+微测同时保留旧storage方案作控制，以分离少复制和替换scatter_的作用。
+C1=200/C40=1319，GSM8K nonthinking，block16=anchor+15proposal，max2096，T0/T1，一轮。
+设置 | 原AL | 优化AL | 原TPS | 优化TPS | TPS变化 | 污染
+C1 T0 | 8.414318 | 8.414318 | 427.456 | 450.186 | +5.32% | False
+C1 T1 | 7.355848 | 7.355848 | 376.633 | 397.847 | +5.63% | False
+C40 T0 | 8.582962 | 8.543360 | 4176.414 | 4242.315 | +1.58% | False
+C40 T1 | 7.681713 | 7.611864 | 3724.965 | 3756.426 | +0.84% | False
+
+相同状态的完整logits、实际token、lag-1前驱、verifier q、Graph输入更新与复原一致性见pilot_summary.json；真实native一致性见各FAST_HEAD/head_implementation_parity.jsonl。
+C1：200条T0最终文本有0条跨实现不同；这是文本一致性检查，不是准确率。
+C40：1319条T0最终文本有732条跨实现不同；这是文本一致性检查，不是准确率。
+C40跨运行批调度/target浮点路径可以变化；同状态head bitwise证明不扩大为完整target逐状态证明。
+核验52正式产物SHA及8个正式窗口。

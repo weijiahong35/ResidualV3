@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "request_seed_matches_record": [
+    980406,
+    980407,
+    980408
+  ],
+  "max_new_tokens": 2048,
+  "nonthinking": true,
+  "top_p": 1.0,
+  "top_k": -1,
+  "test_scope": "CPU mocked HTTP payload and returned metadata; GPU smoke pending"
+}

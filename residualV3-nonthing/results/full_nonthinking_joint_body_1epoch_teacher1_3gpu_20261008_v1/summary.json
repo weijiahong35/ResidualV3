@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "epochs": 1,
+  "training_rows": 833176,
+  "input_tokens": 1019443945,
+  "updates_per_arm": 15847,
+  "teacher_dp": 1,
+  "teacher_tp": 1,
+  "arms": [
+    "dflash",
+    "dflash_joint_nosoft3"
+  ],
+  "head_loss": "CE_DPACE_OUTPUT",
+  "validation": false,
+  "evaluation": false,
+  "utc": "2026-10-08T15:37:36.192531+00:00"
+}

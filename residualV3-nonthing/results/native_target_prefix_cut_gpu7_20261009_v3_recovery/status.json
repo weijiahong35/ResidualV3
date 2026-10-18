@@ -1,0 +1,11 @@
+{
+  "status": "not_started_user_hold",
+  "reason": "用户选择暂不启动补测，并要求先做好顶层设计；截断未体现额外吞吐收益。",
+  "pending_windows": [
+    "C40 VERIFY_STOP T0",
+    "C40 VERIFY_STOP T1"
+  ],
+  "gpu_process_launched": false,
+  "background_controller_started": false,
+  "utc": "2026-10-09T14:44:25.382948+00:00"
+}

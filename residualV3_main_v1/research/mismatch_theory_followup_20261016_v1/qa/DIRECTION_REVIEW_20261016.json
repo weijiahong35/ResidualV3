@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-16",
+  "kind": "research_direction_decision_not_execution_protocol",
+  "user_request": "整合蒸馏文献、R1–R9与现有方法，明确能够支撑论文的后续研究方向",
+  "core_question": "哪些大小模型失配能被修复，为什么能修复，失败何时来自具体修正、何时来自明确约束下无法兼顾的目标需求？",
+  "recommended_direction": "以有效修复失配为中心的机制驱动方法研究：区分在指定收益目标下可避免的损伤与必要取舍，再判断这一理论区分能否约束实际可实现的修正。",
+  "status": "scoping_pass_only",
+  "novelty_established": false,
+  "executable_experiment_plan": false,
+  "new_experiments_authorized_or_started": false,
+  "revision_record": [
+    {
+      "candidate": "受限计算下，训练后残余失配可以被轻量修正",
+      "verdict": "insufficient_as_contribution",
+      "reason": "过宽，蒸馏、Domino与DSpark已有大量实例；不能靠重新命名形成贡献。"
+    },
+    {
+      "candidate": "扩大共同oracle或历史分组，继续报告平均改善",
+      "verdict": "reject_as_next_mainline",
+      "reason": "R4–R9已回答有限族的存在性和部分边界；扩大面板不能代替实际修复原则。"
+    },
+    {
+      "candidate": "在指定收益目标下，判断哪些损伤能够避免，并检验这一判断能否导出可实现的纠正原则",
+      "verdict": "retain_as_direction_not_confirmed_claim",
+      "reason": "对应可修条件、修复原因与失败边界；不以增加历史输入或预测原头成败作为终点。"
+    }
+  ],
+  "evidence_roles": [
+    {
+      "source": "蒸馏文献",
+      "role": "容量、训练所访问状态与优化目标提供已有解释；不是所有一般性问题都需本项目重证",
+      "boundary": "不得直接推断本模型的失配主因；过量/欠量本身不是新贡献"
+    },
+    {
+      "source": "R7",
+      "role": "共同部分与原头收益已有有限干预联系",
+      "boundary": "634/9982自然槽的条件子集；不代表全部收益归因，不能称联系完全空白"
+    },
+    {
+      "source": "R8",
+      "role": "两个主体各自的共同修正及从target生成前缀向草稿生成前缀迁移有支持",
+      "boundary": "不是同一个修正跨主体迁移；约19%草稿历史主集合状态仍损伤，reached覆盖不足"
+    },
+    {
+      "source": "R9",
+      "role": "有限族中共同安全余量与高收益必要取舍的可核验边界",
+      "boundary": "完整simplex、已暴露有限数据；I0不能解释已有前驱输入的原头，I1仍未包含basis/Top256/dose和共享参数约束"
+    },
+    {
+      "source": "正式AC/TPS面板",
+      "role": "现有整体方法具有实际效用，是后续研究基础",
+      "boundary": "不同主体权重；不能替代同主体机制对照或与近邻的匹配协议比较"
+    }
+  ],
+  "decisions_required_before_execution": [
+    {
+      "decision": "理论是否提供已有一般性解释之外的可反驳判断",
+      "support": "在相同观测信息、动作限制及预先指定收益要求下，能认证可兼顾或必要损伤，并产生可检验设计后果",
+      "reject_or_reduce": "只有标准凸性、过量欠量命名、更多输入的单调收益或事后更优分布存在；仅保留为背景/分析",
+      "uncertain": "上界过宽或真实动作不可达性未识别；不能当失败或强行下结论"
+    },
+    {
+      "decision": "识别的改善空间是否可以实际利用",
+      "support": "不读取推理时未知target的实际修正，在未参与选择的题面及自生成状态中，得到与理论预言相符的改善",
+      "reject_or_reduce": "只有读取target的oracle有效；只确认存在性，停止扩张同类探针",
+      "uncertain": "训练或测量故障与科学阴性分开，当前没有执行预算/样本/功效协议"
+    },
+    {
+      "decision": "收益是否来自理论指导而非额外预算或通用训练变化",
+      "support": "先用能区分竞争解释的最小匹配对照，随后用公平近邻和真实解码验证方法价值",
+      "reject_or_reduce": "相同资源的已有目标或修复达到同等行为，且无新机制判断；不能继续声称独立方法创新",
+      "uncertain": "当前不能预设必须优于所有蒸馏方法或跨论文排名；native概率警报独立保留"
+    }
+  ],
+  "stop_conditions": [
+    "理论只能在知道完整target分布后说明存在更好答案，却不能约束可实现方法时，不再承担论文主创新",
+    "不为获得正结果增加指标、筛状态或不断扩展oracle支线",
+    "现有配方不强行解释为理论最优；若需要改变方法，由新结论决定，另订限定执行协议"
+  ],
+  "review": {
+    "core_question_correspondence": "pass_for_direction",
+    "direct_evidence_logic": "pass_at_decision_level_only",
+    "support_refutation_uncertainty_distinguished": true,
+    "existing_negative_results_preserved": true,
+    "review_method": "root核对R7/R9及文献，并由deep-research来源核验角色检查过宽论点；不是独立统计确认",
+    "remaining_requirement": "若用户要求执行，必须补具体可行的理论任务、动作定义、对照、样本、预算和停止规则；本文件不得被当作训练授权"
+  },
+  "primary_sources": [
+    "https://arxiv.org/html/2306.08543v4",
+    "https://proceedings.iclr.cc/paper_files/paper/2024/file/5be69a584901a26c521c2b51e40a4c20-Paper-Conference.pdf",
+    "https://proceedings.mlr.press/v267/busbridge25a.html",
+    "https://arxiv.org/html/2501.16937v2",
+    "https://arxiv.org/html/2503.07067v1",
+    "https://arxiv.org/html/2608.09836v1",
+    "https://arxiv.org/html/2605.29707v1",
+    "https://arxiv.org/html/2607.05147v1"
+  ]
+}

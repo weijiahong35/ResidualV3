@@ -1,0 +1,77 @@
+{
+  "utc": "2026-10-12T04:46:20.907856+00:00",
+  "inventory": [
+    {
+      "gpu": 0,
+      "uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+      "used_mib": 64236,
+      "free_mib": 16919,
+      "pids": [
+        1247116
+      ]
+    },
+    {
+      "gpu": 1,
+      "uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+      "used_mib": 23073,
+      "free_mib": 58081,
+      "pids": [
+        1389362
+      ]
+    },
+    {
+      "gpu": 2,
+      "uuid": "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824",
+      "used_mib": 77039,
+      "free_mib": 4116,
+      "pids": [
+        3470604,
+        176264
+      ]
+    },
+    {
+      "gpu": 3,
+      "uuid": "GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd",
+      "used_mib": 76313,
+      "free_mib": 4842,
+      "pids": [
+        3618744,
+        442114
+      ]
+    },
+    {
+      "gpu": 4,
+      "uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+      "used_mib": 29955,
+      "free_mib": 51199,
+      "pids": [
+        1367938
+      ]
+    },
+    {
+      "gpu": 5,
+      "uuid": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+      "used_mib": 44117,
+      "free_mib": 37037,
+      "pids": [
+        4155715
+      ]
+    },
+    {
+      "gpu": 6,
+      "uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+      "used_mib": 43889,
+      "free_mib": 37265,
+      "pids": [
+        189200
+      ]
+    },
+    {
+      "gpu": 7,
+      "uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+      "used_mib": 4,
+      "free_mib": 81151,
+      "pids": []
+    }
+  ]
+}

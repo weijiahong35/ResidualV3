@@ -1,0 +1,23 @@
+全数据nonthinking三卡并行长训，只有1epoch，无验证、无推理测试。
+目标833176条、1019443945输入token、15847包；每包最多65536输入token、1536anchor整块、15预测位置，一包一次更新、无额外梯度累计。
+一张teacher在线获取hidden（TP1/DP1/KV48GiB/maxseq64/HTTP128/reader16），一次请求同时供两独立训练端；hidden读后unlink，无持久hidden/logits。
+初始布局teacher GPU3，DFlash+头 GPU4，纯DFlash GPU5；GPU1/2排除；真故障可换其他空卡，额外进程只记录，不因此直接停训练。
+两组均从下载的nonthinking pretrained DFlash开始；主体5层Transformer，联合头no-soft3/Top256/basis512，随机初始化头；不加载旧训练头。
+头CE+D-PACE+OUTPUT（repaired D-PACE CE+OUTPUT），主体raw D-PACE CE；三个项系数1/1/1。BF16大张量，FP32归约/master/优化器。
+主体Muon lr1e-3，主体norm/mask Adam2e-4，头Adam3e-4，clip1；全程1%线性warmup后cosine，一轮结束停止。
+联合保留前4层激活、checkpoint第5层；纯DFlash缓存全部5层；每个learner74GiB可复用allocator池，cap76GiB。
+只采anchor与15proposal均受监督的16-token窗口，不跨document；位置每条重置，打包65536不等于单条context。最后小包候选不足时最多1536，绝不重复凑anchor。
+完整断点：first-update实际CUDA全状态保存/恢复校验，随后每200更新自动保存；随时checkpoint/pause请求会排空已投递包，两组提交相同cursor。
+FP32 master可逐位重建实际BF16参数，断点不重复存BF16；保存全部Muon/Adam状态、CPU/CUDA/Python/NumPy RNG、数据cursor、打乱顺序和protocol SHA。
+checkpoints两个预分配槽，共33GiB；最终BF16权重预留4GiB，另有256MiB应急元数据空间，因此df显示接近满包含已为本轮保存预留的空间。
+最新提交位置latest_checkpoint.json；槽文件有预分配尾部，要通过本目录control.sh和配套恢复器加载，不能直接torch.load整个.state.bin文件。
+两路状态都fsync完成才原子提交指针；失败时恢复此前共同断点，不会一条数据只更新一个训练端。强制kill/真实故障恢复最近已提交位置，未提交部分会重算。
+命令（在本目录执行）：
+  ./control.sh status
+  ./control.sh checkpoint    # 立即保存完整共同断点后继续
+  ./control.sh pause         # 完成已投递包并保存，两路和teacher释放GPU
+  ./control.sh resume        # 从共同断点恢复；控制器已退出时自动重启
+日志：joint_training.log（联合）；dflash_training.log（纯DFlash）；training.log（供数与共同断点）；teacher.log；status.json。每个attempt证据在runs/attempt_XXXX，身份在current_attempt.json。
+完成要求status.json/summary.json为complete，cursor=15847，final下两组epoch_01.safetensors存在，latest_checkpoint共同cursor=15847。
+旧消融、长训、全部BF16短测权重保留；本次仅删除四份不再需要的吞吐短测优化器状态，清单在相邻storage_cleanup_20261008_v1。
+先前暂停的PID733871旧顺序队列不唤醒；本目录新流程替代旧配方，不启动DSpark/DFlash-2额外组。

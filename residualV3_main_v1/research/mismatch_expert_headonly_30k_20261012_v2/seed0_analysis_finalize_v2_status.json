@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "seed": 6101202,
+  "physical_gpu": 6,
+  "shared_gpu": true,
+  "training_repeated": false,
+  "routers_retrained": false,
+  "utc": "2026-10-12T10:29:47.465238+00:00"
+}

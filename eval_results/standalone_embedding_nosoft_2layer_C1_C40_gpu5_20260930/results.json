@@ -1,0 +1,126 @@
+{
+  "status": "complete",
+  "rows": [
+    {
+      "concurrency": 1,
+      "arm": "RAW",
+      "T": 0,
+      "acceptance": 3.954496851609837,
+      "tps": 255.14603934180806,
+      "acceptance_ratio": 1.0,
+      "throughput_ratio": 1.0,
+      "throughput_ratio_vs_A": 1.1024795188626684
+    },
+    {
+      "concurrency": 1,
+      "arm": "A_full_3layer",
+      "T": 0,
+      "acceptance": 4.081049598430507,
+      "tps": 231.42927825545448,
+      "acceptance_ratio": 1.032002237343836,
+      "throughput_ratio": 0.9070463286534451,
+      "throughput_ratio_vs_A": 1.0
+    },
+    {
+      "concurrency": 1,
+      "arm": "N_no_soft_2layer",
+      "T": 0,
+      "acceptance": 4.081233523389123,
+      "tps": 241.6177519877451,
+      "acceptance_ratio": 1.0320487476751166,
+      "throughput_ratio": 0.9469782584555831,
+      "throughput_ratio_vs_A": 1.044024134755519
+    },
+    {
+      "concurrency": 1,
+      "arm": "RAW",
+      "T": 1,
+      "acceptance": 3.205114414238216,
+      "tps": 206.8094937372552,
+      "acceptance_ratio": 1.0,
+      "throughput_ratio": 1.0,
+      "throughput_ratio_vs_A": 0.9960912846601587
+    },
+    {
+      "concurrency": 1,
+      "arm": "A_full_3layer",
+      "T": 1,
+      "acceptance": 3.6760442851794406,
+      "tps": 207.62102522341954,
+      "acceptance_ratio": 1.146930751941083,
+      "throughput_ratio": 1.0039240533473544,
+      "throughput_ratio_vs_A": 1.0
+    },
+    {
+      "concurrency": 1,
+      "arm": "N_no_soft_2layer",
+      "T": 1,
+      "acceptance": 3.685537422622397,
+      "tps": 217.02158689231206,
+      "acceptance_ratio": 1.149892623567501,
+      "throughput_ratio": 1.0493792280543512,
+      "throughput_ratio_vs_A": 1.0452775033683446
+    },
+    {
+      "concurrency": 40,
+      "arm": "RAW",
+      "T": 0,
+      "acceptance": 4.0344504011424895,
+      "tps": 2595.509851882622,
+      "acceptance_ratio": 1.0,
+      "throughput_ratio": 1.0,
+      "throughput_ratio_vs_A": 1.0377675147457481
+    },
+    {
+      "concurrency": 40,
+      "arm": "A_full_3layer",
+      "T": 0,
+      "acceptance": 4.198375359228701,
+      "tps": 2501.0513578453256,
+      "acceptance_ratio": 1.0406312983894388,
+      "throughput_ratio": 0.963606959931675,
+      "throughput_ratio_vs_A": 1.0
+    },
+    {
+      "concurrency": 40,
+      "arm": "N_no_soft_2layer",
+      "T": 0,
+      "acceptance": 4.191603413359717,
+      "tps": 2543.2387168764176,
+      "acceptance_ratio": 1.0389527684298026,
+      "throughput_ratio": 0.9798609375463205,
+      "throughput_ratio_vs_A": 1.0168678499538837
+    },
+    {
+      "concurrency": 40,
+      "arm": "RAW",
+      "T": 1,
+      "acceptance": 3.3502798094056305,
+      "tps": 2122.6575809392175,
+      "acceptance_ratio": 1.0,
+      "throughput_ratio": 1.0,
+      "throughput_ratio_vs_A": 0.9369944675787081
+    },
+    {
+      "concurrency": 40,
+      "arm": "A_full_3layer",
+      "T": 1,
+      "acceptance": 3.856575907473814,
+      "tps": 2265.3896627846557,
+      "acceptance_ratio": 1.1511205412296608,
+      "throughput_ratio": 1.0672421605477616,
+      "throughput_ratio_vs_A": 1.0
+    },
+    {
+      "concurrency": 40,
+      "arm": "N_no_soft_2layer",
+      "T": 1,
+      "acceptance": 3.8671794980468612,
+      "tps": 2311.0460795527797,
+      "acceptance_ratio": 1.1542855277908664,
+      "throughput_ratio": 1.0887512429254866,
+      "throughput_ratio_vs_A": 1.020153891190623
+    }
+  ],
+  "utc": "2026-09-30T16:02:45.761553+00:00"
+}

@@ -1,0 +1,297 @@
+{
+  "GPU_hours": 0,
+  "CUDA_VISIBLE_DEVICES": "",
+  "numerical_workers": 1,
+  "numerical_library_threads": 1,
+  "torch_intra_interop_threads": [
+    1,
+    1
+  ],
+  "CPU_process_tree_seconds_measured_plus_failure_allowance": 3353.2524355,
+  "CPU_hours_conservative_with_1320_second_control_closure_reserve": 1.2990533626777778,
+  "limit_CPU_hours": 6,
+  "peak_child_RSS_GiB": 3.0384521484375,
+  "peak_supervisor_allowance_MiB": 64,
+  "disk_GiB_before_final_manifests": 2.355629527941346,
+  "disk_limit_GiB": 8,
+  "RSS_limit_GiB": 16,
+  "stage_receipts": [
+    {
+      "stage": "cache_absolute",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/data_ops.py"
+      ],
+      "identity": {
+        "pid": 6,
+        "ppid": 2,
+        "pgid": 6,
+        "startticks": 37257059,
+        "uid": 1024,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/data_ops.py ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "cpu_seconds": 264.73126999199997,
+      "cpu_accounting": "complete waited child rusage plus supervisor self",
+      "peak_RSS_bytes": 2085412864,
+      "wall_seconds": 265.0822265148163,
+      "exit_code": 0,
+      "stop_reason": null,
+      "ended_epoch": 1792162494.2902944,
+      "child_reaped": true
+    },
+    {
+      "stage": "cache_relative_identity_failure",
+      "cpu_seconds": 5,
+      "wall_seconds": 0.5,
+      "peak_RSS_bytes": 0,
+      "exit_code": 1,
+      "managed_job_identity": null,
+      "reason": "relative command does not contain full run identity; supervisor rejected; absolute command retry recorded separately",
+      "accounting": "conservative 5 seconds failed startup",
+      "child_reaped": "sandbox execution ended; no claim of host PID visibility"
+    },
+    {
+      "stage": "delivery",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/pipeline.py",
+        "deliver",
+        "scene",
+        "report"
+      ],
+      "identity": {
+        "pid": 6,
+        "ppid": 2,
+        "pgid": 6,
+        "startticks": 37574299,
+        "uid": 1024,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/pipeline.py deliver scene report ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "cpu_seconds": 17.309351794,
+      "cpu_accounting": "complete waited child rusage plus supervisor self",
+      "peak_RSS_bytes": 658149376,
+      "wall_seconds": 18.345831394195557,
+      "exit_code": 1,
+      "stop_reason": null,
+      "ended_epoch": 1792165419.945577,
+      "child_reaped": true
+    },
+    {
+      "stage": "final_audit",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/finish.py"
+      ],
+      "identity": {
+        "pid": 6,
+        "ppid": 2,
+        "pgid": 6,
+        "startticks": 37587261,
+        "uid": 1024,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/finish.py ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "cpu_seconds": 15.18040314,
+      "cpu_accounting": "complete waited child rusage plus supervisor self",
+      "peak_RSS_bytes": 78278656,
+      "wall_seconds": 16.305224418640137,
+      "exit_code": 0,
+      "stop_reason": null,
+      "ended_epoch": 1792165547.5282328,
+      "child_reaped": true
+    },
+    {
+      "stage": "formal_pipeline",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/pipeline.py",
+        "construct",
+        "maps",
+        "recheck",
+        "costs",
+        "fit",
+        "evaluate",
+        "summarize"
+      ],
+      "identity": {
+        "pid": 6,
+        "ppid": 2,
+        "pgid": 6,
+        "startticks": 37284194,
+        "uid": 1024,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/pipeline.py construct maps recheck costs fit evaluate summarize ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "cpu_seconds": 2921.220897206,
+      "cpu_accounting": "complete waited child rusage plus supervisor self",
+      "peak_RSS_bytes": 1978380288,
+      "wall_seconds": 2879.7077436447144,
+      "exit_code": 0,
+      "stop_reason": null,
+      "ended_epoch": 1792165380.2611861,
+      "child_reaped": true
+    },
+    {
+      "stage": "identity",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/identity.py"
+      ],
+      "identity": {
+        "pid": 6,
+        "ppid": 2,
+        "pgid": 6,
+        "startticks": 37185564,
+        "uid": 1024,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/identity.py ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "cpu_seconds": 16.71705206,
+      "cpu_accounting": "complete waited child rusage plus supervisor self",
+      "peak_RSS_bytes": 1324150784,
+      "wall_seconds": 18.02497696876526,
+      "exit_code": 0,
+      "stop_reason": null,
+      "ended_epoch": 1792161532.2832246,
+      "child_reaped": true
+    },
+    {
+      "stage": "math_contract",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/check_math_contract.py",
+        "--output",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/qa/MATH_CONTRACT.json"
+      ],
+      "identity": {
+        "pid": 6,
+        "ppid": 2,
+        "pgid": 6,
+        "startticks": 37177603,
+        "uid": 1024,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/check_math_contract.py --output /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/qa/MATH_CONTRACT.json ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "cpu_seconds": 0.23263711699999998,
+      "cpu_accounting": "complete waited child rusage plus supervisor self",
+      "peak_RSS_bytes": 39100416,
+      "wall_seconds": 2.0036401748657227,
+      "exit_code": 0,
+      "stop_reason": null,
+      "ended_epoch": 1792161436.6430438,
+      "child_reaped": true
+    },
+    {
+      "stage": "metadata",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/audit_inputs.py",
+        "--output",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/protocol/INPUT_MANIFEST.json"
+      ],
+      "identity": {
+        "pid": 6,
+        "ppid": 2,
+        "pgid": 6,
+        "startticks": 37169364,
+        "uid": 1024,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/audit_inputs.py --output /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/protocol/INPUT_MANIFEST.json ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "cpu_seconds": 1.857377661,
+      "cpu_accounting": "complete waited child rusage plus supervisor self",
+      "peak_RSS_bytes": 44625920,
+      "wall_seconds": 2.0029993057250977,
+      "exit_code": 0,
+      "stop_reason": null,
+      "ended_epoch": 1792161354.2561269,
+      "child_reaped": true
+    },
+    {
+      "stage": "performance_gate",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/benchmark.py"
+      ],
+      "identity": {
+        "pid": 6,
+        "ppid": 2,
+        "pgid": 6,
+        "startticks": 37229917,
+        "uid": 1024,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/benchmark.py ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "cpu_seconds": 111.37011439300001,
+      "cpu_accounting": "complete waited child rusage plus supervisor self",
+      "peak_RSS_bytes": 3262513152,
+      "wall_seconds": 112.22636675834656,
+      "exit_code": 0,
+      "stop_reason": null,
+      "ended_epoch": 1792162070.0056458,
+      "child_reaped": true
+    },
+    {
+      "stage": "reporting_recovery",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/pipeline.py",
+        "recover_scene",
+        "report"
+      ],
+      "identity": {
+        "pid": 6,
+        "ppid": 2,
+        "pgid": 6,
+        "startticks": 37579672,
+        "uid": 1024,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse/code/pipeline.py recover_scene report ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "cpu_seconds": 2.9730022769999995,
+      "cpu_accounting": "complete waited child rusage plus supervisor self",
+      "peak_RSS_bytes": 812761088,
+      "wall_seconds": 4.082122802734375,
+      "exit_code": 0,
+      "stop_reason": null,
+      "ended_epoch": 1792165459.4160874,
+      "child_reaped": true
+    }
+  ],
+  "training_steps": 16848,
+  "closure_minimum_reserved_seconds": 1200,
+  "failed_relative_startup_conservative_seconds": 5,
+  "resource_fraction_not_used": true,
+  "reservations_created": false,
+  "old_jobs_touched": false,
+  "supervised_children_reaped": [
+    true,
+    true,
+    true,
+    true,
+    "sandbox execution ended; no claim of host PID visibility",
+    true,
+    true,
+    true,
+    true
+  ],
+  "final_audit_worker_will_exit_before_final_tool_return": true,
+  "CPU_process_tree_seconds_complete_receipts_plus_failure_allowance": 3356.5921056399998,
+  "CPU_hours_complete_receipts": 0.932386696011111,
+  "all_supervised_children_reaped": true,
+  "active_owned_numerical_jobs": 0,
+  "reservations_to_release": 0,
+  "failed_startup_log_bytes": 0,
+  "final_audit_receipt_included": true
+}

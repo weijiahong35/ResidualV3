@@ -1,0 +1,43 @@
+{
+  "status": "requested_comparison_finished_timing_acquired_with_coverage_gap_baseline_incomplete",
+  "source_version": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/implementations/shared_cpu_cache_v3",
+  "trained_head_models_complete": 12,
+  "trained_head_models_target": 12,
+  "seed_evaluations_complete": 3,
+  "cache_groups": 42288,
+  "target_cache_groups": 42288,
+  "actual_head_training_started": true,
+  "head_training_and_static_evaluation_complete": true,
+  "running": [],
+  "completed_native_tasks": [
+    "native_eval_depth_gsm8k_C1",
+    "native_eval_depth_gsm8k_C32",
+    "native_eval_depth_humaneval_C1",
+    "native_eval_depth_humaneval_C32",
+    "native_eval_depth_mt-bench_C1",
+    "native_eval_depth_mt-bench_C32",
+    "native_eval_gsm8k_C1",
+    "native_eval_gsm8k_C32",
+    "native_eval_mt-bench_C1",
+    "native_eval_mt-bench_C32"
+  ],
+  "blocked": {
+    "native_eval_humaneval_C1": {
+      "reason": "Prior worker exited without completed audit; inspect before retry",
+      "log": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/native_eval_humaneval_C1_attempt01.log"
+    },
+    "native_eval_humaneval_C32": {
+      "reason": "Prior worker exited without completed audit; inspect before retry",
+      "log": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/native_eval_humaneval_C32_attempt01.log"
+    }
+  },
+  "native_evaluation": "No own GPU workers; two failed independent-baseline HumanEval groups preserved",
+  "depth_comparison_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head2_vs_head3_three_domains_C1_C32_20261012_v1",
+  "head2_dflash_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head2_three_domains_C1_C32_20261012_v1",
+  "direct_depth_groups_complete": 6,
+  "head2_dflash_groups_complete": 4,
+  "user_gpu_policy": "All cards allowed; native AC/TPS requires empty GPU. Never stop others.",
+  "utc": "2026-10-12T14:40:50.850845+00:00",
+  "controller_live": false,
+  "controller_pid_history": 3678448
+}

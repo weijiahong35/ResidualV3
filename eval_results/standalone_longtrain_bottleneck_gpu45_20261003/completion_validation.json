@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "own_host_process_statuses": {
+    "2803813": "exited",
+    "2804052": "exited",
+    "2811789": "exited",
+    "2804049": "exited",
+    "2811785": "exited",
+    "2858174": "exited",
+    "2858404": "exited",
+    "2865906": "exited",
+    "2858401": "exited",
+    "2866110": "exited"
+  },
+  "gpu_snapshot": "0, GPU-6708ee11-1afa-f173-d74b-59daf320d901, 4, 0\n1, GPU-250cd769-9b6a-e76d-92cb-681686776938, 4, 0\n2, GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824, 4, 0\n3, GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd, 4, 0\n4, GPU-b69b3699-6c78-06df-49e1-81ef44cf415b, 4, 0\n5, GPU-6b9e070b-a9db-7515-5b45-999392d3bb49, 4, 0\n6, GPU-16d48373-c956-39a9-3989-4676fb6aa22c, 63775, 0\n7, GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f, 63775, 0\n",
+  "remaining_gpu_apps": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c, 1763669, VLLM::Worker_TP0, 63766\nGPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f, 1763678, VLLM::Worker_TP1, 63766\n",
+  "others_stopped": false,
+  "own_servers_stopped": true
+}

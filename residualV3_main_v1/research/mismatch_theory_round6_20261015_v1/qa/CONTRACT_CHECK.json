@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "scope": "synthetic_math_and_protocol_only",
+  "model_experiments": false,
+  "checks": {
+    "same_action_opposite_outcomes": {
+      "delta": [
+        0.2,
+        -0.19999999999999996
+      ],
+      "bad": [
+        0,
+        1
+      ]
+    },
+    "score_each_permutation_before_averaging": {
+      "correct_loss": 0.41000000000000003,
+      "incorrect_ensemble_loss": 0.25
+    },
+    "novel_history_uses_complete_tokens_not_seed_or_predecessor": true,
+    "constant_history_zero_is_not_missing": true,
+    "correct_single_token_direction_can_still_harm": true,
+    "zero_common_flow_does_not_prove_irreparability": true,
+    "fit_common_direction_can_fail_on_new_target": true,
+    "finite_threshold_candidates_and_whole_ties": true,
+    "minibatch_scaling_targets_global_weighted_loss": true,
+    "proposed_feature_allowlist_excludes_label_and_identifier_channels": true,
+    "limitation": "Synthetic assertions only; actual extractor/data access still needs runtime audit."
+  }
+}

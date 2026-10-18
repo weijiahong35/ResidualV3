@@ -1,0 +1,61 @@
+{
+  "claims": [
+    {
+      "claim": "可定位单轴功能共用",
+      "status": "未建立",
+      "evidence": "Q1_REMOVAL.csv;Q1_SHARING_DECISION.csv",
+      "scope": "same-fold identified first axis; two error classes >=4 prompts; deletion lower>=.001",
+      "forbidden": "coordinate overlap alone does not establish necessity"
+    },
+    {
+      "claim": "方向组功能依赖",
+      "status": "已支持",
+      "evidence": "Q1_REMOVAL.csv;Q1_SHARING_DECISION.csv",
+      "scope": "group dependency, not shared individual axis",
+      "forbidden": "do not add overlapping group contributions"
+    },
+    {
+      "claim": "OUT超过完整E512的空间能力",
+      "status": "不确定／未过冻结门槛",
+      "evidence": "Q2_SPACES.csv;Q2_SPACES_STATES.csv.gz",
+      "scope": "same Top256/full normalization/.8 ball/KL",
+      "forbidden": "OUT vs128 cannot identify E512 shortage"
+    },
+    {
+      "claim": "聚类选择价值",
+      "status": "未建立",
+      "evidence": "Q2_SPACES.csv;UNIQUE_BEST_WITNESSES.csv",
+      "scope": "balanced training residual groups; RND and constant controls",
+      "forbidden": "max over four is not itself evidence"
+    },
+    {
+      "claim": "X0超过常量选择",
+      "status": "未支持（未到预设幅度）",
+      "evidence": "Q3_ROUTING.csv;ROUTER_ACCESS_AUDIT.json",
+      "scope": "selection_only_with_oracle_coefficients",
+      "forbidden": "not a trained repair head"
+    },
+    {
+      "claim": "X1新增前驱选择信息",
+      "status": "未支持（未到预设幅度）",
+      "evidence": "Q3_ROUTING.csv;Q3_INPUT_ALIAS_BOUNDS.csv",
+      "scope": "previous token only, retrospective OOF",
+      "forbidden": "not full-history value or online repair gain"
+    },
+    {
+      "claim": "任务分组适配",
+      "status": "未建立",
+      "evidence": "Q4_TASK_CROSSOVER.csv;Q4_TASK_BY_GROUP.csv",
+      "scope": "all three fixed domain pairs and both directions",
+      "forbidden": "cluster composition is not task specialization"
+    },
+    {
+      "claim": "训练/规模原因、部署接受或TPS",
+      "status": "未检验",
+      "evidence": "protocol/REDO_DESIGN_SPEC.json",
+      "scope": "CPU stored-state capacity and selection only",
+      "forbidden": "no causal or native extrapolation"
+    }
+  ],
+  "old_warnings_preserved": true
+}

@@ -1,0 +1,5 @@
+{
+  "status": "not_launched",
+  "reason": "GPU0-3 occupied before launch; use free GPU4/5",
+  "replacement": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_output_margin_native_pilot16_gpu45_20261003"
+}

@@ -1,0 +1,15 @@
+{
+  "pid": 422188,
+  "gpu": 0,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/single_card_finish.py",
+    "--collect",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/single_card_diagnostic",
+    "--phase",
+    "diagnostic"
+  ],
+  "utc": "2026-10-03T14:24:06.095553+00:00"
+}

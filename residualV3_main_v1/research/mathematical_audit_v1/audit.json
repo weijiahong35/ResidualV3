@@ -1,0 +1,456 @@
+{
+  "status": "complete",
+  "created_utc": "2026-10-01T03:43:32.853553+00:00",
+  "scope": "mathematics, source audit, primary literature and CPU identity checks only",
+  "sections": [
+    {
+      "id": "scope",
+      "title": "审计范围与结论",
+      "status": "已完成代码审阅、原始文献核对及CPU数值验证",
+      "paragraphs": [
+        "本轮仅审计冻结的 N_no_soft_2layer EMBEDDING 版本及其 merged 对照。未启动GPU、未训练修复头、未改变模型、损失、输入或采样协议。小型有限分布用于验证数学恒等式与反例，不能作为真实模型性能实验。",
+        "当前结构可解释为：在KL误差梯度构造的冻结子空间内，根据原hidden、原q及实际前驱预测一个受限连续更新。这个解释比“通用MLP”更具体，但不证明选择512维基底、256维latent和两层SwiGLU最优。",
+        "目前证据不支持直接增加额外交互头。应先区分信息缺失、实际输出空间约束、学习映射与目标偏差；论文提供近似假设，而不是某个层必然更好的定理。"
+      ],
+      "equations": [],
+      "evidence": []
+    },
+    {
+      "id": "notation",
+      "title": "符号和现有输入流",
+      "status": "代码核实",
+      "paragraphs": [
+        "c 为已验证上下文，包含 anchor；x_1,…,x_L 为块内草稿token，j从1开始。u_j为原始全词表logits，q_j=softmax(u_j)固定特征温度1，z_j为修复后logits，r_j=softmax(z_j)为T1无额外处理时的proposal。三者不能混称q。",
+        "W 为原目标LM-head（V×4096），E为原目标embedding。B为冻结train128基底（512×4096）；C=WBᵀ是输出基底，F=EBᵀ是q特征表。I_j=Top256(u_j)每次动态变化。",
+        "输入：LN(h)→Linear256；normalize(E[实际前驱])→LN→Linear256；Σ_{v∈I}q(v)F[v]→LN→Linear256。三路拼接768→LN→Linear256→两层SwiGLU残差→LN→latent256→direction/dose。没有软lag-1。",
+        "训练前驱来自固定答案（teacher forcing）；native前驱首步为verified anchor，此后为真实上一采样token。使用同一个rollout数学函数，不代表训练和native的前缀分布相同。native传给verifier的是修复后processed logits缓冲区；变量名q并不表示它已经是softmax概率。T0走argmax，不能把T1 softmax重叠直接当作T0接受概率。"
+      ],
+      "equations": [
+        "f_q(q,I)=Linear_q(LN(Σ_{v∈I} q(v) F[v]))",
+        "d=normalize(Aℓ+b); a=0.8 sigmoid(w_aᵀℓ+b_a); s=‖h‖",
+        "δ(v)=1[v∈I] C[v]ᵀ(s a d); z=u+δ; T1: r=softmax(z)",
+        "q与hidden的预处理可并行；实际前驱融合后的部分依赖顺序反馈。"
+      ],
+      "evidence": [
+        "model.py:44–70,80–110",
+        "repair/run.py:100–109",
+        "repair/native_launch.py:6–57"
+      ]
+    },
+    {
+      "id": "factorization",
+      "title": "并行分布误差的精确分解",
+      "status": "数学恒等式；真实数据各项大小尚未估计",
+      "paragraphs": [
+        "固定c，原始独立采样的块分布Q_parallel=∏q_j；设目标联合分布为P，各位置真实边缘分布为m_j。展开log(P/∏q_j)，加减Σlog m_j并对P取期望，即得到下式。",
+        "即使q_j逐位置已经等于m_j，只要目标token之间仍有条件依赖，联合误差仍然是total correlation。masked hidden之间有attention，不等于最终抽到的token之间具有目标条件依赖。",
+        "这属于独立并行采样的结构限制，而不是所有“扩散模型”都必然无法避免的问题。PUNT讨论条件独立与置信度，Tensor-Train工作尝试直接建模联合分布；它们不能直接替换当前逐token精确proposal契约。"
+      ],
+      "equations": [
+        "KL(P(X_1:L|c) ‖ ∏_j q_j(X_j|c))",
+        "  = TC(P|c) + Σ_j KL(m_j ‖ q_j)",
+        "TC(P|c) = KL(P(X_1:L|c) ‖ ∏_j m_j(X_j|c))."
+      ],
+      "evidence": [
+        "math_checks: parallel_KL_decomposition_and_Markov_projection",
+        "PUNT",
+        "Tensor-Train"
+      ]
+    },
+    {
+      "id": "lag1",
+      "title": "lag-1近似到底假设什么",
+      "status": "理论边界明确；近似质量未被现有实验识别",
+      "paragraphs": [
+        "在可以任意表达且可以访问完整c的一阶Markov模型族中，forward KL最优解采用真实的一阶条件P(x_j|c,x_{j-1})。未能表达的误差恰为更早前缀的条件互信息之和。当前模型还受到c→hidden/q特征压缩及函数形式的额外限制，因此下式是理想模型族的下界，不是当前模型已达到的损失。",
+        "对同一c、同一j、同一实际lag-1，若不同更早块内前缀产生不同目标分布，而修复输入完全相同，任何确定性修复网络都无法同时精确匹配。加层不能恢复未输入的信息。",
+        "已有前驱干预固定更早前缀、改变lag-1，测量的是P(v|c,b,a)对a的响应；并未对b正确边缘化得到P(v|c,a)。所以它不能检验“lag-1是否充分”，也不能直接估计下面的条件互信息。首草稿位置没有新产生的块内前缀，不能把其修复一律解释为补回未观察的lag-1。"
+      ],
+      "equations": [
+        "Q*_Markov = P(x_1|c) ∏_{j=2}^L P(x_j|c,x_{j-1})",
+        "min_QMarkov KL(P‖QMarkov) = Σ_{j=2}^L I_P(X_j;X_<j-1 | c,X_j-1)",
+        "δ*_j(v)=log[p(v|c,x_<j)/q_j(v)] + 常数",
+        "log(p_full/q) = log(m/q) + log(p_lag1/m) + log(p_full/p_lag1)."
+      ],
+      "evidence": [
+        "math_checks: lag1_information_limit",
+        "math_checks: density_ratio_and_three_term_decomposition"
+      ]
+    },
+    {
+      "id": "basis",
+      "title": "现有mismatch基底的数学依据",
+      "status": "来源与梯度解释已核实",
+      "paragraphs": [
+        "基底协议记录：对normalize((p−q)W)按TV及首拒绝加权，取未中心化二阶矩的前512个特征向量。这不是logits的PCA，也不是候选词表。",
+        "当u=Wh、目标p作为常量时，KL(p‖softmax(Wh))对h的负梯度正是Wᵀ(p−q)。因此B保留的是训练样本中常见的KL hidden下降方向。当前修复在候选上等价于投影hidden增量的LM-head评分：δ_I=W_I Bᵀr。因为候选外被置零，它通常不等价于对全词表统一应用一次hidden更新。",
+        "这给了冻结基底明确理由，但没有证明它适合当前OUTPUT目标或greedy margin。基底按全词表KL梯度构造；Top256限制与训练overlap梯度会改变优化几何。首拒绝加权只改变样本权重，不会使KL方向自动成为最优排序方向。",
+        "实际B原存储为FP32，运行时BF16后Gram特征值约在[0.998324,1.001654]。近似正交成立；不能把量化后的范数约束当作实数精确恒等式。"
+      ],
+      "equations": [
+        "−∇_h KL(p‖q) = Wᵀ(p−q)",
+        "B = top eigenspace of Σ_n ω_n g_n g_nᵀ,  g_n=normalize(Wᵀ(p_n−q_n))",
+        "δ_I=C_I r=W_I Bᵀr,   ‖r‖≲0.8‖h‖."
+      ],
+      "evidence": [
+        "provenance/basis/preregistration.json",
+        "math_checks: basis_direction_is_negative_forward_KL_hidden_gradient",
+        "math_checks: basis_orthogonality_after_BF16"
+      ]
+    },
+    {
+      "id": "span",
+      "title": "必须区分候选基底与真正的可达输出",
+      "status": "纠正先前oracle解释",
+      "paragraphs": [
+        "C_I为256×512且满行秩，只证明任意候选增量有一个不受限512维系数解。先前oracle另检查了系数范数与BF16更新，但没有强制系数来自真实direction head。它是放宽条件后的能力上界，不能证明当前网络能产生该系数。",
+        "真实direction先产生t=Aℓ+b，其中A是512×256。最终LayerNorm又约束ℓ=γ⊙y+β，1ᵀy=0。于是t落在span([A diag(γ) P_0, Aβ+b])中，维数至多256。direction归一化与dose乘法在实数数学下不改变这个线性包络；BF16舍入会造成小偏离。",
+        "在实际epoch3 checkpoint上，该包络的数值秩为256。还存在LayerNorm可达流形、上游输入映射、dose范围等限制。因此需要检查C_I S的条件数及可行性，而不能只检查C_I。",
+        "256维包络并不自动意味着256候选不可表达：C_I S仍可能满秩；这也不是证明最终头就是瓶颈。",
+        "merged头使用0.8 t/√(1+‖t‖²)。如果t可任意取值，它覆盖开球；真实t同样来自低维仿射映射及LayerNorm，不能据此宣称split与merged整个神经网络函数族相同。两者都未移除C基底。"
+      ],
+      "equations": [
+        "P_0=I−11ᵀ/256; M=A diag(γ)P_0; b′=Aβ+b",
+        "t=My+b′; r∈span([M,b′]); dim span([M,b′])≤255+1=256",
+        "层级：完整C_I系数球 ⊇ 学到的输出包络与系数球 ⊇ 实际网络可达集（实数近似）。"
+      ],
+      "evidence": [
+        "model.py:64–70",
+        "merged/model.py:49–53,86–99",
+        "math_checks: actual_checkpoint_output_span"
+      ]
+    },
+    {
+      "id": "q",
+      "title": "q信息与候选身份：不能仅凭维度断言",
+      "status": "已核实精确路径与理论边界",
+      "paragraphs": [
+        "候选ID通过F[v]参与加权moment，网络并非只读取按排名排列的256个数。q_I保持完整softmax下的原概率，没有在Top256内重新归一化；其总和包含候选概率质量信息。",
+        "对固定I，若F_I有256个线性独立行，则q_I→q_IᵀF_I（256→512）可以是单射。不能仅因求和或降维就断言Top256概率信息已经丢失。后续LayerNorm、Linear、动态ID组合和BF16对可辨识性的影响需要单独分析，不能以一个总参数维度代替。",
+        "LayerNorm对全一向量平移严格不变；对缩放仅在忽略epsilon等条件下近似不变。故候选总质量可能被弱化，但不能声称必然被精确删除。",
+        "候选外概率形状不进入q moment；若两份q在I上相同、尾部重分配，该q分支输出相同。与此同时h本身决定u和q，所以在理想完整hidden已知条件下q不新增Shannon信息；实际hidden分支压缩后显式q提供不同的预测统计。这不构成删除q的依据。",
+        "固定h和I只改q的干预证明网络读取q；因为真实q由h和W决定，该干预一般离开真实状态流形，不能单独证明q改善泛化或接受率。"
+      ],
+      "equations": [
+        "F_I∈R^(256×512), rank(F_I)=256 ⇒ q_I↦q_IᵀF_I在固定I上单射",
+        "q=softmax(Wh)；显式q条件的意义是结构与优化上的归纳偏置，而非凭空增加观测。"
+      ],
+      "evidence": [
+        "model.py:43–60",
+        "math_checks: q_moment_not_necessarily_lossy_with_fixed_ids"
+      ]
+    },
+    {
+      "id": "support",
+      "title": "Top256修复的精确限制",
+      "status": "数学恒等式；不是候选采样限制",
+      "paragraphs": [
+        "候选外logits保持原值，但完整softmax分母会变，所以候选外概率并非保持原值。候选外任意两个token的概率比保持不变。若目标在候选外的概率比与原q不同，Top256-only修复不可能精确匹配完整目标分布。",
+        "目标argmax落在Top256内，仅排除了该位置的目标赢家漏召回，不能保证完整分布可达，也不能保证正确排序可达。",
+        "给全部词表logits加常数不改变分布；只给Top256增量加常数会改变候选内外质量分配。此前将响应在候选内中心化，只测量候选内相对排序，丢掉了候选整体质量变化这一自由度。不能把该分析当作完整分布修复质量。"
+      ],
+      "equations": [
+        "v,w∉I ⇒ r(v)/r(w)=q(v)/q(w)",
+        "存在任意自由候选增量使r=p的必要条件：p(v)/q(v)在v∉I上为常数。"
+      ],
+      "evidence": [
+        "model.py:93–95",
+        "math_checks: support_and_gauge"
+      ]
+    },
+    {
+      "id": "geometry",
+      "title": "dose的欧氏长度不等于概率扰动",
+      "status": "精确KL式与局部二阶式已验证",
+      "paragraphs": [
+        "在全词表上把候选外增量扩展为零，r=q·exp(δ)/Z。KL(q‖r)由log-partition函数给出，其零点Hessian是softmax Fisher矩阵。",
+        "δ_I=C_I r_coeff时，局部度量为G(q)=C_Iᵀ[diag(q_I)−q_Iq_Iᵀ]C_I。这里q_I没有局部重归一化，因为候选外质量仍影响完整分布。相同dose和hidden范数会随q与方向不同产生不同分布扰动。",
+        "这说明固定0.8的系数球不是KL或TV信赖域，但并不证明应该马上加Fisher归一化。二阶式仅适合小步，G可能病态，精确KL与greedy决策面又不同。先测量，不能把推导直接当作部署方案。"
+      ],
+      "equations": [
+        "KL(q‖r)=log E_q[exp δ]−E_q[δ]",
+        "KL(q‖r)=½ δᵀ(diag(q)−qqᵀ)δ+O(‖δ‖³)",
+        "≈½(sa)² dᵀ G(q)d,  G(q)=C_Iᵀ(diag(q_I)−q_Iq_Iᵀ)C_I."
+      ],
+      "evidence": [
+        "math_checks: candidate_Fisher_geometry"
+      ]
+    },
+    {
+      "id": "objective",
+      "title": "OUTPUT、真实接受长度与greedy不是同一个目标",
+      "status": "代码、推导及可复现反例均支持",
+      "paragraphs": [
+        "固定一个真实到达的前缀，T1标准拒绝采样的单步接受概率α=Σmin(p,r)是精确式。代码在固定答案前缀上计算各步α，再求cumprod的平均；该量是有意义的前缀加权代理。",
+        "但真实到达后续步骤的前缀由此前的proposal与接受事件共同选择。第一步存活token的条件分布是min(p,r)/α，而不是一般的p或原训练答案分布。完整期望必须对存活路径求和；即便训练前缀理想地来自p，固定路径的overlap乘积平均也不一般等于真实期望。",
+        "已用实际output_loss函数验证二步反例：p1=(.9,.1)，r1=(.1,.9)；第一token为0时第二步α=1，为1时α=.2。真实第二步存活概率=.12，teacher目标给出=.184；归一化接受草稿数分别=.16与=.192。这个反例证明不等价，不证明代理无用，也不证明它必然高估所有真实状态。",
+        "对OUTPUT单步梯度，min分支按r_v<p_v分区；这与KL的r−p梯度不同。首位置权重较高的设计有合理性，但不能保证T0排序约束，也不能由论文的i.i.d.平均接受率近似推导出此teacher损失精确。",
+        "T0只由argmax及平局规则决定。反例p=(.40,.35,.25)，r_before=(.41,.20,.39)，r_after=(.37,.38,.25)：overlap从.85升到.97，预测却从正确token0变为错误token1。",
+        "正式native acceptance length包含bonus token；以下L_acc仅计接受的草稿token。理想未截断周期可加1，实际EOS/长度截断及服务调度仍需按native计数。"
+      ],
+      "equations": [
+        "α_j(x_<j)=Σ_v min[p_j(v|x_<j),r_j(v|x_<j)]",
+        "L_OUTPUT=1−(1/L)Σ_k ∏_{j≤k} α_j(y_<j)",
+        "S_k=Σ_{x_1:k} ∏_{j≤k} min[p_j(x_j|x_<j),r_j(x_j|x_<j)]",
+        "E[L_acc]=Σ_k S_k",
+        "∇_{z_j}L_OUTPUT=−w_j r_j⊙(b_j−〈r_j,b_j〉1), b_j(v)=1[r_j(v)<p_j(v)]",
+        "w_j=(1/L)Σ_{k≥j}∏_{t≤k,t≠j}α_t  （无soft反馈且teacher前驱固定；min相等处用实现的次梯度）",
+        "greedy严格获胜需 z(b)>z(v) 对所有v≠b；等号需实际tie-breaking。"
+      ],
+      "evidence": [
+        "model.py:108–110",
+        "repair/run.py:106–109",
+        "Leviathan2023",
+        "math_checks: OUTPUT_not_exact_expected_acceptance",
+        "math_checks: overlap_improves_while_greedy_worsens",
+        "math_checks: OUTPUT_analytic_gradient"
+      ]
+    },
+    {
+      "id": "papers",
+      "title": "论文到底支持什么，不支持什么",
+      "status": "已核对原始论文与官方实现",
+      "paragraphs": [
+        "DSpark：一阶转移的低秩因子化是明确假设；其RNN变体扩展到更早历史。训练包含CE、TV和confidence损失，并联合训练backbone与顺序模块。不能把它的增益全部归因于Markov层，更不能把其目标视作我们的OUTPUT。",
+        "DFlash-2：selector是上下文门控双线性相容性；动态短卷积是另一个改变backbone的机制。官方selector代码在TopK候选上采样，并没有将显式q读入增量。我们保持全词表proposal及显式q要求，无法直接复制整个协议。低秩双线性与当前低秩输出均是连续空间方法，“更连续”不能构成选择理由。",
+        "Domino：GRU提供前缀记忆，再做低秩残差。它提供了“信息范围→状态结构”的对应关系。teacher forcing保留匹配标签有合理性，但不等于teacher前缀分布就是T1存活前缀分布。其backbone curriculum面向联合训练的shortcut问题，不应机械搬到冻结DFlash。",
+        "PUNT与Tensor-Train：共同提醒我们独立边缘预测不能代替联合建模。它们分别改变并行更新选择或联合表示，并不证明对现有头重复修正或增加一个层就有效。",
+        "Leviathan：固定前缀的重叠接受率是精确结论；其简化周期速度分析有i.i.d.与成本假设。不能将这些近似省略后，声称teacher前缀cumprod精确优化真实吞吐。"
+      ],
+      "equations": [
+        "DSpark Markov: B(a,v)=W1[a]·W2[:,v]",
+        "DFlash-2: S_j(a,v)=u_j(v)+〈A(a)⊙H(h_j),B(v)〉",
+        "Domino: S_j=causal_encoder(x_<j), δ_j=W2 SiLU(W1[h_j;S_j])."
+      ],
+      "evidence": [
+        "DSpark",
+        "DFlash2",
+        "DFlash2_code",
+        "Domino",
+        "PUNT",
+        "Tensor-Train",
+        "Leviathan2023"
+      ]
+    },
+    {
+      "id": "evidence",
+      "title": "对已有实验结论的约束",
+      "status": "证据复核；不新增真实性能测量",
+      "paragraphs": [
+        "前驱干预的正响应表明已有头学到部分条件更新，并不能识别它是否主要受信息、输出几何、有限数据或目标偏差限制。候选中心化余弦只覆盖排序分量；4个前驱的中心化矩阵秩至多3，不能据此选择模型rank。",
+        "原前驱96位置里40个RAW错误：10修复，12相对原赢家未增分，8增分不足，10越过原赢家但输给第三候选；另外5个正确被误修。这是观测分类，不能直接将每类归因到direction/dose的某个参数。",
+        "完整序列与截断重算有1/96个目标top1不同；修订诊断以同长度截断前缀成对比较，96组重复请求完全一致。所有结论仍限于8条研究prompt。",
+        "部分reveal实验在原冻结DFlash训练模式之外，变差不能用于估计更早历史的条件互信息。现有split/merged和层数消融也不能单独辨别输入信息不足与训练目标偏差。",
+        "C1/C40改善与损失下降均为已有事实，但本审计没有重新测native，因此不声称新理论已经带来性能提升。"
+      ],
+      "equations": [],
+      "evidence": [
+        "predecessor_response/findings.json",
+        "extra_head_audit/REPORT.md"
+      ]
+    },
+    {
+      "id": "decision",
+      "title": "下一步：先检验一个机制，不启动结构搜索",
+      "status": "待验证方案；本轮未执行",
+      "paragraphs": [
+        "目前不能从数学或现有证据唯一选出新头。继续保留hidden、显式q、实际lag-1、Top256修复、全词表proposal和现有OUTPUT；未授权更改这些实现。",
+        "优先问题：错误是在现有输出几何中不可修，还是实际映射/目标没有学到可行更新？下一项应是约束可达性审计：对同一真实状态比较完整C系数球、冻结checkpoint实际输出包络S内的系数球、以及当前direction只改变dose的射线。目标标签只用于诊断上界，绝不能部署。",
+        "对于目标赢家b在I内，可以将全部候选的greedy约束写成线性不等式，并把候选外合并为最高原logit的一条约束。最小范数可行解检验是否超过0.8‖h‖；需要可靠求解与证书，不能把某个构造失败等同于不可行。S内成功仍只排除部分几何限制，未满足实际LayerNorm流形与输入映射。",
+        "若完整C可行而S不可行，才有理由研究输出参数化；若S有充足可行余量而实际失败，应先研究学习映射与OUTPUT/排序的一致性。没有证据前，不从上述任一情况直接跳到增加双线性头。",
+        "另一个独立的信息问题是：保持lag-1相同，仅改变更早块内历史，重算对应目标分布。如果差异显著，则同输入头存在条件信息下界。该诊断必须匹配合法前缀并量化概率覆盖；它只检验必要信息，不自动授权加入更早前缀输入。",
+        "结构选择最终需要指定：近似哪个概率项、依赖范围、参数约束、可证伪预测、训练目标为何合适，以及顺序计算成本。等这些条件齐备，再提出单一结构变更及受控验证。"
+      ],
+      "equations": [
+        "令S为真实direction线性包络的正交基，r=Sη。对v∈I且v≠b: (C_b−C_v)Sη ≥ u_v−u_b+ε",
+        "对v∉I（b∈I）: C_b Sη ≥ max_{v∉I}u_v−u_b+ε",
+        "min ‖η‖₂ subject to上述约束；与0.8‖h‖比较。ε是诊断严格margin，不是新训练损失。"
+      ],
+      "evidence": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "Leviathan2023",
+      "url": "https://proceedings.mlr.press/v202/leviathan23a/leviathan23a.pdf",
+      "locator": "§3.1–3.3, Appendix A.1",
+      "note": "固定前缀接受概率与存活token质量；速度分析的i.i.d.假设。"
+    },
+    {
+      "id": "DSpark",
+      "url": "https://arxiv.org/html/2607.05147v1",
+      "locator": "§3.1, §3.3",
+      "note": "Markov/RNN参数化与联合CE/TV/confidence训练。"
+    },
+    {
+      "id": "DFlash2",
+      "url": "https://inco.ai/blog/dflash2/",
+      "locator": "A Lightweight Path Selector; A Lightweight Local Convolution",
+      "note": "selector与backbone卷积为不同机制；该来源是官方技术说明。"
+    },
+    {
+      "id": "DFlash2_code",
+      "url": "https://raw.githubusercontent.com/z-lab/dflash/main/dflash/model.py",
+      "locator": "CandidateSelector lines482–510 at retrieval",
+      "note": "可变main分支，2026-10-01核对；不作为固定版本性能复现。"
+    },
+    {
+      "id": "Domino",
+      "url": "https://arxiv.org/html/2605.29707v1",
+      "locator": "§4.1.2, §4.2",
+      "note": "因果编码、低秩logits修复、teacher forcing与curriculum。"
+    },
+    {
+      "id": "PUNT",
+      "url": "https://arxiv.org/abs/2510.21961",
+      "locator": "abstract",
+      "note": "仅使用其条件独立与置信度区分的概念，不借用未核实的具体定理。"
+    },
+    {
+      "id": "Tensor-Train",
+      "url": "https://arxiv.org/abs/2607.03788v2",
+      "locator": "abstract",
+      "note": "联合分布表示针对并行化偏差；未评价其工程适配。"
+    }
+  ],
+  "code_and_evidence_sha256": {
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/ablation_v1/nosoft_2layer_v1/runtime_bundle/repair/model.py": "a350a84243dda1fd7b1e298fd5943c0ca417150feed41673ef33b040c91f7bf8",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/ablation_v1/nosoft_2layer_v1/runtime_bundle/repair/run.py": "5a81c456c10bdd83d6165521cb65e41d05c86ed3ecd652a8419781bf945f7fef",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/ablation_v1/nosoft_2layer_v1/runtime_bundle/repair/native_launch.py": "8eddc88306e3dc2dc6aa66d1d671824f73d2ad8d72ec70fc2e737c51bd9e7c47",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/ablation_v1/nosoft_2layer_v1/runtime_bundle/runtime/components.py": "8483bb55ca0e03561acdb53d99c0bb8864d7a6d8fb2d30500b1349d7fe175cfd",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/ablation_v1/nosoft_2layer_v1/runtime_bundle/runtime/precision.py": "18176736f13da730a150106cb07b4a40d82caa36d32587dac094de154ec0a6d0",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/ablation_v1/nosoft_merged_head_v1/runtime_bundle/repair/model.py": "75474c9fdb4b784b31582c0a3380f77d938ea00e6d9ee9410401ee18f5e5cd46",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/provenance/basis/preregistration.json": "f0c067845268a3b93cc1a2e1f45f2bbced30a43da1a7a2258f2aaf358ca1216b",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_predecessor_response_gpu5_20261001_attempt2/findings.json": "876230c4de713502f7a7e4295dfaa94373f1f9d6b98e1906ea73a2717a5836a4",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/extra_head_audit_v1/REPORT.md": "565ee87f9980957a21b95dba22555b0336760e7b8342b6847ab7850f3d7311aa"
+  },
+  "math_checks": {
+    "status": "passed",
+    "device": "cpu",
+    "new_training": false,
+    "gpu_jobs_started": 0,
+    "checks": {
+      "density_ratio_and_three_term_decomposition": {
+        "passed": true,
+        "max_error": 0.0
+      },
+      "parallel_KL_decomposition_and_Markov_projection": {
+        "passed": true,
+        "parallel_KL": 0.22215332331766918,
+        "total_correlation": 0.027761842719276997,
+        "sum_marginal_KL": 0.19439148059839229,
+        "optimal_Markov_KL": 0.008452456042982729,
+        "remaining_conditional_mutual_information": 0.00845245604298274,
+        "scope": "exact finite-distribution identities; no claim these values measure real DFlash"
+      },
+      "lag1_information_limit": {
+        "passed": true,
+        "two_matching_lag1_targets": [
+          [
+            0.9,
+            0.1
+          ],
+          [
+            0.1,
+            0.9
+          ]
+        ],
+        "minimum_mean_forward_KL": 0.36806420716849714,
+        "interpretation": "no deterministic identical-input repair can match both targets; this is a constructed theorem witness, not measured real-data CMI"
+      },
+      "OUTPUT_not_exact_expected_acceptance": {
+        "passed": true,
+        "first_survival": 0.2,
+        "second_survival_exact": 0.12000000000000002,
+        "second_survival_teacher_product": 0.18400000000000002,
+        "normalized_expected_accepted_draft_count": 0.16000000000000003,
+        "real_code_teacher_objective_score": 0.19199998974800112,
+        "bonus_token_excluded": true
+      },
+      "overlap_improves_while_greedy_worsens": {
+        "passed": true,
+        "target": [
+          0.4,
+          0.35,
+          0.25
+        ],
+        "before": [
+          0.41,
+          0.2,
+          0.39
+        ],
+        "after": [
+          0.37,
+          0.38,
+          0.25
+        ],
+        "overlap_before": 0.8500000000000001,
+        "overlap_after": 0.97
+      },
+      "basis_direction_is_negative_forward_KL_hidden_gradient": {
+        "passed": true,
+        "error": 2.220446049250313e-16
+      },
+      "OUTPUT_analytic_gradient": {
+        "passed": true,
+        "max_error": 6.938893903907228e-18,
+        "not_equal_to_KL_gradient": true
+      },
+      "candidate_Fisher_geometry": {
+        "passed": true,
+        "hessian_error": 1.1102230246251565e-16,
+        "small_step_exact_KL": 2.6876549201612036e-07,
+        "quadratic_KL": 2.6882156101499163e-07
+      },
+      "support_and_gauge": {
+        "passed": true,
+        "outside_odds_preserved": true,
+        "outside_probabilities_change": true,
+        "candidate_only_constant_is_not_global_gauge": true
+      },
+      "q_moment_not_necessarily_lossy_with_fixed_ids": {
+        "passed": true,
+        "rank": 3,
+        "input_dimension": 3,
+        "output_dimension": 5,
+        "recovery_error": 1.3877787807814457e-16
+      },
+      "actual_checkpoint_output_span": {
+        "passed": true,
+        "checkpoint_sha256": "999c7f35ac5c10d7d4cc526f1c4f366fdb2c71e902a57f144afaf222ab75b035",
+        "direction_weight_shape": [
+          512,
+          256
+        ],
+        "direction_matrix_rank": 256,
+        "final_LN_affine_direction_span_rank": 256,
+        "rank_threshold": 1e-09,
+        "smallest_augmented_singular_values": [
+          0.06827269486986222,
+          0.020279441586217327,
+          6.532787446710905e-17
+        ],
+        "rank_bound": 256,
+        "interpretation": "relaxed C_I full-rank oracle did not enforce this learned span, LN manifold or input mapping; BF16 introduces additional rounding"
+      },
+      "basis_orthogonality_after_BF16": {
+        "passed": true,
+        "shape": [
+          512,
+          4096
+        ],
+        "stored_dtype": "torch.float32",
+        "gram_eigenvalue_min": 0.9983237127620777,
+        "gram_eigenvalue_max": 1.0016535621975697,
+        "max_gram_entry_error": 0.0002956371728961571
+      }
+    },
+    "check_count": 12
+  },
+  "limitations": [
+    "KL模型族结论不等于TV/greedy/吞吐优化定理",
+    "真实数据中条件互信息、实际输出可行率、q编码Jacobian尚未测量",
+    "所有精确实数结论用于解释；运行BF16和argmax平局另按实际实现"
+  ],
+  "next_structure_training": "not started; previous extra-head sweep is deferred"
+}

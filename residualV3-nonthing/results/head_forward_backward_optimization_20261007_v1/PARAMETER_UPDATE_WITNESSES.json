@@ -1,0 +1,675 @@
+{
+  "status": "passed",
+  "actual_parameter_updates_verified": true,
+  "variants": {
+    "baseline": {
+      "joint": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_forward_backward_optimization_20261007_v1/baseline/joint/joint_pilot_weights.safetensors",
+        "bytes": 2105978602,
+        "body_bf16_update_witnesses": {
+          "fc.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 976,
+            "max_absolute_change": 0.000335693359375
+          },
+          "layers.0.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 983,
+            "max_absolute_change": 0.007568359375
+          },
+          "layers.1.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 994,
+            "max_absolute_change": 0.0074462890625
+          },
+          "layers.2.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 992,
+            "max_absolute_change": 0.0068359375
+          },
+          "layers.3.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 999,
+            "max_absolute_change": 0.008056640625
+          },
+          "layers.4.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 987,
+            "max_absolute_change": 0.007080078125
+          }
+        },
+        "head_bf16_updates": {
+          "hidden_proj.0.weight": {
+            "values": 4096,
+            "changed_values": 1055,
+            "max_absolute_change": 0.0078125
+          },
+          "hidden_proj.0.bias": {
+            "values": 4096,
+            "changed_values": 4096,
+            "max_absolute_change": 0.004486083984375
+          },
+          "hidden_proj.1.weight": {
+            "values": 1048576,
+            "changed_values": 1037862,
+            "max_absolute_change": 0.006203651428222656
+          },
+          "hidden_proj.1.bias": {
+            "values": 256,
+            "changed_values": 252,
+            "max_absolute_change": 0.00274658203125
+          },
+          "previous_proj.0.weight": {
+            "values": 4096,
+            "changed_values": 736,
+            "max_absolute_change": 0.0078125
+          },
+          "previous_proj.0.bias": {
+            "values": 4096,
+            "changed_values": 4096,
+            "max_absolute_change": 0.0038909912109375
+          },
+          "previous_proj.1.weight": {
+            "values": 1048576,
+            "changed_values": 1041870,
+            "max_absolute_change": 0.0070133209228515625
+          },
+          "previous_proj.1.bias": {
+            "values": 256,
+            "changed_values": 249,
+            "max_absolute_change": 0.00311279296875
+          },
+          "q_proj.0.weight": {
+            "values": 512,
+            "changed_values": 238,
+            "max_absolute_change": 0.00390625
+          },
+          "q_proj.0.bias": {
+            "values": 512,
+            "changed_values": 512,
+            "max_absolute_change": 0.003631591796875
+          },
+          "q_proj.1.weight": {
+            "values": 131072,
+            "changed_values": 126806,
+            "max_absolute_change": 0.006103515625
+          },
+          "q_proj.1.bias": {
+            "values": 256,
+            "changed_values": 247,
+            "max_absolute_change": 0.00341796875
+          },
+          "fusion.0.weight": {
+            "values": 768,
+            "changed_values": 401,
+            "max_absolute_change": 0.0078125
+          },
+          "fusion.0.bias": {
+            "values": 768,
+            "changed_values": 768,
+            "max_absolute_change": 0.0034942626953125
+          },
+          "fusion.1.weight": {
+            "values": 196608,
+            "changed_values": 192234,
+            "max_absolute_change": 0.0067138671875
+          },
+          "fusion.1.bias": {
+            "values": 256,
+            "changed_values": 250,
+            "max_absolute_change": 0.003173828125
+          },
+          "blocks.0.norm.weight": {
+            "values": 256,
+            "changed_values": 42,
+            "max_absolute_change": 0.0078125
+          },
+          "blocks.0.norm.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.00445556640625
+          },
+          "blocks.0.up.weight": {
+            "values": 393216,
+            "changed_values": 380678,
+            "max_absolute_change": 0.006591796875
+          },
+          "blocks.0.up.bias": {
+            "values": 1536,
+            "changed_values": 1485,
+            "max_absolute_change": 0.005859375
+          },
+          "blocks.0.down.weight": {
+            "values": 196608,
+            "changed_values": 192731,
+            "max_absolute_change": 0.0069580078125
+          },
+          "blocks.0.down.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.0037689208984375
+          },
+          "blocks.1.norm.weight": {
+            "values": 256,
+            "changed_values": 36,
+            "max_absolute_change": 0.0078125
+          },
+          "blocks.1.norm.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.004791259765625
+          },
+          "blocks.1.up.weight": {
+            "values": 393216,
+            "changed_values": 381204,
+            "max_absolute_change": 0.0072021484375
+          },
+          "blocks.1.up.bias": {
+            "values": 1536,
+            "changed_values": 1497,
+            "max_absolute_change": 0.005615234375
+          },
+          "blocks.1.down.weight": {
+            "values": 196608,
+            "changed_values": 192772,
+            "max_absolute_change": 0.006591796875
+          },
+          "blocks.1.down.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.00384521484375
+          },
+          "blocks.2.norm.weight": {
+            "values": 256,
+            "changed_values": 32,
+            "max_absolute_change": 0.0078125
+          },
+          "blocks.2.norm.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.004425048828125
+          },
+          "blocks.2.up.weight": {
+            "values": 393216,
+            "changed_values": 381051,
+            "max_absolute_change": 0.0068359375
+          },
+          "blocks.2.up.bias": {
+            "values": 1536,
+            "changed_values": 1471,
+            "max_absolute_change": 0.005859375
+          },
+          "blocks.2.down.weight": {
+            "values": 196608,
+            "changed_values": 192675,
+            "max_absolute_change": 0.006591796875
+          },
+          "blocks.2.down.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.00384521484375
+          },
+          "output_norm.weight": {
+            "values": 256,
+            "changed_values": 58,
+            "max_absolute_change": 0.0078125
+          },
+          "output_norm.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.005889892578125
+          },
+          "direction_head.weight": {
+            "values": 131072,
+            "changed_values": 129850,
+            "max_absolute_change": 0.0069580078125
+          },
+          "direction_head.bias": {
+            "values": 512,
+            "changed_values": 512,
+            "max_absolute_change": 0.00421142578125
+          },
+          "dose_head.weight": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.006805419921875
+          },
+          "dose_head.bias": {
+            "values": 1,
+            "changed_values": 0,
+            "max_absolute_change": 0.0
+          }
+        }
+      },
+      "body": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_forward_backward_optimization_20261007_v1/baseline/body/joint_pilot_weights.safetensors",
+        "bytes": 2097267648,
+        "body_bf16_update_witnesses": {
+          "fc.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 962,
+            "max_absolute_change": 0.0002899169921875
+          },
+          "layers.0.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 984,
+            "max_absolute_change": 0.00750732421875
+          },
+          "layers.1.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 998,
+            "max_absolute_change": 0.009033203125
+          },
+          "layers.2.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 994,
+            "max_absolute_change": 0.008056640625
+          },
+          "layers.3.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 984,
+            "max_absolute_change": 0.007568359375
+          },
+          "layers.4.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 987,
+            "max_absolute_change": 0.0078125
+          }
+        },
+        "head_bf16_updates": {}
+      }
+    },
+    "optimized": {
+      "joint": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_forward_backward_optimization_20261007_v1/optimized/joint/joint_pilot_weights.safetensors",
+        "bytes": 2105978602,
+        "body_bf16_update_witnesses": {
+          "fc.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 974,
+            "max_absolute_change": 0.00031280517578125
+          },
+          "layers.0.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 970,
+            "max_absolute_change": 0.00738525390625
+          },
+          "layers.1.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 993,
+            "max_absolute_change": 0.0079345703125
+          },
+          "layers.2.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 991,
+            "max_absolute_change": 0.00732421875
+          },
+          "layers.3.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 995,
+            "max_absolute_change": 0.00830078125
+          },
+          "layers.4.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 993,
+            "max_absolute_change": 0.00732421875
+          }
+        },
+        "head_bf16_updates": {
+          "hidden_proj.0.weight": {
+            "values": 4096,
+            "changed_values": 1067,
+            "max_absolute_change": 0.0078125
+          },
+          "hidden_proj.0.bias": {
+            "values": 4096,
+            "changed_values": 4096,
+            "max_absolute_change": 0.00408935546875
+          },
+          "hidden_proj.1.weight": {
+            "values": 1048576,
+            "changed_values": 1037760,
+            "max_absolute_change": 0.00626373291015625
+          },
+          "hidden_proj.1.bias": {
+            "values": 256,
+            "changed_values": 248,
+            "max_absolute_change": 0.002685546875
+          },
+          "previous_proj.0.weight": {
+            "values": 4096,
+            "changed_values": 745,
+            "max_absolute_change": 0.0078125
+          },
+          "previous_proj.0.bias": {
+            "values": 4096,
+            "changed_values": 4096,
+            "max_absolute_change": 0.00384521484375
+          },
+          "previous_proj.1.weight": {
+            "values": 1048576,
+            "changed_values": 1041888,
+            "max_absolute_change": 0.0069580078125
+          },
+          "previous_proj.1.bias": {
+            "values": 256,
+            "changed_values": 255,
+            "max_absolute_change": 0.00323486328125
+          },
+          "q_proj.0.weight": {
+            "values": 512,
+            "changed_values": 242,
+            "max_absolute_change": 0.00390625
+          },
+          "q_proj.0.bias": {
+            "values": 512,
+            "changed_values": 512,
+            "max_absolute_change": 0.0037384033203125
+          },
+          "q_proj.1.weight": {
+            "values": 131072,
+            "changed_values": 126803,
+            "max_absolute_change": 0.006103515625
+          },
+          "q_proj.1.bias": {
+            "values": 256,
+            "changed_values": 247,
+            "max_absolute_change": 0.003173828125
+          },
+          "fusion.0.weight": {
+            "values": 768,
+            "changed_values": 404,
+            "max_absolute_change": 0.0078125
+          },
+          "fusion.0.bias": {
+            "values": 768,
+            "changed_values": 768,
+            "max_absolute_change": 0.0034637451171875
+          },
+          "fusion.1.weight": {
+            "values": 196608,
+            "changed_values": 192263,
+            "max_absolute_change": 0.0068359375
+          },
+          "fusion.1.bias": {
+            "values": 256,
+            "changed_values": 250,
+            "max_absolute_change": 0.0030517578125
+          },
+          "blocks.0.norm.weight": {
+            "values": 256,
+            "changed_values": 44,
+            "max_absolute_change": 0.0078125
+          },
+          "blocks.0.norm.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.0042724609375
+          },
+          "blocks.0.up.weight": {
+            "values": 393216,
+            "changed_values": 380774,
+            "max_absolute_change": 0.00634765625
+          },
+          "blocks.0.up.bias": {
+            "values": 1536,
+            "changed_values": 1491,
+            "max_absolute_change": 0.005859375
+          },
+          "blocks.0.down.weight": {
+            "values": 196608,
+            "changed_values": 192765,
+            "max_absolute_change": 0.007080078125
+          },
+          "blocks.0.down.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.003631591796875
+          },
+          "blocks.1.norm.weight": {
+            "values": 256,
+            "changed_values": 37,
+            "max_absolute_change": 0.0078125
+          },
+          "blocks.1.norm.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.004974365234375
+          },
+          "blocks.1.up.weight": {
+            "values": 393216,
+            "changed_values": 381267,
+            "max_absolute_change": 0.0072021484375
+          },
+          "blocks.1.up.bias": {
+            "values": 1536,
+            "changed_values": 1486,
+            "max_absolute_change": 0.0054931640625
+          },
+          "blocks.1.down.weight": {
+            "values": 196608,
+            "changed_values": 192904,
+            "max_absolute_change": 0.006591796875
+          },
+          "blocks.1.down.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.0038299560546875
+          },
+          "blocks.2.norm.weight": {
+            "values": 256,
+            "changed_values": 30,
+            "max_absolute_change": 0.0078125
+          },
+          "blocks.2.norm.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.004425048828125
+          },
+          "blocks.2.up.weight": {
+            "values": 393216,
+            "changed_values": 380962,
+            "max_absolute_change": 0.006591796875
+          },
+          "blocks.2.up.bias": {
+            "values": 1536,
+            "changed_values": 1474,
+            "max_absolute_change": 0.005615234375
+          },
+          "blocks.2.down.weight": {
+            "values": 196608,
+            "changed_values": 192722,
+            "max_absolute_change": 0.00653076171875
+          },
+          "blocks.2.down.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.00390625
+          },
+          "output_norm.weight": {
+            "values": 256,
+            "changed_values": 58,
+            "max_absolute_change": 0.0078125
+          },
+          "output_norm.bias": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.005584716796875
+          },
+          "direction_head.weight": {
+            "values": 131072,
+            "changed_values": 129824,
+            "max_absolute_change": 0.006927490234375
+          },
+          "direction_head.bias": {
+            "values": 512,
+            "changed_values": 512,
+            "max_absolute_change": 0.00396728515625
+          },
+          "dose_head.weight": {
+            "values": 256,
+            "changed_values": 256,
+            "max_absolute_change": 0.0067138671875
+          },
+          "dose_head.bias": {
+            "values": 1,
+            "changed_values": 0,
+            "max_absolute_change": 0.0
+          }
+        }
+      },
+      "body": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_forward_backward_optimization_20261007_v1/optimized/body/joint_pilot_weights.safetensors",
+        "bytes": 2097267648,
+        "body_bf16_update_witnesses": {
+          "fc.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 968,
+            "max_absolute_change": 0.0003204345703125
+          },
+          "layers.0.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 987,
+            "max_absolute_change": 0.00634765625
+          },
+          "layers.1.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 986,
+            "max_absolute_change": 0.0074462890625
+          },
+          "layers.2.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 985,
+            "max_absolute_change": 0.007904052734375
+          },
+          "layers.3.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 996,
+            "max_absolute_change": 0.0081787109375
+          },
+          "layers.4.self_attn.q_proj.weight": {
+            "sample_shape": [
+              32,
+              32
+            ],
+            "changed_values": 990,
+            "max_absolute_change": 0.0067138671875
+          }
+        },
+        "head_bf16_updates": {}
+      }
+    }
+  },
+  "saved_head_cross_variant_bitwise_equal": {
+    "head.blocks.0.down.bias": false,
+    "head.blocks.0.down.weight": false,
+    "head.blocks.0.norm.bias": false,
+    "head.blocks.0.norm.weight": false,
+    "head.blocks.0.up.bias": false,
+    "head.blocks.0.up.weight": false,
+    "head.blocks.1.down.bias": false,
+    "head.blocks.1.down.weight": false,
+    "head.blocks.1.norm.bias": false,
+    "head.blocks.1.norm.weight": false,
+    "head.blocks.1.up.bias": false,
+    "head.blocks.1.up.weight": false,
+    "head.blocks.2.down.bias": false,
+    "head.blocks.2.down.weight": false,
+    "head.blocks.2.norm.bias": false,
+    "head.blocks.2.norm.weight": false,
+    "head.blocks.2.up.bias": false,
+    "head.blocks.2.up.weight": false,
+    "head.direction_head.bias": false,
+    "head.direction_head.weight": false,
+    "head.dose_head.bias": true,
+    "head.dose_head.weight": false,
+    "head.fusion.0.bias": false,
+    "head.fusion.0.weight": false,
+    "head.fusion.1.bias": false,
+    "head.fusion.1.weight": false,
+    "head.hidden_proj.0.bias": false,
+    "head.hidden_proj.0.weight": false,
+    "head.hidden_proj.1.bias": false,
+    "head.hidden_proj.1.weight": false,
+    "head.output_norm.bias": false,
+    "head.output_norm.weight": false,
+    "head.previous_proj.0.bias": false,
+    "head.previous_proj.0.weight": false,
+    "head.previous_proj.1.bias": false,
+    "head.previous_proj.1.weight": false,
+    "head.q_proj.0.bias": false,
+    "head.q_proj.0.weight": false,
+    "head.q_proj.1.bias": false,
+    "head.q_proj.1.weight": false
+  },
+  "scope": "actual BF16 updates in fc and all5layers sampled; every saved head tensor checked; not full-backbone equivalence"
+}

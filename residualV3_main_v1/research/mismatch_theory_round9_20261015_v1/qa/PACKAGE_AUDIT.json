@@ -1,0 +1,35 @@
+{
+  "schema": "mismatch_r9_package_audit_v1",
+  "timestamp_utc": "2026-10-15T14:12:38.510630+00:00",
+  "passed": true,
+  "required_files": [
+    "README_CN.md",
+    "THEORY_PLAN_CN.md",
+    "EXECUTION_GUIDE_CN.md",
+    "START_PROMPT_CN.md",
+    "sources/READING_GUIDE_CN.md",
+    "protocol/DESIGN_SPEC.json",
+    "qa/CORE_QUESTION_REVIEW_CN.md",
+    "qa/FEASIBILITY_REVIEW_CN.md",
+    "qa/INPUT_AUDIT.json"
+  ],
+  "missing_files": [],
+  "json_parse_checked": [
+    "protocol/DESIGN_SPEC.json",
+    "qa/INPUT_AUDIT.json",
+    "qa/MATH_FEASIBILITY.json",
+    "qa/METADATA_FEASIBILITY.json",
+    "AUTHORING_COMPLETION.json"
+  ],
+  "markdown_local_links_checked": 13,
+  "broken_local_links": [],
+  "python_check": "AST parse only; not rerun",
+  "review_scope": "design only; execution and scientific results not certified",
+  "post_review_clarifications": [
+    "explicit source BF16 uint16 bit-pattern decoding",
+    "compact reconstructible witness storage",
+    "add feasibility review to prompt reading list",
+    "record actual passed design-review state"
+  ],
+  "no_scientific_execution": true
+}

@@ -1,0 +1,197 @@
+{
+  "schema": "mechanism_discovery_design_v1",
+  "stage": "retrospective_discovery_and_elimination",
+  "question": "明确场景下，哪个具体近似可能造成哪一种错误，哪些观测能区分竞争解释？",
+  "preselected_mechanism": null,
+  "prior_output_adaptation_priority": "withdrawn",
+  "authorized_execution": [
+    "primary_source_review",
+    "read_only_archive_analysis",
+    "new_run_cpu_code",
+    "candidate_diagnostics",
+    "closure"
+  ],
+  "prohibited": [
+    "gpu",
+    "model_loading",
+    "training",
+    "new_sampling",
+    "architecture_changes",
+    "environment_changes",
+    "native_tps",
+    "old_stage_restart",
+    "old_asset_writes"
+  ],
+  "input_run": "residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8",
+  "panel": {
+    "directory": "data/fresh_test",
+    "status": "previously_exposed",
+    "sources": [
+      "P",
+      "D",
+      "F"
+    ],
+    "pool": "fresh_eval",
+    "positions": [
+      1,
+      2,
+      3,
+      8,
+      15
+    ],
+    "raw_bodies": [
+      "D",
+      "J"
+    ],
+    "prompt_count_snapshot": 36,
+    "C_count_snapshot": 69,
+    "source_position_records_snapshot": 3312,
+    "expanded_result_rows_snapshot": 99360,
+    "unique_eval_target_rows_snapshot": 12157,
+    "unique_selected_F_head_rows_snapshot": 2611,
+    "retain_natural_H_frequency": true,
+    "filter_by_head_outcome": false,
+    "filter_by_reached": false,
+    "filter_by_fit_match": false,
+    "filter_by_novel": false,
+    "legal_current_EOS": "retain",
+    "post_EOS_invalid": "exclude_and_account",
+    "pool_semantic": "eval"
+  },
+  "probabilities": {
+    "bits": "uint16 BF16",
+    "decode": "uint32 left shift 16, view float32, convert float64",
+    "normalize": "full_vocabulary_stable_softmax",
+    "sum_tolerance": 1e-12,
+    "top_ties": "ascending_token_id",
+    "entropy_unit": "nats",
+    "margin": "largest_probability_minus_second_largest",
+    "top_k": [
+      16,
+      256
+    ]
+  },
+  "fixed_analyses": {
+    "A": [
+      "TV",
+      "top1_agreement",
+      "p_and_q_at_both_top1_tokens",
+      "top2_probability_margins",
+      "entropy",
+      "target_mass_in_raw_topK",
+      "target_top1_in_raw_topK",
+      "top1_group_weighted_TV_contributions"
+    ],
+    "B": [
+      "TV(mean_p,argmax_frequency)",
+      "TV(q,mean_p)",
+      "TV(q,argmax_frequency)",
+      "TV(q,argmax_frequency)-TV(q,mean_p)"
+    ],
+    "C": {
+      "source": "F",
+      "raw": "J",
+      "pairing": "same_C_and_eval_record_target_row_F_head_row",
+      "metrics": [
+        "coverage",
+        "TV_raw",
+        "TV_head",
+        "paired_TV_gain",
+        "harm_rate"
+      ],
+      "harm_tolerance": 1e-07,
+      "scenes": "all_F_and_frozen_scene_in_out",
+      "may_select_candidate": false,
+      "may_count_as_source_D2": false,
+      "read_after_final_selection_lock": true,
+      "selection_file": "protocol/FINAL_SELECTION.json"
+    }
+  },
+  "aggregation": [
+    "natural_slots_within_C",
+    "equal_valid_C_within_prompt",
+    "equal_prompts_within_domain",
+    "equal_domains"
+  ],
+  "sensitivity": "unique_H_equal_within_C_only",
+  "independent_unit": "prompt",
+  "confirmatory_claims": false,
+  "candidates": {
+    "max": 3,
+    "extra_diagnostics_each": 2,
+    "extra_diagnostics_total": 6,
+    "D1": "necessary_prediction",
+    "D2": "competing_predictions_differ",
+    "freeze_before_new_diagnostic_results": true,
+    "missing_intervention": "unavailable_not_negative",
+    "max_selected": 1,
+    "cross_domain_screen": {
+      "domains_at_least": 2,
+      "defined_prompts_per_domain_at_least": 4,
+      "direction_fraction_per_domain_at_least": 0.6666666666666666,
+      "status": "exploratory_operational_not_significance"
+    },
+    "result_labels": [
+      "necessary_prediction_not_observed",
+      "novelty_covered_by_prior_work",
+      "data_cannot_distinguish",
+      "localized_lead",
+      "eligible_for_controlled_test"
+    ],
+    "D1_must_not_be_tautological": true,
+    "final_selection_before_head_results": true
+  },
+  "performance_gate": {
+    "contexts": [
+      "smallest_group_sha_C1",
+      "maximum_selected_eval_unique_target_rows_C_ties_by_group_sha_anchor"
+    ],
+    "deduplicate": true,
+    "benchmark": "full_A_B_and_sealed_C_scalar_extraction",
+    "extrapolation_safety_multiplier": 1.5,
+    "max_fraction_remaining_cpu": 0.8,
+    "failure": "partial_resource_limited_not_panel_change"
+  },
+  "resources_all_runs": {
+    "gpu_hours": 0,
+    "cpu_process_tree_hours": 6,
+    "new_disk_GiB": 8,
+    "own_peak_RSS_GiB": 16,
+    "numeric_workers": 1,
+    "numeric_library_threads": 1,
+    "diagnosed_technical_retries_per_stage": 2,
+    "copy_large_archives": false,
+    "watchdog_interval_seconds_max": 5
+  },
+  "literature": {
+    "extra_query_groups_max": 8,
+    "primary_sources_only_for_claims": true,
+    "source_failure": "novelty_unknown"
+  },
+  "future_controlled_test": {
+    "max": 1,
+    "status": "design_only_not_executed",
+    "required": [
+      "unit",
+      "intervention",
+      "control",
+      "matched_factors_and_confounds",
+      "single_primary_endpoint",
+      "minimal_distinguishable_effect_with_basis",
+      "competing_predictions",
+      "falsification",
+      "assets",
+      "cost_basis",
+      "stop_rule"
+    ]
+  },
+  "output_root": "residualV3_main_v1/research/mismatch_mechanism_discovery_20261016_v1/runs/<UTC>_mechanism_discovery",
+  "completion": {
+    "zero_candidates_can_complete": true,
+    "mandatory_analysis_missing": "partial",
+    "resource_limit": "partial_resource_limited",
+    "automatic_next_round": false,
+    "report_first_page_max_Chinese_characters": 600,
+    "cases_max": 6
+  }
+}

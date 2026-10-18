@@ -1,0 +1,12 @@
+{
+  "utc": "2026-09-30T10:14:08.185945+00:00",
+  "reason": "User requests GPU4 and GPU5 both train; defer all formal C1 until all training completes",
+  "paused_old_supervisor": 2736456,
+  "stopped_evaluator": 2862311,
+  "adopt_running_C_pipeline": 2855068,
+  "adopt_running_C_training": 2880360,
+  "preserve_completed_training": [
+    "A_full_3layer",
+    "B_no_hidden"
+  ]
+}

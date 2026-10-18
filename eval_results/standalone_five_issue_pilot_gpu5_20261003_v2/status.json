@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "training_and_native_evaluation_complete": true,
+  "report_recovered": true,
+  "native_logits_bitwise_gates_unchanged": true,
+  "fixed_state_hash_gates_unchanged": true,
+  "maximum_initial_overlap_reduction_delta": 1.1920928955078125e-07,
+  "scalar_tolerance": 3e-07,
+  "original_controller_exit_status": "/data/weijiahong/speculators-main-lora/eval_results/standalone_five_issue_pilot_gpu5_20261003_v2/controller_exit_status.json",
+  "frozen_report_sha256": "f77b8da111d289730c6cd8c3b9afa92f03ffcfe472ec5991bd58162442bd6446",
+  "recovery_source_sha256": "45ca694fd1b7d13c440f479834e432886185f1a8396f8bb47bb0316ab6ed2730",
+  "throughput_evidence": false
+}

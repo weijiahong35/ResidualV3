@@ -1,0 +1,16 @@
+{
+  "UTC": "2026-10-15T15:11:01.456491+00:00",
+  "status": "passed_before_resume",
+  "reason": "high-active dual-simplex performance bottleneck; same LP switched to HiGHS-IPM",
+  "code_overrides": {
+    "code/oracles.py": "7d88486c3fe9e69267540926a728feeb695a9eec62cbe193d8541dd5696f7eea",
+    "code/core_workflow.py": "cb55136cf3b5884e094b8ccb65e19413738be7a447505591c4e43cdad2d4bfea"
+  },
+  "initial_LOCK_preserved": true,
+  "acceptance": "analysis/SOLVER_REPAIR_1_ACCEPTANCE.json",
+  "review": "qa/SOLVER_REPAIR_1_CORE_REVIEW_CN.md",
+  "completed_groups_reused": 129,
+  "interrupted_group_retained_initial_bounds_no_new_solver_budget": true,
+  "per_objective_30s_and_active_ladder_unchanged": true,
+  "CPU_hours_so_far": 0.17708237333333332
+}

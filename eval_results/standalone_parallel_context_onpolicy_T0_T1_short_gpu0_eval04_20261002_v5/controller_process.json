@@ -1,0 +1,8 @@
+{
+  "pid": 642470,
+  "kind": "adopt_T1_evaluate_gpu4",
+  "command": [
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_eval_gpu4_controller_v1/controller.py"
+  ],
+  "utc": "2026-10-02T07:58:41.052435+00:00"
+}

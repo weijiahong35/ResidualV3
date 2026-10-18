@@ -1,0 +1,20 @@
+{
+  "scope": "proposal review synthetic checks; not full executor numerical admission",
+  "model_probabilities_or_scientific_effects_loaded": false,
+  "mean_cases": 60,
+  "mean_max_objective_difference": 2.220446049250313e-16,
+  "mean_max_mass_error": 2.220446049250313e-16,
+  "pair_cases": 60,
+  "pair_margin_max_difference": 1.1102230246251565e-16,
+  "pair_safe_tau_max_difference": 1.1102230246251565e-16,
+  "fixture_three_vertices_margin": -0.0,
+  "fixture_zero_margin_positive_safe": {
+    "M": -0.0,
+    "S": 0.16666666666666669
+  },
+  "numpy_version": "2.5.2",
+  "scipy_version": "1.18.1",
+  "single_numeric_thread_requested": true,
+  "script_SHA256": "d41f73bae7137cdde9089f707dd01d392d27691885522175a8555ee25e58ae87",
+  "checks_passed": true
+}

@@ -1,0 +1,14 @@
+{
+  "previous_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v3",
+  "inherited_cursor": 8896,
+  "inherited_global_step": 24743,
+  "main_optimizer_rng_lr_data_order_unchanged": true,
+  "original_q45_checkpoint_preserved": true,
+  "only_two_new_readouts_initialized": false,
+  "teacher_server_pid": 573734,
+  "teacher_service_retained": true,
+  "utc": "2026-10-10T03:38:23.269657+00:00",
+  "both_requested_readouts_restored_from_v3": true,
+  "previous_readouts_training_steps": 0,
+  "new_readout_training_begins_after_cuda_gate": true
+}

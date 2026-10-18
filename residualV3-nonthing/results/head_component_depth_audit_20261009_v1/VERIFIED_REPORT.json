@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "report_sha256": "45dbd6ea3044bbbb2bd13a86a9992873fceabaf16e4eceb437329c07c50dfebc",
+  "summary_sha256": "0604bfdf712166ceba52dc67d62f63bfaff963049afedd5024afddd3f8c81c8d",
+  "greedy_text_audit_sha256": "b879e3d5c36747ac2f3becac56ba7b27d0b7dad7ced1bdf084e7b1217cbd4b8b",
+  "verified_formal_windows": 16,
+  "native_weights_changed": false,
+  "timing_scope": "GPU inference head including actual sequential native sampling; excludes body, raw LM, target verifier and HTTP"
+}

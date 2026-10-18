@@ -1,0 +1,270 @@
+{
+  "status": "complete",
+  "decision": "new_head_training_and_C1_C40_complete",
+  "gate_passed": true,
+  "new_training_steps": 384,
+  "formal_windows": {
+    "C1": [
+      {
+        "round": 1,
+        "arm": "KRR_OVERLAP_B512",
+        "T": 0,
+        "requests": 20,
+        "completion_tokens": 71199,
+        "wall_seconds": 286.4012348353863,
+        "tokens_per_second": 248.59878848260823,
+        "native_metrics": {
+          "num_drafts": 16862.0,
+          "num_draft_tokens": 118034.0,
+          "num_accepted_tokens": 54357.0,
+          "acceptance_length": 4.223638951488554,
+          "acceptance_at_pos_0": 0.8507294508361998,
+          "acceptance_at_pos_1": 0.6859210058118848,
+          "acceptance_at_pos_2": 0.540268058356067,
+          "acceptance_at_pos_3": 0.41703238050053376,
+          "acceptance_at_pos_4": 0.3195350492231052,
+          "acceptance_at_pos_5": 0.23799074842841894,
+          "acceptance_at_pos_6": 0.17216225833234491
+        },
+        "execution_counters": {
+          "captures": 0,
+          "replays": 16882,
+          "fallbacks": 0,
+          "eager": 0
+        },
+        "target_execution_counters": {
+          "captures": 0,
+          "replays": 16862,
+          "fallbacks": 0,
+          "eager": 0
+        },
+        "diagnostic_only": false,
+        "smoke": false,
+        "foreign_pids_observed": [],
+        "monitor_errors": [],
+        "performance_contaminated": false,
+        "isolation_observed": true,
+        "speed_evidence": true,
+        "acceptance_only": false
+      },
+      {
+        "round": 1,
+        "arm": "KRR_OVERLAP_B512",
+        "T": 1,
+        "requests": 20,
+        "completion_tokens": 71013,
+        "wall_seconds": 307.81468971446157,
+        "tokens_per_second": 230.70049082411842,
+        "native_metrics": {
+          "num_drafts": 18106.0,
+          "num_draft_tokens": 126742.0,
+          "num_accepted_tokens": 52912.0,
+          "acceptance_length": 3.9223461835855518,
+          "acceptance_at_pos_0": 0.8335358444714459,
+          "acceptance_at_pos_1": 0.6410582127471557,
+          "acceptance_at_pos_2": 0.48343090688169665,
+          "acceptance_at_pos_3": 0.36440958798188444,
+          "acceptance_at_pos_4": 0.2711255937258367,
+          "acceptance_at_pos_5": 0.19396885010493758,
+          "acceptance_at_pos_6": 0.1348171876725947
+        },
+        "execution_counters": {
+          "captures": 0,
+          "replays": 18126,
+          "fallbacks": 0,
+          "eager": 0
+        },
+        "target_execution_counters": {
+          "captures": 0,
+          "replays": 18106,
+          "fallbacks": 0,
+          "eager": 0
+        },
+        "diagnostic_only": false,
+        "smoke": false,
+        "foreign_pids_observed": [],
+        "monitor_errors": [],
+        "performance_contaminated": false,
+        "isolation_observed": true,
+        "speed_evidence": true,
+        "acceptance_only": false
+      }
+    ],
+    "C40": [
+      {
+        "round": 1,
+        "arm": "KRR_OVERLAP_B512",
+        "T": 0,
+        "requests": 300,
+        "completion_tokens": 1090332,
+        "wall_seconds": 502.4843269791454,
+        "tokens_per_second": 2169.882604209568,
+        "native_metrics": {
+          "num_drafts": 257715.0,
+          "num_draft_tokens": 1804005.0,
+          "num_accepted_tokens": 831861.0,
+          "acceptance_length": 4.227833071416099,
+          "acceptance_at_pos_0": 0.8533535106610015,
+          "acceptance_at_pos_1": 0.68865219331432,
+          "acceptance_at_pos_2": 0.5410589216770464,
+          "acceptance_at_pos_3": 0.4187687949867101,
+          "acceptance_at_pos_4": 0.31870865102923773,
+          "acceptance_at_pos_5": 0.23683914401567624,
+          "acceptance_at_pos_6": 0.17045185573210717
+        },
+        "execution_counters": {
+          "captures": 0,
+          "replays": 10991,
+          "fallbacks": 0,
+          "eager": 0
+        },
+        "target_execution_counters": {
+          "captures": 0,
+          "replays": 10677,
+          "fallbacks": 0,
+          "eager": 0
+        },
+        "diagnostic_only": false,
+        "smoke": false,
+        "foreign_pids_observed": [],
+        "monitor_errors": [],
+        "performance_contaminated": false,
+        "isolation_observed": true,
+        "speed_evidence": true,
+        "acceptance_only": false
+      },
+      {
+        "round": 1,
+        "arm": "KRR_OVERLAP_B512",
+        "T": 1,
+        "requests": 300,
+        "completion_tokens": 1105274,
+        "wall_seconds": 563.9070001132786,
+        "tokens_per_second": 1960.028869614973,
+        "native_metrics": {
+          "num_drafts": 285597.0,
+          "num_draft_tokens": 1999179.0,
+          "num_accepted_tokens": 818980.0,
+          "acceptance_length": 3.8676071527361984,
+          "acceptance_at_pos_0": 0.8290668319345091,
+          "acceptance_at_pos_1": 0.6393099367290273,
+          "acceptance_at_pos_2": 0.4799035003869088,
+          "acceptance_at_pos_3": 0.3538272460845177,
+          "acceptance_at_pos_4": 0.2573416387427039,
+          "acceptance_at_pos_5": 0.1827680262747858,
+          "acceptance_at_pos_6": 0.12538997258374562
+        },
+        "execution_counters": {
+          "captures": 0,
+          "replays": 12356,
+          "fallbacks": 0,
+          "eager": 0
+        },
+        "target_execution_counters": {
+          "captures": 0,
+          "replays": 12054,
+          "fallbacks": 0,
+          "eager": 0
+        },
+        "diagnostic_only": false,
+        "smoke": false,
+        "foreign_pids_observed": [
+          1751037,
+          1764215
+        ],
+        "monitor_errors": [],
+        "performance_contaminated": true,
+        "isolation_observed": false,
+        "speed_evidence": false,
+        "acceptance_only": false
+      }
+    ]
+  },
+  "crossfit": [
+    {
+      "trainfold": 0,
+      "testfold": 1,
+      "train_reached": 7765,
+      "test_reached": 7601,
+      "zero_predictor_error": 0.044107696008790526,
+      "models": {
+        "linear1537": {
+          "lambda_value": 0.9789991289754454,
+          "rank512_error": 0.039724708084557414,
+          "relative_error_to_zero": 0.9006298600734077,
+          "full_ridge_error": 0.03972765916339949,
+          "relative_eigenvalue512": 0.00024046430447343978
+        },
+        "linear1537_projected_GG512": {
+          "rank512_error": 0.039710466886518865,
+          "relative_error_to_zero": 0.9003069867581542
+        },
+        "linear3073": {
+          "lambda_value": 0.9763539616839425,
+          "rank512_error": 0.040123445708574006,
+          "relative_error_to_zero": 0.9096699519416641,
+          "full_ridge_error": 0.0401349676038456,
+          "relative_eigenvalue512": 0.00033228470122253476
+        },
+        "nonlinear3073": {
+          "lambda_value": 0.9910451429515054,
+          "rank512_error": 0.03946500794588854,
+          "relative_error_to_zero": 0.8947419955470647,
+          "full_ridge_error": 0.039475516614565304,
+          "relative_eigenvalue512": 0.00043319226189126193
+        }
+      },
+      "best_linear_control_error": 0.039710466886518865,
+      "nonlinear_relative_improvement": 0.006181215177645201,
+      "passed": true
+    },
+    {
+      "trainfold": 1,
+      "testfold": 0,
+      "train_reached": 7601,
+      "test_reached": 7765,
+      "zero_predictor_error": 0.04450946683433311,
+      "models": {
+        "linear1537": {
+          "lambda_value": 0.979091952094836,
+          "rank512_error": 0.03974239401926877,
+          "relative_error_to_zero": 0.8928975529451371,
+          "full_ridge_error": 0.03974668995845379,
+          "relative_eigenvalue512": 0.0002788028273478355
+        },
+        "linear1537_projected_GG512": {
+          "rank512_error": 0.03973199676500047,
+          "relative_error_to_zero": 0.8926639564766151
+        },
+        "linear3073": {
+          "lambda_value": 0.9760611051498297,
+          "rank512_error": 0.04009768949969279,
+          "relative_error_to_zero": 0.9008800228710622,
+          "full_ridge_error": 0.040111353309955994,
+          "relative_eigenvalue512": 0.0003845428373236056
+        },
+        "nonlinear3073": {
+          "lambda_value": 0.9912389286208055,
+          "rank512_error": 0.03944289684681935,
+          "relative_error_to_zero": 0.8861687108863416,
+          "full_ridge_error": 0.03945431023988812,
+          "relative_eigenvalue512": 0.000504946665473036
+        }
+      },
+      "best_linear_control_error": 0.03973199676500047,
+      "nonlinear_relative_improvement": 0.007276249414068908,
+      "passed": true
+    }
+  ],
+  "unpaired_controls_reused": true,
+  "no_baseline_retesting": true,
+  "limitations": [
+    "Cross-fit gradient reconstruction is not a native AL guarantee.",
+    "One fixed finite nonlinear map can test this predictor only; a negative result does not exclude nonlinear learnability.",
+    "Matched-width linear control does not equalize every spectral regularization property.",
+    "Rank512 basis alone changes; deployed width256 head may fail to realize offline predictability.",
+    "Formal panels have prior research use, not independent final test.",
+    "Old controls are unpaired across time/card; TPS comparisons need contamination and memory/panel qualification."
+  ],
+  "utc": "2026-10-03T18:48:18.636403+00:00"
+}

@@ -1,0 +1,113 @@
+{
+  "status": "verified",
+  "utc": "2026-10-11T04:52:59.680630+00:00",
+  "formal_windows": [
+    {
+      "C": 1,
+      "arm": "DFLASH",
+      "T": 0,
+      "requests": 200,
+      "graph_verified": true,
+      "isolated": true
+    },
+    {
+      "C": 1,
+      "arm": "DFLASH",
+      "T": 1,
+      "requests": 200,
+      "graph_verified": true,
+      "isolated": true
+    },
+    {
+      "C": 1,
+      "arm": "FULL15_NOFILL",
+      "T": 0,
+      "requests": 200,
+      "graph_verified": true,
+      "isolated": true
+    },
+    {
+      "C": 1,
+      "arm": "FULL15_NOFILL",
+      "T": 1,
+      "requests": 200,
+      "graph_verified": true,
+      "isolated": true
+    },
+    {
+      "C": 40,
+      "arm": "DFLASH",
+      "T": 0,
+      "requests": 1319,
+      "graph_verified": true,
+      "isolated": true
+    },
+    {
+      "C": 40,
+      "arm": "DFLASH",
+      "T": 1,
+      "requests": 1319,
+      "graph_verified": true,
+      "isolated": true
+    },
+    {
+      "C": 40,
+      "arm": "FULL15_NOFILL",
+      "T": 0,
+      "requests": 1319,
+      "graph_verified": true,
+      "isolated": true
+    },
+    {
+      "C": 40,
+      "arm": "FULL15_NOFILL",
+      "T": 1,
+      "requests": 1319,
+      "graph_verified": true,
+      "isolated": true
+    }
+  ],
+  "smoke": [
+    {
+      "C": 1,
+      "arm": "DFLASH",
+      "sampling_witnesses": 86
+    },
+    {
+      "C": 1,
+      "arm": "FULL15_NOFILL",
+      "sampling_witnesses": 79
+    },
+    {
+      "C": 40,
+      "arm": "DFLASH",
+      "sampling_witnesses": 94
+    },
+    {
+      "C": 40,
+      "arm": "FULL15_NOFILL",
+      "sampling_witnesses": 97
+    }
+  ],
+  "formal_requests": 6076,
+  "runtime_byte_identical_to_verified_iter26": true,
+  "source_hashes_verified": true,
+  "independent_dflash_baseline": true,
+  "weights_changed": false,
+  "training_started": false,
+  "tail_cut_tested": false,
+  "T0_independent_vs_joint_output_parity": [
+    {
+      "C": 1,
+      "requests": 200,
+      "exact_messages_finish_and_lengths": 200,
+      "all_equal": true
+    },
+    {
+      "C": 40,
+      "requests": 1319,
+      "exact_messages_finish_and_lengths": 1319,
+      "all_equal": true
+    }
+  ]
+}

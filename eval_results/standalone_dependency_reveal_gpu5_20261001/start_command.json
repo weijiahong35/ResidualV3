@@ -1,0 +1,10 @@
+{
+  "pid": 3337917,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/dependency_probe_v1/launch.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_dependency_reveal_gpu5_20261001"
+  ]
+}

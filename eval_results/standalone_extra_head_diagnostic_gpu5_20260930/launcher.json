@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/extra_head_audit_v1/launch.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_extra_head_diagnostic_gpu5_20260930"
+  ],
+  "pid": 421454
+}

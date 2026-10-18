@@ -1,0 +1,8 @@
+{
+  "sources": {
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/bounded_collect.py": "406c506d1bb74ae5a557fed239e8e2af0cc701b72ca95a8876a0a5242d7d549f",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/tail_supervisor.py": "216e150a7bbb36cf25da08170007f2fbf89373243b1a34f074ef075348173edf"
+  },
+  "only_runs_after_main_recovery_exits": true,
+  "no_completed_training_repeated": true
+}

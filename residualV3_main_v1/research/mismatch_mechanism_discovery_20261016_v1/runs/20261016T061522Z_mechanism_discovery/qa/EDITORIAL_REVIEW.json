@@ -1,0 +1,16 @@
+{
+  "UTC": "2026-10-16T06:32:14.428762+00:00",
+  "report_actual_read": true,
+  "all_four_plots_visually_inspected": true,
+  "core_question_review": "passed after minor clarity changes; no identified source falsely claimed",
+  "changes": [
+    "replace significant-like descriptive wording",
+    "label stacked chart D raw explicitly",
+    "clarify 3 D2 are candidate diagnostics"
+  ],
+  "numerical_rule_change": false,
+  "candidate_selection_change": false,
+  "C_selection_immutable": true,
+  "artifact_only_regeneration": "same saved scalars, no probability/archive scanning, no new experiment",
+  "code_SHA": "0df75ee0973d1461fd588b7c7204f2738eff9f88d571d71605345da1ab2eeebc"
+}

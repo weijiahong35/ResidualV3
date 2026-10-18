@@ -1,0 +1,39 @@
+4/16 prompt 可拟合性与留出检查：完成
+总更新：800/800；执行耗时：310.0 秒。
+共同设置：N_no_soft_2layer；EMBEDDING、无soft lag-1、depth2 SwiGLU、direction/dose 分开；ORACLE_KL。
+T0、每prompt第2块7个状态；固定旧N生成；oracle三起点、每次最多120次LBFGS。
+对照4个prompt/28状态；扩大16个prompt/112状态；共同留出8个prompt/56状态。
+同一fresh seed300931；每训练状态40次；优化器系数不改，学习率按epoch统一推进，两组每个epoch的LR完全一致。
+没有提前停止或按留出结果选择checkpoint。原始逐状态指标已独立重算。
+24块的完整输入+oracle标签签名与上一轮一致；CPU和GPU缓存最终签名不变；观察器不改变生成轨迹。
+
+训练集通过标准：最后两次检查mean KL<=0.01、max KL<=0.05、mean TV<=0.02；oracle margin>=0.5的位置learner margin>=0.25。
+留出强通过标准：mean KL严格优于旧N，greedy错误数严格减少（旧N零错误时要求仍为零）。单指标改善只计部分改善。
+
+CONTROL_4
+训练：通过=True；mean KL=0.00117538；max KL=0.00663655；mean TV=0.00388594；greedy错误=0/28。
+留出：mean KL=1.12894010；目标分布重叠=0.63556494；greedy错误=19/56；判定=no_joint_improvement。
+留出修好旧N错误=1；损坏旧N正确=7；KL改善prompt=3/8。
+
+EXPANDED_16
+训练：通过=False；mean KL=0.00285332；max KL=0.06131848；mean TV=0.00362512；greedy错误=0/112。
+留出：mean KL=1.44645360；目标分布重叠=0.65213654；greedy错误=19/56；判定=no_joint_improvement。
+留出修好旧N错误=2；损坏旧N正确=8；KL改善prompt=3/8。
+
+留出旧N基线：mean KL=1.05401062；目标分布重叠=0.75448008；greedy错误=13/56。
+留出oracle：目标分布重叠=0.96957958；greedy错误=1/56。
+
+CONTROL_4 passes. EXPANDED_16 has all112 greedy positions correct and low mean KL/TV; its sole formal training failure is one max-KL tail state (source611 position7: KL0.061318>0.05). Do not describe the expanded group as generally unable to learn. Both heads have19/56 heldout greedy errors versus frozen N13/56; target overlap is also lower. The clearest observation is very good finite-set learning with poor heldout transfer, plus a small unresolved training tail. This is consistent with overfitting a narrow state set; it does not identify missing input information, capacity, optimization interference, or behavior-history shift as the unique cause.
+
+边界：只检查固定历史前缀上的条件预测。留出仅相对本轮fresh learner；这些prompt属于历史train128，旧N及basis已使用，不能称独立最终测试。
+未测实际新轨迹的接受长度与吞吐；只有一个seed和T0早期块。扩大组仍有更多Adam更新和更多样本间隔，不足以单独证明梯度冲突、输入缺失或容量不足。
+
+补充：尾部与曲线复核（正式判据不变）
+扩大组不是整体学不会：112/112位置greedy正确；平均KL0.002853、平均TV0.003625均达标。
+第36和40轮都只有同一个状态超过max KL=0.05；source611，第7位置，第40轮KL0.061318，greedy margin0.5625，greedy本身正确。
+因此正式训练判定仍为未通过，但原因只是一个soft分布拟合尾部，不能据此把主要问题定为大范围训练拟合失败。
+更明显的观察是留出推广有限：两组均19/56个greedy错误，旧N为13/56；扩大组修好2个旧错误，同时损坏8个旧正确位置。
+扩大组留出目标分布重叠0.652137，旧N为0.754480；oracle为0.969580（oracle仍有1个greedy错误）。
+训练指标持续改善，留出KL却高于初始化并总体恶化，符合窄样本过拟合的表现；尚未确定唯一原因。
+逐轮检查没有发现同时严格改善留出KL和greedy错误数的检查点；未据留出结果选模型。
+优先方向：检验样本覆盖与推广的关系，保持现有网络和输入。后续实验尚未启动。

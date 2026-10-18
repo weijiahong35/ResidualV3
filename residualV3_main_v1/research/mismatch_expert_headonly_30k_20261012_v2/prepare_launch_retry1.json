@@ -1,0 +1,6 @@
+{
+  "pid": 156993,
+  "uid": 1024,
+  "utc": "2026-10-12T07:34:07.168456+00:00",
+  "reason": "distinguish 843028 conversation rows from 841050 first-user groups; initial failed before panel/GPU work"
+}

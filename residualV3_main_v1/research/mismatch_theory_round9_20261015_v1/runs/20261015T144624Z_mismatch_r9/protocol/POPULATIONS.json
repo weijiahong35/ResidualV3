@@ -1,0 +1,4723 @@
+{
+  "prompts": [
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:0019309e83e7cf0e6e90",
+      "group_sha256": "0019309e83e7cf0e6e90506fed1044a3d7199e27fb5d772b061842afbd9a5dc4"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:061501956468e82c7701",
+      "group_sha256": "061501956468e82c77012647889111bf1af73b2f143f180a6e35fa567c1df02d"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:39fda382b145630d85ef",
+      "group_sha256": "39fda382b145630d85efba7c8b2a9538a4665d91a29e10a7f9ee9577460e01f1"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:3aa8d4c8f02f9dcd55d4",
+      "group_sha256": "3aa8d4c8f02f9dcd55d42e831bf0512b6c491733af0ba40657604376ae6239a7"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:4f749fa93e2847434af9",
+      "group_sha256": "4f749fa93e2847434af904e3f6490356b8b07c2778f45246c8f390e3e2603a87"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:63c10e422dd934697d85",
+      "group_sha256": "63c10e422dd934697d85808772679a26401dbe12949ef5c88ef5b09167488c25"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:67ab79f900374ccf5223",
+      "group_sha256": "67ab79f900374ccf522331a8ad660c723bfba7d83e1fd2bc80cd21e955803058"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:67edeb0d4adcc8e0b94f",
+      "group_sha256": "67edeb0d4adcc8e0b94fa6088be541f1f46f9abafd1830772da9407774420f8e"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:7f98592767830e2644d5",
+      "group_sha256": "7f98592767830e2644d59c6167b222411127b4727df3f76e1a7d91694fc863e4"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:8db337a49418fd6f1f89",
+      "group_sha256": "8db337a49418fd6f1f89fda8fbe414d0adf9349a89321a1d4a076af32e5ac075"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:d002a3129a63c8dd2c3e",
+      "group_sha256": "d002a3129a63c8dd2c3eef113dd6af3d2a854aa227e4fdf9c9456f91a3b03fff"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:f16f3c13c4f786d48b25",
+      "group_sha256": "f16f3c13c4f786d48b2550a79509008e31617f55c7e2ec988ab11f28549beeac"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:17f6178e393cb29f00e1",
+      "group_sha256": "17f6178e393cb29f00e197d84907ecda35b3e1fa38d46677ecc7e110bd94512c"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:18d5fc1fa5c042718343",
+      "group_sha256": "18d5fc1fa5c042718343ec590842f9ec30b3b06de1e28f1bf72e7bca36290fed"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:2c604d6231f8160f7733",
+      "group_sha256": "2c604d6231f8160f7733285f27d8ea886f34b5b8c380c5ba173023d33b2b9b76"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:34aa525ccaced7f94dfc",
+      "group_sha256": "34aa525ccaced7f94dfcfb169871dd58e17fe28b61e81191851ad6aefe0506b3"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:676e1a983974c0f63794",
+      "group_sha256": "676e1a983974c0f63794e9ce1f6c6ebd7237dea90c33a60b2b81448fcd5a1183"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:7802c24617edd6b7a66c",
+      "group_sha256": "7802c24617edd6b7a66c258b6b1a05f22fb27c1f912d95fea1a15ede2f8886a7"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:7da8b33ed0ecdd0b14be",
+      "group_sha256": "7da8b33ed0ecdd0b14be1c4c3dd44356d788ddbb2834ae55d655203574212d9f"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:be3aaef0f47598ef333b",
+      "group_sha256": "be3aaef0f47598ef333b5103c09b352a7288f22afae3f94a2a3af8c44a30a8ae"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:c03e17a85d15f78bb370",
+      "group_sha256": "c03e17a85d15f78bb3701580dbd11629360c04bb46f08b803c37b6079abcfaf0"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:c2d148cb2492a2cab87c",
+      "group_sha256": "c2d148cb2492a2cab87ce54d352c35cfb5db85f90e8b107453b0a3e834dad5da"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:cc1e70ae45bc887b453f",
+      "group_sha256": "cc1e70ae45bc887b453f70e4eb49af71f98281bc8cf6ed7a728d3c3b2ef5b62a"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:e22e0e1880a25a24cd76",
+      "group_sha256": "e22e0e1880a25a24cd761775607b3c65c24dc8663151c31e99141dfe26b81f89"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:04ce139694b5d8900256",
+      "group_sha256": "04ce139694b5d8900256910e90021fbee3bc82ae50a441fb40deaaac453ea2d9"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:141c521796a45116e2fc",
+      "group_sha256": "141c521796a45116e2fcfe9f3c129eaed2f7e49f30a57d3ff0984325b8b23e90"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:2f2c7f26f46d75a845a5",
+      "group_sha256": "2f2c7f26f46d75a845a5a06e835170406bd9951d3a7661ce66927c25693dab02"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:3831e7709c2d89249d46",
+      "group_sha256": "3831e7709c2d89249d46285c482c3ff9cf7bf783552e5392ab5d7a1956632681"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:4cc7641d09244a4ace7d",
+      "group_sha256": "4cc7641d09244a4ace7dcc1da57d7b49ce42d10b3cfba66f03bb2d841cf5ed46"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:50b21448a07edd1f7796",
+      "group_sha256": "50b21448a07edd1f7796bf943359b98288b6923c8a2c6e4302f84c1566c2db9d"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:6af97e412e162dbb9cc3",
+      "group_sha256": "6af97e412e162dbb9cc3c8ec0c4e615638193709ca264e0d2b92acc9ef2a4c0c"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:7cc55b151b9b88ac66b2",
+      "group_sha256": "7cc55b151b9b88ac66b262e33052626ea9224e6dba9b236e78b18d8b2d47abd5"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:cc454e121eff7333aad1",
+      "group_sha256": "cc454e121eff7333aad1a950faae70d3bc32a6b245d707ae602ddb32986ae95f"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:df993fac56b31cf22017",
+      "group_sha256": "df993fac56b31cf22017c7a6f470c8512f7e874ed83f393a6b210693d658cc27"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:e078a4e2476c683dc68c",
+      "group_sha256": "e078a4e2476c683dc68c365af59d7e47c0be865be479bd8add4c386c88138a3a"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:f510e3b394eafd535a46",
+      "group_sha256": "f510e3b394eafd535a46d1f4624283d719b212fd48bfd460eaefab62acc4c118"
+    }
+  ],
+  "contexts": [
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_04ce139694b5d8900256/C1",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:04ce139694b5d8900256",
+      "group_sha256": "04ce139694b5d8900256910e90021fbee3bc82ae50a441fb40deaaac453ea2d9",
+      "anchor": 1,
+      "C_SHA256": "3820d3e7c37ca085a3f0cd7e36da0eb6958845634b4c7eab92cf61a9564eea76",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 6
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_04ce139694b5d8900256/C65",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:04ce139694b5d8900256",
+      "group_sha256": "04ce139694b5d8900256910e90021fbee3bc82ae50a441fb40deaaac453ea2d9",
+      "anchor": 65,
+      "C_SHA256": "86903532373f90cff5db8e802cdb948e6102fe36ef610eb4c913fc8fd3acceb2",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 5
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 16
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 34
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 21
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 11
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_141c521796a45116e2fc/C1",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:141c521796a45116e2fc",
+      "group_sha256": "141c521796a45116e2fcfe9f3c129eaed2f7e49f30a57d3ff0984325b8b23e90",
+      "anchor": 1,
+      "C_SHA256": "cd9ddd92bd85e3006f4c92fc071f6f84987b43b7effa7f6538aa015f4d0e8ede",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 12
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 6
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 44
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_141c521796a45116e2fc/C65",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:141c521796a45116e2fc",
+      "group_sha256": "141c521796a45116e2fcfe9f3c129eaed2f7e49f30a57d3ff0984325b8b23e90",
+      "anchor": 65,
+      "C_SHA256": "7b7a963abe9fa6ea9b82727543d7a59b4e0a04a9ef3c3fb526785f74f93c422f",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 15
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 20
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 14
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 8
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_2f2c7f26f46d75a845a5/C1",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:2f2c7f26f46d75a845a5",
+      "group_sha256": "2f2c7f26f46d75a845a5a06e835170406bd9951d3a7661ce66927c25693dab02",
+      "anchor": 1,
+      "C_SHA256": "5909172fec70928a3e1067f6b14d7a2a3461eb428d40a20bccac876b3dea0d86",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 13
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 31
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 47
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_2f2c7f26f46d75a845a5/C65",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:2f2c7f26f46d75a845a5",
+      "group_sha256": "2f2c7f26f46d75a845a5a06e835170406bd9951d3a7661ce66927c25693dab02",
+      "anchor": 65,
+      "C_SHA256": "555fa2aea798bcd25a384c4754b5baf10a614dd7fdcf26d33e4afc851146ef16",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 24
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 39
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 17
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 20
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 47
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_3831e7709c2d89249d46/C1",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:3831e7709c2d89249d46",
+      "group_sha256": "3831e7709c2d89249d46285c482c3ff9cf7bf783552e5392ab5d7a1956632681",
+      "anchor": 1,
+      "C_SHA256": "52f4cac07dc38af54eb91e93a57da059a4d95b0e9202e1305dfc8838349cfe4c",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 15
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 35
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 46
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_3831e7709c2d89249d46/C65",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:3831e7709c2d89249d46",
+      "group_sha256": "3831e7709c2d89249d46285c482c3ff9cf7bf783552e5392ab5d7a1956632681",
+      "anchor": 65,
+      "C_SHA256": "6234dff4cf26bbf9bf2c6c960650a766b247ddc7aff0c2dc0e8727950d9ad97c",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 10
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 43
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 39
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 32
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_4cc7641d09244a4ace7d/C1",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:4cc7641d09244a4ace7d",
+      "group_sha256": "4cc7641d09244a4ace7dcc1da57d7b49ce42d10b3cfba66f03bb2d841cf5ed46",
+      "anchor": 1,
+      "C_SHA256": "5573f162534e9319d0de32046fd0641e2ff238f415068d2c42201d7ebc8770bf",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 16
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 6
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 8
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 47
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_50b21448a07edd1f7796/C1",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:50b21448a07edd1f7796",
+      "group_sha256": "50b21448a07edd1f7796bf943359b98288b6923c8a2c6e4302f84c1566c2db9d",
+      "anchor": 1,
+      "C_SHA256": "b85699dc0cb56c2292cc7c7e876c6d1670811a56ac7c69951bc564f4b5a7f119",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 17
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 34
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_50b21448a07edd1f7796/C65",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:50b21448a07edd1f7796",
+      "group_sha256": "50b21448a07edd1f7796bf943359b98288b6923c8a2c6e4302f84c1566c2db9d",
+      "anchor": 65,
+      "C_SHA256": "2727047b5777311a442007b44c2d1f91dbfba385a1e568558997731605e4369a",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 6
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 10
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 10
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 34
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_6af97e412e162dbb9cc3/C1",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:6af97e412e162dbb9cc3",
+      "group_sha256": "6af97e412e162dbb9cc3c8ec0c4e615638193709ca264e0d2b92acc9ef2a4c0c",
+      "anchor": 1,
+      "C_SHA256": "78be4f0b82ef912bf437bcf7c0da3c8b9da2d61f890f9c3c9bf54cfbb067f38a",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 6
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 7
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 24
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 14
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_7cc55b151b9b88ac66b2/C1",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:7cc55b151b9b88ac66b2",
+      "group_sha256": "7cc55b151b9b88ac66b262e33052626ea9224e6dba9b236e78b18d8b2d47abd5",
+      "anchor": 1,
+      "C_SHA256": "4a14f34ff773b632a02f580fa393339e9a0553b03058ddf77d4974b2ff4f6e3f",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 7
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 37
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 27
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 24
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_7cc55b151b9b88ac66b2/C65",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:7cc55b151b9b88ac66b2",
+      "group_sha256": "7cc55b151b9b88ac66b262e33052626ea9224e6dba9b236e78b18d8b2d47abd5",
+      "anchor": 65,
+      "C_SHA256": "891e13f789517eda4ab5555423f217cc2a5eb85c66f9deae5b64b8dfb42fe455",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 7
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 28
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 47
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 17
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 47
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 14
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 47
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_cc454e121eff7333aad1/C1",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:cc454e121eff7333aad1",
+      "group_sha256": "cc454e121eff7333aad1a950faae70d3bc32a6b245d707ae602ddb32986ae95f",
+      "anchor": 1,
+      "C_SHA256": "fe652b76312daa1bbc1a340fa2bf23645b7ef9f3f4497e829d14e8a712e6219a",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 6
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 19
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 41
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_cc454e121eff7333aad1/C65",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:cc454e121eff7333aad1",
+      "group_sha256": "cc454e121eff7333aad1a950faae70d3bc32a6b245d707ae602ddb32986ae95f",
+      "anchor": 65,
+      "C_SHA256": "740009f38053fb05f529136c17ad5e1617e85a000412f030a81a6525c298f753",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 13
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 40
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 43
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 6
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 30
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_df993fac56b31cf22017/C1",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:df993fac56b31cf22017",
+      "group_sha256": "df993fac56b31cf22017c7a6f470c8512f7e874ed83f393a6b210693d658cc27",
+      "anchor": 1,
+      "C_SHA256": "3a9cf4270142aff0af873887e7b9c501fe1fb9663625dbf6931dc2a58733139d",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 11
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 16
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_e078a4e2476c683dc68c/C1",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:e078a4e2476c683dc68c",
+      "group_sha256": "e078a4e2476c683dc68c365af59d7e47c0be865be479bd8add4c386c88138a3a",
+      "anchor": 1,
+      "C_SHA256": "ba38cb66d1f61b6bcc87d64472ed45071b7264bc4d4d0004e485d9e2c603aa5f",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 11
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 25
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 24
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 20
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_e078a4e2476c683dc68c/C65",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:e078a4e2476c683dc68c",
+      "group_sha256": "e078a4e2476c683dc68c365af59d7e47c0be865be479bd8add4c386c88138a3a",
+      "anchor": 65,
+      "C_SHA256": "3b0a84ea2e87824c7677aa646cbd1bf09fb8a97df1ec423e8047e6995400612f",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 18
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 36
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 33
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 28
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_f510e3b394eafd535a46/C1",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:f510e3b394eafd535a46",
+      "group_sha256": "f510e3b394eafd535a46d1f4624283d719b212fd48bfd460eaefab62acc4c118",
+      "anchor": 1,
+      "C_SHA256": "62ca19b4f1087c679593a48687b7071f2cbc77eedc9122deecf16e158b7bf178",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 29
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 34
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 15
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/alpaca_f510e3b394eafd535a46/C65",
+      "domain": "alpaca",
+      "prompt_id": "alpaca:f510e3b394eafd535a46",
+      "group_sha256": "f510e3b394eafd535a46d1f4624283d719b212fd48bfd460eaefab62acc4c118",
+      "anchor": 65,
+      "C_SHA256": "1cc744eb467a3a17b7c5719a0f8021f76803fd59045f251b037ad04f6899c95f",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 7
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 15
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 36
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 39
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 40
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_0019309e83e7cf0e6e90/C1",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:0019309e83e7cf0e6e90",
+      "group_sha256": "0019309e83e7cf0e6e90506fed1044a3d7199e27fb5d772b061842afbd9a5dc4",
+      "anchor": 1,
+      "C_SHA256": "124099fbad55ba19d493685509cc78bcd99baf84508f1430c25b8a0bbb0b0aff",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 15
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 33
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 33
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 22
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_0019309e83e7cf0e6e90/C65",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:0019309e83e7cf0e6e90",
+      "group_sha256": "0019309e83e7cf0e6e90506fed1044a3d7199e27fb5d772b061842afbd9a5dc4",
+      "anchor": 65,
+      "C_SHA256": "16177e57d9b25349d9fdd45086d2e19a63c7c545c66ef7372c067cfd81a32e87",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 8
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 17
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 31
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 11
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_061501956468e82c7701/C1",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:061501956468e82c7701",
+      "group_sha256": "061501956468e82c77012647889111bf1af73b2f143f180a6e35fa567c1df02d",
+      "anchor": 1,
+      "C_SHA256": "f6cc6f1dbd26f922baa1a258afab8389ad04096e2dabaa83de33a6e16d8aae35",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 7
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 7
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 44
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 21
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 35
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_061501956468e82c7701/C65",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:061501956468e82c7701",
+      "group_sha256": "061501956468e82c77012647889111bf1af73b2f143f180a6e35fa567c1df02d",
+      "anchor": 65,
+      "C_SHA256": "82b84b2f46c17f51d3045bd13b609a2626d0731f9658d032e26b581edd8c9741",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 16
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 24
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 7
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 46
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 12
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 28
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_39fda382b145630d85ef/C1",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:39fda382b145630d85ef",
+      "group_sha256": "39fda382b145630d85efba7c8b2a9538a4665d91a29e10a7f9ee9577460e01f1",
+      "anchor": 1,
+      "C_SHA256": "c6ff01f7f314a69c7e7ccfd9801ba7e2b80c233a5069dc2b66889b15193ef8bc",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 7
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 35
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 10
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 30
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 12
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_39fda382b145630d85ef/C65",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:39fda382b145630d85ef",
+      "group_sha256": "39fda382b145630d85efba7c8b2a9538a4665d91a29e10a7f9ee9577460e01f1",
+      "anchor": 65,
+      "C_SHA256": "5c778384ad4b2b216bf9010c9a75ef22ed4e70e49c2d160fbc19e8bd3263351f",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 23
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 46
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 13
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 47
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_3aa8d4c8f02f9dcd55d4/C1",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:3aa8d4c8f02f9dcd55d4",
+      "group_sha256": "3aa8d4c8f02f9dcd55d42e831bf0512b6c491733af0ba40657604376ae6239a7",
+      "anchor": 1,
+      "C_SHA256": "0f5314a9d242344e8d81b3f12f137a15d33d5fc267d87325533d783a5d3c28ab",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 19
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 40
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 25
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 12
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 47
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_3aa8d4c8f02f9dcd55d4/C65",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:3aa8d4c8f02f9dcd55d4",
+      "group_sha256": "3aa8d4c8f02f9dcd55d42e831bf0512b6c491733af0ba40657604376ae6239a7",
+      "anchor": 65,
+      "C_SHA256": "1a06dd6d32e9dd17dad83482cbcc2cf95f8f2c5e4bdffb84f75cdd1f4aa68661",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 11
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 13
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 10
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 41
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 24
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 46
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_4f749fa93e2847434af9/C1",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:4f749fa93e2847434af9",
+      "group_sha256": "4f749fa93e2847434af904e3f6490356b8b07c2778f45246c8f390e3e2603a87",
+      "anchor": 1,
+      "C_SHA256": "ed9596a624e2f3688e7061d940c14b8e5c2bd86d8e30e92889816789afeb014d",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 7
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 12
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 45
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 8
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 32
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_4f749fa93e2847434af9/C65",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:4f749fa93e2847434af9",
+      "group_sha256": "4f749fa93e2847434af904e3f6490356b8b07c2778f45246c8f390e3e2603a87",
+      "anchor": 65,
+      "C_SHA256": "3fc1e70819c674b3408a19d5ac93c4bd664e4c31067747c89d9f99888036e31a",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 3
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_63c10e422dd934697d85/C1",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:63c10e422dd934697d85",
+      "group_sha256": "63c10e422dd934697d85808772679a26401dbe12949ef5c88ef5b09167488c25",
+      "anchor": 1,
+      "C_SHA256": "423cb927f2905d55e2fd236aed5967f1b1fb0934488e522ce4ffdd1755e72769",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 7
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 35
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 17
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_63c10e422dd934697d85/C65",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:63c10e422dd934697d85",
+      "group_sha256": "63c10e422dd934697d85808772679a26401dbe12949ef5c88ef5b09167488c25",
+      "anchor": 65,
+      "C_SHA256": "ffb9538f04870257364cccafbc26240773fa2345f5968c9bc89573a0202d33ce",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 6
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 21
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 8
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 45
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 23
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_67ab79f900374ccf5223/C1",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:67ab79f900374ccf5223",
+      "group_sha256": "67ab79f900374ccf522331a8ad660c723bfba7d83e1fd2bc80cd21e955803058",
+      "anchor": 1,
+      "C_SHA256": "4f15a12f5773183b4b9f662a68318621e2ef60ffcbd40651159437de66036ff9",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 25
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 35
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 38
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 27
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_67ab79f900374ccf5223/C65",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:67ab79f900374ccf5223",
+      "group_sha256": "67ab79f900374ccf522331a8ad660c723bfba7d83e1fd2bc80cd21e955803058",
+      "anchor": 65,
+      "C_SHA256": "9c48fba13baf106488317286ddf56d1141acfb7efb08150f6fff5ae022da78d2",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 12
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 33
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 34
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 27
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 43
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 47
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_67edeb0d4adcc8e0b94f/C1",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:67edeb0d4adcc8e0b94f",
+      "group_sha256": "67edeb0d4adcc8e0b94fa6088be541f1f46f9abafd1830772da9407774420f8e",
+      "anchor": 1,
+      "C_SHA256": "46d62697d88ad2f9c52b4ddaaa888aaef133149c49487903876f8d5db0ccada3",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 7
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 8
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 24
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 34
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_67edeb0d4adcc8e0b94f/C65",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:67edeb0d4adcc8e0b94f",
+      "group_sha256": "67edeb0d4adcc8e0b94fa6088be541f1f46f9abafd1830772da9407774420f8e",
+      "anchor": 65,
+      "C_SHA256": "552ce198dc469151cc891237a76cc92bf219475cbe14b9443092a3e190a308b2",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 29
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 33
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 46
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 30
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_7f98592767830e2644d5/C1",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:7f98592767830e2644d5",
+      "group_sha256": "7f98592767830e2644d59c6167b222411127b4727df3f76e1a7d91694fc863e4",
+      "anchor": 1,
+      "C_SHA256": "7879d2f7c00c8897649bacfe79147a37c64db933dd1942beab4bfba913ad358f",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 15
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 40
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 26
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 41
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 23
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_7f98592767830e2644d5/C65",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:7f98592767830e2644d5",
+      "group_sha256": "7f98592767830e2644d59c6167b222411127b4727df3f76e1a7d91694fc863e4",
+      "anchor": 65,
+      "C_SHA256": "b902678d70b46c4d113481240b54eabeb3e27e02cb10169858beea0722b5120a",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_8db337a49418fd6f1f89/C1",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:8db337a49418fd6f1f89",
+      "group_sha256": "8db337a49418fd6f1f89fda8fbe414d0adf9349a89321a1d4a076af32e5ac075",
+      "anchor": 1,
+      "C_SHA256": "f4371b4b4accb39b2385a0ad31fd15527808083cb2ed5c36f2183a1659b5390c",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 28
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 29
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 41
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 20
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_8db337a49418fd6f1f89/C65",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:8db337a49418fd6f1f89",
+      "group_sha256": "8db337a49418fd6f1f89fda8fbe414d0adf9349a89321a1d4a076af32e5ac075",
+      "anchor": 65,
+      "C_SHA256": "a06250508787214ac06f86e3bf9488bf16133bc65f3515ec168cde0566def4ff",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 6
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 13
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 24
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 5
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 13
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 16
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_d002a3129a63c8dd2c3e/C1",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:d002a3129a63c8dd2c3e",
+      "group_sha256": "d002a3129a63c8dd2c3eef113dd6af3d2a854aa227e4fdf9c9456f91a3b03fff",
+      "anchor": 1,
+      "C_SHA256": "f88ea69607711aa09b65f6a1751193548ff45ce72e30748135835840d5a24fc3",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 15
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 24
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 38
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 13
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 19
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_d002a3129a63c8dd2c3e/C65",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:d002a3129a63c8dd2c3e",
+      "group_sha256": "d002a3129a63c8dd2c3eef113dd6af3d2a854aa227e4fdf9c9456f91a3b03fff",
+      "anchor": 65,
+      "C_SHA256": "1df8e086088e327801312c4a1f9c253f5aa636dd6b2ebe5f9ad504ae3980e416",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_f16f3c13c4f786d48b25/C1",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:f16f3c13c4f786d48b25",
+      "group_sha256": "f16f3c13c4f786d48b2550a79509008e31617f55c7e2ec988ab11f28549beeac",
+      "anchor": 1,
+      "C_SHA256": "8b1101c7994fffecc27788180190fc2e3f237b1596d4a56095bc9a713c834587",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 6
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 14
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 24
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 43
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 30
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/gsm8k_f16f3c13c4f786d48b25/C65",
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:f16f3c13c4f786d48b25",
+      "group_sha256": "f16f3c13c4f786d48b2550a79509008e31617f55c7e2ec988ab11f28549beeac",
+      "anchor": 65,
+      "C_SHA256": "e1d75f9b153be18c22fb3592c19d71e1bde4d4a1f8a06a47eebb204c7c6aaf39",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 10
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 46
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 19
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_17f6178e393cb29f00e1/C1",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:17f6178e393cb29f00e1",
+      "group_sha256": "17f6178e393cb29f00e197d84907ecda35b3e1fa38d46677ecc7e110bd94512c",
+      "anchor": 1,
+      "C_SHA256": "21abe2f9298c52302ac982ab0ffa6a40075126c6d2ccbf02bd8feeb177adebd3",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 28
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 38
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 47
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 39
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 47
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_17f6178e393cb29f00e1/C65",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:17f6178e393cb29f00e1",
+      "group_sha256": "17f6178e393cb29f00e197d84907ecda35b3e1fa38d46677ecc7e110bd94512c",
+      "anchor": 65,
+      "C_SHA256": "9107b8ccf8026e61fa07da217fefa66b9865d6f2e1b5e815ccbcf85b025c14a7",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 27
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_18d5fc1fa5c042718343/C1",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:18d5fc1fa5c042718343",
+      "group_sha256": "18d5fc1fa5c042718343ec590842f9ec30b3b06de1e28f1bf72e7bca36290fed",
+      "anchor": 1,
+      "C_SHA256": "50194c1383b0c9c5b43d43a919f3a4d09724aec5b37393ecd04ed2bfb4f22e1a",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 27
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 44
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 33
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 29
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_18d5fc1fa5c042718343/C65",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:18d5fc1fa5c042718343",
+      "group_sha256": "18d5fc1fa5c042718343ec590842f9ec30b3b06de1e28f1bf72e7bca36290fed",
+      "anchor": 65,
+      "C_SHA256": "bed9044e8cdfa717b22471f7eaf87b41e6d63da976ca1966635341ae0f07adfb",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_2c604d6231f8160f7733/C1",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:2c604d6231f8160f7733",
+      "group_sha256": "2c604d6231f8160f7733285f27d8ea886f34b5b8c380c5ba173023d33b2b9b76",
+      "anchor": 1,
+      "C_SHA256": "78750b0f8c7f828b1a1b5ba862f15a667d51274ed37939a94da8396d6f8e7ae1",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 21
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 27
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 46
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 46
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_2c604d6231f8160f7733/C65",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:2c604d6231f8160f7733",
+      "group_sha256": "2c604d6231f8160f7733285f27d8ea886f34b5b8c380c5ba173023d33b2b9b76",
+      "anchor": 65,
+      "C_SHA256": "48d45a514308ac86b8313e00b9d7c32a83baa971f4195ec50fd26cf68c6f9cb3",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_34aa525ccaced7f94dfc/C1",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:34aa525ccaced7f94dfc",
+      "group_sha256": "34aa525ccaced7f94dfcfb169871dd58e17fe28b61e81191851ad6aefe0506b3",
+      "anchor": 1,
+      "C_SHA256": "298bd9682f858039ce82e98bac725a8079d4059e978574bcec1588ba14ecbbc7",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 29
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 40
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 46
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 37
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_34aa525ccaced7f94dfc/C65",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:34aa525ccaced7f94dfc",
+      "group_sha256": "34aa525ccaced7f94dfcfb169871dd58e17fe28b61e81191851ad6aefe0506b3",
+      "anchor": 65,
+      "C_SHA256": "d6fb9ca6da614f39cf4661ce8cbdbe9d6925afd54f320281aafb36f69c468eee",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 15
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 5
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 40
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_676e1a983974c0f63794/C1",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:676e1a983974c0f63794",
+      "group_sha256": "676e1a983974c0f63794e9ce1f6c6ebd7237dea90c33a60b2b81448fcd5a1183",
+      "anchor": 1,
+      "C_SHA256": "302e578afc5b338f89b3411105f66705868395e55e785b2bc9a69bfdcce83751",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 23
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 43
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 46
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 32
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 47
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_676e1a983974c0f63794/C65",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:676e1a983974c0f63794",
+      "group_sha256": "676e1a983974c0f63794e9ce1f6c6ebd7237dea90c33a60b2b81448fcd5a1183",
+      "anchor": 65,
+      "C_SHA256": "c6a3fb364d0e9a4a000875de9c0f49783514dfa8b8d2aac9608c3aeb40f278cd",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 6
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 37
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 36
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_7802c24617edd6b7a66c/C1",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:7802c24617edd6b7a66c",
+      "group_sha256": "7802c24617edd6b7a66c258b6b1a05f22fb27c1f912d95fea1a15ede2f8886a7",
+      "anchor": 1,
+      "C_SHA256": "1be9aa678fac8bcc5806888750314ccca806039042dc15de7e03457b8596662d",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 25
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 39
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 42
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 40
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 47
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_7802c24617edd6b7a66c/C65",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:7802c24617edd6b7a66c",
+      "group_sha256": "7802c24617edd6b7a66c258b6b1a05f22fb27c1f912d95fea1a15ede2f8886a7",
+      "anchor": 65,
+      "C_SHA256": "02b65baff8814b8a80adcea36ab523c018d603d6046228ec98df7577b0c3206b",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 10
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 12
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 35
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 19
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 37
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_7da8b33ed0ecdd0b14be/C1",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:7da8b33ed0ecdd0b14be",
+      "group_sha256": "7da8b33ed0ecdd0b14be1c4c3dd44356d788ddbb2834ae55d655203574212d9f",
+      "anchor": 1,
+      "C_SHA256": "8e79e35c0a22b4dec43b8c792a92551ff66967749947b42d3a87235365078c38",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 10
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 20
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 30
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 43
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_7da8b33ed0ecdd0b14be/C65",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:7da8b33ed0ecdd0b14be",
+      "group_sha256": "7da8b33ed0ecdd0b14be1c4c3dd44356d788ddbb2834ae55d655203574212d9f",
+      "anchor": 65,
+      "C_SHA256": "1f300cbd51e0c70bb2f7b97656a0715547213a09869b49e4573fdd04bbf443f0",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 5
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 34
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 13
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 47
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_be3aaef0f47598ef333b/C1",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:be3aaef0f47598ef333b",
+      "group_sha256": "be3aaef0f47598ef333b5103c09b352a7288f22afae3f94a2a3af8c44a30a8ae",
+      "anchor": 1,
+      "C_SHA256": "d327b171005df1e8c66152bbbe65daa8a347892aa600b3700f56923400d17efc",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 31
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 39
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 45
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 35
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_be3aaef0f47598ef333b/C65",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:be3aaef0f47598ef333b",
+      "group_sha256": "be3aaef0f47598ef333b5103c09b352a7288f22afae3f94a2a3af8c44a30a8ae",
+      "anchor": 65,
+      "C_SHA256": "2c6eb013a40d0535faf4eb967e6ce19c0a8c17cf8608366a5bfedc13cfc72c9f",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 5
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 5
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 12
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 39
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 10
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 35
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 47
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_c03e17a85d15f78bb370/C1",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:c03e17a85d15f78bb370",
+      "group_sha256": "c03e17a85d15f78bb3701580dbd11629360c04bb46f08b803c37b6079abcfaf0",
+      "anchor": 1,
+      "C_SHA256": "88482dff226027765ce32ccbe501f729d432e10aaaf2a1f88d1f13834b913032",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 31
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 5
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 24
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_c03e17a85d15f78bb370/C65",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:c03e17a85d15f78bb370",
+      "group_sha256": "c03e17a85d15f78bb3701580dbd11629360c04bb46f08b803c37b6079abcfaf0",
+      "anchor": 65,
+      "C_SHA256": "7b8386752723f3f95118407e33c35fbcc879652ec90564fbfc89cb15387baaa5",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 13
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 38
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 46
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 27
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 17
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_c2d148cb2492a2cab87c/C1",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:c2d148cb2492a2cab87c",
+      "group_sha256": "c2d148cb2492a2cab87ce54d352c35cfb5db85f90e8b107453b0a3e834dad5da",
+      "anchor": 1,
+      "C_SHA256": "bf3f246e5222e845ca89b8dc904fc5bc7e2ffcd7dd54ea27c65d89385847a110",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 8
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 16
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 44
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 16
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_c2d148cb2492a2cab87c/C65",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:c2d148cb2492a2cab87c",
+      "group_sha256": "c2d148cb2492a2cab87ce54d352c35cfb5db85f90e8b107453b0a3e834dad5da",
+      "anchor": 65,
+      "C_SHA256": "17468250cf9847c58b93f964773efad9c334131c070fa7f2d85ddb7fdb6bf411",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 7
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 11
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 12
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 44
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_cc1e70ae45bc887b453f/C1",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:cc1e70ae45bc887b453f",
+      "group_sha256": "cc1e70ae45bc887b453f70e4eb49af71f98281bc8cf6ed7a728d3c3b2ef5b62a",
+      "anchor": 1,
+      "C_SHA256": "11401dc17ae3c4e780d923af087cf6b2d35523e1e2204c92c14ba6fcb38f6ee7",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 18
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 8
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 8
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 21
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_cc1e70ae45bc887b453f/C65",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:cc1e70ae45bc887b453f",
+      "group_sha256": "cc1e70ae45bc887b453f70e4eb49af71f98281bc8cf6ed7a728d3c3b2ef5b62a",
+      "anchor": 65,
+      "C_SHA256": "882407b7edcfb6bb0cc2d6bf8ac333029a8b040e7cdada1671ac2b7a5bec7aa0",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 4
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 19
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 9
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 6
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 34
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_e22e0e1880a25a24cd76/C1",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:e22e0e1880a25a24cd76",
+      "group_sha256": "e22e0e1880a25a24cd761775607b3c65c24dc8663151c31e99141dfe26b81f89",
+      "anchor": 1,
+      "C_SHA256": "2daba87cae1a79c450cd9b89494dec35e40b8736ae3dc3e5e6905ff8a6e1f657",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 3
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 16
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 22
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 46
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 40
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 48
+        }
+      ]
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/fresh_test/humaneval_e22e0e1880a25a24cd76/C65",
+      "domain": "humaneval",
+      "prompt_id": "humaneval:e22e0e1880a25a24cd76",
+      "group_sha256": "e22e0e1880a25a24cd761775607b3c65c24dc8663151c31e99141dfe26b81f89",
+      "anchor": 65,
+      "C_SHA256": "b423294486ced1039a3ec010e60dbeb103b99793f782e6021db547b51ce4aa4f",
+      "panels": [
+        {
+          "source": "P",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "P",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "D",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 2
+        },
+        {
+          "source": "D",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 5
+        },
+        {
+          "source": "D",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 43
+        },
+        {
+          "source": "F",
+          "position": 3,
+          "slots": 48,
+          "distinct_H": 1
+        },
+        {
+          "source": "F",
+          "position": 8,
+          "slots": 48,
+          "distinct_H": 8
+        },
+        {
+          "source": "F",
+          "position": 15,
+          "slots": 48,
+          "distinct_H": 12
+        }
+      ]
+    }
+  ],
+  "target_panels": 621,
+  "slots_by_source": {
+    "P": 9936,
+    "D": 9936,
+    "F": 9936
+  },
+  "certificate_prompts": [
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:0019309e83e7cf0e6e90",
+      "group_sha256": "0019309e83e7cf0e6e90506fed1044a3d7199e27fb5d772b061842afbd9a5dc4"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:061501956468e82c7701",
+      "group_sha256": "061501956468e82c77012647889111bf1af73b2f143f180a6e35fa567c1df02d"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:39fda382b145630d85ef",
+      "group_sha256": "39fda382b145630d85efba7c8b2a9538a4665d91a29e10a7f9ee9577460e01f1"
+    },
+    {
+      "domain": "gsm8k",
+      "prompt_id": "gsm8k:3aa8d4c8f02f9dcd55d4",
+      "group_sha256": "3aa8d4c8f02f9dcd55d42e831bf0512b6c491733af0ba40657604376ae6239a7"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:17f6178e393cb29f00e1",
+      "group_sha256": "17f6178e393cb29f00e197d84907ecda35b3e1fa38d46677ecc7e110bd94512c"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:18d5fc1fa5c042718343",
+      "group_sha256": "18d5fc1fa5c042718343ec590842f9ec30b3b06de1e28f1bf72e7bca36290fed"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:2c604d6231f8160f7733",
+      "group_sha256": "2c604d6231f8160f7733285f27d8ea886f34b5b8c380c5ba173023d33b2b9b76"
+    },
+    {
+      "domain": "humaneval",
+      "prompt_id": "humaneval:34aa525ccaced7f94dfc",
+      "group_sha256": "34aa525ccaced7f94dfcfb169871dd58e17fe28b61e81191851ad6aefe0506b3"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:04ce139694b5d8900256",
+      "group_sha256": "04ce139694b5d8900256910e90021fbee3bc82ae50a441fb40deaaac453ea2d9"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:141c521796a45116e2fc",
+      "group_sha256": "141c521796a45116e2fcfe9f3c129eaed2f7e49f30a57d3ff0984325b8b23e90"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:2f2c7f26f46d75a845a5",
+      "group_sha256": "2f2c7f26f46d75a845a5a06e835170406bd9951d3a7661ce66927c25693dab02"
+    },
+    {
+      "domain": "alpaca",
+      "prompt_id": "alpaca:3831e7709c2d89249d46",
+      "group_sha256": "3831e7709c2d89249d46285c482c3ff9cf7bf783552e5392ab5d7a1956632681"
+    }
+  ],
+  "certificate_target_panels": 108,
+  "certificate_raw_panels": 216,
+  "certificate_group_counts": {
+    "('I0', 'one')": 13,
+    "('I1', 'one')": 697,
+    "('I2', 'one')": 1272,
+    "('I0', 'general')": 79,
+    "('I1', 'general')": 218,
+    "('I1', 'two')": 156,
+    "('I2', 'general')": 149,
+    "('I2', 'two')": 144,
+    "('I0', 'two')": 16
+  },
+  "dev": [
+    {
+      "domain": "gsm8k",
+      "group_sha256": "0172bc0c9804157b5970e65921f8da5f7310e035b257e86f66ddcedef2dd8ce9",
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/dev/gsm8k_0172bc0c9804157b5970/C1",
+      "anchor": 1,
+      "source": "P",
+      "position": 8,
+      "bodies": [
+        "D",
+        "J"
+      ]
+    },
+    {
+      "domain": "humaneval",
+      "group_sha256": "0177bb90e64de5f230fd7b87adece43bb4a417499652779f558d8e32628b2d8f",
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/dev/humaneval_0177bb90e64de5f230fd/C1",
+      "anchor": 1,
+      "source": "P",
+      "position": 8,
+      "bodies": [
+        "D",
+        "J"
+      ]
+    },
+    {
+      "domain": "alpaca",
+      "group_sha256": "1ffec456cb94f7722525a3c8cc165cfd26e8de698f0fe7c30c71ba22a26ea45e",
+      "path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8/data/dev/alpaca_1ffec456cb94f7722525/C1",
+      "anchor": 1,
+      "source": "P",
+      "position": 8,
+      "bodies": [
+        "D",
+        "J"
+      ]
+    }
+  ],
+  "no_outcome_selection": true,
+  "H_repeats_preserve_frequency": true
+}

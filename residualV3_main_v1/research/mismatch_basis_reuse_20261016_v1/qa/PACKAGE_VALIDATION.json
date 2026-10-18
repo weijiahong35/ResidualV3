@@ -1,0 +1,26 @@
+{
+  "status": "pass",
+  "scope": "document_contract_static_checks_only",
+  "required_files": 15,
+  "local_links_checked": 24,
+  "fold_domain_counts": {
+    "alpaca:0": 4,
+    "alpaca:1": 4,
+    "alpaca:2": 4,
+    "gsm8k:0": 4,
+    "gsm8k:1": 4,
+    "gsm8k:2": 4,
+    "humaneval:0": 4,
+    "humaneval:1": 4,
+    "humaneval:2": 4
+  },
+  "planned_fits": 27,
+  "python_sources_parse": true,
+  "json_parse": true,
+  "math_check": "pass",
+  "errors": [],
+  "scientific_experiment_started": false,
+  "performance_gate": "not_measured",
+  "whitespace_check": "passed_direct_file_scan",
+  "git_diff_check": "unavailable_git_discovery_stopped_at_filesystem_boundary; direct_file_whitespace_check_passed"
+}

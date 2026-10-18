@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "first_fold_CPU_seconds_this_stage": 53.442372958,
+  "reused_F0_and_ME0_CPU_added_for_prediction": 59.092294339999995,
+  "first_fold_full_equivalent_CPU_seconds": 112.53466729799999,
+  "remaining_science_CPU_predicted": 664.4057208873035,
+  "remaining_CPU_seconds": 21340.603166359,
+  "no_effect_based_admission": true,
+  "remaining_folds": 2
+}

@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "training_rows": 20000,
+  "unique_training_groups": 20000,
+  "max_prompt_plus_answer_tokens": 4095,
+  "min_answer_tokens": 17,
+  "source_files": [
+    {
+      "path": "/data/weijiahong/speculators-main-lora/regeneration_standalone/open_perfectblend_regen/pool_500k_seed42/regenerated_ctx4096/nonthinking/train/shard-000.jsonl",
+      "sha256": "9e09d066e4a28787b04240a694cd2b269698548a43b658a1bcf72a70fe1726b1",
+      "selected": 9071
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/regeneration_standalone/open_perfectblend_regen/pool_500k_seed42/regenerated_ctx4096/nonthinking/train/shard-001.jsonl",
+      "sha256": "b64f0cdbd3670e037305df8556ca0c0b91b6ccfffb2730d769ce9a63e6b972f6",
+      "selected": 9082
+    },
+    {
+      "path": "/data/weijiahong/speculators-main-lora/regeneration_standalone/open_perfectblend_regen/pool_500k_seed42/regenerated_ctx4096/nonthinking/train/shard-002.jsonl",
+      "sha256": "281f56a1d6d08c19ea46752f4de637be494e6e6e15b81f1a42f34d9860614047",
+      "selected": 1847
+    }
+  ],
+  "filtering": {
+    "conversation_not_complete": 10282,
+    "truncated_or_other_finish": 1785,
+    "insufficient_contiguous_answer": 79,
+    "duplicate_group": 6
+  },
+  "paths": {
+    "train": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/train20k_20261006/train.jsonl",
+    "warmup": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/train20k_20261006/warmup.jsonl",
+    "final_C1": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/train20k_20261006/final_C1.jsonl",
+    "final_C40": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/train20k_20261006/final_C40.jsonl"
+  },
+  "sha256": {
+    "train": "399d9d52184ce33e88f8e7e9a82b343fd53c1f2dc497bfd7138474759468e459",
+    "warmup": "823be1d369e7d7c19f0483b8894b19cd0c9ee4a80c35a1da99f6def7383fcd2d",
+    "final_C1": "f7ad345f063d0d5d5ec78014308cb9ee699397183bba616ed7dac99db05a9cab",
+    "final_C40": "8d7c2ccb85aa3969d411a7ed634dcee6aea04c2f5b608cab54036270982de082"
+  },
+  "validation_groups_disjoint": true,
+  "thinking": false,
+  "utc": "2026-10-06T03:09:01.848158+00:00"
+}

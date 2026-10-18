@@ -1,0 +1,1164 @@
+{
+  "status": "complete",
+  "total_updates": 800,
+  "elapsed_seconds": 310.0260589122772,
+  "registered_sources_unchanged": true,
+  "exact_prior_state_and_oracle_signatures": {
+    "5539": true,
+    "1822": true,
+    "9272": true,
+    "7068": true,
+    "7715": true,
+    "1878": true,
+    "8261": true,
+    "4376": true,
+    "3726": true,
+    "8401": true,
+    "9742": true,
+    "7810": true,
+    "2459": true,
+    "611": true,
+    "9257": true,
+    "6681": true,
+    "3715": true,
+    "1982": true,
+    "6680": true,
+    "7476": true,
+    "7510": true,
+    "5970": true,
+    "1465": true,
+    "7304": true
+  },
+  "exact_matched_initialization": true,
+  "exact_matched_lr_by_epoch": true,
+  "heldout_never_used_in_gradient_updates": true,
+  "each_train_state_exposures": 40,
+  "scalar_metrics_independently_recomputed": true,
+  "baselines": {
+    "CONTROL_4": {
+      "raw": {
+        "states": 28,
+        "mean_kl": 1.285118307245284,
+        "max_kl": 6.691284656524658,
+        "mean_tv": 0.41439863291426654,
+        "target_overlap": 0.5825096641326256,
+        "greedy_errors": 9,
+        "target_correct": 19
+      },
+      "frozen_N": {
+        "states": 28,
+        "mean_kl": 1.17185071716781,
+        "max_kl": 7.927553653717041,
+        "mean_tv": 0.3104159875336044,
+        "target_overlap": 0.686602968988674,
+        "greedy_errors": 10,
+        "target_correct": 18
+      },
+      "oracle": {
+        "states": 28,
+        "mean_kl": 0.0,
+        "max_kl": 0.0,
+        "mean_tv": 0.0,
+        "target_overlap": 0.9895444533654622,
+        "greedy_errors": 0,
+        "target_correct": 28
+      }
+    },
+    "EXPANDED_16": {
+      "raw": {
+        "states": 112,
+        "mean_kl": 1.3151217184768922,
+        "max_kl": 6.951608657836914,
+        "mean_tv": 0.4485827684188247,
+        "target_overlap": 0.5477269367350216,
+        "greedy_errors": 42,
+        "target_correct": 70
+      },
+      "frozen_N": {
+        "states": 112,
+        "mean_kl": 1.3721380934417504,
+        "max_kl": 12.238112449645996,
+        "mean_tv": 0.2611355493306845,
+        "target_overlap": 0.7350146017138286,
+        "greedy_errors": 29,
+        "target_correct": 83
+      },
+      "oracle": {
+        "states": 112,
+        "mean_kl": 0.0,
+        "max_kl": 0.0,
+        "mean_tv": 0.0,
+        "target_overlap": 0.9913247302174568,
+        "greedy_errors": 0,
+        "target_correct": 112
+      }
+    },
+    "heldout": {
+      "raw": {
+        "states": 56,
+        "mean_kl": 0.870759585153272,
+        "max_kl": 4.598653793334961,
+        "mean_tv": 0.3635578216352379,
+        "target_overlap": 0.6274348125329458,
+        "greedy_errors": 17,
+        "target_correct": 39
+      },
+      "frozen_N": {
+        "states": 56,
+        "mean_kl": 1.0540106231460473,
+        "max_kl": 9.039815902709961,
+        "mean_tv": 0.24390737314423713,
+        "target_overlap": 0.7544800818154468,
+        "greedy_errors": 13,
+        "target_correct": 43
+      },
+      "oracle": {
+        "states": 56,
+        "mean_kl": 0.0,
+        "max_kl": 0.0,
+        "mean_tv": 0.0,
+        "target_overlap": 0.9695795821618438,
+        "greedy_errors": 1,
+        "target_correct": 55
+      }
+    }
+  },
+  "arms": {
+    "CONTROL_4": {
+      "train_fit": true,
+      "steps": 160,
+      "exposures_by_source_index": {
+        "5539": 40,
+        "1822": 40,
+        "9272": 40,
+        "7068": 40
+      },
+      "train": {
+        "states": 28,
+        "mean_kl": 0.001175379713840487,
+        "max_kl": 0.00663654925301671,
+        "mean_tv": 0.0038859380403144833,
+        "target_overlap": 0.9865893700293132,
+        "greedy_errors": 0,
+        "target_correct": 28
+      },
+      "heldout": {
+        "states": 56,
+        "mean_kl": 1.1289401019347776,
+        "max_kl": 6.021997928619385,
+        "mean_tv": 0.3554530353278876,
+        "target_overlap": 0.6355649402338973,
+        "greedy_errors": 19,
+        "target_correct": 37
+      },
+      "heldout_vs_frozen_N": "no_joint_improvement",
+      "heldout_soft_kl_relative_improvement": -0.07108987057936678,
+      "heldout_errors_fixed": 1,
+      "heldout_previous_correct_harmed": 7,
+      "heldout_kl_improved_prompts": 3,
+      "heldout_greedy_improved_prompts": 0,
+      "heldout_per_prompt": [
+        {
+          "source_index": 3715,
+          "learner": {
+            "states": 7,
+            "mean_kl": 1.1019567360251261,
+            "max_kl": 5.549671649932861,
+            "mean_tv": 0.3580528789493006,
+            "target_overlap": 0.6419271576617446,
+            "greedy_errors": 1,
+            "target_correct": 6
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 0.9893139491594606,
+            "max_kl": 6.8782477378845215,
+            "mean_tv": 0.15034039361176252,
+            "target_overlap": 0.8496395216123867,
+            "greedy_errors": 1,
+            "target_correct": 6
+          },
+          "kl_difference": 0.11264278686566553,
+          "overlap_difference": -0.20771236395064208,
+          "greedy_error_difference": 0
+        },
+        {
+          "source_index": 1982,
+          "learner": {
+            "states": 7,
+            "mean_kl": 3.639842962580068,
+            "max_kl": 6.021997928619385,
+            "mean_tv": 0.7739110131348882,
+            "target_overlap": 0.2268231915243502,
+            "greedy_errors": 5,
+            "target_correct": 2
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 2.1144770880761956,
+            "max_kl": 9.039815902709961,
+            "mean_tv": 0.4197357926251633,
+            "target_overlap": 0.5802988036136542,
+            "greedy_errors": 3,
+            "target_correct": 4
+          },
+          "kl_difference": 1.5253658745038723,
+          "overlap_difference": -0.35347561208930395,
+          "greedy_error_difference": 2
+        },
+        {
+          "source_index": 6680,
+          "learner": {
+            "states": 7,
+            "mean_kl": 0.2370093952230101,
+            "max_kl": 1.644820213317871,
+            "mean_tv": 0.11353570367230402,
+            "target_overlap": 0.8544276818091541,
+            "greedy_errors": 1,
+            "target_correct": 6
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 1.0300348296903914,
+            "max_kl": 6.517873764038086,
+            "mean_tv": 0.21535358257642656,
+            "target_overlap": 0.7833939114293449,
+            "greedy_errors": 1,
+            "target_correct": 6
+          },
+          "kl_difference": -0.7930254344673813,
+          "overlap_difference": 0.07103377037980918,
+          "greedy_error_difference": 0
+        },
+        {
+          "source_index": 7476,
+          "learner": {
+            "states": 7,
+            "mean_kl": 0.8195663650902654,
+            "max_kl": 2.7152223587036133,
+            "mean_tv": 0.31250381974885905,
+            "target_overlap": 0.6869461131947381,
+            "greedy_errors": 2,
+            "target_correct": 5
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 0.5617318337328437,
+            "max_kl": 2.2017672061920166,
+            "mean_tv": 0.25938099795999797,
+            "target_overlap": 0.7401674166321754,
+            "greedy_errors": 2,
+            "target_correct": 5
+          },
+          "kl_difference": 0.2578345313574216,
+          "overlap_difference": -0.05322130343743736,
+          "greedy_error_difference": 0
+        },
+        {
+          "source_index": 7510,
+          "learner": {
+            "states": 7,
+            "mean_kl": 0.4484881767296299,
+            "max_kl": 1.2928943634033203,
+            "mean_tv": 0.2935256344540643,
+            "target_overlap": 0.7092163477625165,
+            "greedy_errors": 2,
+            "target_correct": 5
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 0.04619237842364653,
+            "max_kl": 0.22617505490779877,
+            "mean_tv": 0.023469125099706747,
+            "target_overlap": 0.975576366697039,
+            "greedy_errors": 0,
+            "target_correct": 7
+          },
+          "kl_difference": 0.40229579830598333,
+          "overlap_difference": -0.26636001893452244,
+          "greedy_error_difference": 2
+        },
+        {
+          "source_index": 5970,
+          "learner": {
+            "states": 7,
+            "mean_kl": 0.08226832180454428,
+            "max_kl": 0.2095528542995453,
+            "mean_tv": 0.09609973432088736,
+            "target_overlap": 0.9036428332328796,
+            "greedy_errors": 1,
+            "target_correct": 6
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 0.04190773652875838,
+            "max_kl": 0.09896653890609741,
+            "mean_tv": 0.04684604447187927,
+            "target_overlap": 0.9533188939094543,
+            "greedy_errors": 0,
+            "target_correct": 7
+          },
+          "kl_difference": 0.040360585275785905,
+          "overlap_difference": -0.04967606067657471,
+          "greedy_error_difference": 1
+        },
+        {
+          "source_index": 1465,
+          "learner": {
+            "states": 7,
+            "mean_kl": 0.6176356310960338,
+            "max_kl": 2.941624402999878,
+            "mean_tv": 0.2657889946037488,
+            "target_overlap": 0.7307033246116978,
+            "greedy_errors": 2,
+            "target_correct": 5
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 1.3965086555286754,
+            "max_kl": 7.138503074645996,
+            "mean_tv": 0.22628887827324565,
+            "target_overlap": 0.7694146441561835,
+            "greedy_errors": 2,
+            "target_correct": 5
+          },
+          "kl_difference": -0.7788730244326416,
+          "overlap_difference": -0.0387113195444857,
+          "greedy_error_difference": 0
+        },
+        {
+          "source_index": 7304,
+          "learner": {
+            "states": 7,
+            "mean_kl": 2.0847532269295437,
+            "max_kl": 5.862621307373047,
+            "mean_tv": 0.6302065037390483,
+            "target_overlap": 0.3308328720740974,
+            "greedy_errors": 5,
+            "target_correct": 2
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 2.2519185140284077,
+            "max_kl": 6.2085652351379395,
+            "mean_tv": 0.609844170535715,
+            "target_overlap": 0.3840310964733362,
+            "greedy_errors": 4,
+            "target_correct": 3
+          },
+          "kl_difference": -0.16716528709886402,
+          "overlap_difference": -0.053198224399238825,
+          "greedy_error_difference": 1
+        }
+      ],
+      "clipped_updates": 49,
+      "median_pre_clip_norm": 0.2599956542253494,
+      "fp32_group_updates_always_nonzero": true,
+      "candidate_outputs_unchanged_updates": 0,
+      "last_two_train_evaluations": [
+        {
+          "scope": "train",
+          "epoch": 36,
+          "step": 144,
+          "states": 28,
+          "mean_kl": 0.0010078915392373996,
+          "max_kl": 0.007814627140760422,
+          "mean_tv": 0.0016103683687041276,
+          "max_tv": 0.014747148379683495,
+          "target_overlap": 0.9885813295841217,
+          "target_top1": 1.0,
+          "greedy_errors": 0,
+          "baseline_correct_to_wrong": 0,
+          "baseline_wrong_to_correct": 10,
+          "oracle_greedy_eligible": 28,
+          "oracle_greedy_margin_pass": 28,
+          "distribution_pass": true,
+          "greedy_pass": true,
+          "fit_pass": true,
+          "utc": "2026-10-01T15:30:08.293407+00:00",
+          "frozen_reached": {
+            "states": 20,
+            "mean_kl": 0.0005566926350184076,
+            "max_kl": 0.0023703211918473244,
+            "mean_tv": 0.0008493420072682057,
+            "max_tv": 0.00662051048129797,
+            "target_overlap": 0.9967832952737808,
+            "target_top1": 1.0,
+            "greedy_errors": 0,
+            "baseline_correct_to_wrong": 0,
+            "baseline_wrong_to_correct": 4,
+            "oracle_greedy_eligible": 20,
+            "oracle_greedy_margin_pass": 20,
+            "distribution_pass": true,
+            "greedy_pass": true,
+            "fit_pass": true
+          }
+        },
+        {
+          "scope": "train",
+          "epoch": 40,
+          "step": 160,
+          "states": 28,
+          "mean_kl": 0.001175379713840487,
+          "max_kl": 0.00663654925301671,
+          "mean_tv": 0.0038859380403144833,
+          "max_tv": 0.03681531175971031,
+          "target_overlap": 0.9865893700293132,
+          "target_top1": 1.0,
+          "greedy_errors": 0,
+          "baseline_correct_to_wrong": 0,
+          "baseline_wrong_to_correct": 10,
+          "oracle_greedy_eligible": 28,
+          "oracle_greedy_margin_pass": 28,
+          "distribution_pass": true,
+          "greedy_pass": true,
+          "fit_pass": true,
+          "utc": "2026-10-01T15:30:09.560370+00:00",
+          "frozen_reached": {
+            "states": 20,
+            "mean_kl": 0.0005828116778388903,
+            "max_kl": 0.0023548768367618322,
+            "mean_tv": 0.001666431889498199,
+            "max_tv": 0.024263331666588783,
+            "target_overlap": 0.9961410194635392,
+            "target_top1": 1.0,
+            "greedy_errors": 0,
+            "baseline_correct_to_wrong": 0,
+            "baseline_wrong_to_correct": 4,
+            "oracle_greedy_eligible": 20,
+            "oracle_greedy_margin_pass": 20,
+            "distribution_pass": true,
+            "greedy_pass": true,
+            "fit_pass": true
+          }
+        }
+      ]
+    },
+    "EXPANDED_16": {
+      "train_fit": false,
+      "steps": 640,
+      "exposures_by_source_index": {
+        "5539": 40,
+        "1822": 40,
+        "9272": 40,
+        "7068": 40,
+        "7715": 40,
+        "1878": 40,
+        "8261": 40,
+        "4376": 40,
+        "3726": 40,
+        "8401": 40,
+        "9742": 40,
+        "7810": 40,
+        "2459": 40,
+        "611": 40,
+        "9257": 40,
+        "6681": 40
+      },
+      "train": {
+        "states": 112,
+        "mean_kl": 0.002853323160361449,
+        "max_kl": 0.06131847947835922,
+        "mean_tv": 0.00362512250641903,
+        "target_overlap": 0.9896398947707244,
+        "greedy_errors": 0,
+        "target_correct": 112
+      },
+      "heldout": {
+        "states": 56,
+        "mean_kl": 1.446453597190904,
+        "max_kl": 10.180298805236816,
+        "mean_tv": 0.34379928139310323,
+        "target_overlap": 0.6521365429103493,
+        "greedy_errors": 19,
+        "target_correct": 37
+      },
+      "heldout_vs_frozen_N": "no_joint_improvement",
+      "heldout_soft_kl_relative_improvement": -0.37233303481655566,
+      "heldout_errors_fixed": 2,
+      "heldout_previous_correct_harmed": 8,
+      "heldout_kl_improved_prompts": 3,
+      "heldout_greedy_improved_prompts": 0,
+      "heldout_per_prompt": [
+        {
+          "source_index": 3715,
+          "learner": {
+            "states": 7,
+            "mean_kl": 1.1352678847724746,
+            "max_kl": 5.047252655029297,
+            "mean_tv": 0.2938367744573043,
+            "target_overlap": 0.7061875828408769,
+            "greedy_errors": 2,
+            "target_correct": 5
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 0.9893139491594606,
+            "max_kl": 6.8782477378845215,
+            "mean_tv": 0.15034039361176252,
+            "target_overlap": 0.8496395216123867,
+            "greedy_errors": 1,
+            "target_correct": 6
+          },
+          "kl_difference": 0.14595393561301406,
+          "overlap_difference": -0.14345193877150975,
+          "greedy_error_difference": 1
+        },
+        {
+          "source_index": 1982,
+          "learner": {
+            "states": 7,
+            "mean_kl": 4.2225897304181546,
+            "max_kl": 9.99410629272461,
+            "mean_tv": 0.7032834326050111,
+            "target_overlap": 0.29747265588957816,
+            "greedy_errors": 5,
+            "target_correct": 2
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 2.1144770880761956,
+            "max_kl": 9.039815902709961,
+            "mean_tv": 0.4197357926251633,
+            "target_overlap": 0.5802988036136542,
+            "greedy_errors": 3,
+            "target_correct": 4
+          },
+          "kl_difference": 2.108112642341959,
+          "overlap_difference": -0.282826147724076,
+          "greedy_error_difference": 2
+        },
+        {
+          "source_index": 6680,
+          "learner": {
+            "states": 7,
+            "mean_kl": 0.30796728363930015,
+            "max_kl": 2.1463265419006348,
+            "mean_tv": 0.12277202287337527,
+            "target_overlap": 0.8547557820503633,
+            "greedy_errors": 1,
+            "target_correct": 6
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 1.0300348296903914,
+            "max_kl": 6.517873764038086,
+            "mean_tv": 0.21535358257642656,
+            "target_overlap": 0.7833939114293449,
+            "greedy_errors": 1,
+            "target_correct": 6
+          },
+          "kl_difference": -0.7220675460510912,
+          "overlap_difference": 0.0713618706210184,
+          "greedy_error_difference": 0
+        },
+        {
+          "source_index": 7476,
+          "learner": {
+            "states": 7,
+            "mean_kl": 0.9007886981427353,
+            "max_kl": 3.188138961791992,
+            "mean_tv": 0.3220916593927541,
+            "target_overlap": 0.6779103502631187,
+            "greedy_errors": 2,
+            "target_correct": 5
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 0.5617318337328437,
+            "max_kl": 2.2017672061920166,
+            "mean_tv": 0.25938099795999797,
+            "target_overlap": 0.7401674166321754,
+            "greedy_errors": 2,
+            "target_correct": 5
+          },
+          "kl_difference": 0.3390568644098916,
+          "overlap_difference": -0.0622570663690567,
+          "greedy_error_difference": 0
+        },
+        {
+          "source_index": 7510,
+          "learner": {
+            "states": 7,
+            "mean_kl": 1.7846919962783951,
+            "max_kl": 10.180298805236816,
+            "mean_tv": 0.346741498650642,
+            "target_overlap": 0.6529522688184183,
+            "greedy_errors": 3,
+            "target_correct": 4
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 0.04619237842364653,
+            "max_kl": 0.22617505490779877,
+            "mean_tv": 0.023469125099706747,
+            "target_overlap": 0.975576366697039,
+            "greedy_errors": 0,
+            "target_correct": 7
+          },
+          "kl_difference": 1.7384996178547487,
+          "overlap_difference": -0.3226240978786207,
+          "greedy_error_difference": 3
+        },
+        {
+          "source_index": 5970,
+          "learner": {
+            "states": 7,
+            "mean_kl": 0.037826254717531684,
+            "max_kl": 0.13453975319862366,
+            "mean_tv": 0.03999117096412062,
+            "target_overlap": 0.9598914640290397,
+            "greedy_errors": 0,
+            "target_correct": 7
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 0.04190773652875838,
+            "max_kl": 0.09896653890609741,
+            "mean_tv": 0.04684604447187927,
+            "target_overlap": 0.9533188939094543,
+            "greedy_errors": 0,
+            "target_correct": 7
+          },
+          "kl_difference": -0.004081481811226695,
+          "overlap_difference": 0.006572570119585341,
+          "greedy_error_difference": 0
+        },
+        {
+          "source_index": 1465,
+          "learner": {
+            "states": 7,
+            "mean_kl": 0.6866126098245461,
+            "max_kl": 3.0839831829071045,
+            "mean_tv": 0.25830427488082414,
+            "target_overlap": 0.7390136559094701,
+            "greedy_errors": 2,
+            "target_correct": 5
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 1.3965086555286754,
+            "max_kl": 7.138503074645996,
+            "mean_tv": 0.22628887827324565,
+            "target_overlap": 0.7694146441561835,
+            "greedy_errors": 2,
+            "target_correct": 5
+          },
+          "kl_difference": -0.7098960457041293,
+          "overlap_difference": -0.030400988246713445,
+          "greedy_error_difference": 0
+        },
+        {
+          "source_index": 7304,
+          "learner": {
+            "states": 7,
+            "mean_kl": 2.4958843197340945,
+            "max_kl": 5.661985874176025,
+            "mean_tv": 0.6633734173207942,
+            "target_overlap": 0.32890858348192914,
+            "greedy_errors": 4,
+            "target_correct": 3
+          },
+          "frozen_N": {
+            "states": 7,
+            "mean_kl": 2.2519185140284077,
+            "max_kl": 6.2085652351379395,
+            "mean_tv": 0.609844170535715,
+            "target_overlap": 0.3840310964733362,
+            "greedy_errors": 4,
+            "target_correct": 3
+          },
+          "kl_difference": 0.24396580570568682,
+          "overlap_difference": -0.05512251299140708,
+          "greedy_error_difference": 0
+        }
+      ],
+      "clipped_updates": 254,
+      "median_pre_clip_norm": 0.5206850171089172,
+      "fp32_group_updates_always_nonzero": true,
+      "candidate_outputs_unchanged_updates": 0,
+      "last_two_train_evaluations": [
+        {
+          "scope": "train",
+          "epoch": 36,
+          "step": 576,
+          "states": 112,
+          "mean_kl": 0.003160222933670655,
+          "max_kl": 0.07015596330165863,
+          "mean_tv": 0.00425569241468539,
+          "max_tv": 0.06557884812355042,
+          "target_overlap": 0.9892412652926785,
+          "target_top1": 1.0,
+          "greedy_errors": 0,
+          "baseline_correct_to_wrong": 0,
+          "baseline_wrong_to_correct": 29,
+          "oracle_greedy_eligible": 112,
+          "oracle_greedy_margin_pass": 112,
+          "distribution_pass": false,
+          "greedy_pass": true,
+          "fit_pass": false,
+          "utc": "2026-10-01T15:30:50.347524+00:00",
+          "frozen_reached": {
+            "states": 75,
+            "mean_kl": 0.0020917201986443007,
+            "max_kl": 0.07015596330165863,
+            "mean_tv": 0.0019460957787267338,
+            "max_tv": 0.04847393184900284,
+            "target_overlap": 0.9954705437024435,
+            "target_top1": 1.0,
+            "greedy_errors": 0,
+            "baseline_correct_to_wrong": 0,
+            "baseline_wrong_to_correct": 13,
+            "oracle_greedy_eligible": 75,
+            "oracle_greedy_margin_pass": 75,
+            "distribution_pass": false,
+            "greedy_pass": true,
+            "fit_pass": false
+          }
+        },
+        {
+          "scope": "train",
+          "epoch": 40,
+          "step": 640,
+          "states": 112,
+          "mean_kl": 0.002853323160361449,
+          "max_kl": 0.06131847947835922,
+          "mean_tv": 0.00362512250641903,
+          "max_tv": 0.055638302117586136,
+          "target_overlap": 0.9896398947707244,
+          "target_top1": 1.0,
+          "greedy_errors": 0,
+          "baseline_correct_to_wrong": 0,
+          "baseline_wrong_to_correct": 29,
+          "oracle_greedy_eligible": 112,
+          "oracle_greedy_margin_pass": 112,
+          "distribution_pass": false,
+          "greedy_pass": true,
+          "fit_pass": false,
+          "utc": "2026-10-01T15:30:54.726588+00:00",
+          "frozen_reached": {
+            "states": 75,
+            "mean_kl": 0.0019076983541822302,
+            "max_kl": 0.06131847947835922,
+            "mean_tv": 0.002053637934308578,
+            "max_tv": 0.055638302117586136,
+            "target_overlap": 0.995468901793162,
+            "target_top1": 1.0,
+            "greedy_errors": 0,
+            "baseline_correct_to_wrong": 0,
+            "baseline_wrong_to_correct": 13,
+            "oracle_greedy_eligible": 75,
+            "oracle_greedy_margin_pass": 75,
+            "distribution_pass": false,
+            "greedy_pass": true,
+            "fit_pass": false
+          }
+        }
+      ]
+    }
+  },
+  "diagnosis": "CONTROL_4 passes. EXPANDED_16 has all112 greedy positions correct and low mean KL/TV; its sole formal training failure is one max-KL tail state (source611 position7: KL0.061318>0.05). Do not describe the expanded group as generally unable to learn. Both heads have19/56 heldout greedy errors versus frozen N13/56; target overlap is also lower. The clearest observation is very good finite-set learning with poor heldout transfer, plus a small unresolved training tail. This is consistent with overfitting a narrow state set; it does not identify missing input information, capacity, optimization interference, or behavior-history shift as the unique cause.",
+  "expanded_vs_control_heldout": {
+    "kl_difference": 0.3175134952561265,
+    "greedy_error_difference": 0,
+    "target_overlap_difference": 0.01657160267645197
+  },
+  "limitations": [
+    "One fresh seed; finite-set mechanism diagnostic, no population generalization claim",
+    "Heldout is relative to these fresh learner heads; historical train128 was used by frozen behavior/basis and earlier research, so this is not an independent final test",
+    "Only early T0 block2; fixed behavior prefixes; no on-policy acceptance or throughput evidence",
+    "Equal exposure counts and LR per epoch, but expanded arm has more Adam updates and more intervening prompts; failure would not isolate interference from optimizer/capacity/input causes"
+  ],
+  "native_acceptance_throughput_measured": false,
+  "cleanup": {
+    "owned_native_stopped": true,
+    "owned_learner_stopped": true,
+    "owned_oracle_stopped": true,
+    "transfer_files_left": 0,
+    "leftovers_cleaned": 1,
+    "hidden_files_persisted": 0,
+    "utc": "2026-10-01T15:30:57.345584+00:00"
+  },
+  "analysis_source_sha256": "64912ccdc9bca6c2c7108bb3e44a9d3b78bbbb00baa7a37b3ace467cab6f9d1e",
+  "formal_criteria_diagnosis": "The four-prompt control fits but the expanded training set does not meet every threshold. Finite-budget shared fitting is now a bottleneck; individual failed criteria must be reported.",
+  "tail_and_curve_audit": {
+    "CONTROL_4": {
+      "last_two_training_checks": [
+        {
+          "epoch": 36,
+          "states": 28,
+          "kl_tail_exceedances": [],
+          "greedy_errors": 0,
+          "greedy_margin_failures": 0
+        },
+        {
+          "epoch": 40,
+          "states": 28,
+          "kl_tail_exceedances": [],
+          "greedy_errors": 0,
+          "greedy_margin_failures": 0
+        }
+      ],
+      "train_curve": [
+        {
+          "epoch": 0,
+          "mean_kl": 1.281723249334131,
+          "max_kl": 6.725996494293213,
+          "mean_tv": 0.4142093794466096,
+          "greedy_errors": 9
+        },
+        {
+          "epoch": 4,
+          "mean_kl": 0.2956789456596068,
+          "max_kl": 3.3312828540802,
+          "mean_tv": 0.16682190040033415,
+          "greedy_errors": 1
+        },
+        {
+          "epoch": 8,
+          "mean_kl": 0.03049718522434627,
+          "max_kl": 0.34769660234451294,
+          "mean_tv": 0.019953374878663714,
+          "greedy_errors": 0
+        },
+        {
+          "epoch": 12,
+          "mean_kl": 0.012985983092611215,
+          "max_kl": 0.17004720866680145,
+          "mean_tv": 0.01337006512475065,
+          "greedy_errors": 0
+        },
+        {
+          "epoch": 16,
+          "mean_kl": 0.011197130475092567,
+          "max_kl": 0.211660698056221,
+          "mean_tv": 0.015498119805101851,
+          "greedy_errors": 0
+        },
+        {
+          "epoch": 20,
+          "mean_kl": 0.0023195641304515186,
+          "max_kl": 0.01839148811995983,
+          "mean_tv": 0.003745295169502632,
+          "greedy_errors": 0
+        },
+        {
+          "epoch": 24,
+          "mean_kl": 0.0016920099622065468,
+          "max_kl": 0.013713052496314049,
+          "mean_tv": 0.004305266528498513,
+          "greedy_errors": 0
+        },
+        {
+          "epoch": 28,
+          "mean_kl": 0.002876125863606051,
+          "max_kl": 0.042619653046131134,
+          "mean_tv": 0.007275002733276129,
+          "greedy_errors": 0
+        },
+        {
+          "epoch": 32,
+          "mean_kl": 0.0011956558007162649,
+          "max_kl": 0.008242957293987274,
+          "mean_tv": 0.0033284792172837896,
+          "greedy_errors": 0
+        },
+        {
+          "epoch": 36,
+          "mean_kl": 0.0010078915392373996,
+          "max_kl": 0.007814627140760422,
+          "mean_tv": 0.0016103683687041276,
+          "greedy_errors": 0
+        },
+        {
+          "epoch": 40,
+          "mean_kl": 0.001175379713840487,
+          "max_kl": 0.00663654925301671,
+          "mean_tv": 0.0038859380403144833,
+          "greedy_errors": 0
+        }
+      ],
+      "heldout_curve": [
+        {
+          "epoch": 0,
+          "mean_kl": 0.8700921943361338,
+          "mean_tv": 0.3627860610969427,
+          "target_overlap": 0.6282286235043882,
+          "greedy_errors": 17
+        },
+        {
+          "epoch": 4,
+          "mean_kl": 0.7847529569847081,
+          "mean_tv": 0.3308472188660484,
+          "target_overlap": 0.6590668194582706,
+          "greedy_errors": 13
+        },
+        {
+          "epoch": 8,
+          "mean_kl": 0.9211979818492182,
+          "mean_tv": 0.3326955478923992,
+          "target_overlap": 0.6573767425964304,
+          "greedy_errors": 18
+        },
+        {
+          "epoch": 12,
+          "mean_kl": 0.9595856426176397,
+          "mean_tv": 0.33735571356360844,
+          "target_overlap": 0.6533494244228807,
+          "greedy_errors": 18
+        },
+        {
+          "epoch": 16,
+          "mean_kl": 0.972391147880119,
+          "mean_tv": 0.339103195631781,
+          "target_overlap": 0.6517493892579945,
+          "greedy_errors": 18
+        },
+        {
+          "epoch": 20,
+          "mean_kl": 1.0346240506425082,
+          "mean_tv": 0.3423684523357094,
+          "target_overlap": 0.6485951741248235,
+          "greedy_errors": 18
+        },
+        {
+          "epoch": 24,
+          "mean_kl": 1.0626485406341675,
+          "mean_tv": 0.3463790510544901,
+          "target_overlap": 0.64459602206216,
+          "greedy_errors": 19
+        },
+        {
+          "epoch": 28,
+          "mean_kl": 1.078526876685016,
+          "mean_tv": 0.3544148620066413,
+          "target_overlap": 0.6367061015703257,
+          "greedy_errors": 20
+        },
+        {
+          "epoch": 32,
+          "mean_kl": 1.10508472135429,
+          "mean_tv": 0.3521398234374179,
+          "target_overlap": 0.6388768422517127,
+          "greedy_errors": 20
+        },
+        {
+          "epoch": 36,
+          "mean_kl": 1.1186396809265002,
+          "mean_tv": 0.3540085568075873,
+          "target_overlap": 0.6370983658170449,
+          "greedy_errors": 19
+        },
+        {
+          "epoch": 40,
+          "mean_kl": 1.1289401019347776,
+          "mean_tv": 0.3554530353278876,
+          "target_overlap": 0.6355649402338973,
+          "greedy_errors": 19
+        }
+      ],
+      "posthoc_jointly_improved_heldout_epochs": [],
+      "caveat": "Posthoc curve inspection only; no checkpoint selection, re-training, or additional model tuning."
+    },
+    "EXPANDED_16": {
+      "last_two_training_checks": [
+        {
+          "epoch": 36,
+          "states": 112,
+          "kl_tail_exceedances": [
+            {
+              "source_index": 611,
+              "prompt_index": 13,
+              "position": 7,
+              "reached": true,
+              "kl": 0.07015596330165863,
+              "tv": 0.04847393184900284,
+              "margin": 0.625
+            }
+          ],
+          "greedy_errors": 0,
+          "greedy_margin_failures": 0
+        },
+        {
+          "epoch": 40,
+          "states": 112,
+          "kl_tail_exceedances": [
+            {
+              "source_index": 611,
+              "prompt_index": 13,
+              "position": 7,
+              "reached": true,
+              "kl": 0.06131847947835922,
+              "tv": 0.055638302117586136,
+              "margin": 0.5625
+            }
+          ],
+          "greedy_errors": 0,
+          "greedy_margin_failures": 0
+        }
+      ],
+      "train_curve": [
+        {
+          "epoch": 0,
+          "mean_kl": 1.3137549936891202,
+          "max_kl": 6.922161102294922,
+          "mean_tv": 0.44874724915035,
+          "greedy_errors": 42
+        },
+        {
+          "epoch": 4,
+          "mean_kl": 0.20734642959593583,
+          "max_kl": 3.079301595687866,
+          "mean_tv": 0.1258813639894356,
+          "greedy_errors": 9
+        },
+        {
+          "epoch": 8,
+          "mean_kl": 0.1629678524738247,
+          "max_kl": 3.7842586040496826,
+          "mean_tv": 0.09119729503818823,
+          "greedy_errors": 6
+        },
+        {
+          "epoch": 12,
+          "mean_kl": 0.06736096496579488,
+          "max_kl": 2.166921615600586,
+          "mean_tv": 0.04821678592292652,
+          "greedy_errors": 4
+        },
+        {
+          "epoch": 16,
+          "mean_kl": 0.03560655850300216,
+          "max_kl": 0.9223024845123291,
+          "mean_tv": 0.028926154233220962,
+          "greedy_errors": 2
+        },
+        {
+          "epoch": 20,
+          "mean_kl": 0.013251988784134028,
+          "max_kl": 0.3770315945148468,
+          "mean_tv": 0.01803483504576978,
+          "greedy_errors": 1
+        },
+        {
+          "epoch": 24,
+          "mean_kl": 0.009145538298273184,
+          "max_kl": 0.18811598420143127,
+          "mean_tv": 0.011594986922862713,
+          "greedy_errors": 1
+        },
+        {
+          "epoch": 28,
+          "mean_kl": 0.005421553659269916,
+          "max_kl": 0.13759008049964905,
+          "mean_tv": 0.006126791895829748,
+          "greedy_errors": 0
+        },
+        {
+          "epoch": 32,
+          "mean_kl": 0.003830298779399856,
+          "max_kl": 0.08259551227092743,
+          "mean_tv": 0.0062019164419357,
+          "greedy_errors": 0
+        },
+        {
+          "epoch": 36,
+          "mean_kl": 0.003160222933670655,
+          "max_kl": 0.07015596330165863,
+          "mean_tv": 0.00425569241468539,
+          "greedy_errors": 0
+        },
+        {
+          "epoch": 40,
+          "mean_kl": 0.002853323160361449,
+          "max_kl": 0.06131847947835922,
+          "mean_tv": 0.00362512250641903,
+          "greedy_errors": 0
+        }
+      ],
+      "heldout_curve": [
+        {
+          "epoch": 0,
+          "mean_kl": 0.8700921943361338,
+          "mean_tv": 0.3627860610969427,
+          "target_overlap": 0.6282286235043882,
+          "greedy_errors": 17
+        },
+        {
+          "epoch": 4,
+          "mean_kl": 0.9752920308999039,
+          "mean_tv": 0.32895548094061916,
+          "target_overlap": 0.6659630798900642,
+          "greedy_errors": 16
+        },
+        {
+          "epoch": 8,
+          "mean_kl": 1.1305694177135592,
+          "mean_tv": 0.3304539315266603,
+          "target_overlap": 0.6604203748098111,
+          "greedy_errors": 18
+        },
+        {
+          "epoch": 12,
+          "mean_kl": 1.4591115065817186,
+          "mean_tv": 0.33995466211367137,
+          "target_overlap": 0.6537574165697931,
+          "greedy_errors": 18
+        },
+        {
+          "epoch": 16,
+          "mean_kl": 1.3344268182478831,
+          "mean_tv": 0.339926083191358,
+          "target_overlap": 0.654162706927309,
+          "greedy_errors": 19
+        },
+        {
+          "epoch": 20,
+          "mean_kl": 1.2867317789711186,
+          "mean_tv": 0.33370237825066135,
+          "target_overlap": 0.6607739016690175,
+          "greedy_errors": 18
+        },
+        {
+          "epoch": 24,
+          "mean_kl": 1.3589049081211246,
+          "mean_tv": 0.3371192950126637,
+          "target_overlap": 0.6578488722203214,
+          "greedy_errors": 18
+        },
+        {
+          "epoch": 28,
+          "mean_kl": 1.3965507069988397,
+          "mean_tv": 0.3399679182625895,
+          "target_overlap": 0.6553347263447254,
+          "greedy_errors": 18
+        },
+        {
+          "epoch": 32,
+          "mean_kl": 1.409508048992117,
+          "mean_tv": 0.3410764505861315,
+          "target_overlap": 0.6543705538674658,
+          "greedy_errors": 19
+        },
+        {
+          "epoch": 36,
+          "mean_kl": 1.4265113908869012,
+          "mean_tv": 0.34184524466388666,
+          "target_overlap": 0.6538515980408712,
+          "greedy_errors": 19
+        },
+        {
+          "epoch": 40,
+          "mean_kl": 1.446453597190904,
+          "mean_tv": 0.34379928139310323,
+          "target_overlap": 0.6521365429103493,
+          "greedy_errors": 19
+        }
+      ],
+      "posthoc_jointly_improved_heldout_epochs": [],
+      "caveat": "Posthoc curve inspection only; no checkpoint selection, re-training, or additional model tuning."
+    }
+  },
+  "tail_audit_source_sha256": "f3b57c7cd9fa94d0140de6c2321a5f8d171e64a5fa904c52c72b1fb5451abee0",
+  "next_experiment_proposal": "Prioritize sample coverage versus heldout transfer. Keep architecture/inputs/teacher and use fixed heldout prompts. Compare broader fixed-state training with the existing repeated narrow-state results; report both training fit and transfer, rather than solely extending repetitions of these112 states. No follow-on run has been launched."
+}

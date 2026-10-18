@@ -1,0 +1,1022 @@
+[
+  {
+    "dataset": "GSM8K",
+    "setting": "我们E2三层；同数据独立单训对照；Qwen3-8B；C1 T0",
+    "cells": [
+      "GSM8K",
+      "我们E2三层；同数据独立单训对照；Qwen3-8B；C1 T0",
+      "7.479→8.515",
+      "+13.86%",
+      "178.4→196.2",
+      "+9.94%"
+    ],
+    "AC": [
+      "7.478575890068707",
+      "8.515069661643446"
+    ],
+    "TPS": [
+      "178.41044909749007",
+      "196.15166838727464"
+    ],
+    "source": "residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1/COMPARISON.json",
+    "derived_TPS": false,
+    "method": "ours",
+    "C": 1,
+    "T": 0
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "我们E2三层；同数据独立单训对照；Qwen3-8B；C1 T1",
+    "cells": [
+      "GSM8K",
+      "我们E2三层；同数据独立单训对照；Qwen3-8B；C1 T1",
+      "6.336→7.489",
+      "+18.19%",
+      "151.9→173.3",
+      "+14.09%"
+    ],
+    "AC": [
+      "6.33593349071128",
+      "7.488576664630422"
+    ],
+    "TPS": [
+      "151.85897905137176",
+      "173.25330705418145"
+    ],
+    "source": "residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1/COMPARISON.json",
+    "derived_TPS": false,
+    "method": "ours",
+    "C": 1,
+    "T": 1
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "我们E2三层；同数据独立单训对照；Qwen3-8B；C32 T0",
+    "cells": [
+      "GSM8K",
+      "我们E2三层；同数据独立单训对照；Qwen3-8B；C32 T0",
+      "7.609→8.652",
+      "+13.70%",
+      "2978.9→3183.1",
+      "+6.86%"
+    ],
+    "AC": [
+      "7.609462194729773",
+      "8.65206922498119"
+    ],
+    "TPS": [
+      "2978.876291565576",
+      "3183.1490320053795"
+    ],
+    "source": "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/COMPARISON.json",
+    "derived_TPS": false,
+    "method": "ours",
+    "C": 32,
+    "T": 0
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "我们E2三层；同数据独立单训对照；Qwen3-8B；C32 T1",
+    "cells": [
+      "GSM8K",
+      "我们E2三层；同数据独立单训对照；Qwen3-8B；C32 T1",
+      "6.483→7.699",
+      "+18.75%",
+      "2549.9→2837.1",
+      "+11.26%"
+    ],
+    "AC": [
+      "6.48325381986977",
+      "7.699184679560106"
+    ],
+    "TPS": [
+      "2549.9376770815393",
+      "2837.1342317180965"
+    ],
+    "source": "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/COMPARISON.json",
+    "derived_TPS": false,
+    "method": "ours",
+    "C": 32,
+    "T": 1
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；低并发 T0；[表1](https://arxiv.org/html/2605.29707v1#S4.T1)",
+    "cells": [
+      "GSM8K",
+      "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；低并发 T0；[表1](https://arxiv.org/html/2605.29707v1#S4.T1)",
+      "6.590→10.030",
+      "+52.20%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "6.59",
+      "10.03"
+    ],
+    "TPS": null,
+    "source": "https://arxiv.org/html/2605.29707v1#S4.T1",
+    "derived_TPS": false,
+    "method": "Domino",
+    "training": "OPB",
+    "C": null,
+    "T": 0
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；低并发 T1；[表1](https://arxiv.org/html/2605.29707v1#S4.T1)",
+    "cells": [
+      "GSM8K",
+      "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；低并发 T1；[表1](https://arxiv.org/html/2605.29707v1#S4.T1)",
+      "6.000→8.340",
+      "+39.00%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "6.00",
+      "8.34"
+    ],
+    "TPS": null,
+    "source": "https://arxiv.org/html/2605.29707v1#S4.T1",
+    "derived_TPS": false,
+    "method": "Domino",
+    "training": "OPB",
+    "C": null,
+    "T": 1
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；C32，**温度未注明**；[表2](https://arxiv.org/html/2605.29707v1#S5.T2)",
+    "cells": [
+      "GSM8K",
+      "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；C32，**温度未注明**；[表2](https://arxiv.org/html/2605.29707v1#S5.T2)",
+      "—",
+      "—",
+      "2801.0→3650.0",
+      "+30.31%"
+    ],
+    "AC": null,
+    "TPS": [
+      "2801",
+      "3650"
+    ],
+    "source": "https://arxiv.org/html/2605.29707v1#S5.T2",
+    "derived_TPS": false,
+    "method": "Domino",
+    "training": "OPB",
+    "C": 32,
+    "T": null
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "Domino同数据对照；双方ShareGPT训练；Qwen3-8B；T0；AC未分并发；[表3](https://arxiv.org/html/2605.29707v1#S5.T3)",
+    "cells": [
+      "GSM8K",
+      "Domino同数据对照；双方ShareGPT训练；Qwen3-8B；T0；AC未分并发；[表3](https://arxiv.org/html/2605.29707v1#S5.T3)",
+      "3.900→4.650",
+      "+19.23%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "3.90",
+      "4.65"
+    ],
+    "TPS": null,
+    "source": "https://arxiv.org/html/2605.29707v1#S5.T3",
+    "derived_TPS": false,
+    "method": "Domino",
+    "training": "ShareGPT",
+    "C": null,
+    "T": 0
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "Domino同数据对照；双方ShareGPT训练；Qwen3-8B；T0；C1；[表3](https://arxiv.org/html/2605.29707v1#S5.T3)",
+    "cells": [
+      "GSM8K",
+      "Domino同数据对照；双方ShareGPT训练；Qwen3-8B；T0；C1；[表3](https://arxiv.org/html/2605.29707v1#S5.T3)",
+      "—",
+      "—",
+      "≈246.6→276.9",
+      "≈+12.31%"
+    ],
+    "AC": null,
+    "TPS": [
+      "246.56",
+      "276.92"
+    ],
+    "source": "https://arxiv.org/html/2605.29707v1#S5.T3",
+    "derived_TPS": true,
+    "method": "Domino",
+    "training": "ShareGPT",
+    "C": 1,
+    "T": 0,
+    "AR_TPS": "92",
+    "speedup_DFlash": "2.68",
+    "speedup_Domino": "3.01"
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "Domino同数据对照；双方ShareGPT训练；Qwen3-8B；T0；C32；[表3](https://arxiv.org/html/2605.29707v1#S5.T3)",
+    "cells": [
+      "GSM8K",
+      "Domino同数据对照；双方ShareGPT训练；Qwen3-8B；T0；C32；[表3](https://arxiv.org/html/2605.29707v1#S5.T3)",
+      "—",
+      "—",
+      "≈1867.2→2124.1",
+      "≈+13.76%"
+    ],
+    "AC": null,
+    "TPS": [
+      "1867.17",
+      "2124.12"
+    ],
+    "source": "https://arxiv.org/html/2605.29707v1#S5.T3",
+    "derived_TPS": true,
+    "method": "Domino",
+    "training": "ShareGPT",
+    "C": 32,
+    "T": 0,
+    "AR_TPS": "1713",
+    "speedup_DFlash": "1.09",
+    "speedup_Domino": "1.24"
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "DSpark Markov头，固定长度验证（未截断）；双方OPB训练；Qwen3-8B；T1、7 proposal；C未注明；[表1](https://arxiv.org/html/2607.05147v1#S4.T1)",
+    "cells": [
+      "GSM8K",
+      "DSpark Markov头，固定长度验证（未截断）；双方OPB训练；Qwen3-8B；T1、7 proposal；C未注明；[表1](https://arxiv.org/html/2607.05147v1#S4.T1)",
+      "5.330→6.170",
+      "+15.76%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "5.33",
+      "6.17"
+    ],
+    "TPS": null,
+    "source": "https://arxiv.org/html/2607.05147v1#S4.T1",
+    "derived_TPS": false,
+    "method": "DSpark",
+    "training": "OPB 10 epochs",
+    "scheduler": false,
+    "C": null,
+    "T": 1
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "DFlash-2选择头，卷积关；Qwen3-4B；T0；C未注明；训练规模未披露；[作者表2](https://inco.ai/blog/dflash2/#table-2)",
+    "cells": [
+      "GSM8K",
+      "DFlash-2选择头，卷积关；Qwen3-4B；T0；C未注明；训练规模未披露；[作者表2](https://inco.ai/blog/dflash2/#table-2)",
+      "4.270→4.610",
+      "+7.96%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "4.27",
+      "4.61"
+    ],
+    "TPS": null,
+    "source": "https://inco.ai/blog/dflash2/#table-2",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": false,
+    "C": null,
+    "T": 0
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "DFlash-2选择头，卷积关；Qwen3-4B；T1；C未注明；训练规模未披露；[作者表2](https://inco.ai/blog/dflash2/#table-2)",
+    "cells": [
+      "GSM8K",
+      "DFlash-2选择头，卷积关；Qwen3-4B；T1；C未注明；训练规模未披露；[作者表2](https://inco.ai/blog/dflash2/#table-2)",
+      "3.780→4.250",
+      "+12.43%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "3.78",
+      "4.25"
+    ],
+    "TPS": null,
+    "source": "https://inco.ai/blog/dflash2/#table-2",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": false,
+    "C": null,
+    "T": 1
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "DFlash-2卷积＋选择头；Qwen3.5-4B、匹配设置DFlash；thinking T1；C未注明；[作者表3](https://inco.ai/blog/dflash2/#table-3)",
+    "cells": [
+      "GSM8K",
+      "DFlash-2卷积＋选择头；Qwen3.5-4B、匹配设置DFlash；thinking T1；C未注明；[作者表3](https://inco.ai/blog/dflash2/#table-3)",
+      "4.990→6.200",
+      "+24.25%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "4.99",
+      "6.20"
+    ],
+    "TPS": null,
+    "source": "https://inco.ai/blog/dflash2/#table-3",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": true,
+    "C": null,
+    "T": 1,
+    "target": "Qwen3.5-4B"
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；AC未分并发；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#acceptance-length)",
+    "cells": [
+      "GSM8K",
+      "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；AC未分并发；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#acceptance-length)",
+      "5.430→6.570",
+      "+20.99%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "5.43",
+      "6.57"
+    ],
+    "TPS": null,
+    "source": "https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#acceptance-length",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": true,
+    "C": null,
+    "T": 1,
+    "target": "Muse-Glimmer-30B",
+    "newly_added": true
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；C1；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput)",
+    "cells": [
+      "GSM8K",
+      "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；C1；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput)",
+      "—",
+      "—",
+      "247.8→293.7",
+      "+18.52%"
+    ],
+    "AC": null,
+    "TPS": [
+      "247.8",
+      "293.7"
+    ],
+    "source": "https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": true,
+    "C": 1,
+    "T": 1,
+    "target": "Muse-Glimmer-30B"
+  },
+  {
+    "dataset": "GSM8K",
+    "setting": "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；C32；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput)",
+    "cells": [
+      "GSM8K",
+      "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；C32；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput)",
+      "—",
+      "—",
+      "2330.3→2818.3",
+      "+20.94%"
+    ],
+    "AC": null,
+    "TPS": [
+      "2330.3",
+      "2818.3"
+    ],
+    "source": "https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": true,
+    "C": 32,
+    "T": 1,
+    "target": "Muse-Glimmer-30B"
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "我们E2三层；同数据独立单训对照；Qwen3-8B；C1 T0",
+    "cells": [
+      "HumanEval",
+      "我们E2三层；同数据独立单训对照；Qwen3-8B；C1 T0",
+      "5.542→6.344",
+      "+14.48%",
+      "134.1→148.7",
+      "+10.85%"
+    ],
+    "AC": [
+      "5.541693929480189",
+      "6.3441817879141"
+    ],
+    "TPS": [
+      "134.11412252284038",
+      "148.66242109273927"
+    ],
+    "source": "residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/COMPARISON.json",
+    "derived_TPS": false,
+    "method": "ours",
+    "C": 1,
+    "T": 0
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "我们E2三层；同数据独立单训对照；Qwen3-8B；C1 T1",
+    "cells": [
+      "HumanEval",
+      "我们E2三层；同数据独立单训对照；Qwen3-8B；C1 T1",
+      "4.681→5.688",
+      "+21.50%",
+      "113.5→133.4",
+      "+17.48%"
+    ],
+    "AC": [
+      "4.681263460157933",
+      "5.687674863790311"
+    ],
+    "TPS": [
+      "113.52220286685404",
+      "133.3651232587824"
+    ],
+    "source": "residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/COMPARISON.json",
+    "derived_TPS": false,
+    "method": "ours",
+    "C": 1,
+    "T": 1
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "我们E2三层；同数据独立单训对照；Qwen3-8B；C32 T0",
+    "cells": [
+      "HumanEval",
+      "我们E2三层；同数据独立单训对照；Qwen3-8B；C32 T0",
+      "5.542→6.343",
+      "+14.46%",
+      "1981.0→2167.8",
+      "+9.43%"
+    ],
+    "AC": [
+      "5.5416212286441295",
+      "6.343125832223702"
+    ],
+    "TPS": [
+      "1980.955028497479",
+      "2167.7977185956374"
+    ],
+    "source": "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/COMPARISON.json",
+    "derived_TPS": false,
+    "method": "ours",
+    "C": 32,
+    "T": 0
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "我们E2三层；同数据独立单训对照；Qwen3-8B；C32 T1",
+    "cells": [
+      "HumanEval",
+      "我们E2三层；同数据独立单训对照；Qwen3-8B；C32 T1",
+      "4.682→5.568",
+      "+18.94%",
+      "1635.4→1878.9",
+      "+14.89%"
+    ],
+    "AC": [
+      "4.681501501501502",
+      "5.568287037037037"
+    ],
+    "TPS": [
+      "1635.410977687729",
+      "1878.8911202569"
+    ],
+    "source": "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/COMPARISON.json",
+    "derived_TPS": false,
+    "method": "ours",
+    "C": 32,
+    "T": 1
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；低并发 T0；[表1](https://arxiv.org/html/2605.29707v1#S4.T1)",
+    "cells": [
+      "HumanEval",
+      "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；低并发 T0；[表1](https://arxiv.org/html/2605.29707v1#S4.T1)",
+      "6.520→7.390",
+      "+13.34%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "6.52",
+      "7.39"
+    ],
+    "TPS": null,
+    "source": "https://arxiv.org/html/2605.29707v1#S4.T1",
+    "derived_TPS": false,
+    "method": "Domino",
+    "training": "OPB",
+    "C": null,
+    "T": 0
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；低并发 T1；[表1](https://arxiv.org/html/2605.29707v1#S4.T1)",
+    "cells": [
+      "HumanEval",
+      "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；低并发 T1；[表1](https://arxiv.org/html/2605.29707v1#S4.T1)",
+      "5.440→5.980",
+      "+9.93%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "5.44",
+      "5.98"
+    ],
+    "TPS": null,
+    "source": "https://arxiv.org/html/2605.29707v1#S4.T1",
+    "derived_TPS": false,
+    "method": "Domino",
+    "training": "OPB",
+    "C": null,
+    "T": 1
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "Domino同数据对照；双方ShareGPT训练；Qwen3-8B；T0；AC未分并发；[表3](https://arxiv.org/html/2605.29707v1#S5.T3)",
+    "cells": [
+      "HumanEval",
+      "Domino同数据对照；双方ShareGPT训练；Qwen3-8B；T0；AC未分并发；[表3](https://arxiv.org/html/2605.29707v1#S5.T3)",
+      "3.780→4.350",
+      "+15.08%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "3.78",
+      "4.35"
+    ],
+    "TPS": null,
+    "source": "https://arxiv.org/html/2605.29707v1#S5.T3",
+    "derived_TPS": false,
+    "method": "Domino",
+    "training": "ShareGPT",
+    "C": null,
+    "T": 0
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "Domino同数据对照；双方ShareGPT训练；Qwen3-8B；T0；C1；[表3](https://arxiv.org/html/2605.29707v1#S5.T3)",
+    "cells": [
+      "HumanEval",
+      "Domino同数据对照；双方ShareGPT训练；Qwen3-8B；T0；C1；[表3](https://arxiv.org/html/2605.29707v1#S5.T3)",
+      "—",
+      "—",
+      "≈237.4→259.4",
+      "≈+9.30%"
+    ],
+    "AC": null,
+    "TPS": [
+      "237.36",
+      "259.44"
+    ],
+    "source": "https://arxiv.org/html/2605.29707v1#S5.T3",
+    "derived_TPS": true,
+    "method": "Domino",
+    "training": "ShareGPT",
+    "C": 1,
+    "T": 0,
+    "AR_TPS": "92",
+    "speedup_DFlash": "2.58",
+    "speedup_Domino": "2.82"
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "Domino同数据对照；双方ShareGPT训练；Qwen3-8B；T0；C32；[表3](https://arxiv.org/html/2605.29707v1#S5.T3)",
+    "cells": [
+      "HumanEval",
+      "Domino同数据对照；双方ShareGPT训练；Qwen3-8B；T0；C32；[表3](https://arxiv.org/html/2605.29707v1#S5.T3)",
+      "—",
+      "—",
+      "≈2036.0→2280.3",
+      "≈+12.00%"
+    ],
+    "AC": null,
+    "TPS": [
+      "2036.00",
+      "2280.32"
+    ],
+    "source": "https://arxiv.org/html/2605.29707v1#S5.T3",
+    "derived_TPS": true,
+    "method": "Domino",
+    "training": "ShareGPT",
+    "C": 32,
+    "T": 0,
+    "AR_TPS": "2036",
+    "speedup_DFlash": "1.00",
+    "speedup_Domino": "1.12"
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "DSpark Markov头，固定长度验证（未截断）；双方OPB训练；Qwen3-8B；T1、7 proposal；C未注明；[表1](https://arxiv.org/html/2607.05147v1#S4.T1)",
+    "cells": [
+      "HumanEval",
+      "DSpark Markov头，固定长度验证（未截断）；双方OPB训练；Qwen3-8B；T1、7 proposal；C未注明；[表1](https://arxiv.org/html/2607.05147v1#S4.T1)",
+      "4.640→5.520",
+      "+18.97%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "4.64",
+      "5.52"
+    ],
+    "TPS": null,
+    "source": "https://arxiv.org/html/2607.05147v1#S4.T1",
+    "derived_TPS": false,
+    "method": "DSpark",
+    "training": "OPB 10 epochs",
+    "scheduler": false,
+    "C": null,
+    "T": 1
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "DFlash-2卷积＋选择头；Qwen3.5-4B、匹配设置DFlash；thinking T1；C未注明；[作者表3](https://inco.ai/blog/dflash2/#table-3)",
+    "cells": [
+      "HumanEval",
+      "DFlash-2卷积＋选择头；Qwen3.5-4B、匹配设置DFlash；thinking T1；C未注明；[作者表3](https://inco.ai/blog/dflash2/#table-3)",
+      "5.430→6.280",
+      "+15.65%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "5.43",
+      "6.28"
+    ],
+    "TPS": null,
+    "source": "https://inco.ai/blog/dflash2/#table-3",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": true,
+    "C": null,
+    "T": 1,
+    "target": "Qwen3.5-4B"
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；AC未分并发；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#acceptance-length)",
+    "cells": [
+      "HumanEval",
+      "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；AC未分并发；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#acceptance-length)",
+      "4.110→5.660",
+      "+37.71%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "4.11",
+      "5.66"
+    ],
+    "TPS": null,
+    "source": "https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#acceptance-length",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": true,
+    "C": null,
+    "T": 1,
+    "target": "Muse-Glimmer-30B",
+    "newly_added": true
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；C1；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput)",
+    "cells": [
+      "HumanEval",
+      "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；C1；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput)",
+      "—",
+      "—",
+      "210.5→266.2",
+      "+26.46%"
+    ],
+    "AC": null,
+    "TPS": [
+      "210.5",
+      "266.2"
+    ],
+    "source": "https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": true,
+    "C": 1,
+    "T": 1,
+    "target": "Muse-Glimmer-30B"
+  },
+  {
+    "dataset": "HumanEval",
+    "setting": "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；C32；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput)",
+    "cells": [
+      "HumanEval",
+      "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；C32；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput)",
+      "—",
+      "—",
+      "2170.0→2780.2",
+      "+28.12%"
+    ],
+    "AC": null,
+    "TPS": [
+      "2170.0",
+      "2780.2"
+    ],
+    "source": "https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": true,
+    "C": 32,
+    "T": 1,
+    "target": "Muse-Glimmer-30B"
+  },
+  {
+    "dataset": "MT-Bench",
+    "setting": "我们E2三层；同数据独立单训对照；Qwen3-8B；C1 T0",
+    "cells": [
+      "MT-Bench",
+      "我们E2三层；同数据独立单训对照；Qwen3-8B；C1 T0",
+      "3.145→3.413",
+      "+8.52%",
+      "77.6→82.8",
+      "+6.78%"
+    ],
+    "AC": [
+      "3.144793536804309",
+      "3.412641215426568"
+    ],
+    "TPS": [
+      "77.57826050818673",
+      "82.83781997487624"
+    ],
+    "source": "residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/COMPARISON.json",
+    "derived_TPS": false,
+    "method": "ours",
+    "C": 1,
+    "T": 0
+  },
+  {
+    "dataset": "MT-Bench",
+    "setting": "我们E2三层；同数据独立单训对照；Qwen3-8B；C1 T1",
+    "cells": [
+      "MT-Bench",
+      "我们E2三层；同数据独立单训对照；Qwen3-8B；C1 T1",
+      "2.821→3.121",
+      "+10.66%",
+      "69.6→75.7",
+      "+8.78%"
+    ],
+    "AC": [
+      "2.8205886703150425",
+      "3.121362845063417"
+    ],
+    "TPS": [
+      "69.59760234033075",
+      "75.71087688075208"
+    ],
+    "source": "residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/COMPARISON.json",
+    "derived_TPS": false,
+    "method": "ours",
+    "C": 1,
+    "T": 1
+  },
+  {
+    "dataset": "MT-Bench",
+    "setting": "我们E2三层；同数据独立单训对照；Qwen3-8B；C32 T0",
+    "cells": [
+      "MT-Bench",
+      "我们E2三层；同数据独立单训对照；Qwen3-8B；C32 T0",
+      "3.148→3.415",
+      "+8.48%",
+      "952.5→982.7",
+      "+3.17%"
+    ],
+    "AC": [
+      "3.147901877976458",
+      "3.4147743884611637"
+    ],
+    "TPS": [
+      "952.4986304131168",
+      "982.7371505279683"
+    ],
+    "source": "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/COMPARISON.json",
+    "derived_TPS": false,
+    "method": "ours",
+    "C": 32,
+    "T": 0
+  },
+  {
+    "dataset": "MT-Bench",
+    "setting": "我们E2三层；同数据独立单训对照；Qwen3-8B；C32 T1",
+    "cells": [
+      "MT-Bench",
+      "我们E2三层；同数据独立单训对照；Qwen3-8B；C32 T1",
+      "2.777→3.151",
+      "+13.47%",
+      "889.2→953.5",
+      "+7.23%"
+    ],
+    "AC": [
+      "2.776864864864865",
+      "3.1508846657929226"
+    ],
+    "TPS": [
+      "889.2154965605275",
+      "953.4692436037687"
+    ],
+    "source": "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/COMPARISON.json",
+    "derived_TPS": false,
+    "method": "ours",
+    "C": 32,
+    "T": 1
+  },
+  {
+    "dataset": "MT-Bench",
+    "setting": "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；低并发 T0；[表1](https://arxiv.org/html/2605.29707v1#S4.T1)",
+    "cells": [
+      "MT-Bench",
+      "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；低并发 T0；[表1](https://arxiv.org/html/2605.29707v1#S4.T1)",
+      "4.180→5.180",
+      "+23.92%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "4.18",
+      "5.18"
+    ],
+    "TPS": null,
+    "source": "https://arxiv.org/html/2605.29707v1#S4.T1",
+    "derived_TPS": false,
+    "method": "Domino",
+    "training": "OPB",
+    "C": null,
+    "T": 0
+  },
+  {
+    "dataset": "MT-Bench",
+    "setting": "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；低并发 T1；[表1](https://arxiv.org/html/2605.29707v1#S4.T1)",
+    "cells": [
+      "MT-Bench",
+      "Domino主实验；OPB训练/公开DFlash对照；Qwen3-8B；低并发 T1；[表1](https://arxiv.org/html/2605.29707v1#S4.T1)",
+      "3.870→4.610",
+      "+19.12%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "3.87",
+      "4.61"
+    ],
+    "TPS": null,
+    "source": "https://arxiv.org/html/2605.29707v1#S4.T1",
+    "derived_TPS": false,
+    "method": "Domino",
+    "training": "OPB",
+    "C": null,
+    "T": 1
+  },
+  {
+    "dataset": "MT-Bench",
+    "setting": "DSpark Markov头，固定长度验证（未截断）；双方OPB训练；Qwen3-8B；T1、7 proposal；C未注明；[表1](https://arxiv.org/html/2607.05147v1#S4.T1)",
+    "cells": [
+      "MT-Bench",
+      "DSpark Markov头，固定长度验证（未截断）；双方OPB训练；Qwen3-8B；T1、7 proposal；C未注明；[表1](https://arxiv.org/html/2607.05147v1#S4.T1)",
+      "3.110→3.720",
+      "+19.61%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "3.11",
+      "3.72"
+    ],
+    "TPS": null,
+    "source": "https://arxiv.org/html/2607.05147v1#S4.T1",
+    "derived_TPS": false,
+    "method": "DSpark",
+    "training": "OPB 10 epochs",
+    "scheduler": false,
+    "C": null,
+    "T": 1
+  },
+  {
+    "dataset": "MT-Bench",
+    "setting": "DFlash-2卷积＋选择头；Qwen3.5-4B、匹配设置DFlash；thinking T1；C未注明；[作者表3](https://inco.ai/blog/dflash2/#table-3)",
+    "cells": [
+      "MT-Bench",
+      "DFlash-2卷积＋选择头；Qwen3.5-4B、匹配设置DFlash；thinking T1；C未注明；[作者表3](https://inco.ai/blog/dflash2/#table-3)",
+      "4.260→5.200",
+      "+22.07%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "4.26",
+      "5.20"
+    ],
+    "TPS": null,
+    "source": "https://inco.ai/blog/dflash2/#table-3",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": true,
+    "C": null,
+    "T": 1,
+    "target": "Qwen3.5-4B"
+  },
+  {
+    "dataset": "MT-Bench",
+    "setting": "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；AC未分并发；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#acceptance-length)",
+    "cells": [
+      "MT-Bench",
+      "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；AC未分并发；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#acceptance-length)",
+      "3.520→4.420",
+      "+25.57%",
+      "—",
+      "—"
+    ],
+    "AC": [
+      "3.52",
+      "4.42"
+    ],
+    "TPS": null,
+    "source": "https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#acceptance-length",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": true,
+    "C": null,
+    "T": 1,
+    "target": "Muse-Glimmer-30B",
+    "newly_added": true
+  },
+  {
+    "dataset": "MT-Bench",
+    "setting": "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；C1；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput)",
+    "cells": [
+      "MT-Bench",
+      "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；C1；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput)",
+      "—",
+      "—",
+      "164.6→197.4",
+      "+19.93%"
+    ],
+    "AC": null,
+    "TPS": [
+      "164.6",
+      "197.4"
+    ],
+    "source": "https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": true,
+    "C": 1,
+    "T": 1,
+    "target": "Muse-Glimmer-30B"
+  },
+  {
+    "dataset": "MT-Bench",
+    "setting": "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；C32；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput)",
+    "cells": [
+      "MT-Bench",
+      "DFlash-2卷积＋选择头；Muse-30B/官方DFlash；high reasoning T1；C32；[模型卡](https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput)",
+      "—",
+      "—",
+      "1668.0→1975.5",
+      "+18.44%"
+    ],
+    "AC": null,
+    "TPS": [
+      "1668.0",
+      "1975.5"
+    ],
+    "source": "https://huggingface.co/incoai/Muse-Glimmer-30B-DFlash2#throughput",
+    "derived_TPS": false,
+    "method": "DFlash-2",
+    "convolution": true,
+    "C": 32,
+    "T": 1,
+    "target": "Muse-Glimmer-30B"
+  }
+]

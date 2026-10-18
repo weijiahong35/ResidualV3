@@ -1,0 +1,15 @@
+{
+  "status": "superseded_by_verified_split_run",
+  "completed_training_steps": 32,
+  "replacement": "/data/weijiahong/speculators-main-lora/eval_results/standalone_oracle_learning_split_anygpu_20261001",
+  "verification": "/data/weijiahong/speculators-main-lora/eval_results/standalone_oracle_learning_split_anygpu_20261001/replay_verification.json",
+  "original_exit": "User-authorized intentional SIGTERM at completed step boundary; not numerical failure",
+  "cleanup": {
+    "owned_server_stopped": true,
+    "learner_stopped": true,
+    "transfer_files_left": 0,
+    "leftovers_cleaned": 1,
+    "utc": "2026-10-01T12:22:17.386909+00:00"
+  },
+  "utc": "2026-10-01T12:22:43.185550+00:00"
+}

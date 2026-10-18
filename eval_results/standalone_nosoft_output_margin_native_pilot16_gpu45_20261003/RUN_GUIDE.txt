@@ -1,0 +1,32 @@
+本轮有效目录：standalone_nosoft_output_margin_native_pilot16_gpu45_20261003
+控制器PID3364032；源码output_margin_native_v3；启动北京时间2026-10-03 18:01。
+此前gpu0123/gpu2345目录只完成准备，未启动任何GPU实验，不是失败训练。
+
+内容：RAW、原长训两层LONG_BASE、16步继续OUTPUT的OUTPUT16、同样16步加greedy margin的MARGIN16。
+不新增训练；target/draft/basis冻结；Top256/basis512/no-soft两层架构不变。
+这轮各头真正自行采样七个proposal、走自己的实际前缀；verifier读取实际q。
+GPU4跑C1=20，GPU5跑C40=300，各自T0/T1；max4096；thinking；raw dataset30000+新研究提示。
+它是新研究验证，不是独立最终测试；每个C/T内同卡同提示同seed单轮比较。
+
+运行状态：看status.json，controller每5秒更新。suites里区分formal_smoke与formal。
+formal_smoke的任何AL/TPS都不是速度成绩。
+各组先跑RAW、LONG_BASE、OUTPUT16、MARGIN16的smoke，然后自动正式评测四组，每组T0/T1。
+正在starting时看相应round_1/arm/vllm.log；启动有模型加载与编译阶段。
+正在measuring时看C1/formal.log或C40/formal.log；完成整个正式窗口才打印一条AL/TPS。
+每个正在测的窗口的已完成请求计数见：C1或C40/formal/round_1/arm/T0或T1_request_progress.jsonl。
+状态起始时间不变不等于停滞；controller状态时间更新、请求进度增长或vllm运行日志持续输出可用于判断运行。
+
+完成判据（需同时满足）：
+1. status.json的status=complete。
+2. completion_validation.json的status=complete、formal_windows=16、all_smokes_passed=true、all_graph_gates_passed=true、all_artifacts_and_source_hashes_verified=true。
+3. controller_cleanup.json的finished=true、owned_evaluators_stopped=true。
+完成后自动生成REPORT.txt、findings.json、formal_results.csv。
+若status=failed，查看controller.log以及对应C1/C40的smoke.log/formal.log；保留旧证据，不能重复launch。
+
+判断有没有改善：先看MARGIN16相对LONG_BASE，再看相对OUTPUT16。
+AL_vs_BASE/OUTPUT16_pct是实际native接受长度差异；TPS_vs_BASE/OUTPUT16_pct是同卡正式吞吐差异。
+只有TPS_vs_BASE_clean与TPS_vs_OUTPUT16_clean=true时，配对吞吐差异才作为干净性能证据。
+不能只因AL升高就判定加速；不能拿C1/GPU4与C40/GPU5的绝对AL/TPS横比作修复收益。
+额外GPU进程只记录，继续执行；污染窗口performance_contaminated=true，speed_evidence=false，不杀别人进程。
+只有一轮，小幅收益还需要复测，不能把训练四条提示的局部拟合当成泛化证明。
+无持久hidden/logit缓存；模型前向hidden在线计算。

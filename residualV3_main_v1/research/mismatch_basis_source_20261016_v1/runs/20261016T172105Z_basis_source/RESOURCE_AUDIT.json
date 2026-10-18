@@ -1,0 +1,308 @@
+{
+  "CPU_seconds_observed_including_author_audit": 540.9523796410001,
+  "CPU_hours_with_120_second_administrative_allowance": 0.18478246356388892,
+  "CPU_limit_hours": 6,
+  "closure_seconds_reserved_before_end": 1200,
+  "stage_receipts": [
+    {
+      "stage": "identity",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/identity.py"
+      ],
+      "identity": {
+        "pid": 6,
+        "uid": 1024,
+        "pgid": 6,
+        "startticks": 38174381,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/identity.py ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "supervisor_identity": {
+        "pid": 2,
+        "uid": 1024,
+        "pgid": 1,
+        "startticks": 38174378,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/supervise.py identity /data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/identity.py ",
+        "cpu": 10.6,
+        "rss": 12451840
+      },
+      "cpu_seconds": 10.620717999,
+      "wall_seconds": 12.016368865966797,
+      "peak_RSS_bytes": 174157824,
+      "exit_code": 0,
+      "stop_reason": null,
+      "child_reaped": true,
+      "ended_epoch": 1792171414.4443762,
+      "GPU_hours": 0
+    },
+    {
+      "stage": "math",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/math_check.py"
+      ],
+      "identity": {
+        "pid": 6,
+        "uid": 1024,
+        "pgid": 6,
+        "startticks": 38200049,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/math_check.py ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "supervisor_identity": {
+        "pid": 2,
+        "uid": 1024,
+        "pgid": 1,
+        "startticks": 38200044,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/supervise.py math /data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/math_check.py ",
+        "cpu": 0.31,
+        "rss": 12476416
+      },
+      "cpu_seconds": 0.331755358,
+      "wall_seconds": 2.003934621810913,
+      "peak_RSS_bytes": 61575168,
+      "exit_code": 0,
+      "stop_reason": null,
+      "child_reaped": true,
+      "ended_epoch": 1792171661.104764,
+      "GPU_hours": 0
+    },
+    {
+      "stage": "benchmark",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/benchmark.py"
+      ],
+      "identity": {
+        "pid": 6,
+        "uid": 1024,
+        "pgid": 6,
+        "startticks": 38230642,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/benchmark.py ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "supervisor_identity": {
+        "pid": 2,
+        "uid": 1024,
+        "pgid": 1,
+        "startticks": 38230639,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/supervise.py benchmark /data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/benchmark.py ",
+        "cpu": 8.13,
+        "rss": 13008896
+      },
+      "cpu_seconds": 8.145783741,
+      "wall_seconds": 10.029891014099121,
+      "peak_RSS_bytes": 921296896,
+      "exit_code": 1,
+      "stop_reason": null,
+      "child_reaped": true,
+      "ended_epoch": 1792171975.0660985,
+      "GPU_hours": 0
+    },
+    {
+      "stage": "atomic_check",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/check_atomic.py"
+      ],
+      "identity": {
+        "pid": 6,
+        "uid": 1024,
+        "pgid": 6,
+        "startticks": 38241240,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/check_atomic.py ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "supervisor_identity": {
+        "pid": 2,
+        "uid": 1024,
+        "pgid": 1,
+        "startticks": 38241237,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/supervise.py atomic_check /data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/check_atomic.py ",
+        "cpu": 0.25,
+        "rss": 13221888
+      },
+      "cpu_seconds": 0.26538624099999997,
+      "wall_seconds": 2.008220911026001,
+      "peak_RSS_bytes": 13221888,
+      "exit_code": 0,
+      "stop_reason": null,
+      "child_reaped": true,
+      "ended_epoch": 1792172073.0273805,
+      "GPU_hours": 0
+    },
+    {
+      "stage": "benchmark_retry1",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/benchmark.py"
+      ],
+      "identity": {
+        "pid": 6,
+        "uid": 1024,
+        "pgid": 6,
+        "startticks": 38242691,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/benchmark.py ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "supervisor_identity": {
+        "pid": 2,
+        "uid": 1024,
+        "pgid": 1,
+        "startticks": 38242686,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/supervise.py benchmark_retry1 /data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/benchmark.py ",
+        "cpu": 65.59,
+        "rss": 12886016
+      },
+      "cpu_seconds": 65.60482148,
+      "wall_seconds": 66.34782218933105,
+      "peak_RSS_bytes": 1211453440,
+      "exit_code": 0,
+      "stop_reason": null,
+      "child_reaped": true,
+      "ended_epoch": 1792172151.8685436,
+      "GPU_hours": 0
+    },
+    {
+      "stage": "formal",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/pipeline.py",
+        "construct",
+        "scale_stage",
+        "costs",
+        "summary"
+      ],
+      "identity": {
+        "pid": 6,
+        "uid": 1024,
+        "pgid": 6,
+        "startticks": 38254776,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/pipeline.py construct scale_stage costs summary ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "supervisor_identity": {
+        "pid": 2,
+        "uid": 1024,
+        "pgid": 1,
+        "startticks": 38254772,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/supervise.py formal /data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/pipeline.py construct scale_stage costs summary ",
+        "cpu": 441.91,
+        "rss": 14204928
+      },
+      "cpu_seconds": 441.926221412,
+      "wall_seconds": 438.5853281021118,
+      "peak_RSS_bytes": 1010393088,
+      "exit_code": 0,
+      "stop_reason": null,
+      "child_reaped": true,
+      "ended_epoch": 1792172644.958602,
+      "GPU_hours": 0
+    },
+    {
+      "stage": "delivery",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/pipeline.py",
+        "deliver",
+        "report"
+      ],
+      "identity": {
+        "pid": 6,
+        "uid": 1024,
+        "pgid": 6,
+        "startticks": 38303996,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/pipeline.py deliver report ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "supervisor_identity": {
+        "pid": 2,
+        "uid": 1024,
+        "pgid": 1,
+        "startticks": 38303992,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/supervise.py delivery /data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/pipeline.py deliver report ",
+        "cpu": 3.49,
+        "rss": 14077952
+      },
+      "cpu_seconds": 3.5043376090000002,
+      "wall_seconds": 4.060219764709473,
+      "peak_RSS_bytes": 157405184,
+      "exit_code": 0,
+      "stop_reason": null,
+      "child_reaped": true,
+      "ended_epoch": 1792172702.630053,
+      "GPU_hours": 0
+    },
+    {
+      "stage": "final_audit",
+      "command": [
+        "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+        "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/finish.py"
+      ],
+      "identity": {
+        "pid": 6,
+        "uid": 1024,
+        "pgid": 6,
+        "startticks": 38318175,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/finish.py ",
+        "cpu": 0.0,
+        "rss": 8192
+      },
+      "supervisor_identity": {
+        "pid": 2,
+        "uid": 1024,
+        "pgid": 1,
+        "startticks": 38318171,
+        "cmd": "/data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/supervise.py final_audit /data/weijiahong/miniconda3/envs/dflash/bin/python /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/code/finish.py ",
+        "cpu": 12.61,
+        "rss": 14057472
+      },
+      "cpu_seconds": 12.639476168,
+      "wall_seconds": 14.195662498474121,
+      "peak_RSS_bytes": 120668160,
+      "exit_code": 0,
+      "stop_reason": null,
+      "child_reaped": true,
+      "ended_epoch": 1792172854.5561721,
+      "GPU_hours": 0
+    }
+  ],
+  "peak_RSS_GiB_before_final_receipt": 1.1282539367675781,
+  "RSS_limit_GiB": 16,
+  "disk_GiB": 3.6412474224343896,
+  "disk_limit_GiB": 8,
+  "numerical_workers": 1,
+  "numerical_threads": 1,
+  "CUDA_VISIBLE_DEVICES": "",
+  "GPU_hours": 0,
+  "head_fits": 0,
+  "router_fits": 0,
+  "LLM_forward": false,
+  "reservations_created": false,
+  "all_workers_exit_to_be_confirmed_after_final_receipt": true,
+  "technical_repairs": [
+    {
+      "stage": "S1",
+      "count": 1,
+      "cause": "non-atomic control ledger publication",
+      "evidence": "qa/repair_S1_01/REVIEW_CN.md"
+    }
+  ],
+  "science_negative_retries": 0,
+  "initial_authoring_CPU_seconds_charged": 2.178368822,
+  "CPU_seconds_complete_waited_receipts_including_author": 545.2168688300001,
+  "CPU_hours_complete_receipts": 0.15144913023055556,
+  "active_owned_numerical_workers": 0,
+  "all_supervised_children_reaped": true,
+  "reservations_to_release": 0,
+  "final_audit_receipt_included": true,
+  "peak_RSS_GiB": 1.1282539367675781
+}

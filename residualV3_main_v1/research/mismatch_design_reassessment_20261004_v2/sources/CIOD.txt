@@ -1,0 +1,1779 @@
+                                               COUPLED INPUT-OUTPUT DIMENSION REDUCTION:
+                                           APPLICATION TO GOAL-ORIENTED BAYESIAN EXPERIMENTAL
+                                                  DESIGN AND GLOBAL SENSITIVITY ANALYSIS
+                                                QIAO CHEN∗ , ÉLISE ARNAUD∗ , RICARDO BAPTISTA† , AND OLIVIER ZAHM∗
+
+                                               Abstract. We introduce a new method to jointly reduce the dimension of the input and output
+                                           space of a function between high-dimensional spaces. Choosing a reduced input subspace influences
+                                           which output subspace is relevant and vice versa. Conventional methods focus on reducing either
+                                           the input or output space, even though both are often reduced simultaneously in practice. Our
+arXiv:2406.13425v2 [stat.ML] 30 Mar 2025
+
+
+
+
+                                           coupled approach naturally supports goal-oriented dimension reduction, where either an input or
+                                           output quantity of interest is prescribed. We consider, in particular, goal-oriented sensor placement
+                                           and goal-oriented sensitivity analysis, which can be viewed as dimension reduction where the most
+                                           important output or, respectively, input components are chosen. Both applications present difficult
+                                           combinatorial optimization problems with expensive objectives such as the expected information gain
+                                           and Sobol’ indices. By optimizing gradient-based bounds, we can determine the most informative
+                                           sensors and most influential parameters as the largest diagonal entries of some diagnostic matrices,
+                                           thus bypassing the combinatorial optimization and objective evaluation.
+
+                                               Key words. dimension reduction, Poincaré inequality, Cramér-Rao inequality, derivative-based,
+                                           goal-oriented, Bayesian optimal experimental design, global sensitivity anaylsis
+
+                                              MSC codes. 65D40, 62F15, 62K05
+
+
+                                                1. Introduction. High dimensionality poses a challenge in many fields of ap-
+                                           plied mathematics, seriously limiting the effectiveness of established solution methods.
+                                           Tasks like approximation, sampling, and optimization become exponentially harder
+                                           as the size of the respective exploration spaces explodes with growing dimensions.
+                                           And yet, the dimensionality of computational problems continues to rise due to im-
+                                           proved processing capacities that allow for higher resolution simulations and an un-
+                                           precedented accumulation of data. In response to this challenge, dimension reduction
+                                           methods seek to leverage the underlying low-dimensional structures present in many
+                                           problems.
+                                                Classical dimension reduction methods target either the input or the output space
+                                           of a model. For example, truncated Karhunen-Loève expansion [44] is often applied
+                                           to reduce input parameters, while the reduced basis method [6], proper orthogonal
+                                           decomposition [56, 46] and principal component analysis (PCA) [34] are used on
+                                           the output states. Derivative-based reduction methods like ours have been mostly
+                                           proposed for the parameter space like the active subspace [19, 62] and likelihood
+                                           informed subspace [20, 63] methods. Although input and output reduction methods
+                                           are often applied simultaneously, the two spaces are commonly treated separately (see
+                                           e.g. [5, 16, 48]). However, choosing an input subspace inevitably impacts the relevant
+                                           output subspace and vice versa. Taking this interplay into account can significantly
+                                           reduce computational cost by allowing lower-dimensional approximations with the
+                                           same level of accuracy [5].
+                                                Few works consider the coupling between the input and output space reduction,
+                                           though the coupling is often only algorithmic and one-directional. For example, [43]
+                                           uses a greedy reduced basis method for output state reduction and re-purposes the
+
+                                              ∗ Université Grenoble Alpes, Inria Grenoble, France (elise.arnaud@univ-grenoble-alpes.fr,
+
+                                           qiao.chen@inria.fr, olivier.zahm@inria.fr).
+                                              † Computing and Mathematical Sciences, California Institute of Technology, Pasadena, CA
+
+                                           (rsb@caltech.edu).
+                                                                                            1
+2                 Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+snapshot parameters to span a reduced parameter space. Conversely, [21] employs
+likelihood informed parameter subspaces, and then reduces the output using PCA
+on snapshots sampled from a reduced parameter distribution. The operator learn-
+ing framework of [45] optimizes the output reduction (seen here as a linear decoder
+parametrized by neural networks) after fixing a reduced input, e.g., using Karhunen-
+Loève or active subspaces; see also the discussion in [37]. [13] derive error bounds for
+joint input-output dimension reduction which permits one to balance the contribution
+of the two reductions to meet an overall level of accuracy.
+     The coupling between input and output space is also the motivation behind goal-
+oriented methods. These approaches tailor the dimension reduction of the input
+or output space to specific quantities of interest in the opposite space to enhance
+computational efficiency and significance of the results. For example, optimal sensor
+placement can be viewed as dimension reduction that selects the most informative
+output components. The goal-oriented optimal sensor placement problem [25, 10, 59]
+seeks optimality with respect to a prescribed lower dimensional parameter of interest
+(instead of the whole parameter). On the other hand, sensitivity analysis can be
+viewed as input dimension reduction where parameter components that cause the
+most (or least) output variations are identified. Goal-oriented sensitivity analysis
+considers sensitivities with respect to a specified output of interest.
+     1.1. Contribution and Outline. We develop a coupled dimension reduction
+method that accounts for the interdependence between the input and output space of a
+non-linear function G : Rd → Rm . As a consequence of the coupling, our method nat-
+urally supports goal-oriented dimension reduction. Using the Poincaré and a Cramér-
+Rao-like inequality, we establish gradient-based upper and lower bounds for several
+joint and goal-oriented dimension reduction objectives. These bounds provide us with
+computable error estimates and an easy optimization algorithm based on the eigen-
+decomposition of two diagnostic matrices
+                        HX (Vs ) = E ∇G(X)⊤ Vs Vs⊤ ∇G(X) ,
+                                                          
+
+                        HY (Ur ) = E ∇G(X)Ur Ur⊤ ∇G(X)⊤ ,
+                                                          
+
+for the input and output space, respectively. Here, ∇G(X) ∈ Rm×d denotes the
+Jacobian of G, while Ur ∈ Rd×r and Vs ∈ Rm×s are orthogonal matrices spanning the
+reduced input and output space, respectively. We note that each diagnostic matrix
+is a function of a specified subspace in the opposing space. In the goal-oriented case
+where a fixed Ur prescribes a parameter of interest Ur⊤ X, the optimal Vs∗ (Ur ) consists
+of the dominant eigenvectors of HY (Ur ). Equivalently, for a given output of interest
+Vs⊤ G(X), the optimal Ur∗ (Vs ) consists of the dominant eigenvectors of HX (Vs ). To
+obtain coupled subspaces (Ur∗ , Vs∗ ), we propose an alternating eigendecomposition of
+both diagnostic matrices.
+     In the goal-oriented optimal sensor placement scenario, we seek Vτ (Ur ) = [em   τ ]
+consisting of canonical basis vectors em i ∈ R
+                                               m
+                                                 indexed by τ ⊆ {1, . . . , m}. By max-
+imizing a derivative-based lower bound of the expected information gain, we obtain
+the optimal τ ∗ as the index set of the largest diagonal entries of HY (Ur ). Similarly,
+in the goal-oriented sensitivity analysis scenario, we seek Uτ (Vr ) = [edτ ] consisting
+of canonical basis vectors edi ∈ Rd . The solution τ ∗ ⊆ {1, . . . , d} that optimizes a
+derivative-based bound of the total Sobol’ index is given as the largest diagonal en-
+tries of HX (Vs ). In both applications, we circumvent the expensive evaluation of the
+objective functions and the combinatorial optimization problem by maximizing our
+derivative-based bounds.
+                 COUPLED INPUT-OUTPUT DIMENSION REDUCTION                            3
+
+     The remainder of this article is organized as follows. We begin in Section 2 by
+introducing several coupled and goal-oriented dimension reduction objectives. Sec-
+tion 3 contains our main results. We derive derivative-based upper and lower bounds
+for the input-output dimension-reduction objectives, as well as an algorithm that
+computes the optimal coupled subspaces with respect to the bounds. In Section 4,
+we consider two goal-oriented applications. In particular, we look at goal-oriented
+Bayesian optimal experimental design in Subsection 4.1 and goal-oriented global sen-
+sitivity analysis in Subsection 4.2. We finally demonstrate our theoretical results on
+numerical examples in Section 5.
+    2. Problem Setting and Objectives. Let G : Rd → Rm be a deterministic
+non-linear function of a random input parameter vector X. We reduce the input
+vector X and output Y = G(X) by retaining only some low-dimensional projections
+                                        Xr = Ur⊤ X,
+                                         Ys = Vs⊤ Y,
+where Ur ∈ Rd×r , Vs ∈ Rm×s are two matrices with r ≪ d and s ≪ m orthonormal
+columns. The identification of Ur and Vs depends on the objective at hand. In the
+following, we introduce four potential objectives. The first two consider general func-
+tion approximation and Bayesian inference problems, while the second two consider
+goal-oriented applications of our framework.
+     Reduced order modelling. In reduced order modelling (ROM), G is typically a
+parametrized partial differential equation (PDE) model taking parameter X and re-
+turning the (discretized) solution G(X) of the PDE. ROM aims to construct a fast-
+to-evaluate approximation G e that can be used in place of G for real-time or multiple-
+query problems such as control, optimization or sampling. A possible formalization
+of the problem is to find matrices Ur and Vs which minimize the L2 -error
+                                                      2
+                                                       
+(O1)                          min E ∥G(X) − G(X)∥
+                                                e        ,
+                             Ur ,Vs
+
+(2.1)                     where       G(x)
+                                      e    = Vs ge(Ur⊤ x) + G
+                                                            e⊥ ,
+
+for some optimal low-dimensional function ge : Rr → Rs and vector G    e ⊥ ∈ Rm to be
+specified later in Proposition 3.3. If the minimum value of the objective (O1) is
+close to 0, then G ≈ G    e is essentially constant along the (d − r)-dimensional sub-
+space Ker(Ur⊤ ) and the variation in its output is confined in the m-dimensional affine
+subspace Im(Vs ) + G e⊥ .
+     Bayesian inference. In Bayesian inference, the aim is to compute statistics for
+the posterior distribution πX|Y . Existing knowledge on X, represented by the prior
+distribution πX , is thereby updated with new information from a noisy observation
+Y = G(X) + η, where η ∼ N (0, σ 2 Im ) denotes some additive Gaussian noise with
+Im ∈ Rm×m being the identity matrix. While one may consider more general like-
+lihood functions, we will restrict ourselves to the setting of additive and Gaussian
+observational noise in this work. By this definition, the likelihood πY |X is Gaussian
+so that Bayes theorem yields the posterior density, which is known up to a normal-
+ization constant, as
+                                                           
+                                                          2
+                      πX|Y (x|y) ∝ exp − 2σ1 2 ∥y − G(x)∥ πX (x).
+
+In the case of a high-dimensional X, standard Markov-chain Monte Carlo (MCMC)
+methods need an excessive amount of iterations (and thus of model evaluations) to
+4                  Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+accurately sample the posterior. Reducing the dimension of X aims at identifying the
+components Xr which are most informed by the data Y in order to run the inference
+algorithm, e.g., MCMC on a low-dimensional subspace [20]. Reducing the dimension
+of Y permits one to only consider the most informative data Ys , typically yielding
+smaller autocorrelation between posterior samples and further reducing the number
+of required MCMC iterations [13]. We formalize this problem as finding Ur and Vs
+that minimize the posterior error with respect to the expected Kullback-Leibler (KL)
+divergence
+                                                 
+(O2)                        min EY DKL πX|Y ∥ π
+                                              eX|Y ,
+                            Ur ,Vs
+
+(2.2)                     where      eX|Y (x|y) ∝ πYs |Xr (ys |xr )πX (x),
+                                     π
+                    R
+with DKL (ν∥µ) = log(dν/ dµ) dν. For (O2) to be close to 0, the parameter X
+needs to be essentially independent of the observations in the subspace Ker(Vs ), and
+observations of Y should primarily provide information within the parameter subspace
+Im(Ur ). To sample from the approximate density π   eX|Y , we can independently sample
+Xr ∈ Rr , which depends on the projected observation (see algorithms to sample the
+reduced posterior in [13, Section 6]), and its orthogonal complement X⊥ ∈ Rd−r ,
+which only depends on the prior.
+     Goal-oriented Bayesian optimal experimental design. Bayesian optimal experi-
+mental design (BOED) aims to select a set of sensors τ ⊆ {1, . . . , m} with |τ | = s
+that maximizes the information gained about the parameter that is to be inferred.
+Measurements from the sensors τ are gathered in the vector Yτ = Vτ⊤ Y , where
+Vτ = [em τ ] ∈ R
+                 m×s
+                      contains the canonical basis vectors em   i ∈ R
+                                                                       m
+                                                                           indexed by τ .
+The information content of the experimental design Vτ can be quantified by the ex-
+pected information gain (EIG), which is defined as the KL-divergence from the prior
+to the posterior in expectation over the data Φ(Vτ ) = EY [DKL (πX|Yτ ∥ πX )]. When
+the inference problem focuses on a specific linear quantity of interest in the parameter
+Xr = Ur⊤ X, the sensor placement can be improved by maximizing the goal-oriented
+EIG
+                                                            
+(O3)                max Φ(Vτ |Ur ) = max EY DKL πXr |Yτ ∥ πXr ,
+                     Vτ                      Vτ
+
+
+where πXr |Yτ and πXr are the corresponding marginalized densities. BOED is notori-
+ously challenging as each evaluation of the EIG requires a costly nested Monte-Carlo
+estimator [55]. Existing methods often resort to linear Gaussian models for which the
+EIG can be computed explicitly [4]. Nevertheless, it remains a combinatorial opti-
+mization problem that typically only allows for sub-optimal greedy solutions [40, 17].
+       Goal-oriented global sensitivity analysis. Assuming independent inputs Xi , i =
+1, . . . , d, global sensitivity analysis (GSA) aims to identify which set τ ⊆ {1, . . . , d}
+of r = |τ | input factors causes the least output variations in order to fix them to
+a nominal value and simplify the model. A widely used sensitivity index is the to-
+tal Sobol’ index Sτtot = 1 − Tr(Cov(G(X)|X       −τ ))
+                                      Tr(Cov(G(X)))    with X−τ = U−τ ⊤ X ∈ Rd−r where
+U−τ = [ed−τ ] ∈ Rd×(d−r) contains the canonical basis vectors edi ∈ Rd indexed by the
+complement of τ [28]. A smaller Sτtot implies that the output is less sensitive to the
+parameters indexed by τ . Thus, the optimal set of input factors τ for factor fixing
+minimize the total Sobol’ index Sτtot . When there are particular output directions of
+interest Vs⊤ G(X), it is more suitable to consider minimizing the goal-oriented total
+                    COUPLED INPUT-OUTPUT DIMENSION REDUCTION                            5
+
+Sobol’ index
+
+                                                 Tr Cov Vs⊤ G(X) U−τ
+                                                                   ⊤
+                                                                          
+                       tot                                            X
+(O4)           min S         (Uτ |Vs ) = min 1 −               ⊤
+                                                                               ,
+               Uτ                        Uτ         Tr (Cov (Vs G(X)))
+
+where Uτ = [edτ ] ∈ Rd×r . GSA faces similar challenges as BOED. First, the objective
+function is expensive to evaluate and the development of fast computational meth-
+ods is an ongoing research topic [27, 51]. Secondly, identifying the optimal set that
+minimizes the total Sobol’ index poses a combinatorial problem. In practice, only
+single-element sets τ = {i} are considered and Sobol’ indices are computed for all
+i = 1, . . . , d to rank them by importance.
+    3. Coupled Input-Output Dimension Reduction. The following Lemmas
+allow us to address both the posterior approximation problem (O2) as well as the
+goal-oriented BOED problem (O3) by solving the L2 -approximation problem of the
+forward model (O1). The proofs can be found in Appendices A.1 and A.2.
+     Lemma 3.1. With the above notations, for any Ur , Vs and G
+                                                              e as in (2.1), we have
+
+                                                           2
+                               eX|Y ≤ 2σ1 2 E ∥G(X) − G(X)∥
+                                                         
+(3.1)            EY DKL πX|Y ∥ π                      e       .
+
+     Lemma 3.2. For any Ur , Vs and G
+                                    e as in (2.1), we have
+
+                                                                 2
+            Φ(Vs |Ur ) ≥ EY DKL πX|Y ∥ πX − 2σ1 2 E ∥G(X) − G(X)∥
+                                                               
+(3.2)                                                       e       .
+
+    Inequality (3.1) shows that minimizing the L2 -error of G  e corresponds to mini-
+mizing an upper bound of the posterior error of π eX|Y . At the same time, minimizing
+the L2 -error also maximizes a lower bound of the goal-oriented EIG Φ(Vs |Ur ) accord-
+ing to (3.2). For this reason, we will focus on the L2 -approximation of G    e in this
+section. The link to the goal-oriented GSA problem (O4) will be addressed later in
+Proposition 4.1. For any fixed pair of matrices (Ur , Vs ), the following proposition
+gives analytical expressions for the optimal function G
+                                                      e in (2.1). The proof is given in
+Appendix B.
+    Proposition 3.3. Let X be a random vector taking values in Rd and let G : Rd →
+R be such that E[∥G(X)∥2 ] < ∞. For any matrices Ur ∈ Rd×r and Vs ∈ Rm×s with
+ m
+
+orthogonal columns, we define G∗ : Rd → Rm as
+
+                                  G∗ (x) = Vs g ∗ (Ur⊤ x) + G∗⊥ ,
+
+where g ∗ (xr ) = Vs⊤ E[G(X)| Ur⊤ X = xr ] and G∗⊥ = (Im − Vs Vs⊤ ) E[G(X)]. Then G∗
+            e 7→ E[∥G(X) − G(X)∥    2
+minimizes G                   e       ] over the set of square integrable functions in the
+form of (2.1). Furthermore, it holds that
+
+(3.3) E ∥G(X) − G∗ (X)∥2 = Tr (Cov (G(X))) − Tr Vs⊤ Cov E[G(X)|Ur⊤ X] Vs ,
+                                                                                  
+
+
+where Cov(E[G(X)| Ur⊤ X]) ∈ Rm×m denotes the covariance of E[G(X)| Ur⊤ X].
+     Proposition 3.3 allows us to obtain optimal Ur and Vs by minimizing the L2 -error
+of the forward model as given by (3.3), the minimum value for the objective in (O1).
+After that, one can approximate the low-dimensional function g ∗ using state-of-the-
+art approximation methods (see e.g. [2, 30]) and compute G∗⊥ to obtain a reduced
+6                 Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+order model of G. We focus on reducing the inputs and/or outputs by minimizing
+(3.3) over Ur and/or Vs , which is equivalent to
+
+                      max Tr Vs⊤ Cov E[ G(X)| Ur⊤ X] Vs .
+                                                     
+(3.4)
+
+Let us look at some computational aspects of (3.4). Consider the goal-oriented case
+with fixed Ur . The matrix Vs∗ (Ur ) that maximizes (3.4) spans the s-dimensional sub-
+space which most effectively captures the output variations caused by parameter of
+interest Xr = Ur⊤ X. It can be computed as the matrix containing the s dominant
+eigenvectors of Cov(E[G(X)| Ur⊤ X]), see Lemma 3.9 bellow. Without input dimen-
+sion reduction r = d, this would correspond to the PCA solution which consists of
+the dominant eigenvectors of Cov(G(X)) [34]. Replacing G(X) by its conditional
+expectation E[G(X)|Ur⊤ X] is a natural modification to couple the output dimension
+reduction with a prescribed input subspace Ur . However, computing the covariance of
+the conditional expectation is challenging. It poses a common problem in global sensi-
+tivity analysis and requires dedicated algorithms such as the pick-freeze method [57].
+The alternative goal-oriented problem with fixed Vs gives us a matrix Ur∗ (Vs ) that
+extracts the inputs which best explain the projected output Vr⊤ G(X). This problem
+is even more difficult to solve as there exists no closed form expression of Ur∗ (Vs ) in
+general. The same computational difficulties affect the problem of finding the optimal
+coupled matrix pair (Ur∗ , Vs∗ ) that maximizes (3.4). In the following section, we derive
+a gradient-based bound that provides a feasible optimization procedure to identify the
+reduced subspaces.
+    3.1. Derivative-based Bounds. In this subsection, we derive derivative-based
+bounds for the L2 -error (3.3) which permit more manageable optimization problems
+compared to (3.4). To derive the bounds, we invoke the Poincaré inequality [50] and
+a Cramér-Rao-like inequality [52] for the input random variable X.
+    Definition 3.4 (Poincaré and Cramér-Rao inequality). Given a random vector
+X taking values in Rd , we denote the smallest and the largest constants by C(X) ≥ 0
+and c(X) ≥ 0, respectively, such that
+                            2                       2                     2
+(3.5)     c(X) ∥E [∇f (X)]∥ ≤ E (f (X) − E[f (X)]) ≤ C(X) E ∥∇f (X)∥ ,
+
+holds for any continuously differentiable function f : Rd → R. If C(X) < ∞, the right
+inequality is called the Poincaré inequality with constant C(X) and, if c(X) > 0, the
+left inequality is called the Cramér-Rao inequality with constant c(X).
+     It is well known that a Gaussian random vector X ∼ N (µ, Σ) on Rd satisfies (3.5)
+with c(X) = λmin (Σ) and C(X) = λmax (Σ), see Lemma D.1 and [7]. More details
+regarding the Poincaré inequality can be found in [11, 63] and references therein. For
+the Cramér-Rao inequality see the discussion in Appendix D. We defer to Proposition
+3.6 for sufficient conditions so that c(X) > 0 and C(X) < ∞ hold. We now state our
+main result. The proof can be found in Appendix C.
+    Theorem 3.5. Given a random vector X taking values in Rd , we let C(X) ≥ 0
+and c(X) ≥ 0 be the smallest and the largest constant, respectively, such that
+
+(3.6)                          C(X⊥ | Xr = xr ) ≤ C(X),
+(3.7)                           c(X⊥ | Xr = xr ) ≥ c(X),
+
+holds for all xr ∈ Rr and all Ur ∈ Rd×r with orthonormal columns, where Xr = Ur⊤ X
+              ⊤
+and X⊥ = U⊥     X with U⊥ ∈ Rd×(d−r) being an orthogonal complement to Ur . In other
+                 COUPLED INPUT-OUTPUT DIMENSION REDUCTION                            7
+
+words, we require every conditional distribution of X⊥ to satisfy the Poincaré and
+Cramér-Rao inequality.
+    Let G : Rd → Rm be a continuously differentiable function such that E[∥∇G(X)∥2F ] <
+∞, where ∇G(X) ∈ Rm×d denotes the Jacobian of G and ∥·∥F is the Frobenius norm.
+Then, for any Ur ∈ Rd×r and Vs ∈ Rm×s with orthonormal columns, we have
+                                                                            
+        E ∥G(X) − G∗ (X)∥2 ≤ C(X) E ∥∇G(X)∥2F − E ∥Vs⊤ ∇G(X)Ur ∥2F ,
+                                                         
+(3.8)
+                                                                            2
+                                                                               
+                                                      2
+        E ∥G(X) − G∗ (X)∥2 ≥ c(X) E [∇G(X)] F − Vs⊤ E ∇G(X) Ur F ,
+                                                                       
+(3.9)
+
+with G∗ defined as in Proposition 3.3.
+    Instead of solving the computationally expensive optimization problem (3.4), we
+can now optimize the upper bound (3.8) of the L2 -error to find the subspaces, meaning
+                                   h                  2
+                                                        i
+(3.10)                       max E Vs⊤ ∇G(X)Ur F .
+
+We will show in the next subsection that maximizing over either Ur or Vs yields closed-
+form solutions that can be computed as dominant eigenvectors of certain diagnostic
+matrices. There is, however, no closed-form solution for the joint maximization over
+Ur and Vs . Nonetheless, since the Stiefel manifold St(p, q) = {A ∈ Rp×q | A⊤ A = Iq }
+is compact [1] and the objective function is continuous with respect to Ur and Vs ,
+the joint maximization problem has a solution. We propose a natural heuristic for its
+computation in the next subsection.
+     The following proposition gives sufficient conditions on the density πX which
+ensures c(X) > 0 and C(X) < ∞.
+    Proposition 3.6. The following holds:
+     1. Assume that supp(πX ) is convex and that there exists ρ > 0 so that
+
+        (3.11)                      − ∇2 log πX (x) ⪰ ρ Id
+
+        holds for any x ∈ Rd . Then C(X) ≤ 1/ρ.
+     2. Assume that supp(πX ) = Rd and that there exists η > 0 so that
+
+        (3.12)                      − ∇2 log πX (x) ⪯ η Id
+
+        holds for any x ∈ Rd . Then c(X) ≥ 1/η.
+    Proof. For the proof of 1 see [63], and for 2 see Lemma D.2.
+    While assumption (3.11) is a classical strict log-concavity assumption on πX , the
+assumption (3.12) means that the density πX has to lie above some scaled Gaussian
+density (see Remark D.3). Assuming access to c(X), the lower-bound (3.9) can be
+evaluated with no additional cost after computing Ur and/or Vs and allows us to
+certify the error made by optimizing the upper bound. For Gaussian priors, c(X)
+can be shown to be the smallest eigenvalue of the prior covariance matrix. For non-
+Gaussian priors, one may normalize the prior and consider an inference problem in a
+transformed coordinate system in order to obtain the values for both constants C(X)
+and c(X) [22].
+    Remark 3.7 (Preconditioning). Using Proposition 3.6, one can show for X ∼
+N (µ, Σ) that C(X) = λmax (Σ) and c(X) = λmin (Σ). Using a preconditioned vector
+8                  Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+X = Σ−1/2 (X − µ) ∼ N (0, Id ), we get sharper bounds for (3.8) and (3.9) with
+C(X) = c(X) = 1. Appling Theorem 3.5 on X 7→ G(Σ1/2 X + µ) yields
+                                                ⊤
+      E ∥G(X) − G∗ (X)∥2 ≤ E ∥∇G(X)Σ1/2 ∥2F − E ∥V s ∇G(X)Σ1/2 U r ∥2F ,
+                                                                  
+
+
+where we use G∗ (X) = Vs⊤ E[G(X)|Xr ] + (Im − Vs Vs⊤ ) E[G(X)] with reduced pa-
+                  ⊤
+rameter Xr = (U r Σ−1/2 )(X − µ). In practice, even for non-Gaussian X, it can be
+beneficial to apply the change of variable X = Cov(X)−1/2 (X − E[X]) and compute
+the dimension-reduction with the isotropic random variable X instead of X.
+   Remark 3.8 (Equality and Closed-form Solution for Affine Models). For affine
+models of the form G(x) = a + M x with a ∈ Rm , M ∈ Rm×d , the Jacobian ∇G(X) =
+M is constant. If we further assume X ∼ N (0, Id ), so that C(X) = c(X) = 1, the
+upper and lower bound coincide with the L2 -error
+                                              2
+                     E ∥G(X) − G∗ (X)∥2 = ∥M ∥F − ∥Vs⊤ M Ur ∥2F .
+                                      
+
+
+Thus, the solution to (3.10) is actually the same as the one of (3.4). By the Eckart-
+Young-Mirsky theorem, the optimal Ur and Vs minimizing the right hand side have
+columns consisting of the dominant right and left eigenvectors of M , respectively,
+meaning that Ur∗ = [u1 . . . ur ] and Vs∗ = [v1 . . . vs ] where
+                                               min(m,d)
+                                                 X
+                                    M=                    λi vi u⊤
+                                                                 i
+                                                 i=1
+
+is the singular value decomposition of M .
+    3.2. Minimizing the Error Bound. We define the diagnostic matrices
+
+                HX (Vs ) = E ∇G(X)⊤ Vs Vs⊤ ∇G(X) ∈ Rd×d ,
+                                               
+(3.13)
+                HY (Ur ) = E ∇G(X)Ur Ur⊤ ∇G(X)⊤ ∈ Rm×m .
+                                               
+(3.14)
+
+Then the objective function in (3.10) can be written as
+
+           E ∥Vs⊤ ∇G(X)Ur ∥2F = Tr Vs⊤ HY (Ur )Vs = Tr Ur⊤ HX (Vs )Ur .
+                                                                  
+(3.15)
+
+To find the optimal subspaces that minimize the objective above, we recall the fol-
+lowing property on Hermitian matrices (see e.g. Corollary 4.3.39 [33]).
+    Lemma 3.9 (Variational characterization of eigenvalues of Hermitian matrices).
+Let H ∈ Rd×d be a symmetric positive definite matrix with eigenpairs (λi , wi ) meaning
+Hwi = λi wi , where λi+1 ≤ λi and ∥wi ∥2 = 1 for i = 1, . . . , d. Then for any r < d we
+have
+                                                                     r
+                                                                     X
+                                                Wr⊤ HWr
+                                                             
+                               max        Tr                     =         λi ,
+                             Wr ∈Rd×r
+                                                                     i=1
+                             Wr⊤ Wr =Ir
+
+
+where a solution is given by Wr = [w1 , . . . , wr ].
+    Applying Lemma 3.9 to the second term Tr Vs⊤ HY (Ur )Vs in (3.15), we obtain
+                                                                  
+
+the solution Vs∗ (Ur ) to the goal-oriented problem (3.10) with fixed Ur . The solution
+                  COUPLED INPUT-OUTPUT DIMENSION REDUCTION                                     9
+                                                                    Pm    Y          ⊤
+requires computing the eigendecomposition HY (Ur ) =                 i=1 λi (Ur )vi vi and assem-
+bling
+
+(3.16)                            Vs∗ (Ur ) = [v1 , . . . , vs ].
+
+In a similar fashion, the third term in (3.15) suggests that the solution Ur∗ (Vs ) to
+the goal-oriented problem (3.10) with fixed Vs can be obtained by computing the
+                               Pd                ⊤
+eigendecomposition HX (Vs ) = i=1 λX  i (Vs )ui ui and assembling
+
+(3.17)                            Ur∗ (Vs ) = [u1 , . . . , ur ].
+
+By (3.8), we also get the following error bounds for the two goal-oriented problems
+                                                  s          
+                                                  X
+            E ∥G(X) − G∗ (X)∥2 ≤ C(X) E ∥∇G(X)∥2F −   λYi (Ur ) ,
+                             
+                                                                          i=1
+                                                  r         
+                                                  X
+            E ∥G(X) − G∗ (X)∥2 ≤ C(X) E ∥∇G(X)∥2F −   λX
+                             
+                                                       i (Vs ) .
+                                                                          i=1
+
+For the joint minimization over (Ur , Vs ) for the coupled problem (3.10), there is no
+closed form solution in general. To approximate the solution, we propose the iterative
+alternating eigendecomposition scheme
+
+                                    Urk+1 = Ur∗ (Vsk ),
+(3.18)
+                                    Vsk+1 = Vs∗ (Urk+1 ),
+
+where Ur∗ (·) and Vs∗ (·) are defined as in (3.17) and (3.16). If {(Urk , Vsk )}k≥1 converges
+towards a limit point (Ur∗ , Vs∗ ) then, by construction, this point will be a stationary
+point of the objective function. In practice, the diagnostic matrices can be com-
+puted using Monte Carlo estimators and the operational algorithm is formalized in
+Algorithm 3.1.
+
+Algorithm 3.1 Alternating eigendecomposition for coupled input and output dimen-
+sion reduction.
+                                                                         i.i.d.
+    Input: s, r ∈ N; Vs0 ∈ Rm×s ; Gi = ∇G(x(i) ) where x(i) ∼ πX
+ 1: Set k = 0
+ 2: while k ≤ maximal iteration do
+ 3:   Assemble H b X (Vsk ) = 1 PM G⊤ Vsk Vsk ⊤ Gi
+                                   M     i=1  i
+ 4:   Compute SVD of H        b X (Vsk ) = U ΛU ⊤
+ 5:   Set Urk = [u1 , . . . , ur ]
+ 6:   Assemble H b Y (U k ) = 1 PM Gi U k U k ⊤ G⊤
+                          r        M     i=1    r r i
+ 7:   Compute SVD of H        b Y (Urk ) = V ΛV ⊤
+ 8:   Set Vsk+1 = [v1 , . . . , vs ]
+ 9:   k =k+1
+10: end while
+11: return Ur , Vs
+
+
+
+    Remark 3.10 (Implicit diagnostic matrices). Algorithm 3.1 requires computing
+eigencompositions of the matrices H             b Y (Ur ) which, when d ≫ 1 or m ≫ 1,
+                                  b X (Vs ) and H
+10                 Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+can be numerically costly to assemble and to store. To remedy this, one can compute
+the eigencompositions using iterative algorithms (e.g., Krylov methods) which only
+require access to matrix-vector product operations of the form
+                                   M
+                   b Y (Ur )v = 1
+                                  X                                
+              v 7→ H                  ∇G(X (i) ) Ur Ur⊤ ∇G(X (i) )⊤ v ,
+                                M i=1
+                                  M
+                  b X (Vs )u = 1
+                                 X                               
+             u 7→ H                  ∇G(X (i) )⊤ Vs Vs⊤ ∇G(X (i) )u .
+                               M i=1
+
+Computing these matrix-vector products requires only evaluating the linear-tangent
+operator u 7→ ∇G(X (i) )u and its adjoint v 7→ ∇G(X (i) )⊤ v, which have a computa-
+tional complexity of roughly two forward simulations [49, 31]. Since the gradient-based
+dimension reduction methods are intended as a preprocessing step for the analysis of
+G (e.g., optimization, calibration or parameter estimation), access to gradients is of-
+ten required by the prospective analysis itself. Finally, if closed-form gradients are
+not available, automatic differentiation or gradient approximation methods, such as
+finite differences, may be used. Both the accuracy of the gradient evaluations and the
+Monte Carlo estimation of the diagnostic matrices will affect the obtained subspaces
+Ur and Vs . A detailed error analysis is left for future work.
+     Remark 3.11. In a recent paper [13], the authors proposed a joint dimension
+reduction method for the parameter and data space based on similar diagnostic ma-
+trices. Using an information theoretic approach, they derive an upper bound for the
+                               πX|Y )] which is minimized by Ur∗ and Vs∗ consisting of
+posterior error EY [DKL (πX|Y ∥e
+the dominant eigenvectors of
+
+                             HX = E ∇G(X)⊤ ∇G(X) ,
+                                                      
+
+                             HY = E ∇G(X)∇G(X)⊤ ,
+                                                      
+
+
+respectively. Their results correspond to our goal-oriented solutions with Vs∗ = Vs∗ (Id )
+and Ur∗ = Ur∗ (Im ). Contrary to our error bound, their results depend on the loga-
+rithmic Sobolev constant of the joint distribution πXY whose existence is generally
+difficult to establish.
+     4. Application to Goal-oriented Coordinate Selection.
+    4.1. Goal-Oriented Bayesian Optimal Experimental Design. Consider
+the problem of finding an optimal subset of s ≤ m sensors out of m candidate locations
+that maximizes the information gained about the parameter X that is to be inferred.
+The vector Y = G(X) + η gathers all possible measurements at the m candidate
+locations. Data collected at select sensor locations τ ⊆ {1, . . . , m}, |τ | = s are denoted
+by Yτ = Vτ⊤ Y , where Vτ = [em  τ ]∈R
+                                       m×s
+                                           contains the canonical basis vectors em    i ∈R
+                                                                                            m
+
+indexed by τ . Later, we will propose an alternative approach for experimental design
+where the reduced data is characterized by a matrix Vs ∈ Rm×s with orthonormal
+columns. We will explain the benefits of considering this relaxed design space later
+and how to associate sensor locations to the design matrix Vs . For any V⋆ , which can
+be a coordinate selection design V⋆ = Vτ or a relaxed orthogonal design V⋆ = Vs , we
+have the posterior density of X knowing Y⋆ = V⋆⊤ Y given as
+                                                               2
+                                                                  
+(4.1)            πX|V⋆⊤ Y (x|y⋆ ) ∝ exp − 2σ1 2 y⋆ − V⋆⊤ G(x)        πX (x).
+                 COUPLED INPUT-OUTPUT DIMENSION REDUCTION                             11
+
+To quantify the information content of an experimental design V⋆ , we use the expected
+information gain (EIG) defined as the KL-divergence between posterior and prior
+distribution in expectation over the data
+
+                      Φ(V⋆ ) = EY DKL πX|V⋆⊤ Y ( · |V⋆⊤ Y )∥ πX .
+                                                              
+(4.2)
+
+The divergence reflects the extent to which the posterior distribution differs from the
+prior due to observed data and, thereby, represents the information gain of the design
+V⋆ . The EIG is equivalent to the mutual information between X and Y given as
+I(X, Y ) = DKL (πX,Y ∥πX πY ), i.e., the KL-divergence from the product of marginal
+densities to their joint density. This perspective can be useful for models with inacces-
+sible likelihood functions [39]. For a linear Gaussian inference problem, optimizing the
+EIG corresponds to minimizing the determinant of the posterior covariance matrix,
+also referred to as the D-optimality criterion. It can be interpreted as minimizing the
+volume of the uncertainty ellipsoid around the maximum a-posteriori estimator of the
+parameter X [3].
+     Estimating the EIG poses an even greater challenge than solving the Bayesian in-
+ference problem as it requires solving the inverse problem itself as a sub-problem. The
+EIG consists of an expectation over both the posterior and data distributions, neces-
+sitating an expensive nested Monte Carlo estimator [55, 15]. Efficient EIG estimation
+is an active research area, and various approaches exist. Some rely on construct-
+ing tractable approximations to the posterior distribution using measure transport
+[38, 12, 42] or variational inference [26]. Others employ different types of surrogate
+models [36, 60, 8]. A widely used strategy is to resort to Gaussian linear models
+for which a closed-form expression of the EIG exists [4, 59, 10]. In addition to the
+challenging EIG estimation, identifying the optimal setof sensor placements requires
+solving a combinatorial optimization problem with m      s possible combinations. This
+NP-hard problem is intractable even for moderate dimensions. Hence, sub-optimal
+solutions are commonly identified using greedy methods [40, 17, 59] or by solving
+continuous relaxations of the problem with sparsity constraints [32, 10].
+     We consider, in particular, goal-oriented BOEDs, where the final target is to infer
+the parameter in a lower-dimensional linear subspace of interest. This quantity of
+interest Xr = Ur⊤ X is characterized by a prescribed linear ’goal’ operator Ur ∈ Rd×r .
+For example, if the PDE model describes a spatio-temporal field with X as the initial
+state, the initial state in a localized region of the domain could be a parameter of
+interest. Tailoring the experimental design to maximize the information gained with
+respect to the parameter of interest allows for more efficient and accurate inference
+from experimental data. For a given parameter of interest Xr , we seek the optimal
+design V⋆ that maximizes the goal-oriented EIG (see (O3))
+
+                max Φ(V⋆ |Ur ) = EY DKL πXr |V⋆⊤ Y ( · |V⋆⊤ Y )∥ πXr ,
+                                                                   
+(4.3)
+                 V⋆
+
+
+where πXr |V⋆⊤ Y and πXr are the marginalized densities. The goal-oriented BOED
+problem faces the same obstacles as the non-goal-oriented one, namely the expensive
+EIG estimation and combinatorial optimization problem. We avoid both challenges by
+maximizing a lower bound for the EIG. Although our method requires the assumption
+of a Gaussian likelihood, it allows for non-linear forward models.
+     Combining Lemma 3.2 with Theorem 3.5 permits usto optimize a lower bound of
+the goal-oriented EIG by maximizing Tr V⋆⊤ HY (Ur )V⋆ . In the coordinate selection
+12                    Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+case with V⋆ = Vτ , this reduces to solving the problem
+                                                    X
+(4.4)                  max        Tr Vτ⊤ HY (Ur )Vτ =   HY (Ur )ii ,
+                       Vτ =[eτ ]∈Rm×s
+                                                                       i∈τ ∗
+                     τ ⊂{1,...,m}, |τ |=s
+
+where the solution τ ∗ ⊆ {1, . . . , m} is the index set of the s largest diagonal entries of
+HY (Ur ). While our solution τ ∗ may be sub-optimal due to the maximization of a lower
+bound, it has the advantage of being computable without the expensive evaluation of
+the EIG nor the need to solve a combinatorial optimization problem.
+    For orthogonal designs V⋆ = Vs , we obtain with Lemma 3.9 the solution
+                                                                      s
+                                                                      X
+                                             Vs⊤ HY (Ur )Vs                 λYi (Ur ),
+                                                              
+(4.5)                         max       Tr                        =
+                           Vs ∈Rm×s
+                                                                      i=1
+                           Vs⊤ Vs =Im
+
+         ∗                                        Y
+with
+Pm VsY(Ur ) = [v          1 , . . . , vs ] and (λi , vi ) being the i-th largest eigenpair of HY (Ur ) =
+                        ⊤               Y             Y
+   i=1 λi (Ur )vi vi with λi+1 (Ur ) ≤ λi (Ur ). Given that (4.5) is a relaxation        Ps      of (4.4),
+                 ∗                                                                              Y
+we  expect    V    (U     )  to   yield    better results  compared    to V                i=1 i (Ur ) ≥
+                        r                                                  τ ∗ , meaning      λ
+                s
+                                                                                             Vs∗ (Ur ), we
+P
+   i∈τ ∗ H Y (U  r ) ii .  To    associate    sensor  locations  with the  optimal  subspace
+propose to employ the empirical interpolation method (EIM) [14, 47].
+     The EIM takes as input a set of basis vectors v1 , . . . , vs ∈ Rm and returns a set of
+indices {i1 , . . . , is } ⊆ {1, . . . , m} corresponding to the empirically-best interpolation
+points for the given basis. Combining the EIM with dimension reduction methods
+for sensor placement has been considered, for example, in [29, 9]. By using the EIM
+on the columns of Vs∗ (Ur ), we can thus associate sensor locations τe = {i1 , . . . , is } to
+the orthogonal design matrix Vs∗ (Ur ). Compared to τ ∗ , the EIM-based sensors τe are
+less optimal with respect to the goal-oriented EIG lower bound (4.4). However, our
+numerical experiments show that the EIM-based sensors represent a viable alternative
+with similarly good performance as τ ∗ in terms of the true goal-oriented EIG rather
+than the lower bound. In contrast to τ ∗ , the EIM-based sensors τe tend to be less
+localized in our experiments. In the numerical experiments, we also apply the EIM
+on PCA bases to obtain sensor placements τePCA , which we will refer to as PCA-EIM
+sensors.
+     4.2. Goal-Oriented Global Sensitivity Analysis. Global sensitivity analy-
+sis aims to assign an importance value to each set of input variables, reflecting its
+contribution to the output variations. It is often used for factor prioritization and/or
+fixing in complex models. Factor prioritization identifies the subset τ ⊆ {1, . . . , d},
+|τ | = r of input parameters causing the most output variation so that the param-
+eters Xτ = (Xi )i∈τ can be prioritized e.g., in uncertainty reduction. Factor fixing,
+on the other hand, identifies the input set τ with the least influence on the output.
+Thus, Xτ can be fixed at a nominal value to reduce the complexity of, e.g., param-
+eter estimation problems. For a scalar-valued square-integrable function f : Rd → R
+with independent inputs X1 , . . . , Xd , commonly used sensitivity indices are the closed
+Sobol’ indices and the total Sobol’ indices defined as
+                     Var (E [ f (X)| Xτ ])                                     Var (E [ f (X)| X−τ ])
+(4.6)       Sτcl =                               and       Sτtot = 1 −                                ,
+                        Var (f (X))                                                 Var (f (X))
+respectively, where X−τ = (Xi )i∈τ
+                                 / . The closed Sobol’ index quantifies the portion
+of output variance attributed to Xτ . A higher value implies a stronger influence of
+Xτ on the output. The total Sobol’ index encompasses output variation due to Xτ
+                  COUPLED INPUT-OUTPUT DIMENSION REDUCTION                            13
+
+along with variations caused by interactions of Xτ with any of the remaining input
+variables. As a result, it holds that Sτcl ≤ Sτtot and 1 = Sτtot + S−τ cl
+                                                                          . A lower value
+in total Sobol’ index suggests that the parameters indexed by τ have little direct nor
+indirect impact on the output.
+     We consider, in particular, goal-oriented GSA where some outputs of interest
+Vs⊤ G(X) are prescribed. We use definitions of Sobol’ indices for vector-valued func-
+tions in [28] and generalize them to the goal-oriented case as follows
+
+                                       Tr Cov E Vs⊤ G(X) Uτ⊤ X
+                                                                
+                      S cl (Uτ |Vs ) =                               ,
+                                           Tr (Cov (Vs⊤ G(X)))
+(4.7)
+                                         Tr Cov Vs⊤ G(X) U−τ ⊤
+                                                                  
+                     tot                                        X
+                   S (Uτ |Vs ) = 1 −                                 .
+                                             Tr (Cov (Vs⊤ G(X)))
+
+For Vs ∈ Rm×1 being a vector, the provided indices correspond to the ones for a
+scalar-valued output (4.6).
+     Using the Poincaré and Cramér-Rao inequality, we now derive derivative-based
+bounds for the goal-oriented Sobol’ indices involving similar derivative-based quanti-
+ties as in Theorem 3.5.
+     Proposition 4.1. With the above notations, for any Uτ = [edτ ] ∈ Rd×r and Vs ∈
+    m×s
+R      with orthogonal columns, we have
+
+(4.8)
+
+                                                                                2
+                  ⊤                                          Vs⊤ E [∇G(X)] U−τ F
+                                 
+            Tr U−τ   HX (Vs )U−τ      cl
+   1 − C(X)                        ≤ S (Uτ |Vs ) ≤ 1 − c(X)                       ,
+            Tr (Cov (Vs⊤ G(X)))                              Tr (Cov (Vs⊤ G(X)))
+                                2
+             Vs⊤ E [∇G(X)] Uτ F                           Tr Uτ⊤ HX (Vs )Uτ
+                                                                            
+                                      tot
+(4.9) c(X)                         ≤ S (Uτ |Vs ) ≤ C(X)                       ,
+            Tr (Cov (Vs⊤ G(X)))                          Tr (Cov (Vs⊤ G(X)))
+
+where U−τ = [ed−τ ] ∈ Rd×(d−r) is the orthogonal complement to Uτ .
+     The proof can be found in Appendix E. Similarly to the BOED problem, GSA
+struggles with an objective function that is expensive to evaluate combined with a
+difficult combinatorial optimization problem to identify an optimal index set τ (see
+discussion in Section 2). On the other hand, optimizing our derivative-based bound
+instead of the Sobol’ indices provides us with a closed-form solution for the optimal
+index set. That is,
+                                     ⊤
+                                                           X
+(4.10)              min         Tr U−τ cl
+                                          HX (V s )U−τ cl
+                                                           =  HX (Vs )ii ,
+                U−τcl ∈Rd×(d−r)                                 ∗
+                                                            i∈τ
+                                                             / cl
+              τcl ⊂{1,...,d}, |τcl |=r
+
+where the index set τcl∗ maximizing the lower bound for the closed Sobol’ index is
+given by the indices corresponding to the largest diagonal entries of HX (Vs ). Corre-
+spondingly, we have
+                                                          X
+                                Tr Uτ⊤tot HX (Vs )Uτtot =
+                                                       
+(4.11)              min                                       HX (Vs )ii ,
+                   Uτtot ∈Rd×r                                 ∗
+                                                            i∈τtot
+             τtot ⊂{1,...,d}, |τtot |=r
+
+                       ∗
+where the index set τtot  minimizing the upper bound for the total Sobol’ index is
+given by the indices corresponding to the smallest diagonal entries of HX (Vs ). Note
+14                Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+that we can handle index sets of any size for the same computational cost as the case
+of single-element index sets, given that only the diagonal elements of HX (Vs ) need to
+be computed in either setting. Moreover, evaluating the respective upper and lower
+bound of the closed and total Sobol’ index allows for complete certification of the
+induced error.
+    Remark 4.2. Our method generalizes the derivative-based global sensitivity mea-
+sures (DGSM) introduced in [58] which are defined as
+                                              2 
+                                         ∂f
+                                νi = E       (X)
+                                         ∂xi
+
+for a scalar function f : Rd → R. The generalization to vector-valued functions has
+also been considered in [18]. Setting Vs ∈ Rm×1 to be a vector, the diagonal elements
+HX (Vs )ii correspond to the DGSM νi of the scalar function Vs⊤ G(X). Our approach
+additionally enables sensitivity measures for goal-oriented vector-valued outputs and
+is not restricted to single-element sets τ = {i}. The authors in [41] also derived the
+following DGSM-based bounds for the total Sobol’ index where Xi ∼ N (µi , σi )
+                                   σi4                  σ2
+                                          ω 2 ≤ Sitot ≤ Vi νi ,
+                              (µ2i +σi2 )V i
+
+
+where ωi = E[ ∂f∂x (X)
+                     i
+                        ] and V = Var(f (X)). For normally distributed Xi , we have
+                   2
+c(X) = C(X) = σi (see Remark 3.7) and thus obtain a slightly improved lower bound
+σi2 2     tot   σ2
+ V ωi ≤ Si    ≤ Vi νi . Note that lower-bounds for the total Sobol’ index are generally
+receiving growing attention in GSA [54, 53].
+    5. Numerical Experiments. The following numerical experiments are com-
+puted with code provided at https://github.com/qchen95/Coupled-input-output-DR.
+    5.1. Conditioned Diffusion. Here, we consider a model for the movement of
+a diffusive particle acting under a double-well potential in molecular dynamics. The
+goal is to infer the driving force dBt applied to the particle given observations of its
+path u : [0, T ] → R with final time T = 1. The particle movement is described by the
+solution of the stochastic differential equation
+
+                          dut = f (ut ) dt + dBt ,        u0 = 0,
+
+with non-linear drift function f (u) = u(1 − u2 )/(1 + u2 ) and B denoting a Wiener
+process. We discretize the differential equation using an Euler-Maruyama scheme with
+time step ∆t = 10−2 resulting in 100 uniformly-spaced time steps. Noisy observations
+Y are taken at each time step so that the forward model G : Rd → Rm is defined as
+the mapping from the incremental driving force X at d = 100 times to the particle
+position u at m = 100 times. We further assume a standard normal prior N (0, Id ) for
+the driving force and i.i.d. additive observational noise with distribution N (0, 0.1).
+Figures 1a and 1b illustrate some realizations of the particle path u.
+    In this problem, we aim to identify optimal subspaces and indices of the inputs and
+outputs of G that reduce the dimensions of the Bayesian inference problem for inferring
+X from Y . To compute the diagnostic matrices HX (Vs ) (3.13) and HY (Ur ) (3.14),
+we use M = 10000 prior samples and set r = s = 10, if not stated otherwise. The
+alternating eigendecomposition algorithm is run for a fixed number of 10 iterations
+and initiated from a random Vs ∈ Rm×s with orthonormal columns when no goal is
+                      COUPLED INPUT-OUTPUT DIMENSION REDUCTION                                     15
+
+specified. We recall that the optimal subspace is given without alternation when only
+solving for one of Ur or Vs .
+
+
+    1.6                                             1.6
+    0.8                                             0.8
+    0.0                                             0.0
+  −0.8                                            −0.8
+  −1.6                                            −1.6
+          0.0   0.2    0.4    0.6    0.8    1.0           0.0   0.2    0.4    0.6    0.8     1.0
+                          Time                                            Time
+
+
+     (a) Driving force of interest Ur⊤ X.           (b) Observations of interest Vs⊤ G(X).
+
+
+
+    0.2
+
+                                                   0.00
+    0.0
+                                                  −0.25
+  −0.2
+
+          0.0   0.2    0.4    0.6    0.8    1.0           0.0   0.2    0.4    0.6    0.8     1.0
+                          Time                                            Time
+
+            (c) Reduced data Vs∗ (Ur ).                   (d) Reduced parameter Ur∗ (Vs ).
+
+
+Fig. 1: Illustration of the inputs and outputs of interest (i.e., goals) within the specified
+orange time intervals, and their corresponding goal-oriented solutions for the vectors
+defining the reduced output and input spaces, respectively. Notice that the solutions
+correctly reflect the time causality of the problem.
+
+
+     In Figure 1, we observe solutions of the goal-oriented problems. The goals Ur
+and Vs , illustrated in Figure 1a and Figure 1b, project onto the driving force and,
+respectively, the particle path observations within the specified orange time intervals.
+For the goal Ur , the resulting observation space bases Vs∗ (Ur ) (3.16) in Figure 1c are
+zero up to the interval of interest. This behavior can be explained as the driving
+force within the prescribed time interval does not influence the particle position at
+earlier times. Similarly, the parameter space bases Ur∗ (Vs ) (3.17) in Figure 1d derived
+from the goal Vs do not extend beyond the observed time interval. An explanation is
+that observations of the particle’s path do not provide information about the driving
+force at future times. Thus, our goal-oriented solutions appear to capture the time
+causality within the inference problem correctly.
+     In Figure 2, we present the goal-oriented total Sobol’ indices for the output of
+interest Vs⊤ G(X) illustrated in Figure 1d. For each coordinate i = 1, . . . , d of the input
+parameter, i.e., the driving force at time i · ∆t, we compute S tot (U{i} |Vs ) along with
+the derivative-based bounds in (4.9). We present single-element input sets τ = {i},
+1 ≤ i ≤ d for easier illustration. However, we recall that the derived bounds can
+be computed for arbitrary parameter sets by summing up the elementwise values
+16                 Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+         101
+
+        10−2                                                      Upper Bound
+                                                                  S tot (U{i} |Vs )
+        10−5                                                      Lower Bound
+
+        10−8
+               0      20      40       60       80
+                                   i
+
+
+Fig. 2: Goal-oriented total Sobol’ indices for each index set as compared with the
+derived derivative-based bounds. The bounds tightly track the true value for the
+Sobol’ indices. The bounds also take into account the time causality of the problem.
+
+
+
+
+according to (4.11). Both the upper and lower bounds in Figure 2 tightly track the
+total Sobol’ indices. The bounds also capture the problem’s temporal causality, i.e.,
+driving forces at later times exert no influence on the model’s output variations during
+the time interval of interest.
+     Figure 3 shows solutions of the coupled dimension reduction problem (top) in
+comparison with dimension reduction by applying PCA separately on the parameter
+and data space (bottom) [34]. The coupled modes of the parameter space focus on
+approximating the driving force at initial times, reflecting the strong influence of the
+force at these times on the overall particle path. Contrarily, the modes of the data
+space focus on approximating the particle path at final times. This phenomenon
+reflects the fact that the final position of the particle reveals more about the overall
+driving force. The coupled eigenvectors of both spaces exhibit notable disparities
+from those derived through PCA. The PCA modes of the input space reflect the
+white noise behavior of the driving force. The PCA modes of the observation space
+are more global as compared to the coupled ones and moreover they do not exhibit
+awareness of the inverse problem.
+     Next, we consider the convergence of the alternating eigendecomposition algo-
+rithm. Figure 4 depicts the relative L2 -error (3.3) as well as the relative upper (3.8)
+and lower bound (3.9) over the iterations of the alternating eigendecomposition for 10
+random initializations of the matrices. We observe that minimizing the upper error
+bound indeed decreases the true L2 -error. Moreover, the alternating eigendecompo-
+sition converges after just three iterations independent of the initiation.
+     Figure 5 shows the convergence of the relative L2 -error and upper bound with
+increasing subspace dimensions r and s. We compare the errors of our coupled di-
+mension reduction method with other dimension reduction methods in the data and
+parameter spaces such as PCA, canonical correlation analysis (CCA) [35] and the joint
+dimension reduction method [13] discussed in Remark 3.11. Our coupled method has
+very similar error and upper bound values as the joint dimension reduction method.
+Both decrease much faster with increasing subspace dimensions and do not get stuck
+on a plateau like CCA.
+                       COUPLED INPUT-OUTPUT DIMENSION REDUCTION                                            17
+
+
+    0.25
+                                                            0.2
+    0.00
+                                                            0.0
+  −0.25
+                                                           −0.2
+           0.0   0.2     0.4       0.6   0.8     1.0              0.0   0.2       0.4    0.6   0.8   1.0
+
+                   (a) UrCoupled                                              (b) VsCoupled
+
+
+
+
+    0.25                                                    0.1
+
+    0.00                                                    0.0
+
+                                                           −0.1
+  −0.25
+
+           0.0   0.2     0.4       0.6   0.8     1.0              0.0   0.2       0.4    0.6   0.8   1.0
+
+                       (c) UrPCA                                               (d) VsPCA
+
+
+Fig. 3: Comparison of subspaces from coupled and PCA-based dimension reduction.
+
+
+
+
+                       101
+                                                                        Upper Bound
+                       100                                              L2 -error
+                                                                        Lower Bound
+                   10−1
+
+
+                             0      2     4     6      8    10
+                                         Iteration
+
+
+Fig. 4: Convergence of of alternating eigendecomposition for 10 random initializations.
+
+
+
+  5.2. Burgers’ Equation. In this subsection, we demonstrate our goal-oriented
+BOED framework on the one-dimensional non-linear Burgers’ equation
+                                         ∂u    ∂u    ∂u
+                                            +u    − D 2 = 0,
+                                         ∂t    ∂x    ∂x
+with t ∈ [0, 1], x ∈ [0, 1], D = 0.001 and periodic boundaries. Our parameters are the
+initial conditions u0 (x). We assume a normal prior distribution for u0 (x) with mean
+µ(x) = √12π exp(− 12 ∥0.5 − x∥2 ) and Matérn covariance with correlation length l = 0.1
+and smoothness ν = 2.5. Using a uniform space discretization our parameters are
+(u0 (x1 ), . . . , u0 (xd )) ∈ Rd with d = 100. As data y ∈ Rm , we use state observations
+at the final time T = 0.1 with i.i.d. measurement noise η ∼ N (0, 0.01 Im ) so that
+18                    Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+
+                                                                             Coupled Bound
+                101
+                                                                             Coupled L2 -Error
+                100                                                          Joint Bound
+                                                                             Joint L2 -Error
+               10−1
+                                                                             PCA Bound
+               10−2                                                          PCA L2 -Error
+               10−3                                                          CCA Bound
+                                                                             CCA L2 -Error
+
+                       0    15     30        45 60    75   90
+                                              r, s
+
+
+Fig. 5: Comparison of model error and upper bound convergence across different
+dimension reduction methods as subspace dimensions r, s increase.
+
+
+
+m = 100. Therefore, G : Rd → Rm maps the discretized initial condition u0 (x) to
+the discretized solution u(x, T ) at the final time. The left subplot in Figure 6 shows
+the prior mean µ(x) together with several prior samples and also visualizes each of
+            (i)
+the goals Ur , which project the initial conditions X onto the grid points i, . . . , i + r
+marked by an orange bar. The right subplot in Figure 6 illustrates the space-time
+model solutions u(x, t) with the prior mean as initial condition u0 (x) = µ(x). We
+consider r = 5 and the sensor placement for s = 10 sensors. To compute the diagnostic
+matrices, we use M = 1000 prior samples, and the goal-oriented true EIG (4.3) is
+computed via the double-loop importance sampling estimator from [15] with 30 inner
+and M outer loop samples making sure the estimator is sufficiently accurate for the
+subsequent comparison.
+
+
+       6
+                                                                     0
+       4
+                                                                    25                                        3
+                                                           Space
+
+
+
+
+       2
+                                                                    50                                        2
+       0
+                                                                    75                                        1
+     −2
+                                                                   100
+           0      25        50          75      100                   0.00           0.05              0.10
+                           Space                                                     Time
+
+
+Fig. 6: Left: Illustration of the prior mean µ(x) (solid line) and samples (transparent
+lines) of the initial condition parameter with orange bars marking the quantities of
+           (i)
+interest Ur . Right: Solutions of Burgers’ equation with the prior mean as initial
+condition, i.e., u0 (x) = µ(x).
+
+
+                                                                                                 (i)
+    In Figure 7, we present the goal-oriented EIG for different goals Ur and sensor
+placement methods. For each goal, we select sensors based on four different methods:
+the optimal sensor placement τ ∗ from (4.4), the goal-oriented EIM-based sensors τe,
+                  COUPLED INPUT-OUTPUT DIMENSION REDUCTION                                19
+
+the PCA-EIM sensors τePCA and sensors τ F based on the Fedorov-Wynn algorithm
+with a linearized model around the prior mean composed with the linear goal operator
+[24, 61]. The violin plots also show the EIG values for 250 random sensor placements.
+Both sensors τ ∗ and τe almost always outperform the random sensors, i.e., yielding
+larger EIG. In general, both τe and τ ∗ perform similarly well as the Fedorov-Wynn-
+                                                                               (45)
+based sensors τ F . Their performance surpasses that of τ F for the goals Ur        and
+  (55)
+Ur , where non-linear effects may significantly compromise the accuracy of the model
+linearization in the Fedorov-Wynn algorithm. On the other hand, the PCA-EIM
+sensors τePCA are often only as good as average random selections, especially for goals
+  (i)
+Ur with lower indices i < 45. This phenomenon can be explained by looking at the
+actual sensor positions in Figure 8. Since the solution has a wavefront that is moving
+to the right, the final state has strong features on the right side of the domain. As
+a result, the PCA-EIM sensors are concentrated on the right side of the domain,
+regardless of the goal. Thus, the PCA-EIM sensors seem to be more informative for
+                             (i)
+parameters of interests Ur that also lie on the right side of the domain (large i)
+and less so for parameters of interest located on the left side of the domain (small
+i). Generally, τ ∗ and τe are similarly distributed as the Fedorov-Wynn-based sensors
+                        (55)
+τ F except for goal Ur , where the τ F exhibits a low EIG. Comparing the EIM-
+based indices τe with the sensors τ ∗ that optimize the EIG lower bound, we observe
+in Figure 8 that τe tends to be more spread over the domain of high variability in
+                                 (i)
+the goal-oriented modes Vs∗ (Ur ). This behaviour could explain their slightly better
+                     ∗
+performance over τ relative to the true EIG.
+
+
+
+                                                                             (i)
+                                                                     Φ(Vτ ∗ |Ur )
+         2
+                                                                             (i)
+                                                                     Φ(Vτe |Ur )
+                                                                              (i)
+                                                                     Φ(Vτ F |Ur )
+         1                                                                          (i)
+                                                                     Φ(VτePCA |Ur )
+
+
+
+              5   15   25   35   45       55   65   75   85   95
+                                      i
+
+
+                                                               (i)
+Fig. 7: Goal-oriented EIG values of different goals Ur and sensor placements. Violin
+plots represent 250 random sensor placements.
+20                      Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+      0.5                                             0.25
+
+      0.0
+                                                      0.00
+     −0.5
+                                                     −0.25
+
+
+
+
+              0    20     40     60   80       100             0    20   40     60   80       100
+                            Space                                          Space
+
+
+      1                                                1
+
+
+      0                                                0
+
+
+     −1                                              −1
+
+
+
+
+          0       20     40     60    80       100         0       20    40     60   80       100
+                           Space                                           Space
+                   τ∗     τe     τF    τePCA                        τ∗    τe    τF    τePCA
+
+
+Fig. 8: Goal-oriented modes Vs∗ (Ur ) (denoted by lines) and sensor placements (de-
+noted by markers at select indices below each plot) for four different parameters of
+interest Ur⊤ X marked by orange bars.
+
+
+
+
+     6. Conclusions. We derived a coupled input-output dimension reduction method
+that is easily computed using an alternating eigendecomposition of two diagnostic ma-
+trices. The reduced spaces are identified given only access to matrix-vector products
+of the model’s gradient. Our method supports goal-oriented dimension reduction
+when some quantity of interest is prescribed in the input or the output space. We
+demonstrate our dimension reduction framework on Bayesian optimal experimental
+design and global sensitivity analysis, which can be seen as selecting the most impor-
+tant components of each variable instead of subspaces. In both applications, we not
+only bypass the expensive evaluation of the objective function for each task but also a
+combinatorial optimization problem by computing the relevant components from the
+largest diagonal entries of the diagnostic matrices.
+     Next, we explain a few possible directions for further developments. First, the
+convergence of the alternating eigendecomposition algorithm and the (adaptive) choice
+of the ranks r and s are important open questions. Second, we plan to examine
+quantities of interest described by some nonlinear functions ψr : Rd → Rr for the
+input and/or ϕs : Rm → Rs for the output. By the chain rule, the diagnostic matrices
+                  COUPLED INPUT-OUTPUT DIMENSION REDUCTION                                 21
+
+become
+
+               HX (ϕs ) = E ∇G(X)⊤ ∇ϕs (G(X))⊤ ∇ϕs (G(X))∇G(X) ,
+                                                             
+
+               HY (ψr ) = E ∇G(X)∇ψr (X)⊤ ∇ψr (X)∇G(X)⊤ .
+                                                        
+
+
+In particular, a nonlinear output quantity of interest allows for more general goal-
+oriented BOED problems, while a nonlinear transformation ψr could map the inputs to
+independent components (e.g. through a Knothe-Rosenblatt transform) for GSA. The
+error analysis associated with such diagnostics is a natural question for future work.
+Third, our coupled dimension reduction framework can also be extended to operator
+learning [45, 37] where G is considered as operator G : U → V acting on function
+spaces U, V, typically separable Hilbert spaces. This extension is possible since the
+Poincaré and Cramér-Rao inequalities are known to hold in infinite dimensions.
+    Acknowledgements. The authors appreciate discussions of some of the results
+with Matthew Li. The authors acknowledges support from the ANR JCJC project
+MODENA (ANR-21-CE46-0006-01). RB also acknowledges support from from the
+von Kármán instructorship at Caltech, the Air Force Office of Scientific Research
+MURI on “Machine Learning and Physics-Based Modeling and Simulation” (award
+FA9550-20-1-0358) and a Department of Defense (DoD) Vannevar Bush Faculty Fel-
+lowship (award N00014-22-1-2790) held by Andrew M. Stuart.
+
+    Appendix A. Linking the L2 -error of G.
+                                         e Recall Proposition 1 from [13].
+                                                               ⊤
+    Proposition A.1. Set πeX|Y = πXr |Ys πX⊥ |Xr , where X⊥ = U⊥ X is the orthogo-
+nal complement of Xr with U⊥ ∈ Rd×(d−r) spanning Ker(Ur⊤ ). Then, we have
+                                                      
+                                eX|Y ≤ EY DKL πX|Y ∥ π
+                  EY DKL πX|Y ∥ π                    bX|Y
+
+for any approximate posterior of the form π
+                                          bX|Y (x|y) = f1 (xr , ys )f2 (x⊥ , xr ) with non-
+negative functions f1 , f2 .
+                                                                     eX|Y ∝
+     A.1. Proof of Lemma 3.1. First note that the normalized form of π
+πYs |Xr πX in (2.2) can be written as
+
+                      πYs |Xr πX     πY |X πX  πY ,X πX
+          π
+          eX|Y = R                  = s r     = s r        = πXr |Ys πX⊥ |Xr
+                      πYs |Xr πX dx     π Ys    π X r π Ys
+
+Thus, it corresponds to the definition in Proposition A.1 and we can use it to obtain
+                                                      
+(A.1)             EY DKL πX|Y ∥ π
+                                eX|Y ≤ EY DKL πX|Y ∥ π
+                                                     bX|Y
+
+where π bX|Y (x|y) ∝ exp(− 2σ1 2 ∥G(x)
+                                  e    − y∥2 )πX (x) satisfies the definition in Proposi-
+                              1        1
+                                           g (xr ) − ys ∥2 ) and f2 (x⊥ , xr ) = πX (x). Here,
+tion A.1 with f1 (xr , ys ) = Z exp(− 2σ2 ∥e
+Z ∈ R represents a normalization constant independent of x and y. By Proposition 4.1
+in [23] we have the following bound for any posterior πX|Y with Gaussian likelihood
+and its approximation π   bX|Y with an approximate forward model
+
+                                                             2
+                                bX|Y ≤ 2σ1 2 EY ∥G(x) − G(x)∥
+                                                           
+(A.2)             EY DKL πX|Y ∥ π                       e       .
+
+Combining (A.1) and (A.2) finishes the proof.
+22                Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+     A.2. Proof of Lemma 3.2. We have from the previous proof that π
+                                                                   eX|Y =
+πXr |Ys πX⊥ |Xr . We get for the goal-oriented EIG
+                                                             
+                                                      πXr |Ys
+                                              Z
+                                       
+     Φ(Vs |Ur ) = EY DKL πXr |Ys ∥ πXr = log                    dπXY
+                                                       πXr
+                                    
+                            π
+                  Z
+                             eX|Y
+                = log                  dπXY
+                         πXr πX⊥ |Xr
+                                                     
+                         πY |X                     πX|Y
+                  Z                        Z
+                = log            dπXY − log                dπXY
+                          πY                       π
+                                                   eX|Y
+                  Z Z                             Z                   
+                              πX|Y                               πX|Y
+                =       log          dπX|Y dπY −           log          dπX|Y dπY
+                               πX                                π
+                                                                 eX|Y
+                                                               
+                = EY DKL πX|Y ∥ πX − EY DKL πX|Y ∥ π          eX|Y .
+
+Applying Lemma 3.1 on the last term concludes the proof.
+     Appendix B. Proof of Proposition 3.3. Let us rewrite
+                               h                                    2i
+                        2
+                            = E G(X) − G∗ (X) + G∗ (X) − G(X)
+                                             
+        E ∥G(X) − G(X)∥
+                  e                                            e
+
+                            = E ∥G(X) − G∗ (X)∥2 ] + E[∥G∗ (X) − G(X)∥ 2
+                                                                        
+                                                                 e
+                                    h                ⊤ ∗             i
+                                + 2E G(X) − G∗ (X)      G (X) − G(X)
+                                                                 e       .
+
+                                                    e it holds E[∥G(X) − G(X)∥   2
+We show that the last term vanishes so that for any G                      e       ]≥
+            ∗     2                     ∗                    e 7→ E[∥G(X)− G(X)∥    2
+E[∥G(X)−G (X)∥ ]. This proves that G is a minimizer of G                     e        ].
+           m×(m−s)
+Let V⊥ ∈ R          be the orthogonal complement of Vs . Without loss of generality,
+               e ⊥ ∈ Ker(Vs ) so that V⊥ V ⊤ G
+we assume that G                             e⊥ = G e ⊥ . By construction, we have
+                                          ⊥
+
+       G(X) − G∗ (X) = Vs Vs⊤ G(X) − g ∗ (Ur⊤ x) + V⊥ V⊥⊤ G(X) − E[G(X)] ,
+                                                                       
+
+       G∗ (X) − G(X) = Vs g ∗ (Ur⊤ x) − ge(Ur⊤ x) + V⊥ V⊥⊤ G∗⊥ − G
+                                                                  
+                e                                                e⊥ .
+
+Thus, we get that
+      h             ⊤ ∗           i
+     E G(X) − G∗ (X)  G (X) − G(X)
+                               e
+                         h                       ⊤ ∗ ⊤                i
+                      = E Vs⊤ G(X) − g ∗ (Ur⊤ X)   g (Ur X) − ge(Ur⊤ X)
+                             h                  ⊤                i
+                         + E G(X) − E[G(X)] V⊥ V⊥⊤ G∗⊥ − G     e⊥ ,
+                           |                   {z                  }
+                                                      =0
+
+
+where the last term vanishes by taking the expectation of G(X) − E[G(X)]. Next, we
+exploit the fundamental property of the conditional expectation E[G(X)f (Ur⊤ X)] =
+E[E[G(X)|Ur⊤ X]f (Ur⊤ X)] which holds for any function f : Rr → R. Considering the
+definition of g ∗ and setting f (Ur⊤ X) = Vs (g ∗ (Ur⊤ X) − ge(Ur⊤ X)), we obtain
+ h                  ⊤ ∗              i      h                           ⊤      i
+E G(X)−G∗ (X)          G (X)−G(X)e       = E G(X) − E[G(X)| Ur⊤ X] f (Ur⊤ X) = 0.
+
+     To prove (3.3), we again use the fundamental property of the conditional expec-
+                 COUPLED INPUT-OUTPUT DIMENSION REDUCTION                              23
+
+tation to write
+                         h                                                     i
+                                                                             2
+E ∥G(X) − G∗ (X)∥2 = E G(X) − Vs Vs⊤ E[ G(X)| Ur⊤ X] − (Im − Vs Vs⊤ )E[G(X)]
+                    
+              h                                                    2i
+          = E G(X) − E[G(X)] − Vs Vs⊤ E[ G(X)| Ur⊤ X] − E[G(X)]
+                                
+              h                   i    h                              2i
+                                2
+          = E G(X) − E[G(X)]        − E Vs⊤ E[ G(X)| Ur⊤ X] − E[G(X)]
+          = Tr (Cov (G(X))) − Tr Vs⊤ Cov E G(X)| Ur⊤ X Vs ,
+                                                        
+
+
+which concludes the proof.
+    Appendix C. Proof of Theorem 3.5.
+    Let V⊥ ∈ Rm×(m−s) be the orthogonal complement of Vs . We have
+                       h                                                 i
+                                                                       2
+E ∥G(X) − G∗ (X)∥2 = E G(X) − Vs Vs⊤ E[ G(X)| Ur⊤ X] − V⊥ V⊥⊤ E[G(X)]
+                 
+             h                                                        2i
+         = E V⊥ V⊥⊤ G(X) − E[G(X)] − Vs Vs⊤ E[ G(X)| Ur⊤ X] − G(X)
+                                     
+             h                        2i    h                              2i
+(C.1)    = E V⊥ V⊥⊤ G(X) − E[G(X)]        + E Vs Vs⊤ E[ G(X)| Ur⊤ X] − G(X)
+
+Using the Poincaré inequality (3.5) for the component fi (X) = [V⊥ V⊥⊤ G(X)]i yields
+   h                          m
+        ⊤
+                         2i X   h                  2 i
+  E V⊥ V⊥ G(X) − E[G(X)]    =   E fi (X) − E[fi (X)]
+                                           i=1
+                                           m
+                                           X
+                                                 C(X) E ∥∇fi (X)∥2
+                                                                  
+                                       ≤
+                                           i=1
+                                               h                      i
+                                                                    2
+                                       = C(X) E (Im − Vs Vs⊤ )∇G(X) F
+                                                                          
+                                       = C(X) E ∥∇G(X)∥2F − E ∥Vs⊤ ∇G(X)∥2F
+                                                               
+(C.2)
+
+Moreover, the subspace Poincaré inequality (3.6) for fi (X) = [Vs Vs⊤ G(X)]i yields
+ h                                   m
+                                2i X   h                                     i
+E Vs Vs⊤ E[ G(X)| Ur⊤ X] − G(X)    =   E E (fi (X) − E[ fi (X)| Ur⊤ X])2 Ur⊤ X
+                                                 i=1
+                             m  h
+                             X                                                i
+                               E C(X⊥ | Xr ) E ∥(Id − Ur Ur⊤ )∇fi (X)∥2 Ur⊤ X
+                                              
+                           ≤
+                               i=1
+                               m
+                               X
+                                     C(X) E ∥(Id − Ur Ur⊤ )∇fi (X)∥2
+                                                                    
+                           ≤
+                               i=1
+                                   h                             i
+                                                               2
+                           = C(X) E Vs Vs⊤ ∇G(X)(Id − Ur Ur⊤ ) F
+                                                                     
+                           = C(X) E ∥Vs⊤ ∇G(X)∥2F − E ∥Vs⊤ ∇G(X)Ur ∥2F
+                                                      
+(C.3)
+
+Finally, since C(X) ≤ C(X), injecting (C.2) and (C.3) in (C.1) yields the upper bound
+(3.8). The lower bound (3.9) is obtained in the same way by permuting the expectation
+and the norm in the above calculation. This concludes the proof.
+    Appendix D. Cramér-Rao-like Inequality.
+24                Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+    Lemma D.1. Let X be a random variable on Rd with Lebesgue density πX such
+that supp(πX ) = Rd . Let f : Rd → R be a differentiable function. Then it holds
+                                        2                      2 
+(D.1)               c(X) E [∇f (X)]         ≤ E f (X) − E[f (X)] ,
+
+where c(X) = λmax (E[∇ log πX (X)∇ log πX (X)⊤ ])−1 .
+    Proof. By partial integration, it holds for any differentiable function h : Rd → R
+                    Z                         Z
+       E[∇h(X)] = ∇h(x)πX (x) dx = − h(x)∇πX (x) dx
+                       Z
+(D.2)            = − h(x)∇ log πX (x)πX (x) dx = −E [h(X)∇ log πX (X)]
+
+
+In the second to last equality we used the chain rule ∇ log h(x) = ∇h(x)
+                                                                   h(x) . Let α ∈ R
+                                                                                    d
+
+be such that ∥α∥ = 1. Applying (D.2) to h(x) = f (x) − E[f (X)] and using the
+Cauchy-Schwarz inequality yields
+                        2                   2                          2
+         E[∇f (X)]⊤ α       = E[∇h(X)]⊤ α = E h(X) ∇ log πX (X)⊤ α
+                                                  
+                                                         2
+                            ≤ E h(X)2 E ∇ log πX (X)⊤ α
+                                      
+
+                            = Var(f (X)) α⊤ E ∇ log πX (X)∇ log πX (X)⊤ α
+                                                                      
+
+                            ≤ Var(f (X)) λmax E ∇ log πX (X)∇ log πX (X)⊤
+                                                                          
+
+
+Thus, we obtain inequality (D.1).
+     We call (D.1) the Cramér-Rao-like inequality since it poses a similar lower bound
+to the variance involving the inverse Fisher information matrix in c(X) [52]. The
+following Lemma establishes sufficient conditions for every conditional distribution of
+X⊥ to satisfy the Cramér-Rao inequality, i.e., c(X) ≥ 0.
+    Lemma D.2 (see Proposition 3.6). Let X be a random variable on Rd with
+Lebesgue density πX such that supp(πX ) = Rd and there exists η < ∞ so that
+
+(D.3)                             − ∇2 log πX (x) ⪯ η Id .
+
+Then there exists a positive constant c(X) ≥ 1/η such that
+                                               2                               2 
+             c(X) (Id − Ur Ur⊤ )E[∇f (X)]          ≤ E f (X) − E[ f (X)| Ur⊤ X] ,
+                                                      
+(D.4)
+
+holds for any differentiable function f : Rd → R with E[f (X)2 ] < ∞ and E[∥∇f (X)∥2 ] <
+∞ and for any matrix Ur ∈ Rd×r with orthogonal columns.
+    Proof. Let U⊥ ∈ Rd×(d−r) be orthogonal to Ur so that X = Ur Xr + U⊥ X⊥ . Fur-
+ther, let ∇⊥ denote the derivative with respect to the argument X⊥ . We write E⊥ and
+Var⊥ for the expectation and variance with respect to the conditional density πX⊥ |Xr .
+From the proof of Lemma D.1, we have for any differentiable function h : Rd → R
+                                                                           
+           E⊥ [∇⊥ h (X⊥ , xr )] = −E⊥ h (X⊥ , xr ) ∇⊥ log πX⊥ |Xr (X⊥ |xr )
+
+Let α ∈ Rd such that ∥α∥ = 1. Similar to the proof of Lemma D.1, we set h(x⊥ , xr ) =
+                     COUPLED INPUT-OUTPUT DIMENSION REDUCTION                              25
+
+f (x⊥ , xr ) − E⊥ [f (X⊥ , xr )] to be the centered version of f and obtain
+                                   2                                 2
+                              ⊤                                 ⊤
+   E⊥ [∇⊥ f (X⊥ , xr )] α              = E⊥ [∇⊥ h (X⊥ , xr )] α
+                                           h              i                          2 
+                                                        2                           ⊤
+                                       ≤ E⊥ h (X⊥ , xr ) E⊥ ∇⊥ log πX⊥ |Xr (X⊥ |xr ) α
+
+(D.5)                                  = Var⊥ (f (X⊥ , xr )) α⊤ I⊥ (xr ) α,
+
+where
+                         Z
+                                                                                      ⊤
+        I⊥ (xr ) =            ∇⊥ log πX⊥ |Xr (x⊥ |xr ) ∇⊥ log πX⊥ |Xr (x⊥ |xr ) dπX⊥ |Xr
+                         Z
+                                                                               ⊤
+                  =   ∇⊥ πX⊥ |Xr (x⊥ |xr ) ∇⊥ log πX⊥ |Xr (x⊥ |xr ) dx⊥
+                     Z
+                  = − ∇2⊥ log πX (x⊥ |xr ) πX⊥ |Xr (x⊥ |xr ) dx⊥
+                         Z
+                       ⊤
+                  = −U⊥ ∇2 log πX (x) dπX⊥ |Xr U⊥ .
+
+The second line uses the chain rule for ∇ log while the third uses partial integration.
+In the last line, we apply the relationship log πX⊥ |Xr = log πX − log πXr as well as the
+chain rule for ∇⊥ . Due to the assumption −∇2 log πX (x) ⪯ η Id , we have
+
+                                              I⊥ (xr ) ⪯ η Id−r
+
+for any Ur . Thus, Equation (D.5) yields
+                                                        2
+                                                    ⊤
+                          E⊥ [∇⊥ f (X⊥ , xr )] α            ≤ η Var⊥ (f (X⊥ , xr ))
+
+so that taking the expectation over the marginal πXr and applying Jensen’s inequality
+on the left hand side, we get
+                              Z                 2
+                     ⊤    ⊤
+                                                                                  2 
+                                                    ≤ η E f (X) − E[ f (X)| Ur⊤ X]
+                                                         
+                 α       U⊥       ∇f (x) dπX
+
+Taking the supremum over ∥α∥ = 1 finally yields
+               1                         2                            2 
+                 (Id − Ur Ur⊤ )E [∇f (X)] ≤ E f (X) − E[ f (X)| Ur⊤ X]
+                                             
+               η
+for any Ur .
+     Remark D.3. Assumption (D.3) is equivalent to saying that the function h(x) :=
+η    2
+2 ∥x∥ + log πX (x) is convex. This implies that h(x) ≥ h(y) + ∇h(y)⊤ (x − y) for all
+       d
+x, y ∈ R and, by letting y = 0, we deduce that
+                                   η                        
+                   πX (x) ≥ C exp − ∥x − η −1 ∇ log πX (0)∥2 ,
+                                      2
+holds for all x ∈ Rd , where C > 0 is a constant independent of x. This means that if
+(3.12) holds, then the density πX is necessarily above some rescaled Gaussian density.
+    Appendix E. Proof of Proposition 4.1.
+26                  Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+     On one side, the law of total variance enables us to write
+
+                                   E ∥Vs⊤ G(X) − E[ Vs⊤ G(X) Uτ⊤ X]∥2
+                                                                       
+                 cl
+               S (Uτ |Vs ) = 1 −
+                                            Tr (Cov (Vs⊤ G(X)))
+                                E ∥Vs G(X) − E[ Vs⊤ G(X) U−τ
+                                  ⊤                        ⊤
+                                                                    
+                                                               X]∥2
+              S tot (Uτ |Vs ) =                                       .
+                                        Tr (Cov (Vs⊤ G(X)))
+
+On the other side, applying Theorem 3.5 with Vs⊤ G(X) instead of G(X) yields
+
+        E ∥Vs⊤ G(X) − E[ Vs⊤ G(X) Uτ⊤ X]∥2
+                                           
+                                                                   
+                      ≤ C(X) E ∥Vs⊤ ∇G(X)∥2F − E ∥Vs⊤ ∇G(X)Uτ ∥2F
+                                                   
+
+                                ⊤
+                     = C(X) Tr(U−τ HX (Vs )U−τ )
+          E ∥Vs G(X) − E[ Vs G(X) Uτ⊤ X]∥2
+            ⊤              ⊤
+                                           
+                                                            2
+                                                               
+                                             2
+                     ≥ c(X) Vs⊤ E [∇G(X)] F − Vs⊤ E ∇G(X) Uτ F
+                                                        
+
+                                                             2
+                          = c(X) Vs⊤ E [∇G(X)] U−τ F
+
+By combining these relations we directly obtain (4.8) and, by replacing Uτ with U−τ
+in the above inequalities, we obtain (4.9). This concludes the proof.
+
+                                          REFERENCES
+
+ [1] P.-A. Absil, R. Mahony, and R. Sepulchre, Optimization algorithms on matrix manifolds,
+         in Optimization Algorithms on Matrix Manifolds, Princeton University Press, 2009.
+ [2] B. Adcock, S. Brugiapaglia, and C. G. Webster, Sparse polynomial approximation of
+         high-dimensional functions, vol. 25, SIAM, 2022.
+ [3] A. Alexanderian, Optimal experimental design for infinite-dimensional bayesian inverse prob-
+         lems governed by pdes: A review, Inverse Problems, 37 (2021), p. 043001.
+ [4] A. Alexanderian, N. Petra, G. Stadler, and O. Ghattas, A fast and scalable method
+         for a-optimal design of experiments for infinite-dimensional bayesian nonlinear inverse
+         problems, SIAM Journal on Scientific Computing, 38 (2016), pp. A243–A272.
+ [5] A. Alexanderian, W. Reese, R. C. Smith, and M. Yu, Model input and output dimension
+         reduction using karhunen–loève expansions with application to biotransport, ASCE-ASME
+         J Risk and Uncert in Engrg Sys Part B Mech Engrg, 5 (2019).
+ [6] B. O. Almroth, P. Stern, and F. A. Brogan, Automatic choice of global shape functions in
+         structural analysis, Aiaa Journal, 16 (1978), pp. 525–528.
+ [7] C. Ané, S. Blachère, D. Chafaı̈, P. Fougères, I. Gentil, F. Malrieu, C. Roberto, and
+         G. Scheffer, Sur les inégalités de Sobolev logarithmiques, vol. 10, Société mathématique
+         de France Paris, 2000.
+ [8] N. Aretz, P. Chen, D. Degen, and K. Veroy, A greedy sensor selection algorithm for hyper-
+         parameterized linear bayesian inverse problems, arXiv preprint arXiv:2301.12019, (2023).
+ [9] J.-P. Argaud, B. Bouriquet, F. De Caso, H. Gong, Y. Maday, and O. Mula, Sensor
+         placement in nuclear reactors based on the generalized empirical interpolation method,
+         Journal of Computational Physics, 363 (2018), pp. 354–370.
+[10] A. Attia, A. Alexanderian, and A. K. Saibaba, Goal-oriented optimal design of experiments
+         for large-scale bayesian linear inverse problems, Inverse Problems, 34 (2018), p. 095009.
+[11] D. Bakry, I. Gentil, M. Ledoux, et al., Analysis and geometry of Markov diffusion opera-
+         tors, vol. 103, Springer, 2014.
+[12] R. Baptista, L. Cao, J. Chen, O. Ghattas, F. Li, Y. M. Marzouk, and J. T. Oden,
+         Bayesian model calibration for block copolymer self-assembly: Likelihood-free inference and
+         expected information gain computation via measure transport, Journal of Computational
+         Physics, (2024), p. 112844.
+[13] R. Baptista, Y. Marzouk, and O. Zahm, Gradient-based data and parameter dimen-
+         sion reduction for bayesian models: an information theoretic perspective, arXiv preprint
+         arXiv:2207.08670, (2022).
+                    COUPLED INPUT-OUTPUT DIMENSION REDUCTION                                          27
+
+[14] M. Barrault, Y. Maday, N. C. Nguyen, and A. T. Patera, An ‘empirical interpola-
+         tion’method: application to efficient reduced-basis discretization of partial differential equa-
+         tions, Comptes Rendus Mathematique, 339 (2004), pp. 667–672.
+[15] J. Beck, B. M. Dia, L. F. Espath, Q. Long, and R. Tempone, Fast bayesian experimental
+         design: Laplace-based importance sampling for the expected information gain, Computer
+         Methods in Applied Mechanics and Engineering, 334 (2018), pp. 523–553.
+[16] K. Bhattacharya, B. Hosseini, N. B. Kovachki, and A. M. Stuart, Model reduction and
+         neural networks for parametric pdes, The SMAI journal of computational mathematics, 7
+         (2021), pp. 121–157.
+[17] P. Binev, A. Cohen, O. Mula, and J. Nichols, Greedy algorithms for optimal measurements
+         selection in state estimation using reduced models, SIAM/ASA Journal on Uncertainty
+         Quantification, 6 (2018), pp. 1101–1126.
+[18] H. L. Cleaves, A. Alexanderian, H. Guy, R. C. Smith, and M. Yu, Derivative-based global
+         sensitivity analysis for models with high-dimensional inputs and functional outputs, SIAM
+         Journal on Scientific Computing, 41 (2019), pp. A3524–A3551.
+[19] P. G. Constantine, E. Dow, and Q. Wang, Active subspace methods in theory and prac-
+         tice: applications to kriging surfaces, SIAM Journal on Scientific Computing, 36 (2014),
+         pp. A1500–A1524.
+[20] T. Cui, J. Martin, Y. M. Marzouk, A. Solonen, and A. Spantini, Likelihood-informed di-
+         mension reduction for nonlinear inverse problems, Inverse Problems, 30 (2014), p. 114015.
+[21] T. Cui, Y. Marzouk, and K. Willcox, Scalable posterior approximations for large-scale
+         bayesian inverse problems via likelihood-informed parameter and state reduction, Journal
+         of Computational Physics, 315 (2016), pp. 363–387.
+[22] T. Cui, X. T. Tong, and O. Zahm, Prior normalization for certified likelihood-informed
+         subspace detection of bayesian inverse problems, Inverse Problems, 38 (2022), p. 124002.
+[23] T. Cui and O. Zahm, Data-free likelihood-informed dimension reduction of bayesian inverse
+         problems, Inverse Problems, 37 (2021), p. 045009.
+[24] V. Fedorov, Theory of Optimal Experiments, Cellular Neurobiology, Academic Press, 1972.
+[25] C. Feng and Y. M. Marzouk, A layered multiple importance sampling scheme for focused
+         optimal bayesian experimental design, arXiv preprint arXiv:1903.11187, (2019).
+[26] A. Foster, M. Jankowiak, E. Bingham, P. Horsfall, Y. W. Teh, T. Rainforth, and
+         N. Goodman, Variational bayesian optimal experimental design, Advances in Neural In-
+         formation Processing Systems, 32 (2019).
+[27] F. Gamboa, P. Gremaud, T. Klein, and A. Lagnoux, Global sensitivity analysis: A novel
+         generation of mighty estimators based on rank statistics, Bernoulli, 28 (2022).
+[28] F. Gamboa, A. Janon, T. Klein, and A. Lagnoux, Sensitivity analysis for multidimensional
+         and functional outputs, (2014).
+[29] L. Giraldi, O. P. Le Maı̂tre, I. Hoteit, and O. M. Knio, Optimal projection of observations
+         in a bayesian setting, Computational Statistics & Data Analysis, 124 (2018), pp. 252–276.
+[30] R. B. Gramacy, Surrogates: Gaussian process modeling, design, and optimization for the
+         applied sciences, Chapman and Hall/CRC, 2020.
+[31] A. Griewank and A. Walther, Evaluating derivatives: principles and techniques of algorith-
+         mic differentiation, SIAM, 2008.
+[32] E. Haber, L. Horesh, and L. Tenorio, Numerical methods for experimental design of large-
+         scale linear ill-posed inverse problems, Inverse Problems, 24 (2008), p. 055012.
+[33] R. A. Horn and C. R. Johnson, Matrix analysis, Cambridge university press, 2012.
+[34] H. Hotelling, Analysis of a complex of statistical variables into principal components., Journal
+         of educational psychology, 24 (1933), p. 417.
+[35] H. Hotelling, Relations between two sets of variates, in Breakthroughs in statistics: method-
+         ology and distribution, Springer, 1992, pp. 162–190.
+[36] X. Huan and Y. M. Marzouk, Simulation-based optimal bayesian experimental design for
+         nonlinear systems, Journal of Computational Physics, 232 (2013), pp. 288–317.
+[37] N. B. Kovachki, S. Lanthaler, and A. M. Stuart, Operator learning: Algorithms and
+         analysis, arXiv preprint arXiv:2402.15715, (2024).
+[38] K. Koval, R. Herzog, and R. Scheichl, Tractable optimal experimental design using trans-
+         port maps, arXiv preprint arXiv:2401.07971, (2024).
+[39] A. Kraskov, H. Stögbauer, and P. Grassberger, Estimating mutual information, Physical
+         review E, 69 (2004), p. 066138.
+[40] A. Krause, A. Singh, and C. Guestrin, Near-optimal sensor placements in gaussian pro-
+         cesses: Theory, efficient algorithms and empirical studies., Journal of Machine Learning
+         Research, 9 (2008).
+[41] S. Kucherenko and B. Iooss, Derivative based global sensitivity measures, arXiv preprint
+28                  Q. CHEN, E. ARNAUD, R. BAPTISTA, AND O. ZAHM
+
+
+          arXiv:1412.2619, (2014).
+[42] F. Li, R. Baptista, and Y. Marzouk, Expected information gain estimation via den-
+          sity approximations: Sample allocation and dimension reduction, arXiv preprint
+          arXiv:2411.08390, (2024).
+[43] C. Lieberman, K. Willcox, and O. Ghattas, Parameter and state model reduction for
+          large-scale statistical inverse problems, SIAM Journal on Scientific Computing, 32 (2010),
+          pp. 2523–2542.
+[44] M. Loève and M. Loève, Elementary probability theory, Springer, 1977.
+[45] L. Lu, P. Jin, G. Pang, Z. Zhang, and G. E. Karniadakis, Learning nonlinear operators
+          via deeponet based on the universal approximation theorem of operators, Nature machine
+          intelligence, 3 (2021), pp. 218–229.
+[46] J. L. Lumley, The structure of inhomogeneous turbulent flows, Atmospheric turbulence and
+          radio wave propagation, (1967), pp. 166–178.
+[47] Y. Maday, N. C. Nguyen, A. T. Patera, and G. S. Pau, A general, multipurpose interpola-
+          tion procedure: the magic points, (2007).
+[48] T. O’Leary-Roseberry, P. Chen, U. Villa, and O. Ghattas, Derivative-informed neu-
+          ral operator: an efficient framework for high-dimensional parametric derivative learning,
+          Journal of Computational Physics, 496 (2024), p. 112555.
+[49] R.-E. Plessix, A review of the adjoint-state method for computing the gradient of a functional
+          with geophysical applications, Geophysical Journal International, 167 (2006), pp. 495–503.
+[50] H. Poincaré, Sur les équations aux dérivées partielles de la physique mathématique, American
+          Journal of Mathematics, (1890), pp. 211–294.
+[51] E. Qian, B. Peherstorfer, D. O’Malley, V. V. Vesselinov, and K. Willcox, Multifi-
+          delity monte carlo estimation of variance and sensitivity indices, SIAM/ASA Journal on
+          Uncertainty Quantification, 6 (2018), pp. 683–706.
+[52] C. Radhakrishna Rao, Information and accuracy attainable in the estimation of statistical
+          parameters, Bulletin of the Calcutta Mathematical Society, 37 (1945), pp. 81–91.
+[53] O. Roustant, F. Gamboa, and B. Iooss, Sensitivity analysis and generalized chaos expan-
+          sions. lower bounds for sobol indices, arXiv preprint arXiv:1906.09883, (2019).
+[54] O. Roustant, F. Gamboa, and B. Iooss, Parseval inequalities and lower bounds for variance-
+          based sensitivity indices, (2020).
+[55] K. J. Ryan, Estimating expected information gains for experimental designs with application
+          to the random fatigue-limit model, Journal of Computational and Graphical Statistics, 12
+          (2003), pp. 585–603.
+[56] L. Sirovich, Turbulence and the dynamics of coherent structures. i. coherent structures, Quar-
+          terly of applied mathematics, 45 (1987), pp. 561–571.
+[57] I. Sobol, Sensitivity estimates for nonlinear mathematical models, Math. Model. Comput.
+          Exp., 1 (1993), p. 407.
+[58] I. Sobol’ and S. Kucherenko, Derivative based global sensitivity measures and their link with
+          global sensitivity indices, Mathematics and Computers in Simulation, 79 (2009), pp. 3009–
+          3017.
+[59] K. Wu, P. Chen, and O. Ghattas, An efficient method for goal-oriented linear bayesian
+          optimal experimental design: Application to optimal sensor placemen, arXiv preprint
+          arXiv:2102.06627, (2021).
+[60] K. Wu, T. O’Leary-Roseberry, P. Chen, and O. Ghattas, Large-scale bayesian optimal
+          experimental design with derivative-informed projected neural network, Journal of Scientific
+          Computing, 95 (2023), p. 30.
+[61] H. P. Wynn, Results in the theory and construction of d-optimum experimental designs, Jour-
+          nal of the Royal Statistical Society Series B: Statistical Methodology, 34 (1972), pp. 133–
+          147.
+[62] O. Zahm, P. G. Constantine, C. Prieur, and Y. M. Marzouk, Gradient-based dimension
+          reduction of multivariate vector-valued functions, SIAM Journal on Scientific Computing,
+          42 (2020), pp. A534–A558.
+[63] O. Zahm, T. Cui, K. Law, A. Spantini, and Y. Marzouk, Certified dimension reduction in
+          nonlinear bayesian inverse problems, Mathematics of Computation, 91 (2022), pp. 1789–
+          1835.
+

@@ -1,0 +1,9 @@
+{
+  "pid": 1200329,
+  "command": [
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/gradient_objectives_v1/launch.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_gradient_objectives_C1_gpu45_20261001"
+  ],
+  "utc": "2026-10-01T09:15:52.361252+00:00"
+}

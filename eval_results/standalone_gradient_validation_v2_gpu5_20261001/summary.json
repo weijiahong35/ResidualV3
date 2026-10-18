@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "frozen_and_grad_forward_bitwise_equal": true,
+  "latent_bitwise_equal": true,
+  "max_previous_relative_difference": 9.71573545198774e-16,
+  "max_original_style_vs_direct_relative": 0.0,
+  "max_FP64_factorization_relative": 4.103536625228282e-12,
+  "trained_parameters": 0
+}

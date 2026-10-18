@@ -1,0 +1,16 @@
+{
+  "pid": 2982371,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/teacher_count_head_parallel_pilot_20261007_v1/study_worker.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/teacher1_vs2_head_parallel_gpu016_20261007_v1"
+  ],
+  "gpu": {
+    "index": 6,
+    "uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+    "free": 81151
+  },
+  "utc": "2026-10-07T12:20:35.331976+00:00"
+}

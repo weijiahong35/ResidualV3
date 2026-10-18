@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "formal_training_started_for_all_arms": true,
+  "updates_observed": [
+    53,
+    44,
+    42
+  ],
+  "early_paired_updates": 42,
+  "anchor_answer_hashes_equal": true,
+  "common_initial_tensor_hashes_equal": true,
+  "native_smokes_passed": true,
+  "online_hidden_peak_inflight": 6,
+  "fresh_reset_passed": true,
+  "real_input_gradient_checks_passed": true
+}

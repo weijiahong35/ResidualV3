@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "reviewer": "/root/discovery_scope_review",
+  "reason": "Both prespecified CIs cross zero; report rejects priority of this hypothesis without excluding historical influence. Absolute subgroup improvement does not replace relative endpoints; overall harm disclosed.",
+  "required_changes": []
+}

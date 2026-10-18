@@ -1,0 +1,17 @@
+{
+  "schema": "basis_source.package_validation.v1",
+  "UTC": "2026-10-16T17:12:51.781110+00:00",
+  "JSON_parsed": [
+    "protocol/DESIGN_SPEC.json",
+    "qa/INPUT_AUDIT.json"
+  ],
+  "python_AST_parsed": true,
+  "local_links_checked": true,
+  "prompt_input_paths_checked": true,
+  "fixed_parameters_and_input_counts_match": true,
+  "README_intro_Chinese_characters": 407,
+  "scientific_run_started": false,
+  "performance_gate_measured": false,
+  "errors": [],
+  "passed": true
+}

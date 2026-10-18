@@ -1,0 +1,364 @@
+{
+  "status": "complete",
+  "crossfit": {
+    "RR_KL_B512": {
+      "status": "complete",
+      "arm": "RR_KL_B512",
+      "objective": "KL",
+      "ridge_multiplier": 1.0,
+      "lambda_value": 0.9790454018168628,
+      "basis": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/fit/RR_KL_B512/basis.safetensors",
+        "sha256": "096f2ce75e2adfbc1071a9c7093df9fa5055bf2713542d42637dbe1f309ffbdc"
+      },
+      "relative_eigenvalue_512": 0.00045543467445761086,
+      "input_dimension": 1537,
+      "rank": 512,
+      "reached_states": 15366,
+      "prompt_crossfit": [
+        {
+          "trainfold": 0,
+          "testfold": 1,
+          "train_reached": 7765,
+          "test_reached": 7601,
+          "lambda_value": 0.9789991403075479,
+          "zero_predictor_error": 0.4566543281630787,
+          "full_ridge_error": 0.4456834565328748,
+          "reduced_rank_ridge_error": 0.4456141435182008,
+          "same_ridge_projected_GG_error": 0.44544921414279903
+        },
+        {
+          "trainfold": 1,
+          "testfold": 0,
+          "train_reached": 7601,
+          "test_reached": 7765,
+          "lambda_value": 0.9790919460939485,
+          "zero_predictor_error": 0.4325453401851957,
+          "full_ridge_error": 0.42380680633036416,
+          "reduced_rank_ridge_error": 0.4237001858794341,
+          "same_ridge_projected_GG_error": 0.4234712872953008
+        }
+      ],
+      "aggregate_sources": {
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu2/collection/fit/aggregate_input_gradient_moments.pt": "86113ed02d07db9ff3ffe9c7896d9ac909a08f201ea17b2ef387846ac5d1084e",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu3/collection/fit/aggregate_input_gradient_moments.pt": "4811b0ce21fccc04f472226e0d0bb6585a33334401a24c2ddc3c67c621ee8347",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu4/collection/fit/aggregate_input_gradient_moments.pt": "9d1500f47c695d2d67bd028af96d1ac02a9780bf667f840e8c89003615a54945",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu5/collection/fit/aggregate_input_gradient_moments.pt": "dc51dc171b9f2ffe01c83cc611c344899710e5bab8d1ea7d92d7c545cb31a6d6"
+      },
+      "selection_matrix": "C_GX (C_XX + lambda I)^-1 C_XG; augmented-ridge fitted output, not ordinary prediction PCA",
+      "limitations": [
+        "Fixed random input projections limit this linear predictor; not all information or nonlinear learnability.",
+        "Cross-fit score predicts gradient reconstruction, not native acceptance length.",
+        "Rank512 coefficient oracle differs from actual width256 repair head."
+      ],
+      "utc": "2026-10-03T13:28:02.620126+00:00"
+    },
+    "RR_OVERLAP_B512": {
+      "status": "complete",
+      "arm": "RR_OVERLAP_B512",
+      "objective": "OVERLAP",
+      "ridge_multiplier": 1.0,
+      "lambda_value": 0.9790454018168628,
+      "basis": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/fit/RR_OVERLAP_B512/basis.safetensors",
+        "sha256": "87cb8637f1955894929209405261722d43560e0f93a993b1a8a21731f43fde7e"
+      },
+      "relative_eigenvalue_512": 0.0002459752414658595,
+      "input_dimension": 1537,
+      "rank": 512,
+      "reached_states": 15366,
+      "prompt_crossfit": [
+        {
+          "trainfold": 0,
+          "testfold": 1,
+          "train_reached": 7765,
+          "test_reached": 7601,
+          "lambda_value": 0.9789991403075479,
+          "zero_predictor_error": 0.04410769661143053,
+          "full_ridge_error": 0.039727659675291085,
+          "reduced_rank_ridge_error": 0.03972470859771765,
+          "same_ridge_projected_GG_error": 0.03971046740042759
+        },
+        {
+          "trainfold": 1,
+          "testfold": 0,
+          "train_reached": 7601,
+          "test_reached": 7765,
+          "lambda_value": 0.9790919460939485,
+          "zero_predictor_error": 0.044509468148022285,
+          "full_ridge_error": 0.03974669128578211,
+          "reduced_rank_ridge_error": 0.03974239534476452,
+          "same_ridge_projected_GG_error": 0.03973199808410287
+        }
+      ],
+      "aggregate_sources": {
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu2/collection/fit/aggregate_input_gradient_moments.pt": "86113ed02d07db9ff3ffe9c7896d9ac909a08f201ea17b2ef387846ac5d1084e",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu3/collection/fit/aggregate_input_gradient_moments.pt": "4811b0ce21fccc04f472226e0d0bb6585a33334401a24c2ddc3c67c621ee8347",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu4/collection/fit/aggregate_input_gradient_moments.pt": "9d1500f47c695d2d67bd028af96d1ac02a9780bf667f840e8c89003615a54945",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu5/collection/fit/aggregate_input_gradient_moments.pt": "dc51dc171b9f2ffe01c83cc611c344899710e5bab8d1ea7d92d7c545cb31a6d6"
+      },
+      "selection_matrix": "C_GX (C_XX + lambda I)^-1 C_XG; augmented-ridge fitted output, not ordinary prediction PCA",
+      "limitations": [
+        "Fixed random input projections limit this linear predictor; not all information or nonlinear learnability.",
+        "Cross-fit score predicts gradient reconstruction, not native acceptance length.",
+        "Rank512 coefficient oracle differs from actual width256 repair head."
+      ],
+      "utc": "2026-10-03T13:28:02.322840+00:00"
+    },
+    "RR_MARGIN_B512": {
+      "status": "complete",
+      "arm": "RR_MARGIN_B512",
+      "objective": "MARGIN",
+      "ridge_multiplier": 1.0,
+      "lambda_value": 0.9790454018168628,
+      "basis": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/fit/RR_MARGIN_B512/basis.safetensors",
+        "sha256": "b63f8eb7559bf4cfb1092c54f64b0c68d4f8ff2a4d4ae9183883650d00823030"
+      },
+      "relative_eigenvalue_512": 0.0004316643051555008,
+      "input_dimension": 1537,
+      "rank": 512,
+      "reached_states": 15366,
+      "prompt_crossfit": [
+        {
+          "trainfold": 0,
+          "testfold": 1,
+          "train_reached": 7765,
+          "test_reached": 7601,
+          "lambda_value": 0.9789991403075479,
+          "zero_predictor_error": 0.716123136562568,
+          "full_ridge_error": 0.703152664155951,
+          "reduced_rank_ridge_error": 0.7030273414039743,
+          "same_ridge_projected_GG_error": 0.7027130157075427
+        },
+        {
+          "trainfold": 1,
+          "testfold": 0,
+          "train_reached": 7601,
+          "test_reached": 7765,
+          "lambda_value": 0.9790919460939485,
+          "zero_predictor_error": 0.6709138582024952,
+          "full_ridge_error": 0.6612941532437226,
+          "reduced_rank_ridge_error": 0.6611174090969669,
+          "same_ridge_projected_GG_error": 0.6607929215354901
+        }
+      ],
+      "aggregate_sources": {
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu2/collection/fit/aggregate_input_gradient_moments.pt": "86113ed02d07db9ff3ffe9c7896d9ac909a08f201ea17b2ef387846ac5d1084e",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu3/collection/fit/aggregate_input_gradient_moments.pt": "4811b0ce21fccc04f472226e0d0bb6585a33334401a24c2ddc3c67c621ee8347",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu4/collection/fit/aggregate_input_gradient_moments.pt": "9d1500f47c695d2d67bd028af96d1ac02a9780bf667f840e8c89003615a54945",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu5/collection/fit/aggregate_input_gradient_moments.pt": "dc51dc171b9f2ffe01c83cc611c344899710e5bab8d1ea7d92d7c545cb31a6d6"
+      },
+      "selection_matrix": "C_GX (C_XX + lambda I)^-1 C_XG; augmented-ridge fitted output, not ordinary prediction PCA",
+      "limitations": [
+        "Fixed random input projections limit this linear predictor; not all information or nonlinear learnability.",
+        "Cross-fit score predicts gradient reconstruction, not native acceptance length.",
+        "Rank512 coefficient oracle differs from actual width256 repair head."
+      ],
+      "utc": "2026-10-03T13:28:02.414988+00:00"
+    },
+    "RR_OVERLAP_LOW_B512": {
+      "status": "complete",
+      "arm": "RR_OVERLAP_LOW_B512",
+      "objective": "OVERLAP",
+      "ridge_multiplier": 0.1,
+      "lambda_value": 0.09790454018168629,
+      "basis": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/fit/RR_OVERLAP_LOW_B512/basis.safetensors",
+        "sha256": "a7d259107e6b534b5e21ba63bbe75f60f01f40352f7e2e028a398268a521027d"
+      },
+      "relative_eigenvalue_512": 0.0006946080558727904,
+      "input_dimension": 1537,
+      "rank": 512,
+      "reached_states": 15366,
+      "prompt_crossfit": [
+        {
+          "trainfold": 0,
+          "testfold": 1,
+          "train_reached": 7765,
+          "test_reached": 7601,
+          "lambda_value": 0.09789991403075479,
+          "zero_predictor_error": 0.04410769661143053,
+          "full_ridge_error": 0.04317249175493229,
+          "reduced_rank_ridge_error": 0.04308310668609858,
+          "same_ridge_projected_GG_error": 0.0430348994620338
+        },
+        {
+          "trainfold": 1,
+          "testfold": 0,
+          "train_reached": 7601,
+          "test_reached": 7765,
+          "lambda_value": 0.09790919460939485,
+          "zero_predictor_error": 0.044509468148022285,
+          "full_ridge_error": 0.043099713445485216,
+          "reduced_rank_ridge_error": 0.04300351168539594,
+          "same_ridge_projected_GG_error": 0.042956640331307236
+        }
+      ],
+      "aggregate_sources": {
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu2/collection/fit/aggregate_input_gradient_moments.pt": "86113ed02d07db9ff3ffe9c7896d9ac909a08f201ea17b2ef387846ac5d1084e",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu3/collection/fit/aggregate_input_gradient_moments.pt": "4811b0ce21fccc04f472226e0d0bb6585a33334401a24c2ddc3c67c621ee8347",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu4/collection/fit/aggregate_input_gradient_moments.pt": "9d1500f47c695d2d67bd028af96d1ac02a9780bf667f840e8c89003615a54945",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu5/collection/fit/aggregate_input_gradient_moments.pt": "dc51dc171b9f2ffe01c83cc611c344899710e5bab8d1ea7d92d7c545cb31a6d6"
+      },
+      "selection_matrix": "C_GX (C_XX + lambda I)^-1 C_XG; augmented-ridge fitted output, not ordinary prediction PCA",
+      "limitations": [
+        "Fixed random input projections limit this linear predictor; not all information or nonlinear learnability.",
+        "Cross-fit score predicts gradient reconstruction, not native acceptance length.",
+        "Rank512 coefficient oracle differs from actual width256 repair head."
+      ],
+      "utc": "2026-10-03T13:28:02.500117+00:00"
+    },
+    "RR_OVERLAP_HIGH_B512": {
+      "status": "complete",
+      "arm": "RR_OVERLAP_HIGH_B512",
+      "objective": "OVERLAP",
+      "ridge_multiplier": 10.0,
+      "lambda_value": 9.790454018168628,
+      "basis": {
+        "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/fit/RR_OVERLAP_HIGH_B512/basis.safetensors",
+        "sha256": "20ddeccc286905bc9744eac4280d9841c2cb141187c93bedc1265de709a0b1cd"
+      },
+      "relative_eigenvalue_512": 4.977829353849798e-05,
+      "input_dimension": 1537,
+      "rank": 512,
+      "reached_states": 15366,
+      "prompt_crossfit": [
+        {
+          "trainfold": 0,
+          "testfold": 1,
+          "train_reached": 7765,
+          "test_reached": 7601,
+          "lambda_value": 9.78999140307548,
+          "zero_predictor_error": 0.04410769661143053,
+          "full_ridge_error": 0.04082977049006308,
+          "reduced_rank_ridge_error": 0.0408305103494572,
+          "same_ridge_projected_GG_error": 0.040829696055368375
+        },
+        {
+          "trainfold": 1,
+          "testfold": 0,
+          "train_reached": 7601,
+          "test_reached": 7765,
+          "lambda_value": 9.790919460939485,
+          "zero_predictor_error": 0.044509468148022285,
+          "full_ridge_error": 0.04105098835199878,
+          "reduced_rank_ridge_error": 0.04105159112965093,
+          "same_ridge_projected_GG_error": 0.0410521452432891
+        }
+      ],
+      "aggregate_sources": {
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu2/collection/fit/aggregate_input_gradient_moments.pt": "86113ed02d07db9ff3ffe9c7896d9ac909a08f201ea17b2ef387846ac5d1084e",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu3/collection/fit/aggregate_input_gradient_moments.pt": "4811b0ce21fccc04f472226e0d0bb6585a33334401a24c2ddc3c67c621ee8347",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu4/collection/fit/aggregate_input_gradient_moments.pt": "9d1500f47c695d2d67bd028af96d1ac02a9780bf667f840e8c89003615a54945",
+        "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/workers/gpu5/collection/fit/aggregate_input_gradient_moments.pt": "dc51dc171b9f2ffe01c83cc611c344899710e5bab8d1ea7d92d7c545cb31a6d6"
+      },
+      "selection_matrix": "C_GX (C_XX + lambda I)^-1 C_XG; augmented-ridge fitted output, not ordinary prediction PCA",
+      "limitations": [
+        "Fixed random input projections limit this linear predictor; not all information or nonlinear learnability.",
+        "Cross-fit score predicts gradient reconstruction, not native acceptance length.",
+        "Rank512 coefficient oracle differs from actual width256 repair head."
+      ],
+      "utc": "2026-10-03T13:28:02.889733+00:00"
+    }
+  },
+  "heldout_gradient_capture": {
+    "0": {
+      "OLD_B": {
+        "KL": 0.7420448623659053,
+        "OVERLAP": 0.7916526972261758,
+        "MARGIN": 0.7634817314416299
+      },
+      "RR_KL_B512": {
+        "KL": 0.7314273787341735,
+        "OVERLAP": 0.8008299780015122,
+        "MARGIN": 0.7591290844145319
+      },
+      "RR_OVERLAP_B512": {
+        "KL": 0.7418435344908786,
+        "OVERLAP": 0.8199506465390748,
+        "MARGIN": 0.7696783284118262
+      },
+      "RR_MARGIN_B512": {
+        "KL": 0.7300986183493666,
+        "OVERLAP": 0.8028664260901743,
+        "MARGIN": 0.7606761385863033
+      },
+      "RR_OVERLAP_LOW_B512": {
+        "KL": 0.7431590861281495,
+        "OVERLAP": 0.8209384236104004,
+        "MARGIN": 0.7705498769599917
+      },
+      "RR_OVERLAP_HIGH_B512": {
+        "KL": 0.7399516380089973,
+        "OVERLAP": 0.8182149766969651,
+        "MARGIN": 0.768010749896386
+      },
+      "KL_B512": {
+        "KL": 0.7631246895809501,
+        "OVERLAP": 0.8342511303424506,
+        "MARGIN": 0.7939296605096091
+      },
+      "OVERLAP_B512": {
+        "KL": 0.7639642484104598,
+        "OVERLAP": 0.8405240248931218,
+        "MARGIN": 0.7911288497944505
+      },
+      "MARGIN_B512": {
+        "KL": 0.7615961904017414,
+        "OVERLAP": 0.8357322265312555,
+        "MARGIN": 0.7944879189502682
+      }
+    },
+    "1": {
+      "OLD_B": {
+        "KL": 0.7372939862767242,
+        "OVERLAP": 0.7964984818395826,
+        "MARGIN": 0.7623870915681968
+      },
+      "RR_KL_B512": {
+        "KL": 0.7428885661747963,
+        "OVERLAP": 0.7991426359495856,
+        "MARGIN": 0.7742408323630763
+      },
+      "RR_OVERLAP_B512": {
+        "KL": 0.7539540653844135,
+        "OVERLAP": 0.820967581991797,
+        "MARGIN": 0.7841068782517113
+      },
+      "RR_MARGIN_B512": {
+        "KL": 0.7421052718822022,
+        "OVERLAP": 0.8046008300701964,
+        "MARGIN": 0.7784561242348207
+      },
+      "RR_OVERLAP_LOW_B512": {
+        "KL": 0.7556316735226897,
+        "OVERLAP": 0.8220089349338051,
+        "MARGIN": 0.7853117049553895
+      },
+      "RR_OVERLAP_HIGH_B512": {
+        "KL": 0.7518570545871586,
+        "OVERLAP": 0.8194529160128022,
+        "MARGIN": 0.7824714948478179
+      },
+      "KL_B512": {
+        "KL": 0.7786550644640601,
+        "OVERLAP": 0.831828578791648,
+        "MARGIN": 0.8132970685455955
+      },
+      "OVERLAP_B512": {
+        "KL": 0.7790204715925864,
+        "OVERLAP": 0.8392581774189475,
+        "MARGIN": 0.8124594913364848
+      },
+      "MARGIN_B512": {
+        "KL": 0.7795756004368739,
+        "OVERLAP": 0.8362017177433604,
+        "MARGIN": 0.8147603740306893
+      }
+    }
+  },
+  "heldout_geometry_is_not_actual_rollout_improvement": true,
+  "no_oracle_global_optimality_claim": true,
+  "utc": "2026-10-03T20:10:34.985763+00:00"
+}

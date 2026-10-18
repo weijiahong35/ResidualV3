@@ -1,0 +1,17 @@
+ResidualV3 当前入口 — 2026-10-18 整理后
+
+日常先看仓库根 PROJECT_MAP_CN.md 和 GROUP_MEETING_20261013_CN.md。
+本次只整理服务器项目；没有新训练、推理、评测或模型参数修改。
+
+01_results/：正式结果与重要对照。08为六数据集最新48窗/24配对，最终及CPU收尾审计passed；09为E1/E2统一实现对照。
+02_code/：正式推理、E1/E2训练及其依赖的冻结实现。看似旧的共享helper仍可能被训练代码调用。
+03_weights/：只有E1/E2的body与joint四个最终权重链接；SHA256已核验。
+03_epoch12/：完整训练历史、恢复断点和资产，继续保留，不是默认上传内容。
+05_research/：机制/基底研究最终报告，含阴性、不确定和partial结果；不要把过程完成当成理论成立。
+04_history/：历史总账及早期归档，仅供查阅。
+
+清理：删除可再生成缓存和仅用于训练计时的临时权重；23个旧代码/自动化入口先压缩、逐文件校验后删除展开副本。
+恢复索引：archives/server_cleanup_20261018_v1/RESTORE.json；先解压到新空目录，不覆盖当前代码，不重启旧controller。
+清理审计：maintenance/cleanup_20261018_v1/。
+
+旧START_PROMPT、NEXT_CHAT、PID/GPU预约和controller日志均为历史资料，不是当前任务授权。GitHub Actions已按用户要求暂停。

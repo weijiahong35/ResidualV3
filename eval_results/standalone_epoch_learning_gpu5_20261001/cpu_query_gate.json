@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "prefix_weight_identity": true,
+  "scalar_aggregation_identity": true,
+  "overlap_greedy_discordance_counterexample": true
+}

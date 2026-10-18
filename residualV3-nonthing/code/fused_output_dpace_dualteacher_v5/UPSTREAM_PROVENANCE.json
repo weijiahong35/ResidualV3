@@ -1,0 +1,10 @@
+{
+  "source_url": "https://raw.githubusercontent.com/vllm-project/speculators/main/src/speculators/losses/fused.py",
+  "downloaded_utc": "2026-10-07",
+  "source_sha256": "9144017e137269d231d1d926c68e2b808eab0d0a346be7d2708fd86ec00ab9eb",
+  "changes": [
+    "standalone CUDA import",
+    "TV equal-probability half subgradient matching torch.minimum"
+  ],
+  "upstream_file_preserved": true
+}

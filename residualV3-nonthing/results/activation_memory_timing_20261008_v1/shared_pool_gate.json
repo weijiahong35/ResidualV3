@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "exact_input_metadata_and_hidden_match": true,
+  "reuse_cycles": 4,
+  "live_padding_zeroed": true,
+  "two_slots_reused": true
+}

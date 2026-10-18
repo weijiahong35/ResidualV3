@@ -1,0 +1,18 @@
+冻结长训两层修复头：整网跨prompt梯度诊断；无训练/更新；非测速。
+T0: 18 reached argmax错误状态，24块/8prompts，逐状态与第一轮hash和采样token完全相同。
+  own_overlap_loss: helps=18, harms=0, near_zero=0
+  same_block_prefix_proxy: helps=17, harms=1, near_zero=0
+  same_block_equal_overlap: helps=14, harms=4, near_zero=0
+  own_prompt_prefix_proxy: helps=14, harms=4, near_zero=0
+  other_prompts_prefix_proxy: helps=5, harms=13, near_zero=0
+  global_prefix_proxy: helps=14, harms=4, near_zero=0
+  global_equal_overlap: helps=14, harms=4, near_zero=0
+T1: 21 reached argmax错误状态，24块/8prompts，逐状态与第一轮hash和采样token完全相同。
+  own_overlap_loss: helps=21, harms=0, near_zero=0
+  same_block_prefix_proxy: helps=20, harms=1, near_zero=0
+  same_block_equal_overlap: helps=19, harms=2, near_zero=0
+  own_prompt_prefix_proxy: helps=17, harms=4, near_zero=0
+  other_prompts_prefix_proxy: helps=9, harms=12, near_zero=0
+  global_prefix_proxy: helps=13, harms=8, near_zero=0
+  global_equal_overlap: helps=13, harms=8, near_zero=0
+Full BF16 repair-head VJP, local unpreconditioned SGD transport, not Adam. Repeated first-run diagnostic prompts, not new independent testing.

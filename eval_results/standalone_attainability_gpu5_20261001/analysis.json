@@ -1,0 +1,241 @@
+{
+  "status": "complete",
+  "scopes": {
+    "primary": {
+      "states": 96,
+      "raw_correct": 57,
+      "repair_correct": 61,
+      "repair_errors": 35,
+      "target_outside_I": 0,
+      "dose_only_correctable_errors": 9,
+      "dose_values_per_test": 16206,
+      "oracle_table": {
+        "full_basis/0.0": {
+          "tested": 35,
+          "feasible_real": 35,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 13,
+          "median_norm_fraction": 0.03181335418902781,
+          "max_constraint_violation": 9.93015891737059e-09,
+          "median_duality_gap": 9.22722456168229e-12
+        },
+        "full_basis/0.5": {
+          "tested": 35,
+          "feasible_real": 35,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 35,
+          "median_norm_fraction": 0.03811695885911482,
+          "max_constraint_violation": 9.923066812689285e-09,
+          "median_duality_gap": 8.917760410329101e-12
+        },
+        "learned_span/0.0": {
+          "tested": 35,
+          "feasible_real": 35,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 15,
+          "median_norm_fraction": 0.04097843527693007,
+          "max_constraint_violation": 6.840016553155692e-09,
+          "median_duality_gap": 1.7359570812086611e-12
+        },
+        "learned_span/0.5": {
+          "tested": 35,
+          "feasible_real": 35,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 35,
+          "median_norm_fraction": 0.04842905987273554,
+          "max_constraint_violation": 8.32159141594957e-09,
+          "median_duality_gap": 1.6944758313500174e-12
+        }
+      },
+      "categories": {
+        "full_witness=True,span_witness=True,dose_witness=False": 26,
+        "full_witness=True,span_witness=True,dose_witness=True": 9
+      },
+      "controls_selected": 7
+    },
+    "primary_greedy_prefix_compatible": {
+      "states": 72,
+      "raw_correct": 52,
+      "repair_correct": 50,
+      "repair_errors": 22,
+      "target_outside_I": 0,
+      "dose_only_correctable_errors": 7,
+      "dose_values_per_test": 16206,
+      "oracle_table": {
+        "full_basis/0.0": {
+          "tested": 22,
+          "feasible_real": 22,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 10,
+          "median_norm_fraction": 0.018620156998467093,
+          "max_constraint_violation": 9.93015891737059e-09,
+          "median_duality_gap": 2.0510742220316083e-13
+        },
+        "full_basis/0.5": {
+          "tested": 22,
+          "feasible_real": 22,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 22,
+          "median_norm_fraction": 0.025830552450002153,
+          "max_constraint_violation": 9.923066812689285e-09,
+          "median_duality_gap": 1.0164395367051604e-20
+        },
+        "learned_span/0.0": {
+          "tested": 22,
+          "feasible_real": 22,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 11,
+          "median_norm_fraction": 0.026702132791637755,
+          "max_constraint_violation": 1.8422920966543188e-09,
+          "median_duality_gap": 0.0
+        },
+        "learned_span/0.5": {
+          "tested": 22,
+          "feasible_real": 22,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 22,
+          "median_norm_fraction": 0.03714398184653246,
+          "max_constraint_violation": 8.32159141594957e-09,
+          "median_duality_gap": 0.0
+        }
+      },
+      "categories": {
+        "full_witness=True,span_witness=True,dose_witness=False": 15,
+        "full_witness=True,span_witness=True,dose_witness=True": 7
+      },
+      "controls_selected": 2
+    },
+    "first_position": {
+      "states": 32,
+      "raw_correct": 26,
+      "repair_correct": 26,
+      "repair_errors": 6,
+      "target_outside_I": 0,
+      "dose_only_correctable_errors": 2,
+      "dose_values_per_test": 16206,
+      "oracle_table": {
+        "full_basis/0.0": {
+          "tested": 6,
+          "feasible_real": 6,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 2,
+          "median_norm_fraction": 0.012168580353327341,
+          "max_constraint_violation": 7.884404240598997e-11,
+          "median_duality_gap": 2.6469779601696886e-22
+        },
+        "full_basis/0.5": {
+          "tested": 6,
+          "feasible_real": 6,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 6,
+          "median_norm_fraction": 0.018557975844101994,
+          "max_constraint_violation": 7.349296893277568e-09,
+          "median_duality_gap": -4.336808689942018e-19
+        },
+        "learned_span/0.0": {
+          "tested": 6,
+          "feasible_real": 6,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 2,
+          "median_norm_fraction": 0.016845255970561794,
+          "max_constraint_violation": 1.2878587085651816e-12,
+          "median_duality_gap": -2.6893296075324036e-20
+        },
+        "learned_span/0.5": {
+          "tested": 6,
+          "feasible_real": 6,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 6,
+          "median_norm_fraction": 0.02556615313107316,
+          "max_constraint_violation": 1.199040866595169e-14,
+          "median_duality_gap": 4.37069000783219e-19
+        }
+      },
+      "categories": {
+        "full_witness=True,span_witness=True,dose_witness=False": 4,
+        "full_witness=True,span_witness=True,dose_witness=True": 2
+      },
+      "controls_selected": 7
+    },
+    "all": {
+      "states": 128,
+      "raw_correct": 83,
+      "repair_correct": 87,
+      "repair_errors": 41,
+      "target_outside_I": 0,
+      "dose_only_correctable_errors": 11,
+      "dose_values_per_test": 16206,
+      "oracle_table": {
+        "full_basis/0.0": {
+          "tested": 41,
+          "feasible_real": 41,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 15,
+          "median_norm_fraction": 0.023893208324153963,
+          "max_constraint_violation": 9.93015891737059e-09,
+          "median_duality_gap": 1.774640547361206e-12
+        },
+        "full_basis/0.5": {
+          "tested": 41,
+          "feasible_real": 41,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 41,
+          "median_norm_fraction": 0.03315208276301457,
+          "max_constraint_violation": 9.923066812689285e-09,
+          "median_duality_gap": 2.5645069699547704e-13
+        },
+        "learned_span/0.0": {
+          "tested": 41,
+          "feasible_real": 41,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 17,
+          "median_norm_fraction": 0.03342193456365915,
+          "max_constraint_violation": 6.840016553155692e-09,
+          "median_duality_gap": 1.6940658945086007e-21
+        },
+        "learned_span/0.5": {
+          "tested": 41,
+          "feasible_real": 41,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 41,
+          "median_norm_fraction": 0.047494031693260004,
+          "max_constraint_violation": 8.32159141594957e-09,
+          "median_duality_gap": 1.8047846203628204e-13
+        }
+      },
+      "categories": {
+        "full_witness=True,span_witness=True,dose_witness=False": 30,
+        "full_witness=True,span_witness=True,dose_witness=True": 11
+      },
+      "controls_selected": 14
+    }
+  },
+  "source_sha256": {
+    "summary.json": "664b49c9dea0ca1eacd52e8e90f166f4aa442e28407352f95c6b161b3e5a6ecb",
+    "cases.json": "87dbf9e84f5a2de1adc17b4637167cde407f348c23c3ea9fa5ca6bfdff2c033c"
+  },
+  "interpretation_limits": [
+    "All oracles use matching target labels; no deployed model changes.",
+    "Output span is a relaxation, not the final-LN manifold or full input-conditioned network.",
+    "Only zero-margin real exclusion is necessary for real greedy feasibility; positive-margin failure alone is not.",
+    "Real-arithmetic exclusions are not proofs of BF16 impossibility.",
+    "Exact dose scan covers BF16 runtime values through rounded 0.8; a success does not mean a learned dose predictor finds it.",
+    "Teacher-forced states are not native acceptance length or throughput."
+  ]
+}

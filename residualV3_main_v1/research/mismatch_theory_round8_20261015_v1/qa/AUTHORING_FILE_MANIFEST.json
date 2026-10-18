@@ -1,0 +1,82 @@
+{
+  "schema": "r8_authoring_file_manifest_v1",
+  "utc": "2026-10-15T10:41:58.948924+00:00",
+  "scope": "authoring_package_only_not_experiment",
+  "files": [
+    {
+      "path": "EXECUTION_GUIDE_CN.md",
+      "bytes": 15466,
+      "sha256": "bddb5a479f3aef8b2d79ce2bd06ac1439fa72e5eeac47f484ad472e3afc4eccd"
+    },
+    {
+      "path": "README_CN.md",
+      "bytes": 2597,
+      "sha256": "709b129ee77d28b215dce4ffb4bfd328c352558f89c0664a018ad8b8783d3f85"
+    },
+    {
+      "path": "START_PROMPT_CN.md",
+      "bytes": 5839,
+      "sha256": "4753fce1959f126227a43c061ca758af3b2636e908100e18f7fa053ff7b03505"
+    },
+    {
+      "path": "THEORY_PLAN_CN.md",
+      "bytes": 10993,
+      "sha256": "4aaf1a7ad4cfa0c0c988ac5c6287c6aa0492339d07d9571b5e4541e31c92fe04"
+    },
+    {
+      "path": "protocol/DESIGN_SPEC.json",
+      "bytes": 5506,
+      "sha256": "200c3c18a84c758e839bc83810c14b6ffa3c51a8a3b3c09bb8c59e40622515ee"
+    },
+    {
+      "path": "qa/DOCUMENT_AUDIT.json",
+      "bytes": 1148,
+      "sha256": "2be455f043914c14bc14a236a27014dace086499dad022e18cceddfb5b99c0d1"
+    },
+    {
+      "path": "qa/FINAL_REVIEW_CN.md",
+      "bytes": 1297,
+      "sha256": "a2b4ce0d79db032d9f8126cc461cdcfb847120470bee8b001b2e807f395e5328"
+    },
+    {
+      "path": "qa/FOUNDATION_REVIEW_CN.md",
+      "bytes": 1418,
+      "sha256": "5d8d841508d85e9994d07e54be00849f011f86ae4a4a39fc8b9c9bbe9ac6e776"
+    },
+    {
+      "path": "qa/INPUT_AUDIT.json",
+      "bytes": 44497,
+      "sha256": "36b87712c5fe50089c2e7af5a9abbdf1ac0516484f0372f428c53d05afebdfd6"
+    },
+    {
+      "path": "qa/foundation/00_scope.md",
+      "bytes": 1341,
+      "sha256": "eb0939abfd4bfb2d6658fca3522124dfe71f5d26039d8ec568acb80730d29914"
+    },
+    {
+      "path": "qa/foundation/01_research_canon.md",
+      "bytes": 2578,
+      "sha256": "39a297fa8d2b8d10cfb89b030a93fe09e5577f85bdc88b46bd3606618a7601df"
+    },
+    {
+      "path": "qa/foundation/02_evidence_table.md",
+      "bytes": 1288,
+      "sha256": "7da5c03aad4c7302d6804c46fff9a1e5123a4640e3df1491aa21ea06829c39c5"
+    },
+    {
+      "path": "qa/foundation/03_argument_map.md",
+      "bytes": 3669,
+      "sha256": "521ccf7e474473b68c1ac370d4dad7f532d3c714026b2d12e998b93127e31e32"
+    },
+    {
+      "path": "qa/foundation/04_section_contracts.md",
+      "bytes": 1404,
+      "sha256": "b025afa3a607d4b9919ed1f2055d248328bc72f6ef49f9cbb4961aa6e2706270"
+    },
+    {
+      "path": "sources/READING_GUIDE_CN.md",
+      "bytes": 6557,
+      "sha256": "0e5a5b72fb7d27799c68e35fc03009b9283d169f812cad6ab5c823d5769fe975"
+    }
+  ]
+}

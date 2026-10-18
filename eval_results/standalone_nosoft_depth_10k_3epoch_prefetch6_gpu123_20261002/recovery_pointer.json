@@ -1,0 +1,14 @@
+{
+  "status": "recovery_launched",
+  "new_output": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002",
+  "status_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002/status.json",
+  "gpus": [
+    0,
+    1,
+    2
+  ],
+  "recovery_start_step": 20000,
+  "optimizer_reset": true,
+  "original_logs_preserved": true,
+  "utc": "2026-10-02T08:01:00.406276+00:00"
+}

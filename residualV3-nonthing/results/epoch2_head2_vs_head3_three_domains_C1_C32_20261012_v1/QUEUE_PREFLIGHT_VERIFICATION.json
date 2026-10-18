@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "all_source_and_operational_SHA_verified": true,
+  "all_weight_and_dependency_SHA_verified": true,
+  "all_three_dataset_templates_pinned": true,
+  "same_body": true,
+  "both_NOFILL": true,
+  "retained_head_weights_bitwise_equal": true,
+  "native_contract_pending": true,
+  "utc": "2026-10-12T11:02:34.324552+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "run": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_basis_structure_routing_20261017_v1/runs/20261017T022013Z_basis_structure_routing",
+  "authorization": "user activated structure/routing START_PROMPT",
+  "question_scope": [
+    "direction sharing",
+    "full E512 limitation",
+    "visible selection information",
+    "task crossover"
+  ],
+  "GPU_hours": 0,
+  "CPU_hours_cap": 6,
+  "RSS_GiB_cap": 16,
+  "new_disk_GiB_cap": 8,
+  "numerical_workers": 1,
+  "threads": 1,
+  "old_assets": "read_only",
+  "data_previously_exposed": true,
+  "panel": [
+    36,
+    69,
+    207,
+    9936,
+    2571
+  ],
+  "protocol_SHA": "07f3a7971ee7a4e9ce1b19c64025776f7a129272d4797f95f5d1946b4e271eac"
+}

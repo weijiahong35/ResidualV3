@@ -1,0 +1,6 @@
+{
+  "reason": "Original dense and sparse suffix grouping can choose different BF16 kernels. Independently check exact E2 parameter/feature identity and reconstruct with identical sparse packing; report dense-versus-sparse numerical differences, do not claim batch invariance.",
+  "first_failed_log": "training_gate_attempt00.log",
+  "large_training_started": false,
+  "utc": "2026-10-12T07:52:24.808458+00:00"
+}

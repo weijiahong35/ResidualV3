@@ -1,0 +1,185 @@
+{
+  "status": "complete",
+  "loss_and_streamed_features_gate": [
+    {
+      "arm": "OUTPUT",
+      "loss_abs": 1.7881393432617188e-07,
+      "relative_l2": 0.0009757548687048256,
+      "cosine": 0.9999995231628418,
+      "max_abs": 6.103515625e-05,
+      "passed": true
+    },
+    {
+      "arm": "CE_DPACE",
+      "loss_abs": 2.980232238769531e-07,
+      "relative_l2": 0.0010159810772165656,
+      "cosine": 0.999999463558197,
+      "max_abs": 0.0009765625,
+      "passed": true
+    },
+    {
+      "arm": "CE_DPACE_OUTPUT",
+      "loss_abs": 4.76837158203125e-07,
+      "relative_l2": 0.0006910926313139498,
+      "cosine": 0.9999998807907104,
+      "max_abs": 0.00048828125,
+      "passed": true
+    }
+  ],
+  "chunks": [
+    {
+      "chunk": 64,
+      "passed": 3,
+      "attempted": 3,
+      "peak_allocated_GiB": 7.545361042022705,
+      "peak_reserved_GiB": 7.84375,
+      "seconds": [
+        1.6683302018791437,
+        1.6050859466195107,
+        1.6519530545920134
+      ],
+      "median_seconds": 1.6519530545920134
+    },
+    {
+      "chunk": 256,
+      "passed": 3,
+      "attempted": 3,
+      "peak_allocated_GiB": 11.661877155303955,
+      "peak_reserved_GiB": 12.82421875,
+      "seconds": [
+        0.5900907013565302,
+        0.6528022326529026,
+        0.5999509114772081
+      ],
+      "median_seconds": 0.5999509114772081
+    },
+    {
+      "chunk": 1536,
+      "passed": 3,
+      "attempted": 3,
+      "peak_allocated_GiB": 39.12475872039795,
+      "peak_reserved_GiB": 45.669921875,
+      "seconds": [
+        0.5190953593701124,
+        1.4642081148922443,
+        1.078908333554864
+      ],
+      "median_seconds": 1.078908333554864
+    }
+  ],
+  "selected_chunk": 1536,
+  "selected_head_mode": "sequential",
+  "parallel_rejected": true,
+  "parallel_diagnostic": {
+    "actual_state_layer_trace": [
+      {
+        "module": "previous_proj.0",
+        "bitwise_agreement": 1.0,
+        "relative_l2": 0.0,
+        "max_abs": 0.0
+      },
+      {
+        "module": "previous_proj.1",
+        "bitwise_agreement": 0.6871012449264526,
+        "relative_l2": 0.0022965301759541035,
+        "max_abs": 0.03125
+      },
+      {
+        "module": "fusion.0",
+        "bitwise_agreement": 0.8594401478767395,
+        "relative_l2": 0.001982137793675065,
+        "max_abs": 0.03125
+      },
+      {
+        "module": "fusion.1",
+        "bitwise_agreement": 0.5359375476837158,
+        "relative_l2": 0.003161560045555234,
+        "max_abs": 0.03125
+      },
+      {
+        "module": "blocks.0.norm",
+        "bitwise_agreement": 0.5401937365531921,
+        "relative_l2": 0.0036126563791185617,
+        "max_abs": 0.03125
+      },
+      {
+        "module": "blocks.0.up",
+        "bitwise_agreement": 0.40927329659461975,
+        "relative_l2": 0.0039380742236971855,
+        "max_abs": 0.015625
+      },
+      {
+        "module": "blocks.0.down",
+        "bitwise_agreement": 0.27865397930145264,
+        "relative_l2": 0.005939272232353687,
+        "max_abs": 0.0078125
+      },
+      {
+        "module": "blocks.1.norm",
+        "bitwise_agreement": 0.48439130187034607,
+        "relative_l2": 0.004151494707912207,
+        "max_abs": 0.046875
+      },
+      {
+        "module": "blocks.1.up",
+        "bitwise_agreement": 0.37619900703430176,
+        "relative_l2": 0.004338978789746761,
+        "max_abs": 0.015625
+      },
+      {
+        "module": "blocks.1.down",
+        "bitwise_agreement": 0.2643066644668579,
+        "relative_l2": 0.006219715345650911,
+        "max_abs": 0.0078125
+      },
+      {
+        "module": "blocks.2.norm",
+        "bitwise_agreement": 0.43796390295028687,
+        "relative_l2": 0.004566877614706755,
+        "max_abs": 0.046875
+      },
+      {
+        "module": "blocks.2.up",
+        "bitwise_agreement": 0.34965279698371887,
+        "relative_l2": 0.004664809908717871,
+        "max_abs": 0.03125
+      },
+      {
+        "module": "blocks.2.down",
+        "bitwise_agreement": 0.2591959834098816,
+        "relative_l2": 0.006362183019518852,
+        "max_abs": 0.0078125
+      },
+      {
+        "module": "output_norm",
+        "bitwise_agreement": 0.41175946593284607,
+        "relative_l2": 0.004769556224346161,
+        "max_abs": 0.046875
+      },
+      {
+        "module": "direction_head",
+        "bitwise_agreement": 0.35926109552383423,
+        "relative_l2": 0.004413112998008728,
+        "max_abs": 0.0078125
+      },
+      {
+        "module": "dose_head",
+        "bitwise_agreement": 0.3229166865348816,
+        "relative_l2": 0.0037158667109906673,
+        "max_abs": 0.03125
+      }
+    ],
+    "first_different_module": "previous_proj.1",
+    "fp32_prediction_network_control": {
+      "direction_relative_l2": 2.9126792355782527e-07,
+      "gradient_relative_l2": 3.8409049807341944e-07,
+      "gradient_cosine": 1.0
+    },
+    "scope": "FP32 is a diagnostic control only; not applied to production model or loss training",
+    "interpretation": "changed GEMM batching and BF16 accumulation change numerical results; native predecessor recursion is not parallelized"
+  },
+  "source_weights_unchanged": true,
+  "temporary_updates_discarded": true,
+  "timing_scope": "one actual training pack, three repeats; shared GPU timing fluctuates; not a formal native throughput result",
+  "memory_scope": "sampled 60-document actual pack, 1536 anchors x15 positions; OUTPUT with complete temporary backward and Adam step; not whole-epoch or body+head proof"
+}

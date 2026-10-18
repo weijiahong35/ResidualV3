@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "scope": "report answers core question with finite-family feasibility and upper certificates, not head prediction or average probe gains",
+  "formation": "conditional information merging isolated; training/size causes unidentifed",
+  "repairability": "full simplex M/S witnesses at explicit gain magnitudes",
+  "failure_boundary": "only S_tau upper and gain comparison certifies required harm; unresolved retained",
+  "history": "fixed p/q information groups plus risk-only same-size shams",
+  "no_extra_branch": true,
+  "negative_results_preserved": true,
+  "numerical_results_not_general_theory": true
+}

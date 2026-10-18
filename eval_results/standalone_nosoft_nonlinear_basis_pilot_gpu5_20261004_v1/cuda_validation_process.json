@@ -1,0 +1,16 @@
+{
+  "pid": 1414065,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "-m",
+    "repair.validate",
+    "--protocol",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_nonlinear_basis_pilot_gpu5_20261004_v1/training_protocol.json",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_nonlinear_basis_pilot_gpu5_20261004_v1/cuda_validation.json",
+    "--device",
+    "cuda"
+  ],
+  "utc": "2026-10-03T17:35:12.912093+00:00"
+}

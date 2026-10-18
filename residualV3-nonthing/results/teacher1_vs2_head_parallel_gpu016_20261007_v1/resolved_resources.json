@@ -1,0 +1,78 @@
+{
+  "learner": {
+    "index": 6,
+    "uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+    "free": 81151
+  },
+  "teacher_dp1": {
+    "endpoint": "http://127.0.0.1:48105/v1",
+    "root": "/dev/shm/residualV3_throughput_teacher_2925515",
+    "gpu": [
+      0
+    ],
+    "identity": [
+      {
+        "physical_gpu": 0,
+        "uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+        "pci_bus_id": "00000000:3D:00.0",
+        "name": "NVIDIA A100-SXM4-80GB",
+        "cuda_device": 0
+      }
+    ],
+    "server_pid": 2939491,
+    "attempt": 2,
+    "same_model": "/data/weijiahong/huggingface/models/Qwen3-8B",
+    "dp_size": 1,
+    "tp_size": 1,
+    "dtype": "bfloat16",
+    "target_layers": [
+      2,
+      10,
+      18,
+      26,
+      34,
+      36
+    ],
+    "utc": "2026-10-07T12:12:49.427774+00:00"
+  },
+  "teacher_dp2": {
+    "endpoint": "http://127.0.0.1:52063/v1",
+    "root": "/dev/shm/residualV3_throughput_teacher_2956935",
+    "gpu": [
+      1,
+      2
+    ],
+    "identity": [
+      {
+        "physical_gpu": 1,
+        "uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+        "pci_bus_id": "00000000:42:00.0",
+        "name": "NVIDIA A100-SXM4-80GB",
+        "cuda_device": 0
+      },
+      {
+        "physical_gpu": 2,
+        "uuid": "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824",
+        "pci_bus_id": "00000000:61:00.0",
+        "name": "NVIDIA A100-SXM4-80GB",
+        "cuda_device": 0
+      }
+    ],
+    "server_pid": 2957055,
+    "attempt": 1,
+    "same_model": "/data/weijiahong/huggingface/models/Qwen3-8B",
+    "dp_size": 2,
+    "tp_size": 1,
+    "dtype": "bfloat16",
+    "target_layers": [
+      2,
+      10,
+      18,
+      26,
+      34,
+      36
+    ],
+    "utc": "2026-10-07T12:16:29.000932+00:00"
+  },
+  "utc": "2026-10-07T12:20:35.325706+00:00"
+}

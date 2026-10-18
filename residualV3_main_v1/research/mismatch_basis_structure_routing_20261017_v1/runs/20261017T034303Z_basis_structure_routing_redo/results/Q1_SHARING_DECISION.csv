@@ -1,0 +1,25 @@
+fold,kind,group,qualifying_error_classes,axis_identifiable,supported
+0,axis,0,[],True,False
+1,axis,0,[],True,False
+2,axis,0,[],True,False
+0,axis,1,[],True,False
+1,axis,1,[],True,False
+2,axis,1,[],True,False
+0,axis,2,[],True,False
+1,axis,2,[],True,False
+2,axis,2,[],True,False
+0,axis,3,[],True,False
+1,axis,3,[],True,False
+2,axis,3,[],True,False
+0,group,0,"[0, 1, 3, 4, 5]",True,True
+1,group,0,"[0, 4]",True,True
+2,group,0,"[3, 4]",True,True
+0,group,1,"[1, 3, 4]",True,True
+1,group,1,"[0, 3, 4]",True,True
+2,group,1,"[1, 3, 4]",True,True
+0,group,2,"[3, 4, 5]",True,True
+1,group,2,"[4, 5]",True,True
+2,group,2,"[3, 4]",True,True
+0,group,3,"[0, 1, 3, 4, 5]",True,True
+1,group,3,"[0, 3, 4]",True,True
+2,group,3,"[3, 4]",True,True

@@ -1,0 +1,15 @@
+{
+  "status": "verified",
+  "mode": "all16_64",
+  "fusion_mode": "lean_combined",
+  "full_head_checks": 24,
+  "all_full_head_checks": 120,
+  "parent_full_head_checks": 144,
+  "operator_checks": 9,
+  "parent_operator_checks": 121,
+  "evidence_sha256": {
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_structure_fusion_probe_20261009_v2/invariant_on/summary.json": "a2a236e0682e98f3eb0d8b725d8447610d0943b4fcb206b0905b9ebb80ec9936",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_structure_fusion_probe_20261009_v2/isolation.json": "bf77b8b312ef757863f27bb34fd61cc40cb3cb5832c5fc8f073dd2ae4de916c3",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_structure_fusion_probe_20261009_v2/native_protocol.json": "37e9cb20e221224cec46968dd56f6657cc40131cf8bf5463eaee204f60cea7b8"
+  }
+}

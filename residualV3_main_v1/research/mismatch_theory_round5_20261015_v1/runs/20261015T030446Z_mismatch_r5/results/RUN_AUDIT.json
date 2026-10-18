@@ -1,0 +1,138 @@
+{
+  "schema": "r5.final_run_audit.v1",
+  "UTC": "2026-10-15T04:08:33.680840+00:00",
+  "status": "complete_with_scoped_resource_disclosures",
+  "core_scientific_work_complete": true,
+  "required_experiments_remaining": [],
+  "scientific_lock_unchanged": true,
+  "one_fresh_opening": true,
+  "new36_collected_analyzed": true,
+  "old18_development_only": true,
+  "scientific_counts": {
+    "contexts": 68,
+    "all_states": 10854,
+    "fit_states": 5423,
+    "eval_states": 5431,
+    "groups": 1363,
+    "observed_positions": 340,
+    "fit_eligible_groups": 225,
+    "fit_eligible_M_zero": 18,
+    "matched_core_groups": 194,
+    "matched_eval_states": 1034,
+    "nonzero_pair_groups": 70,
+    "paired_replicates": 1552,
+    "nonzero_pair_replicates": 245,
+    "main_all_states": 6502,
+    "main_fit_states": 3247,
+    "main_eval_states": 3255,
+    "control_states": 4352,
+    "main_different_H_groups": 387,
+    "matched_M_zero_groups": 15,
+    "main_mixed_head_groups": 26,
+    "fit_eligible_no_eval_groups": 31
+  },
+  "identity_measure_audit_passed": true,
+  "numeric_maxima": {
+    "E1_identity_error": 7.294241213713108e-15,
+    "E4_identity_error": 6.661338147750939e-16,
+    "tail_condition_TV_drift": 8.464113598336009e-16,
+    "fit_identity_error": 5.551115123125783e-16,
+    "input_hash_discrepancies": 0.0,
+    "head_scalar_error": 4.440892098500626e-16,
+    "raw_scalar_error": 5.551115123125783e-16
+  },
+  "H_shared": {
+    "verdict": "supported_within_predefined_subset",
+    "coverage_gate": true,
+    "metric": "E2_gain"
+  },
+  "H_match": {
+    "verdict": "supported_within_predefined_subset",
+    "coverage_gate": true,
+    "metric": "E3_gain"
+  },
+  "no_general_theory_joint_stamp": true,
+  "resources": {
+    "GPU_hours_booked": 0.3677127527528339,
+    "GPU_hours_limit": 8,
+    "CPU_seconds_booked": 2881.4964939999995,
+    "CPU_hours_booked": 0.8004156927777777,
+    "CPU_hours_limit": 24,
+    "disk_limit_GiB": 700,
+    "disk_allocated_at_closure_bytes": 25412612096,
+    "disk_allocated_at_closure_GiB": 23.667339324951172,
+    "sampled_disk_peak_bytes": 25412612096,
+    "gross_preflight_disk_upper_bytes": 93144571904,
+    "gross_preflight_disk_upper_GiB": 86.74764251708984,
+    "continuous_exact_disk_peak_claimed": false,
+    "peak_own_GPU_memory_MiB": 21768,
+    "GPU_stage_peak_observed_OS_threads": 7,
+    "numerical_workers_configured_single_thread": true,
+    "global_all_instant_thread_cap_certified": false,
+    "thread_scope": "supervised numerical jobs set OMP/MKL/OPENBLAS/NUMEXPR1, GPU Torch intra/inter-op1; driver/IO helpers observed separately. One prelock direct metadata import lacked explicit env wrapper and full lifecycle thread record; no demonstrated numerical parallel cap overrun, no unconditional clean certificate.",
+    "thread_gap_record": "logs/METADATA_THREAD_RECORD_GAP.json",
+    "own_experiments_exited": true,
+    "shared_leases_released": true,
+    "foreign_processes_managed": false,
+    "all_GPU_launch_failure_retry_shared_wall_charged": true,
+    "no_native_RNG_TPS_or_training": true,
+    "within_GPU_CPU_disk_caps": true
+  },
+  "old_probability_alarm_passed": false,
+  "old_probability_alarm_preserved": true,
+  "R4_resource_and_posthoc_certificate_disclosures_preserved": true,
+  "old_assets_scope": "201 frozen source SHA and23 stat identities plus signed old reports and all actually used complete captures; no new full target-weight hash",
+  "manifest_creator_host_exit_checks": [
+    {
+      "recorded": {
+        "pid": 1579755,
+        "ppid": 1579751,
+        "pgid": 1579755,
+        "uid": 1024,
+        "start_ticks": 24759671,
+        "state": "R",
+        "command": [
+          "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+          "-B",
+          "evidence_tools/hash_run_manifest.py"
+        ],
+        "OS_threads": 1
+      },
+      "current": null,
+      "matching_live_identity": false
+    },
+    {
+      "recorded": {
+        "pid": 1579751,
+        "ppid": 1294061,
+        "pgid": 1579751,
+        "uid": 1024,
+        "start_ticks": 24759661,
+        "state": "R",
+        "command": [
+          "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+          "-B",
+          "code/cpu_runner.py",
+          "--stage",
+          "final_manifest_r5",
+          "--wall-seconds",
+          "3600",
+          "--",
+          "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+          "-B",
+          "evidence_tools/hash_run_manifest.py"
+        ],
+        "OS_threads": 1
+      },
+      "current": null,
+      "matching_live_identity": false
+    }
+  ],
+  "CPU_active_jobs": [],
+  "static_manifest_sha256": "ceb876ea7a9a8aad10ed309694f65577ee4e5639009ff107d9ef66684b246561",
+  "static_files_fully_hashed": 2631,
+  "large_static_run_files_fully_hashed": true,
+  "new_training_optimization_LP_native_or_dose_grid": false,
+  "no_automatic_round6": true,
+  "reporting_auxiliaries": "new report/audit readers outside scientific LOCK; final full file manifest binds their bytes, no new actions or hypothesis selection"
+}

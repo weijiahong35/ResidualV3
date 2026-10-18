@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "source_files_checked": 183,
+  "runtime_math_unchanged": true,
+  "weight_and_dependency_files_checked": 10,
+  "dataset_counts": {
+    "humaneval": 164,
+    "mt-bench": 80
+  },
+  "only_two_E2_arms": true,
+  "MT_Bench_first_turn_only": true,
+  "independent_quality_scores": false,
+  "require_complete": true,
+  "formal_groups": [
+    {
+      "dataset": "humaneval",
+      "concurrency": 1,
+      "requests": 164,
+      "T0_equal_outputs": true,
+      "isolation": true,
+      "Graph": true,
+      "formal_summary_sha256": "f8b4ac12d3bde0aa684255407569a1ef219fd0041a75c74019b7ff25a43a9b09"
+    },
+    {
+      "dataset": "humaneval",
+      "concurrency": 40,
+      "requests": 164,
+      "T0_equal_outputs": true,
+      "isolation": true,
+      "Graph": true,
+      "formal_summary_sha256": "6dfd7cb384835e9c7da410219ebb0186f6da0bdfb5e6c0d1f28559b4992146ac"
+    },
+    {
+      "dataset": "mt-bench",
+      "concurrency": 1,
+      "requests": 80,
+      "T0_equal_outputs": true,
+      "isolation": true,
+      "Graph": true,
+      "formal_summary_sha256": "89bf72f911cb61e244e90c5cc8db866b99862f3b0f64e39668b8fbbf5e4e277c"
+    },
+    {
+      "dataset": "mt-bench",
+      "concurrency": 40,
+      "requests": 80,
+      "T0_equal_outputs": true,
+      "isolation": true,
+      "Graph": true,
+      "formal_summary_sha256": "c4942cfcf56966b75740fc70d4bdd23fc611b131e3dfc2d7aa4b969c5fa947f1"
+    }
+  ],
+  "utc": "2026-10-11T16:12:38.610076+00:00",
+  "parallel_dispatch_source_checks": true,
+  "dispatch_manifest_sha256": "0ecbe59af1254473a4283b602f999cb9f0970891bf260bc1a72c0e4a195fd485",
+  "recovery_manifest_sha256": "b5e32397c74e10a378ba23f72c6f758d66e7535c4bd38cbb2d8ccc612f1481d3",
+  "recovery_source_checks": true,
+  "prior_partial_smoke_preserved": true,
+  "completed_formal_C1_preserved": true,
+  "occupation_attempts_archived": true
+}

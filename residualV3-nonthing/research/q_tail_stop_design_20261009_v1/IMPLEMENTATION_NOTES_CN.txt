@@ -1,0 +1,14 @@
+修复前／后q的实现时序核查，2026-10-09，北京时间
+
+新配对诊断：residualV3-nonthing/results/q_pre_post_tail_signal_20261009_v1。
+比较同一个实际native状态的raw q和repaired q，标签共用修复后残余错误／实际拒绝／完整路径尾部接受机会。旧q实验的单位置修复收益代理不用于伪造新的闭环成绩。
+
+修复前：raw logits已经由一次DFlash前向产生 → q准备阶段 → 决定是否执行当前位置repair。
+修复后：执行当前位置repair并得到actual q → 判断后续位置是否继续repair。
+两者可利用的信息和已支付的修复次数不同，必须统计真实停止边界，不能只比较AUROC。
+
+实际读到的代码：code/q_pre_post_tail_signal_20261009_v1/native_runtime/head_latency/structure_fusion.py，selected_prepare。
+现有融合准备已经计算z=raw.float()、m=max(z)、exp(z-m)、denom=sum(exp(z-m))，再取TopK概率用于q编码。因此raw q_max=1/denom，可以复用该分母；Top1/Top2概率也可以在现有gather结果转BF16前保留小张量。
+上述是后续优化机会，当前冻结runtime没有新增返回值或部署门控。参考softmax与复用归一化的小数值差异应检查，并用阈值灰区保护边界。
+POST必须依据修正后的概率归一化，不能直接套用raw分母。若未来按候选logit增量更新分母，需要检查数值稳定性和候选外最大值，不能假设argmax始终在修复支持内。
+即使信号很便宜，静态Graph仍执行全部repair时也省不了时间；真正跳过运算、Graph路由和C40不同停止点的成本必须另测。

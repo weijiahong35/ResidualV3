@@ -1,0 +1,22 @@
+{
+  "long_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1",
+  "protocol_sha256": "f21991779e3767f0f8668ad62fdc2582210a8366472f7724e36805878d76b160",
+  "source_sha_manifest_sha256": "228c645eeb6a15270e11e84ac8109534852b299e48281f6ea3132a65f59f3000",
+  "status_before_short": {
+    "status": "training",
+    "epochs": 1,
+    "total_packs": 15847,
+    "training_rows": 833176,
+    "produced_pack": 7820,
+    "updated": {
+      "joint": 7818,
+      "body": 7818
+    },
+    "latest_committed_cursor": 7800,
+    "validation": false,
+    "evaluation": false,
+    "utc": "2026-10-08T03:45:25.515846+00:00"
+  },
+  "long_sources_not_edited": true,
+  "long_processes_not_signalled": true
+}

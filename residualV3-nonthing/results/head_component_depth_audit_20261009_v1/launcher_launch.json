@@ -1,0 +1,11 @@
+{
+  "pid": 1654780,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/head_component_depth_audit_20261009_v1/launcher.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_component_depth_audit_20261009_v1"
+  ],
+  "utc": "2026-10-09T00:26:04.849163+00:00"
+}

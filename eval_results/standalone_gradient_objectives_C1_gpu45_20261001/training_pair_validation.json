@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "initial_tensor_hashes_equal": true,
+  "all384_anchor_answer_hashes_equal": true,
+  "diagnostic_state_hashes_equal": true,
+  "parameter_counts": {
+    "PREFIX": 3761409,
+    "TOKEN_TV": 3761409,
+    "TOKEN_NLA": 3761409
+  }
+}

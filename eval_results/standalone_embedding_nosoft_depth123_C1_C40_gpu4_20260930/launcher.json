@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/ablation_v1/nosoft_depth_sweep_v1/run.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930",
+    "--previous",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_ablation_C1_gpu45_20260930",
+    "--two-layer",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_2layer_C1_C40_gpu5_20260930"
+  ],
+  "pid": 154578
+}

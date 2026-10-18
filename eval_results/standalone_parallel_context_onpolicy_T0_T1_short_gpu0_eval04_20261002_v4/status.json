@@ -1,0 +1,22 @@
+{
+  "status": "failed",
+  "stage": "training_Parallel_T0",
+  "gpus": [
+    0,
+    4
+  ],
+  "utc": "2026-10-02T05:50:58.473242+00:00",
+  "progress": {
+    "Parallel_T0": {
+      "pipeline_status.json": {
+        "status": "failed",
+        "stage": "online_causality",
+        "mode": "training",
+        "gpu": 0,
+        "utc": "2026-10-02T05:50:57.220936+00:00",
+        "error": "RuntimeError('online_causality failed; see online_causality.log')"
+      }
+    }
+  },
+  "error": "RuntimeError('training_Parallel_T0 failed; see phase logs')"
+}

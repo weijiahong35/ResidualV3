@@ -1,0 +1,267 @@
+{
+  "status": "complete",
+  "train_count": 128,
+  "epochs": 3,
+  "steps": 384,
+  "loss": "OUTPUT",
+  "rows": [
+    {
+      "concurrency": 1,
+      "gpu": 4,
+      "T": 0,
+      "arm": "RAW",
+      "acceptance": 3.954496851609837,
+      "tps": 255.9221017719845,
+      "acceptance_ratio_vs_RAW": 1.0,
+      "throughput_ratio_vs_RAW": 1.0,
+      "acceptance_ratio_vs_Top256": 0.9689464787905491,
+      "throughput_ratio_vs_Top256": 1.0580445920822956
+    },
+    {
+      "concurrency": 1,
+      "gpu": 4,
+      "T": 0,
+      "arm": "Top256",
+      "acceptance": 4.081233523389123,
+      "tps": 241.88215098601313,
+      "acceptance_ratio_vs_RAW": 1.0320487476751166,
+      "throughput_ratio_vs_RAW": 0.9451397488190357,
+      "acceptance_ratio_vs_Top256": 1.0,
+      "throughput_ratio_vs_Top256": 1.0
+    },
+    {
+      "concurrency": 1,
+      "gpu": 4,
+      "T": 0,
+      "arm": "Top128",
+      "acceptance": 4.080171621207478,
+      "tps": 242.5012363911333,
+      "acceptance_ratio_vs_RAW": 1.0317802173863106,
+      "throughput_ratio_vs_RAW": 0.9475587872718839,
+      "acceptance_ratio_vs_Top256": 0.9997398085222129,
+      "throughput_ratio_vs_Top256": 1.002559450553075
+    },
+    {
+      "concurrency": 1,
+      "gpu": 4,
+      "T": 0,
+      "arm": "Top64",
+      "acceptance": 4.075425492837027,
+      "tps": 242.29899997722433,
+      "acceptance_ratio_vs_RAW": 1.03058003224303,
+      "throughput_ratio_vs_RAW": 0.9467685608220826,
+      "acceptance_ratio_vs_Top256": 0.9985768933537347,
+      "throughput_ratio_vs_Top256": 1.0017233557313425
+    },
+    {
+      "concurrency": 1,
+      "gpu": 4,
+      "T": 1,
+      "arm": "RAW",
+      "acceptance": 3.205114414238216,
+      "tps": 207.63177046870518,
+      "acceptance_ratio_vs_RAW": 1.0,
+      "throughput_ratio_vs_RAW": 1.0,
+      "acceptance_ratio_vs_Top256": 0.869646416982427,
+      "throughput_ratio_vs_Top256": 0.9554759415446732
+    },
+    {
+      "concurrency": 1,
+      "gpu": 4,
+      "T": 1,
+      "arm": "Top256",
+      "acceptance": 3.685537422622397,
+      "tps": 217.3071674971079,
+      "acceptance_ratio_vs_RAW": 1.149892623567501,
+      "throughput_ratio_vs_RAW": 1.0465988273690563,
+      "acceptance_ratio_vs_Top256": 1.0,
+      "throughput_ratio_vs_Top256": 1.0
+    },
+    {
+      "concurrency": 1,
+      "gpu": 4,
+      "T": 1,
+      "arm": "Top128",
+      "acceptance": 3.6942067687612403,
+      "tps": 218.50330910496737,
+      "acceptance_ratio_vs_RAW": 1.1525974712011242,
+      "throughput_ratio_vs_RAW": 1.0523597068585453,
+      "acceptance_ratio_vs_Top256": 1.0023522610530637,
+      "throughput_ratio_vs_Top256": 1.005504381754345
+    },
+    {
+      "concurrency": 1,
+      "gpu": 4,
+      "T": 1,
+      "arm": "Top64",
+      "acceptance": 3.677356276886977,
+      "tps": 217.5323165989601,
+      "acceptance_ratio_vs_RAW": 1.1473400951151387,
+      "throughput_ratio_vs_RAW": 1.0476831946667196,
+      "acceptance_ratio_vs_Top256": 0.9977802027771573,
+      "throughput_ratio_vs_Top256": 1.001036086864715
+    },
+    {
+      "concurrency": 40,
+      "gpu": 5,
+      "T": 0,
+      "arm": "RAW",
+      "acceptance": 4.0388810709791745,
+      "tps": 2582.8159160896635,
+      "acceptance_ratio_vs_RAW": 1.0,
+      "throughput_ratio_vs_RAW": 1.0,
+      "acceptance_ratio_vs_Top256": 0.9638249520818812,
+      "throughput_ratio_vs_Top256": 1.016687594745838
+    },
+    {
+      "concurrency": 40,
+      "gpu": 5,
+      "T": 0,
+      "arm": "Top256",
+      "acceptance": 4.190471581229673,
+      "tps": 2540.422376979373,
+      "acceptance_ratio_vs_RAW": 1.0375327987099525,
+      "throughput_ratio_vs_RAW": 0.983586310256879,
+      "acceptance_ratio_vs_Top256": 1.0,
+      "throughput_ratio_vs_Top256": 1.0
+    },
+    {
+      "concurrency": 40,
+      "gpu": 5,
+      "T": 0,
+      "arm": "Top128",
+      "acceptance": 4.182198591089698,
+      "tps": 2536.0072812166254,
+      "acceptance_ratio_vs_RAW": 1.035484461560483,
+      "throughput_ratio_vs_RAW": 0.98187689855036,
+      "acceptance_ratio_vs_Top256": 0.9980257615450652,
+      "throughput_ratio_vs_Top256": 0.9982620623236687
+    },
+    {
+      "concurrency": 40,
+      "gpu": 5,
+      "T": 0,
+      "arm": "Top64",
+      "acceptance": 4.196252305022236,
+      "tps": 2549.4942935318745,
+      "acceptance_ratio_vs_RAW": 1.038964067343758,
+      "throughput_ratio_vs_RAW": 0.9870987233932501,
+      "acceptance_ratio_vs_Top256": 1.001379492422394,
+      "throughput_ratio_vs_Top256": 1.0035710268633709
+    },
+    {
+      "concurrency": 40,
+      "gpu": 5,
+      "T": 1,
+      "arm": "RAW",
+      "acceptance": 3.3398009950248757,
+      "tps": 2112.2390524804714,
+      "acceptance_ratio_vs_RAW": 1.0,
+      "throughput_ratio_vs_RAW": 1.0,
+      "acceptance_ratio_vs_Top256": 0.864214133691217,
+      "throughput_ratio_vs_Top256": 0.9135823473565263
+    },
+    {
+      "concurrency": 40,
+      "gpu": 5,
+      "T": 1,
+      "arm": "Top256",
+      "acceptance": 3.8645526204946146,
+      "tps": 2312.040133647819,
+      "acceptance_ratio_vs_RAW": 1.1571206267233987,
+      "throughput_ratio_vs_RAW": 1.0945920779812846,
+      "acceptance_ratio_vs_Top256": 1.0,
+      "throughput_ratio_vs_Top256": 1.0
+    },
+    {
+      "concurrency": 40,
+      "gpu": 5,
+      "T": 1,
+      "arm": "Top128",
+      "acceptance": 3.8430541719865867,
+      "tps": 2291.495084385365,
+      "acceptance_ratio_vs_RAW": 1.1506835819593384,
+      "throughput_ratio_vs_RAW": 1.0848654093836525,
+      "acceptance_ratio_vs_Top256": 0.9944370149356961,
+      "throughput_ratio_vs_Top256": 0.9911138872706162
+    },
+    {
+      "concurrency": 40,
+      "gpu": 5,
+      "T": 1,
+      "arm": "Top64",
+      "acceptance": 3.8546382412480003,
+      "tps": 2300.614789443365,
+      "acceptance_ratio_vs_RAW": 1.154152072830103,
+      "throughput_ratio_vs_RAW": 1.0891829628572003,
+      "acceptance_ratio_vs_Top256": 0.9974345337687897,
+      "throughput_ratio_vs_Top256": 0.9950583279078173
+    }
+  ],
+  "diagnosis": [
+    {
+      "topk": 128,
+      "concurrency": 1,
+      "T": 0,
+      "behavior": "\u63a5\u53d7\u957f\u5ea6\u4e0b\u964d\u4f46\u541e\u5410\u63d0\u9ad8"
+    },
+    {
+      "topk": 128,
+      "concurrency": 1,
+      "T": 1,
+      "behavior": "\u541e\u5410\u63d0\u9ad8\u4e14\u63a5\u53d7\u957f\u5ea6\u4fdd\u6301/\u63d0\u9ad8"
+    },
+    {
+      "topk": 128,
+      "concurrency": 40,
+      "T": 0,
+      "behavior": "\u63a5\u53d7\u957f\u5ea6\u4e0e\u541e\u5410\u5747\u672a\u8d85\u8fc7Top256"
+    },
+    {
+      "topk": 128,
+      "concurrency": 40,
+      "T": 1,
+      "behavior": "\u63a5\u53d7\u957f\u5ea6\u4e0e\u541e\u5410\u5747\u672a\u8d85\u8fc7Top256"
+    },
+    {
+      "topk": 64,
+      "concurrency": 1,
+      "T": 0,
+      "behavior": "\u63a5\u53d7\u957f\u5ea6\u4e0b\u964d\u4f46\u541e\u5410\u63d0\u9ad8"
+    },
+    {
+      "topk": 64,
+      "concurrency": 1,
+      "T": 1,
+      "behavior": "\u63a5\u53d7\u957f\u5ea6\u4e0b\u964d\u4f46\u541e\u5410\u63d0\u9ad8"
+    },
+    {
+      "topk": 64,
+      "concurrency": 40,
+      "T": 0,
+      "behavior": "\u541e\u5410\u63d0\u9ad8\u4e14\u63a5\u53d7\u957f\u5ea6\u4fdd\u6301/\u63d0\u9ad8"
+    },
+    {
+      "topk": 64,
+      "concurrency": 40,
+      "T": 1,
+      "behavior": "\u63a5\u53d7\u957f\u5ea6\u4e0e\u541e\u5410\u5747\u672a\u8d85\u8fc7Top256"
+    }
+  ],
+  "training_pairing": {
+    "passed": true,
+    "matched_updates": 384,
+    "all_anchor_answer_hashes_match_old_Top256": true,
+    "all_initial_tensors_match_old_Top256": true,
+    "both_fresh_reset_verified": true,
+    "utc": "2026-10-01T21:33:54.321630+00:00"
+  },
+  "baseline_retrained": false,
+  "old_baseline_remeasured_on_current_cards": true,
+  "limitations": [
+    "K changes q moment and correction support together.",
+    "Previously used test panels; one forward-order round; no significance claim.",
+    "Unrelated long training on other GPUs may affect shared CPU/IO and power conditions."
+  ],
+  "utc": "2026-10-01T22:44:41.063328+00:00"
+}

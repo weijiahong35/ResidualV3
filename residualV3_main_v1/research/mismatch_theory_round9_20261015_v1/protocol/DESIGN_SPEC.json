@@ -1,0 +1,116 @@
+{
+  "schema": "mismatch_r9_design_v1",
+  "date_local": "2026-10-15 Asia/Shanghai",
+  "status": "ready_for_execution_after_runtime_admission",
+  "scope": "CPU retrospective full-simplex information-boundary analysis; no new sampling or model training",
+  "source_run": "residualV3_main_v1/research/mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8",
+  "source_data": "data/fresh_test",
+  "all_data_previously_exposed": true,
+  "raw_bodies": [
+    "D",
+    "J"
+  ],
+  "history_sources": [
+    "P",
+    "D",
+    "F"
+  ],
+  "main_positions": [
+    3,
+    8,
+    15
+  ],
+  "risk_anchors": [
+    1,
+    65
+  ],
+  "information_levels": [
+    "I0_constant",
+    "I1_previous",
+    "I2_last_two",
+    "IH_full_history_control"
+  ],
+  "main_weighting": "natural eval slot frequency within C/i/source; equal position/anchor/prompt/domain aggregation",
+  "risk_population": "all 36 R8 prompts and valid eval states, no fit matching or novel filters",
+  "certificate_selection": {
+    "domains": [
+      "gsm8k",
+      "humaneval",
+      "alpaca"
+    ],
+    "ordering": "full group_sha256 ascending within domain",
+    "prompts_per_domain": 4,
+    "anchor": 1,
+    "all_sources_positions_bodies_information_levels": true,
+    "missing": "NA, no replacement"
+  },
+  "primary_quantities": [
+    "A=max mean TV improvement",
+    "M=max minimum branch TV improvement",
+    "S_tau=max mean TV improvement subject to every branch gain >= -tau"
+  ],
+  "safe_tau": 1e-07,
+  "material_TV_epsilon": 0.01,
+  "mean_risk_gap_target": 1e-08,
+  "general_certificate_gap_target": 0.0001,
+  "target_tail_mass_goal": 1e-06,
+  "active_sizes": [
+    64,
+    256,
+    1024,
+    4096,
+    16384
+  ],
+  "general_group_body_solver_seconds_total": 60,
+  "per_objective_solver_seconds": 30,
+  "solver_threads": 1,
+  "sham": {
+    "replicates": 16,
+    "weighting": "distinct complete H equal weight",
+    "I1": "permute labels within C/i/source preserving unique-H group counts",
+    "I2": "permute labels within true I1 groups",
+    "metric": "R only, not M/S",
+    "i3_I2": "mathematical full-H control, not empirical discovery"
+  },
+  "master_seed": 2026101591,
+  "bootstrap_seed": 2026101592,
+  "bootstrap": {
+    "replicates": 5000,
+    "CI": 0.95,
+    "unit": "prompt stratified within domain",
+    "role": "descriptive retrospective, conditional on archived history bank"
+  },
+  "cases_maximum": 6,
+  "resource_caps": {
+    "GPU_hours": 0,
+    "CPU_process_tree_hours": 24,
+    "new_disk_GiB": 16,
+    "own_RSS_GiB": 32,
+    "numeric_workers": 1,
+    "all_numeric_threads": 1
+  },
+  "technical_retries_per_stage": 2,
+  "forbidden": [
+    "head/gain predictor",
+    "training",
+    "new model inference",
+    "new sampling",
+    "native TPS/RNG",
+    "editing old sources/reports/weights",
+    "current-head-outcome sample selection",
+    "automatic next round"
+  ],
+  "review_required_before_execution": true,
+  "review_status": "passed_design_level",
+  "review_records": [
+    "qa/CORE_QUESTION_REVIEW_CN.md",
+    "qa/FEASIBILITY_REVIEW_CN.md"
+  ],
+  "runtime_admission_required": [
+    "consumed_probability_identity_and_SHA",
+    "full_numerical_contracts",
+    "fixed_dev_engineering_and_resource_check",
+    "execution_lock"
+  ],
+  "authoring_experiments_run": false
+}

@@ -1,0 +1,226 @@
+{
+  "target_model": "/data/weijiahong/huggingface/models/Qwen3-8B",
+  "pretrained_draft": "/data/weijiahong/huggingface/models/Qwen3-8B-speculator.dflash-nonthinking-20260916",
+  "body_only": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/models/body_only_draft",
+  "basis_path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_then_dflash_1epoch_2gpu_20261006_v1/basis/initial_pretrained_basis_512.safetensors",
+  "head_config_path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_then_dflash_1epoch_2gpu_20261006_v1/head_config.json",
+  "seed": 42,
+  "body_adam_lr": 0.0002,
+  "body_muon_lr": 0.001,
+  "head_lr": 0.0003,
+  "muon_momentum": 0.95,
+  "muon_weight_decay": 0.1,
+  "muon_ns_steps": 5,
+  "muon_adjust_lr_fn": "match_rms_adamw",
+  "weight_decay": 0.01,
+  "dpace_alpha": 0.5,
+  "output_loss_weight": 1.0,
+  "data_source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/all_nonthinking_ctx4096_20261006_v1/manifest.json",
+  "experiment_seed": 610006,
+  "pack_tokens": 65536,
+  "max_anchors": 1536,
+  "head_chunk_requested": 1536,
+  "proposal_positions": 15,
+  "teacher_kv_gib": 48,
+  "teacher_max_seqs": 64,
+  "teacher_max_batched_tokens": 65536,
+  "request_concurrency": 128,
+  "loss": "body: raw CE with D-PACE; head: repaired CE with D-PACE + OUTPUT; coefficients 1:1:1",
+  "initialization": "Full same-epoch main checkpoint; no optimizer/RNG/LR reset; predictor starts fresh",
+  "new_scope": "One additional full epoch (epoch2), no validation or native evaluation",
+  "fallback_policy": "test full1536 first; record OOM; then test smaller loss chunk with same1536 anchors and one update per pack",
+  "old_C40_untouched": true,
+  "utc": "2026-10-10T03:38:23.265017+00:00",
+  "learner_gpu": 4,
+  "teacher_gpus": [
+    3
+  ],
+  "layout": "one shared online teacher, independent joint and body learners on two GPUs",
+  "arm_order": null,
+  "measured_updates_per_arm": 16,
+  "warmup_updates_per_arm": 8,
+  "learner_memory_budget_gib": 76,
+  "learner_gpus": {
+    "joint": 4,
+    "body": 5
+  },
+  "pack_count": 15854,
+  "warmup_packs": 8,
+  "share_hidden_once": true,
+  "host_queue_depth": 2,
+  "learner_uuid": {
+    "joint": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+    "body": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49"
+  },
+  "shared_buffer_policy": "two fixed immutable-in-flight shared CPU buffers; reuse only after both learners finish H2D",
+  "save_optimizer_state": true,
+  "head_loss": "CE_DPACE_OUTPUT",
+  "stop_teacher_on_exit": false,
+  "read_concurrency": 16,
+  "http_keepalive": false,
+  "split_read_timings": true,
+  "variant": "epoch2_two_detached_online_MLP_readouts",
+  "registered_shared_storage": true,
+  "teacher_gpu": 3,
+  "triton_cache_parent": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_forward_backward_optimization_20261007_v1/compiled_cache",
+  "repair_implementation": "optimized",
+  "excluded_gpus_by_user": [
+    1,
+    2
+  ],
+  "producer_torch_threads": 1,
+  "mmap_ownership": true,
+  "lock_poll_seconds": 0.01,
+  "prevalidated_head_gate": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_forward_backward_optimization_20261007_v1/optimized/joint/full1536_online_gradient_gate.json",
+  "teacher_dp_size": 1,
+  "allocator_reserve_gib": 74,
+  "timing_only_no_parameter_update": false,
+  "epochs": 1,
+  "training_rows": 833176,
+  "input_tokens": 1019443945,
+  "data_manifest": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/all_nonthinking_ctx4096_20261006_v1/manifest.json",
+  "data_order": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_teacher1_3gpu_20261009_v1/epoch_order.npy",
+  "pack_offsets": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_teacher1_3gpu_20261009_v1/pack_offsets.npy",
+  "shuffle_seed": 43,
+  "checkpoint_interval": 200,
+  "checkpoint_slot_capacity_gib": 8.25,
+  "validation": false,
+  "evaluation": false,
+  "lr_warmup_fraction": 0.01,
+  "lr_schedule": "new epoch cycle: 1% linear warmup then cosine to zero, inherited optimizer moments",
+  "activation_policy_reference": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/activation_memory_timing_20261008_v1",
+  "job_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4",
+  "sampler": "Only anchors with a fully supervised16-token block; at most1536 per65536-token pack",
+  "checkpoint_policy": "Two paired preallocated slots; first update then every200 updates and on request; atomically commit shared cursor only after both fsyncs",
+  "actual_optimizer_updates": true,
+  "gradient_accumulation_packs": 1,
+  "hidden_request_log_every": 1000,
+  "training_epoch": 2,
+  "global_step_offset": 15847,
+  "initial_checkpoint_pointer": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/initial_checkpoint.json",
+  "initial_checkpoint_proof": {
+    "protocol_sha256": "b3ce33edc241209ecd14baf8e3c068b8b47d1a091814b5e4d69b4469ef901801",
+    "order_sha256": "05ea3fd9ef2d319d11b96be92fbed055d75b01fb562002d109d8fc46dade3d6f",
+    "plan_sha256": "5c7846662cd3cb7db43b1252cc2f021df47649f016e1daf11fbed497ddd0fd87"
+  },
+  "source_epoch_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v3",
+  "teacher_tp_size": 1,
+  "training_data_parallel_size_per_arm": 1,
+  "global_anchors_per_update_per_arm": 1536,
+  "initial_epoch_cursor": 8896,
+  "auxiliary_predictor": {
+    "input": "post_repair_q45; optional third-block output_norm representation256",
+    "structure": "Q45_MLP 45->32->2 and Q45_REPAIR_LATENT_MLP 301->32->2; SiLU",
+    "label_T0": "teacher-prefix target argmax agreement",
+    "label_T1": "teacher-prefix analytical overlap",
+    "lr": 0.003,
+    "weight_decay": 0.001,
+    "clip_norm": 1.0,
+    "feature_normalization": "shared q45 first new pack mean/std; then fixed",
+    "detached_inputs_and_labels": true,
+    "optimizer": "independent AdamW",
+    "main_gradient_clipping_unchanged": true,
+    "max_compute_overhead_fraction": 0.05,
+    "original_joint_runner": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/full_joint_body_shared_teacher_epoch2_20261009_v1/joint_runner.py",
+    "branch_start_epoch_cursor": 8896,
+    "no_native_stopping_enabled": true,
+    "parameter_counts": {
+      "Q45_MLP": 1538,
+      "Q45_REPAIR_LATENT_MLP": 9730
+    },
+    "gradients": "both inputs and labels detached; independent optimizer and clipping per readout",
+    "only_requested_two_branches_train": true
+  },
+  "adopted_teacher_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_q45_teacher1_3gpu_20261010_v2/teachers/attempt_0001",
+  "fixed_hardware": {
+    "teacher": 4,
+    "joint": 5,
+    "body": 7,
+    "initial_inventory": {
+      "0": {
+        "uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+        "free_mib": 39249,
+        "utilization": 100,
+        "pids": [
+          1688798
+        ]
+      },
+      "1": {
+        "uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+        "free_mib": 39881,
+        "utilization": 100,
+        "pids": [
+          1824735
+        ]
+      },
+      "2": {
+        "uuid": "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824",
+        "free_mib": 4332,
+        "utilization": 58,
+        "pids": [
+          3470604,
+          3519708
+        ]
+      },
+      "3": {
+        "uuid": "GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd",
+        "free_mib": 3376,
+        "utilization": 27,
+        "pids": [
+          3618744,
+          4194090
+        ]
+      },
+      "4": {
+        "uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+        "free_mib": 81151,
+        "utilization": 0,
+        "pids": []
+      },
+      "5": {
+        "uuid": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+        "free_mib": 81151,
+        "utilization": 0,
+        "pids": []
+      },
+      "6": {
+        "uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+        "free_mib": 50279,
+        "utilization": 100,
+        "pids": [
+          348205
+        ]
+      },
+      "7": {
+        "uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+        "free_mib": 81151,
+        "utilization": 0,
+        "pids": []
+      }
+    }
+  },
+  "fixed_learner_gpus": {
+    "joint": 5,
+    "body": 7
+  },
+  "fixed_learner_uuid": {
+    "joint": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+    "body": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f"
+  },
+  "handoff_keepers": {
+    "joint": {
+      "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/handoff/joint",
+      "pid": 3163487,
+      "uuid": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49"
+    },
+    "body": {
+      "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/handoff/body",
+      "pid": 3163488,
+      "uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f"
+    }
+  },
+  "owned_keeper_pids": [
+    3163487,
+    3163488
+  ]
+}

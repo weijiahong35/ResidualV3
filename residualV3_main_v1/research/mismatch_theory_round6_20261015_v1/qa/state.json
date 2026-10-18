@@ -1,0 +1,40 @@
+{
+  "mode": "compose",
+  "scope": "bounded_research_execution_handoff_markdown",
+  "status": "documents_complete_experiments_not_started",
+  "date_UTC": "2026-10-15T04:57:48.954663+00:00",
+  "skill": "researchwrite",
+  "foundation_scores": {
+    "scope_review": 8.35,
+    "prediction_review_modified_design": 8.56
+  },
+  "final_review": {
+    "P0": 0,
+    "P1_dispositions": "qa/REVIEW_CN.md"
+  },
+  "authorized_by_handoff_scope": {
+    "old_data_read_only": true,
+    "offline_diagnostic_predictors": true,
+    "fresh_prompts": 48,
+    "K": 64,
+    "fit_K": 16,
+    "eval_K": 48,
+    "limited_relaxed_pairs_max": 12,
+    "repair_head_training": false,
+    "native_RNG_TPS": false
+  },
+  "proposed_execution_budget": {
+    "GPU_hours": 8,
+    "CPU_hours": 24,
+    "new_disk_GiB": 700,
+    "concurrent_GPU": 1,
+    "shared_GPU_allowed": true
+  },
+  "current_authoring_model_experiments": false,
+  "technical_debts": [
+    "Finite predictor family and single training seed.",
+    "Novel and exact-Z heterogeneous-label coverage may be inadequate.",
+    "Old runtime probability and resource disclosures persist.",
+    "Executor must recheck resources, full feature identity and exposure ledger."
+  ]
+}

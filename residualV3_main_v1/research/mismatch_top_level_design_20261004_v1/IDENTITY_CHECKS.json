@@ -1,0 +1,25 @@
+{
+  "scope": "synthetic FP64 CPU algebra; no native states or performance claims",
+  "log_ratio_exact_distribution_max_abs": 6.938893903907228e-18,
+  "masked_kl_negative_gradient_max_abs": 1.3440004664744265e-10,
+  "full_vs_masked_kl_gradient_l2": 0.5676359084141119,
+  "candidate_action_rank": 3,
+  "coefficient_null_dimension_lower_bound": 2,
+  "nonzero_null_coefficient_action_norm": 1.1749176455138695e-15,
+  "candidate_action_singular_values": [
+    3.364145848675402,
+    2.2023785962811075,
+    1.0785155010602956
+  ],
+  "gradient_second_moment_sign_flip_max_abs": 0.0,
+  "conditional_predictability_decomposition_max_abs": 4.440892098500626e-16,
+  "conditional_variance_witness": 2.7739687920693132,
+  "expected_accepted_proposals_recursion": 0.5130784289702254,
+  "expected_accepted_proposals_enumeration": 0.5130784289702254,
+  "recursion_vs_enumeration_max_abs": 0.0,
+  "fixed_teacher_path_overlap_product_sum": 0.5529127320088842,
+  "teacher_proxy_vs_true_value_abs": 0.03983430303865887,
+  "local_prefix_value_logit_gradient_max_abs": 4.7330903085729403e-11,
+  "continuation_values_differ_across_tokens": 0.6542888846881214,
+  "passed": true
+}

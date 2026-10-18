@@ -1,0 +1,26 @@
+[
+  {
+    "index": 0,
+    "source_id": "opb:af60f3c18201:0443948",
+    "usage": {
+      "prompt_tokens": 104,
+      "total_tokens": 232,
+      "completion_tokens": 128,
+      "prompt_tokens_details": null
+    },
+    "completion_sha256": "d5f015146e96cae0e624b143dbeec9e44ce69e2cacde8121762e35309f5711dd",
+    "utc": "2026-10-04T14:09:18.425727+00:00"
+  },
+  {
+    "index": 1,
+    "source_id": "opb:af60f3c18201:0041829",
+    "usage": {
+      "prompt_tokens": 29,
+      "total_tokens": 157,
+      "completion_tokens": 128,
+      "prompt_tokens_details": null
+    },
+    "completion_sha256": "e758c9fea918dd9613bd8cddb3b191fbbc78efa259d1da503cee8ec80dd39bab",
+    "utc": "2026-10-04T14:09:20.658746+00:00"
+  }
+]

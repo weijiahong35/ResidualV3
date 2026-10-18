@@ -1,0 +1,10 @@
+{
+  "pid": 88199,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/head_forward_backward_optimization_20261007_v1/paired_head_controller.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_forward_backward_optimization_20261007_v1"
+  ]
+}

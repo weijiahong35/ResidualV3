@@ -1,0 +1,201 @@
+{
+  "status": {
+    "status": "complete",
+    "utc": "2026-10-09T12:30:39.008311+00:00"
+  },
+  "formal_rows": [
+    {
+      "C": 1,
+      "T": 0,
+      "arm": "BODY_ONLY",
+      "AL": 7.3273394495412845,
+      "TPS": 178.4858961021113,
+      "relative_FULL_AL": -0.12574367147972598,
+      "relative_FULL_TPS": -0.05919132492710255,
+      "repair_gain_retention": 0.0,
+      "mean_repair_positions": 0,
+      "performance_contaminated": false
+    },
+    {
+      "C": 1,
+      "T": 0,
+      "arm": "FULL15",
+      "AL": 8.381225517627309,
+      "TPS": 189.7154021122111,
+      "relative_FULL_AL": 0.0,
+      "relative_FULL_TPS": 0.0,
+      "repair_gain_retention": 1.0,
+      "mean_repair_positions": 15,
+      "performance_contaminated": false
+    },
+    {
+      "C": 1,
+      "T": 0,
+      "arm": "SEQUENTIAL",
+      "AL": 8.36250697934115,
+      "TPS": 188.72083784178892,
+      "relative_FULL_AL": -0.002233389168062594,
+      "relative_FULL_TPS": -0.005242401298730215,
+      "repair_gain_retention": 0.9822385560896981,
+      "mean_repair_positions": 13.102797392721348,
+      "performance_contaminated": false
+    },
+    {
+      "C": 1,
+      "T": 0,
+      "arm": "PIPELINE",
+      "AL": 8.36250697934115,
+      "TPS": 192.81458892021803,
+      "relative_FULL_AL": -0.002233389168062594,
+      "relative_FULL_TPS": 0.01633597891105243,
+      "repair_gain_retention": 0.9822385560896981,
+      "mean_repair_positions": 13.102797392721348,
+      "performance_contaminated": false
+    },
+    {
+      "C": 1,
+      "T": 1,
+      "arm": "BODY_ONLY",
+      "AL": 6.425752080221891,
+      "TPS": 157.36155529394475,
+      "relative_FULL_AL": -0.13507707594762353,
+      "relative_FULL_TPS": -0.06783235500512119,
+      "repair_gain_retention": 0.0,
+      "mean_repair_positions": 0,
+      "performance_contaminated": false
+    },
+    {
+      "C": 1,
+      "T": 1,
+      "arm": "FULL15",
+      "AL": 7.429277108433735,
+      "TPS": 168.8125050669499,
+      "relative_FULL_AL": 0.0,
+      "relative_FULL_TPS": 0.0,
+      "repair_gain_retention": 1.0,
+      "mean_repair_positions": 15,
+      "performance_contaminated": false
+    },
+    {
+      "C": 1,
+      "T": 1,
+      "arm": "SEQUENTIAL",
+      "AL": 7.439199029126214,
+      "TPS": 168.67970843630246,
+      "relative_FULL_AL": 0.0013355163022814587,
+      "relative_FULL_TPS": -0.0007866516203570706,
+      "repair_gain_retention": 1.0098870684970942,
+      "mean_repair_positions": 13.177251184834123,
+      "performance_contaminated": false
+    },
+    {
+      "C": 1,
+      "T": 1,
+      "arm": "PIPELINE",
+      "AL": 7.439199029126214,
+      "TPS": 172.4154109297304,
+      "relative_FULL_AL": 0.0013355163022814587,
+      "relative_FULL_TPS": 0.021342647935658654,
+      "repair_gain_retention": 1.0098870684970942,
+      "mean_repair_positions": 13.177251184834123,
+      "performance_contaminated": false
+    },
+    {
+      "C": 40,
+      "T": 0,
+      "arm": "BODY_ONLY",
+      "AL": 7.4773740526081145,
+      "TPS": 3163.223846641572,
+      "relative_FULL_AL": -0.12313365512781826,
+      "relative_FULL_TPS": -0.05528875329395844,
+      "repair_gain_retention": 0.0,
+      "mean_repair_positions": 0,
+      "performance_contaminated": false
+    },
+    {
+      "C": 40,
+      "T": 0,
+      "arm": "FULL15",
+      "AL": 8.527381734211808,
+      "TPS": 3348.349940440423,
+      "relative_FULL_AL": 0.0,
+      "relative_FULL_TPS": 0.0,
+      "repair_gain_retention": 1.0,
+      "mean_repair_positions": 15,
+      "performance_contaminated": false
+    },
+    {
+      "C": 40,
+      "T": 0,
+      "arm": "SEQUENTIAL",
+      "AL": 8.504119834361532,
+      "TPS": 3323.505523765912,
+      "relative_FULL_AL": -0.002727906475319286,
+      "relative_FULL_TPS": -0.0074198984922235756,
+      "repair_gain_retention": 0.9778459717411329,
+      "mean_repair_positions": 13.150644385521366,
+      "performance_contaminated": false
+    },
+    {
+      "C": 40,
+      "T": 0,
+      "arm": "PIPELINE",
+      "AL": 8.504119834361532,
+      "TPS": 3326.6240506781573,
+      "relative_FULL_AL": -0.002727906475319286,
+      "relative_FULL_TPS": -0.006488536189084182,
+      "repair_gain_retention": 0.9778459717411329,
+      "mean_repair_positions": 13.150644385521366,
+      "performance_contaminated": false
+    },
+    {
+      "C": 40,
+      "T": 1,
+      "arm": "BODY_ONLY",
+      "AL": 6.414621360148692,
+      "TPS": 2736.3682084236407,
+      "relative_FULL_AL": -0.1633013172107166,
+      "relative_FULL_TPS": -0.09371732524179677,
+      "repair_gain_retention": 0.0,
+      "mean_repair_positions": 0,
+      "performance_contaminated": false
+    },
+    {
+      "C": 40,
+      "T": 1,
+      "arm": "FULL15",
+      "AL": 7.6665847480055955,
+      "TPS": 3019.331919981484,
+      "relative_FULL_AL": 0.0,
+      "relative_FULL_TPS": 0.0,
+      "repair_gain_retention": 1.0,
+      "mean_repair_positions": 15,
+      "performance_contaminated": false
+    },
+    {
+      "C": 40,
+      "T": 1,
+      "arm": "SEQUENTIAL",
+      "AL": 7.65372846781505,
+      "TPS": 3000.173381079406,
+      "relative_FULL_AL": -0.00167692402981523,
+      "relative_FULL_TPS": -0.006345290749681931,
+      "repair_gain_retention": 0.9897311053060802,
+      "mean_repair_positions": 13.214363378360945,
+      "performance_contaminated": false
+    },
+    {
+      "C": 40,
+      "T": 1,
+      "arm": "PIPELINE",
+      "AL": 7.65372846781505,
+      "TPS": 3003.465973048562,
+      "relative_FULL_AL": -0.00167692402981523,
+      "relative_FULL_TPS": -0.005254787268641703,
+      "repair_gain_retention": 0.9897311053060802,
+      "mean_repair_positions": 13.214363378360945,
+      "performance_contaminated": false
+    }
+  ],
+  "micro_gate": "verified"
+}

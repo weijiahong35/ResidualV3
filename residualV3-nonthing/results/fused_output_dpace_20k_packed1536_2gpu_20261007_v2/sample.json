@@ -1,0 +1,9 @@
+{
+  "documents": 60,
+  "input_tokens": 65240,
+  "anchors": 1536,
+  "positions": 15,
+  "anchor_sha256": "faa276b8ff9026bfdadbe6ccb6cce6df460b8760f25f7da4f528c58a9b3a5745",
+  "source_step": 894,
+  "utc": "2026-10-07T05:28:46.942384+00:00"
+}

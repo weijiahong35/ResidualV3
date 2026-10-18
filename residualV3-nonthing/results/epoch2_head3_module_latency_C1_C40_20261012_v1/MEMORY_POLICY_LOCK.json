@@ -1,0 +1,15 @@
+{
+  "status": "fixed",
+  "kv_gib": {
+    "C1": 52,
+    "C40": 44
+  },
+  "memory_utilization": 0.92,
+  "reference_formal_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1",
+  "main_C1_previous_changed_to_16GiB": "Preserved existing result with configuration caveat; not rerun.",
+  "historical_diagnostic_C40_38GiB": "Historical context only; no budget-sweep experiment.",
+  "no_placeholder_allocation": true,
+  "no_memory_sweep": true,
+  "no_silent_budget_fallback": true,
+  "utc": "2026-10-12T12:28:01.130690+00:00"
+}

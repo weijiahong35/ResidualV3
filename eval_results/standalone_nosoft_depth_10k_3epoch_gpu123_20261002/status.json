@@ -1,0 +1,41 @@
+{
+  "status": "failed",
+  "stage": "training_and_gates",
+  "utc": "2026-10-01T17:01:35.241147+00:00",
+  "arms": {
+    "nosoft_1layer": {
+      "pipeline_status.json": {
+        "status": "running",
+        "stage": "initialization_native_smoke",
+        "mode": "training",
+        "gpu": 1,
+        "utc": "2026-10-01T17:00:03.585131+00:00",
+        "pid": 778883,
+        "log": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_gpu123_20261002/nosoft_1layer/initialization_native_smoke.log"
+      }
+    },
+    "nosoft_2layer": {
+      "pipeline_status.json": {
+        "status": "running",
+        "stage": "initialization_native_smoke",
+        "mode": "training",
+        "gpu": 2,
+        "utc": "2026-10-01T17:00:03.675144+00:00",
+        "pid": 778949,
+        "log": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_gpu123_20261002/nosoft_2layer/initialization_native_smoke.log"
+      }
+    },
+    "nosoft_3layer": {
+      "pipeline_status.json": {
+        "status": "running",
+        "stage": "initialization_native_smoke",
+        "mode": "training",
+        "gpu": 3,
+        "utc": "2026-10-01T17:00:03.691514+00:00",
+        "pid": 778954,
+        "log": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_gpu123_20261002/nosoft_3layer/initialization_native_smoke.log"
+      }
+    }
+  },
+  "error": "KeyboardInterrupt('15')"
+}

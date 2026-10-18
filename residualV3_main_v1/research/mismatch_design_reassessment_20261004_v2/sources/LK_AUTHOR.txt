@@ -1,0 +1,644 @@
+LK losses: Training speculative decoding draft models to directly maximize acceptance rate
+
+Skip to main content
+
+
+
+
+
+Products
+Solutions
+Why Nebius
+For Developers
+Pricing
+
+
+Company
+Investors
+
+
+
+
+Contact sales
+Log in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Blog/
+Platform news/
+
+
+
+
+
+
+
+
+LK losses: Training speculative decoding draft models to directly maximize acceptance rate
+
+
+We introduce LK losses — training objectives that directly optimize the acceptance rate for speculative decoding draft models. They are a drop-in replacement for KL divergence, with no computational overhead, and they work with any draft architecture and any target model size, to deliver consistent improvements in inference throughput across models ranging from 8B to 685B parameters. We are open-sourcing our trained draft models (LK-Speculators) and training datasets (Infinity-Instruct-Completions). An implementation of LK losses is also available as a pull request to SpecForge.
+
+April 10, 2026
+16 mins to read
+
+
+
+
+Share
+
+
+
+
+
+
+
+
+
+
+
+
+We introduce LK losses — training objectives that directly optimize the acceptance rate for speculative decoding draft models. They are a drop-in replacement for KL divergence, with no computational overhead, and they work with any draft architecture and any target model size, to deliver consistent improvements in inference throughput across models ranging from 8B to 685B parameters. We are open-sourcing our trained draft models — LK-Speculators and training datasets — Infinity-Instruct-Completions. An implementation of LK losses is also available as a pull request to SpecForge.
+
+
+
+Speculative decoding has become one of the most widely used techniques for accelerating LLM inference in production. The approach separates token generation into two stages: a small, fast draft model proposes a batch of candidate tokens; and the large target model verifies all of them in a single forward pass. The target model evaluates all drafted tokens and accepts a prefix of them by using a rejection sampling procedure that preserves the target’s output distribution exactly. This method allows obtaining multiple tokens in one pass, substantially improving throughput without changing model quality.
+
+One of the key performance metrics in speculative decoding is the acceptance rate α — the probability that a given draft token is accepted by the target model. Everything else equal, higher acceptance rate means more tokens per forward pass and better end-to-end speedup. Drafter latency and batch size also matter for real deployment efficiency, but acceptance rate is the quantity that draft model training most directly controls.
+
+Against this background, there is a notable mismatch in standard practice: most draft models are trained by minimizing KL divergence from the target distribution, an objective that does not directly maximize acceptance rate.
+
+Why KL divergence is a proxyWhy KL divergence is a proxy
+
+The justification for KL-based training is straightforward: the global optimum of KL divergence is where the draft distribution perfectly matches the target. This is also the global optimum of acceptance rate α. The two objectives agree when a perfect solution is achievable.
+
+Draft models, however, are small by design. In practice, they have roughly 1–5% of the target model’s parameter count and cannot perfectly replicate its output distribution. At these suboptimal solutions, minimizing KL offers no formal guarantee of maximizing the acceptance rate.
+
+The connection between acceptance rate and Total Variation (TV) distance makes this concrete. Acceptance rate is defined as
+
+α=∑x∈Ymin⁡(p(x), q(x))\alpha = \sum_{x \in \mathcal{Y}} \min(p(x),\, q(x))α=x∈Y∑​min(p(x),q(x))
+
+where q is the draft and p is the target distribution, respectively. This quantity is the total probability mass that the two distributions share. It is directly related to TV distance:
+
+α=1−TV(p,q)\alpha = 1 - \mathrm{TV}(p, q)α=1−TV(p,q)
+
+This identity, established in the original speculative decoding paper by Leviathan et al. (2023), means that maximizing acceptance rate is exactly equivalent to minimizing TV distance. KL divergence is an indirect surrogate that happens to share the global optimum, but leads to different suboptimal solutions when model capacity is constrained.
+
+This relationship also motivates the name. In the original speculative decoding paper, TV distance appears as DLKD_{\mathrm{LK}}DLK​ — a notation that reverses “KL.” Our losses are designed as an alternative to the standard KL optimization approach, replacing a proxy objective with the quantity we actually care about.
+
+To build intuition for why the choice of objective matters at suboptimal solutions, consider a simple experiment: fitting a single Gaussian to a three-mode Gaussian mixture. This is an analog of what draft models face: a low-capacity approximation to a multi-modal target.
+
+Motivating figure: KL, Reverse KL, and TV distance fitting a single Gaussian to a Gaussian mixture. Green areas show density overlap (= acceptance rate in the speculative sampling sense).
+
+The results under three different objectives:
+
+
+
+
+Forward KL divergence is mode-covering: it spreads probability mass broadly to avoid placing zero mass anywhere the target has support. The result is a wide distribution centered between the modes, with an acceptance rate of 50.2%;
+
+
+
+
+Reverse KL divergence is mode-seeking: it collapses to cover the single mode, yielding an acceptance rate of 50.8%;
+
+
+
+
+TV distance places the distribution to maximize the area of overlap, achieving a substantially higher acceptance rate of 60.2%.
+
+
+
+The parametric family and parameter count are identical across all three. The large difference is entirely explained by the objective. When capacity is limited and the draft model cannot perfectly match the target, the different objectives converge to different solutions and KL’s solution does not necessarily correspond to an optimal acceptance rate.
+
+Why not train with TV distance directly?Why not train with TV distance directly?
+
+If TV distance is the right objective, the natural question is why is it not already in use. The obstacle is gradient behavior when we train draft models from scratch.
+
+The gradient of TV distance with respect to the draft logits zqz_qzq​ is:
+
+∇zqTV(p,q)=12 q⊙(s−Eq[s])\nabla_{z_q}\mathrm{TV}(p, q) = \frac{1}{2}\, q \odot \bigl(s - \mathbb{E}_q[s]\bigr)∇zq​​TV(p,q)=21​q⊙(s−Eq​[s])
+
+Where si=sign(qi−pi)s_i = \mathrm{sign}(q_i - p_i)si​=sign(qi​−pi​). Several problems make this impractical for training from random weights.
+
+Sign-only gradient direction. The TV gradient encodes only the sign of the prediction error for each token, not its magnitude. A token with probability q slightly below p receives the same gradient as one severely under-predicted. In contrast, the KL gradient q−pq - pq−p scales linearly with the gap, providing natural prioritization.
+
+Small gradients at initialization. A randomly initialized draft model spreads q approximately uniformly over the vocabulary. For a vocabulary of size V with the target p concentrating on k≪Vk \ll Vk≪V tokens, the gradient norm satisfies:
+
+∥∇z LTV∥=O ⁣(kV)\left\|\nabla_z\,\mathcal{L}_{\mathrm{TV}}\right\| = O\!\left(\frac{\sqrt{k}}{V}\right)∥∇z​LTV​∥=O(Vk​​)
+
+With k≈100k \approx 100k≈100 and V=128,000V = 128{,}000V=128,000, the norm has the order of 10−510^{-5}10−5, essentially no useful signal at the start of training. In comparison, KL gradient magnitude is:
+
+∥∇KL(p∥q)∥=O(1/k)\|\nabla\mathrm{KL}(p\|q)\| = \mathcal{O}(1/\sqrt{k})∥∇KL(p∥q)∥=O(1/k​)
+
+In order of 10−110^{-1}10−1 in this case.
+
+Non-smooth loss landscape. The TV loss contains non-differentiable points along the manifold {zq:qi=pi}\{z_q : q_i = p_i\}{zq​:qi​=pi​}, where gradients change discontinuously.
+
+These properties make pure TV optimization unstable when starting from random weights. Our experiments confirm this: draft models trained with TV loss from scratch fall far short of KL baselines.
+
+LK lossesLK losses
+
+We propose two objectives that target acceptance rate while avoiding the gradient pathologies of TV distance.
+
+Negative log-acceptanceNegative log-acceptance
+
+Since α probability, its negative logarithm is a natural training objective:
+
+LLKα(p,q)=−log⁡α=−log⁡∑x∈Vmin⁡(p(x), q(x))\mathcal{L}^{\alpha}_{\mathrm{LK}}(p, q) = -\log \alpha = -\log \sum_{x \in \mathcal{V}} \min(p(x),\, q(x))LLKα​(p,q)=−logα=−logx∈V∑​min(p(x),q(x))
+
+The gradient of this loss is:
+
+∇zqLLKα=1α ∇zqTV(p,q)\nabla_{z_q}\mathcal{L}^{\alpha}_{\mathrm{LK}} = \frac{1}{\alpha}\,\nabla_{z_q}\mathrm{TV}(p, q)∇zq​​LLKα​=α1​∇zq​​TV(p,q)
+
+The 1/α factor is the key mechanism. When alignment is poor (low α, early training), it amplifies the otherwise negligibly small TV gradient to a magnitude matching KL’s O(1/k)\mathcal{O}(1/\sqrt{k})O(1/k​) regime. The gradient direction follows TV throughout, so the objective directly targets the acceptance rate. Note, that in the degenerate case where p is a point mass (for example, if we train with a setup with temperature = 0), LLKα\mathcal{L}^{\alpha}_{\mathrm{LK}}LLKα​ reduces to standard cross-entropy loss −log⁡(q(x))-\log(q(x))−log(q(x)).
+
+Hybrid objectiveHybrid objective
+
+The second variant explicitly interpolates between KL and TV:
+
+LLKλ(p,q)=λ⋅KL(p∥q)+(1−λ)⋅TV(p,q)\mathcal{L}^{\lambda}_{\mathrm{LK}}(p, q) = \lambda \cdot \mathrm{KL}(p\|q) + (1 - \lambda) \cdot \mathrm{TV}(p, q)LLKλ​(p,q)=λ⋅KL(p∥q)+(1−λ)⋅TV(p,q)
+
+with an adaptive weight driven by the current acceptance rate:
+
+λ=exp⁡(−η⋅sg[α]),η>0\lambda = \exp(-\eta \cdot \mathrm{sg}[\alpha]), \quad \eta > 0λ=exp(−η⋅sg[α]),η>0
+
+Where sg[⋅]\mathrm{sg}[\cdot]sg[⋅] denotes stop-gradient (the weight λ is computed independently for each draft decoding position). This schedule satisfies: λ→1\lambda \to 1λ→1 when α→0\alpha \to 0α→0 (early training, poor alignment) and λ→0\lambda \to 0λ→0 when λ→1\lambda \to 1λ→1 (late training, perfect alignment). The KL component dominates at the start, providing stable gradients that bring the draft distribution close enough to the target for TV gradients to become effective. As alignment improves, the balance shifts toward direct acceptance rate optimization.
+
+Handling truncated vocabulariesHandling truncated vocabularies
+
+Modern draft models often use a truncated vocabulary, restricting the draft’s LM head to the most frequent tokens, following FR-Spec (Zhao et al., 2025). This reduces the cost of the LM head substantially, but introduces a complication for KL-based training.
+
+When qi=0q_i = 0qi​=0 (tokens outside the draft vocabulary), but pi>0p_i > 0pi​>0, KL divergence is infinite. The standard workaround is to renormalize the target: p~=softmax(m⊙zp)\tilde{p} = \mathrm{softmax}(m \odot z_p)p~​=softmax(m⊙zp​), masking out-of-vocabulary logits. The training objective becomes KL(p~∥q)\mathrm{KL}(\tilde{p}\|q)KL(p~​∥q) — a proxy for the true KL(p∥q)\mathrm{KL}(p\|q)KL(p∥q), which is itself already a proxy for acceptance rate.
+
+LK losses handle this naturally. Tokens outside the draft vocabulary contribute min⁡(pi,0)=0\min(p_i, 0) = 0min(pi​,0)=0 to the acceptance sum and simply drop out. No renormalization of p is required, and LK losses optimize acceptance rate with respect to the original target distribution regardless of vocabulary truncation.
+
+Experimental SetupExperimental Setup
+
+We evaluate LK losses across a broad range of configurations.
+
+Target models: Six models across three orders of magnitude — Llama-3.1-8B-Instruct, Llama-3.3-70B-Instruct, gpt-oss-20b, gpt-oss-120b, Qwen3-235B-A22B-Instruct and DeepSeek-V3-0324 (685B).
+
+Draft architectures: EAGLE-3, MLP Speculator, MEDUSA and DeepSeek’s native MTP module. For Llama-3.1-8B we train all four; for larger models we use EAGLE-3 and, for DeepSeek-V3, MTP fine-tuning.
+
+Training: 660K instruction-response pairs generated from each target model by using prompts from Infinity-Instruct-0625. All draft models except DeepSeek-MTP are trained from scratch for 10 epochs; DeepSeek-MTP is fine-tuned from pretrained weights for 1 epoch.
+
+Evaluation: We use vLLM with a patch implementing correct rejection sampling at non-zero temperatures. The default vLLM implementation samples draft tokens greedily regardless of the temperature setting, which systematically underestimates acceptance rate at T>0T > 0T>0. We evaluate on MT-bench, HumanEval and GSM8K.
+
+Metric: Average acceptance length τ=K×accepted tokensdrafted tokens+1\tau = K \times \frac{\text{accepted tokens}}{\text{drafted tokens}} + 1τ=K×drafted tokensaccepted tokens​+1, where K is the maximum draft length.
+
+ResultsResults
+
+Architecture-agnostic improvements (Llama-3.1-8B, temperature = 1)
+
+Both LK variants consistently outperform the KL baseline across all architectures. The hybrid objective with adaptive scheduling achieves the strongest results. Lower-capacity architectures benefit most: MEDUSA and MLP Speculator see average improvements of +7.8% and +8.3%, compared to +3.9% for EAGLE-3. This aligns with the theoretical analysis — low-capacity draft models converge further from the global optimum, where direct acceptance optimization provides the greatest leverage.
+
+Scalability across target model sizes (EAGLE-3, temperature = 1, K = 7)
+
+Improvements are consistent across every model. All EAGLE-3 draft models in this experiment are single-layer dense transformers, while target models range from 32 layers (Llama-3.1-8B) to 94 layers (Qwen3-235B), and include large MoE architectures. The harder the approximation task, the further the KL solution sits from the true acceptance optimum. GPT-OSS 120B achieves +7.7% and Qwen3-235B achieves +8.2%, the largest improvements among EAGLE-3 configurations.
+
+DeepSeek-V3 MTP fine-tuningDeepSeek-V3 MTP fine-tuning
+
+DeepSeek-V3 ships with a pretrained MTP module, but this module was originally trained to predict only the next token and is reused autoregressively for later speculative positions. This mismatch causes sharp acceptance rate degradation beyond the first position.
+
+Fine-tuning with KL divergence substantially improves performance, while LK loss achieves an additional +5.6% on top of this already-improved KL baseline, confirming that the benefit of direct acceptance optimization is not limited to random-initialization training.
+
+Open-source releaseOpen-source release
+
+We release the following:
+
+
+
+
+LK-Speculators — Trained draft model weights for all six target models on HuggingFace.
+
+
+
+
+Infinity-Instruct-Completions — 660K instruction-response pairs generated from our target models for draft model training.
+
+
+
+
+SpecForge PR — Implementation of LK losses in the SpecForge training framework.
+
+
+
+Our KL baselines trained from scratch on target-model-generated responses already significantly outperform the best publicly available EAGLE-3 checkpoints on HuggingFace. LK losses extend this lead further.
+
+ConclusionConclusion
+
+Standard speculative decoding training uses KL divergence as a proxy for acceptance rate. This works well when draft models can closely match the target, but introduces systematic suboptimality under capacity constraints, which is always the case in practice.
+
+LK losses bridge this gap directly, at no additional cost. Our method applies to any draft architecture and target model, introduces no computational overhead and delivers consistent improvements across model scales from 8B to 685B parameters, with the largest gains precisely where the approximation task is hardest.
+
+Full gradient derivations, ablation studies and per-checkpoint comparisons are available in the paper.
+
+
+
+
+
+
+
+
+ContributorsAlexander Samarin, Sergei Krutikov, Anton Shevtsov, Sergei Skvortsov, Filipp Fisin, Alexander Golubev
+
+
+
+Citation information
+@misc{samarin2026lklosses,
+  title={LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding},
+  author={Samarin, Alexander and Krutikov, Sergei and Shevtsov, Anton and Skvortsov, Sergei and Fisin, Filipp and Golubev, Alexander},
+  year={2026},
+  eprint={2602.23881},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://arxiv.org/abs/2602.23881}
+ }
+
+
+
+
+
+
+
+
+
+
+
+Explore Nebius AI Cloud
+
+Sign up​
+Docs​
+
+
+
+
+Explore Nebius Token Factory
+
+Sign up​
+Docs and support​
+
+
+
+
+
+
+
+
+
+
+See the contributors
+
+
+
+
+Contents
+
+
+
+
+Why KL divergence is a proxy
+
+
+
+
+Why not train with TV distance directly?
+
+
+
+
+LK losses
+
+
+Negative log-acceptance
+
+Hybrid objective
+
+
+
+
+
+Handling truncated vocabularies
+
+
+
+
+Experimental Setup
+
+
+
+
+Results
+
+
+DeepSeek-V3 MTP fine-tuning
+
+
+
+
+
+Open-source release
+
+
+
+
+Conclusion
+
+
+
+
+
+
+
+
+
+
+
+See also
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MLPerf® Inference v6.0: Top-tier AI performance on NVIDIA Blackwell and Blackwell Ultra
+
+The results of our MLPerf® Inference v6.0 submission demonstrate Nebius’ ability to maximize efficiency for modern AI inference workloads on the latest NVIDIA Blackwell and Blackwell Ultra platforms.
+
+
+
+April 1, 2026
+14 mins to read
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Introducing DevPods, Jobs and Endpoints: Easy compute access with serverless AI
+
+The serverless services at Nebius are a natural extension of how an AI infrastructure cloud evolves over time, building on a mature and well-established underlying platform. As the platform develops, it becomes possible to expose compute in more flexible and elastic forms that better match how AI workloads are consumed.
+
+
+
+March 26, 2026
+12 mins to read
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Introducing NVIDIA RTX PRO 6000 Blackwell Server Edition on Nebius
+
+NVIDIA RTX PRO 6000 Blackwell opens new opportunities for cost-efficient inference and increased performance for visual computing and scientific simulations.
+
+
+
+March 26, 2026
+5 mins to read
+
+
+Sign in to save this post
+Sign In
+
+
+
+
+
+
+
+
+
+
+ (opens in a new tab)
+ (opens in a new tab)
+ (opens in a new tab)
+ (opens in a new tab)
+
+
+Subscribe to updates
+First nameLast nameEmailSubscription topics
+Nebius AI CloudNebius Token Factory
+Nebius Group news
+I agree to receive marketing communications from Nebius, subject to the Privacy Policy. (opens in a new tab)Subscribe
+
+
+ (opens in a new tab)
+ (opens in a new tab)
+ (opens in a new tab)
+ (opens in a new tab)
+
+
+Products
+
+
+Managed Inference
+
+
+Agentic Search
+
+
+Human Validation
+
+
+AI Orchestration
+
+
+Serverless AI
+
+
+DataOps
+
+
+ModelOps
+
+
+Compute
+
+
+Networking
+
+
+AI Storage
+
+
+
+Service status
+
+
+Solutions
+
+
+Scientific AI and Healthcare
+
+
+Media & Entertainment
+
+
+Retail & Commerce
+
+
+Physical AI & Robotics
+
+
+Agents & Copilots
+
+
+Vision AI
+
+
+Pre-Training
+
+
+Post-Training
+
+
+Inference
+
+
+Simulation
+
+Pricing
+
+
+AI Cloud pricing
+
+
+Token Factory pricing
+
+
+Programs
+
+
+Partner program
+
+
+Startup program
+
+
+Research grants
+
+
+Nebius Fellows
+
+Resources
+
+
+Blog
+
+
+Events & webinars
+
+
+Customer stories
+
+
+Feature requests
+
+
+Nebius for AI Builders
+
+Tech docs
+
+
+Nebius AI Cloud
+
+
+Nebius Token Factory
+
+
+Legal
+
+
+Legal documents
+
+
+Report abuse
+
+
+DMCA notice
+
+Security and compliance
+
+
+Trust center
+
+Company
+
+
+About
+
+
+Investor Hub
+
+
+Sustainability
+
+
+Nebius Academy
+
+
+Newsroom
+
+
+Careers
+
+
+Contacts
+
+
+
+
+Corporate policies
+
+Terms of use
+
+Manage cookies
+
+Cookie policy (opens in a new tab)
+
+Privacy policy (opens in a new tab)
+
+© 2026 Nebius B.V.

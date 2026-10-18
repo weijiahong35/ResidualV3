@@ -1,0 +1,14 @@
+本轮授权：融合OUTPUT计算、损失与梯度校验、64/256/1536分块测试；优先1536整块。
+训练与推理前驱区别：训练TF调用lambda z,j: answers[:,j]，前驱固定为anchor+答案前缀；native调用修复后实际采样，保留顺序递推。合并15个位置只允许训练TF路径。
+原OUTPUT前缀cumprod仍保留，融合TV仅提供每位置overlap，未改成TOKEN_TV损失。
+新损失：完整151936词表当前teacher argmax CE，D-PACE alpha0.5且权重detach；联合组CE_DPACE与OUTPUT系数均1，这是固定对照起点、未宣称最优。
+短训练：相同20k nonthinking、3轮、65536token/包、整包1536 anchors、每包一次更新、no-soft3层；target/draft冻结，只训练头。
+OUTPUT复用已完成packed20k权重，不重新训练；另外两组从相同seed610006、相同basis和随机初始头训练。旧OUTPUT用64分块，新组用1536；监督/更新预算一致，浮点累积实现有差异。
+自动顺序：融合primitive校验 -> 真实训练状态头梯度校验 -> TF并行校验 -> 三分块实测 -> 校验通过且1536通过后训练CE_DPACE，再CE_DPACE_OUTPUT -> RAW/三损失组同卡C1/C40正式评测。
+并行不通过就保留顺序头；1536不通过则不擅自降分块开训。
+C1=200/C40=2000，T0/T1，15递推proposal，最多2096输出token。smoke只校验，正式窗口才用于效果结论。外部进程只记录；共享窗口TPS标记污染，优先看AL。
+状态：controller_status.json（总流程）；status.json（一次性预检）；probe.log（预检日志）；training_arms/CE_DPACE/training.log和training_arms/CE_DPACE_OUTPUT/training.log（后续训练）；single_card_C1_formal.log与single_card_C40_formal.log（后续正式评测）。
+权重、Adam、基底、旧源码均保留；hidden在线计算，/dev/shm读取即删，不保存hidden/logits。
+本轮v2初始GPU：learner 2 / GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824；teacher 3 / GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd。
+v2额外工程改动：RAW q全词表normalizer流式FP32归约，仅计算Top256对应概率；不对子集重归一化。no-soft不用保留input feature basis候选行，计算moment后释放；output候选行仍保留反向需要的内容。数值门槛比较旧prepare+旧loss与新prepare+融合loss，不修改native源码。
+v1证据保留在相邻v1目录：融合校验通过，15位置合并被拒绝；GPU4在预检期间出现外部32.7GiB任务，1536在head阶段OOM；没有开始新训练。

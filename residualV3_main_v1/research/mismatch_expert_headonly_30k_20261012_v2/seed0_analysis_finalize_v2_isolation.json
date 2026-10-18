@@ -1,0 +1,58 @@
+{
+  "initial": {
+    "uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+    "used_mib": 17265,
+    "free_mib": 63889,
+    "pids": [
+      897713
+    ],
+    "utc": "2026-10-12T10:29:16.391751+00:00"
+  },
+  "pid": 3264013,
+  "physical_gpu": 6,
+  "checks": [
+    {
+      "uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+      "used_mib": 20391,
+      "free_mib": 60764,
+      "pids": [
+        897713,
+        3264013
+      ],
+      "utc": "2026-10-12T10:29:22.886674+00:00",
+      "foreign": [
+        897713
+      ]
+    },
+    {
+      "uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+      "used_mib": 20617,
+      "free_mib": 60538,
+      "pids": [
+        897713,
+        3264013
+      ],
+      "utc": "2026-10-12T10:29:33.781347+00:00",
+      "foreign": [
+        897713
+      ]
+    },
+    {
+      "uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+      "used_mib": 20619,
+      "free_mib": 60536,
+      "pids": [
+        897713,
+        3264013
+      ],
+      "utc": "2026-10-12T10:29:45.082399+00:00",
+      "foreign": [
+        897713
+      ]
+    }
+  ],
+  "status": "running",
+  "shared_training": true,
+  "memory_cap_gib": 8,
+  "performance_evidence": false
+}

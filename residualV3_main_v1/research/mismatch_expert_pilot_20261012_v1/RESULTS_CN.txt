@@ -1,0 +1,41 @@
+Mismatch 专家路由：流程试跑，样本不足以判断研究路线
+2026-10-12 12:47北京时间完成，GPU7空卡；96提示/192块/2880状态。
+样本解释已修正：真正留出仅24提示，且来自E2已用的短序列训练数据；下面数值只描述这批流程试跑，不支持专家路由成功或失败的方向结论。大样本方案见LARGE_SAMPLE_PLAN_CN.txt，尚未启动。
+
+目的：验证两种修复动作是否互补，以及部署可见输入能否选择有价值的动作。
+设置：E2主体/共享输入映射/原权重冻结；BF16 HF/SDPA诊断；每块15 proposal；原始完整短序列64–256 token，不截断。
+分组：专家训练48提示，router训练16，选择超参8，留出24（720状态）；按conversation group隔离。它们均来自E2已用训练数据，不能作为E2独立泛化结果。
+专家：共享原head前端；复制两个三层SwiGLU suffix（各1,908,737参数），按训练块的有符号受限mismatch梯度聚类分工（51/45块），每个100步。通用suffix200步，激活参数与累计训练块预算匹配。
+训练：每步4块，原repair CE/D-PACE＋OUTPUT，BF16前向/FP32 master AdamW；不更新主体，不开epoch3，无新增native监督。router为62维可见输入到3动作的ridge回归，不看当前target。
+
+| 对照 | 平均同prefix overlap | 同prefix argmax一致率 |
+|---|---:|---:|
+| 原始proposal/KEEP | 0.385184 | 40.694% |
+| 原E2通用头 | 0.575019 | 60.833% |
+| 专家A | 0.576663 | 60.556% |
+| 专家B | 0.578469 | 60.556% |
+| 同预算继续训练通用头 | 0.580302 | 60.556% |
+| 学习路由 KEEP/A/B | 0.578482 | 60.833% |
+| target可见oracle KEEP/A/B（仅离线上界） | 0.591710 | 62.778% |
+
+互补性：A比B的overlap高>0.005占16.81%，B比A高>0.005占20.97%。仅A/B、不含KEEP的oracle=0.587428；比通用头高0.713个百分点，prompt bootstrap 95%区间[0.413, 1.034]。这是离线局部潜力，oracle选择本身不证明router可实现它。
+KEEP贡献：oracle额外加入KEEP再增加0.428个百分点；不能把三动作oracle的全部收益归因于专家分工。
+路由：相比同预算通用头，overlap变化-0.182个百分点，95%区间[-0.542, 0.201]，尚未胜出；相比原E2的小提升也不能排除额外小样本训练的贡献。
+匹配动作频数的随机路由均值0.572027；学习路由=0.578482，随机化单侧p=0.0010（单轮诊断，不作多重检验校正后的确证）。
+
+| 可见输入消融（overlap路由） | 留出overlap |
+|---|---:|
+| POSITION_ONLY | 0.578469 |
+| RAW_Q45_ONLY | 0.579445 |
+| SHARED_PHI16_ONLY | 0.578230 |
+| ALL_VISIBLE | 0.578482 |
+
+开销：只测已准备62维输入→ridge打分/argmax的CUDA Graph，C1约0.0088–0.0089ms，C32约0.0104ms，每位置/整批。排除q45/PCA准备、专家分组和native执行；不能乘15机械相加或换算TPS。
+AC/TPS：本轮没有native AC或TPS，没有新正式窗口；上表overlap/argmax一致率不是接受长度、答题准确率或HumanEval pass@1。
+隔离/身份：isolation.json启动与采集/训练/收尾检查均无外来GPU进程；源代码与E2 SHA前后通过；FINAL_PROCESS_SNAPSHOT.json确认本轮PID1437038已退出GPU。
+
+结论：该轮仅证明采集/小训/评分流程可运行。oracle互补和router未胜通用头都是样本内观察；24提示留出不足以支持或否定研究路线，三个关键证据尚未完成有效验证。
+下一步按LARGE_SAMPLE_PLAN_CN.txt扩展样本、独立性、长度、多个种子和容量/随机头对照；不能先把均值略低定成选择失败。历史反馈、跨轮body复用及target压缩仍未测。
+限制：短序列、24留出提示、一次初始化/聚类/小训；固定teacher-prefix、HF数值路径；不证明专家语义类型、真实连续前缀价值、跨领域泛化或最终创新性。失败也不能区分输入信息不足、PCA压缩、线性router能力或小样本问题。
+
+入口：pilot.log（即时日志）、plan.json（预注册）、CAPTURE_AUDIT.json（诊断对齐）、RESULTS.json（原始数值）、EVIDENCE_AUDIT.json（互补/KEEP/随机/输入消融）、router_parameters.json、state_scores.npz。

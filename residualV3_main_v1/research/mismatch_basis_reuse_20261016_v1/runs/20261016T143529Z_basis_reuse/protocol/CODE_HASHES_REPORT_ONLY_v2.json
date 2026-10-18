@@ -1,0 +1,9 @@
+{
+  "scope": "fixed tables/scene in-out/prompt counts/source descriptive CIs/plots/cases/report/audit; primary endpoints unchanged",
+  "code_SHA": {
+    "deliver.py": "e251cce1c2a9b3f1b4453bcf26a7e5d26baa07bdac9b7b3fb4d42074718b5a03",
+    "scene.py": "66e669b412d5db3d6c9d48937ede735572896f131d099784e1ac6568a4bb9be2",
+    "report.py": "c1e990320697068f498dbebb2397ddc24416e31724be25a59ebd29d15dfcfc00",
+    "finish.py": "d3a80df396077a41be9231e16385a579e0c73d229609401ef869df276ba02644"
+  }
+}

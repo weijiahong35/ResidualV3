@@ -1,0 +1,26 @@
+冻结长训权重瓶颈诊断：真实 native 状态；不训练；诊断窗口不测速。
+两层长训权重为30000步终点；20000步BF16权重恢复时重置Adam，不是完整连续断点恢复。
+新8个原始dataset index20000之后的thinking prompts，与长训train/formal/warmup规范化prompt无重叠。
+实际路径由long2产生；short2/long1/long3只在同一hidden/q/实际硬前驱上回放，不是它们各自路径的AL。
+
+T0 reached: 106 states, actual wrong 18, target outsideTop256 0
+完整冻结最终头greedy witness: 18/18; 固定方向dose网格: 2/18; 未解 0
+错误状态：单状态final-linear overlap上升损margin 0; 同块reached平均 1; prefix代理 1
+matched comparisons: {"long_2layer": {"correct": 88, "fixes_raw_wrong": 6, "harms_raw_correct": 0, "overlap": 0.8498541433452014, "overlap_change_from_raw": 0.19410372096638828}, "long_1layer": {"correct": 87, "fixes_raw_wrong": 6, "harms_raw_correct": 1, "overlap": 0.8389609787619126, "overlap_change_from_raw": 0.18321055638309944}, "long_3layer": {"correct": 92, "fixes_raw_wrong": 10, "harms_raw_correct": 0, "overlap": 0.8597463942591412, "overlap_change_from_raw": 0.2039959718803282}, "short_2layer": {"correct": 87, "fixes_raw_wrong": 7, "harms_raw_correct": 2, "overlap": 0.7958017926273828, "overlap_change_from_raw": 0.14005137024856973}}
+
+T1 reached: 105 states, actual wrong 21, target outsideTop256 1
+完整冻结最终头greedy witness: 20/21; 固定方向dose网格: 3/21; 未解 1
+错误状态：单状态final-linear overlap上升损margin 0; 同块reached平均 1; prefix代理 1
+matched comparisons: {"long_2layer": {"correct": 84, "fixes_raw_wrong": 10, "harms_raw_correct": 1, "overlap": 0.8021507713932546, "overlap_change_from_raw": 0.14376703000382673}, "long_1layer": {"correct": 83, "fixes_raw_wrong": 9, "harms_raw_correct": 1, "overlap": 0.8025408133271585, "overlap_change_from_raw": 0.14415707193773067}, "long_3layer": {"correct": 85, "fixes_raw_wrong": 11, "harms_raw_correct": 1, "overlap": 0.7966146194418146, "overlap_change_from_raw": 0.13823087805238668}, "short_2layer": {"correct": 80, "fixes_raw_wrong": 6, "harms_raw_correct": 1, "overlap": 0.7544295467895739, "overlap_change_from_raw": 0.09604580540014597}}
+
+原有正式两层结果（独立于本次诊断）：
+C1 T0: AL +8.73%, TPS -0.18%, 相对short TPS +4.55%, 全窗口wall/draft比 1.0892
+C1 T1: AL +23.57%, TPS +13.18%, 相对short TPS +6.71%, 全窗口wall/draft比 1.0918
+C40 T0: AL +8.63%, TPS +2.71%, 相对short TPS +4.74%, 全窗口wall/draft比 1.0576
+C40 T1: AL +23.37%, TPS +16.24%, 相对short TPS +6.78%, 全窗口wall/draft比 1.0613
+
+局限：latent可行解不能证明输入足够、共享网络可学或留出泛化；数值solver无解不能证明不可达。
+梯度transport只考察同块共享direction/dose最终线性参数，不代表整网/跨prompt/Adam更新。
+prefix cumprod是代理；overlap改进不保证greedy改进；局部oracle不等于native AL改进。
+性能依据仅原有正式窗口，单轮不是显著性结论，wall/draft不是唯一硬件瓶颈定位。
+按prompt/position/accepted/first_rejection/unreached分组及覆盖缺口详见findings.json；所有hidden/logits/latent仅保留RAM，不落盘。

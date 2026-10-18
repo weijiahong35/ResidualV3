@@ -1,0 +1,33 @@
+{
+  "previous": {
+    "name": "shared_controller_recovery",
+    "pid": 3243897,
+    "uid": 1024,
+    "proc_start_ticks": "1120420",
+    "command": [
+      "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/implementations/shared_cpu_cache_v3/controller_recovery.py"
+    ],
+    "log": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/shared_controller_recovery_attempt00.log",
+    "physical_gpu": null,
+    "initial_inventory": null,
+    "utc": "2026-10-12T10:27:42.818543+00:00"
+  },
+  "replacement": {
+    "name": "shared_controller_recovery_v2",
+    "pid": 3263608,
+    "uid": 1024,
+    "proc_start_ticks": "1129594",
+    "command": [
+      "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+      "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/implementations/shared_cpu_cache_v3/controller_recovery_v2.py"
+    ],
+    "log": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/shared_controller_recovery_v2_attempt00.log",
+    "physical_gpu": null,
+    "initial_inventory": null,
+    "utc": "2026-10-12T10:29:14.556952+00:00"
+  },
+  "stopped_only_owned_cpu_controller": true,
+  "native_evaluator_not_interrupted": true,
+  "utc": "2026-10-12T10:29:14.556952+00:00"
+}

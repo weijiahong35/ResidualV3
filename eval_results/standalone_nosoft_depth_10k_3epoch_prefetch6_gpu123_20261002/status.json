@@ -1,0 +1,241 @@
+{
+  "status": "failed",
+  "stage": "training_and_gates",
+  "utc": "2026-10-02T07:35:22.867731+00:00",
+  "arms": {
+    "nosoft_1layer": {
+      "training/status.json": {
+        "status": "training",
+        "step": 23249,
+        "total": 30000,
+        "latest": {
+          "EMBEDDING": {
+            "step": 23249,
+            "epoch": 3,
+            "index": 346,
+            "anchors": 1536,
+            "anchor_sha256": "4f499a76515c048b18359e3dd53ac24ddfd1e7213e1605e7c19e804b3638ac22",
+            "answer_sha256": "c8c88ed75f0f96f8b61f94194b9ebd8919ba0a55352411422f3b988b71dcf7d1",
+            "hidden_requests": 23255,
+            "hidden_deleted": 23255,
+            "hidden_norm_sum": 688128.0,
+            "hidden_norm_count": 10752,
+            "utc": "2026-10-02T07:35:22.483152+00:00",
+            "arm": "EMBEDDING",
+            "loss": 0.5183496723572413,
+            "grad_norm": 0.10356269776821136,
+            "gradient_sums": {
+              "hidden_proj.0.weight": 0.07247009873390198,
+              "hidden_proj.0.bias": 0.09068862348794937,
+              "hidden_proj.1.weight": 19.43901252746582,
+              "hidden_proj.1.bias": 0.006179868243634701,
+              "previous_proj.0.weight": 0.05160762369632721,
+              "previous_proj.0.bias": 0.058520592749118805,
+              "previous_proj.1.weight": 15.06594467163086,
+              "previous_proj.1.bias": 0.004647914320230484,
+              "q_proj.0.weight": 0.022410541772842407,
+              "q_proj.0.bias": 0.0234067440032959,
+              "q_proj.1.weight": 4.930841445922852,
+              "q_proj.1.bias": 0.009771695360541344,
+              "fusion.0.weight": 0.047782693058252335,
+              "fusion.0.bias": 0.054854847490787506,
+              "fusion.1.weight": 17.60793685913086,
+              "fusion.1.bias": 0.028245842084288597,
+              "blocks.0.norm.weight": 0.023298023268580437,
+              "blocks.0.norm.bias": 0.022055484354496002,
+              "blocks.0.up.weight": 14.236684799194336,
+              "blocks.0.up.bias": 0.058669835329055786,
+              "blocks.0.down.weight": 7.505916595458984,
+              "blocks.0.down.bias": 0.024327006191015244,
+              "output_norm.weight": 0.02926895022392273,
+              "output_norm.bias": 0.03503049910068512,
+              "direction_head.weight": 17.150205612182617,
+              "direction_head.bias": 0.07126888632774353,
+              "dose_head.weight": 0.1485697627067566,
+              "dose_head.bias": 0.0014943182468414307
+            },
+            "fusion_gradient_sums": {
+              "hidden": 6.837929725646973,
+              "hard_previous": 7.2699127197265625,
+              "q": 3.5000929832458496
+            },
+            "zero_gradient_parameters": [],
+            "zero_gradient_fusion_branches": [],
+            "seconds": 2.5568830519914627
+          }
+        }
+      },
+      "pipeline_status.json": {
+        "status": "running",
+        "stage": "training",
+        "mode": "training",
+        "gpu": 1,
+        "utc": "2026-10-01T17:12:33.558617+00:00",
+        "pid": 866463,
+        "log": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu123_20261002/nosoft_1layer/training.log"
+      }
+    },
+    "nosoft_2layer": {
+      "training/status.json": {
+        "status": "training",
+        "step": 20981,
+        "total": 30000,
+        "latest": {
+          "EMBEDDING": {
+            "step": 20981,
+            "epoch": 3,
+            "index": 6318,
+            "anchors": 1536,
+            "anchor_sha256": "bc42b5933e0a1eb7599779846b20f92c18e58cc5de85761e6645d4b824ab8483",
+            "answer_sha256": "8aecce793af84aa9bea9eb96ed1d0939861f2a3e2c3a62fed7fdf273748928ec",
+            "hidden_requests": 20987,
+            "hidden_deleted": 20987,
+            "hidden_norm_sum": 688128.0,
+            "hidden_norm_count": 10752,
+            "utc": "2026-10-02T07:35:21.176987+00:00",
+            "arm": "EMBEDDING",
+            "loss": 0.4265250861644743,
+            "grad_norm": 0.11195283383131027,
+            "gradient_sums": {
+              "hidden_proj.0.weight": 0.06841035187244415,
+              "hidden_proj.0.bias": 0.07742539793252945,
+              "hidden_proj.1.weight": 19.79671287536621,
+              "hidden_proj.1.bias": 0.00609685480594635,
+              "previous_proj.0.weight": 0.04008936509490013,
+              "previous_proj.0.bias": 0.06325814127922058,
+              "previous_proj.1.weight": 12.488191604614258,
+              "previous_proj.1.bias": 0.0049245236441493034,
+              "q_proj.0.weight": 0.026497038081288338,
+              "q_proj.0.bias": 0.03160012513399124,
+              "q_proj.1.weight": 5.649757385253906,
+              "q_proj.1.bias": 0.012926384806632996,
+              "fusion.0.weight": 0.046494632959365845,
+              "fusion.0.bias": 0.06276814639568329,
+              "fusion.1.weight": 17.71439552307129,
+              "fusion.1.bias": 0.030828652903437614,
+              "blocks.0.norm.weight": 0.020472681149840355,
+              "blocks.0.norm.bias": 0.019155874848365784,
+              "blocks.0.up.weight": 11.417263984680176,
+              "blocks.0.up.bias": 0.04821907728910446,
+              "blocks.0.down.weight": 6.675276756286621,
+              "blocks.0.down.bias": 0.024761313572525978,
+              "blocks.1.norm.weight": 0.021084649488329887,
+              "blocks.1.norm.bias": 0.01909364014863968,
+              "blocks.1.up.weight": 10.31473159790039,
+              "blocks.1.up.bias": 0.0425368957221508,
+              "blocks.1.down.weight": 5.769715309143066,
+              "blocks.1.down.bias": 0.01994510181248188,
+              "output_norm.weight": 0.02712108939886093,
+              "output_norm.bias": 0.03104373626410961,
+              "direction_head.weight": 19.012699127197266,
+              "direction_head.bias": 0.08339370042085648,
+              "dose_head.weight": 0.14136621356010437,
+              "dose_head.bias": 6.476044654846191e-05
+            },
+            "fusion_gradient_sums": {
+              "hidden": 7.472475051879883,
+              "hard_previous": 6.64849328994751,
+              "q": 3.593427896499634
+            },
+            "zero_gradient_parameters": [],
+            "zero_gradient_fusion_branches": [],
+            "seconds": 2.5048775151371956
+          }
+        }
+      },
+      "pipeline_status.json": {
+        "status": "running",
+        "stage": "training",
+        "mode": "training",
+        "gpu": 2,
+        "utc": "2026-10-01T17:12:44.748395+00:00",
+        "pid": 867127,
+        "log": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu123_20261002/nosoft_2layer/training.log"
+      }
+    },
+    "nosoft_3layer": {
+      "training/status.json": {
+        "status": "training",
+        "step": 20061,
+        "total": 30000,
+        "latest": {
+          "EMBEDDING": {
+            "step": 20061,
+            "epoch": 3,
+            "index": 8935,
+            "anchors": 1536,
+            "anchor_sha256": "0c91598bb958ddd555df7ffb98457a366329a0ce59e85814a7b0fa335acf931d",
+            "answer_sha256": "46c41c8af3d24e647a7e3bddf8fb1bd9ca1cc94af726bd9f7a7ba35f37d7350a",
+            "hidden_requests": 20067,
+            "hidden_deleted": 20067,
+            "hidden_norm_sum": 688128.0,
+            "hidden_norm_count": 10752,
+            "utc": "2026-10-02T07:35:17.728654+00:00",
+            "arm": "EMBEDDING",
+            "loss": 0.5443046540021895,
+            "grad_norm": 0.13332918286323547,
+            "gradient_sums": {
+              "hidden_proj.0.weight": 0.08038833737373352,
+              "hidden_proj.0.bias": 0.10881450772285461,
+              "hidden_proj.1.weight": 22.154747009277344,
+              "hidden_proj.1.bias": 0.007698887027800083,
+              "previous_proj.0.weight": 0.05206739902496338,
+              "previous_proj.0.bias": 0.06270429491996765,
+              "previous_proj.1.weight": 15.491918563842773,
+              "previous_proj.1.bias": 0.005269053392112255,
+              "q_proj.0.weight": 0.024557407945394516,
+              "q_proj.0.bias": 0.028456617146730423,
+              "q_proj.1.weight": 5.505881309509277,
+              "q_proj.1.bias": 0.011752992868423462,
+              "fusion.0.weight": 0.051750149577856064,
+              "fusion.0.bias": 0.06781530380249023,
+              "fusion.1.weight": 19.722856521606445,
+              "fusion.1.bias": 0.03395558148622513,
+              "blocks.0.norm.weight": 0.01906716823577881,
+              "blocks.0.norm.bias": 0.020129729062318802,
+              "blocks.0.up.weight": 11.139572143554688,
+              "blocks.0.up.bias": 0.04919395595788956,
+              "blocks.0.down.weight": 6.6400837898254395,
+              "blocks.0.down.bias": 0.029729990288615227,
+              "blocks.1.norm.weight": 0.01937958225607872,
+              "blocks.1.norm.bias": 0.02009977027773857,
+              "blocks.1.up.weight": 10.744712829589844,
+              "blocks.1.up.bias": 0.04831736534833908,
+              "blocks.1.down.weight": 6.363304138183594,
+              "blocks.1.down.bias": 0.027861427515745163,
+              "blocks.2.norm.weight": 0.021439839154481888,
+              "blocks.2.norm.bias": 0.03644692525267601,
+              "blocks.2.up.weight": 9.402462005615234,
+              "blocks.2.up.bias": 0.044455498456954956,
+              "blocks.2.down.weight": 5.1863789558410645,
+              "blocks.2.down.bias": 0.0320521704852581,
+              "output_norm.weight": 0.03955931216478348,
+              "output_norm.bias": 0.061069756746292114,
+              "direction_head.weight": 23.73088836669922,
+              "direction_head.bias": 0.1125858798623085,
+              "dose_head.weight": 0.2906869053840637,
+              "dose_head.bias": 0.0019481033086776733
+            },
+            "fusion_gradient_sums": {
+              "hidden": 7.842195987701416,
+              "hard_previous": 7.906924247741699,
+              "q": 3.9737372398376465
+            },
+            "zero_gradient_parameters": [],
+            "zero_gradient_fusion_branches": [],
+            "seconds": 2.246620114892721
+          }
+        }
+      },
+      "pipeline_status.json": {
+        "status": "failed",
+        "stage": "training",
+        "mode": "training",
+        "gpu": 3,
+        "utc": "2026-10-02T07:35:19.312314+00:00",
+        "error": "RuntimeError('GPU isolation lost; unknown processes: [528298]')"
+      }
+    }
+  },
+  "error": "RuntimeError('phase training_and_gates failed in processes [817063]; see phase logs')"
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "matched_updates": 10000,
+  "inherited_updates": 20000,
+  "all_anchor_answer_hashes_equal": true,
+  "optimizer_reset_for_all_arms_at_step": 20000,
+  "exact_uninterrupted_training": false,
+  "utc": "2026-10-02T15:29:22.010110+00:00"
+}

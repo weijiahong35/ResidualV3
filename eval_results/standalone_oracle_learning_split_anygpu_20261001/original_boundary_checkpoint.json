@@ -1,0 +1,10 @@
+{
+  "status": "paused_for_verified_handoff",
+  "step": 32,
+  "pid": 3181099,
+  "optimizer_preserved_in_original_process_memory": true,
+  "checkpoint": {
+    "ok": true
+  },
+  "utc": "2026-10-01T12:05:25.556426+00:00"
+}

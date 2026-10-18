@@ -1,0 +1,19 @@
+{
+  "pid": 224983,
+  "utc": "2026-10-02T06:26:28.212069+00:00",
+  "adopted_t0": {
+    "pid": 88013,
+    "state": "R",
+    "pgid": 88013,
+    "start_ticks": 966915146,
+    "command": "/data/weijiahong/miniconda3/envs/dflash/bin/python -B -m repair.pipeline --output /data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5/Parallel_T0 --training-only"
+  },
+  "retiring_coordinator": {
+    "pid": 86086,
+    "state": "S",
+    "pgid": 86086,
+    "start_ticks": 966912582,
+    "command": "/data/weijiahong/miniconda3/envs/dflash/bin/python -B /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_onpolicy_short_v5/launch.py --output /data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5"
+  },
+  "controller_source_sha256": "cf072061685f557888c04a4137fafa86897265044484f67e126a7a87087a1ddc"
+}

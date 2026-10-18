@@ -1,0 +1,10 @@
+{
+  "pid": 4018859,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/shared_teacher_fusion_registered_timing_20261007_v4/controller.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/shared_teacher_fusion_registered_timing_20261007_v4"
+  ]
+}

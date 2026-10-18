@@ -1,0 +1,112 @@
+{
+  "verified_at_utc": "2026-10-13T03:27:04.101107+00:00",
+  "report": "/data/weijiahong/speculators-main-lora/GROUP_MEETING_20261013_CN.md",
+  "backup": "/data/weijiahong/vscode-tmp/group_meeting_before_source_rebuild_h4zajbmg.md",
+  "sha256": "adca87918b00dd7610f35e728d174ab3c61eadf4a914018717f0af230e7468f4",
+  "source_manifest": "FETCH.json",
+  "machine_extracted_original_tables": [
+    "domino_v1_tables.json",
+    "dspark_v1_tables.json",
+    "dflash2_author_blog_tables.json"
+  ],
+  "facts_corrected": [
+    "Domino Table 1/2 versus Table 3 is training/evaluation variation, not an extra architecture module switch",
+    "Domino Table 2 temperature unspecified in checked caption/section; previous T0 label removed",
+    "DSpark offline Table 1 scheduler disabled; production Section 5 baseline MTP-1",
+    "DFlash-2 selector-only Qwen3-4B and full Qwen3.5-4B/Muse results do not share a target/setup",
+    "DFlash-2 primary work cited as author technical report/model card, not original DFlash paper"
+  ],
+  "numeric_rows": 42,
+  "local_E2_rows": 12,
+  "new_Muse_AC_rows": 3,
+  "old_numeric_rows_preserved": 56,
+  "no_new_GPU_runs": true,
+  "weights_or_runtime_changed": false,
+  "terminology": {
+    "AC/AL": "accepted length including bonus, not task accuracy",
+    "Domino主实验": "OPB-trained method versus public independent DFlash",
+    "Domino同数据对照": "both methods trained on ShareGPT",
+    "DFlash-2选择头": "convolution disabled",
+    "DSpark离线": "scheduler disabled"
+  },
+  "evidence_allocation": {
+    "core": "E2 three-domain C1/C32 paired results",
+    "necessary_support": "head arrows and independent baseline identity",
+    "qualification": "cross-source target/training/temperature/concurrency differences and missing fields",
+    "historical": "RAW and E1/E2 retained in Section 2",
+    "provenance": "source snapshots and TABLE_ROWS.json"
+  },
+  "evidence_chain": [
+    "define method and training",
+    "retain epoch history",
+    "distinguish peer mechanisms",
+    "declare each experimental setup",
+    "display domain-specific paired results",
+    "bound claims using measured module costs"
+  ],
+  "edit_log": [
+    "reordered peer descriptions: Domino, DSpark, DFlash-2",
+    "replaced ambiguous full/head categories with training/setup and explicit module switches",
+    "kept all old numeric pairs",
+    "added three Muse AC rows from same model card without assigning concurrency",
+    "used DFlash-to-enhanced-model headers for external comparisons"
+  ],
+  "claim_locations": {
+    "method": "Section 1 introduce",
+    "training": "Section 2 support",
+    "external mechanism": "Section 3 distinguish",
+    "paired gains": "Section 4 demonstrate",
+    "limits": "Section 5 interpret"
+  },
+  "length_before": {
+    "lines": 476,
+    "unicode_characters": 21736
+  },
+  "length_after": {
+    "lines": 491,
+    "unicode_characters": 26236
+  },
+  "render_checks": {
+    "fences_paired": true,
+    "display_math_blocks": 2,
+    "legacy_math_delimiters_absent": true
+  },
+  "local_links_valid": true,
+  "table_columns_valid": true,
+  "source_qualification": "Domino main experiment uses public checkpoint; equal training budget is not established, rather than established unequal.",
+  "final_checked_at_utc": "2026-10-13T04:27:35.103718+00:00",
+  "section_length_delta": {
+    "3": {
+      "before_characters": 4382,
+      "after_characters": 3877,
+      "before_whitespace_words": 337,
+      "after_whitespace_words": 291
+    },
+    "4": {
+      "before_characters": 5492,
+      "after_characters": 9378,
+      "before_whitespace_words": 696,
+      "after_whitespace_words": 811
+    },
+    "5": {
+      "before_characters": 946,
+      "after_characters": 1098,
+      "before_whitespace_words": 64,
+      "after_whitespace_words": 65
+    }
+  },
+  "followup_edits": [
+    {
+      "verified_at_utc": "2026-10-13T04:27:35.103718+00:00",
+      "backup": "/data/weijiahong/vscode-tmp/group_meeting_before_dspark_truncation_p6kne66x.md",
+      "previous_report_sha256": "aa7a4bdb39450438412f876298f1ec5c7fb19def9b94dde85111b91ce51613c3",
+      "change": "Make verification truncation explicit in three-domain labels; add DSpark static diagnostic and enabled production results in Section 4.4",
+      "evidence": "DSPARK_TRUNCATION.json",
+      "original_numeric_pairs_preserved": true,
+      "production_rows_added": 2,
+      "main_three_domain_rows": 42,
+      "no_new_GPU_runs": true,
+      "weights_or_runtime_changed": false
+    }
+  ]
+}

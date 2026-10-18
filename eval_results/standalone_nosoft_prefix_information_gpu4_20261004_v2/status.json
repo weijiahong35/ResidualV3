@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "stage": "paired_prefix_diagnostic",
+  "controller_pid": 3112169,
+  "gpu": 4,
+  "uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+  "utc": "2026-10-04T14:09:21.311960+00:00",
+  "error": "RuntimeError('HTTP 500 from http://127.0.0.1:60147/v1/completions: {\"error\":{\"message\":\"EngineCore encountered an issue. See stack trace (above) for the root cause.\",\"type\":\"InternalServerError\",\"param\":null,\"code\":500}}')"
+}

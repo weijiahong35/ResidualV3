@@ -1,0 +1,38 @@
+本轮：冻结Parallel_TF，检查输入信息与target hidden来源。
+
+执行位置：优先整张GPU4，UUID GPU-b69b3699-6c78-06df-49e1-81ef44cf415b。
+实际分配以actual_assignment.json和status.json为准。target与DFlash同卡。
+控制器与其拥有的服务器信息见launch.json、server.json；GPU宿主PID见gpu_monitor.json。
+额外进程只记录，不停止其他任务；不因外部进程存在而终止已运行实验。
+
+依次执行：
+1. 模型加载、编译、预热。
+2. observer_smoke：同提示、同seed，观察器开关的完整输出和逐块token哈希相同；确认实际修正q进入stock verifier。
+3. 16条新开发提示的T1 native轨迹，第三个已到达proposal的两种前缀A→X/B→X；最多32对、256次额外teacher请求。
+4. 有足够提示且存在有价值的有限动作冲突，才自动做跨提示轻量ridge探针。
+5. 生成RESULTS.json、RESULTS_CN.txt，停止本轮拥有的服务器并释放显存。
+
+target hidden需要区分：
+- 现有可在线使用的context：target辅助层2/10/18/26/34，经冻结DFlash fc和RMSNorm，位置在anchor前一token；块内七个proposal共用。
+- 新草稿分支下当前位置teacher hidden：额外冻结target前向计算，仅用于诊断，不能当成免费在线输入。
+原no-soft短训、长训和旧TargetHidden消融均不重训；原basis不改变。
+
+如何判断跑好：
+- status.json的status=complete，RESULTS.json存在且status=complete。
+- smoke_checks.json的status=passed，instrumentation_sequence_parity=true。
+- native/block_checks.jsonl全部prefix_aligned/rng_unchanged/weight_sentinel_unchanged/verifier_reads_actual_corrected_q=true。
+- target_hidden_checks.jsonl确认projection_source_exact=true，shadow HF/native teacher差异在注册门限内。
+- cleanup.json确认owned_server_stopped=true、foreign_processes_untouched=true。
+status=failed表示工程失败，不能当成“输入充分”或“输入不足”的结果。
+predictability.status=skipped是预先规定的证据门槛未满足，属于有效停止，不是训练失败。
+
+结果边界：
+有限动作库中分别修正优于共用修正，说明所测动作存在条件冲突；不能直接证明所有可能修正都冲突。
+unconstrained_common_overlap_ceiling提供同输入共同分布的理论上限；只有分支专属收益越过它，才构成更强的条件限制证据。
+分支到达质量只涵盖当前块所选两条分支，不是全局AL收益或瓶颈占比。
+这是信息诊断，没有正式C1/C40吞吐成绩。新增history是否有效还需自身native rollout和正式窗口验证。
+开发提示来自待重生成数据池，现在已被开发使用；以后不能作为独立最终测试。
+所有hidden/logits/逐状态向量只保存在当前进程内存；只保存统计、token/hash元数据及探针模型参数。
+
+恢复说明：v1首次观察器遗漏普通采样路径的首个bonus token，尚未得到有效诊断结果。
+v1代码、冻结协议、错误日志均保留。v2从native输入与位置核对并补齐该一个token；不放松前缀一致性断言。

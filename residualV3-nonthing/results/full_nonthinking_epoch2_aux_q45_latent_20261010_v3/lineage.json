@@ -1,0 +1,11 @@
+{
+  "previous_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_q45_teacher1_3gpu_20261010_v2",
+  "inherited_cursor": 8847,
+  "inherited_global_step": 24694,
+  "main_optimizer_rng_lr_data_order_unchanged": true,
+  "original_q45_checkpoint_preserved": true,
+  "only_two_new_readouts_initialized": true,
+  "teacher_server_pid": 573734,
+  "teacher_service_retained": true,
+  "utc": "2026-10-10T03:30:20.387888+00:00"
+}

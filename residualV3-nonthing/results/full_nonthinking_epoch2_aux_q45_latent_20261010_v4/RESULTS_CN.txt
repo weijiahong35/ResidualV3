@@ -1,0 +1,16 @@
+第二轮长训练内嵌两个辅助读出：仅做用户指定两项。
+1. repair后的q45 → 标准化 → 45→32→2（SiLU），1538参数。
+2. 同一q45 + 三层repair末层output_norm表示256 → 标准化 → 301→32→2（SiLU），9730参数。
+共同样本、T0/T1标签、独立AdamW .003/wd .001/clip1，同步更新；输入和标签detach，主梯度不受影响。两个输出监督T0 teacher-prefix argmax一致、T1已有OUTPUT的analytical overlap。没有真实rollout监督，未启用推理截断。
+
+从v3第8896包/global_step24743共同完整断点恢复；原主训练状态、数据顺序、优化器、RNG、学习率继承。teacher卡4保留，联合卡5，单训DFlash卡7；两训练卡74GiB可复用allocator池。交接有临时显存接力，未停止他人任务。
+主833176条、prompt+answer≤4096、65536输入token/包、1536anchor一整块、block16、三层no-soft repair。
+
+现场真实1536-anchor包：主损失完全相同，99组参数梯度逐位相同，主权重未改、CUDA RNG相同；q45特征与参考最大绝对误差1.49011612e-06。
+原核心前后向1.933626s，加入两分支1.999303s，开销3.3966%。共享特征62.129ms，两个预测器训练合计4.362ms。6对交替，前2对warmup不计；不含主optimizer.step与teacher等待，不等于端到端吞吐或推理TPS。
+梯度与5%耗时门槛通过，已启用两分支，第8897包后两个步骤均为1/BCE均0.693147（最后层零初始化）。
+首次共同完整断点cursor8897/global_step24744已经提交，两个训练端CUDA保存/恢复逐位校验通过；含两预测器参数、Adam、normalizer及步数。恢复后已继续更新，两辅助步骤同步推进。后续每200更新和手动请求。
+
+旧v3证据保留：梯度一致，但12.83%计算开销未启用；v4保持原主损失求值顺序并按需捕获末层表示，已将开销降到上述水平。
+实时日志：joint_training.log（AUX_Q45_MLP、AUX_Q45_LATENT_MLP），dflash_training.log，teacher.log。
+当前没有held-out AUROC或native接受长度/TPS结论；训练BCE不能代替这些指标。

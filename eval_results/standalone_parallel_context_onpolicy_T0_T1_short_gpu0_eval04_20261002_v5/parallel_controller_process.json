@@ -1,0 +1,11 @@
+{
+  "pid": 224983,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_gpu04_controller_v1/controller.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5"
+  ],
+  "utc": "2026-10-02T06:25:46.015037+00:00"
+}

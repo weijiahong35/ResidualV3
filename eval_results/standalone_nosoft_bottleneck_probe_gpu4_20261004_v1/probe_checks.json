@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "exact_BF16_update_matches_deployed_formula": true,
+  "outside_candidate_logits_unchanged": true,
+  "zero_dose_exact_RAW": true,
+  "mask_certificate_fixture": true,
+  "finite_full_vocab_metrics": true,
+  "utc": "2026-10-04T03:11:48.099346+00:00"
+}

@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "complete_unique_rows": 833176,
+  "input_tokens": 1019443945,
+  "pack_count": 15847,
+  "all_token_mask_index_file_checksums_match": true,
+  "fully_supervised_anchor_windows": true,
+  "first_and_last_pack": {
+    "1": {
+      "rows": 43,
+      "tokens": 65222,
+      "eligible": 40020,
+      "anchors": 1536
+    },
+    "15847": {
+      "rows": 39,
+      "tokens": 51472,
+      "eligible": 26052,
+      "anchors": 1536
+    }
+  },
+  "basis_sha256": "66456e529780d78a4fedf11a1931e610468adf94f3907f324458ea9b35817c9e",
+  "head_config_sha256": "c8c76527b178d266b9d19a3e8b8807e158c4459bb6df3bac13796f7f014c446c",
+  "downloaded_draft_config_sha256": "637304b1fa770ceb1196cbae7b188032ea0f3b563f651a75cb9ec28a5f7e8233"
+}

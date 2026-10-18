@@ -1,0 +1,23 @@
+{
+  "pid": 282486,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/hidden_supply_timing_20261008_v1/teacher_service.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/hidden_supply_timing_20261008_v1/teacher_dp2",
+    "--protocol",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/hidden_supply_timing_20261008_v1/teacher_input_protocol.json",
+    "--exclude-gpus",
+    "1",
+    "2",
+    "4",
+    "5",
+    "6",
+    "7",
+    "--dp-size",
+    "2",
+    "--kv-gib",
+    "48"
+  ]
+}

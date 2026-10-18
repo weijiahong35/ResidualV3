@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/joint_head_v1/probe.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_joint_head_gpu5_20261001",
+    "--protocol",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_2layer_C1_C40_gpu5_20260930/N_no_soft_2layer/native/preregistration.json",
+    "--transfer",
+    "/dev/shm/joint_head_standalone_joint_head_gpu5_20261001",
+    "--endpoint",
+    "http://127.0.0.1:19995/v1"
+  ],
+  "pid": 3714940
+}

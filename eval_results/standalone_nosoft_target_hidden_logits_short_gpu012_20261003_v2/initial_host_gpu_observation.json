@@ -1,0 +1,42 @@
+{
+  "gpus": {
+    "0": {
+      "free_mib": 81151,
+      "active_pids": []
+    },
+    "1": {
+      "free_mib": 81151,
+      "active_pids": []
+    },
+    "2": {
+      "free_mib": 81151,
+      "active_pids": []
+    },
+    "3": {
+      "free_mib": 81151,
+      "active_pids": []
+    },
+    "4": {
+      "free_mib": 81151,
+      "active_pids": []
+    },
+    "5": {
+      "free_mib": 81151,
+      "active_pids": []
+    },
+    "6": {
+      "free_mib": 17379,
+      "active_pids": [
+        1763669
+      ]
+    },
+    "7": {
+      "free_mib": 17379,
+      "active_pids": [
+        1763678
+      ]
+    }
+  },
+  "policy": "record/annotate; never abort solely on foreign processes; never kill foreign PIDs",
+  "utc": "2026-10-03T03:22:45.532132+00:00"
+}

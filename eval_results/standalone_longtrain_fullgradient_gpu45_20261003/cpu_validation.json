@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "inference_to_autograd_replay_exact": true,
+  "gradient_vectors_scalar_output": true,
+  "weights_and_parameter_grads_unchanged": true,
+  "errors": 5,
+  "cuda_initialized": false
+}

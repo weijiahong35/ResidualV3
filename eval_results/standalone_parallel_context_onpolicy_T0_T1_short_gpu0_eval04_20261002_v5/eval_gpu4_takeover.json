@@ -1,0 +1,22 @@
+{
+  "old": {
+    "pid": 224983,
+    "start_ticks": 967103492,
+    "pgid": 224983,
+    "state": "S",
+    "command": "/data/weijiahong/miniconda3/envs/dflash/bin/python -B /data/weijiahong/speculators-main-lora/residualV3_main_v1/research/parallel_context_gpu04_controller_v1/controller.py --output /data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5 "
+  },
+  "adopted_t1": {
+    "pid": 229896,
+    "start_ticks": 967110225,
+    "pgid": 229896,
+    "state": "R",
+    "command": "/data/weijiahong/miniconda3/envs/dflash/bin/python -B -m repair.pipeline --output /data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5/Parallel_T1 --training-only "
+  },
+  "protocol_sha256": {
+    "Parallel_T0": "5e0d7c3b0ea4a422fde1a1f51e4b085236d51ad314d9235b5098617fea929b2e",
+    "Parallel_T1": "9604ce8e8f539e478f11d3697841dff69cb44b9db30df5166f29acd016453832"
+  },
+  "utc": "2026-10-02T07:58:40.950866+00:00",
+  "reason": "user assigns GPUs0/1/2 to long training; both short-run test suites move to already authorized GPU4"
+}

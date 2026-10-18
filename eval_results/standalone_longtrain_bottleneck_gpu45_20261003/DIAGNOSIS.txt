@@ -1,0 +1,40 @@
+长训完成后的瓶颈诊断（2026-10-03；冻结权重，无训练或参数更新）
+
+当前证据最支持：修正方向的学习缺口和共享更新干扰仍然存在；T0/C1另受实际开销制约。唯一根因尚未识别。
+
+本次实际完成：
+  GPU4=T0、GPU5=T1；8个dataset index20000后的新thinking prompts，各取第2/14/30块、全7位置。
+  共336个逐位置状态，211个真实到达状态；T0有18个、T1有21个修正argmax错误状态。
+  T1错误状态的argmax指标与随机拒绝不同，accepted状态也可能argmax不同。
+  旧短训两层及长训1/3层在相同hidden/q/实际长训两层前驱上回放；不是各自的native路径成绩。
+  第一轮解冻结最终头内的latent oracle和固定direction的dose网格；第二轮同状态检查整个头、跨prompt的VJP。
+
+结果：
+  39个argmax错误状态中38个找到冻结最终头内的正确修正；单独调幅度只修好5/39。
+  30/39个残余错误状态的修正overlap比RAW还低；这不代表模型总体无收益，正式长训T1收益明确。
+  剩下1个T1状态：目标在raw中排第391，Top256外必有更高且无法修改的logit，构成当前候选范围的硬阻塞。
+  39/39个错误状态单独沿本状态overlap梯度下降loss，局部SGD预测目标margin上升。
+  平均8条prompt的完整头梯度，局部SGD预测12/39个margin下降（T0 4/18，T1 8/21）；只取其他prompt则伤25/39。
+  因而单状态梯度不是普遍反方向，共享更新会干扰部分状态；尚不能直接证明PCGrad或某种新loss必然有效。
+
+原有正式两层结果（本次不测速）：
+  C1 T0: AL +8.73%, TPS -0.18%; 全窗口wall/draft成本 +8.92%.
+  C1 T1: AL +23.57%, TPS +13.18%; 全窗口wall/draft成本 +9.18%.
+  C40 T0: AL +8.63%, TPS +2.71%; 全窗口wall/draft成本 +5.76%.
+  C40 T1: AL +23.37%, TPS +16.24%; 全窗口wall/draft成本 +6.13%.
+  T0第一位置存活率较RAW略低（C1 -0.179pp、C40 -0.273pp），收益主要来自后面位置；这不是matched-state因果效果。
+  C1 T0 AL+8.73%与每轮有效成本+8.92%几乎抵消。wall/draft包含prefill/调度/请求开销，不能指认某个kernel。
+
+能排除/尚不能断言：
+  本次不支持把普遍候选不足、输出维数不足或单纯幅度标定作为主要解释；有输出好解不等于输入足够或共享网络能学会。
+  不能从当前检查证明缺少更长前缀是唯一原因，也不能把平均梯度效果当成真实Adam更新后的成绩。
+  保留8prompt探索性范围与原有正式单轮范围；不把oracle、smoke和诊断延迟包装成native AL/TPS收益。
+
+校验：两轮T0/T1 instrumentation开关生成token一致；逐状态native/head BF16回放一致；两轮同状态hash/前驱/样本token一致。
+  source/权重SHA逐项未变；所有本任务服务退出；无hidden/logit/latent缓存文件；仅RAM保存整网参数梯度，最后释放。
+  无新训练/PCGrad训练/架构替换/废弃流程重启。
+
+证据：/data/weijiahong/speculators-main-lora/eval_results/standalone_longtrain_bottleneck_gpu45_20261003/findings.json
+整网梯度：/data/weijiahong/speculators-main-lora/eval_results/standalone_longtrain_fullgradient_gpu45_20261003/findings.json
+协议：/data/weijiahong/speculators-main-lora/eval_results/standalone_longtrain_bottleneck_gpu45_20261003/preregistration.json
+原始逐状态记录：T0/formal/cases.jsonl、T1/formal/cases.jsonl（仅scalar/token IDs/hash）。

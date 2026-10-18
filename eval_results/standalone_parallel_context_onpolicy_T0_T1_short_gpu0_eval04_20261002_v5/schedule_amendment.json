@@ -1,0 +1,37 @@
+{
+  "utc": "2026-10-02T06:26:53.341118+00:00",
+  "user_authorized_T1_gpu4": true,
+  "original_schedule": "T0 then T1 sequentially on GPU0",
+  "new_schedule": "T0 GPU0 and T1 GPU4 independent simultaneous training",
+  "training_gpu_by_arm": {
+    "Parallel_T0": 0,
+    "Parallel_T1": 4
+  },
+  "t0_pipeline_preserved": {
+    "pid": 88013,
+    "state": "R",
+    "pgid": 88013,
+    "start_ticks": 966915146,
+    "command": "/data/weijiahong/miniconda3/envs/dflash/bin/python -B -m repair.pipeline --output /data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5/Parallel_T0 --training-only"
+  },
+  "t0_protocol_sha256": "5e0d7c3b0ea4a422fde1a1f51e4b085236d51ad314d9235b5098617fea929b2e",
+  "t1_protocol_sha256": "9604ce8e8f539e478f11d3697841dff69cb44b9db30df5166f29acd016453832",
+  "changed_t1_protocol_keys": [
+    "physical_gpu",
+    "server_gpu",
+    "execution_schedule",
+    "startup_math_native_reuse (removed to rerun GPU4 gates)"
+  ],
+  "frozen_runtime_sources_modified": false,
+  "model_data_optimizer_budget_unchanged": true,
+  "native_evaluation": {
+    "C1": {
+      "gpu": 0,
+      "prompts": 20
+    },
+    "C40": {
+      "gpu": 4,
+      "prompts": 300
+    }
+  }
+}

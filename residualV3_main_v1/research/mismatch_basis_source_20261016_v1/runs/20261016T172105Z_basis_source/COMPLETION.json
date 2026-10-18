@@ -1,0 +1,39 @@
+{
+  "execution_status": "complete",
+  "scientific_decision": "not_established",
+  "source_value_supported": false,
+  "completed_necessary_stages": {
+    "identity": true,
+    "mathematical_contract": true,
+    "full_performance_gate": true,
+    "first_true_fold_gate": true,
+    "new_bases_constructed": true,
+    "all_basis_numerically_valid": true,
+    "all_P_costs": true,
+    "old_E_alignment": true,
+    "original_and_matched_scales": true,
+    "weighted_common_support_and_5000_bootstrap": true,
+    "two_figures": true,
+    "core_review": true,
+    "static_resource_file_audits": true
+  },
+  "fixed_panel": [
+    36,
+    69,
+    207,
+    9936,
+    2571
+  ],
+  "GPU_hours": 0,
+  "head_fits": 0,
+  "router_fits": 0,
+  "new_data": false,
+  "old_assets_readonly": true,
+  "all_data_already_exposed": true,
+  "owned_workers_exit_pending_final_receipt": false,
+  "automatic_next_round": false,
+  "UTC": "2026-10-16T17:47:32.719572+00:00",
+  "all_owned_workers_exited": true,
+  "final_audit_passed": true,
+  "reservations_created": false
+}

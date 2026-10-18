@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "formal_windows": 40,
+  "clean_windows": 35,
+  "contaminated_windows": 5,
+  "all_smokes_and_graph_gates_passed": true,
+  "training_steps_each": 384,
+  "training_alignment_passed": true,
+  "source_checks_passed": true,
+  "utc": "2026-10-03T20:10:35.044388+00:00"
+}

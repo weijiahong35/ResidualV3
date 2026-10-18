@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "rows": [
+    {
+      "C": 1,
+      "arm": "SKIP3",
+      "requests": 200,
+      "text_equal": 200,
+      "text_different": 0,
+      "different_prefix_chars_median": null
+    },
+    {
+      "C": 1,
+      "arm": "SKIP2",
+      "requests": 200,
+      "text_equal": 200,
+      "text_different": 0,
+      "different_prefix_chars_median": null
+    },
+    {
+      "C": 1,
+      "arm": "SKIP23",
+      "requests": 200,
+      "text_equal": 200,
+      "text_different": 0,
+      "different_prefix_chars_median": null
+    },
+    {
+      "C": 40,
+      "arm": "SKIP3",
+      "requests": 1319,
+      "text_equal": 575,
+      "text_different": 744,
+      "different_prefix_chars_median": 267.0
+    },
+    {
+      "C": 40,
+      "arm": "SKIP2",
+      "requests": 1319,
+      "text_equal": 567,
+      "text_different": 752,
+      "different_prefix_chars_median": 276.5
+    },
+    {
+      "C": 40,
+      "arm": "SKIP23",
+      "requests": 1319,
+      "text_equal": 585,
+      "text_different": 734,
+      "different_prefix_chars_median": 275.5
+    }
+  ],
+  "scope": "Exact generated T0 string equality; no accuracy grading. Request seeds are matched as42+index. Independent C40 arms have different closed-loop generated text paths; no full target-forward numerical parity or cause attribution is established by this check."
+}

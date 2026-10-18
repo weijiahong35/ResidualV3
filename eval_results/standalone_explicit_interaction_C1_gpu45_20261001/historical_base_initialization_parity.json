@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "same_base_initial_tensors_as_historical_E3_training": true,
+  "old_parameter_tensors": 34,
+  "added_parameter_tensors": [
+    "extra.candidate.weight",
+    "extra.context.bias",
+    "extra.context.weight",
+    "extra.predecessor.weight"
+  ],
+  "missing": [],
+  "changed": [],
+  "old_checkpoint_loaded": false
+}

@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "utc": "2026-10-03T14:27:59.460725+00:00",
+  "effective_controller_pid": 422147,
+  "actual_diagnostic_gpu": 0,
+  "frozen_original_training_and_new_operational_sources_unchanged": true,
+  "existing_training_worker_pids": [
+    242176,
+    242195,
+    242205,
+    242212
+  ],
+  "existing_training_progress": {
+    "RR_KL_B512": {
+      "gpu": 1,
+      "pid": 242176,
+      "step": 384,
+      "total": 384,
+      "status": "complete"
+    },
+    "RR_OVERLAP_LOW_B512": {
+      "gpu": 2,
+      "pid": 242195,
+      "step": 366,
+      "total": 384,
+      "status": "training"
+    },
+    "RR_OVERLAP_B512": {
+      "gpu": 3,
+      "pid": 242205,
+      "step": 375,
+      "total": 384,
+      "status": "training"
+    },
+    "RR_MARGIN_B512": {
+      "gpu": 4,
+      "pid": 242212,
+      "step": 382,
+      "total": 384,
+      "status": "training"
+    },
+    "RR_OVERLAP_HIGH_B512": {
+      "gpu": 5,
+      "step": 384,
+      "total": 384,
+      "status": "complete"
+    }
+  },
+  "diagnostic_requests_completed": 38,
+  "no_training_restarted": true
+}

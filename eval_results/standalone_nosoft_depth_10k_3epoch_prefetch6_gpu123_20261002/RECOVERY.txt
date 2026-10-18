@@ -1,0 +1,4 @@
+本目录保存中断前原始实验，不覆盖旧训练日志。
+当前恢复任务：/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002
+状态：/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002/status.json
+1/2/3层分别在GPU0/1/2；从20000步权重续训，优化器重置已明确记录。

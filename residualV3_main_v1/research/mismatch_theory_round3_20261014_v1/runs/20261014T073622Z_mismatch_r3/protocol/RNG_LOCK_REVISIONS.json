@@ -1,0 +1,47 @@
+{
+  "schema": "round3.predata.lock_history.v1",
+  "GPU_model_requests_before_all_revisions": 0,
+  "sample_SHA256_unchanged": "44b66c997bb47a3b649474d0efcf64e6f5579c3a56524279458064d1ebcc44ec",
+  "revisions": [
+    {
+      "revision": 1,
+      "path": "protocol/RNG_LOCK_v1.json",
+      "SHA256": "62f5e49cf75ce7be1e5254a16448f435db35e0a223b62c0bab28376f0ba7e727",
+      "reason": "initial CPU-reviewed contract; preserved"
+    },
+    {
+      "revision": 2,
+      "path": "protocol/RNG_LOCK_v2.json",
+      "SHA256": "12ee9d327fa28697737402ac893a3ee9fd5d895081465c129a35d6b2093d792c",
+      "reason": "actual address/token binding checks; admission budget and classification gate repaired before data"
+    },
+    {
+      "revision": 3,
+      "path": "protocol/RNG_LOCK_v3.json",
+      "SHA256": "85b1192d2600530162d1d60d829e41b9f8dbb98bf3ed37940fc518fba4c5996c",
+      "reason": "certificate only hashes completed test logs, removing own unfinished output log self-reference; native algorithm/source unchanged from revision2"
+    },
+    {
+      "revision": 4,
+      "path": "protocol/RNG_LOCK_v4.json",
+      "SHA256": "830e584ee1a98014bbcca05b95bb6f10ad663f694feb3e0e303403d1ed7d72df",
+      "reason": "identity-verified CPU descendant close/PID-reuse guard after real resource-conflict abort; original supervisor source archived by prior-lock SHA"
+    },
+    {
+      "revision": 5,
+      "path": "protocol/RNG_LOCK.json",
+      "SHA256": "929835c43ab46e50c0e6266239a06a0bfa2fe3f46f97f2d3cdb1633bbe749921",
+      "reason": "ownership classification checks exact birth identity on known PID and worker ancestor; full13 CPU guards pass; no native sampling change"
+    }
+  ],
+  "unchanged_science": [
+    "sample manifest",
+    "RNG seeds and role keys",
+    "sampling operations and counters",
+    "eta0/0.5/1 only",
+    "fixed statistics"
+  ],
+  "UTC": "2026-10-14T08:46:54.289405+00:00",
+  "startup_attempts_before_revision4": 1,
+  "startup_attempts_before_revision5": 1
+}

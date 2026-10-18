@@ -1,0 +1,13 @@
+{
+  "status": "pending_remaining_groups",
+  "reason": "Old GSM8K failure audit preserved; current GSM8K C1/C32 passed. Reviewed HumanEval failed smoke archives queued for retry.",
+  "completed_groups": [
+    "gsm8k/C1",
+    "gsm8k/C32"
+  ],
+  "recovery_archives": [
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head2_three_domains_C1_C32_20261012_v1/humaneval/C1/prior_attempts/foreign_smoke_20261012_1154",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head2_three_domains_C1_C32_20261012_v1/humaneval/C32/prior_attempts/foreign_smoke_20261012_1154"
+  ],
+  "utc": "2026-10-12T11:54:41.721137+00:00"
+}

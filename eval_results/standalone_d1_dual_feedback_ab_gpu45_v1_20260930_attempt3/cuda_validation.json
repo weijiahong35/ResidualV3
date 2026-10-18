@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "device": "cuda",
+  "protocol_sha256": "409af1c68e88e9d196e841fe0a6886310f727f5dda1dda7fdcc937b9dceb1e8f",
+  "parameter_count": 4419585,
+  "dose_parameters": 257,
+  "arms": {
+    "LMHEAD": {
+      "input_effects": {
+        "passed": true,
+        "delta_max_abs": {
+          "current_q": 0.04534912109375,
+          "soft_previous": 0.035400390625,
+          "hidden": 0.43603515625,
+          "hard_previous": 0.5302734375
+        },
+        "residual_u_fixed": true,
+        "output_basis_fixed": true,
+        "current_candidate_ids_fixed": true,
+        "soft_candidate_ids_fixed": true,
+        "hard_previous_fixed_for_q_tests": true,
+        "soft_feature_temperature": 1,
+        "q_direction_max_abs": 0.04052734375,
+        "soft_direction_max_abs": 0.0537109375,
+        "q_dose_max_abs": 0.00030517578125,
+        "soft_dose_max_abs": 0.0
+      },
+      "input_gradients": {
+        "passed": true,
+        "input_gradient_l1": {
+          "current_q": 12.0701904296875,
+          "soft_previous": 19.474544525146484
+        },
+        "distribution_and_dose_parameter_gradients": {
+          "q_proj.0.weight": 1.6693115234375,
+          "q_proj.0.bias": 2.209716796875,
+          "q_proj.1.weight": 53.7056884765625,
+          "q_proj.1.bias": 4.0859375,
+          "dose_head.weight": 13.98828125,
+          "dose_head.bias": 0.796875
+        },
+        "fusion_column_gradients": {
+          "hidden": 69.58600616455078,
+          "hard_previous": 70.47779846191406,
+          "q": 73.14712524414062,
+          "soft_previous": 100.39746856689453
+        }
+      },
+      "soft_recurrence_differentiable": true,
+      "graph_changed_inputs_exact": true
+    },
+    "EMBEDDING": {
+      "input_effects": {
+        "passed": true,
+        "delta_max_abs": {
+          "current_q": 0.0224609375,
+          "soft_previous": 0.0390625,
+          "hidden": 0.4677734375,
+          "hard_previous": 0.309814453125
+        },
+        "residual_u_fixed": true,
+        "output_basis_fixed": true,
+        "current_candidate_ids_fixed": true,
+        "soft_candidate_ids_fixed": true,
+        "hard_previous_fixed_for_q_tests": true,
+        "soft_feature_temperature": 1,
+        "q_direction_max_abs": 0.0234375,
+        "soft_direction_max_abs": 0.0390625,
+        "q_dose_max_abs": 0.0,
+        "soft_dose_max_abs": 0.0
+      },
+      "input_gradients": {
+        "passed": true,
+        "input_gradient_l1": {
+          "current_q": 10.85137939453125,
+          "soft_previous": 11.261703491210938
+        },
+        "distribution_and_dose_parameter_gradients": {
+          "q_proj.0.weight": 1.37054443359375,
+          "q_proj.0.bias": 1.39697265625,
+          "q_proj.1.weight": 40.82440185546875,
+          "q_proj.1.bias": 2.635009765625,
+          "dose_head.weight": 6.0782470703125,
+          "dose_head.bias": 0.82421875
+        },
+        "fusion_column_gradients": {
+          "hidden": 51.367156982421875,
+          "hard_previous": 60.52960205078125,
+          "q": 61.41004180908203,
+          "soft_previous": 49.267147064208984
+        }
+      },
+      "soft_recurrence_differentiable": true,
+      "graph_changed_inputs_exact": true
+    }
+  },
+  "blocks": 3,
+  "seed_reproducible": true,
+  "smoke_seed_distinct": true,
+  "topk_selected_once": true,
+  "outside_candidate_logits_unchanged": true,
+  "outside_candidate_feedback_supported": true,
+  "no_future_input": true,
+  "independent_output_reference": true,
+  "all_parameters_receive_output_gradients": true
+}

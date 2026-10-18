@@ -1,0 +1,8 @@
+{
+  "user_approval": "\u5173\u95ed\u65e7\u526f\u672c\uff0c\u7ee7\u7eed\u5206\u5361\u7248",
+  "original_session_pid": 3181099,
+  "original_step": 32,
+  "verification": "/data/weijiahong/speculators-main-lora/eval_results/standalone_oracle_learning_split_anygpu_20261001/replay_verification.json",
+  "preserve_all_logs_and_model_checkpoints": true,
+  "utc": "2026-10-01T12:22:14.527786+00:00"
+}

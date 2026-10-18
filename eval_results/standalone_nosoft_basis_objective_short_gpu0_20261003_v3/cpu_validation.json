@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "device": "cpu",
+  "protocol_sha256": "81635b6ee1b88234570a71972f8823548e932f653d80ff08327fe87f89cc3cc4",
+  "parameter_count": 3761409,
+  "dose_parameters": 257,
+  "fixture_q_topk": 256,
+  "input_effects": {
+    "passed": true,
+    "delta_max_abs": {
+      "current_q": 0.05615234375,
+      "hard_previous": 0.783203125,
+      "hidden": 0.78173828125,
+      "soft_previous": 0.0
+    },
+    "enabled": {
+      "current_q": true,
+      "hard_previous": true,
+      "hidden": true,
+      "soft_previous": false
+    },
+    "residual_u_fixed": true,
+    "output_basis_fixed": true,
+    "amplitude_factor_fixed": true,
+    "current_candidate_ids_fixed": true,
+    "soft_candidate_ids_fixed": true,
+    "q_direction_max_abs": 0.0341796875,
+    "q_dose_max_abs": 0.0,
+    "removed_hidden_module_absent": false,
+    "scale_mode": "hidden_norm"
+  },
+  "input_gradients": {
+    "passed": true,
+    "input_gradient_l1": {
+      "current_q": 978.7003784179688,
+      "soft_previous": 0.0,
+      "hidden": 10.52154541015625,
+      "hard_previous": 10.781879425048828
+    },
+    "distribution_and_dose_parameter_gradients": {
+      "q_proj.0.weight": 7.90673828125,
+      "q_proj.0.bias": 6.48291015625,
+      "q_proj.1.weight": 163.58636474609375,
+      "q_proj.1.bias": 8.87109375,
+      "dose_head.weight": 29.765625,
+      "dose_head.bias": 2.75
+    },
+    "fusion_column_gradients": {
+      "hidden": 291.19622802734375,
+      "hard_previous": 312.2677917480469,
+      "q": 298.9883117675781
+    },
+    "amplitude_factor_detached": true
+  },
+  "blocks": 2,
+  "seed_reproducible": true,
+  "smoke_seed_distinct": true,
+  "topk_selected_once": true,
+  "outside_candidate_logits_unchanged": true,
+  "outside_candidate_feedback_supported": true,
+  "no_future_input": true,
+  "independent_output_reference": true,
+  "all_parameters_receive_output_gradients": true,
+  "soft_recurrence_differentiable": false,
+  "removed_soft_computation_absent": true,
+  "graph_changed_inputs_exact": false,
+  "original_512_path_parity": {
+    "passed": true,
+    "initialization_exact": true,
+    "logits_exact": true,
+    "parameter_gradients_exact": true
+  },
+  "reused_cpu_only_result": true,
+  "reused_from": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_basis_objective_short_gpu3_shared_20261003_v2/cpu_validation.json",
+  "reused_result_sha256": "c17736f20bedf9677387c7200b2ec4f627a1cf6ec758988218bd96b6da137e56",
+  "unchanged_fixture_code_verified": true
+}

@@ -1,0 +1,12 @@
+{
+  "execution_status": "complete_with_unresolved",
+  "FILE_AUDIT_SHA256": "7c4f9aba33a17a423de94fc55e10b1e417b662479d98ca0894e03c16a6046a5c",
+  "COMPLETION_SHA256": "26b2d52a44a971be3cf70caff40049a6094fc345eeb67014e7ee7e3748545cf2",
+  "files": 845,
+  "four_questions_completed": 4,
+  "scientific_core_figures": 4,
+  "all_owned_numerical_workers_exited": true,
+  "old_assets_readonly": true,
+  "automatic_next_round": false,
+  "UTC": "2026-10-17T06:33:07Z"
+}

@@ -1,0 +1,47 @@
+{
+  "seed_rules": {
+    "panel_shuffle_base": 2026101508,
+    "master": 2026101538,
+    "bootstrap": 2026101539,
+    "tuple": [
+      "master",
+      "namespace",
+      "prompt_group_SHA",
+      "anchor",
+      "source",
+      "pool",
+      "branch_slot",
+      "position"
+    ],
+    "serialization": "UTF8_compact_JSON_array",
+    "derivation": "SHA256_first_16_bytes_big_endian_uint128",
+    "generator": "PCG64",
+    "namespaces": [
+      "context",
+      "proposal",
+      "reject"
+    ],
+    "context_sentinels": {
+      "anchor": 0,
+      "source": "P",
+      "pool": "context",
+      "branch_slot": 0
+    },
+    "collision_policy": "fail"
+  },
+  "numpy": "2.4.6",
+  "python": "3.11.15",
+  "sampling": {
+    "temperature": 1,
+    "proposal_length": 15,
+    "vocabulary": "full",
+    "top_k_top_p_extra_penalties": false,
+    "logits_storage": "BF16_bits",
+    "probability_buffer": "stable_FP64_full_softmax",
+    "categorical": "NumPy_Generator_PCG64_choice_using_same_buffer",
+    "verification_probability": "actual_buffer_passed_to_sampler",
+    "native_equivalence_claim": false
+  },
+  "context_special_sentinels": true,
+  "fresh_10_unsaved_positions": "scalar hashes only; not fully offline reconstructible"
+}

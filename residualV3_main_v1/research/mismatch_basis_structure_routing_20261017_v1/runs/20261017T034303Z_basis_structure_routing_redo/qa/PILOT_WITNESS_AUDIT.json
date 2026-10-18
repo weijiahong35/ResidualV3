@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "capacity_cells": 2392,
+  "maximum_reconstructed_gain_error": 2.042810365310288e-14,
+  "maximum_radius_ratio": 1.0000000000000002,
+  "no_scientific_aggregates_inspected": true,
+  "completed_cells_reused": true
+}

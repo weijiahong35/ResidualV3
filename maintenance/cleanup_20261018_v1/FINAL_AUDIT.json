@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "time_unix": 1792287668.3461514,
+  "critical_files_unchanged_at_original_paths": 3909,
+  "retired_source_files_exactly_preserved_in_verified_archive": 91,
+  "intentionally_updated_entry_documents": [
+    {
+      "path": "residualV3-nonthing/current/START_HERE_CN.txt",
+      "original_backup": "maintenance/cleanup_20261018_v1/before/START_HERE_previous.txt",
+      "old_sha256": "2eed1533c49913926754854f9e6a6835d991b01ca3c671ea572af6f9874ace37",
+      "new_sha256": "781112716b85f17528586114835bfe0da84640e19a48adaeef1a38a333c56798"
+    }
+  ],
+  "e1_e2_final_weight_count": 4,
+  "current_entry_broken_symlinks": [],
+  "current_training_and_formal_inference_python_ast_files": 303,
+  "project_allocated_bytes_after": 465782194176,
+  "cache_reclaimed_bytes": 9750659072,
+  "timing_pilot_weights_reclaimed_bytes": 42041245696,
+  "retired_roots": 23,
+  "archived_source_files": 1321,
+  "training_or_inference_executed": false,
+  "scientific_results_or_probability_banks_deleted": false,
+  "complete_training_checkpoints_deleted": false,
+  "github_actions_paused": true,
+  "uploads_resumed": false
+}

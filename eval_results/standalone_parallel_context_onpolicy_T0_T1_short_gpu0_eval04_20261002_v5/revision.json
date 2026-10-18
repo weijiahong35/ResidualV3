@@ -1,0 +1,6 @@
+{
+  "previous": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v4",
+  "change": "apply existing vector/distribution numerical contract also to first-prefill/cache-hit repeat; exact prefix hash, causal intervention equality and greedy equality retained",
+  "model_training_transport_unchanged_from_v3": true,
+  "utc": "2026-10-02T05:53:56.913117+00:00"
+}

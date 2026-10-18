@@ -1,0 +1,49 @@
+{
+  "authorized_round": 6,
+  "scope": [
+    "T1",
+    "T2",
+    "T3",
+    "T4"
+  ],
+  "HF_DOSE": {
+    "main_K": 64,
+    "maximum_proposals": 15,
+    "anchor_generated_positions_1based": [
+      1,
+      65
+    ],
+    "eos_token_ids": [
+      151645
+    ],
+    "actual_target_trajectory_cap": 65,
+    "context_limit": 4096
+  },
+  "numerics": {
+    "output_same_tv_tolerance": 2e-06,
+    "old_scalar_alignment_tolerance": 2e-06,
+    "sign_epsilon": 1e-05,
+    "contract_tolerance": 1e-10,
+    "M_zero_band": 1e-12
+  },
+  "source": "immutable EXECUTION_GUIDE_CN.md fixed specification; no fresh adaptation",
+  "K_fit_eval": [
+    16,
+    48
+  ],
+  "risk_fits": {
+    "architecture": "width32 GELU one hidden layer",
+    "weight_decay": [
+      0,
+      0.0001,
+      0.01
+    ],
+    "lr": 0.001,
+    "epochs": 50,
+    "batch": 512,
+    "selection": "old dev Brier at final50 only; ties1e-12 preferlargerdecay"
+  },
+  "secondary": "exact fixed ridge1e-3 LSMR and linear3-class recipe",
+  "T4_max_pairs": 12,
+  "no_real_head_training_native_RNG_TPS_or_dose_search": true
+}

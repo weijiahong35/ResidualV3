@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "source_files_checked": 182,
+  "runtime_math_unchanged": true,
+  "weight_and_dependency_files_checked": 10,
+  "dataset_counts": {
+    "gsm8k": 1319,
+    "humaneval": 164,
+    "mt-bench": 80
+  },
+  "only_two_E2_arms": true,
+  "MT_Bench_first_turn_only": true,
+  "independent_quality_scores": false,
+  "require_complete": true,
+  "formal_groups": [
+    {
+      "dataset": "gsm8k",
+      "concurrency": 32,
+      "requests": 1319,
+      "T0_equal_outputs": true,
+      "isolation": true,
+      "Graph": true,
+      "formal_summary_sha256": "350c67c29a37af23dcf998cedacf04b6967e2ed2d72a9cb66ef35a543132d218"
+    },
+    {
+      "dataset": "humaneval",
+      "concurrency": 32,
+      "requests": 164,
+      "T0_equal_outputs": true,
+      "isolation": true,
+      "Graph": true,
+      "formal_summary_sha256": "2f8b4f1e205ab10901e3f6d1a6718f33da7f7c97cdbf54ce57b40200d6c4e77e"
+    },
+    {
+      "dataset": "mt-bench",
+      "concurrency": 32,
+      "requests": 80,
+      "T0_equal_outputs": true,
+      "isolation": true,
+      "Graph": true,
+      "formal_summary_sha256": "c901f477b8277d7bac6c8ad453cdff3a90c265bd53beb8f18a234fe20c08141e"
+    }
+  ],
+  "utc": "2026-10-11T18:12:13.684466+00:00"
+}

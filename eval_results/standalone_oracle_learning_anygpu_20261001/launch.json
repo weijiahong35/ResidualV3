@@ -1,0 +1,12 @@
+{
+  "pid": 3168687,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-u",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/oracle_learning_v1/launch.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_oracle_learning_anygpu_20261001",
+    "--execute"
+  ]
+}

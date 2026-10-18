@@ -1,0 +1,268 @@
+{
+  "status": "complete",
+  "utc": "2026-10-01T03:57:58.300885+00:00",
+  "scope": "8条研究prompt×4锚点×位置0/1/3/6=128状态。主分析位置1/3/6共96，首位置对照32。无新训练、无新答案轨迹、未访问封存确认集。",
+  "method": "冻结checkpoint，固定hidden/q/实际前驱/候选集；对全部41个当前错误及14个成功对照求解。全基底与学到的方向线性包络分别求最小范数；同时检查0和0.5 logit间隔。原始可行残差与对偶下界独立复核；BF16输出重新检查全词表argmax。dose穷举16206个可表示值。",
+  "results": {
+    "primary": {
+      "states": 96,
+      "raw_correct": 57,
+      "repair_correct": 61,
+      "repair_errors": 35,
+      "target_outside_I": 0,
+      "dose_only_correctable_errors": 9,
+      "dose_values_per_test": 16206,
+      "oracle_table": {
+        "full_basis/0.0": {
+          "tested": 35,
+          "feasible_real": 35,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 13,
+          "median_norm_fraction": 0.03181335418902781,
+          "max_constraint_violation": 9.93015891737059e-09,
+          "median_duality_gap": 9.22722456168229e-12
+        },
+        "full_basis/0.5": {
+          "tested": 35,
+          "feasible_real": 35,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 35,
+          "median_norm_fraction": 0.03811695885911482,
+          "max_constraint_violation": 9.923066812689285e-09,
+          "median_duality_gap": 8.917760410329101e-12
+        },
+        "learned_span/0.0": {
+          "tested": 35,
+          "feasible_real": 35,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 15,
+          "median_norm_fraction": 0.04097843527693007,
+          "max_constraint_violation": 6.840016553155692e-09,
+          "median_duality_gap": 1.7359570812086611e-12
+        },
+        "learned_span/0.5": {
+          "tested": 35,
+          "feasible_real": 35,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 35,
+          "median_norm_fraction": 0.04842905987273554,
+          "max_constraint_violation": 8.32159141594957e-09,
+          "median_duality_gap": 1.6944758313500174e-12
+        }
+      },
+      "categories": {
+        "full_witness=True,span_witness=True,dose_witness=False": 26,
+        "full_witness=True,span_witness=True,dose_witness=True": 9
+      },
+      "controls_selected": 7
+    },
+    "primary_greedy_prefix_compatible": {
+      "states": 72,
+      "raw_correct": 52,
+      "repair_correct": 50,
+      "repair_errors": 22,
+      "target_outside_I": 0,
+      "dose_only_correctable_errors": 7,
+      "dose_values_per_test": 16206,
+      "oracle_table": {
+        "full_basis/0.0": {
+          "tested": 22,
+          "feasible_real": 22,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 10,
+          "median_norm_fraction": 0.018620156998467093,
+          "max_constraint_violation": 9.93015891737059e-09,
+          "median_duality_gap": 2.0510742220316083e-13
+        },
+        "full_basis/0.5": {
+          "tested": 22,
+          "feasible_real": 22,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 22,
+          "median_norm_fraction": 0.025830552450002153,
+          "max_constraint_violation": 9.923066812689285e-09,
+          "median_duality_gap": 1.0164395367051604e-20
+        },
+        "learned_span/0.0": {
+          "tested": 22,
+          "feasible_real": 22,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 11,
+          "median_norm_fraction": 0.026702132791637755,
+          "max_constraint_violation": 1.8422920966543188e-09,
+          "median_duality_gap": 0.0
+        },
+        "learned_span/0.5": {
+          "tested": 22,
+          "feasible_real": 22,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 22,
+          "median_norm_fraction": 0.03714398184653246,
+          "max_constraint_violation": 8.32159141594957e-09,
+          "median_duality_gap": 0.0
+        }
+      },
+      "categories": {
+        "full_witness=True,span_witness=True,dose_witness=False": 15,
+        "full_witness=True,span_witness=True,dose_witness=True": 7
+      },
+      "controls_selected": 2
+    },
+    "first_position": {
+      "states": 32,
+      "raw_correct": 26,
+      "repair_correct": 26,
+      "repair_errors": 6,
+      "target_outside_I": 0,
+      "dose_only_correctable_errors": 2,
+      "dose_values_per_test": 16206,
+      "oracle_table": {
+        "full_basis/0.0": {
+          "tested": 6,
+          "feasible_real": 6,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 2,
+          "median_norm_fraction": 0.012168580353327341,
+          "max_constraint_violation": 7.884404240598997e-11,
+          "median_duality_gap": 2.6469779601696886e-22
+        },
+        "full_basis/0.5": {
+          "tested": 6,
+          "feasible_real": 6,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 6,
+          "median_norm_fraction": 0.018557975844101994,
+          "max_constraint_violation": 7.349296893277568e-09,
+          "median_duality_gap": -4.336808689942018e-19
+        },
+        "learned_span/0.0": {
+          "tested": 6,
+          "feasible_real": 6,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 2,
+          "median_norm_fraction": 0.016845255970561794,
+          "max_constraint_violation": 1.2878587085651816e-12,
+          "median_duality_gap": -2.6893296075324036e-20
+        },
+        "learned_span/0.5": {
+          "tested": 6,
+          "feasible_real": 6,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 6,
+          "median_norm_fraction": 0.02556615313107316,
+          "max_constraint_violation": 1.199040866595169e-14,
+          "median_duality_gap": 4.37069000783219e-19
+        }
+      },
+      "categories": {
+        "full_witness=True,span_witness=True,dose_witness=False": 4,
+        "full_witness=True,span_witness=True,dose_witness=True": 2
+      },
+      "controls_selected": 7
+    },
+    "all": {
+      "states": 128,
+      "raw_correct": 83,
+      "repair_correct": 87,
+      "repair_errors": 41,
+      "target_outside_I": 0,
+      "dose_only_correctable_errors": 11,
+      "dose_values_per_test": 16206,
+      "oracle_table": {
+        "full_basis/0.0": {
+          "tested": 41,
+          "feasible_real": 41,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 15,
+          "median_norm_fraction": 0.023893208324153963,
+          "max_constraint_violation": 9.93015891737059e-09,
+          "median_duality_gap": 1.774640547361206e-12
+        },
+        "full_basis/0.5": {
+          "tested": 41,
+          "feasible_real": 41,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 41,
+          "median_norm_fraction": 0.03315208276301457,
+          "max_constraint_violation": 9.923066812689285e-09,
+          "median_duality_gap": 2.5645069699547704e-13
+        },
+        "learned_span/0.0": {
+          "tested": 41,
+          "feasible_real": 41,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 17,
+          "median_norm_fraction": 0.03342193456365915,
+          "max_constraint_violation": 6.840016553155692e-09,
+          "median_duality_gap": 1.6940658945086007e-21
+        },
+        "learned_span/0.5": {
+          "tested": 41,
+          "feasible_real": 41,
+          "outside_radius_certified": 0,
+          "unresolved": 0,
+          "verified_BF16_correct": 41,
+          "median_norm_fraction": 0.047494031693260004,
+          "max_constraint_violation": 8.32159141594957e-09,
+          "median_duality_gap": 1.8047846203628204e-13
+        }
+      },
+      "categories": {
+        "full_witness=True,span_witness=True,dose_witness=False": 30,
+        "full_witness=True,span_witness=True,dose_witness=True": 11
+      },
+      "controls_selected": 14
+    }
+  },
+  "dose_breakdown": {
+    "total_current_errors": 41,
+    "originally_wrong_still_wrong": 35,
+    "dose_can_fix_original_errors": 5,
+    "originally_correct_harmed": 6,
+    "dose_can_undo_harms": 6,
+    "remaining_errors_after_best_dose": 30
+  },
+  "maximum_needed_span_norm_fraction": 0.30094650026117403,
+  "conclusions": [
+    "在这批状态中，完整冻结基底与最终direction头的线性输出包络都存在可修正全部41个错误的向量；带0.5 logit目标间隔的解全部通过BF16排序检查。未发现这些错误被基底范围或0.8‖hidden‖上限阻挡的证据。",
+    "学到的输出包络中，所需系数范数/上限的中位数约4.75%，最大约30.09%。这不是已学模型的性能，而是使用目标标签构造的可达性见证。",
+    "固定当前direction穷举dose仅能处理11/41：6个是撤销原本正确位置的误修，5个是修正原本就错的预测。剩余30个在当前BF16正向dose范围内无解。因此单独调整dose不能解决大部分剩余错误。",
+    "结果把问题收窄到方向选择/更强的最终头可达性约束/训练映射与目标，但尚不能在这些原因之间归因。特别是线性包络仍放宽了LayerNorm可达流形与direction-dose共享latent关系。",
+    "零间隔最小范数解常落在排序平局边界；全基底只有15/41、学到包络17/41零间隔解在BF16下直接正确。0.5间隔均41/41，说明不能用连续可行但无数值余量的解宣称runtime已修复。"
+  ],
+  "limits": [
+    "8个研究prompt的有标签oracle，不是新修复网络，也不是native接受长度或吞吐。",
+    "这轮仅验证同一候选集、同一范数上限的输出空间可达性，不能证明输入到latent的函数可实现该oracle方向。",
+    "learned_span是实际最终LN/direction仿射映射的线性包络，不等于完整最终头可达集。新方向经BF16量化后可略离开理想实数包络。",
+    "所有当前错误都被纳入；成功对照按预先约定选择，不能用其比例估计总体成功率。",
+    "主分析RAW正确57/96，与上轮截断目标的56/96相差1例；已与上轮记录核对，来源是已知的完整/截断目标计算差异，并非模型权重变化。",
+    "既有0.5间隔oracle为稳健充分条件；失败不等于greedy不可能。本轮所有错误均找到解，无求解未决案例。"
+  ],
+  "next_step": "不扩大基底、不提高dose上限、不直接加交互头。先推导并检验最终LayerNorm、direction与dose共享latent带来的更强可达性约束；若这些约束也有充分余量，再检验OUTPUT梯度与目标赢家相对所有候选的排序梯度是否一致。此次未启动这些后续研究。",
+  "evidence": [
+    "preregistration.json",
+    "cases.json",
+    "analysis.json",
+    "learned_span.json",
+    "cpu_contracts.json",
+    "online_alignment_causality.json",
+    "cross_study_alignment.json",
+    "hidden_cleanup.json",
+    "cleanup.json"
+  ]
+}

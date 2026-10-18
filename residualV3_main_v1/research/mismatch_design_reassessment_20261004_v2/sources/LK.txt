@@ -1,0 +1,920 @@
+                                           LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+
+                                        Alexander Samarin 1 Sergei Krutikov 1 Anton Shevtsov 1 Sergei Skvortsov 1 Filipp Fisin 1 Alexander Golubev 1
+
+
+                                                                 Abstract
+                                             Speculative decoding accelerates autoregressive
+                                             large language model (LLM) inference by using
+                                             a lightweight draft model to propose candidate
+arXiv:2602.23881v2 [cs.LG] 1 Jun 2026
+
+
+
+
+                                             tokens that are then verified in parallel by the
+                                             target model. The speedup is significantly deter-
+                                             mined by the acceptance rate, yet standard train-
+                                             ing minimizes Kullback-Leibler (KL) divergence
+                                             as a proxy objective. While KL divergence and
+                                             acceptance rate share the same global optimum,
+                                             small draft models, having limited capacity, typi-
+                                             cally converge to suboptimal solutions where min-
+                                             imizing KL does not guarantee maximizing ac-
+                                             ceptance rate. To address this issue, we propose
+                                             LK losses, special training objectives that directly
+                                                                                                              Figure 1. Acceptance length τ vs maximum length K for EAGLE-
+                                             target acceptance rate. Comprehensive experi-                    3 draft models, trained using different objectives with Qwen3-
+                                             ments across four draft architectures and six tar-               235B-A22B-Instruct as a target model. The values were obtained
+                                             get models, ranging from 8B to 685B parameters,                  on the MT-Bench dataset with chain sampling at temperature = 1.
+                                             demonstrate consistent improvements in accep-
+                                             tance metrics across all configurations compared
+                                             to the standard KL-based training. We evaluate
+                                             our approach on general, coding and math do-                     2023; Chen et al., 2023) addresses this challenge through a
+                                             mains and report gains of up to 8-10% in average                 draft-then-verify paradigm: a lightweight draft model pro-
+                                             acceptance length. LK losses are easy to imple-                  poses multiple candidate tokens, which the target model then
+                                             ment, introduce no computational overhead and                    verifies in a single forward pass. This approach preserves
+                                             can be directly integrated into any existing spec-               the output distribution of the target model while achiev-
+                                             ulator training framework, making them a com-                    ing substantial speedups. The efficiency of this process is
+                                             pelling alternative to the existing draft training               largely determined by the acceptance rate – an expected
+                                             objectives.                                                      probability of a drafted token being accepted by the target
+                                                                                                              model.
+                                                                                                              A variety of draft model architectures implementing that
+                                        1. Introduction                                                       idea have emerged, including parallel prediction heads (Cai
+                                        Large language model (LLM) inference is fundamentally                 et al., 2024; Sandler et al., 2025), autoregressive draft heads
+                                        constrained by memory bandwidth rather than computa-                  with feature fusion (Li et al., 2024; 2025b), and multi-
+                                        tional throughput. The autoregressive nature of token gener-          token prediction modules that can be repurposed for spec-
+                                        ation requires sequential memory accesses that underutilize           ulation after training (DeepSeek-AI et al., 2024). These
+                                        modern accelerators, creating a critical bottleneck for de-           approaches commonly train draft models by minimizing
+                                        ployment at scale. Speculative decoding (Leviathan et al.,            Kullback-Leibler (KL) divergence between target and draft
+                                                                                                              distributions, treating distributional alignment as a proxy for
+                                           1
+                                             Nebius, Amsterdam, Netherlands. Correspondence to: Alexan-       acceptance rate optimization. At the global optimum draft
+                                        der Golubev <alex golubev@nebius.com>.                                matches target perfectly, so this proxy is exact: KL diver-
+                                        Proceedings of the 43 rd International Conference on Machine          gence reaches zero and acceptance rate reaches one. How-
+                                        Learning, Seoul, South Korea. PMLR 306, 2026. Copyright 2026          ever, draft models operate under severe capacity constraints,
+                                        by the author(s).                                                     typically having 1-5% of the target model parameters, and
+
+                                                                                                          1
+                           LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+inevitably converge to suboptimal solutions. At these subop-            MEDUSA (Cai et al., 2024) attaches parallel decoding heads
+timal points, minimizing KL divergence provides no guaran-              to the target model’s final layer to predict draft tokens in-
+tee of maximizing acceptance rate. Leviathan et al. (2023)              dependently from each other. This approach is computa-
+noted that greater improvements might be obtained via cus-              tionally efficient but implicitly assumes conditional inde-
+tom training procedures, including direct optimization of               pendence between the proposed tokens, which can degrade
+the draft model for the acceptance rate, yet this direction             performance for distant draft positions.
+has remained largely unexplored.
+                                                                        Other methods introduce autoregressive draft heads that also
+In this work, we propose two variants of LK losses 1 , train-           operate in the target model’s hidden state space. Wertheimer
+ing objectives that directly target acceptance rate. One of             et al. (2024) propose a multi-stage MLP speculator that
+them is motivated by the maximum likelihood methods,                    extends MEDUSA heads with the principles from recurrent
+directly optimizing the negative log-acceptance rate. The               networks. A more advanced EAGLE (Li et al., 2024; 2025b)
+other variant is a hybrid approach, which gradually shifts              family employs a shallow transformer model with a causal
+the focus from KL towards direct acceptance optimization                mask to better capture long-term dependencies between
+as training progresses, analogous to trust-region methods               draft tokens and their context. EAGLE-3 also enriches the
+that balance a stable surrogate objective against the true              input feature space of the speculator heads by fusing hidden
+optimization target. Both losses help improving average                 states from various intermediate layers of the target model.
+acceptance length, especially for longer draft sequences
+                                                                        A similar autoregressive design was recently adopted by
+(see Figure 1).
+                                                                        DeepSeek-V3 with its Multi-Token Prediction (MTP) mod-
+In summary, our contributions are as follows:                           ule (DeepSeek-AI et al., 2024). It predicts multiple draft
+                                                                        tokens during training, essentially serving as a native “draft
+   • We propose two loss variants for direct acceptance rate            head” that requires no separate post-training.
+     optimization in speculative decoding.                              In addition to architectural advances, some works address
+   • We demonstrate consistent improvements in accep-                   the problem of computational overhead in the LM heads
+     tance metrics across a number of target models and                 of the draft models. FR-Spec (Zhao et al., 2025) observed
+     draft architectures, empirically confirming that LK                that large token vocabularies of contemporary LLMs often
+     losses are both model- and architecture-agnostic.                  make the latency of LM heads dominate in the total latency
+                                                                        of the speculator heads, even in such powerful approaches
+   • We release our training datasets and draft model                   as EAGLE. FR-Spec addresses this issue by truncating the
+     weights to facilitate reproducibility and further re-              draft vocabulary to a small subset of high-frequency tokens
+     search 2 .                                                         learned on training data.
+
+                                                                        2.2. Training Methodologies for Draft Models
+2. Related Work
+                                                                        Knowledge Distillation. The problem of training specu-
+2.1. Draft Model Architectures
+                                                                        lators has been predominantly framed as the Knowledge
+Early works on speculative decoding utilized smaller,                   Distillation (KD). Within this paradigm, draft models are
+standalone versions of the target model as draft mod-                   students that approximate the teacher’s (i.e. target) output
+els (Leviathan et al., 2023; Chen et al., 2023). Although               distribution as closely as possible. The standard training
+straightforward to implement, such an approach usually suf-             objective has therefore been KL divergence, or equivalently
+fers from performance bottlenecks within the draft model.               cross-entropy (CE), between the target and draft distribu-
+Moreover, to achieve high acceptance rate it either needs a             tions.
+small pretrained language model (LM) from the same fam-
+                                                                        Some works experimented with combined objectives.
+ily or training from scratch on a sufficiently large corpus of
+                                                                        MEDUSA suggests mixing the KL loss with the LM objec-
+data.
+                                                                        tive for the target model to address the discrepancy between
+To mitigate these overheads, subsequent works integrated                its distribution and static training data. EAGLE (Li et al.,
+the drafting mechanism directly into the target model.                  2024) extends KL with regression loss on hidden states of
+   1
+                                                                        the last layer in an attempt to better match training and
+      The naming LK positions the loss as an alternative to KL          inference settings.
+divergence: standard approaches minimize KL as a proxy for
+acceptance rate, while LK objectives target acceptance directly.        Targeting Acceptance Rate. Some studies went beyond the
+The notation also connects to the DLK ≡ TV divergence in the            standard KD framework in terms of both training data and
+original speculative decoding paper (Leviathan et al., 2023).
+    2
+      Datasets: HuggingFace nebius/infinity-instruct-completions,       objectives. DistillSpec (Zhou et al., 2024) explores other
+Weights: HuggingFace nebius/lk-speculators.                             types of divergences, including reverse KL and total varia-
+
+                                                                    2
+                          LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+tion (TV) distance, as KD objectives for already pretrained           reverse KL divergence KL(q∥p) and Total Variation dis-
+LMs being used as external speculators. Although they note            tance
+that TV distance should theoretically be the right objective
+as it directly maximizes acceptance rate, they conclude that                                        1X
+                                                                                      TV(p, q) =        |pi − qi |.
+the choice of the divergence loss is highly dependent on                                            2 i
+the task and data being used for KD. AdaSPEC (Hu et al.,
+2025) further addresses the mismatch between standard KD
+objectives and speculative decoding efficiency through se-            The TV distance is of great interest for us due to its direct
+lective distillation strategies for standalone draft models. In       relation to acceptance rate via α = 1 − TV(p, q) (Leviathan
+contrast, our work focuses on native draft modules tightly            et al., 2023). Thus, maximization of acceptance is strictly
+integrated into target models and trained from scratch, rather        equivalent to minimization of TV whereas other divergences
+than on separately pretrained external drafters. Within this          serve only as proxy objectives. The gap between proxy and
+setting, we study whether the core training objective should          direct optimization becomes stark when model capacity is
+optimize token acceptance directly instead of proxy diver-            limited, which is demonstrated in Section 3.3.
+gence measures.                                                       Direct influence of TV on acceptance has been noticed and
+                                                                      employed in prior works (Zhou et al., 2024; Yin et al., 2024),
+3. Background and Motivation                                          providing competitive results compared to other training
+                                                                      objectives. However, in our setting draft model is initialized
+3.1. Speculative Decoding                                             randomly rather than from a pretrained language model. We
+In this paper we are working under the standard lossless              reveal why this distinction is critical in Section 4.1.
+speculative sampling setting. A draft model q proposes a
+sequence of tokens x1 , . . . , xK given the context c that are       3.3. Motivating Example
+later verified by the target model p in parallel. Each draft          An important property of the TV distance is its focus on the
+token xi in the sequence is accepted with the probability             tokens that constitute the major probability mass under the
+                                                                      target distribution (Ji et al., 2023). This is a major advantage
+                                                    
+                                     p(xi | c, x<i )
+        β(xi | c, x<i ) = min 1,                       ,              given the limited capacity of the draft model and its inability
+                                     q(xi | c, x<i )
+                                                                      to fully match the target distribution. Figure 2 illustrates
+where x<i = (x1 , . . . xi−1 ) is a prefix of the i-th draft          this with a simple example – fitting a single Gaussian to a
+token. Drafted tokens are verified in parallel and accepted           multi-modal Gaussian mixture distribution using different
+sequentially. The first rejected token terminates the accepted        divergences as loss functions. Green areas visualize density
+sequence, discarding all subsequent drafts.                           overlap, which in fact is equal to the acceptance rate if we
+The efficiency of speculative decoding is mainly driven               were applying speculative sampling algorithm to this toy
+by the acceptance rate defined as an expected acceptance              example (see Appendix C).
+probability for the i-th draft token                                  Forward KL divergence, being mode-covering, spreads prob-
+                                                                      ability mass broadly to avoid infinite penalties wherever the
+                                        
+       αi = Ex∼q(·|c,x<i ) β(x | c, x<i )
+             X
+                                                      (1)             target has support, resulting in suboptimal acceptance rate.
+          =       min (q(x | c, x ), p(x | c, x )) ,
+                                  <i             <i                   Reverse KL divergence exhibits the opposite failure mode,
+             x∈V                                                      underestimating uncertainty and collapsing to cover only
+where V is the vocabulary of tokens. In the following sec-            the dominant mode. In contrast, TV distance finds a quali-
+tions we omit the conditioning and subscripts for brevity             tatively different solution that maximizes the distributional
+wherever the context is clear. From the definition of α above         overlap, achieving substantially higher acceptance despite
+it follows that its global optimum is achieved at q = p.              using the same parametric family. This toy example high-
+                                                                      lights an important observation: when the draft cannot per-
+3.2. Divergence Losses                                                fectly match the target, the choice of objective determines
+                                                                      which compromises the optimization makes.
+Statistical divergences are defined as discrepancy measures
+between probability distributions (Amari & Nagaoka, 2000).
+As it is noted in Section 2.2, they are widely employed               4. Methodology
+as primary training objectives for draft models. The most             We propose training objectives that directly target accep-
+commonly used divergences (Zhou et al., 2024) include                 tance rate rather than using KL divergence as a proxy. Our
+forward KL divergence,                                                approach is grounded in gradient analysis that reveals fun-
+                                                                      damental differences in how various divergence measures
+                            X
+                KL(p∥q) =        pi log(pi /qi ),
+                              i
+                                                                      guide optimization.
+
+                                                                  3
+                            LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+
+
+
+Figure 2. Fitting a single Gaussian to a Gaussian mixture under different objectives. Top: Loss landscapes (log-scale) over parameters µ
+and σ. Bottom: Resulting distributions and overlap (green). KL divergence produces a mass-covering solution (α = 50.2%), reverse KL
+exhibits mode-seeking behavior (α = 50.8%), while TV maximizes overlap (α = 60.2%).
+
+
+
+
+4.1. Gradient Analysis of Divergence Losses                             each token is under- or over-predicted, the signal depends
+                                                                        only on the sign of the error, not its magnitude. A token
+Consider training a parametric draft model with logits zq
+                                                                        with qi slightly below pi receives the same sign signal as
+to match a target distribution p through minimization of
+                                                                        one severely under-predicted, which contrasts with KL di-
+divergence loss, where q = softmax(zq ). The choice of
+                                                                        vergence gradient. The TV loss landscape also contains
+the divergence type fundamentally determines optimization
+                                                                        non-differentiable points along the manifold {zq : qi = pi },
+dynamics through its gradient structure. Understanding
+                                                                        where gradients change discontinuously.
+that is especially important in case when training starts
+with randomly initialized parameters, which implies large               A more significant concern is gradient magnitude. For
+discrepancy between the draft and target distributions. In              randomly initialized draft models which spread q over a
+this section we explore two most relevant divergence losses,            large vocabulary√of size V , the gradient norm satisfies
+forward KL and TV.                                                      ∥∇zq TV∥ = O( k/V ) (see A.5). With typical vocabulary
+                                                                        sizes exceeding 100k, this yields extremely small gradients
+The forward KL divergence yields an elegant gradient with
+                                                                        at initialization. Together with ignorance of error magni-
+respect to the logits (see A.2 for derivations):
+                                                                        tude and the non-smooth loss landscape, these issues make
+                   ∇zq KL(p∥q) = q − p.                       (2)       pure TV optimization impractical for training from random
+                                                                        initialization.
+This gradient pushes each logit proportionally to the gap
+between predicted and target probabilities. At the early                4.2. Hybrid Objective with Adaptive Blending
+         the training the gradient magnitude ∥q − p∥ scales
+stage of √
+as O(1/ k) when p is concentrated on k tokens (see A.5),                The gradient analysis reveals a fundamental controversy. KL
+providing strong signal regardless of current alignment.                divergence creates smooth, well-conditioned optimization
+                                                                        landscapes but optimizes a proxy for the acceptance rate.
+The gradient of TV distance takes more sophisticated form               Conversely, directly minimizing TV distance targets the
+(see A.3)                                                               correct objective but suffers from vanishing gradients and
+                               1                                       non-smooth optimization surfaces. To benefit from both
+            ∇zq TV(p, q) =       q ⊙ s − Eq [s] ,          (3)
+                               2                                        advantages, we propose a hybrid objective that combines
+                                            P                           KL divergence with TV distance as follows:
+where si = sign(qi − pi ) and Eq [s] =         i qi si . While
+this gradient provides directional information about whether                LλLK (p, q) = λ · KL(p∥q) + (1 − λ) · TV(p, q).         (4)
+
+                                                                    4
+                          LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+With λ = 1 we recover standard KL training whilst setting           marginal likelihood as a training objective that clearly maxi-
+λ = 0 leads to pure TV optimization.                                mizes α, or more precisely
+The key insight is that these components serve complemen-                     Lα
+                                                                               LK (p, q) = − log α
+tary roles at different training stages. Early in training,                                      X
+                                                                                         = − log   min(p(x), q(x)).
+when q is far from p, the KL component provides smooth,
+                                                                                                  x∈V
+properly-scaled gradients that efficiently navigate the loss
+landscape. As alignment improves, the TV component takes            This objective looks appealing due to its simplicity, as it does
+over to directly optimize acceptance rate.                          not need a complex mixture of different losses with adaptive
+                                                                    weight scheduling to tackle optimization challenges.
+Adaptive schedule. To achieve the aforementioned be-
+havior, we propose the following schedule driven by the             In the degenerate case where p is a point mass, Lα
+                                                                                                                     LK reduces
+ongoing acceptance rate value:                                      to the standard negative log-likelihood (see Appendix B for
+                                                                   details).
+             λ = exp −η · sg[α] , η > 0,             (5)
+                                                                    Gradient behaviour. We derive in A.4 that
+where sg[·] denotes stop-gradient operation, preventing                                          1
+                                                                                    ∇zq Lα LK =    ∇z TV(p, q),                (6)
+backpropagation through λ. We compute λ independently                                           α q
+for each draft token position using aggregated values of α          which reveals a key insight – LαLK performs TV optimization
+across sequence and batch dimensions.                               with adaptive gradient scaling. The 1/α factor provides
+The proposed schedule satisfies the desired properties:             automatic amplification when acceptance is low (α → 0),
+λ → 1 when α → 0 (poor alignment), and λ converges                  addressing the vanishing gradient problem. The gradient
+to a small value when α → 1 (good alignment), smoothly              magnitude ∥∇zq Lα   LK ∥ matches the one of KL at the early
+transitioning from KL-dominated to TV-dominated opti-               stage of the training (see A.5), while the gradient direction
+mization as training progresses. In Section 6 we empirically        matches that of TV.
+confirm through ablation studies that such an adaptive sched-       We evaluate both Lα           λ
+                                                                                         LK and LLK empirically in Section 6,
+ule makes the hybrid objective superior to pure TV and KL           finding that both improve over pure TV and KL losses, with
+losses as well as to the fixed mixture of weights.                  the hybrid objective generally achieving stronger results.
+The hybrid objective with adaptive scheduling can be inter-
+preted through the lens of constrained optimization. When           4.4. Vocabulary Truncation
+α is small, large λ prioritizes KL minimization, establishing       EAGLE-3 uses a truncated vocabulary for its LM head as
+a region where the draft distribution q is sufficiently close       it is proposed in FR-Spec (Zhao et al., 2025), which sets
+to p for TV gradients to behave well. As α increases and λ          a large subset of draft probabilities to zero. This creates a
+decays, the objective shifts towards TV minimization while          fundamental problem in KL-based training: KL divergence
+the KL term acts as a soft constraint, maintaining distribu-        becomes infinite for tokens outside the draft vocabulary as
+tional proximity. This resembles the trust-region approach          qi = 0 and pi > 0. To overcome this challenge, we redefine
+used in policy optimization (Schulman et al., 2015):                standard target probabilities p = softmax(zp ), where zp are
+           min TV(p, q)     s.t.   KL(p∥q) ≤ δ,                     the target model logits, as p̃ = softmax(m ⊙ zp ), where the
+             q                                                      mask m sets logits of tokens outside the draft vocabulary
+                                                                    to −∞. However, this introduces another layer of approxi-
+where the adaptive schedule implicitly controls the effective
+                                                                    mation as now we optimize KL(p̃∥q) rather than KL(p∥q),
+constraint threshold δ based on current alignment quality.
+                                                                    making KL a proxy of a proxy.
+4.3. Likelihood-based Approach                                      In contrast, LK losses handle vocabulary truncation nat-
+                                                                    urally. From (1) it follows that tokens outside the draft
+A different interpretation of the acceptance rate comes from        vocabulary contribute min(pi , 0) = 0 to the acceptance rate
+its role in the speculative sampling algorithm highlighted          and therefore have no influence. Thus, no modification of
+in Section 3.1. By definition, β(x) is the conditional prob-        p is needed for Lα                                λ
+                                                                                      LK loss and TV component in LLK which
+ability of acceptance, given that token x was drafted, and          optimize acceptance rate with respect to the original target
+q(x) is the probability of drafting token x. Thus, we can           distribution rather than its approximation.
+interpret                 X
+                     α=        q(x) β(x).
+                         x∈V
+                                                                    5. Experimental Settings
+as the marginal probability of acceptance. Therefore, it            We evaluate LK losses across a diverse range of target mod-
+is natural to consider minimization of the negative log             els and draft architectures to assess their generality and
+
+                                                                5
+                         LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+practical impact.                                                   original full vocabulary to preserve compatibility with the
+                                                                    pretrained module.
+5.1. Target Models
+                                                                    5.3. Training Configuration
+Our experiments span six target models covering three or-
+ders of magnitude in parameter count. We include both               We construct the training corpus using 660K prompts from
+dense models, namely Llama-3.1-8B-Instruct (Grattafiori             Infinity-Instruct-0625 (Li et al., 2025a) and generating re-
+et al., 2024) and Llama-3.3-70B-Instruct, and mixture-              sponses with each target model listed above. This ensures
+of-experts (MoE) models, namely gpt-oss-20b, gpt-oss-               the draft model is trained on the same distribution it will
+120b, Qwen3-235B-A22B-Instruct (Yang et al., 2025) and              encounter during inference. All models are trained with the
+DeepSeek-V3 (DeepSeek-AI et al., 2024). This selection              input sequence length of 8K.
+allows us to test whether the benefits of LK losses extend to
+                                                                    We use batch size of 64 and learning rate 4 × 10−4 with
+different model scales and architectures.
+                                                                    cosine scheduling and 100 warmup steps. Following the
+                                                                    original speculative decoding literature, we use AdamW
+5.2. Draft Models                                                   optimizer with (β1 , β2 ) = (0.9, 0.95) and gradient clipping
+We evaluate four speculator architectures which are most            at 0.5. All draft models except DeepSeek-MTP are trained
+commonly present in industrial applications. For Llama-             from scratch for 10 epochs. For DeepSeek-V3, we initialize
+3.1-8B we train three architectures to enable direct com-           from the original MTP weights and fine-tune for 1 epoch.
+parison: EAGLE-3 (Li et al., 2025b), multi-stage MLP                We set temperature T = 1 to match our primary evaluation
+speculator (Wertheimer et al., 2024) and MEDUSA (Cai                setting.
+et al., 2024). For larger models (Llama-3.3-70B, gpt-oss,           We compare the following loss configurations: forward KL
+Qwen3), we train only EAGLE-3 with dense transformer                divergence KL(p∥q), negative log-acceptance loss Lα LK (Sec-
+block as the best-performing state-of-the-art architecture.         tion 4.3) and hybrid objective LλLK (Section 4.2) with the
+For DeepSeek-V3, we fine-tune the native MTP module.                adaptive scheduler and η = 3 unless stated otherwise.4 For
+All draft model architectures are trained with K = 6 specu-         Llama-3.1-8B with EAGLE-3 we additionally explore to-
+lative heads. EAGLE-3 shares weights across positions via           tal variation distance TV(p, q), LλLK with the fixed weight
+recurrence, while the MLP speculator and MEDUSA use                 λ = 0.5 and adaptive LλLK with η = 0.7, 1 and 10.
+fully independent heads at each position. The MTP module            All the losses are aggregated across draft heads with expo-
+retains its original MoE architecture and is initialized from       nential weight decay γ ∈ (0, 1], i.e., the n-th head receives
+the pretrained DeepSeek-V3 weights.                                 weight γ n−1 , prioritizing early positions which have the
+Rationale for MTP fine-tuning. While our method is                  largest impact on average acceptance length. In our exper-
+primarily designed for training draft heads from scratch,           iments we set γ = 0.8, following MEDUSA and EAGLE
+fine-tuning pretrained MTP modules addresses a comple-              configurations.
+mentary challenge. Released open-source weights include
+only the first MTP module, which was originally trained             5.4. Evaluation Protocol
+to predict the first token, yet reused autoregressively for
+                                                                    Inference Framework. We evaluate draft models using
+later ones. (Liu et al., 2026; Cai et al., 2025). This mis-
+                                                                    vLLM v0.11.0 (Kwon et al., 2023) with a patch that enables
+match causes sharp decline in acceptance rate across later
+                                                                    proper rejection sampling at non-zero temperatures.5 In the
+positions. Our adaptive λ scheduler naturally addresses this
+                                                                    original version, tokens are sampled greedily from the draft
+inconsistency. Early heads with fairly high acceptance re-
+                                                                    distribution regardless of temperature settings. Our modifi-
+ceive low λ, focusing on TV-driven adjustments within the
+                                                                    cation implements a theoretically correct rejection sampling
+trust region to further improve acceptance. Conversely, later
+                                                                    procedure from Leviathan et al. (2023). See Appendix D
+heads with degraded acceptance receive higher λ, providing
+                                                                    for a detailed analysis of how greedy draft sampling affects
+stronger KL guidance precisely where the MTP module was
+                                                                    acceptance rates.
+not explicitly trained.
+                                                                    Evaluation Datasets. We measure acceptance metrics
+Output vocabulary. EAGLE-3 draft models include a train-
+able unembedding matrix for next-token prediction. We                  4
+                                                                         For MEDUSA we use η = 10 as its acceptance rates improve
+adopt truncated vocabularies from RedHatAI speculators,3            slower during training compared to recurrent architectures. Larger
+using only the vocabulary definitions while training all the        η accelerates transition towards TV optimization to compensate.
+                                                                       5
+weights from scratch. For DeepSeek-MTP, we retain the                    Our patch builds upon https://github.com/
+                                                                    vllm-project/vllm/pull/20459. Equivalent stochastic
+   3
+       https://huggingface.co/RedHatAI                              sampling support was later integrated into upstream vLLM starting
+                                                                    from v0.18.0.
+
+
+                                                                6
+                           LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+on three benchmarks: multi-turn conversational prompts                 Table 1. Average acceptance length τ for LLaMA-3.1-8B-Instruct
+                                                                       with EAGLE-3, MEDUSA, and MLP draft models.
+MT-Bench (Zheng et al., 2023), code generation tasks
+HumanEval (Chen et al., 2021), and grade-school math                                               MT-Bench HumanEval GSM8K
+problems GSM8K (Cobbe et al., 2021). Unlike many                          Method    Loss              τ        τ        τ
+prior works that evaluate draft models on small subsets                                       Temperature=0
+of prompts (e.g. 80 samples in Li et al., 2025b), we evalu-
+ate on full datasets to obtain more reliable estimates of the             EAGLE-3 KL                 3.75       4.82       4.50
+                                                                                  TV                 2.81       3.42       3.34
+acceptance metrics.                                                               Lα                 3.77       4.82       4.55
+                                                                                    LK
+
+Sampling Configurations. We perform evaluations under                             LλLK , λ = 0.5     3.78       4.84       4.53
+two temperature settings: greedy decoding (T = 0) and                             LλLK , η = 0.7     3.79       4.88       4.54
+                                                                                  LλLK , η = 1       3.80       4.83       4.54
+stochastic sampling (T = 1). Our training objective di-
+                                                                                  LλLK , η = 3       3.84       4.89       4.57
+rectly optimizes acceptance probabilities under stochastic                        LλLK , η = 10      3.67       4.85       4.53
+sampling, making it the primary evaluation setting. We
+additionally report greedy decoding results to demonstrate                MEDUSA KL                  2.05       2.41       2.11
+                                                                                 LαLK                2.06       2.42       2.11
+generalization across different sampling regimes.                                LλLK , η = 10       2.07       2.44       2.13
+We evaluate all draft models using chain sampling rather                  MLP       KL               2.45       2.42       2.42
+than tree-based drafting (Cai et al., 2024) to isolate the con-                     LαLK             2.48       2.46       2.46
+tribution of the training objective from inference-time search                      LλLK , η = 3     2.48       2.83       2.46
+optimization. In widely used tree-based speculative decod-                                    Temperature=1
+ing methods, such as the EAGLE family, tree construction                  EAGLE-3 KL                 3.39       4.31       3.88
+is typically implemented as a heuristic inference-time pro-                       TV                 2.67       3.25       3.12
+cedure on top of a pretrained drafter rather than through a                       LαLK               3.50       4.48       3.98
+different drafter training objective. Since LK losses directly                    LλLK , λ = 0.5     3.35       4.36       3.95
+optimize per-position acceptance rates, improvements are                          LλLK , η = 0.7     3.53       4.45       3.98
+expected to transfer to any verification scheme that relies on                    LλLK , η = 1       3.51       4.47       3.96
+these acceptance probabilities.                                                   LλLK , η = 3       3.48       4.52       4.02
+                                                                                  LλLK , η = 10      3.34       4.51       4.03
+5.5. Metrics                                                              MEDUSA KL                  1.72       2.02       1.81
+                                                                                 LαLK                1.78       2.09       1.85
+We report the expected number of tokens generated per spec-                      LλLK , η = 10       1.85       2.22       1.92
+ulation round, computed as τ = K × ##accepted         tokens
+                                             drafted tokens + 1,          MLP       KL               2.13       2.16       2.16
+where K is the maximum draft length. Following standard                             LαLK             2.17       2.19       2.19
+convention (Leviathan et al., 2023), τ includes the bonus                           LλLK , η = 3     2.19       2.62       2.18
+token that is always sampled from the adjusted target dis-
+tribution after verification, ensuring at least one token is
+generated per round. This metric is the major driver of the
+speedup factor of speculative decoding and serves as our               6. Evaluation Results
+primary evaluation criterion.
+                                                                       We evaluate LK losses across all target models and draft
+We evaluate EAGLE-3 and DeepSeek-MTP with K = 7                        architectures described in Section 5 with the average accep-
+draft tokens, being consistent with the original EAGLE-3               tance length τ as the primary metric. See Appendix F for a
+training and evaluation setup. MEDUSA and MLP specula-                 detailed comparison between objectives and against public
+tor are evaluated with K = 6 since weights are not shared              HuggingFace checkpoints.
+between decoding heads in these architectures and genera-
+tion cannot be extended to longer drafts. We demonstrate               6.1. LK Losses across Draft Architectures
+in Figure 1 that LK losses improve τ over all values of K.
+                                                                       Tables 1 presents performance of different draft model archi-
+Additionally we report wall-clock speedup measured as the              tectures trained with various objectives for LLaMA-3.1-8B.
+ratio of tokens per second between speculative and vanilla             The KL baseline demonstrates strong results, but both types
+autoregressive decoding under the same target model and                of LK losses improve over it across all configurations and
+hardware configuration in Appendix F.                                  sampling temperatures.
+                                                                       Among LK configurations, the hybrid objective with adap-
+                                                                       tive scheduler achieves the highest acceptance lengths. The
+                                                                       likelihood-based objective also outperforms the KL baseline
+
+                                                                   7
+                           LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+Table 2. Average acceptance length τ for other target models under different speculative decoding methods. Values in parentheses denote
+relative improvement (%) of LλLK (η = 3) over KL in average acceptance length. MT: MT-Bench; HE: HumanEval; GSM: GSM8K.
+
+                                                        Temperature = 0                             Temperature = 1
+   Model                  Method/Loss      MT (τ ) HE (τ ) GSM (τ ) Mean (∆%) MT (τ ) HE (τ ) GSM (τ ) Mean (∆%)
+   LLaMA 3.1              EAGLE-3 KL         3.75     4.82       4.50          4.36       3.39     4.31      3.88         3.86
+   8B Instruct            EAGLE-3 LλLK       3.84     4.89       4.57       4.43 (+1.6)   3.48     4.52      4.02      4.01 (+3.9)
+   LLaMA 3.3              EAGLE-3 KL         4.01     5.18       5.16          4.78       3.76     4.86      4.89         4.50
+   70B Instruct           EAGLE-3 LλLK       4.00     5.21       5.21       4.81 (+0.5)   3.89     5.08      5.01      4.66 (+3.5)
+   GPT-OSS 20B            EAGLE-3 KL         3.31     3.07       4.01          3.46       3.12     2.89      3.51         3.17
+                          EAGLE-3 LλLK       3.35     3.11       4.00       3.49 (+0.9)   3.20     3.01      3.65      3.29 (+3.8)
+   GPT-OSS 120B           EAGLE-3 KL         2.81     2.47       3.00          2.76       2.53     2.27      2.57         2.46
+                          EAGLE-3 LλLK       2.86     2.51       3.06       2.81 (+1.8)   2.69     2.44      2.81      2.65 (+7.7)
+   Qwen3-235B-A22B- EAGLE-3 KL               3.33     4.65       4.76          4.25       2.96     4.09      4.27         3.77
+   Instruct-2507    EAGLE-3 LλLK             3.36     4.74       4.87       4.32 (+1.8)   3.18     4.42      4.65      4.08 (+8.2)
+   DeepSeek-V3-0324       MTP original       2.90     3.28       3.41          3.20       2.82     3.17      3.27         3.09
+   (685B)                 MTP KL             3.96     4.74       5.67          4.79       3.66     4.39      5.23         4.43
+                          MTP LλLK           4.00     4.77       5.72       4.83 (+0.8)   3.88     4.64      5.51      4.68 (+5.6)
+
+
+though with a smaller margin, particularly under greedy                 All EAGLE-3 models in this experiment consist of a single
+sampling. Yet if the scheduler decay is not optimal (η = 1),            dense transformer layer, while target models range from
+the difference between the two LK losses narrows consider-              32 layers (Llama-3.1-8B) to 94 layers (Qwen3-235B). The
+ably.                                                                   most significant improvements occur when targeting large
+                                                                        MoE models with much smaller dense draft architectures.
+Another important observation is that constant weights in
+                                                                        GPT-OSS 120B shows +7.7% improvement (compared to
+the hybrid objective (λ = 0.5) make it inferior to any other
+                                                                        +3.8% for GPT-OSS 20B) whilst Qwen3-235B achieves the
+LK setting. The advantage of the hybrid loss vs KL loss
+                                                                        largest gain of +8.2%. We hypothesize that the large rela-
+almost disappears, which confirms that curriculum behavior
+                                                                        tive difference in parameters and the architectural mismatch
+is necessary for effective training.
+                                                                        create capacity gaps that are difficult to overcome via KL
+Training with pure TV loss performs substantially worse                 divergence alone.
+than all other objectives. As derived in Section 4.1, TV
+                                                                        Another remarkable result is achieved for DeepSeek-V3
+gradients have severe optimization difficulties when the
+                                                                        with stochastic sampling. As it was stated in Section 5.2,
+draft distribution is far from the target. While TV training
+                                                                        released MTP was not trained primarily for predicting mul-
+converges to a meaningful solution, the resulting acceptance
+                                                                        tiple tokens ahead. Fine-tuning it with KL loss substantially
+lengths are far from being competitive. The hybrid approach
+                                                                        improves its performance, but LK loss pushes this bound
+addresses this pathology by using KL gradients to guide
+                                                                        even further with extra 5.6% gain. This result confirms
+optimization to the trust region.
+                                                                        that our approach is superior to KL not only when the draft
+A striking pattern emerges when comparing architectures                 distribution starts from random, but generally when the dis-
+of varying capacity. MEDUSA and MLP speculators with                    crepancy between the draft and the target is high.
+stochastic sampling show average improvements of 7.8%
+and 8.3% respectively across domains whereas EAGLE-3                    7. Conclusion
+sees 3.8% improvement on average. This aligns with our
+theoretical analysis: low-capacity draft models benefit more            A standard practice of training draft models for speculative
+from direct optimization of acceptance rate.                            decoding is minimizing KL divergence. It has the same
+                                                                        global optimum as acceptance rate, which typically can-
+6.2. Scalability across Target Model Sizes                              not be achieved with capacity-limited draft models. Our
+                                                                        approach addresses this gap through LK losses, training
+Table 2 compares performance of our best setting, the hybrid            objectives that directly target acceptance rate.
+LK loss with η = 3, against the baseline KL objective
+across target models ranging from 8B to 685B parameter.                 We demonstrate through a relevant example that optimiz-
+Our approach provides consistent improvement over KL,                   ing TV distance provides stronger results than any of the
+regardless of target model architecture and size.                       proxy objectives. Our theoretical analysis reveals caveats
+                                                                        in gradient-based TV minimization and establishes a solid
+
+                                                                  8
+                           LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+ground for formulating objectives that work in practice.               References
+Extensive experiments across six target models, ranging in             Amari, S.-i. and Nagaoka, H. Methods of Information Ge-
+size from 8B to 685B parameters, and four draft model ar-               ometry, volume 191 of Translations of Mathematical
+chitectures demonstrate that LK losses consistently improve             Monographs. American Mathematical Society and Ox-
+acceptance metrics. We observe gains up to 10% in average               ford University Press, Providence, RI, 2000.
+acceptance length across various task domains, with larger
+improvements for low-capacity architectures. Our approach              Cai, T., Li, Y., Geng, Z., Peng, H., Lee, J. D., Chen, D., and
+introduces no computational overhead during training and                 Dao, T. MEDUSA: Simple LLM inference acceleration
+integrates directly into existing speculator training pipelines          framework with multiple decoding heads. In Proceedings
+as a drop-in replacement for standard objectives.                        of the 41st International Conference on Machine Learn-
+                                                                         ing, volume 235 of ICML’24, pp. 5209–5235. PMLR,
+Limitations and future work. Our experiments demon-
+                                                                         2024.
+strate consistent gains from LK losses across target models
+and draft architectures, and several directions remain open
+                                                                       Cai, Y., Liang, X., Wang, X., Ma, J., Liang, H., Luo, J.,
+for further exploration of acceptance-oriented training. The
+                                                                         Zuo, X., Duan, L., Yin, Y., and Chen, X. FastMTP:
+present study focuses on a specific adaptive scheduler for
+                                                                         Accelerating LLM inference with enhanced multi-token
+the hybrid objective and uses a fixed exponential aggrega-
+                                                                         prediction. arXiv preprint arXiv:2509.18362, 2025.
+tion scheme across draft heads. Future work should explore
+alternative scheduler parameterizations, learnable or data-
+                                                                       Chen, C., Borgeaud, S., Irving, G., Lespiau, J.-B., Sifre,
+dependent per-head aggregation strategies, as well as the
+                                                                         L., and Jumper, J. Accelerating large language model
+sensitivity of the adaptive schedule to the order of aggrega-
+                                                                         decoding with speculative sampling. arXiv preprint
+tion. Ablating these alternatives would further clarify the
+                                                                         arXiv:2302.01318, 2023.
+internal mechanisms behind the hybrid objective.
+Our evaluation isolates the effect of the training objective           Chen, M., Tworek, J., Jun, H., Yuan, Q., Pinto, H. P. d. O.,
+under chain sampling and the standard sequential accep-                  Kaplan, J., Edwards, H., Burda, Y., Joseph, N., Brockman,
+tance logic. While improvements in per-position acceptance               G., Ray, A., Puri, R., Krueger, G., Petrov, M., Khlaaf,
+rates are expected to transfer to more complex inference                 H., Sastry, G., Mishkin, P., Chan, B., Gray, S., Ryder, N.,
+schemes, systematically verifying this is a natural next step.           Pavlov, M., Power, A., Kaiser, L., Bavarian, M., Winter,
+Evaluating LK-trained speculators under different draft con-             C., Tillet, P., Such, F. P., Cummings, D., Plappert, M.,
+struction strategies, such as tree-based sampling, and under             Chantzis, F., Barnes, E., Herbert-Voss, A., Guss, W. H.,
+alternative verification or acceptance mechanisms, such as               Nichol, A., Paino, A., Tezak, N., Tang, J., Babuschkin, I.,
+block verification, would broaden the picture.                           Balaji, S., Jain, S., Saunders, W., Hesse, C., Carr, A. N.,
+                                                                         Leike, J., Achiam, J., Misra, V., Morikawa, E., Radford,
+It would also be valuable to study the trade-off between
+                                                                         A., Knight, M., Brundage, M., Murati, M., Mayer, K.,
+training-data diversity and epoch count. Our setup uses a
+                                                                         Welinder, P., McGrew, B., Amodei, D., McCandlish, S.,
+large generated corpus with a fixed training schedule, but the
+                                                                         Sutskever, I., and Zaremba, W. Evaluating large language
+relative benefits of broader data coverage versus repeated
+                                                                         models trained on code. arXiv preprint arXiv:2107.03374,
+optimization over fewer samples are an open question. Fi-
+                                                                         2021.
+nally, direct optimization of the draft acceptance length τ , is
+another promising direction for aligning the objective even            Cobbe, K., Kosaraju, V., Bavarian, M., Chen, M., Jun, H.,
+more closely with practical speculative decoding speedups.               Kaiser, L., Plappert, M., Tworek, J., Hilton, J., Nakano,
+                                                                         R., Hesse, C., and Schulman, J. Training verifiers to solve
+Impact Statement                                                         math word problems. arXiv preprint arXiv:2110.14168,
+                                                                         2021.
+This paper presents work whose goal is to advance the field
+of Machine Learning, specifically improving the computa-               DeepSeek-AI, Liu, A., Feng, B., Xue, B., Wang, B., Wu,
+tional efficiency of large language model inference through              B., Lu, C., Zhao, C., Deng, C., Zhang, C., Ruan, C.,
+better training objectives for speculative decoding. There               et al. DeepSeek-V3 technical report. arXiv preprint
+are many potential societal consequences of our work, none               arXiv:2412.19437, 2024.
+of which we feel must be specifically highlighted here.
+                                                                       Grattafiori, A., Dubey, A., Jauhri, A., Pandey, A., Kadian,
+                                                                         A., Al-Dahle, A., Letman, A., Mathur, A., Schelten, A.,
+                                                                         Yang, A., Fan, A., et al. The Llama 3 herd of models.
+                                                                         arXiv preprint arXiv:2407.21783, 2024.
+
+                                                                   9
+                           LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+Hu, Y., Guo, J., Feng, X., and Zhao, T. AdaSPEC: Selective               Yin, M., Chen, M., Huang, K., and Wang, M. A theoretical
+  knowledge distillation for efficient speculative decoders.               perspective for speculative decoding algorithm. In Pro-
+  arXiv preprint arXiv:2510.19779, 2025.                                   ceedings of the 38th International Conference on Neural
+                                                                           Information Processing Systems, NIPS ’24, 2024. ISBN
+Ji, H., Ke, P., Hu, Z., Zhang, R., and Huang, M. Tailoring
+                                                                           9798331314385.
+   language generation models under total variation distance.
+   In The Eleventh International Conference on Learning                  Zhao, W., Pan, T., Han, X., Zhang, Y., Sun, A., Huang,
+   Representations, 2023. URL https://openreview.                          Y., Zhang, K., Zhao, W., Li, Y., Zhou, J., Zhou, H.,
+   net/forum?id=VELL0PlWfc.                                                Wang, J., Liu, Z., and Sun, M. FR-spec: Accelerat-
+                                                                           ing large-vocabulary language models via frequency-
+Kwon, W., Li, Z., Zhuang, S., Sheng, Y., Zheng, L., Yu,
+                                                                           ranked speculative sampling. In Che, W., Nabende, J.,
+ C. H., Gonzalez, J. E., Zhang, H., and Stoica, I. Efficient
+                                                                           Shutova, E., and Pilehvar, M. T. (eds.), Proceedings of
+ memory management for large language model serving
+                                                                           the 63rd Annual Meeting of the Association for Com-
+ with PagedAttention. In Proceedings of the 29th ACM
+                                                                           putational Linguistics (Volume 1: Long Papers), pp.
+ Symposium on Operating Systems Principles, SOSP ’23,
+                                                                           3909–3921, Vienna, Austria, July 2025. Association
+ pp. 611–626. ACM, 2023.
+                                                                           for Computational Linguistics. ISBN 979-8-89176-251-
+Leviathan, Y., Kalman, M., and Matias, Y. Fast inference                   0. doi: 10.18653/v1/2025.acl-long.198. URL https:
+  from transformers via speculative decoding. In Proceed-                  //aclanthology.org/2025.acl-long.198/.
+  ings of the 40th International Conference on Machine
+  Learning, ICML’23. JMLR.org, 2023.                                     Zheng, L., Chiang, W.-L., Sheng, Y., Zhuang, S., Wu, Z.,
+                                                                           Zhuang, Y., Lin, Z., Li, Z., Li, D., Xing, E. P., Zhang,
+Li, J., Du, L., Zhao, H., Zhang, B.-w., Wang, L., Gao, B.,                 H., Gonzalez, J. E., and Stoica, I. Judging LLM-as-a-
+  Liu, G., and Lin, Y. Infinity Instruct: Scaling instruc-                 judge with MT-Bench and Chatbot Arena. In Advances
+  tion selection and synthesis to enhance language models.                 in Neural Information Processing Systems, volume 36,
+  arXiv preprint arXiv:2506.11116, 2025a.                                  2023.
+Li, Y., Wei, F., Zhang, C., and Zhang, H. EAGLE: Specula-                Zhou, Y., Lyu, K., Rawat, A. S., Menon, A., Rostamizadeh,
+  tive sampling requires rethinking feature uncertainty. In                A., Kumar, S., Kagy, J.-F., and Agarwal, R. Distill-
+  International Conference on Machine Learning, 2024.                      Spec: Improving speculative decoding via knowledge
+                                                                           distillation. In The Twelfth International Conference
+Li, Y., Wei, F., Zhang, C., and Zhang, H. EAGLE-3: Scaling
+                                                                           on Learning Representations, 2024. URL https://
+   up inference acceleration of large language models via
+                                                                           openreview.net/forum?id=rsY6J3ZaTF.
+   training-time test. In Advances in Neural Information
+  Processing Systems, 2025b.
+Liu, X., Yu, J., Park, J., Stoica, I., and Cheung, A. Specula-
+  tive decoding: Performance or illusion? arXiv preprint
+  arXiv:2601.11580, 2026.
+Sandler, J., Christopher, J. K., Hartvigsen, T., and Fioretto, F.
+  SpecDiff-2: Scaling diffusion drafter alignment for faster
+  speculative decoding. arXiv preprint arXiv:2511.00606,
+  2025.
+Schulman, J., Levine, S., Abbeel, P., Jordan, M., and Moritz,
+  P. Trust region policy optimization. In Proceedings of
+  the 32nd International Conference on Machine Learning,
+  volume 37 of Proceedings of Machine Learning Research,
+  pp. 1889–1897. PMLR, 2015.
+Wertheimer, D., Rosenkranz, J., Parnell, T., Suneja, S., Ran-
+ ganathan, P., Ganti, R., and Srivatsa, M. Accelerating
+ production LLMs with combined token/embedding spec-
+ ulators. arXiv preprint arXiv:2404.19124, 2024.
+Yang, A., Li, A., Yang, B., Zhang, B., Hui, B., Wang, B., Li,
+  B., Wang, C., Yu, D., Huang, F., et al. Qwen3 technical
+  report. arXiv preprint arXiv:2505.09388, 2025.
+
+                                                                    10
+                          LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+A. Gradient Derivations
+This appendix provides complete derivations of the gradients presented in Section 4. Throughout, we consider distributions
+p (target, fixed) and q = softmax(zq ) (draft), where we optimize the logits zq .
+
+A.1. Softmax Jacobian
+The fundamental building block is the Jacobian of the softmax function:
+                                                        ∂qi
+                                                             = qi (δij − qj ),
+                                                       ∂zq,j
+where δij is the Kronecker delta.
+
+A.2. KL Divergence Gradient
+The forward KL divergence is
+                                                X              pi   X             X
+                                   KL(p∥q) =          pi log      =   pi log pi −   pi log qi .
+                                                  i
+                                                               qi   i             i
+
+Only the second term depends on zq . Taking derivatives:
+                                                ∂ KL     X pi ∂qi
+                                                      =−       ·
+                                                ∂zq,j    i
+                                                           qi ∂zq,j
+                                                         X pi
+                                                      =−       · qi (δij − qj )
+                                                         i
+                                                           qi
+                                                         X
+                                                      =−   pi (δij − qj )
+                                                                 i
+                                                                          X
+                                                          = −pj + qj          pi
+                                                                          i
+                                                          = qj − pj .
+
+Thus,
+                                                      ∇zq KL(p∥q) = q − p.
+
+A.3. Total Variation Distance Gradient
+The TV distance is
+                                                                     1X
+                                                  TV(p, q) =             |pi − qi |.
+                                                                     2 i
+                                    i −qi |
+Define si = sign(qi − pi ), then ∂|p∂q i
+                                            = si , and:
+
+                                               ∂ TV    1X
+                                                     =     si · qi (δij − qj )
+                                               ∂zq,j   2 i
+                                                                                           !
+                                                          1                   X
+                                                        =        sj qj − qj        si qi
+                                                          2                    i
+                                                            1
+                                                        =     qj (sj − Eq [s]) .
+                                                            2
+Thus,
+                                                                     1
+                                              ∇zq TV(p, q) =           q ⊙ (s − Eq [s]),
+                                                                     2
+where ⊙ denotes elementwise multiplication.
+
+                                                                     11
+                          LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+A.4. Negative Log Acceptance Rate Gradient
+For the loss Lα
+              LK = − log α:
+                                                       ∂Lα
+                                                         LK      1 ∂α
+                                                             =−
+                                                       ∂zq,j     α ∂zq,j
+                                                               1 ∂ TV
+                                                             =
+                                                               α ∂zq,j
+
+or in vector form:
+                                                                1
+                                                   ∇zq Lα
+                                                        LK =      ∇z TV(p, q).
+                                                                α q
+
+This key relationship shows that optimizing − log α is equivalent to optimizing TV with an adaptive learning rate that scales
+inversely with acceptance rate.
+
+A.5. Gradient Magnitude Analysis
+To understand gradient behavior in practice, we analyze a representative regime that captures early-stage draft model training.
+Let V denote the size of vocabulary V and let S ⊂ V denote the support set – the tokens with non-negligible probability
+under p. Consider a draft distribution q that is approximately uniform (qi ≈ 1/V ), representing a randomly initialized
+model, while the target p is concentrated on |S| = k ≪ V tokens (pi ≈ 1/k for i ∈ S, and pi ≈ 0 otherwise). This regime
+is relevant because target LLM distributions are typically peaked on few plausible tokens, while undertrained drafts spread
+mass across the vocabulary.
+KL gradient magnitude. For i ∈ S: (q − p)i ≈ 1/V − 1/k ≈ −1/k. For i ∈
+                                                                     / S: (q − p)i ≈ 1/V .
+
+                                                          1        1  1  1  1
+                                        ∥q − p∥2 ≈ k ·      2
+                                                              +V · 2 = +   ≈ .
+                                                          k       V   k V   k
+                   √
+Thus ∥∇ KL ∥ = O(1/ k).
+TV gradient magnitude. In this regime, si = −1 for i ∈ S (since qi < pi ) and si = +1 for i ∈
+                                                                                            / S. Thus Eq [s] ≈ 1 − 2k/V .
+                                          / S: (si − Eq [s])qi ≈ 2k/V 2 ≈ 0.
+For i ∈ S: (si − Eq [s])qi ≈ −2/V . For i ∈
+
+                                                                1       4   k
+                                                ∥∇ TV ∥2 ≈        · k · 2 = 2.
+                                                                4      V   V
+                 √
+Thus ∥∇ TV ∥ = O( k/V ), which vanishes for large V .
+Lα
+ LK gradient magnitude. In this regime, α ≈ k/V , so:
+
+                                                                       √
+                                                       1           V     k   1
+                                         ∥∇Lα
+                                            LK ∥ =       ∥∇ TV ∥ ≈   ·     =√ .
+                                                       α           k V        k
+                                                                       √
+The 1/α factor resolves TV’s vanishing gradient problem, restoring O(1/ k) magnitude in the diffuse-q regime, while
+directly targeting acceptance rate.
+Table 3 summarizes the gradient components in each region.
+
+                     Table 3. Gradient components for different losses in the diffuse-q, concentrated-p regime.
+
+                                             Loss    Gradient on S     Gradient off S
+                                             KL          −1/k              +1/V
+                                             TV          −1/V               ≈0
+                                             Lα
+                                              LK         −1/k              +1/V
+
+
+
+                                                                12
+                          LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+B. Connection to Negative Log-Likelihood
+We establish a relationship between Lα
+                                     LK and the standard negative log-likelihood (NLL) used in language model training.
+
+When the target distribution p is a point mass at token x∗ , i.e., p(x∗ ) = 1 and p(x) = 0 for x ̸= x∗ , the acceptance rate
+simplifies to:                            X
+                                     α=       min(pi , qi ) = min(1, q(x∗ )) = q(x∗ ).
+                                             i
+Therefore:
+                                                                        ∗
+                                                  Lα
+                                                   LK (p, q) = − log q(x ),
+
+which is precisely the negative log-likelihood of x∗ under q.
+
+C. Acceptance Rate as Densities Overlap
+Indeed, if we generalize (1) to continuous distributions we get
+                                                            Z ∞
+                                                       p(x)
+                                  α = Ex∼q min 1,            =     min(q(x), p(x))dx,
+                                                       q(x)     −∞
+
+which is exactly the total area under the minimum of both density curves.
+
+D. Rejection Sampling with Greedy Draft Tokens
+The standard speculative decoding algorithm (Leviathan et al., 2023) samples draft tokens from the draft distribution q
+and accepts them with probability min(1, p(x)/q(x)), where p is the target distribution. At non-zero temperatures, proper
+rejection sampling requires both the numerator p(x) and denominator q(x) to reflect the actual sampling distributions.
+However, the current vLLM implementation samples draft tokens greedily while still using temperature-scaled target logits
+in the acceptance criterion.
+Under greedy sampling, the draft always selects x∗ = arg maxx q(x), substituting q(x∗ ) = 1 in the acceptance criterion.
+The acceptance probability becomes:
+                                                          p(x∗ )
+                                                                
+                                         αgreedy = min 1,          = p(x∗ ).
+                                                            1
+When the target distribution is confident and agrees with the draft (high p(x∗ )), this works well. However, when the target
+distribution is diffuse, or we are in high-temperature sampling scenario, p(x∗ ) is small even if the draft correctly identifies
+the most likely token, leading to systematically low acceptance rates.
+                                                                     P
+Since our LK losses directly optimize the true acceptance rate α = x min(p(x), q(x)) under temperature = 1 evaluating
+with greedy draft sampling introduces a mismatch between training and evaluation objectives. Our vLLM patch ensures that
+evaluation faithfully measures the quantity we optimize during training.
+
+E. Draft Model Architecture Details
+For dense target models (Llama-3.1-8B, Llama-3.3-70B), EAGLE-3 draft heads consist of a single transformer layer that
+mirrors the target model’s architecture and processes the concatenation of token embeddings and aggregated hidden states
+from the target model’s intermediate layers. For MoE target models (gpt-oss-20b, gpt-oss-120b, Qwen3-235B), we use
+a single dense transformer block rather than an MoE block. The intermediate dimension of the feed-forward network is
+chosen as
+                                        dffn = num experts per tok × dexpert ,
+where num experts per tok is the number of experts activated per token and dexpert is the intermediate dimension
+of each expert’s FFN. For DeepSeek-V3, we fine-tune the native Multi-Token Prediction (MTP) module, maintaining its
+original architecture.
+MLP Speculator and MEDUSA use simpler architectures: both employ an MLP layer for each head. MEDUSA heads
+predict all positions in parallel from the same hidden state without token-level autoregression. Unlike EAGLE-3, which
+shares weights across positions, MLP speculator and MEDUSA train fully independent heads for each speculative position.
+
+                                                              13
+                           LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
+
+F. Full Experimental Results
+Table 4. Average acceptance length τ and end-to-end speedup relative to the baseline without speculative decoding. We evaluate
+speculative decoding methods trained with different objectives on MT-Bench, HumanEval, and GSM8K in a low-latency setting with
+batch size 1, and compare them against public Hugging Face checkpoints at temperatures T = 0 and T = 1. Type: Ours = models trained
+from scratch with the specified objective; HF = public HuggingFace checkpoints evaluated with the same inference pipeline.6
+
+    Model         Method    Type Setup                          Temperature = 0                               Temperature = 1
+                                                  MT-Bench HumanEval       GSM8K      MT-Bench HumanEval       GSM8K
+                                                  τ / speedup τ / speedup τ / speedup τ / speedup τ / speedup τ / speedup
+    LLaMA 3.1     EAGLE-3 Ours KL                 3.75 / 2.60     4.82 / 3.30     4.50 / 3.05   3.39 / 2.29     4.31 / 3.00     3.88 / 2.63
+    8B Instruct                TV                 2.81 / 1.96     3.42 / 2.39     3.34 / 2.28   2.67 / 1.83     3.25 / 2.26     3.12 / 2.11
+                               Lα
+                                LK                3.77 / 2.61     4.82 / 3.28     4.55 / 3.07   3.50 / 2.30     4.48 / 3.03     3.98 / 2.72
+                               LLK , λ = 0.5      3.78 / 2.63     4.84 / 3.32     4.53 / 3.07   3.35 / 2.36     4.36 / 3.03     3.95 / 2.68
+                               LλLK , η = 0.7     3.79 / 2.61     4.88 / 3.31     4.54 / 3.07   3.53 / 2.37     4.45 / 2.98     3.98 / 2.66
+                               LλLK , η = 1       3.80 / 2.64     4.83 / 3.33     4.54 / 3.08   3.51 / 2.30     4.47 / 3.01     3.96 / 2.70
+                               LλLK , η = 3       3.84 / 2.62     4.89 / 3.35     4.57 / 3.10   3.48 / 2.39     4.52 / 3.08     4.02 / 2.72
+                               LλLK , η = 10      3.67 / 2.53     4.85 / 3.33     4.53 / 3.06   3.34 / 2.30     4.51 / 3.01     4.03 / 2.72
+                            HF    RH-8B           3.08 / 2.09     3.90 / 2.65     3.57 / 2.37   2.67 / 1.83     3.36 / 2.31     3.08 / 2.05
+                                  YH-8B           3.44 / 2.42     4.37 / 3.07     3.84 / 2.65   2.97 / 2.22     3.75 / 2.50     3.21 / 2.14
+                                  ZK-8B           3.54 / 2.45     4.49 / 3.08     3.97 / 2.71   3.06 / 2.68     3.96 / 2.82     3.36 / 2.28
+    LLaMA 3.3 EAGLE-3 Ours KL                     4.01 / 3.01     5.18 / 3.87     5.16 / 3.78   3.76 / 2.82     4.86 / 3.66     4.89 / 3.61
+    70B Instruct           LαLK                   3.95 / 3.00     5.12 / 3.82     5.13 / 3.78   3.76 / 2.85     4.94 / 3.71     4.91 / 3.66
+                           LλLK , η = 3           4.00 / 2.98     5.21 / 3.87     5.21 / 3.83   3.89 / 2.89     5.08 / 3.77     5.01 / 3.69
+                            HF    RH-70B          3.11 / 2.35     3.99 / 2.99     3.62 / 2.68   2.88 / 2.10     3.62 / 2.69     3.29 / 2.44
+                                  YH-70B          3.13 / 2.50     3.96 / 3.12     3.76 / 2.90   2.77 / 2.07     3.49 / 2.63     3.34 / 2.50
+    GPT-OSS       EAGLE-3 Ours KL                 3.31 / 1.41     3.08 / 1.32     4.01 / 1.63   3.12 / 1.30     2.89 / 1.20     3.51 / 1.44
+    20B                        LαLK               3.27 / 1.41     3.07 / 1.32     4.03 / 1.63   3.28 / 1.35     2.97 / 1.25     3.65 / 1.49
+                               LλLK , η = 3       3.35 / 1.42     3.11 / 1.34     4.00 / 1.63   3.20 / 1.35     3.01 / 1.26     3.65 / 1.49
+                            HF    RH-20B†         2.90 / 1.26     2.70 / 1.17     3.49 / 1.45   2.63 / 1.12     2.43 / 1.04     3.00 / 1.26
+    GPT-OSS       EAGLE-3 Ours KL                 2.81 / 1.57     2.47 / 1.54     3.00 / 1.77   2.53 / 1.20     2.27 / 1.19     2.57 / 1.32
+    120B                       LαLK               2.80 / 1.59     2.51 / 1.57     3.08 / 1.82   2.67 / 1.49     2.39 / 1.45     2.78 / 1.63
+                               LλLK , η = 3       2.86 / 1.62     2.51 / 1.60     3.06 / 1.82   2.69 / 1.48     2.44 / 1.48     2.81 / 1.66
+    Qwen 3        EAGLE-3 Ours KL                 3.33 / 2.09     4.65 / 2.73     4.76 / 2.88   2.96 / 1.84     4.09 / 2.37     4.27 / 2.50
+    235B A22B                  LαLK               3.29 / 2.10     4.68 / 2.77     4.82 / 2.91   3.11 / 1.96     4.31 / 2.46     4.50 / 2.61
+    Instruct                   LλLK , η = 3       3.36 / 2.13     4.74 / 2.78     4.87 / 2.93   3.18 / 1.98     4.42 / 2.52     4.65 / 2.68
+                            HF    RH-235B         2.92 / 1.85     4.06 / 2.42     4.31 / 2.63   2.56 / 1.61     3.52 / 2.06     3.78 / 2.22
+                                  ZK-235B‡        3.06 / 1.94     4.54 / 2.70     4.90 / 2.94   2.64 / 1.63     4.03 / 2.36     4.43 / 2.57
+    DeepSeek      MTP       Ours KL               3.96 / 2.22     4.74 / 2.62     5.67 / 2.95   3.66 / 1.85     4.39 / 2.17     5.23 / 2.30
+    V3 0324                      LλLK             4.00 / 2.22     4.77 / 2.64     5.72 / 2.97   3.88 / 2.14     4.64 / 2.42     5.51 / 2.71
+                            HF    DS-685B         2.90 / 1.66     3.28 / 1.84     3.41 / 1.82   2.82 / 1.54     3.17 / 1.59     3.27 / 1.47
+†
+  Results are based on the checkpoint revision available at the time experiments were conducted, prior to the subsequent weight update
+released during the review period.
+‡
+  This checkpoint employs a wider MLP (24,576 vs. 12,288) and a smaller vocabulary (32k vs. 64k), yielding a slightly larger parameter
+count.
+
+
+  6
+    RH=RedHatAI, YH=yuhuili, ZK=zhuyksir, DS=deepseek-ai.
+RH-8B=Llama-3.1-8B-Instruct-speculator.eagle3; YH-8B=EAGLE3-LLaMA3.1-Instruct-8B;
+ZK-8B=EAGLE3-Llama-3.1-8B-Instruct;
+RH-70B=Llama-3.3-70B-Instruct-speculator.eagle3; YH-70B=EAGLE3-LLaMA3.3-Instruct-70B;
+RH-20B=gpt-oss-20b-speculator.eagle3; RH-235B=Qwen3-235B-A22B-Instruct-2507-speculator.eagle3;
+ZK-235B=EAGLE3-Qwen3-235B-A22B-Instruct-2507-FP8; DS-685B=DeepSeek-V3-0324.
+
+                                                                   14
+

@@ -1,0 +1,22 @@
+{
+  "tasks": {
+    "native_eval_humaneval_C1": {
+      "allowed_previous_launch": "native_eval_humaneval_C1_attempt00.json",
+      "previous_launch_sha256": "8db8ec9f74e00b8c74e9ced0830b68473b58e23b2a97378a3eb42d3488b673b1",
+      "failed_worker_log_sha256": "094c7534247841544f3e8d35d25c594cd1ec7643bc3f8a38b62dddcb0ed5f0b9",
+      "archive_audit": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head2_three_domains_C1_C32_20261012_v1/humaneval/C1/prior_attempts/foreign_smoke_20261012_1154/RECOVERY_AUDIT.json",
+      "retry_limit": 1,
+      "reason": "Reviewed foreign-process contamination; full smoke rerun on a fresh empty GPU"
+    },
+    "native_eval_humaneval_C32": {
+      "allowed_previous_launch": "native_eval_humaneval_C32_attempt00.json",
+      "previous_launch_sha256": "ef3e0ee96e93aed939dda55e852d944397efb379ff35b4357d40445e58f733b8",
+      "failed_worker_log_sha256": "a18334216f25aeead1e387ea4bf6e58029473a8858c559616b86f1580c5e6adb",
+      "archive_audit": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head2_three_domains_C1_C32_20261012_v1/humaneval/C32/prior_attempts/foreign_smoke_20261012_1154/RECOVERY_AUDIT.json",
+      "retry_limit": 1,
+      "reason": "Reviewed foreign-process contamination; full smoke rerun on a fresh empty GPU"
+    }
+  },
+  "native_source_and_weights_unchanged": true,
+  "utc": "2026-10-12T11:54:41.720595+00:00"
+}

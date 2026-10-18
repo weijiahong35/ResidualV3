@@ -1,0 +1,1854 @@
+{
+  "status": "verified",
+  "checks": [
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 15,
+      "cuts": [
+        15
+      ],
+      "math_tile_counts": [
+        375,
+        540,
+        60
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 12,
+      "cuts": [
+        12
+      ],
+      "math_tile_counts": [
+        300,
+        432,
+        48
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 10,
+      "cuts": [
+        10
+      ],
+      "math_tile_counts": [
+        250,
+        360,
+        40
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 0,
+      "cuts": [
+        15
+      ],
+      "math_tile_counts": [
+        375,
+        540,
+        60
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": -1,
+      "cuts": [
+        10
+      ],
+      "math_tile_counts": [
+        250,
+        360,
+        40
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 15,
+      "cuts": [
+        15
+      ],
+      "math_tile_counts": [
+        375,
+        540,
+        60
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 12,
+      "cuts": [
+        12
+      ],
+      "math_tile_counts": [
+        300,
+        432,
+        48
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 10,
+      "cuts": [
+        10
+      ],
+      "math_tile_counts": [
+        250,
+        360,
+        40
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 0,
+      "cuts": [
+        15
+      ],
+      "math_tile_counts": [
+        375,
+        540,
+        60
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": -1,
+      "cuts": [
+        10
+      ],
+      "math_tile_counts": [
+        250,
+        360,
+        40
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 7,
+      "T": 0,
+      "forced_cutoff": 15,
+      "cuts": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "math_tile_counts": [
+        375,
+        540,
+        420
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 7,
+      "T": 0,
+      "forced_cutoff": 12,
+      "cuts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "math_tile_counts": [
+        300,
+        432,
+        336
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 7,
+      "T": 0,
+      "forced_cutoff": 10,
+      "cuts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "math_tile_counts": [
+        250,
+        360,
+        280
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 7,
+      "T": 0,
+      "forced_cutoff": 0,
+      "cuts": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "math_tile_counts": [
+        375,
+        540,
+        420
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 7,
+      "T": 0,
+      "forced_cutoff": -1,
+      "cuts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "math_tile_counts": [
+        250,
+        360,
+        280
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 7,
+      "T": 1,
+      "forced_cutoff": 15,
+      "cuts": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "math_tile_counts": [
+        375,
+        540,
+        420
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 7,
+      "T": 1,
+      "forced_cutoff": 12,
+      "cuts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "math_tile_counts": [
+        300,
+        432,
+        336
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 7,
+      "T": 1,
+      "forced_cutoff": 10,
+      "cuts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "math_tile_counts": [
+        250,
+        360,
+        280
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 7,
+      "T": 1,
+      "forced_cutoff": 0,
+      "cuts": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "math_tile_counts": [
+        375,
+        540,
+        420
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 7,
+      "T": 1,
+      "forced_cutoff": -1,
+      "cuts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "math_tile_counts": [
+        250,
+        360,
+        280
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 18,
+      "T": 0,
+      "forced_cutoff": 15,
+      "cuts": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "math_tile_counts": [
+        750,
+        1080,
+        1080
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 18,
+      "T": 0,
+      "forced_cutoff": 12,
+      "cuts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "math_tile_counts": [
+        600,
+        864,
+        864
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 18,
+      "T": 0,
+      "forced_cutoff": 10,
+      "cuts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "math_tile_counts": [
+        500,
+        720,
+        720
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 18,
+      "T": 0,
+      "forced_cutoff": 0,
+      "cuts": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "math_tile_counts": [
+        750,
+        1080,
+        1080
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 18,
+      "T": 0,
+      "forced_cutoff": -1,
+      "cuts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "math_tile_counts": [
+        500,
+        720,
+        720
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 18,
+      "T": 1,
+      "forced_cutoff": 15,
+      "cuts": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "math_tile_counts": [
+        750,
+        1080,
+        1080
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 18,
+      "T": 1,
+      "forced_cutoff": 12,
+      "cuts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "math_tile_counts": [
+        600,
+        864,
+        864
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 18,
+      "T": 1,
+      "forced_cutoff": 10,
+      "cuts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "math_tile_counts": [
+        500,
+        720,
+        720
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 18,
+      "T": 1,
+      "forced_cutoff": 0,
+      "cuts": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "math_tile_counts": [
+        750,
+        1080,
+        1080
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 18,
+      "T": 1,
+      "forced_cutoff": -1,
+      "cuts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "math_tile_counts": [
+        500,
+        720,
+        720
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 15,
+      "cuts": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "math_tile_counts": [
+        1125,
+        1620,
+        2400
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 12,
+      "cuts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "math_tile_counts": [
+        900,
+        1296,
+        1920
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 10,
+      "cuts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "math_tile_counts": [
+        750,
+        1080,
+        1600
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 0,
+      "cuts": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "math_tile_counts": [
+        1125,
+        1620,
+        2400
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": -1,
+      "cuts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "math_tile_counts": [
+        750,
+        1080,
+        1600
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 15,
+      "cuts": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "math_tile_counts": [
+        1125,
+        1620,
+        2400
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 12,
+      "cuts": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "math_tile_counts": [
+        900,
+        1296,
+        1920
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 10,
+      "cuts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "math_tile_counts": [
+        750,
+        1080,
+        1600
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 0,
+      "cuts": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "math_tile_counts": [
+        1125,
+        1620,
+        2400
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": -1,
+      "cuts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "math_tile_counts": [
+        750,
+        1080,
+        1600
+      ],
+      "checks": {
+        "logits": true,
+        "tokens": true,
+        "previous": true,
+        "actual_verifier_q": true,
+        "streams_exact": true
+      }
+    }
+  ],
+  "timings": [
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 15,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 2.054144032796224
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 15,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 4.734925842285156
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 15,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 3.466100311279297
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 12,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 2.053597895304362
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 12,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 4.6561426798502605
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 12,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 3.433691660563151
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 10,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 2.051720555623372
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 10,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 4.598782857259114
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 10,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 3.410347747802734
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 0,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 2.051413345336914
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 0,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 4.740073649088542
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": 0,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 3.4675252278645834
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": -1,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 2.051959482828776
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": -1,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 4.5995020548502605
+    },
+    {
+      "n": 1,
+      "T": 0,
+      "forced_cutoff": -1,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 3.4098688761393228
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 15,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 2.097459157307943
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 15,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 4.78700917561849
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 15,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 3.478155771891276
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 12,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 2.0948992411295575
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 12,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 4.695371500651041
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 12,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 3.445561726888021
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 10,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 2.09704958597819
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 10,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 4.645886739095052
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 10,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 3.420537567138672
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 0,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 2.0968106587727866
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 0,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 4.7869517008463545
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": 0,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 3.481659698486328
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": -1,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 2.0975616455078123
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": -1,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 4.637250264485677
+    },
+    {
+      "n": 1,
+      "T": 1,
+      "forced_cutoff": -1,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 3.420770009358724
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 15,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 6.507383219401041
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 15,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 10.662422688802083
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 15,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 9.015479532877604
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 12,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 6.5130152384440105
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 12,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 10.44923807779948
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 12,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 8.983160400390625
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 10,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 6.507554117838541
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 10,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 10.346119181315105
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 10,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 8.96668701171875
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 0,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 6.511684163411458
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 0,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 10.616990152994791
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": 0,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 9.024619547526042
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": -1,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 6.509840901692709
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": -1,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 10.347788492838541
+    },
+    {
+      "n": 40,
+      "T": 0,
+      "forced_cutoff": -1,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 8.960602823893229
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 15,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 7.259682210286458
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 15,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 11.453585815429687
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 15,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 9.734383138020833
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 12,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 7.2655186971028645
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 12,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 11.249262491861979
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 12,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 9.695497639973958
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 10,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 7.268658955891927
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 10,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 11.14060567220052
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 10,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 9.679045613606771
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 0,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 7.266918436686198
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 0,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 11.408579508463541
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": 0,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 9.730496215820313
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": -1,
+      "mode": "FULL15",
+      "head_and_actual_sampling_ms": 7.263334147135416
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": -1,
+      "mode": "SEQUENTIAL",
+      "head_and_actual_sampling_ms": 11.132968139648437
+    },
+    {
+      "n": 40,
+      "T": 1,
+      "forced_cutoff": -1,
+      "mode": "PIPELINE",
+      "head_and_actual_sampling_ms": 9.685063680013021
+    }
+  ],
+  "gpu_uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+  "graph_auxiliary_export_checked": true,
+  "limitations": [
+    "Synthetic state timings are not native service TPS.",
+    "Launch slots and full preparation remain. C40 savings depend on fully inactive16-row tiles."
+  ],
+  "utc": "2026-10-10T14:15:38.581148+00:00"
+}

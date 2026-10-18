@@ -1,0 +1,10 @@
+{
+  "pid": 352126,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/activation_memory_timing_20261008_v1/controller.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/activation_memory_timing_20261008_v1"
+  ]
+}

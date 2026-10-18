@@ -1,0 +1,10 @@
+{
+  "pid": 3281218,
+  "body_trainable_parameters": 1048630528,
+  "head_trainable_parameters": 4353537,
+  "target_frozen": true,
+  "model_dtype": "torch.bfloat16",
+  "initialization": "same downloaded nonthinking DFlash, same random no-soft3 head seed; no previous trained repair checkpoint",
+  "allocated_bytes": 9126929408,
+  "utc": "2026-10-07T13:09:36.815177+00:00"
+}

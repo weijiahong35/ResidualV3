@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "panel_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_epoch_learning_gpu5_20261001/combined.jsonl",
+  "panel_sha256": "19cd6ce02ea571942bb51d6dac08ac9766fc3832e2c810d31080588048667fb1",
+  "training_parent_path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/ablation_v1/nosoft_2layer_v1/runtime_bundle/assets/panels/train.jsonl",
+  "training_parent_sha256": "705196d6d1d6b71235d6af7944b94e0bd472a2e9b119cb81be3117938a6a31b5",
+  "train_source_indices": [
+    8586,
+    9742,
+    1982,
+    4171,
+    1615,
+    2754,
+    6973,
+    745,
+    8810,
+    3465,
+    7819,
+    8058,
+    611,
+    9051,
+    5457,
+    2459
+  ],
+  "dev_parent_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_direction_pairs_gpu5_20261001/combined.jsonl",
+  "dev_parent_sha256": "c634e531369bd253799a5957e1f74e6928a0371ed31cbb8b625c56a6ce1c796c",
+  "train_selection": "16 lowest SHA256(epoch-learning-v1:+group_key) from original train128; no outcome selection",
+  "train_anchors": "4 deterministic hash-selected positions from intersection of all3 reconstructed training epoch anchor sets; verify historical anchor-token and answer-token hashes before use; fail if fewer than4",
+  "dev_anchors": "same4 anchors and seeds as previous16 dev prompts",
+  "checkpoints": {
+    "1": {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_2layer_C1_C40_gpu5_20260930/N_no_soft_2layer/training/EMBEDDING/epoch_01.safetensors",
+      "sha256": "a36a3387243adebc4c67ceb7ac21cb36b265de25b864d50305b1e5048063f5a0"
+    },
+    "2": {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_2layer_C1_C40_gpu5_20260930/N_no_soft_2layer/training/EMBEDDING/epoch_02.safetensors",
+      "sha256": "a474c9de2bbd9d38da71fcb52b53d6cc1881f67939c05d26d557d1e531bd5749"
+    },
+    "3": {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_2layer_C1_C40_gpu5_20260930/N_no_soft_2layer/training/EMBEDDING/epoch_03.safetensors",
+      "sha256": "bcc391b88e546ab4e45189e45e624a06045c53948e81e584603aa70873467a2d"
+    }
+  },
+  "metrics_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_2layer_C1_C40_gpu5_20260930/N_no_soft_2layer/training/EMBEDDING/metrics.jsonl",
+  "metrics_sha256": "1ca9c001f808ec833debaf90037431b13fa6af9d3b333dd35a916cd2a78f1697",
+  "confirmation_evaluated": false
+}

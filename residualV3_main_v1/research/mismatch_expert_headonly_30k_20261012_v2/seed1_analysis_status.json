@@ -1,0 +1,7 @@
+{
+  "status": "failed_or_checkpointed_stop",
+  "pid": 2429888,
+  "physical_gpu": 1,
+  "error": "TypeError(\"can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.\")",
+  "utc": "2026-10-12T09:55:35.616017+00:00"
+}

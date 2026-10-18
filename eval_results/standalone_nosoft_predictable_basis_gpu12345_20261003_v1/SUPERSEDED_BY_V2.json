@@ -1,0 +1,5 @@
+{
+  "effective_root": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2",
+  "reason": "GPU1 became occupied during startup; incorrect sibling cleanup in v1 fixed in independent v2",
+  "no_new_heads_trained": true
+}

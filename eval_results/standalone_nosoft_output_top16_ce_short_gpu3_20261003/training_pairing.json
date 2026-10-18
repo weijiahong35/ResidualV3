@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "matched_updates": 384,
+  "all_anchor_answer_hashes_match_old_N": true,
+  "all_initial_tensor_hashes_match_old_N": true,
+  "all_fresh_reset_verified": true,
+  "baseline_retrained": false,
+  "baseline_remeasured": false,
+  "ce_positions": 4100880,
+  "ce_covered": 3776627,
+  "utc": "2026-10-03T04:57:43.306310+00:00"
+}

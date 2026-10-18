@@ -1,0 +1,10 @@
+当前三层修复头诊断：参数逐张量核对 + 分段GPU计时 + 同权重跳层。
+总参数4353537，每个SwiGLU 592128，未修改/删除任何正式权重或原证据。
+完整头FULL=111，SKIP3=110，SKIP2=101，SKIP23=100；模型保留三层全部参数，运行时绕过指定残差块，不是重训的一层/两层头。
+C1=200、C40=1319，固定GSM8K nonthinking，T0/T1，block16，max输出2096，context4096。
+只在空卡启动，分别C1/C40/独立profile用一张卡；额外进程记录，不杀别人。
+先smoke核对Graph/q/实际前驱；FULL的真实状态诊断只保存标量：各层残差幅度、固定前驱下跳层输出变化、分段计时。
+正式窗口测真实递推接受长度，区分“层参与计算”和“层提高接受”。
+人工输入组件计时component_profile.json，不包含DFlash本体/raw LM/target验证/HTTP；真实状态组件计时在C1/C40的formal_smoke/round_1/FULL/layer_effects_N*_T*.json；事件有开销，不插事件的完整头时间另列。
+正式日志C1/single_card_C1_formal.log与C40/single_card_C40_formal.log；最终RESULTS_CN.txt。
+hidden/logits只保留内存，诊断不写持久hidden/logit缓存。单正式轮和已使用开发面板。

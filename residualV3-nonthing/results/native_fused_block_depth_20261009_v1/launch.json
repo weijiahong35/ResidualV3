@@ -1,0 +1,10 @@
+{
+  "pid": 4157800,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/native_fused_block_depth_20261009_v1/controller.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_fused_block_depth_20261009_v1"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "pid": 2602985,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-u",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/native_oracle_pair_v1/launch.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_native_oracle_pair_anygpu_20261001",
+    "--execute"
+  ]
+}

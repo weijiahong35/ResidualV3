@@ -1,0 +1,265 @@
+{
+  "status": "complete",
+  "criterion": "measured end-to-end seconds per paired pack",
+  "faster_measured_variant": "dp2_fast_pack",
+  "dp1": {
+    "seconds_per_paired_pack": 3.815444380044937,
+    "middle20_seconds_per_paired_pack": 3.876852011680603,
+    "first24_same_historical_packs_seconds": 3.8620771765708923,
+    "means": {
+      "joint": {
+        "total_update_seconds": 3.8144606423253813,
+        "shared_queue_wait_seconds": 0.932052049630632,
+        "host_pin_seconds": 0.000561815065642198,
+        "h2d_wall_seconds": 0.20578356638240317,
+        "body_forward_wall": 0.41360192086237174,
+        "projection_wall": 0.22607621760107577,
+        "head_forward_loss_wall": 0.142328911072885,
+        "head_backward_wall": 0.24362209695391357,
+        "body_backward_wall": 1.1484241639263928,
+        "clip_wall": 0.009347142418846488,
+        "optimizer_wall": 0.48085526198459166,
+        "compute_without_queue_and_h2d_seconds": 2.664255714820077
+      },
+      "body": {
+        "total_update_seconds": 3.80109238352937,
+        "shared_queue_wait_seconds": 1.226931034354493,
+        "host_pin_seconds": 0.0005570385449876388,
+        "h2d_wall_seconds": 0.20592646952718496,
+        "body_forward_wall": 0.4072108184918761,
+        "projection_wall": 0.21953725845863423,
+        "head_forward_loss_wall": 0.008552562911063433,
+        "head_backward_wall": 0.11761635115059714,
+        "body_backward_wall": 1.1270324670088787,
+        "clip_wall": 0.009001514408737421,
+        "optimizer_wall": 0.46830802752325934,
+        "compute_without_queue_and_h2d_seconds": 2.3572589999530464
+      }
+    },
+    "measured_packs": 24,
+    "updates": 32,
+    "peak_allocated_gib": {
+      "joint": 45.57129383087158,
+      "body": 30.542861461639404
+    },
+    "producer_means": {
+      "allocate_shared_seconds": 0.2639732672832906,
+      "fetch_fill_seconds": 3.3796554391738027,
+      "producer_wall_seconds": 3.6436287064570934
+    },
+    "request_means": {
+      "rpc_seconds": 3.815130895209622,
+      "lock_wait_seconds": 2.1035849987751356,
+      "reader_wait_seconds": 0.10628995130596765,
+      "transfer_seconds": 0.040707585940364215,
+      "check_seconds": 0.24961404181349187,
+      "copy_seconds": 1.0941866860026182e-05,
+      "total_seconds": 6.4105550443942105
+    },
+    "requests_read_and_deleted": 2243,
+    "full_pack_transport_gate": {
+      "status": "passed",
+      "fields": [
+        "ids",
+        "docs",
+        "positions",
+        "eligible",
+        "aux",
+        "final"
+      ],
+      "input_tokens": 65249,
+      "all_hidden_and_metadata_bitwise_equal": true,
+      "online_requests_once": true,
+      "utc": "2026-10-07T16:34:35.949577+00:00"
+    }
+  },
+  "dp2": {
+    "seconds_per_paired_pack": 3.251720815896988,
+    "middle20_seconds_per_paired_pack": 3.3363462567329405,
+    "first24_same_historical_packs_seconds": 3.4070135056972504,
+    "means": {
+      "joint": {
+        "total_update_seconds": 3.2508443516368666,
+        "shared_queue_wait_seconds": 0.3644750457412253,
+        "host_pin_seconds": 0.0005756556832542022,
+        "h2d_wall_seconds": 0.20131883250238994,
+        "body_forward_wall": 0.4142810309616228,
+        "projection_wall": 0.22644375800155103,
+        "head_forward_loss_wall": 0.1422285370839139,
+        "head_backward_wall": 0.2437009196728468,
+        "body_backward_wall": 1.1547310478830088,
+        "clip_wall": 0.009400420356541872,
+        "optimizer_wall": 0.48185446656619507,
+        "compute_without_queue_and_h2d_seconds": 2.6726401805256805
+      },
+      "body": {
+        "total_update_seconds": 3.2146466673972705,
+        "shared_queue_wait_seconds": 0.6432781065038095,
+        "host_pin_seconds": 0.0005402672880639633,
+        "h2d_wall_seconds": 0.20125173738536736,
+        "body_forward_wall": 0.40694914540896815,
+        "projection_wall": 0.21986306994222105,
+        "head_forward_loss_wall": 0.008569242743154367,
+        "head_backward_wall": 0.11772288242354989,
+        "body_backward_wall": 1.1285400531099488,
+        "clip_wall": 0.00904876102382938,
+        "optimizer_wall": 0.4683613501644383,
+        "compute_without_queue_and_h2d_seconds": 2.3590545048161102
+      }
+    },
+    "measured_packs": 24,
+    "updates": 32,
+    "peak_allocated_gib": {
+      "joint": 45.57129383087158,
+      "body": 30.542861461639404
+    },
+    "producer_means": {
+      "allocate_shared_seconds": 0.046710285901402436,
+      "fetch_fill_seconds": 2.9120467517059296,
+      "producer_wall_seconds": 2.958757037607332
+    },
+    "request_means": {
+      "rpc_seconds": 0.4236842605052412,
+      "lock_wait_seconds": 0.15609959675380283,
+      "reader_wait_seconds": 0.005694080309421688,
+      "transfer_seconds": 0.0295831282314609,
+      "check_seconds": 0.19925318515518656,
+      "copy_seconds": 1.0010458751549637e-05,
+      "total_seconds": 0.8618230206540625
+    },
+    "requests_read_and_deleted": 2243,
+    "full_pack_transport_gate": {
+      "status": "passed",
+      "fields": [
+        "ids",
+        "docs",
+        "positions",
+        "eligible",
+        "aux",
+        "final"
+      ],
+      "input_tokens": 65249,
+      "all_hidden_and_metadata_bitwise_equal": true,
+      "online_requests_once": true,
+      "utc": "2026-10-07T16:38:23.079536+00:00"
+    }
+  },
+  "dp2_time_reduction_percent": 14.77478133598975,
+  "dp2_throughput_increase_percent": 17.33616125320543,
+  "historical_old_dp1": {
+    "seconds": 4.315259724855423,
+    "current_dp1_same24_seconds": 3.8620771765708923,
+    "scope": "historical reference with same first24inputs/anchors;32pack run has different prefetch tail; not a pure causal ablation"
+  },
+  "anchors": 1536,
+  "head_chunk": 1536,
+  "pack_tokens": 65536,
+  "prediction_positions": 15,
+  "updates_per_pack": 1,
+  "head_loss": "CE weighted by detached D-PACE prefix + OUTPUT",
+  "body_loss": "raw CE weighted by detached D-PACE prefix",
+  "same_loss_optimizer_initialization_and_learner_gpus": true,
+  "same_inputs_and_anchors": true,
+  "source_sha_match": true,
+  "transport_lifetime_gate": {
+    "status": "passed",
+    "cpu_lifetime_cases": [
+      {
+        "tokens": 1,
+        "hidden_after_unlink_bitwise_equal": true,
+        "packed_aux_and_final_bitwise_equal": true
+      },
+      {
+        "tokens": 37,
+        "hidden_after_unlink_bitwise_equal": true,
+        "packed_aux_and_final_bitwise_equal": true
+      },
+      {
+        "tokens": 4096,
+        "hidden_after_unlink_bitwise_equal": true,
+        "packed_aux_and_final_bitwise_equal": true
+      },
+      {
+        "tokens": 17,
+        "hidden_after_unlink_bitwise_equal": true,
+        "packed_aux_and_final_bitwise_equal": true
+      }
+    ],
+    "head_loss_optimizer_and_body_math_sources_unchanged": [
+      "optimized_repair.py",
+      "combined_ce_tv.py",
+      "joint_features.py",
+      "joint_model.py",
+      "losses.py",
+      "fused_kernels.py",
+      "host_pipeline.py",
+      "concurrent_driver.py"
+    ],
+    "prior_full1536_online_gradient_gate": "residualV3-nonthing/results/head_forward_backward_optimization_20261007_v1/optimized/joint/full1536_online_gradient_gate.json",
+    "no_hidden_logits_saved": true,
+    "temporary_files_removed": true
+  },
+  "changes": [
+    "CPU mmap tensor owns storage after unlink; eliminate complete hidden clone",
+    "broker Torch threads4 to1",
+    "file writer completion lock polling100ms to10ms"
+  ],
+  "flatten_storage": "experiment showed existing flatten is a view; no redundant flatten copy",
+  "dp_comparison": "same improved CPU transport; teacher TP1/DP1 versus TP1/DP2; two unchanged independent learners",
+  "process_audit": {
+    "dp1_fast_pack": {
+      "known_pids": [
+        254184,
+        255116,
+        269192,
+        269193
+      ],
+      "unattributed_process_samples": [],
+      "owned_processes_on_excluded_gpus": [],
+      "sampled_nvidia_peak_gib": {
+        "3": 77.3642578125,
+        "4": 52.8330078125,
+        "5": 40.2060546875
+      },
+      "teacher_gpu_indices": [
+        3
+      ]
+    },
+    "dp2_fast_pack": {
+      "known_pids": [
+        282631,
+        282674,
+        282675,
+        283844,
+        283845,
+        283846,
+        283847,
+        284488,
+        284489
+      ],
+      "unattributed_process_samples": [],
+      "owned_processes_on_excluded_gpus": [],
+      "sampled_nvidia_peak_gib": {
+        "0": 70.79296875,
+        "3": 71.3017578125,
+        "4": 52.8330078125,
+        "5": 40.2060546875
+      },
+      "teacher_gpu_indices": [
+        0,
+        3
+      ]
+    }
+  },
+  "training_rows": 833176,
+  "full_data_packs": 15847,
+  "estimated_compute_hours": {
+    "dp1": 16.795374191825587,
+    "dp2": 14.313894380422102
+  },
+  "full_data_queue": "paused",
+  "model_quality_tested": false,
+  "limitations": "one32pack timing trial perDP;first8excluded;fresh teacher states not proven bitwise acrossDP;not full training quality or native acceptance",
+  "actual_parameter_updates_verified": true,
+  "parameter_update_witnesses": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/hidden_supply_timing_20261008_v1/PARAMETER_UPDATE_WITNESSES.json"
+}

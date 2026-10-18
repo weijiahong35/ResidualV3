@@ -1,0 +1,34 @@
+{
+  "known_owned_pids": [
+    3279388,
+    3280768,
+    3280769,
+    3280770,
+    3280771,
+    3281218,
+    3281649,
+    3281650,
+    3315761,
+    3317241
+  ],
+  "observed_processes": {
+    "1": [
+      3281649,
+      3317241
+    ],
+    "2": [
+      3281650
+    ],
+    "4": [
+      3281218
+    ]
+  },
+  "unattributed_samples": [],
+  "nvidia_smi_sampled_peak_mib": {
+    "1": 78657,
+    "2": 72509,
+    "4": 66359
+  },
+  "sampling_interval_seconds": 5,
+  "scope": "No claim about shorter unseen process activity; GPU0/3/5/6/7 were outside the measured arms"
+}

@@ -1,0 +1,104 @@
+{
+  "utc": "2026-10-13T02:07:44.048751+00:00",
+  "host_gpu_rows": [
+    "0, GPU-6708ee11-1afa-f173-d74b-59daf320d901, 47532, 0",
+    "1, GPU-250cd769-9b6a-e76d-92cb-681686776938, 50063, 100",
+    "2, GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824, 5418, 0",
+    "3, GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd, 4792, 0",
+    "4, GPU-b69b3699-6c78-06df-49e1-81ef44cf415b, 49237, 100",
+    "5, GPU-6b9e070b-a9db-7515-5b45-999392d3bb49, 59361, 99",
+    "6, GPU-16d48373-c956-39a9-3989-4676fb6aa22c, 73205, 99",
+    "7, GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f, 51121, 100"
+  ],
+  "processes": [
+    {
+      "gpu_uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+      "pid": 2471640,
+      "uid": 1020,
+      "user": "yinzhe",
+      "used_mib": "18126",
+      "comm": "VLLM::EngineCor"
+    },
+    {
+      "gpu_uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+      "pid": 2873290,
+      "uid": 1020,
+      "user": "yinzhe",
+      "used_mib": "15482",
+      "comm": "VLLM::EngineCor"
+    },
+    {
+      "gpu_uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+      "pid": 4071496,
+      "uid": 1019,
+      "user": "xiejiajian",
+      "used_mib": "31082",
+      "comm": "python"
+    },
+    {
+      "gpu_uuid": "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824",
+      "pid": 795984,
+      "uid": 1021,
+      "user": "baoyunpeng",
+      "used_mib": "4510",
+      "comm": "python"
+    },
+    {
+      "gpu_uuid": "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824",
+      "pid": 1346116,
+      "uid": 1021,
+      "user": "baoyunpeng",
+      "used_mib": "71212",
+      "comm": "VLLM::EngineCor"
+    },
+    {
+      "gpu_uuid": "GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd",
+      "pid": 5205,
+      "uid": 1021,
+      "user": "baoyunpeng",
+      "used_mib": "4510",
+      "comm": "python"
+    },
+    {
+      "gpu_uuid": "GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd",
+      "pid": 20723,
+      "uid": 1021,
+      "user": "baoyunpeng",
+      "used_mib": "71838",
+      "comm": "VLLM::EngineCor"
+    },
+    {
+      "gpu_uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+      "pid": 4079679,
+      "uid": 1019,
+      "user": "xiejiajian",
+      "used_mib": "31908",
+      "comm": "python"
+    },
+    {
+      "gpu_uuid": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+      "pid": 4088331,
+      "uid": 1019,
+      "user": "xiejiajian",
+      "used_mib": "21784",
+      "comm": "python"
+    },
+    {
+      "gpu_uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+      "pid": 4000305,
+      "uid": 1019,
+      "user": "xiejiajian",
+      "used_mib": "7940",
+      "comm": "python"
+    },
+    {
+      "gpu_uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+      "pid": 4072652,
+      "uid": 1019,
+      "user": "xiejiajian",
+      "used_mib": "30684",
+      "comm": "python"
+    }
+  ],
+  "host_process_visibility_verified": true
+}

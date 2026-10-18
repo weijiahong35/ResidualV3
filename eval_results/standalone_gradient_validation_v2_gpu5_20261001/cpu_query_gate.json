@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "prefix_factorization_max_error": 6.938893903907228e-18,
+  "analytic_prefix_weight": true,
+  "softmax_overlap_formula": true,
+  "shared_gradient_reversal_counterexample": true,
+  "shared_chain_decomposition": true
+}

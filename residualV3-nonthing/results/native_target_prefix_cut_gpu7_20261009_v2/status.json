@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "stage": "C40/formal",
+  "returncode": 1,
+  "log": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v2/single_card_C40_formal.log",
+  "utc": "2026-10-09T14:13:45.454514+00:00"
+}

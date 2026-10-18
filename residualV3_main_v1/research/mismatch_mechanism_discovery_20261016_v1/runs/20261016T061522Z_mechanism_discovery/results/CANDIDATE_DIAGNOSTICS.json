@@ -1,0 +1,131 @@
+[
+  {
+    "candidate": "K1",
+    "D1": {
+      "domains": [
+        {
+          "domain": "gsm8k",
+          "defined_prompts": 0,
+          "NA_prompts": 12,
+          "direction_prompts": 0,
+          "fraction": null,
+          "mean": null,
+          "cross_domain_gate": false
+        },
+        {
+          "domain": "humaneval",
+          "defined_prompts": 0,
+          "NA_prompts": 12,
+          "direction_prompts": 0,
+          "fraction": null,
+          "mean": null,
+          "cross_domain_gate": false
+        },
+        {
+          "domain": "alpaca",
+          "defined_prompts": 0,
+          "NA_prompts": 12,
+          "direction_prompts": 0,
+          "fraction": null,
+          "mean": null,
+          "cross_domain_gate": false
+        }
+      ],
+      "coverage_direction_gate": false,
+      "operational_gate_only": true,
+      "primary": "P, both bodies equal within prompt",
+      "threshold": 0.1
+    },
+    "D2": {
+      "status": "unavailable",
+      "reason": "没有同起点同预算的位置权重干预模型/逐训练位置梯度账；本包不训练，单纯相关不能确认"
+    },
+    "not_confirmatory": true
+  },
+  {
+    "candidate": "K2",
+    "D1": {
+      "domains": [
+        {
+          "domain": "gsm8k",
+          "defined_prompts": 12,
+          "NA_prompts": 0,
+          "direction_prompts": 12,
+          "fraction": 1.0,
+          "mean": 0.8068073262150083,
+          "cross_domain_gate": true
+        },
+        {
+          "domain": "humaneval",
+          "defined_prompts": 12,
+          "NA_prompts": 0,
+          "direction_prompts": 12,
+          "fraction": 1.0,
+          "mean": 0.7899275414433724,
+          "cross_domain_gate": true
+        },
+        {
+          "domain": "alpaca",
+          "defined_prompts": 12,
+          "NA_prompts": 0,
+          "direction_prompts": 12,
+          "fraction": 1.0,
+          "mean": 0.8216729747986465,
+          "cross_domain_gate": true
+        }
+      ],
+      "coverage_direction_gate": true,
+      "operational_gate_only": true,
+      "primary": "P, both bodies equal within prompt",
+      "threshold": 0.1
+    },
+    "D2": {
+      "status": "unavailable",
+      "reason": "没有同信息/同监督/同预算对照重放或干预；不能用原头收益代替"
+    },
+    "not_confirmatory": true
+  },
+  {
+    "candidate": "K3",
+    "D1": {
+      "domains": [
+        {
+          "domain": "gsm8k",
+          "defined_prompts": 12,
+          "NA_prompts": 0,
+          "direction_prompts": 4,
+          "fraction": 0.3333333333333333,
+          "mean": -0.10855311438137998,
+          "cross_domain_gate": false
+        },
+        {
+          "domain": "humaneval",
+          "defined_prompts": 12,
+          "NA_prompts": 0,
+          "direction_prompts": 4,
+          "fraction": 0.3333333333333333,
+          "mean": -0.05983423511984806,
+          "cross_domain_gate": false
+        },
+        {
+          "domain": "alpaca",
+          "defined_prompts": 12,
+          "NA_prompts": 0,
+          "direction_prompts": 0,
+          "fraction": 0.0,
+          "mean": -0.03324116520633715,
+          "cross_domain_gate": false
+        }
+      ],
+      "coverage_direction_gate": false,
+      "operational_gate_only": true,
+      "primary": "P, both bodies equal within prompt",
+      "threshold": 0.0
+    },
+    "D2": {
+      "status": "unavailable",
+      "reason": "缺匹配训练干预及真实训练加权标签统计，本包禁止训练"
+    },
+    "not_confirmatory": true
+  }
+]

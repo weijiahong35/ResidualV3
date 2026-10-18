@@ -1,0 +1,23 @@
+全数据第二轮：一个在线vLLM teacher + 单训DFlash + DFlash主体/修复头联合训练。
+本轮只额外训练1epoch：833176条，1019443945输入token，15854包；从第一轮15847更新接着训练，本轮完成累计31701更新。没有自动验证/测试队列。
+启动服务只等待空卡：每5秒核实宿主GPU UUID、进程与空闲显存，三张卡均没有其他GPU进程、空闲至少78000MiB才启动；继续排除GPU1/2。利用率0但有GPU进程不算空卡。
+teacher TP1/DP1、BF16、KV48GiB、maxseq64、maxbatched65536、HTTP并发128、reader16；在线hidden一次供两个独立learner。/dev/shm读取即删，无持久hidden/logit。
+两个learner各占一张卡，分别独立优化；不是训练DP2或TP2。沿用每端74GiB可复用allocator池/cap76GiB，在teacher初始化期间领取已选空卡的工作区。显存占用不构成硬件独占锁；只记录运行中新增进程，不因出现新增进程直接退出，不触碰其他人的进程。
+每模型/每次更新最多65536输入token、整包最多1536 anchor、每anchor含已知anchor+15个proposal；loss chunk为1536整块；一包一次更新，梯度累计1。最后包不足不重复补样本；不跨document，位置逐条重置。
+主体5层Transformer，联合修复头no-soft3（三层SwiGLU）、Top256/basis512；固定target/词表矩阵/basis，只训主体、mask等参数及联合头。
+主体raw CE+D-PACE；联合再加repaired CE+D-PACE与OUTPUT。D-PACE是CE的停止梯度前缀权重，不额外重复加一份CE；原三个项系数1/1/1，保持第一轮配方。训练前驱为teacher-forced token。
+从第一轮完成后的两组完整state分别加载BF16对应FP32 master、Muon/Adam所有状态和CPU/CUDA/Python/NumPy RNG，绝不重置优化器。新shuffle_seed43，数据顺序/pack边界固定可恢复。
+第一轮cosine已衰减为0，第二轮明确开启新1% warmup（159更新）+cosine周期。基础lr沿用主体Muon1e-3、主体norm/mask Adam2e-4、头Adam3e-4。优化器moments/Adam步数继续，lr周期重新开始；这与预先规划两轮连续cosine不同，已在protocol记录。
+前向与大张量BF16；FP32归约、master与优化器。联合checkpoint第5层、保留前4层激活；单训保留全部5层激活，projection rows重算。沿用通过梯度校验的训练头优化实现。
+第1次更新保存并实际CUDA全状态恢复校验；此后每200更新自动保存。checkpoint/pause请求先排空至共同更新边界，再保存两个训练端；两路fsync成功才提交latest_checkpoint.json。
+第一轮源目录、权重、state与SHA不改；本轮使用独立两槽完整state约33GiB和最终BF16约4GiB，均预分配，256MiB应急元数据空间。state.bin有预分配尾部，必须用本目录恢复器，不能直接torch.load。
+正常暂停：./control.sh pause（写请求，保存后两端与teacher释放GPU）
+随时保存并继续：./control.sh checkpoint
+恢复：./control.sh resume（进程已退出时会重启控制器；继续等待空卡）
+查看：./control.sh status
+强制kill/真实故障只能恢复最近已提交共同断点，最多重算上次提交后的200包；不能保证kill瞬间保存。实际显存/硬件故障自动等待空卡恢复，连续3次非资源错误暂停并保留现场。
+现在等待服务log：/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_teacher1_3gpu_20261009_v1/controller.log
+状态：/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_teacher1_3gpu_20261009_v1/status.json
+拿到卡后，即时入口会自动指向当前attempt：joint_training.log、dflash_training.log、teacher.log、training.log。等待阶段的两个训练log明确写WAITING，不冒充已经训练。
+每个attempt保留完整日志/失败证据/UUID，current_attempt.json记录当前实际路径。完成要求status/summary complete、两组epoch_02.safetensors存在、共同cursor15854/global_step31701。
+长期训练策略：/data/weijiahong/speculators-main-lora/residualV3-nonthing/TRAINING_STRATEGY_NONTHINKING.md

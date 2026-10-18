@@ -1,0 +1,295 @@
+{
+  "status": "complete",
+  "epochs": 3,
+  "steps_per_arm": 384,
+  "final_epoch_prompt_weighted_all_positions": [
+    {
+      "arm": "OUTPUT",
+      "epoch": 3,
+      "split": "train_probe",
+      "temperature": 0,
+      "scope": "all",
+      "prompts": 8,
+      "overlap": 0.6642784241677232,
+      "argmax_correct": 0.6919642857142857,
+      "oracle_overlap": 0.9766865910163948,
+      "base_overlap": 0.6633705971882478,
+      "kl_to_oracle": 1.8559929686669816,
+      "candidate_logit_rmse_to_oracle": 3.0030567554224814
+    },
+    {
+      "arm": "OUTPUT",
+      "epoch": 3,
+      "split": "train_probe",
+      "temperature": 1,
+      "scope": "all",
+      "prompts": 8,
+      "overlap": 0.6788429881986734,
+      "argmax_correct": 0.6830357142857143,
+      "oracle_overlap": 0.9737123053387872,
+      "base_overlap": 0.6928363582406527,
+      "kl_to_oracle": 1.4757085608417877,
+      "candidate_logit_rmse_to_oracle": 2.961559771160994
+    },
+    {
+      "arm": "OUTPUT",
+      "epoch": 3,
+      "split": "dev",
+      "temperature": 0,
+      "scope": "all",
+      "prompts": 8,
+      "overlap": 0.6093279524074872,
+      "argmax_correct": 0.6428571428571428,
+      "oracle_overlap": 0.9709839980662633,
+      "base_overlap": 0.6921270621549067,
+      "kl_to_oracle": 1.83397783754216,
+      "candidate_logit_rmse_to_oracle": 2.944518794970853
+    },
+    {
+      "arm": "OUTPUT",
+      "epoch": 3,
+      "split": "dev",
+      "temperature": 1,
+      "scope": "all",
+      "prompts": 8,
+      "overlap": 0.597385917014295,
+      "argmax_correct": 0.6383928571428572,
+      "oracle_overlap": 0.9777879185442414,
+      "base_overlap": 0.659477740300799,
+      "kl_to_oracle": 1.7316764782989031,
+      "candidate_logit_rmse_to_oracle": 2.9289438615420034
+    },
+    {
+      "arm": "TARGET_KL",
+      "epoch": 3,
+      "split": "train_probe",
+      "temperature": 0,
+      "scope": "all",
+      "prompts": 8,
+      "overlap": 0.7723051784560084,
+      "argmax_correct": 0.8705357142857143,
+      "oracle_overlap": 0.9766865910163948,
+      "base_overlap": 0.6633705971882478,
+      "kl_to_oracle": 0.5064532366952444,
+      "candidate_logit_rmse_to_oracle": 2.564119807577559
+    },
+    {
+      "arm": "TARGET_KL",
+      "epoch": 3,
+      "split": "train_probe",
+      "temperature": 1,
+      "scope": "all",
+      "prompts": 8,
+      "overlap": 0.7838461962050393,
+      "argmax_correct": 0.8616071428571428,
+      "oracle_overlap": 0.9737123053387872,
+      "base_overlap": 0.6928363582406527,
+      "kl_to_oracle": 0.42508833078784136,
+      "candidate_logit_rmse_to_oracle": 2.499025894328952
+    },
+    {
+      "arm": "TARGET_KL",
+      "epoch": 3,
+      "split": "dev",
+      "temperature": 0,
+      "scope": "all",
+      "prompts": 8,
+      "overlap": 0.6164347912820907,
+      "argmax_correct": 0.6741071428571429,
+      "oracle_overlap": 0.9709839980662633,
+      "base_overlap": 0.6921270621549067,
+      "kl_to_oracle": 1.2625175681407006,
+      "candidate_logit_rmse_to_oracle": 2.5533428780202354
+    },
+    {
+      "arm": "TARGET_KL",
+      "epoch": 3,
+      "split": "dev",
+      "temperature": 1,
+      "scope": "all",
+      "prompts": 8,
+      "overlap": 0.6028052252442129,
+      "argmax_correct": 0.6473214285714286,
+      "oracle_overlap": 0.9777879185442414,
+      "base_overlap": 0.659477740300799,
+      "kl_to_oracle": 1.1667779136370136,
+      "candidate_logit_rmse_to_oracle": 2.5738470716668025
+    },
+    {
+      "arm": "ORACLE_KL",
+      "epoch": 3,
+      "split": "train_probe",
+      "temperature": 0,
+      "scope": "all",
+      "prompts": 8,
+      "overlap": 0.7659810092757523,
+      "argmax_correct": 0.8571428571428571,
+      "oracle_overlap": 0.9766865910163948,
+      "base_overlap": 0.6633705971882478,
+      "kl_to_oracle": 0.519884128236558,
+      "candidate_logit_rmse_to_oracle": 2.542198544102056
+    },
+    {
+      "arm": "ORACLE_KL",
+      "epoch": 3,
+      "split": "train_probe",
+      "temperature": 1,
+      "scope": "all",
+      "prompts": 8,
+      "overlap": 0.7803934385301545,
+      "argmax_correct": 0.8616071428571428,
+      "oracle_overlap": 0.9737123053387872,
+      "base_overlap": 0.6928363582406527,
+      "kl_to_oracle": 0.4279450611082371,
+      "candidate_logit_rmse_to_oracle": 2.47856779769063
+    },
+    {
+      "arm": "ORACLE_KL",
+      "epoch": 3,
+      "split": "dev",
+      "temperature": 0,
+      "scope": "all",
+      "prompts": 8,
+      "overlap": 0.6193454819387472,
+      "argmax_correct": 0.6830357142857143,
+      "oracle_overlap": 0.9709839980662633,
+      "base_overlap": 0.6921270621549067,
+      "kl_to_oracle": 1.2770164810771951,
+      "candidate_logit_rmse_to_oracle": 2.5362822772668943
+    },
+    {
+      "arm": "ORACLE_KL",
+      "epoch": 3,
+      "split": "dev",
+      "temperature": 1,
+      "scope": "all",
+      "prompts": 8,
+      "overlap": 0.6044586247969294,
+      "argmax_correct": 0.6607142857142857,
+      "oracle_overlap": 0.9777879185442414,
+      "base_overlap": 0.659477740300799,
+      "kl_to_oracle": 1.1489829667518188,
+      "candidate_logit_rmse_to_oracle": 2.545183550300343
+    }
+  ],
+  "paired_dev_comparisons": [
+    {
+      "comparison": "ORACLE_KL minus TARGET_KL",
+      "metric": "overlap",
+      "prompt_paired_T0_T1_average": true,
+      "n_prompts": 8,
+      "mean": 0.0022820451046864573,
+      "bootstrap_95_percentile": [
+        0.00047250603594355123,
+        0.00418791260082281
+      ],
+      "positive_prompts": 6,
+      "per_prompt_deltas": [
+        0.006362360902130604,
+        0.00416600689587604,
+        -0.0013759939512446029,
+        0.000450689859072928,
+        -0.00018003710179720356,
+        0.005907702647424018,
+        0.0013023906004881458,
+        0.0016232409855417296
+      ]
+    },
+    {
+      "comparison": "ORACLE_KL minus TARGET_KL",
+      "metric": "argmax_correct",
+      "prompt_paired_T0_T1_average": true,
+      "n_prompts": 8,
+      "mean": 0.01116071428571428,
+      "bootstrap_95_percentile": [
+        -0.002232142857142856,
+        0.026785714285714274
+      ],
+      "positive_prompts": 3,
+      "per_prompt_deltas": [
+        0.05357142857142855,
+        0.0357142857142857,
+        -0.01785714285714285,
+        0.01785714285714285,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "comparison": "TARGET_KL minus OUTPUT",
+      "metric": "overlap",
+      "prompt_paired_T0_T1_average": true,
+      "n_prompts": 8,
+      "mean": 0.006263073552260735,
+      "bootstrap_95_percentile": [
+        -0.003495864133752913,
+        0.015789874069320906
+      ],
+      "positive_prompts": 6,
+      "per_prompt_deltas": [
+        0.004749709156125659,
+        0.009794763823119224,
+        0.023080063061310607,
+        0.027325713262663587,
+        0.0032716379387482397,
+        -0.006504261644717485,
+        -0.019765977409146485,
+        0.00815294022998253
+      ]
+    },
+    {
+      "comparison": "TARGET_KL minus OUTPUT",
+      "metric": "argmax_correct",
+      "prompt_paired_T0_T1_average": true,
+      "n_prompts": 8,
+      "mean": 0.02008928571428572,
+      "bootstrap_95_percentile": [
+        0.0044642857142856915,
+        0.03794642857142859
+      ],
+      "positive_prompts": 5,
+      "per_prompt_deltas": [
+        -0.01785714285714285,
+        0.017857142857142905,
+        0.0357142857142857,
+        0.07142857142857145,
+        0.0,
+        0.017857142857142905,
+        -5.551115123125783e-17,
+        0.0357142857142857
+      ]
+    }
+  ],
+  "optimizer_clipping": {
+    "OUTPUT": {
+      "steps": 384,
+      "clipped": 140,
+      "clip_fraction": 0.3645833333333333,
+      "median_preclip_norm": 0.7183839380741119
+    },
+    "TARGET_KL": {
+      "steps": 384,
+      "clipped": 369,
+      "clip_fraction": 0.9609375,
+      "median_preclip_norm": 4.3840062618255615
+    },
+    "ORACLE_KL": {
+      "steps": 384,
+      "clipped": 369,
+      "clip_fraction": 0.9609375,
+      "median_preclip_norm": 4.289362668991089
+    }
+  },
+  "native_checks_passed": 3584,
+  "transport_unlinked": true,
+  "interpretation": [
+    "Oracle distillation has only a small observed advantage over direct target KL on this 8-prompt dev panel; no large rescue effect.",
+    "KL arms fit train probes much better than dev; train probes still far from per-state oracle.",
+    "Oracle/target overlap approximately 97-98 percent makes supervision similar; comparison does not isolate representational limits.",
+    "Heavy clipping is a confound, not proof that clipping caused poor generalization.",
+    "Frozen behavior histories only; not native acceptance or throughput measurements."
+  ],
+  "next_step_proposal": "Controlled small-fixed-state fitting diagnostic using same inputs/architecture with measurements of gradients and actual optimizer updates; distinguish optimization/fit failure from cross-prompt generalization before a new architecture or large training run."
+}

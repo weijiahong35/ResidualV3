@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "stage": "complete",
+  "gpu": 5,
+  "order": [
+    "RAW",
+    "A_full_3layer",
+    "N_no_soft_2layer"
+  ],
+  "utc": "2026-09-30T16:02:45.762361+00:00"
+}

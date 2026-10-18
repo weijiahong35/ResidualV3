@@ -1,0 +1,8 @@
+{
+  "active_job_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_q45_teacher1_3gpu_20261010_v2",
+  "service_pid": 573404,
+  "source_common_cursor": 426,
+  "status": "passed_and_training",
+  "reason": "user authorized low-overhead detached post-repair q45 predictor",
+  "instruction": "Use the new root control.sh; do not concurrently resume this old job."
+}

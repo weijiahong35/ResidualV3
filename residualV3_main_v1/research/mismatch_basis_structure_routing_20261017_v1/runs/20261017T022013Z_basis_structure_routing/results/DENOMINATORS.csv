@@ -1,0 +1,10 @@
+fold,domain,questions,C,C_i,natural_slots,unique_C_target,formal_solver_states,formal_router_fits,status,expected_panel_slots,input_identity_valid_slots,input_identity_invalid_slots,formal_analysis_NA_slots
+0,alpaca,4,6,18,864,246,0,0,not_admitted,864,864,0,864
+0,gsm8k,4,8,24,1152,325,0,0,not_admitted,1152,1152,0,1152
+0,humaneval,4,8,24,1152,243,0,0,not_admitted,1152,1152,0,1152
+1,alpaca,4,7,21,1008,342,0,0,not_admitted,1008,1008,0,1008
+1,gsm8k,4,8,24,1152,226,0,0,not_admitted,1152,1152,0,1152
+1,humaneval,4,8,24,1152,331,0,0,not_admitted,1152,1152,0,1152
+2,alpaca,4,8,24,1152,298,0,0,not_admitted,1152,1152,0,1152
+2,gsm8k,4,8,24,1152,241,0,0,not_admitted,1152,1152,0,1152
+2,humaneval,4,8,24,1152,319,0,0,not_admitted,1152,1152,0,1152

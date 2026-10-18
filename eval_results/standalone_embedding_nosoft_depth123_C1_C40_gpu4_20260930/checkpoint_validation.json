@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "parameter_counts": {
+    "N_no_soft_1layer": 3169281,
+    "N_no_soft_2layer": 3761409,
+    "N_no_soft_3layer": 4353537
+  },
+  "architectures": {
+    "N_no_soft_1layer": {
+      "hidden_size": 4096,
+      "width": 256,
+      "vocab_size": 151936,
+      "basis_rank": 512,
+      "depth": 1,
+      "q_topk": 256,
+      "dose_max": 0.8,
+      "dose_init": 0.01,
+      "use_hidden": true,
+      "use_soft": false,
+      "scale_mode": "hidden_norm",
+      "fixed_scale": null
+    },
+    "N_no_soft_2layer": {
+      "hidden_size": 4096,
+      "width": 256,
+      "vocab_size": 151936,
+      "basis_rank": 512,
+      "depth": 2,
+      "q_topk": 256,
+      "dose_max": 0.8,
+      "dose_init": 0.01,
+      "use_hidden": true,
+      "use_soft": false,
+      "scale_mode": "hidden_norm",
+      "fixed_scale": null
+    },
+    "N_no_soft_3layer": {
+      "hidden_size": 4096,
+      "width": 256,
+      "vocab_size": 151936,
+      "basis_rank": 512,
+      "depth": 3,
+      "q_topk": 256,
+      "dose_max": 0.8,
+      "dose_init": 0.01,
+      "use_hidden": true,
+      "use_soft": false,
+      "scale_mode": "hidden_norm",
+      "fixed_scale": null
+    }
+  },
+  "checkpoints": {
+    "N_no_soft_1layer": {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930/N_no_soft_1layer/native/EMBEDDING.safetensors",
+      "sha256": "193da7281ad84b24ddb729c18e54bd8a8b52bd038936cd714cc91b8c7324d972",
+      "original": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930/N_no_soft_1layer/training/EMBEDDING/epoch_03.safetensors",
+      "original_sha256": "bf473eaf2a86f0fb0addd0516fad128180216f63f2518e2851ba19ac77fae2b7",
+      "head_config_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930/N_no_soft_1layer/head_config.json",
+      "head_config_sha256": "2ffd4c34b5f4e76e32e5a9670847d08fc2c25aaa0de5d8ba3d277ad42e74f5d9"
+    },
+    "N_no_soft_2layer": {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930/N_no_soft_2layer_reference/EMBEDDING.safetensors",
+      "sha256": "999c7f35ac5c10d7d4cc526f1c4f366fdb2c71e902a57f144afaf222ab75b035",
+      "original": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930/N_no_soft_2layer_reference/epoch_03.safetensors",
+      "original_sha256": "bcc391b88e546ab4e45189e45e624a06045c53948e81e584603aa70873467a2d",
+      "head_config_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930/N_no_soft_2layer_reference/head_config.json",
+      "head_config_sha256": "072d2abaaa48aebabd6bc24263249461918690304df5f1eacdc9d6d2b01c1e00"
+    },
+    "N_no_soft_3layer": {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930/N_no_soft_3layer_reference/EMBEDDING.safetensors",
+      "sha256": "ab6aa8ddefaaa6ccbea8008452393a386860913e352849edddbd64d53e83d141",
+      "original": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930/N_no_soft_3layer_reference/epoch_03.safetensors",
+      "original_sha256": "21f55948f6475f6dd3d30ca0c73aa024e75bb547f7627e35429cb6b1d4255aea",
+      "head_config_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930/N_no_soft_3layer_reference/head_config.json",
+      "head_config_sha256": "c8c76527b178d266b9d19a3e8b8807e158c4459bb6df3bac13796f7f014c446c"
+    },
+    "RAW": {
+      "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930/N_no_soft_1layer/native/EMBEDDING.safetensors",
+      "sha256": "193da7281ad84b24ddb729c18e54bd8a8b52bd038936cd714cc91b8c7324d972",
+      "original": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930/N_no_soft_1layer/training/EMBEDDING/epoch_03.safetensors",
+      "original_sha256": "bf473eaf2a86f0fb0addd0516fad128180216f63f2518e2851ba19ac77fae2b7",
+      "head_config_path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_embedding_nosoft_depth123_C1_C40_gpu4_20260930/N_no_soft_1layer/head_config.json",
+      "head_config_sha256": "2ffd4c34b5f4e76e32e5a9670847d08fc2c25aaa0de5d8ba3d277ad42e74f5d9"
+    }
+  },
+  "training_anchor_answer_hashes_match": true,
+  "only_newly_trained": "N_no_soft_1layer",
+  "reused": [
+    "N_no_soft_2layer",
+    "N_no_soft_3layer"
+  ],
+  "fresh_reset_verified": true
+}

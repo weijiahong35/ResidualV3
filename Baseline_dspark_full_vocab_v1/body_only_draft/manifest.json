@@ -1,0 +1,18 @@
+{
+  "format": "dflash-body-only-target-vocab-v1",
+  "original_checkpoint_sha256": "7d48df1276b056f34e8d60073fde4b69a66121189910c06f2e92df349305e857",
+  "omitted_keys": [
+    "d2t",
+    "embed_tokens.weight",
+    "lm_head.weight",
+    "t2d"
+  ],
+  "body_tensor_count": 58,
+  "target_vocab_size": 151936,
+  "sha256": {
+    "config.json": "191fc034df890cd7aef3943311ba641b6a0fa88ffed05905af0e9baaf4847021",
+    "model.safetensors": "cfaed218e94c375d4974d98cc2ac4f9a2ce6b48ceb094c65bdb08d7280ec0698",
+    "mask_embedding.pt": "dc91f259e04ebfecd33801c44643ec2843733f86f6044f4efab9868c879e4075",
+    "config.py": "50deca50ecabb7171ea295359fd055ac9c1eadd348b65d9fe4a41f8ecba38f6a"
+  }
+}

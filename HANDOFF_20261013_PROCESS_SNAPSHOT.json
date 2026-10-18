@@ -1,0 +1,129 @@
+{
+  "snapshot_utc": "2026-10-13T05:01:40.285900+00:00",
+  "snapshot_beijing": "2026-10-13T13:01:40.286242+08:00",
+  "status": {
+    "status": "running",
+    "controller_pid": 4138310,
+    "dataset_states": {
+      "humaneval": {
+        "status": "complete",
+        "dataset": "humaneval",
+        "utc": "2026-10-13T04:59:11.969990+00:00"
+      },
+      "mbpp": {
+        "status": "running",
+        "dataset": "mbpp",
+        "concurrency": 1,
+        "gpu": 5,
+        "phase": "formal",
+        "evaluator_pid": 472864,
+        "log": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/mbpp_C1_formal.log",
+        "command": [
+          "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+          "-B",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_dspark_code_chat_C1_C32_20261013_v1/native_evaluate.py",
+          "--training",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/mbpp/C1",
+          "--gpu",
+          "5",
+          "--concurrency",
+          "1",
+          "--output",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/mbpp/C1/formal",
+          "--prompts",
+          "256",
+          "--tokens",
+          "2048",
+          "--rounds",
+          "1",
+          "--arms",
+          "DFLASH",
+          "FULL15_NOFILL"
+        ],
+        "attempt": 9,
+        "utc": "2026-10-13T04:25:23.638759+00:00"
+      },
+      "livecodebench": {
+        "status": "running",
+        "dataset": "livecodebench",
+        "concurrency": 1,
+        "gpu": 6,
+        "phase": "formal",
+        "evaluator_pid": 608471,
+        "log": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/livecodebench_C1_formal.log",
+        "command": [
+          "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+          "-B",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_dspark_code_chat_C1_C32_20261013_v1/native_evaluate.py",
+          "--training",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/livecodebench/C1",
+          "--gpu",
+          "6",
+          "--concurrency",
+          "1",
+          "--output",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/livecodebench/C1/formal",
+          "--prompts",
+          "500",
+          "--tokens",
+          "2048",
+          "--rounds",
+          "1",
+          "--arms",
+          "DFLASH",
+          "FULL15_NOFILL"
+        ],
+        "attempt": 1,
+        "utc": "2026-10-13T05:01:19.105657+00:00"
+      },
+      "mt-bench": {
+        "status": "queued",
+        "dataset": "mt-bench",
+        "utc": "2026-10-13T02:07:44.412855+00:00"
+      },
+      "alpaca": {
+        "status": "queued",
+        "dataset": "alpaca",
+        "utc": "2026-10-13T02:07:44.412961+00:00"
+      },
+      "arena-hard-v2": {
+        "status": "queued",
+        "dataset": "arena-hard-v2",
+        "utc": "2026-10-13T02:07:44.413068+00:00"
+      }
+    },
+    "utc": "2026-10-13T05:01:25.146095+00:00"
+  },
+  "progress": {
+    "status": "running",
+    "valid_formal_windows": 10,
+    "paired_comparisons": 4,
+    "formal_windows_expected": 48,
+    "paired_comparisons_expected": 24,
+    "utc": "2026-10-13T05:01:25.257307+00:00"
+  },
+  "host_process_check": {
+    "return_code": 0,
+    "output": "  UID     PID    PPID     ELAPSED COMMAND\n 1024  472864 4138310       36:16 /data/weijiahong/miniconda3/envs/dflash/bin/python -B /data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_dspark_code_chat_C1_C32_20261013_v1/native_evaluate.py --training /data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/mbpp/C1 --gpu 5 --concurrency 1 --output /data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/mbpp/C1/formal --prompts 256 --tokens 2048 --rounds 1 --arms DFLASH FULL15_NOFILL\n 1024  608471 4138310       00:21 /data/weijiahong/miniconda3/envs/dflash/bin/python -B /data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_dspark_code_chat_C1_C32_20261013_v1/native_evaluate.py --training /data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/livecodebench/C1 --gpu 6 --concurrency 1 --output /data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/livecodebench/C1/formal --prompts 500 --tokens 2048 --rounds 1 --arms DFLASH FULL15_NOFILL\n 1024 4138310       1    02:53:56 /data/weijiahong/miniconda3/envs/dflash/bin/python -B /data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_dspark_code_chat_C1_C32_20261013_v1/parallel.py /data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1\n"
+  },
+  "host_gpu_check": {
+    "return_code": 0,
+    "output": "0, GPU-6708ee11-1afa-f173-d74b-59daf320d901, 47239 MiB, 81920 MiB, 0 %\n1, GPU-250cd769-9b6a-e76d-92cb-681686776938, 0 MiB, 81920 MiB, 98 %\n2, GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824, 75737 MiB, 81920 MiB, 0 %\n3, GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd, 76363 MiB, 81920 MiB, 0 %\n4, GPU-b69b3699-6c78-06df-49e1-81ef44cf415b, 58893 MiB, 81920 MiB, 100 %\n5, GPU-6b9e070b-a9db-7515-5b45-999392d3bb49, 72155 MiB, 81920 MiB, 100 %\n6, GPU-16d48373-c956-39a9-3989-4676fb6aa22c, 15083 MiB, 81920 MiB, 4 %\n7, GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f, 31093 MiB, 81920 MiB, 100 %\n"
+  },
+  "user_gpu_processes": [
+    {
+      "gpu_uuid": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+      "pid": 571514,
+      "uid": 1024,
+      "used_memory": "72146 MiB",
+      "command": "VLLM::EngineCore                                                                                                                                                                      "
+    },
+    {
+      "gpu_uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+      "pid": 609770,
+      "uid": 1024,
+      "used_memory": "16262 MiB",
+      "command": "VLLM::EngineCore                                                                                                                                                                      "
+    }
+  ]
+}

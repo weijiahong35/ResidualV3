@@ -1,0 +1,8 @@
+本轮只测整包训练速度，目标是降低在线供数等待；不启动全数据长训。
+GPU1、2排除；teacher3对teacher0+3 DP2/TP1，联合learner4、纯DFlash learner5。
+两组均使用已通过同状态完整1536梯度校验的优化头；no-soft3、CE+D-PACE+OUTPUT；每包65536输入token预算，1536anchor整块、一包一次更新。
+供数改动：safetensors Tensor拥有mmap生命周期，文件读取即unlink，避免完整h.clone；broker内部Torch线程4改1；写锁轮询100ms改10ms。不改writer屏障、ids/shape/dtype/finite检查。
+先CPU mmap生命周期/值校验，再每组完整首包在线hidden与旧clone拼包逐位校验。
+每组32包，前8包不测速；全部最终BF16权重保存，完整Adam旧断点保留。
+比较DP1和DP2使用同learner GPU/初始权重/数据/anchor/loss/优化器；hidden均重新在线获取一次共享给两个learner，无持久hidden/logit缓存。
+旧DP1结果是历史参考；本轮DP1对DP2才是新的同配置短测。

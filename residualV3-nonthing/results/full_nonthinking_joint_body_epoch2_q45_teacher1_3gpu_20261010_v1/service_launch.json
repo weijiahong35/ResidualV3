@@ -1,0 +1,12 @@
+{
+  "pid": 525566,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/full_joint_body_shared_teacher_epoch2_q45_20261010_v1/outer_controller.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_q45_teacher1_3gpu_20261010_v1"
+  ],
+  "user_authorized": "add post-repair q45 auxiliary branch; retain only when low overhead",
+  "started_unix": 1791563973.1076658
+}

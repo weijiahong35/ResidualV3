@@ -1,0 +1,25 @@
+{
+  "schema": "round4.shared_resource_policy.v1",
+  "mode": "shared",
+  "dynamic_all_card_selection": "maximum_free_that_fits_stage_and_has_no_exclusive_reservation",
+  "shared_flock": true,
+  "foreign_process_or_utilization_not_a_block": true,
+  "runtime_free_reserve_MiB": 4096,
+  "maximum_own_memory_MiB": 32768,
+  "stages": {
+    "target_collection": {
+      "expected_peak_MiB": 26624,
+      "min_free_MiB": 30720
+    },
+    "pure_witness": {
+      "expected_peak_MiB": 2048,
+      "min_free_MiB": 6144
+    }
+  },
+  "native_gpu_memory_utilization": 0.35,
+  "native_KV_bytes": 4294967296,
+  "no_TPS": true,
+  "same_cumulative_ledger_across_GPU_migration": true,
+  "selection_ranking": "currently fitting all visible GPUs only; rank by already observed min/max free-memory ratio over recent6 admission/resource snapshots, then historical floor and currentfree. Ranking only: a sole current fit is admitted regardless of history. No waiting, fixed index, utilization or foreign-process exclusion.",
+  "own_cache_reclaim": "after initialization and on low reserve: release only unused own PyTorch cache; allocated tensor values unchanged and dev body bit parity checked. If reserve remains low10seconds exit own process."
+}

@@ -1,0 +1,6 @@
+{
+  "forward_input_weight_bias_gradients_close": true,
+  "dtype": "float64",
+  "GPU_not_initialized": true,
+  "scope": "Shape/axis/autograd CPU check only; GPU BF16 gate still required."
+}

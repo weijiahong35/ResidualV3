@@ -1,0 +1,28 @@
+{
+  "purpose": "研究目标条件更新是什么、当前修复实际实现了什么，不预先选定新结构。",
+  "flow": "固定原 DFlash hidden h、u、q=softmax(u)、I=Top256(u) → 替换前驱 a → 原修复头 delta_a；固定前驱以前的真实前缀 → 插入同一个 a → 在线目标模型 p_a → 比较目标响应与修复响应。",
+  "indices": "0-based proposal j∈{1,3,6}；实际前驱在原序列 anchor+j，目标预测 token 在 anchor+j+1；目标请求截断到 anchor+j（含），不包含当前或未来 token。首步 j=0 仅作原始 verified-anchor 对照，不替换 anchor。",
+  "formulas": {
+    "ideal": "R_a(v)=log p_a(v)-log q(v), v in fixed I",
+    "gauge": "R_a is centered across candidate columns, either uniform or fixed q[I]/sum(q[I]); the latter only weights metrics and never renormalizes model q",
+    "decomposition": "R_a = mean_over_predecessors(R) + (R_a-mean_over_predecessors(R))",
+    "intervention": "Compare R_a-R_original with effective_delta_a-effective_delta_original; effective_delta=z.float()-u.float() includes native BF16 rounding",
+    "greedy": "For raw winner w and matching-target winner t, delta(t)-delta(w)>u(w)-u(t) strictly beats w; equality requires actual argmax tie-breaking. Final top1 is checked separately because a third token can win."
+  },
+  "questions": [
+    "目标对前驱改变的响应是否显著超过重算数值差异？",
+    "修复响应与目标条件响应在原始 Top256 上是否同向？",
+    "修复是否只改变 dose，还是 direction 也随前驱变化？",
+    "原前驱错误中，同向但幅度不足、方向错误、已跨过原赢家却输给第三个 token，各有多少？",
+    "第一位置是否存在不需要新增 lag-1 信息却被误修的情况？"
+  ],
+  "interpretation_limits": [
+    "common/interaction 能量比例依赖所选前驱、候选及加权方式，不是自然数据总体的错误来源占比。",
+    "只有四个前驱，中心化矩阵秩最多三；不能由此证明修复应使用三维或其他低秩。",
+    "固定 h/q 的条件干预用于机制分析，不代表完整自由生成轨迹，也不是 native AL/TPS。",
+    "保留每个替代前驱的先验概率，事后按预先说明的概率分层描述敏感性。",
+    "本轮没有新增模型结构，没有训练新权重，没有访问封存确认集。"
+  ],
+  "next_decision": "根据诊断判断是前驱条件响应不足、基础校准问题、方向/幅度问题还是支持集问题，再设计一项可证伪的结构对照。",
+  "numerical_control": "所有前驱干预用匹配长度的截断请求；原前驱请求重复两次，要求 TV<1e-6。与原完整序列的差异单独报告，不混入条件干预。LM-head 使用相同 GEMM 形状。"
+}

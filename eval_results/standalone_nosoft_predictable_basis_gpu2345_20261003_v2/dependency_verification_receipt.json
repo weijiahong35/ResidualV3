@@ -1,0 +1,155 @@
+{
+  "status": "passed",
+  "sha256": {
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1/runtime_bundle/runtime/body_only_draft/mask_embedding.pt": "dc91f259e04ebfecd33801c44643ec2843733f86f6044f4efab9868c879e4075",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1/runtime_bundle/runtime/body_only_draft/config.json": "191fc034df890cd7aef3943311ba641b6a0fa88ffed05905af0e9baaf4847021",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1/runtime_bundle/runtime/body_only_draft/config.py": "50deca50ecabb7171ea295359fd055ac9c1eadd348b65d9fe4a41f8ecba38f6a",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1/runtime_bundle/runtime/body_only_draft/manifest.json": "43eeb6fe3c9350f56ec6eef864d7ed5bbf39132cf03d99caf52c34f57b8bbbbe",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1/runtime_bundle/runtime/body_only_draft/model.safetensors": "cfaed218e94c375d4974d98cc2ac4f9a2ce6b48ceb094c65bdb08d7280ec0698",
+    "/data/weijiahong/huggingface/models/Qwen3-8B/generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+    "/data/weijiahong/huggingface/models/Qwen3-8B/config.json": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+    "/data/weijiahong/huggingface/models/Qwen3-8B/model-00003-of-00005.safetensors": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836",
+    "/data/weijiahong/huggingface/models/Qwen3-8B/model-00001-of-00005.safetensors": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f",
+    "/data/weijiahong/huggingface/models/Qwen3-8B/model-00004-of-00005.safetensors": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a",
+    "/data/weijiahong/huggingface/models/Qwen3-8B/model-00005-of-00005.safetensors": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff",
+    "/data/weijiahong/huggingface/models/Qwen3-8B/model-00002-of-00005.safetensors": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282",
+    "/data/weijiahong/huggingface/models/Qwen3-8B/model.safetensors.index.json": "f9fdbcb91c23971c13ec5d5f2573d2349e8f61f2f049371ec699281748fdb1bc",
+    "/data/weijiahong/huggingface/models/Qwen3-8B/tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "/data/weijiahong/huggingface/models/Qwen3-8B/tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+    "/data/weijiahong/huggingface/models/Qwen3-8B/vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "/data/weijiahong/miniconda3/envs/llm_dflash_eval_v026/lib/python3.11/site-packages/vllm/model_executor/models/qwen3_dflash.py": "8f78959c98ddc3cf048990e3156805b1d18c0247cca5ace40d6e4e3b086d5e3d",
+    "/data/weijiahong/miniconda3/envs/llm_dflash_eval_v026/lib/python3.11/site-packages/vllm/v1/worker/gpu/spec_decode/dflash/speculator.py": "8d1e69ca5c0f7fa204bafe7d05e6a0b9e77caf34a2cf6ad5b8132b1963e6635f",
+    "/data/weijiahong/miniconda3/envs/llm_dflash_eval_v026/lib/python3.11/site-packages/vllm/v1/worker/gpu/spec_decode/dflash/cudagraph.py": "556acfbce5ef2310a738d254d0029f2976846fa51f37332d1fb07a140b8ac017",
+    "/data/weijiahong/miniconda3/envs/llm_dflash_eval_v026/lib/python3.11/site-packages/vllm/v1/worker/gpu/cudagraph_utils.py": "5b328faa0c29363815eb112f03bb1e8772f5b08e9f158e154aa3c09d676d2da8",
+    "/data/weijiahong/miniconda3/envs/llm_dflash_eval_v026/lib/python3.11/site-packages/vllm/v1/worker/gpu/sample/gumbel.py": "f4721ad9e90850c66a0ee0e60580052f02e55f80cbfbfad29c0e6bfb6fd3edc8"
+  },
+  "stat": {
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1/runtime_bundle/runtime/body_only_draft/mask_embedding.pt": [
+      64768,
+      43018573021,
+      9882,
+      1790390016551211014
+    ],
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1/runtime_bundle/runtime/body_only_draft/config.json": [
+      64768,
+      43018573022,
+      1749,
+      1790390016551211014
+    ],
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1/runtime_bundle/runtime/body_only_draft/config.py": [
+      64768,
+      43018573023,
+      3104,
+      1790390016551211014
+    ],
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1/runtime_bundle/runtime/body_only_draft/manifest.json": [
+      64768,
+      43018573024,
+      680,
+      1790390016551211014
+    ],
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nosoft_depth_10k_prefetch6_v1/runtime_bundle/runtime/body_only_draft/model.safetensors": [
+      64768,
+      43018573025,
+      2097259072,
+      1790390016551211014
+    ],
+    "/data/weijiahong/huggingface/models/Qwen3-8B/generation_config.json": [
+      64768,
+      53744428283,
+      239,
+      1787385898693304841
+    ],
+    "/data/weijiahong/huggingface/models/Qwen3-8B/config.json": [
+      64768,
+      53744428285,
+      728,
+      1787385898713305033
+    ],
+    "/data/weijiahong/huggingface/models/Qwen3-8B/model-00003-of-00005.safetensors": [
+      64768,
+      53744428287,
+      3959604768,
+      1787412932226477934
+    ],
+    "/data/weijiahong/huggingface/models/Qwen3-8B/model-00001-of-00005.safetensors": [
+      64768,
+      53739173964,
+      3996250744,
+      1787412865806486138
+    ],
+    "/data/weijiahong/huggingface/models/Qwen3-8B/model-00004-of-00005.safetensors": [
+      64768,
+      53739104726,
+      3187841392,
+      1787413161748727859
+    ],
+    "/data/weijiahong/huggingface/models/Qwen3-8B/model-00005-of-00005.safetensors": [
+      64768,
+      53688907129,
+      1244659840,
+      1787386892560544833
+    ],
+    "/data/weijiahong/huggingface/models/Qwen3-8B/model-00002-of-00005.safetensors": [
+      64768,
+      53699450817,
+      3993160032,
+      1787413092795252898
+    ],
+    "/data/weijiahong/huggingface/models/Qwen3-8B/model.safetensors.index.json": [
+      64768,
+      53739104725,
+      32878,
+      1787386893100541452
+    ],
+    "/data/weijiahong/huggingface/models/Qwen3-8B/tokenizer.json": [
+      64768,
+      53699450818,
+      11422654,
+      1787386928472316752
+    ],
+    "/data/weijiahong/huggingface/models/Qwen3-8B/tokenizer_config.json": [
+      64768,
+      53699450819,
+      9732,
+      1787386928944313713
+    ],
+    "/data/weijiahong/huggingface/models/Qwen3-8B/vocab.json": [
+      64768,
+      53699450821,
+      2776833,
+      1787386931748295631
+    ],
+    "/data/weijiahong/miniconda3/envs/llm_dflash_eval_v026/lib/python3.11/site-packages/vllm/model_executor/models/qwen3_dflash.py": [
+      64768,
+      17257721574,
+      34090,
+      1788510263109850371
+    ],
+    "/data/weijiahong/miniconda3/envs/llm_dflash_eval_v026/lib/python3.11/site-packages/vllm/v1/worker/gpu/spec_decode/dflash/speculator.py": [
+      64768,
+      15289876464,
+      27420,
+      1788510263201850489
+    ],
+    "/data/weijiahong/miniconda3/envs/llm_dflash_eval_v026/lib/python3.11/site-packages/vllm/v1/worker/gpu/spec_decode/dflash/cudagraph.py": [
+      64768,
+      15289876463,
+      3867,
+      1788510263201850489
+    ],
+    "/data/weijiahong/miniconda3/envs/llm_dflash_eval_v026/lib/python3.11/site-packages/vllm/v1/worker/gpu/cudagraph_utils.py": [
+      64768,
+      40823955622,
+      26041,
+      1788510263201850489
+    ],
+    "/data/weijiahong/miniconda3/envs/llm_dflash_eval_v026/lib/python3.11/site-packages/vllm/v1/worker/gpu/sample/gumbel.py": [
+      64768,
+      66657791146,
+      8862,
+      1788510263201850489
+    ]
+  },
+  "utc": "2026-10-03T13:11:54.382526+00:00"
+}

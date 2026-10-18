@@ -1,0 +1,26 @@
+{
+  "raw_source": "/data/weijiahong/.cache/huggingface/hub/datasets--nvidia--OpenMathInstruct-2/snapshots/469216e3f46f4dacf476b382e192485ea51a143e/data/train_1M-00000-of-00003.parquet",
+  "raw_sha256": "93700f39cdc87994f2c9a6ad62e1d62e09467793f57d376cfab722757ff26e1c",
+  "original_dataset_start_index": 20000,
+  "selected_indices": [
+    20000,
+    20001,
+    20002,
+    20003,
+    20004,
+    20005,
+    20006,
+    20007
+  ],
+  "excluded_panel_paths": [
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002/panels/final_C1.jsonl",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002/panels/final_C40.jsonl",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002/panels/train.jsonl",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002/panels/warmup.jsonl"
+  ],
+  "normalized_exclusion_count": 12001,
+  "no_overlap_with_longtrain_train_formal_warmup": true,
+  "thinking": true,
+  "skipped": [],
+  "scope": "New exploratory diagnostic prompts, not an independent final performance test."
+}

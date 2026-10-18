@@ -1,0 +1,10 @@
+{
+  "status": "failed",
+  "formal_windows": 14,
+  "utc": "2026-10-09T14:13:58.690407+00:00",
+  "summaries": {
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v2/C1/formal/summary.json": "0d253ee6dd968fb1bec35d8245fe0626c7ac045de78853d0e3896b51c93cfff9",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_target_prefix_cut_gpu7_20261009_v2/C40/formal/summary.json": "4465c894fe9bbcbcb7b57e5122f211497dd70718b2812160bb934a3803b84068"
+  },
+  "no_body_only": true
+}

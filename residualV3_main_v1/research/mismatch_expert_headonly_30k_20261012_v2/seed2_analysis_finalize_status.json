@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "pid": 3244384,
+  "physical_gpu": 7,
+  "error": "TypeError(\"event() got multiple values for argument 'label'\")",
+  "utc": "2026-10-12T10:28:16.588681+00:00"
+}

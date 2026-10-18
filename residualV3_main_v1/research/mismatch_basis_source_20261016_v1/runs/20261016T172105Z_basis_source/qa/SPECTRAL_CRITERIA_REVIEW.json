@@ -1,0 +1,90 @@
+{
+  "all_12_direct_spectral_criteria_passed": true,
+  "rows": [
+    {
+      "label": "F",
+      "fold": 0,
+      "lambda512_over_lambda1": 0.0014265788824994036,
+      "boundary_gap": 0.0031341001092024573,
+      "passed": true
+    },
+    {
+      "label": "F",
+      "fold": 1,
+      "lambda512_over_lambda1": 0.0012455057374827444,
+      "boundary_gap": 0.005841449359748029,
+      "passed": true
+    },
+    {
+      "label": "F",
+      "fold": 2,
+      "lambda512_over_lambda1": 0.0012125999039863011,
+      "boundary_gap": 0.004559395846998271,
+      "passed": true
+    },
+    {
+      "label": "N0",
+      "fold": 0,
+      "lambda512_over_lambda1": 0.00016802872974171245,
+      "boundary_gap": 0.011784935350932838,
+      "passed": true
+    },
+    {
+      "label": "N0",
+      "fold": 1,
+      "lambda512_over_lambda1": 8.060843582276374e-05,
+      "boundary_gap": 0.021415217302384486,
+      "passed": true
+    },
+    {
+      "label": "N0",
+      "fold": 2,
+      "lambda512_over_lambda1": 4.5700016033317956e-05,
+      "boundary_gap": 0.02860622775802141,
+      "passed": true
+    },
+    {
+      "label": "N1",
+      "fold": 0,
+      "lambda512_over_lambda1": 0.00015492661035095503,
+      "boundary_gap": 0.006690420169672314,
+      "passed": true
+    },
+    {
+      "label": "N1",
+      "fold": 1,
+      "lambda512_over_lambda1": 8.160346965524617e-05,
+      "boundary_gap": 0.011783981396356004,
+      "passed": true
+    },
+    {
+      "label": "N1",
+      "fold": 2,
+      "lambda512_over_lambda1": 4.403415878408428e-05,
+      "boundary_gap": 0.03140704660727693,
+      "passed": true
+    },
+    {
+      "label": "N2",
+      "fold": 0,
+      "lambda512_over_lambda1": 0.00016934699636048583,
+      "boundary_gap": 0.029837477054197602,
+      "passed": true
+    },
+    {
+      "label": "N2",
+      "fold": 1,
+      "lambda512_over_lambda1": 8.177971532811414e-05,
+      "boundary_gap": 0.032347040925395094,
+      "passed": true
+    },
+    {
+      "label": "N2",
+      "fold": 2,
+      "lambda512_over_lambda1": 4.8768618229091216e-05,
+      "boundary_gap": 0.02083942671864234,
+      "passed": true
+    }
+  ],
+  "note": "independent scalar check; F trace status must not substitute for eigen rank/boundary; no matrix or basis recomputation"
+}

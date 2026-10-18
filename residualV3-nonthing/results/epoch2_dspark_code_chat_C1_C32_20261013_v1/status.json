@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "controller_pid": 4138310,
+  "dataset_states": {
+    "humaneval": {
+      "status": "complete",
+      "dataset": "humaneval",
+      "utc": "2026-10-13T04:59:11.969990+00:00"
+    },
+    "mbpp": {
+      "status": "complete",
+      "dataset": "mbpp",
+      "utc": "2026-10-13T05:26:09.322595+00:00"
+    },
+    "livecodebench": {
+      "status": "complete",
+      "dataset": "livecodebench",
+      "utc": "2026-10-13T06:43:06.932039+00:00"
+    },
+    "mt-bench": {
+      "status": "complete",
+      "dataset": "mt-bench",
+      "utc": "2026-10-13T06:12:39.783816+00:00"
+    },
+    "alpaca": {
+      "status": "complete",
+      "dataset": "alpaca",
+      "utc": "2026-10-13T09:46:15.391023+00:00"
+    },
+    "arena-hard-v2": {
+      "status": "complete",
+      "dataset": "arena-hard-v2",
+      "utc": "2026-10-13T23:38:41.314516+00:00"
+    }
+  },
+  "utc": "2026-10-13T23:38:50.528394+00:00"
+}

@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "source_hashes_unchanged": true,
+  "checkpoint_hash_unchanged": true,
+  "original_predecessor_repair_exact_rollout_checks": 96,
+  "repeated_identical_target_prefix_exact_checks": 96,
+  "hidden_requests": 488,
+  "hidden_unlinks": 488,
+  "remaining_hidden_files": 0,
+  "trained_parameters": 0,
+  "sealed_confirmation_evaluated": false,
+  "cleanup": {
+    "owned_processes_stopped": true,
+    "temporary_transfer_removed": true,
+    "remaining_before_cleanup": [],
+    "utc": "2026-10-01T03:17:09.716182+00:00"
+  }
+}

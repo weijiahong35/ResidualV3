@@ -1,0 +1,49 @@
+{
+  "status": "complete",
+  "stage": "complete",
+  "utc": "2026-10-03T01:47:06.017306+00:00",
+  "arms": {
+    "nosoft_1layer": {
+      "training/status.json": {
+        "status": "complete",
+        "step": 30000,
+        "total": 30000,
+        "utc": "2026-10-02T14:28:15.471892+00:00"
+      },
+      "pipeline_status.json": {
+        "status": "complete",
+        "stage": "prepare_native",
+        "gpu": 0,
+        "utc": "2026-10-02T14:28:44.879662+00:00"
+      }
+    },
+    "nosoft_2layer": {
+      "training/status.json": {
+        "status": "complete",
+        "step": 30000,
+        "total": 30000,
+        "utc": "2026-10-02T14:57:39.872855+00:00"
+      },
+      "pipeline_status.json": {
+        "status": "complete",
+        "stage": "prepare_native",
+        "gpu": 1,
+        "utc": "2026-10-02T14:58:10.637307+00:00"
+      }
+    },
+    "nosoft_3layer": {
+      "training/status.json": {
+        "status": "complete",
+        "step": 30000,
+        "total": 30000,
+        "utc": "2026-10-02T15:28:43.922260+00:00"
+      },
+      "pipeline_status.json": {
+        "status": "complete",
+        "stage": "prepare_native",
+        "gpu": 2,
+        "utc": "2026-10-02T15:29:16.937491+00:00"
+      }
+    }
+  }
+}

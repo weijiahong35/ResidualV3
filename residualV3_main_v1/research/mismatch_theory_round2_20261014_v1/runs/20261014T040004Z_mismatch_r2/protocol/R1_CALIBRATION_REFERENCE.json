@@ -1,0 +1,23 @@
+{
+  "status": "reference_frozen_R1_dev_only",
+  "body": "joint_frozen_E2",
+  "temperature": 0.4965853037914095,
+  "log_temperature": -0.7,
+  "source_path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_execution_20261013_v1/runs/20261013T154124Z_mismatch_e2/protocol/CALIBRATION.json",
+  "source_sha256": "3cec84d49866e31d23799a4bf450621b4bba7c43a7596bc900b2bba3adb39689",
+  "R1_grid_source_path": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_theory_execution_20261013_v1/runs/20261013T154124Z_mismatch_e2/data/target_branch/DEV_CAL_GRID_COMBINED.jsonl",
+  "R1_grid_source_sha256": "bb7a232d8202c98ae99297d77720c7ae22a1a54b6bd3714a641f4e4a87de4197",
+  "fit_measure": "target-branch/alive-at-i, all available positions 1..15",
+  "fit_aggregation": "branch mean supplied by collector -> position -> C -> prompt -> equal domain",
+  "R1_dev_prompts": 72,
+  "R1_dev_domains": 3,
+  "read_test_labels_in_reference_fit": false,
+  "new_fit_performed": false,
+  "normalization_for_R2_reference": "same raw BF16 logits / fixed T / full-vocabulary FP64 logsumexp",
+  "scope_caveat": "R1 T was selected on 72 dev prompts at positions1..15; R2 dev36 overlap those development prompts. Auxiliary fixed reference, not fitted on fresh test, not an in-set correction and not an M0/M1 feature.",
+  "disk_prewrite": {
+    "allocated_bytes_before": 122654720,
+    "estimated_write_bytes": 20971520,
+    "free_bytes": 4676421656576
+  }
+}

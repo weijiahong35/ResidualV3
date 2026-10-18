@@ -1,0 +1,32 @@
+{
+  "source_run": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2",
+  "source_protocol": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2/training_arms/CE_DPACE_OUTPUT/training_protocol.json",
+  "source_checkpoint": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2/training_arms/CE_DPACE_OUTPUT/training/epoch_03_resume.pt",
+  "teacher_dp": 2,
+  "teacher_tp": 1,
+  "teacher_kv_gib_each": 48,
+  "teacher_max_seqs_each": 64,
+  "teacher_batch_tokens_each": 65536,
+  "teacher_gpu_preference": [
+    0,
+    2
+  ],
+  "learner_gpu": 7,
+  "learner_uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+  "study": "bounded training throughput pilot; no large retraining; original native evaluation continues",
+  "sampling": {
+    "pack_tokens": 65536,
+    "anchors": 1536,
+    "head_chunk": 1536,
+    "draft_chunk": 512,
+    "update_per_pack": 1
+  },
+  "request_concurrencies": [
+    32,
+    64,
+    128
+  ],
+  "discard_warmup_packs": 3,
+  "measured_packs_each": 12,
+  "hidden_policy": "online only, /dev/shm read then unlink; no persistent hidden/logits"
+}

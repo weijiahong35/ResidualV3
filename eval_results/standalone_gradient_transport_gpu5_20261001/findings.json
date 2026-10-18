@@ -1,0 +1,380 @@
+{
+  "status": "complete",
+  "scope": "8 frozen pilot prompts, 4 anchors each, 7 positions each; 224 states contribute to shared gradients; 128 prior states reported, 41 errors studied for shared margin gradients",
+  "mathematics": [
+    "alpha_j = sum_v min(p_j(v),r_j(v)); L=1-(1/(B L)) sum_b sum_k product_{j<=k} alpha_bj",
+    "w_bj = (1/(B L)) sum_{k>=j} product_{t<=k,t!=j} alpha_bt; grad_z L = w_bj grad_z(1-alpha_bj)",
+    "b_v=1[r_v<p_v]+0.5*1[r_v=p_v]; grad_z(1-alpha)=r*(<r,b>-b)",
+    "||grad_x L|| = w * ||grad_r local|| * softmax_directional_gain * candidate_gradient_fraction * final_head_directional_gain (continuous final head)",
+    "SGD diagnostic: Delta margin_i/eta = -<grad_theta margin_i,grad_theta L_batch>; all tied max competitors tested"
+  ],
+  "summary": {
+    "status": "complete",
+    "aggregate": {
+      "all": {
+        "states": 128,
+        "errors": 41,
+        "raw_correct": 83,
+        "repair_correct": 87,
+        "median_prefix_weight_error": 0.017296109348535538,
+        "shared_finished": 41,
+        "own_harms": 0,
+        "within_prompt_other_harms": 18,
+        "prompt_harms": 13,
+        "other_prompts_harms": 26,
+        "global_mean_harms": 21,
+        "equal_overlap_global_mean_harms": 18,
+        "by_position": {
+          "0": {
+            "errors": 6,
+            "prefix_weight_median": 0.085837472230196,
+            "local_latent_norm_median": 0.016505035681860618,
+            "weighted_latent_norm_median": 0.0022292032783943136
+          },
+          "1": {
+            "errors": 7,
+            "prefix_weight_median": 0.05196400731801987,
+            "local_latent_norm_median": 0.0357000883664555,
+            "weighted_latent_norm_median": 0.002674983765789488
+          },
+          "3": {
+            "errors": 13,
+            "prefix_weight_median": 0.0156264565885067,
+            "local_latent_norm_median": 0.1720350986999676,
+            "weighted_latent_norm_median": 0.0024923711829105094
+          },
+          "6": {
+            "errors": 15,
+            "prefix_weight_median": 9.326948929810897e-05,
+            "local_latent_norm_median": 0.05066778773992521,
+            "weighted_latent_norm_median": 3.221248695219747e-07
+          }
+        }
+      },
+      "primary": {
+        "states": 96,
+        "errors": 35,
+        "raw_correct": 57,
+        "repair_correct": 61,
+        "median_prefix_weight_error": 0.0156264565885067,
+        "shared_finished": 35,
+        "own_harms": 0,
+        "within_prompt_other_harms": 17,
+        "prompt_harms": 13,
+        "other_prompts_harms": 22,
+        "global_mean_harms": 17,
+        "equal_overlap_global_mean_harms": 15,
+        "by_position": {
+          "1": {
+            "errors": 7,
+            "prefix_weight_median": 0.05196400731801987,
+            "local_latent_norm_median": 0.0357000883664555,
+            "weighted_latent_norm_median": 0.002674983765789488
+          },
+          "3": {
+            "errors": 13,
+            "prefix_weight_median": 0.0156264565885067,
+            "local_latent_norm_median": 0.1720350986999676,
+            "weighted_latent_norm_median": 0.0024923711829105094
+          },
+          "6": {
+            "errors": 15,
+            "prefix_weight_median": 9.326948929810897e-05,
+            "local_latent_norm_median": 0.05066778773992521,
+            "weighted_latent_norm_median": 3.221248695219747e-07
+          }
+        }
+      }
+    },
+    "checkpoint_sha256": "999c7f35ac5c10d7d4cc526f1c4f366fdb2c71e902a57f144afaf222ab75b035",
+    "in_memory_parameter_hash_before": "573e1fca437b93a45c27dee4a2ec8e997d9425d2ce3eb37ab2a330854b6e1c00",
+    "in_memory_parameter_hash_after": "573e1fca437b93a45c27dee4a2ec8e997d9425d2ce3eb37ab2a330854b6e1c00",
+    "states": 128,
+    "all_gradient_states": 224,
+    "parameter_count": 3761409,
+    "parameter_updates": 0,
+    "confirmation_evaluated": false,
+    "limits": [
+      "actual BF16 backward is a training surrogate, not derivative of discrete rounding",
+      "SGD first-order directions on 8 pilot prompts, not historical AdamW updates or native performance",
+      "same-state equal-overlap control only; no alternative loss trained",
+      "all tied largest competitors tested; sign claims use cosine < -1e-6",
+      "outside proposal support gradient is excluded by actual fixed candidate update"
+    ],
+    "utc": "2026-10-01T04:36:46.360635+00:00"
+  },
+  "details": {
+    "all": {
+      "errors": 41,
+      "local_helps_but_prompt_harms": 13,
+      "local_helps_but_global_harms": 21,
+      "global_harms_equal_helps": 5,
+      "global_helps_equal_harms": 2,
+      "weak_gradient_analysis": {
+        "1e-06": {
+          "count": 10,
+          "above_threshold_with_uniform_token_weight": 8,
+          "median_prefix_weight": 3.879949805885019e-09
+        },
+        "1e-08": {
+          "count": 7,
+          "above_threshold_with_uniform_token_weight": 7,
+          "median_prefix_weight": 8.20757212194323e-11
+        },
+        "1e-12": {
+          "count": 3,
+          "above_threshold_with_uniform_token_weight": 3,
+          "median_prefix_weight": 6.453674044687918e-15
+        }
+      },
+      "factor_medians_by_position": {
+        "0": {
+          "previous_overlap_product": 1.0,
+          "prefix_weight_including_mean": 0.085837472230196,
+          "softmax_directional_gain": 0.05501263681943103,
+          "local_logit_norm": 0.2160724252462387,
+          "candidate_gradient_fraction": 1.0,
+          "head_directional_gain": 0.11639894343231363,
+          "local_latent_norm_fp64": 0.016505035681860618,
+          "weighted_latent_norm_fp64": 0.0022292032783943136
+        },
+        "1": {
+          "previous_overlap_product": 0.9790336489677429,
+          "prefix_weight_including_mean": 0.05196400731801987,
+          "softmax_directional_gain": 0.009380478695273475,
+          "local_logit_norm": 0.04550396278500557,
+          "candidate_gradient_fraction": 1.0,
+          "head_directional_gain": 0.7845489970868947,
+          "local_latent_norm_fp64": 0.0357000883664555,
+          "weighted_latent_norm_fp64": 0.002674983765789488
+        },
+        "3": {
+          "previous_overlap_product": 0.3537854463133719,
+          "prefix_weight_including_mean": 0.0156264565885067,
+          "softmax_directional_gain": 0.03737617446360846,
+          "local_logit_norm": 0.09578263014554977,
+          "candidate_gradient_fraction": 1.0,
+          "head_directional_gain": 1.8889379345245318,
+          "local_latent_norm_fp64": 0.1720350986999676,
+          "weighted_latent_norm_fp64": 0.0024923711829105094
+        },
+        "6": {
+          "previous_overlap_product": 0.002611545674506121,
+          "prefix_weight_including_mean": 9.326948929810897e-05,
+          "softmax_directional_gain": 0.010967977344989777,
+          "local_logit_norm": 0.019391806796193123,
+          "candidate_gradient_fraction": 1.0,
+          "head_directional_gain": 2.0660636107374284,
+          "local_latent_norm_fp64": 0.05066778773992521,
+          "weighted_latent_norm_fp64": 3.221248695219747e-07
+        }
+      },
+      "bf16_vs_continuous_gradient_cosine_min": 0.9999489737702686,
+      "bf16_vs_continuous_gradient_cosine_median": 0.9999880763115158,
+      "parameter_group_contributions": {
+        "hidden_proj": {
+          "negative_count": 13,
+          "median_derivative": 0.17506398774276022
+        },
+        "previous_proj": {
+          "negative_count": 17,
+          "median_derivative": 0.027028256517951377
+        },
+        "q_proj": {
+          "negative_count": 20,
+          "median_derivative": 0.0006124275496404152
+        },
+        "fusion": {
+          "negative_count": 16,
+          "median_derivative": 0.12994982684176648
+        },
+        "blocks.0": {
+          "negative_count": 14,
+          "median_derivative": 0.02021229444653727
+        },
+        "blocks.1": {
+          "negative_count": 14,
+          "median_derivative": 0.021826718668307876
+        },
+        "output_norm": {
+          "negative_count": 15,
+          "median_derivative": 0.0006385123415384442
+        },
+        "direction_head": {
+          "negative_count": 24,
+          "median_derivative": -0.442887956276536
+        },
+        "dose_head": {
+          "negative_count": 5,
+          "median_derivative": 0.23150943219661713
+        }
+      }
+    },
+    "primary": {
+      "errors": 35,
+      "local_helps_but_prompt_harms": 13,
+      "local_helps_but_global_harms": 17,
+      "global_harms_equal_helps": 4,
+      "global_helps_equal_harms": 2,
+      "weak_gradient_analysis": {
+        "1e-06": {
+          "count": 10,
+          "above_threshold_with_uniform_token_weight": 8,
+          "median_prefix_weight": 3.879949805885019e-09
+        },
+        "1e-08": {
+          "count": 7,
+          "above_threshold_with_uniform_token_weight": 7,
+          "median_prefix_weight": 8.20757212194323e-11
+        },
+        "1e-12": {
+          "count": 3,
+          "above_threshold_with_uniform_token_weight": 3,
+          "median_prefix_weight": 6.453674044687918e-15
+        }
+      },
+      "factor_medians_by_position": {
+        "1": {
+          "previous_overlap_product": 0.9790336489677429,
+          "prefix_weight_including_mean": 0.05196400731801987,
+          "softmax_directional_gain": 0.009380478695273475,
+          "local_logit_norm": 0.04550396278500557,
+          "candidate_gradient_fraction": 1.0,
+          "head_directional_gain": 0.7845489970868947,
+          "local_latent_norm_fp64": 0.0357000883664555,
+          "weighted_latent_norm_fp64": 0.002674983765789488
+        },
+        "3": {
+          "previous_overlap_product": 0.3537854463133719,
+          "prefix_weight_including_mean": 0.0156264565885067,
+          "softmax_directional_gain": 0.03737617446360846,
+          "local_logit_norm": 0.09578263014554977,
+          "candidate_gradient_fraction": 1.0,
+          "head_directional_gain": 1.8889379345245318,
+          "local_latent_norm_fp64": 0.1720350986999676,
+          "weighted_latent_norm_fp64": 0.0024923711829105094
+        },
+        "6": {
+          "previous_overlap_product": 0.002611545674506121,
+          "prefix_weight_including_mean": 9.326948929810897e-05,
+          "softmax_directional_gain": 0.010967977344989777,
+          "local_logit_norm": 0.019391806796193123,
+          "candidate_gradient_fraction": 1.0,
+          "head_directional_gain": 2.0660636107374284,
+          "local_latent_norm_fp64": 0.05066778773992521,
+          "weighted_latent_norm_fp64": 3.221248695219747e-07
+        }
+      },
+      "bf16_vs_continuous_gradient_cosine_min": 0.9999489737702686,
+      "bf16_vs_continuous_gradient_cosine_median": 0.9999880763115158,
+      "parameter_group_contributions": {
+        "hidden_proj": {
+          "negative_count": 12,
+          "median_derivative": 0.3564172677361057
+        },
+        "previous_proj": {
+          "negative_count": 16,
+          "median_derivative": 0.13657273773424095
+        },
+        "q_proj": {
+          "negative_count": 18,
+          "median_derivative": -0.029404915650957264
+        },
+        "fusion": {
+          "negative_count": 14,
+          "median_derivative": 0.2742091565160081
+        },
+        "blocks.0": {
+          "negative_count": 12,
+          "median_derivative": 0.028998770045291167
+        },
+        "blocks.1": {
+          "negative_count": 12,
+          "median_derivative": 0.048106360161909834
+        },
+        "output_norm": {
+          "negative_count": 13,
+          "median_derivative": 0.0014828036073595285
+        },
+        "direction_head": {
+          "negative_count": 20,
+          "median_derivative": -1.8287716209888458
+        },
+        "dose_head": {
+          "negative_count": 3,
+          "median_derivative": 0.4020065665245056
+        }
+      }
+    }
+  },
+  "verification": {
+    "status": "passed",
+    "same_128_states_as_previous": true,
+    "previous_latent_gradient_norm_max_relative_difference": 0.01104470239850909,
+    "source_hashes_unchanged": true,
+    "parameter_hash_unchanged": true,
+    "numerical_validation": {
+      "status": "complete",
+      "frozen_and_grad_forward_bitwise_equal": true,
+      "latent_bitwise_equal": true,
+      "max_previous_relative_difference": 9.71573545198774e-16,
+      "max_original_style_vs_direct_relative": 0.0,
+      "max_FP64_factorization_relative": 4.103536625228282e-12,
+      "trained_parameters": 0
+    },
+    "initial_numerical_validation_attempt": {
+      "status": "failed",
+      "phase": "online_probe",
+      "utc": "2026-10-01T04:40:47.880070+00:00",
+      "error": "AssertionError('probe failed; see probe.log')"
+    },
+    "parameter_updates": 0,
+    "hidden_requests": 8,
+    "hidden_deleted": 8,
+    "cleanup": {
+      "owned_processes_stopped": true,
+      "temporary_transfer_removed": true,
+      "remaining_before_cleanup": [],
+      "utc": "2026-10-01T04:36:54.815829+00:00"
+    }
+  },
+  "limits": [
+    "actual BF16 backward is a training surrogate, not derivative of discrete rounding",
+    "SGD first-order directions on 8 pilot prompts, not historical AdamW updates or native performance",
+    "same-state equal-overlap control only; no alternative loss trained",
+    "all tied largest competitors tested; sign claims use cosine < -1e-6",
+    "outside proposal support gradient is excluded by actual fixed candidate update",
+    "equal-overlap is only a same-state derivative control; it changes position weighting and objective, so is not a recommended replacement based on this diagnostic alone",
+    "same-prompt gradients contain only four sampled anchors, not all up to1536 training anchors; global gradient averages eight research prompts, not an actual historical training batch",
+    "softmax directional gain uses the probability-space overlap subgradient norm and includes uninformative tail coordinates; compare local gradient magnitudes as well, not this gain alone",
+    "one tied competitor case uses worst derivative per direction, so aggregated worst-direction scalars need not add across directions"
+  ],
+  "conclusions": [
+    "direction头参数组对24/41个错误的全局平均排序导数贡献为负，dose头为5/41；贡献按当前参数化定义，不能简单比较参数组或断言必须换头。",
+    "在相同41个错误状态上，隔离自身加权损失的参数梯度全部帮助greedy排序；合并同一prompt的28个状态后13个反向；8个研究prompt平均后21个反向。主分析35个错误对应0、13、17个反向。",
+    "第7个预测位置j=6的15个错误，局部latent梯度范数中位数约0.0507，包含OUTPUT权重后约3.22e-7。两者中位数不能相除当作典型衰减倍数；逐状态分解已逐项验证。",
+    "j=6的前驱重叠乘积中位数约0.00261，意味着该位置相对等权token损失的权重中位数只有约0.261%。这是前缀目标的数学性质，不能称为反向漏接或实现错误。",
+    "7个梯度范数小于1e-8的错误，在同状态以1/28替代前缀权重后全部超过1e-8；这支持极弱信号来自前缀加权，而非这些状态的局部头普遍没有梯度。",
+    "等权overlap控制仍损害18/41的联合排序方向：相对OUTPUT改善5个，恶化2个。前缀衰减和跨状态共享参数干扰是不同问题；不能据此直接推荐替换损失。",
+    "真实BF16参数梯度与连续最终头诊断相容：错误状态latent梯度余弦最小约0.999949。128个状态的标签和正确性与上一轮一致。",
+    "一个正确对照的极小latent梯度，跨轮直接与因子分解计算差1.1%；已进行单prompt数值复核，开启求导前后logits/latent逐位相同，FP64分解恒等式通过。所有跨轮直接梯度差异均单独记录，不能把数值量级差异当作状态机制。主要参数方向计数使用直接BF16反向，未使用这个正确对照的因子近似。"
+  ],
+  "next_step": {
+    "status": "proposed_not_run",
+    "question": "为什么direction头产生跨状态干扰：latent相似却要求相反的输出修正，还是其他因素？",
+    "direction_identity": {
+      "status": "passed",
+      "absolute_error": 2.842170943040401e-14,
+      "equation": "-<grad_(A,b) m_i,grad_(A,b) L_k> = -(ell_i dot ell_k + 1) * <grad_ti m_i,grad_tk L_k>",
+      "meaning": "direction-head cross-state interference separates latent similarity from required output-gradient agreement",
+      "scope": "real-valued identity; frozen BF16 gradient groups motivate checking these factors, but no latent-similarity diagnosis has yet been run"
+    },
+    "method": [
+      "按线性头恒等式把干扰分成latent相似度与输出梯度相容性，验证是否是相似latent承载冲突修正需求；该具体分解尚未在真实状态上运行",
+      "先在独立开发状态上确认梯度衰减与冲突是否复现，并区分teacher与真实反馈前缀；不触碰封存确认集",
+      "按状态对的前驱token、q、hidden相似性与要求的修正方向分组，检验是否出现输入相近但目标修正相反；区分信息不足与共享映射冲突",
+      "用已记录的参数组贡献定位冲突发生在哪一组；只有出现稳定机制证据后，才提出一项相应的目标校正或条件交互结构，而不是同时加头、改层、改损失"
+    ],
+    "limitation": "参数梯度冲突是多状态学习中可能出现的现象；单个冻结checkpoint上的小样本诊断不能证明它决定了历史训练结果或native吞吐。"
+  }
+}

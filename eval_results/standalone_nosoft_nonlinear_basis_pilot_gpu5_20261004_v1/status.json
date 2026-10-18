@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "stage": "finished",
+  "pid": 1322170,
+  "gpu": 5,
+  "uuid": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+  "utc": "2026-10-03T18:48:21.860524+00:00",
+  "result": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_nonlinear_basis_pilot_gpu5_20261004_v1/result.json",
+  "decision": "new_head_training_and_C1_C40_complete"
+}

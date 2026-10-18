@@ -1,0 +1,134 @@
+{
+  "original_training_protocol": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_2gpu_20261007_v3/training_protocol.json",
+  "checkpoint": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_2gpu_20261007_v3/training/epoch_03_resume.pt",
+  "port": 46461,
+  "transfer_root": "/dev/shm/residualV3_fusedloss_2859970",
+  "hardware": {
+    "learner": {
+      "physical_gpu": 2,
+      "uuid": "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824",
+      "pci_bus_id": "00000000:61:00.0",
+      "name": "NVIDIA A100-SXM4-80GB",
+      "cuda_device": 0
+    },
+    "teacher": {
+      "physical_gpu": 3,
+      "uuid": "GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd",
+      "pci_bus_id": "00000000:67:00.0",
+      "name": "NVIDIA A100-SXM4-80GB",
+      "cuda_device": 0
+    },
+    "initial_inventory": {
+      "0": {
+        "uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+        "total_mib": 81920,
+        "free_mib": 42351,
+        "utilization": 87,
+        "foreign_pids_at_selection": [
+          2834082
+        ]
+      },
+      "1": {
+        "uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+        "total_mib": 81920,
+        "free_mib": 57097,
+        "utilization": 20,
+        "foreign_pids_at_selection": [
+          2035013
+        ]
+      },
+      "2": {
+        "uuid": "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824",
+        "total_mib": 81920,
+        "free_mib": 63889,
+        "utilization": 0,
+        "foreign_pids_at_selection": [
+          2150575
+        ]
+      },
+      "3": {
+        "uuid": "GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd",
+        "total_mib": 81920,
+        "free_mib": 63889,
+        "utilization": 0,
+        "foreign_pids_at_selection": [
+          2742432
+        ]
+      },
+      "4": {
+        "uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+        "total_mib": 81920,
+        "free_mib": 10744,
+        "utilization": 100,
+        "foreign_pids_at_selection": [
+          2791134,
+          2834787
+        ]
+      },
+      "5": {
+        "uuid": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+        "total_mib": 81920,
+        "free_mib": 56021,
+        "utilization": 98,
+        "foreign_pids_at_selection": [
+          2515637
+        ]
+      },
+      "6": {
+        "uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+        "total_mib": 81920,
+        "free_mib": 63889,
+        "utilization": 0,
+        "foreign_pids_at_selection": [
+          2728256
+        ]
+      },
+      "7": {
+        "uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+        "total_mib": 81920,
+        "free_mib": 59445,
+        "utilization": 97,
+        "foreign_pids_at_selection": [
+          2757336
+        ]
+      }
+    }
+  },
+  "allocator_budget_bytes": 62697504768,
+  "protected_sha256": {
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_2gpu_20261007_v3/training_protocol.json": "9afbec750e8ca5e34987e23e62d155cac1187aba4c32bbaf63a7c8c2feb169bf",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_2gpu_20261007_v3/training/epoch_03_resume.pt": "d0ad3afae29eaca6af886fc35e8e479148ece6c97f0a3c3f8777f258c954e1a2",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/nosoft3_20k_3epoch_block16_gpu0_20261006_v1/basis/repair_basis_512.safetensors": "66456e529780d78a4fedf11a1931e610468adf94f3907f324458ea9b35817c9e",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/nosoft3_20k_3epoch_packed65536_a1536_2gpu_20261007_v3/training/epoch_03.safetensors": "271c24f386c65a3614c653756b51ba6cad747c8627ec5a2c05d2c2abcbcdf2f1",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/runtime_bundle/repair/model.py": "a350a84243dda1fd7b1e298fd5943c0ca417150feed41673ef33b040c91f7bf8",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/runtime_bundle/runtime/master_optimizer.py": "6ab029af81a4c676701723789c02675f922591116e7616a48dcca620cb3fa87c",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/packed20k_pipeline_v1/compute.py": "8e86cb5316c493cc12e0dbb06a2faecbd0653d01fdd6b8b415ed66b7f5884ade",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/packed20k_split_v3/train.py": "b462d078213e3ef8bb1754c87a9a9a31ec7cbf407d4baacfc0dc6ca3c17d46be",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/upstream_fused.py": "9144017e137269d231d1d926c68e2b808eab0d0a346be7d2708fd86ec00ab9eb",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/fused_kernels.py": "116aca2e254cdd0cacaa741d4002d9e2db851991b5eae5dd1131ac1bc391ad3b",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/losses.py": "7510aa7e842f6a1da9b790ed4f2adaaca459acf924dd3058aeefe4c13acb5203",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/parallel_tf.py": "8558d15f6cd10d69aa1fd73b1be2cfcf333776c3da41ec22df8414f8f3631ca4",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/probe.py": "2338c75dca5c1b162671fdd392e7621f33d0b689bef11d285dc7807e7cbdf23e",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/train.py": "7725d0322894e350baf377f90565da01669d0fe7431d5247546d9ed7dd1c5dd5",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/controller.py": "9c293e1f35e396d2e1df63029e174f3a7b7af36f6d1dae90f13bc952ace94542",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/evaluate.py": "1f7648010a953742fc9a6d3ff0afac4100e5a88fadb3310396e5fbd8e30e44f7",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/report.py": "275dd44598781d02140331f2848bca5da4d2fadaa0db906c38effe8e80f24c53",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/prepare.py": "89ef6a83224882bc951478111ee268e22dcccc2b688497ff43781492a7a3fdee",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/numeric_diagnostic.py": "c8b8d1208ba2e28bff8977373920e051e66edd87a6e7b011a668db5fb8a9b6bf"
+  },
+  "chunks": [
+    64,
+    256,
+    1536
+  ],
+  "arms": [
+    "OUTPUT",
+    "CE_DPACE",
+    "CE_DPACE_OUTPUT"
+  ],
+  "temporary_updates_only": true,
+  "teacher_and_learner_separate_gpus": true,
+  "shared_gpu_allowed": true,
+  "foreign_processes_untouched": true,
+  "utc": "2026-10-07T05:26:41.121457+00:00"
+}

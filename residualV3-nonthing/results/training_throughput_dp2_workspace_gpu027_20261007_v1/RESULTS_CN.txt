@@ -1,0 +1,19 @@
+训练吞吐短实验已完成：固定工作区36次更新 + 原生分配36次更新。
+每组12包，前3包预热，计时9包；相同输入条目及anchor身份逐包核对通过。
+目标CE_DPACE_OUTPUT；只训练no-soft3修复头，target和DFlash冻结。
+65536输入token/包、最多1536 anchor/整包；头1536整块反传，DFlash前向512分块；每包一次Adam更新。
+vLLM：DP2 TP1，卡0/2，每卡实际KV48GiB，max_num_seqs64，max_num_batched_tokens65536，BF16；实际显存约68—73GiB。
+卡4：固定68GiB常驻工作区，或原生68GiB上限/67GiB缓存预热/expandable_segments=True。
+请求并发 | 固定池秒/包 | 原生秒/包 | 原生输入token/秒
+32 | 3.015 | 3.462 | 18752
+64 | 3.080 | 3.131 | 20733
+128 | 2.840 | 2.393 | 27128
+建议下一次同类训练以总请求并发128、现有1536整块和原生expandable_segments作为候选配置。每卡vLLM仍最多64并发，请求队列总并发128。
+固定工作区已完成126次实际更新无碎片失败，但本小样本未证明其稳定提高吞吐；主要证实了物理显存持有和当前协议下的数值可用性。
+CUDA已持有的页面不能由别人抢走；仍不能保证计算资源独占，也不能直接推广到joint backbone/multi-stream。
+数值门槛：一真实整包1536状态逐位一致，三损失32-anchor梯度逐位一致，完整1536反传及下一包驻留通过。
+每请求唯一cache_salt，无跨请求KV复用；online hidden每组862次读取/删除，未持久保存hidden/logits。
+测试卡未发现额外GPU任务；v14原始汇总的8条额外记录是endpoint发布前缺少归属信息的自身teacher进程，AUDIT.json给出更正。
+性能局限：每组仅9个计时包、时段不同，跨卡任务共享CPU/RAM/PCIe；这些是训练工程观察，不能当正式native推理吞吐结果。
+试验已结束并关闭自身teacher；原卡3正式评测继续，原权重未覆盖。
+完整数据：native_gpu4_v14/throughput.csv，详细监控gpu_monitor.jsonl，核实AUDIT.json。

@@ -1,0 +1,66 @@
+同状态瓶颈定位：诊断结果，不是native AL/TPS成绩。
+所有输入使用原始h/q/实际lag-1；teacher只用于监督、训练提示剂量标定和标记清楚的oracle。
+直接预测器学习OVERLAP梯度，不是最优修正动作；其native RAW监督状态与头的teacher-forced训练状态不同，不能把差异只归因于网络容量。
+研究诊断面板此前使用过，不是独立最终测试。
+
+RAW轨迹 T0：到达563状态；oracle子集错误32、原正确32；Top256固定支持可证明无法修正0个错误。
+方法 同子集修好原错误/总错误；原正确误修；平均overlap变化
+heads/SHORT 24/32；误修0；overlap +0.298057
+heads/LONG 22/32；误修0；overlap +0.312233
+heads/GG 20/32；误修0；overlap +0.280749
+heads/RR 22/32；误修0；overlap +0.295009
+heads/NL 22/32；误修0；overlap +0.284634
+direct/OLD 20/32；误修0；overlap +0.250428
+direct/GG 20/32；误修0；overlap +0.251398
+direct/RR 20/32；误修0；overlap +0.251546
+direct/NL 21/32；误修0；overlap +0.250592
+固定方向+target剂量oracle（不能部署）修好数：direct_OLD 21/32, direct_GG 22/32, direct_RR 22/32, direct_NL 23/32, head_SHORT 24/32, head_LONG 24/32, head_GG 20/32, head_RR 22/32, head_NL 22/32
+基底自由系数MARGIN oracle找到正确数（有限搜索，不是严格上界）：OLD 32/32, GG 32/32, RR 32/32, NL 32/32, FULL4096 32/32
+
+RAW轨迹 T1：到达452状态；oracle子集错误32、原正确32；Top256固定支持可证明无法修正0个错误。
+方法 同子集修好原错误/总错误；原正确误修；平均overlap变化
+heads/SHORT 21/32；误修0；overlap +0.277216
+heads/LONG 21/32；误修0；overlap +0.296073
+heads/GG 21/32；误修0；overlap +0.268721
+heads/RR 21/32；误修0；overlap +0.282180
+heads/NL 21/32；误修0；overlap +0.271744
+direct/OLD 19/32；误修0；overlap +0.247671
+direct/GG 19/32；误修0；overlap +0.247960
+direct/RR 19/32；误修0；overlap +0.248123
+direct/NL 20/32；误修0；overlap +0.250442
+固定方向+target剂量oracle（不能部署）修好数：direct_OLD 19/32, direct_GG 19/32, direct_RR 19/32, direct_NL 21/32, head_SHORT 21/32, head_LONG 23/32, head_GG 21/32, head_RR 21/32, head_NL 22/32
+基底自由系数MARGIN oracle找到正确数（有限搜索，不是严格上界）：OLD 32/32, GG 32/32, RR 32/32, NL 32/32, FULL4096 32/32
+
+NL轨迹 T0：到达615状态；oracle子集错误32、原正确32；Top256固定支持可证明无法修正0个错误。
+方法 同子集修好原错误/总错误；原正确误修；平均overlap变化
+heads/SHORT 24/32；误修0；overlap +0.309889
+heads/LONG 22/32；误修0；overlap +0.324548
+heads/GG 20/32；误修0；overlap +0.292086
+heads/RR 22/32；误修0；overlap +0.307491
+heads/NL 22/32；误修0；overlap +0.295727
+direct/OLD 20/32；误修1；overlap +0.253487
+direct/GG 20/32；误修1；overlap +0.254825
+direct/RR 20/32；误修1；overlap +0.255337
+direct/NL 21/32；误修1；overlap +0.250672
+固定方向+target剂量oracle（不能部署）修好数：direct_OLD 21/32, direct_GG 22/32, direct_RR 22/32, direct_NL 23/32, head_SHORT 24/32, head_LONG 24/32, head_GG 20/32, head_RR 22/32, head_NL 22/32
+基底自由系数MARGIN oracle找到正确数（有限搜索，不是严格上界）：OLD 32/32, GG 32/32, RR 32/32, NL 32/32, FULL4096 32/32
+
+NL轨迹 T1：到达571状态；oracle子集错误32、原正确32；Top256固定支持可证明无法修正0个错误。
+方法 同子集修好原错误/总错误；原正确误修；平均overlap变化
+heads/SHORT 22/32；误修0；overlap +0.303981
+heads/LONG 20/32；误修0；overlap +0.300759
+heads/GG 20/32；误修0；overlap +0.293733
+heads/RR 21/32；误修0；overlap +0.301194
+heads/NL 22/32；误修1；overlap +0.301754
+direct/OLD 21/32；误修2；overlap +0.260477
+direct/GG 21/32；误修2；overlap +0.260949
+direct/RR 21/32；误修2；overlap +0.261460
+direct/NL 21/32；误修2；overlap +0.254282
+固定方向+target剂量oracle（不能部署）修好数：direct_OLD 21/32, direct_GG 21/32, direct_RR 21/32, direct_NL 21/32, head_SHORT 23/32, head_LONG 22/32, head_GG 21/32, head_RR 22/32, head_NL 22/32
+基底自由系数MARGIN oracle找到正确数（有限搜索，不是严格上界）：OLD 32/32, GG 32/32, RR 32/32, NL 32/32, FULL4096 32/32
+
+解释边界：基底oracle找到解，说明存在可修动作；预测/头差仍可能来自输入表示、预测器能力、监督目标和状态分布。
+固定方向剂量oracle与全自由oracle差距用于检查方向问题；固定预测与剂量oracle差距用于检查幅度问题。
+从RAW轨迹到NL轨迹的差异可提示前缀分布影响；不等于反事实连续rollout或因果AL收益。
+有限oracle未找到解不能证明不存在；不同基底失败率还受搜索收敛影响。
+原短训是主基线，长训只读参考；本实验没有任何新大训练或性能重测。

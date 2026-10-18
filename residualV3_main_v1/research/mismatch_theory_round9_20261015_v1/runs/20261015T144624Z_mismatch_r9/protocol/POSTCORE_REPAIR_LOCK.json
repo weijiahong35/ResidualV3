@@ -1,0 +1,21 @@
+{
+  "UTC": "2026-10-15T15:21:07.579644+00:00",
+  "scope": "post-core strict certificate comparison and outcome-independent structural flag repair; report/text labels only; no optimizer/statistic selection change",
+  "review_files": [
+    "qa/STRICT_CERTIFICATE_CHECK_REVIEW_CN.md",
+    "qa/SHAM_FLAG_REPAIR_REVIEW_CN.md"
+  ],
+  "code_SHA256": {
+    "code/audit_strict.py": "04a684001b71d6f246acadf35a12bc878f761453c799cfd5c2970d50fa5095d6",
+    "code/postcore.py": "4fce85a9805d0936c12f5fb183a7337a25eeeb71fc1d5d82f6c234b387cd29ce",
+    "code/deliver.py": "1928d706a066ab8bc2e25fdb5be688db0b24fe2f8040a4edbc25b0303f77daad"
+  },
+  "acceptance_required_before_delivery": true,
+  "initial_LOCK_unchanged": true,
+  "core_stage_not_interrupted_again": true,
+  "revision_note": "before post-core execution: enforce code hashes in postcore entry; no math/statistics or selection change",
+  "revised_UTC": "2026-10-15T16:20:16.990081+00:00",
+  "editorial_note": "before formal output inspection: report explicitly explains TV-ball intersection and fixed sham CI interpretation; no new numerical test or selection",
+  "display_note": "tiny nonzero values shown in scientific notation rather than rounding them to zero",
+  "repair2_note": "External wall supervision, historical overrun explicitly disclosed; no scientific estimand or selection change"
+}

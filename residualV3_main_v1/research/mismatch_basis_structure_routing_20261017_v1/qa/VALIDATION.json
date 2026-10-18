@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "four_user_questions": true,
+    "scope_document_only": true,
+    "panel_matches_audit": true,
+    "solver_count": true,
+    "ridge_count": true,
+    "feature_dimensions": true,
+    "three_domain_pairs": true,
+    "full_space_anchor": true,
+    "no_scientific_output_dir": true,
+    "local_links_exist": true,
+    "prompt_has_questions_and_scope": true,
+    "budget_gate_consistency": true
+  },
+  "broken_links": [],
+  "passed": true,
+  "scientific_experiments_run": false,
+  "files_checked": 24
+}

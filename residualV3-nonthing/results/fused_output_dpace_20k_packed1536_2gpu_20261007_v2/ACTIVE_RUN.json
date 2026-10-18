@@ -1,0 +1,148 @@
+{
+  "controller_status": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2/pipeline_20261007_v8/controller_status.json",
+  "controller_log": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2/pipeline_20261007_v8/controller.log",
+  "training_log": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2/pipeline_20261007_v8/attempt_02_CE_DPACE_OUTPUT/training.log",
+  "training_status": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2/training_arms/CE_DPACE_OUTPUT/training/status.json",
+  "recovery_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2/pipeline_20261007_v8",
+  "arm": "CE_DPACE_OUTPUT",
+  "hardware": {
+    "learner": {
+      "physical_gpu": 3,
+      "uuid": "GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd",
+      "pci_bus_id": "00000000:67:00.0",
+      "name": "NVIDIA A100-SXM4-80GB",
+      "cuda_device": 0
+    },
+    "teacher_dp": [
+      {
+        "physical_gpu": 0,
+        "uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+        "pci_bus_id": "00000000:3D:00.0",
+        "name": "NVIDIA A100-SXM4-80GB",
+        "cuda_device": 0
+      },
+      {
+        "physical_gpu": 4,
+        "uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+        "pci_bus_id": "00000000:AD:00.0",
+        "name": "NVIDIA A100-SXM4-80GB",
+        "cuda_device": 0
+      }
+    ],
+    "inventory": {
+      "0": {
+        "uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+        "total_mib": 81920,
+        "free_mib": 20738,
+        "utilization": 98,
+        "host_processes": [
+          {
+            "pid": 3593937,
+            "used_mib": 34114
+          },
+          {
+            "pid": 3669643,
+            "used_mib": 27564
+          }
+        ]
+      },
+      "1": {
+        "uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+        "total_mib": 81920,
+        "free_mib": 12632,
+        "utilization": 100,
+        "host_processes": [
+          {
+            "pid": 2985147,
+            "used_mib": 39972
+          },
+          {
+            "pid": 3965649,
+            "used_mib": 28520
+          }
+        ]
+      },
+      "2": {
+        "uuid": "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824",
+        "total_mib": 81920,
+        "free_mib": 25072,
+        "utilization": 57,
+        "host_processes": [
+          {
+            "pid": 662203,
+            "used_mib": 17256
+          },
+          {
+            "pid": 897314,
+            "used_mib": 38804
+          }
+        ]
+      },
+      "3": {
+        "uuid": "GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd",
+        "total_mib": 81920,
+        "free_mib": 63889,
+        "utilization": 0,
+        "host_processes": [
+          {
+            "pid": 123026,
+            "used_mib": 17256
+          }
+        ]
+      },
+      "4": {
+        "uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+        "total_mib": 81920,
+        "free_mib": 29624,
+        "utilization": 0,
+        "host_processes": [
+          {
+            "pid": 3593936,
+            "used_mib": 34254
+          },
+          {
+            "pid": 4161901,
+            "used_mib": 17254
+          }
+        ]
+      },
+      "5": {
+        "uuid": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+        "total_mib": 81920,
+        "free_mib": 81151,
+        "utilization": 0,
+        "host_processes": []
+      },
+      "6": {
+        "uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+        "total_mib": 81920,
+        "free_mib": 46628,
+        "utilization": 0,
+        "host_processes": [
+          {
+            "pid": 235320,
+            "used_mib": 17256
+          },
+          {
+            "pid": 235530,
+            "used_mib": 17256
+          }
+        ]
+      },
+      "7": {
+        "uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+        "total_mib": 81920,
+        "free_mib": 21873,
+        "utilization": 100,
+        "host_processes": [
+          {
+            "pid": 894345,
+            "used_mib": 59272
+          }
+        ]
+      }
+    }
+  },
+  "teacher_endpoint": "http://127.0.0.1:43143/v1",
+  "utc": "2026-10-07T08:30:03.604336+00:00"
+}

@@ -1,0 +1,642 @@
+{
+  "schema": "residualv3_handoff/20261013",
+  "written_utc": "2026-10-13T05:07:28.292749+00:00",
+  "written_beijing": "2026-10-13T13:07:28.292749+08:00",
+  "progress_snapshot_utc": "2026-10-13T05:01:40.285900+00:00",
+  "progress_snapshot_beijing": "2026-10-13T13:01:40.286242+08:00",
+  "timezone_for_user": "Asia/Shanghai",
+  "repository": "/data/weijiahong/speculators-main-lora",
+  "read_first": [
+    "HANDOFF_20261013_CN.md",
+    "HANDOFF_20261013_PROCESS_SNAPSHOT.json",
+    "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/status.json",
+    "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/progress.json",
+    "GROUP_MEETING_20261013_CN.md"
+  ],
+  "current_task": {
+    "scope": "Complete authorized E2 independent DFlash vs full three-layer joint-model evaluation on six DSpark code/chat panels",
+    "results_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1",
+    "code_root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_dspark_code_chat_C1_C32_20261013_v1",
+    "snapshot_progress": {
+      "status": "running",
+      "valid_formal_windows": 10,
+      "paired_comparisons": 4,
+      "formal_windows_expected": 48,
+      "paired_comparisons_expected": 24,
+      "utc": "2026-10-13T05:01:25.257307+00:00"
+    },
+    "snapshot_dataset_states": {
+      "humaneval": {
+        "status": "complete",
+        "dataset": "humaneval",
+        "utc": "2026-10-13T04:59:11.969990+00:00"
+      },
+      "mbpp": {
+        "status": "running",
+        "dataset": "mbpp",
+        "concurrency": 1,
+        "gpu": 5,
+        "phase": "formal",
+        "evaluator_pid": 472864,
+        "log": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/mbpp_C1_formal.log",
+        "command": [
+          "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+          "-B",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_dspark_code_chat_C1_C32_20261013_v1/native_evaluate.py",
+          "--training",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/mbpp/C1",
+          "--gpu",
+          "5",
+          "--concurrency",
+          "1",
+          "--output",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/mbpp/C1/formal",
+          "--prompts",
+          "256",
+          "--tokens",
+          "2048",
+          "--rounds",
+          "1",
+          "--arms",
+          "DFLASH",
+          "FULL15_NOFILL"
+        ],
+        "attempt": 9,
+        "utc": "2026-10-13T04:25:23.638759+00:00"
+      },
+      "livecodebench": {
+        "status": "running",
+        "dataset": "livecodebench",
+        "concurrency": 1,
+        "gpu": 6,
+        "phase": "formal",
+        "evaluator_pid": 608471,
+        "log": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/livecodebench_C1_formal.log",
+        "command": [
+          "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+          "-B",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_dspark_code_chat_C1_C32_20261013_v1/native_evaluate.py",
+          "--training",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/livecodebench/C1",
+          "--gpu",
+          "6",
+          "--concurrency",
+          "1",
+          "--output",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/livecodebench/C1/formal",
+          "--prompts",
+          "500",
+          "--tokens",
+          "2048",
+          "--rounds",
+          "1",
+          "--arms",
+          "DFLASH",
+          "FULL15_NOFILL"
+        ],
+        "attempt": 1,
+        "utc": "2026-10-13T05:01:19.105657+00:00"
+      },
+      "mt-bench": {
+        "status": "queued",
+        "dataset": "mt-bench",
+        "utc": "2026-10-13T02:07:44.412855+00:00"
+      },
+      "alpaca": {
+        "status": "queued",
+        "dataset": "alpaca",
+        "utc": "2026-10-13T02:07:44.412961+00:00"
+      },
+      "arena-hard-v2": {
+        "status": "queued",
+        "dataset": "arena-hard-v2",
+        "utc": "2026-10-13T02:07:44.413068+00:00"
+      }
+    },
+    "controller_snapshot": {
+      "pid": 4138310,
+      "uid": 1024,
+      "process_evidence": "HANDOFF_20261013_PROCESS_SNAPSHOT.json",
+      "must_revalidate_uid_and_command": true
+    },
+    "do_not_duplicate_controller": true,
+    "do_not_repeat_valid_completed_windows": true,
+    "all_batch_final_audit_completed": false,
+    "completed_humaneval_evidence": {
+      "humaneval_C1": {
+        "source": "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/humaneval/C1/formal/summary.json",
+        "summary_complete": true,
+        "windows": 4,
+        "all_isolated": true,
+        "all_speed_evidence": true,
+        "all_graph_without_fallback_or_eager": true
+      },
+      "humaneval_C32": {
+        "source": "residualV3-nonthing/results/epoch2_dspark_code_chat_C1_C32_20261013_v1/humaneval/C32/formal/summary.json",
+        "summary_complete": true,
+        "windows": 4,
+        "all_isolated": true,
+        "all_speed_evidence": true,
+        "all_graph_without_fallback_or_eager": true
+      }
+    },
+    "current_comparisons": {
+      "humaneval_C1_T0": {
+        "dataset": "humaneval",
+        "concurrency": 1,
+        "T": 0,
+        "baseline_AC": 5.541693929480189,
+        "head_AC": 6.3441817879141,
+        "AC_growth_pct": 14.480912671212497,
+        "baseline_TPS": 134.40559447935885,
+        "head_TPS": 148.60881619871296,
+        "TPS_growth_pct": 10.567433427434715
+      },
+      "humaneval_C1_T1": {
+        "dataset": "humaneval",
+        "concurrency": 1,
+        "T": 1,
+        "baseline_AC": 4.839549389002037,
+        "head_AC": 5.731345475910693,
+        "AC_growth_pct": 18.427254589761578,
+        "baseline_TPS": 117.50044281989412,
+        "head_TPS": 134.4017238753835,
+        "TPS_growth_pct": 14.384014774647147
+      },
+      "humaneval_C32_T0": {
+        "dataset": "humaneval",
+        "concurrency": 32,
+        "T": 0,
+        "baseline_AC": 5.5416212286441295,
+        "head_AC": 6.343125832223702,
+        "AC_growth_pct": 14.463359556886868,
+        "baseline_TPS": 1999.0674257563626,
+        "head_TPS": 2175.198668529166,
+        "TPS_growth_pct": 8.810670440801305
+      },
+      "humaneval_C32_T1": {
+        "dataset": "humaneval",
+        "concurrency": 32,
+        "T": 1,
+        "baseline_AC": 4.810450884647093,
+        "head_AC": 5.6778777492145105,
+        "AC_growth_pct": 18.03213223392166,
+        "baseline_TPS": 1793.4210416566511,
+        "head_TPS": 1987.0462003631778,
+        "TPS_growth_pct": 10.796413904437507
+      }
+    },
+    "protocol": {
+      "code": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_dspark_code_chat_C1_C32_20261013_v1",
+      "datasets": {
+        "humaneval": {
+          "count": 164,
+          "unique_prompt_texts": 164,
+          "context_limit": 4096,
+          "template_sha256": "a07a22a84cc137d633516c310768e7cad586bf8dc7925c41e638fe3bc6c41bd1",
+          "domain": "code"
+        },
+        "mbpp": {
+          "count": 256,
+          "unique_prompt_texts": 255,
+          "context_limit": 4096,
+          "template_sha256": "fe1a78a33d7948f77f9864e8c182c04e7a21ccbc58b915effc84440bc4c272f4",
+          "domain": "code"
+        },
+        "livecodebench": {
+          "count": 500,
+          "unique_prompt_texts": 500,
+          "context_limit": 4096,
+          "template_sha256": "bc8c45f448a8e48e87a09952ad60dc07d10f9d9ccc73da9a5338a56d545f2d01",
+          "domain": "code"
+        },
+        "mt-bench": {
+          "count": 80,
+          "unique_prompt_texts": 80,
+          "context_limit": 4096,
+          "template_sha256": "b2ee5971770be7a68f44c598e95a8488c9460e83334c2b676ed91a368773c39c",
+          "domain": "chat"
+        },
+        "alpaca": {
+          "count": 500,
+          "unique_prompt_texts": 500,
+          "context_limit": 4096,
+          "template_sha256": "0e335b3830cc0bf24220d2f94a8af6d65118ded72b6f10a844e472b8be708c6f",
+          "domain": "chat"
+        },
+        "arena-hard-v2": {
+          "count": 500,
+          "unique_prompt_texts": 500,
+          "context_limit": 12288,
+          "template_sha256": "a24f388acf10b38f0eade6f83978232584ca3683b48630ee6240cdf9016baee6",
+          "domain": "chat"
+        }
+      },
+      "arms": [
+        "DFLASH",
+        "FULL15_NOFILL"
+      ],
+      "epoch": 2,
+      "head_depth": 3,
+      "concurrency": [
+        1,
+        32
+      ],
+      "temperatures": [
+        0,
+        1
+      ],
+      "formal_windows_expected": 48,
+      "formal_requests_expected": 16000,
+      "max_new_tokens": 2048,
+      "request_seed_base": 980406,
+      "eligible_gpus": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "maximum_simultaneous_owned_gpus": 2,
+      "empty_gpu_free_mib": 78000,
+      "user_disk_limit_bytes": 644245094400,
+      "created_utc": "2026-10-13T02:06:32.207236+00:00",
+      "previous_results_preserved": true,
+      "source_commit": "005e03b81cec38b7da6399833d609ee89a2587f2"
+    },
+    "kv_gib": {
+      "C1": 52,
+      "C32": 44
+    },
+    "memory_utilization": 0.92,
+    "smoke_formal_same_kv": true,
+    "code_identity": {
+      "source_files_checked": 183,
+      "all_match_plan": true,
+      "dispatch_files_checked": 3,
+      "all_match_dispatch_manifest": true
+    },
+    "report_generation": "Existing controller updates report every 15 seconds and invokes final verify.py",
+    "foreign_occupation_recovery": "Preserve failed/contaminated attempts in prior_attempts; do not treat them as valid speed results",
+    "on_completion": [
+      "verify all 48 formal windows and 24 paired comparisons plus final audit",
+      "update registry.json under ledger.lock then ledger.py refresh",
+      "update group meeting report with new protocol labels and retain old batches"
+    ]
+  },
+  "training": {
+    "1": {
+      "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1",
+      "status": {
+        "status": "complete",
+        "epochs": 1,
+        "training_rows": 833176,
+        "cursor": 15847,
+        "utc": "2026-10-08T15:37:36.193968+00:00"
+      },
+      "cursor": 15847,
+      "global_step": 15847,
+      "slot": 0,
+      "full_checkpoint": {
+        "joint": {
+          "file": {
+            "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/checkpoints/slot_0/joint.state.bin",
+            "exists": true,
+            "size_bytes": 8858370048,
+            "allocated_bytes": 8858370048,
+            "is_directory": false,
+            "symlink_target": null
+          },
+          "recorded_sha256": "b61b5677102bedd691a8310018b63992be3aaea06ec18c28d62bf367f0934365",
+          "logical_bytes": 8441662047,
+          "reserved_bytes": 8858370048,
+          "full_masters_optimizers_rng": true,
+          "protocol_sha256": "f21991779e3767f0f8668ad62fdc2582210a8366472f7724e36805878d76b160",
+          "order_sha256": "1d2cfebe5422aef0d06115838b169c665db89ea3774fa5cfcb76bcb7976ecfe9",
+          "plan_sha256": "383ac64b533a084489e93a4d6d32fbfe0a6c8f7e3bee3e77fc393b945d5f8908"
+        },
+        "body": {
+          "file": {
+            "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/checkpoints/slot_0/body.state.bin",
+            "exists": true,
+            "size_bytes": 8858370048,
+            "allocated_bytes": 8858370048,
+            "is_directory": false,
+            "symlink_target": null
+          },
+          "recorded_sha256": "8e3cc1c35abdbbd9b4f3af362b5521fe12613ca681b34f2c12dc499fc0319f91",
+          "logical_bytes": 8389350259,
+          "reserved_bytes": 8858370048,
+          "full_masters_optimizers_rng": true,
+          "protocol_sha256": "f21991779e3767f0f8668ad62fdc2582210a8366472f7724e36805878d76b160",
+          "order_sha256": "1d2cfebe5422aef0d06115838b169c665db89ea3774fa5cfcb76bcb7976ecfe9",
+          "plan_sha256": "383ac64b533a084489e93a4d6d32fbfe0a6c8f7e3bee3e77fc393b945d5f8908"
+        }
+      },
+      "final_artifacts": [
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/final/body_epoch_01.safetensors",
+          "exists": true,
+          "size_bytes": 2097267648,
+          "allocated_bytes": 2097270784,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/final/joint_epoch_01.safetensors",
+          "exists": true,
+          "size_bytes": 2105978602,
+          "allocated_bytes": 2105978880,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/final/body_manifest.json",
+          "exists": true,
+          "size_bytes": 420,
+          "allocated_bytes": 4096,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/final/joint_manifest.json",
+          "exists": true,
+          "size_bytes": 421,
+          "allocated_bytes": 4096,
+          "is_directory": false,
+          "symlink_target": null
+        }
+      ],
+      "protocol": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/protocol.json",
+        "exists": true,
+        "size_bytes": 4863,
+        "allocated_bytes": 8192,
+        "is_directory": false,
+        "symlink_target": null,
+        "sha256_computed_now": "f21991779e3767f0f8668ad62fdc2582210a8366472f7724e36805878d76b160"
+      },
+      "data_manifest": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/all_nonthinking_ctx4096_20261006_v1/manifest.json",
+        "exists": true,
+        "size_bytes": 107948,
+        "allocated_bytes": 110592,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "epoch_order": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/epoch_order.npy",
+        "exists": true,
+        "size_bytes": 3332832,
+        "allocated_bytes": 3334144,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "pack_offsets": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/pack_offsets.npy",
+        "exists": true,
+        "size_bytes": 63520,
+        "allocated_bytes": 65536,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "basis": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_then_dflash_1epoch_2gpu_20261006_v1/basis/initial_pretrained_basis_512.safetensors",
+        "exists": true,
+        "size_bytes": 8388696,
+        "allocated_bytes": 8392704,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "head_config": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_then_dflash_1epoch_2gpu_20261006_v1/head_config.json",
+        "exists": true,
+        "size_bytes": 255,
+        "allocated_bytes": 4096,
+        "is_directory": false,
+        "symlink_target": null
+      }
+    },
+    "2": {
+      "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4",
+      "status": {
+        "status": "complete",
+        "cursor": 15854,
+        "training_epoch": 2,
+        "utc": "2026-10-10T12:13:15.265265+00:00"
+      },
+      "cursor": 15854,
+      "global_step": 31701,
+      "slot": 0,
+      "full_checkpoint": {
+        "joint": {
+          "file": {
+            "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/checkpoints/slot_0/joint.state.bin",
+            "exists": true,
+            "size_bytes": 8858370048,
+            "allocated_bytes": 8858370048,
+            "is_directory": false,
+            "symlink_target": null
+          },
+          "recorded_sha256": "d21e5e8224f2bb045514aa852f6865b9b0d43f3b22d6f84604eb4148ad45a914",
+          "logical_bytes": 8441815795,
+          "reserved_bytes": 8858370048,
+          "full_masters_optimizers_rng": true,
+          "protocol_sha256": "e0fdf1b13d0a9d78be60be63688f99d57c6444b684cecea3edcdda0cf7bbc130",
+          "order_sha256": "05ea3fd9ef2d319d11b96be92fbed055d75b01fb562002d109d8fc46dade3d6f",
+          "plan_sha256": "5c7846662cd3cb7db43b1252cc2f021df47649f016e1daf11fbed497ddd0fd87"
+        },
+        "body": {
+          "file": {
+            "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/checkpoints/slot_0/body.state.bin",
+            "exists": true,
+            "size_bytes": 8858370048,
+            "allocated_bytes": 8858370048,
+            "is_directory": false,
+            "symlink_target": null
+          },
+          "recorded_sha256": "ebd09266deac6bcb588c785f9388306693462ee3a775cfe7c8d87c21f67c98fd",
+          "logical_bytes": 8389350323,
+          "reserved_bytes": 8858370048,
+          "full_masters_optimizers_rng": true,
+          "protocol_sha256": "e0fdf1b13d0a9d78be60be63688f99d57c6444b684cecea3edcdda0cf7bbc130",
+          "order_sha256": "05ea3fd9ef2d319d11b96be92fbed055d75b01fb562002d109d8fc46dade3d6f",
+          "plan_sha256": "5c7846662cd3cb7db43b1252cc2f021df47649f016e1daf11fbed497ddd0fd87"
+        }
+      },
+      "final_artifacts": [
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/post_repair_aux_comparison.pt",
+          "exists": true,
+          "size_bytes": 147901,
+          "allocated_bytes": 151552,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/post_repair_aux_comparison_manifest.json",
+          "exists": true,
+          "size_bytes": 414,
+          "allocated_bytes": 4096,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/body_epoch_02.safetensors",
+          "exists": true,
+          "size_bytes": 2097267648,
+          "allocated_bytes": 2097270784,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/joint_epoch_02.safetensors",
+          "exists": true,
+          "size_bytes": 2105978602,
+          "allocated_bytes": 2105978880,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/body_manifest.json",
+          "exists": true,
+          "size_bytes": 457,
+          "allocated_bytes": 4096,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/joint_manifest.json",
+          "exists": true,
+          "size_bytes": 458,
+          "allocated_bytes": 4096,
+          "is_directory": false,
+          "symlink_target": null
+        }
+      ],
+      "protocol": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/protocol.json",
+        "exists": true,
+        "size_bytes": 9257,
+        "allocated_bytes": 12288,
+        "is_directory": false,
+        "symlink_target": null,
+        "sha256_computed_now": "e0fdf1b13d0a9d78be60be63688f99d57c6444b684cecea3edcdda0cf7bbc130"
+      },
+      "data_manifest": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/all_nonthinking_ctx4096_20261006_v1/manifest.json",
+        "exists": true,
+        "size_bytes": 107948,
+        "allocated_bytes": 110592,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "epoch_order": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_teacher1_3gpu_20261009_v1/epoch_order.npy",
+        "exists": true,
+        "size_bytes": 3332832,
+        "allocated_bytes": 3334144,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "pack_offsets": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_teacher1_3gpu_20261009_v1/pack_offsets.npy",
+        "exists": true,
+        "size_bytes": 126968,
+        "allocated_bytes": 126976,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "basis": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_then_dflash_1epoch_2gpu_20261006_v1/basis/initial_pretrained_basis_512.safetensors",
+        "exists": true,
+        "size_bytes": 8388696,
+        "allocated_bytes": 8392704,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "head_config": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_then_dflash_1epoch_2gpu_20261006_v1/head_config.json",
+        "exists": true,
+        "size_bytes": 255,
+        "allocated_bytes": 4096,
+        "is_directory": false,
+        "symlink_target": null
+      }
+    }
+  },
+  "training_identity_notes": {
+    "training_metadata_origin": "HANDOFF_20261011_STATE.json recorded manifests; large binary SHA not recomputed this turn",
+    "E1_E2_final_weights_and_slot0_full_checkpoints_exist_checked_this_turn": true,
+    "epochs_completed": [
+      1,
+      2
+    ],
+    "epoch3_authorized": false,
+    "train_rows_per_epoch": 833176,
+    "updates_per_epoch": [
+      15847,
+      15854
+    ],
+    "total_updates_per_model": 31701,
+    "body_layers": 5,
+    "repair_swiglu_blocks": 3,
+    "repair_parameters": 4353537
+  },
+  "user_constraints": {
+    "disk_limit_du_sh_G": 600,
+    "disk_limit_bytes": 644245094400,
+    "disk_latest_du_sh": "523G",
+    "disk_unit": "binary human-readable du -sh; user corrected decimal assumption",
+    "current_eval_max_simultaneous_gpus": 2,
+    "eligible_gpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "old_avoid_gpu_1_2_revoked": true,
+    "host_visible_gpu_process_checks_required": true,
+    "preserve_epoch1_epoch2_and_all_checkpoints": true,
+    "preserve_ablation_weights_basis_data_order_shared_cache": true,
+    "fixed_eval_kv_gib": {
+      "C1": 52,
+      "C32": 44
+    },
+    "do_not_kill_foreign_processes": true,
+    "expert_routing_excluded_from_weekly_report": true,
+    "no_additional_large_training_authorized_by_paper_discussion": true
+  },
+  "report_and_literature": {
+    "report": "GROUP_MEETING_20261013_CN.md",
+    "source_audit_dir": "residualV3_main_v1/research/group_meeting_sources_20261013",
+    "Domino": "Main OPB model versus public DFlash checkpoint; ShareGPT same-data retraining Table 3 is the preferred comparable protocol, same head architecture",
+    "DSpark": "Offline Table 1 scheduler off; Section 4.4 of weekly report separately includes static pruning diagnostics and complete production scheduler-on results vs MTP-1",
+    "DFlash2": "Primary author technical report/model card; selector-only no-convolution result found only for GSM8K Qwen3-4B; HumanEval/MT-Bench rows are complete conv+selector",
+    "claim_boundary": "Cross-paper gains are descriptive, not an apples-to-apples ranking; own joint and independent bodies differ"
+  },
+  "negative_results": {
+    "expert_30k": "3 seeds x 4 controls complete; learned mismatch router does not beat general head; no native AC/TPS",
+    "tail_cut_iter28_29": "Completed, no net cutoff throughput benefit; do not restart old queues",
+    "head2": "Inference skips third trained block, not retrained two-layer head; completed comparison has its own KV budget"
+  },
+  "handoff_files": [
+    "HANDOFF_20261013_CN.md",
+    "HANDOFF_20261013_STATE.json",
+    "HANDOFF_20261013_PROCESS_SNAPSHOT.json",
+    "NEW_CHAT_PROMPT_20261013_CN.md"
+  ],
+  "actions_this_turn": {
+    "GPU_processes_started_or_stopped": false,
+    "weights_or_runtime_changed": false,
+    "new_training_started": false,
+    "entry_doc_stale_status_corrected": true
+  }
+}

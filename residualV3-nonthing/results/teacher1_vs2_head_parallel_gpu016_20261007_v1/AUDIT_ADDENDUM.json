@@ -1,0 +1,96 @@
+{
+  "utc": "2026-10-07T12:42:43.647395+00:00",
+  "correction": "RESULTS_CN.txt initially stated no external process observations; six additional-process samples exist. This statement is superseded. Exact ownership was not retained, so these are unattributed, not proven foreign. Main GPU learner6 had none.",
+  "additional_process_samples": [
+    {
+      "utc": "2026-10-07T12:26:04.384442+00:00",
+      "gpu_uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+      "pid": 3009105,
+      "memory_mib": "884",
+      "overlapping_updates": [
+        {
+          "dp": 1,
+          "phase": 3,
+          "mode": "parallel_position_bmm",
+          "pack": 11,
+          "measured": true
+        }
+      ],
+      "ownership": "unattributed short-lived additional GPU process; no retained ancestry proof"
+    },
+    {
+      "utc": "2026-10-07T12:26:09.745756+00:00",
+      "gpu_uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+      "pid": 3009105,
+      "memory_mib": "884",
+      "overlapping_updates": [],
+      "ownership": "unattributed short-lived additional GPU process; no retained ancestry proof"
+    },
+    {
+      "utc": "2026-10-07T12:26:15.127382+00:00",
+      "gpu_uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+      "pid": 3009105,
+      "memory_mib": "1924",
+      "overlapping_updates": [
+        {
+          "dp": 1,
+          "phase": 4,
+          "mode": "sequential",
+          "pack": 1,
+          "measured": false
+        }
+      ],
+      "ownership": "unattributed short-lived additional GPU process; no retained ancestry proof"
+    },
+    {
+      "utc": "2026-10-07T12:28:13.981639+00:00",
+      "gpu_uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+      "pid": 3020521,
+      "memory_mib": "3870",
+      "overlapping_updates": [
+        {
+          "dp": 2,
+          "phase": 1,
+          "mode": "sequential",
+          "pack": 1,
+          "measured": false
+        }
+      ],
+      "ownership": "unattributed short-lived additional GPU process; no retained ancestry proof"
+    },
+    {
+      "utc": "2026-10-07T12:28:19.353793+00:00",
+      "gpu_uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+      "pid": 3020521,
+      "memory_mib": "3870",
+      "overlapping_updates": [
+        {
+          "dp": 2,
+          "phase": 1,
+          "mode": "sequential",
+          "pack": 2,
+          "measured": false
+        }
+      ],
+      "ownership": "unattributed short-lived additional GPU process; no retained ancestry proof"
+    },
+    {
+      "utc": "2026-10-07T12:28:24.737677+00:00",
+      "gpu_uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+      "pid": 3020521,
+      "memory_mib": "3870",
+      "overlapping_updates": [
+        {
+          "dp": 2,
+          "phase": 1,
+          "mode": "sequential",
+          "pack": 2,
+          "measured": false
+        }
+      ],
+      "ownership": "unattributed short-lived additional GPU process; no retained ancestry proof"
+    }
+  ],
+  "sequential_comparison_limit": "Mean DP1 3.548s vs DP2 3.169s is a pilot point estimate, with large timing drift. Matched 9-pack bootstrap difference interval includes zero; cannot establish significant long-run slowdown.",
+  "gradient_limit": "Flat parallel head loss/argmax agree closely on one full1536 pack but gradients differ 0.4684%; not production-equivalent."
+}

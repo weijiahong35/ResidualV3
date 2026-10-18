@@ -1,0 +1,9 @@
+{
+  "previous_attempt": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002",
+  "previous_status": "failed before smoke or formal optimizer steps",
+  "reason": "cached vs full BF16 coordinatewise hidden tolerance failed; diagnostic found relative L2 0.01073 and all seven greedy labels equal",
+  "diagnostic": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002/cache_precision_diagnostic.json",
+  "new_gate": "whole-hidden relative L2<=0.03, min cosine>=0.999; actual BF16 teacher logit distribution TV<=0.01; all seven greedy labels match",
+  "training_or_model_math_changed": false,
+  "utc": "2026-10-02T05:17:26.044845+00:00"
+}

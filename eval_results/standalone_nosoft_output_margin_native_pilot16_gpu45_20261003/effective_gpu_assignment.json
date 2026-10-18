@@ -1,0 +1,29 @@
+{
+  "controller_pid": 3364032,
+  "started_beijing": "2026-10-03 18:01",
+  "suites": [
+    {
+      "name": "C1",
+      "gpu": 4,
+      "concurrency": 1,
+      "temperatures": [
+        0,
+        1
+      ],
+      "prompts": 20
+    },
+    {
+      "name": "C40",
+      "gpu": 5,
+      "concurrency": 40,
+      "temperatures": [
+        0,
+        1
+      ],
+      "prompts": 300
+    }
+  ],
+  "final": true,
+  "previous_gpu_plans_were_prepared_only": true,
+  "foreign_gpu0_to3_processes_untouched": true
+}

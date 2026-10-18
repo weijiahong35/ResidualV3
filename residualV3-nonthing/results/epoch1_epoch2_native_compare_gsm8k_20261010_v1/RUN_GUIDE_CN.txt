@@ -1,0 +1,6 @@
+epoch1 / epoch2 四组正式对比：E1_DFLASH、E1_JOINT_HEAD、E2_DFLASH、E2_JOINT_HEAD。
+一张卡C1=200，一张卡C40=1319，同时启动；GSM8K同一固定提示，nonthinking，T0/T1，block16=anchor+15proposal，max_new2096/context4096，CUDA Graph。
+两种epoch均使用最新lean_combined三层no-soft头，辅助预测器和截断不开启；单训DFlash来自各自独立训练权重。
+epoch1推理权重复用原导出，epoch2新导出并逐张量核对；所有原权重和完整断点保留。
+即时日志single_card_C1_smoke.log、single_card_C1_formal.log、single_card_C40_smoke.log、single_card_C40_formal.log。状态status.json，底层vLLM日志C1或C40/formal_smoke或formal/round_1/方法/vllm.log。
+正式窗口记AL与TPS，存在其他GPU进程则标注吞吐污染；不停止他人进程。

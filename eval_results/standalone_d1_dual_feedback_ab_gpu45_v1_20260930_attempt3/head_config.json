@@ -1,0 +1,10 @@
+{
+  "hidden_size": 4096,
+  "width": 256,
+  "vocab_size": 151936,
+  "basis_rank": 512,
+  "depth": 3,
+  "q_topk": 256,
+  "dose_max": 0.8,
+  "dose_init": 0.01
+}

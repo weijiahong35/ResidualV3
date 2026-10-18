@@ -1,0 +1,11 @@
+{
+  "pid": 2868357,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/fused_output_dpace_v2/probe.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2"
+  ],
+  "utc": "2026-10-07T05:27:29.146239+00:00"
+}

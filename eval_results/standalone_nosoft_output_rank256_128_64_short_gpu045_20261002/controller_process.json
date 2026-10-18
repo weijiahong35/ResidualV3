@@ -1,0 +1,10 @@
+{
+  "pid": 3263208,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/nosoft_output_rank_short_v1/launch.py",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_output_rank256_128_64_short_gpu045_20261002"
+  ]
+}

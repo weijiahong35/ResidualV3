@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "completed_prompts": 16,
+  "native_blocks_checked": 129,
+  "valid_pairs": 23,
+  "teacher_requests": 129,
+  "source_and_asset_sha_unchanged": true,
+  "old_attempt_source_sha_unchanged": true,
+  "stock_sequence_parity_passed": true,
+  "no_gpu_process_remaining_from_this_experiment": true,
+  "not_formal_speed_evidence": true
+}

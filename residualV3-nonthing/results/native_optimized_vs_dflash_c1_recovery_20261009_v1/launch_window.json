@@ -1,0 +1,27 @@
+{
+  "pid": 2897336,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/native_optimized_vs_dflash_c1_recovery_20261009_v1/native_evaluate.py",
+    "--training",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_optimized_vs_dflash_c1_recovery_20261009_v1",
+    "--gpu",
+    "4",
+    "--concurrency",
+    "1",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_optimized_vs_dflash_c1_recovery_20261009_v1/formal",
+    "--tokens",
+    "2096",
+    "--prompts",
+    "200",
+    "--rounds",
+    "1",
+    "--arms",
+    "DFLASH",
+    "--temperatures",
+    "1"
+  ],
+  "utc": "2026-10-09T03:11:46.125643+00:00"
+}

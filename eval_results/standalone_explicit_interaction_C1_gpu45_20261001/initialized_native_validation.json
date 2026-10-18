@@ -1,0 +1,24 @@
+{
+  "ADDITIVE": {
+    "passed": true,
+    "mode": "additive",
+    "parameters": 3925377,
+    "contract_records": 101,
+    "extra_delta_interventions": {
+      "q": 4.100799560546875e-05,
+      "hidden": 0.0006103515625,
+      "previous": 0.0009636878967285156
+    }
+  },
+  "INTERACTION": {
+    "passed": true,
+    "mode": "interaction",
+    "parameters": 3925377,
+    "contract_records": 101,
+    "extra_delta_interventions": {
+      "q": 1.4424324035644531e-05,
+      "hidden": 0.00021958351135253906,
+      "previous": 0.000335693359375
+    }
+  }
+}

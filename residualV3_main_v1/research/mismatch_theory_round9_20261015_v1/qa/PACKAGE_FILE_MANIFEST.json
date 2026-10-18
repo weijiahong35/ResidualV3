@@ -1,0 +1,112 @@
+{
+  "schema": "mismatch_r9_document_manifest_v1",
+  "timestamp_utc": "2026-10-15T14:12:38.510630+00:00",
+  "self_excluded": "qa/PACKAGE_FILE_MANIFEST.json",
+  "files": [
+    {
+      "path": "AUTHORING_COMPLETION.json",
+      "bytes": 771,
+      "sha256": "f37eb50e13b23e49304a9242d9672df8f14cb060bd9409dbe9909a9b42fc4c66"
+    },
+    {
+      "path": "EXECUTION_GUIDE_CN.md",
+      "bytes": 13678,
+      "sha256": "ec8ca0d4af245adb20a78688b862426158dd8272e40fbdcec9be5004a96fb18a"
+    },
+    {
+      "path": "README_CN.md",
+      "bytes": 1901,
+      "sha256": "e1d62c30126f8ad8d92e723fb2ad5b92f0f8406944f151aefb7159ace54797fd"
+    },
+    {
+      "path": "START_PROMPT_CN.md",
+      "bytes": 6099,
+      "sha256": "fc5209ee683561998223d8fd7a64d6ee390f86cef18761918ff58d5490196582"
+    },
+    {
+      "path": "THEORY_PLAN_CN.md",
+      "bytes": 12612,
+      "sha256": "ed9651975c22a60c6a9b09d80c720b6f3c538e85cfb1469ada28211c25b485bf"
+    },
+    {
+      "path": "design_support/00_scope.md",
+      "bytes": 920,
+      "sha256": "ebe413d9c2e7063ef2a18c72a507b569ec0532c7ee66bef524ab85751f8a5bba"
+    },
+    {
+      "path": "design_support/01_research_canon.md",
+      "bytes": 1416,
+      "sha256": "4b5e8ddf4dca8b0d7dd33cd3bcf04d2f269f0f2f13dd06d44b444162afb77c9e"
+    },
+    {
+      "path": "design_support/02_evidence_table.md",
+      "bytes": 994,
+      "sha256": "dc9c35d53e8685e92388d86731b5d2db699f76bb74c5eb49ee8fee68bae125ed"
+    },
+    {
+      "path": "design_support/03_argument_map.md",
+      "bytes": 1262,
+      "sha256": "b25d38de16e1cfb74ad14e44dd363674f9541a287fe6390662c2c91b12e04079"
+    },
+    {
+      "path": "design_support/04_section_contracts.md",
+      "bytes": 777,
+      "sha256": "d0ebe5d8e2d87a274d1f32ad8f26f2bd829714d1ba703214c8b0454ba96ddf75"
+    },
+    {
+      "path": "design_support/05_style_guide.md",
+      "bytes": 548,
+      "sha256": "1f9cf8509f7bd358d56ff17d35109b02bfe3ad47c0eb9c3076d56f0dcea0a3f7"
+    },
+    {
+      "path": "protocol/DESIGN_SPEC.json",
+      "bytes": 3261,
+      "sha256": "0c06fe4426b7715beba04c3b1cf23cdee83c5d74427e7d4a72889f79e2c1be47"
+    },
+    {
+      "path": "qa/CORE_QUESTION_REVIEW_CN.md",
+      "bytes": 9157,
+      "sha256": "78fc1edb17eff9c24ba841b7640c8e80f96a7b943469432f9b22dc5921b10bc5"
+    },
+    {
+      "path": "qa/FEASIBILITY_REVIEW_CN.md",
+      "bytes": 6047,
+      "sha256": "5c2ff3f9d0a6108d26e2b7b12053fc43b55ca14fc2d5b577d8ebb695c7f4048d"
+    },
+    {
+      "path": "qa/FOUNDATION_REVIEW_CN.md",
+      "bytes": 4945,
+      "sha256": "38e1d43a6f2f1faf370949294ee65ef9bd754c85210a3666f2f264195a1126ad"
+    },
+    {
+      "path": "qa/INPUT_AUDIT.json",
+      "bytes": 84427,
+      "sha256": "b9e90aa941f9d2ffa9dbc221743d539af2a3ca6d232835fec6a963415310a9c0"
+    },
+    {
+      "path": "qa/MATH_FEASIBILITY.json",
+      "bytes": 753,
+      "sha256": "e435117038450da99e950f5cfea68b24739406effede10592e1a61948e8a7696"
+    },
+    {
+      "path": "qa/METADATA_FEASIBILITY.json",
+      "bytes": 531,
+      "sha256": "1d216f0ee58d724f1632eff71477f5cd977f4b36545457fceeb8d701df23eee8"
+    },
+    {
+      "path": "qa/PACKAGE_AUDIT.json",
+      "bytes": 1098,
+      "sha256": "2f531354b0933278141ebe778d9ece431bc87292d96c22e1cf64823d7870d525"
+    },
+    {
+      "path": "qa/reviewer_math_check.py",
+      "bytes": 5412,
+      "sha256": "d41f73bae7137cdde9089f707dd01d392d27691885522175a8555ee25e58ae87"
+    },
+    {
+      "path": "sources/READING_GUIDE_CN.md",
+      "bytes": 4331,
+      "sha256": "ad6d897406ccc3ed135b830610a3e7c1665e2a1033f9fa7a8c8e420f2e6bd557"
+    }
+  ]
+}

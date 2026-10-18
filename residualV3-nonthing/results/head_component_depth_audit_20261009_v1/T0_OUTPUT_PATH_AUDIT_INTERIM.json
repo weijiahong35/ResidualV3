@@ -1,0 +1,30 @@
+{
+  "status": "interim",
+  "scope": "Exact generated string equality on completed formal T0 arms; not accuracy grading. Fixed questions/checkpoints, different proposal paths and batch/block execution may still have different numerical target outputs; cause not established.",
+  "rows": [
+    {
+      "C": 1,
+      "arm": "SKIP3",
+      "requests": 200,
+      "text_equal": 200,
+      "text_different": 0,
+      "different_prefix_chars_median": null
+    },
+    {
+      "C": 40,
+      "arm": "SKIP3",
+      "requests": 1319,
+      "text_equal": 575,
+      "text_different": 744,
+      "different_prefix_chars_median": 267.0
+    },
+    {
+      "C": 40,
+      "arm": "SKIP2",
+      "requests": 1319,
+      "text_equal": 567,
+      "text_different": 752,
+      "different_prefix_chars_median": 276.5
+    }
+  ]
+}

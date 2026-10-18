@@ -1,0 +1,108 @@
+{
+  "status": "complete",
+  "policies": {
+    "joint": {
+      "checkpoint_layers": [
+        4
+      ],
+      "recompute_output_rows": true,
+      "baseline_core_seconds": 2.652762286365032,
+      "selected_core_seconds": 2.4184170265992484,
+      "core_time_reduction_percent": 8.834009024114152,
+      "peak_allocated_gib_before": 45.56590127944946,
+      "peak_allocated_gib_after": 67.79467630386353,
+      "loss_and_all_parameter_gradients_bitwise_equal_on_same_state": true,
+      "observed_oom_cases": [
+        "cache_all",
+        "cache_all_and_output_rows"
+      ]
+    },
+    "body": {
+      "checkpoint_layers": [],
+      "recompute_output_rows": true,
+      "baseline_core_seconds": 2.3506025175253553,
+      "selected_core_seconds": 2.055076440796256,
+      "core_time_reduction_percent": 12.572354301748145,
+      "peak_allocated_gib_before": 30.54080057144165,
+      "peak_allocated_gib_after": 58.3256516456604,
+      "loss_and_all_parameter_gradients_bitwise_equal_on_same_state": true,
+      "observed_oom_cases": []
+    }
+  },
+  "allocator_pool_gib": 74,
+  "allocator_cap_gib": 76,
+  "live_dummy_tensor_held": false,
+  "sampled_nvidia_peak_gib": {
+    "0": 69.658203125,
+    "3": 71.9072265625,
+    "4": 74.6923828125,
+    "5": 74.5322265625
+  },
+  "same_state_gradient_scope": "one fresh online65536-token/1536-anchor pack;all trainable preclip gradients",
+  "end_to_end_lr0_probe": {
+    "seconds_per_paired_pack": 3.0320668816566467,
+    "middle12_seconds_per_paired_pack": 3.1786521474520364,
+    "measured_packs": 16,
+    "means": {
+      "joint": {
+        "total_update_seconds": 3.0308219640282914,
+        "shared_queue_wait_seconds": 0.3944239803822711,
+        "host_pin_seconds": 0.0007567701395601034,
+        "h2d_wall_seconds": 0.19562000432051718,
+        "body_forward_wall": 0.41507009940687567,
+        "projection_wall": 0.2267732423497364,
+        "head_forward_loss_wall": 0.14284941065125167,
+        "head_backward_wall": 0.2436677827499807,
+        "body_backward_wall": 0.9055287970695645,
+        "clip_wall": 0.009916905430145562,
+        "optimizer_wall": 0.4817551274318248
+      },
+      "body": {
+        "total_update_seconds": 2.936346718342975,
+        "shared_queue_wait_seconds": 0.6692242904100567,
+        "host_pin_seconds": 0.00069290807005018,
+        "h2d_wall_seconds": 0.19576216174755245,
+        "body_forward_wall": 0.4074314032914117,
+        "projection_wall": 0.2198296784190461,
+        "head_forward_loss_wall": 0.008956064004451036,
+        "head_backward_wall": 0.11847035156097263,
+        "body_backward_wall": 0.8263413030654192,
+        "clip_wall": 0.009169723722152412,
+        "optimizer_wall": 0.4682253352366388
+      }
+    }
+  },
+  "prior_actual_training_dp2_seconds": 3.251720815896988,
+  "end_to_end_comparison_limit": "LR0 vs prior real update;24vs32packs changes prefetch tail;no causal overall improvement claim",
+  "all_model_parameter_hashes_unchanged": true,
+  "optimizer_moments_advanced": true,
+  "no_new_trained_weights": true,
+  "retained_training_weights_manifest": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/hidden_supply_timing_20261008_v1/PARAMETER_UPDATE_WITNESSES.json",
+  "process_audit": {
+    "known_pids": [
+      337488,
+      338470,
+      338472,
+      338473,
+      338474,
+      339357,
+      339358,
+      352324,
+      352325
+    ],
+    "unattributed_process_samples": [],
+    "excluded_gpu_violations": []
+  },
+  "excluded_gpus": [
+    1,
+    2
+  ],
+  "pack_tokens": 65536,
+  "anchors": 1536,
+  "prediction_positions": 15,
+  "head_loss": "CE weighted with detached D-PACE + OUTPUT",
+  "body_loss": "raw CE weighted with detached D-PACE",
+  "full_data_queue": "paused",
+  "model_quality_tested": false,
+  "oom_scope": "observed under current allocator layout and76GiB cap;does not prove impossible on80GB in principle"
+}

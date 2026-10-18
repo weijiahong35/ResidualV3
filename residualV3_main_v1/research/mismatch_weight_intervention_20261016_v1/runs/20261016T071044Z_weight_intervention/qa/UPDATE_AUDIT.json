@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "updates_per_arm": 32,
+  "matched_batches": true,
+  "position_coefficient_totals_match": true,
+  "all_parameters_received_gradient": true,
+  "max_relative_step_error": 1.1830580811040195e-07,
+  "max_paired_relative_norm_difference": 1.0875361447844763e-07,
+  "same_initial_state": true
+}

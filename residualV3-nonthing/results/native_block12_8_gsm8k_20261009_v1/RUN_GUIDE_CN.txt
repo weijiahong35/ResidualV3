@@ -1,0 +1,4 @@
+新推理块长度测试：BLOCK12、BLOCK8，各四组权重。
+只在无宿主GPU进程且空闲≥78000MiB的卡启动，两组串行使用卡；不打断block16。
+无空卡时status.json显示waiting_empty_gpu，有空卡自动开始。
+所有权重、原始block16证据、源码保持原样。

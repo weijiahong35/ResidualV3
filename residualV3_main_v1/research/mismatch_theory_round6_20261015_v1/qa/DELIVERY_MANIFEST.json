@@ -1,0 +1,95 @@
+{
+  "scope": "document package except this self-referential manifest",
+  "files": [
+    {
+      "path": "EXECUTION_GUIDE_CN.md",
+      "bytes": 17739,
+      "sha256": "7202a4c9673dbc1b03a3566d298892adf2ce5dda3b32414e5d19a8a06737e2a1"
+    },
+    {
+      "path": "README_CN.md",
+      "bytes": 1346,
+      "sha256": "2440f1ab8170e4c7314c63fe649c07f1a2c3792701f7a10939d16dae15830daa"
+    },
+    {
+      "path": "START_PROMPT_CN.md",
+      "bytes": 5141,
+      "sha256": "c4e5342822e7051512ae3a859f9217e48e6f768be8ec683efe3b1cdcc992845f"
+    },
+    {
+      "path": "THEORY_PLAN_CN.md",
+      "bytes": 9346,
+      "sha256": "35af35360ebb088658b4572c25ddf46ca7de5abc1f962c0bd9c13b7d3387eb50"
+    },
+    {
+      "path": "qa/00_scope.md",
+      "bytes": 964,
+      "sha256": "e6ad8f0ffafb2ee8e08cd10a60956a06a30a475831df284dcf9dfb86d3e20922"
+    },
+    {
+      "path": "qa/01_research_canon.md",
+      "bytes": 1599,
+      "sha256": "cb21652969ea15d9e891bb0bfcdb0d28291640e65345902913a14f8959bc0bfb"
+    },
+    {
+      "path": "qa/02_evidence_table.md",
+      "bytes": 996,
+      "sha256": "17c501cb2a9d00a8dab482b05024c99fe42b326e32e5c4927583eafb4c66d686"
+    },
+    {
+      "path": "qa/03_argument_map.md",
+      "bytes": 4382,
+      "sha256": "3799d795cd89be00f009f2c471fc686d564772326beac64b96890a9655b802bb"
+    },
+    {
+      "path": "qa/04_section_contracts.md",
+      "bytes": 888,
+      "sha256": "2d8f3a26b0ccc7926b94be1e468fa453a3b2de8995be43b38e3b2eee2e156066"
+    },
+    {
+      "path": "qa/05_style_guide.md",
+      "bytes": 377,
+      "sha256": "a268f6f4e8c2e858372ed3b346499ec7b57e2e6bd8442b934cf6db14cf7357bc"
+    },
+    {
+      "path": "qa/CONTRACT_CHECK.json",
+      "bytes": 1012,
+      "sha256": "6b0b18c620a9a2b4588a7a45a43e5b20ca7b42637e647dfd6fa23c662dd0148e"
+    },
+    {
+      "path": "qa/DELIVERY_AUDIT.json",
+      "bytes": 1560,
+      "sha256": "79eeae39395b7425f13c0051331ff3cef5ead099169c90afd0faaa27c046f1fa"
+    },
+    {
+      "path": "qa/INPUT_AUDIT.json",
+      "bytes": 17804,
+      "sha256": "8014fc8416feecbe39f488d000cb1db6457f9f271d1a26714313af9216b9a537"
+    },
+    {
+      "path": "qa/REVIEW_CN.md",
+      "bytes": 2718,
+      "sha256": "2cab48bd91d17e41878f04d026c581ef96652e8011a1246480dca095b5abf882"
+    },
+    {
+      "path": "qa/audit_inputs.py",
+      "bytes": 6113,
+      "sha256": "a70b0a758936884081ee16c95b5c1e3872dfa7ec2df702ae8ea65008349d4461"
+    },
+    {
+      "path": "qa/check_contracts.py",
+      "bytes": 4373,
+      "sha256": "e6bdce80ce16381b7b1e3f940a9fe98284ace2338f42da102899c44d1693b456"
+    },
+    {
+      "path": "qa/state.json",
+      "bytes": 1200,
+      "sha256": "3c7e21f4058dc901fa945c6bda6cc3974a8ee1120dbe3a77bf88c564ab81d577"
+    },
+    {
+      "path": "sources/READING_GUIDE_CN.md",
+      "bytes": 5890,
+      "sha256": "3a83bda3ecbd19595a519cf1ad6872b10d9b3c2fc970796a3340f073f88b24cf"
+    }
+  ]
+}

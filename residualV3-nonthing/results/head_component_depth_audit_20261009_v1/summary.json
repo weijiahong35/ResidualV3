@@ -1,0 +1,2171 @@
+{
+  "status": "complete",
+  "utc": "2026-10-09T00:53:05.803379+00:00",
+  "head_parameters": {
+    "total_parameters": 4353537,
+    "by_module": {
+      "blocks.0": 592128,
+      "blocks.1": 592128,
+      "blocks.2": 592128,
+      "direction_head": 131584,
+      "dose_head": 257,
+      "fusion": 198400,
+      "hidden_proj": 1057024,
+      "output_norm": 512,
+      "previous_proj": 1057024,
+      "q_proj": 132352
+    },
+    "tensors": {
+      "blocks.0.down.bias": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "blocks.0.down.weight": {
+        "shape": [
+          256,
+          768
+        ],
+        "parameters": 196608
+      },
+      "blocks.0.norm.bias": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "blocks.0.norm.weight": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "blocks.0.up.bias": {
+        "shape": [
+          1536
+        ],
+        "parameters": 1536
+      },
+      "blocks.0.up.weight": {
+        "shape": [
+          1536,
+          256
+        ],
+        "parameters": 393216
+      },
+      "blocks.1.down.bias": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "blocks.1.down.weight": {
+        "shape": [
+          256,
+          768
+        ],
+        "parameters": 196608
+      },
+      "blocks.1.norm.bias": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "blocks.1.norm.weight": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "blocks.1.up.bias": {
+        "shape": [
+          1536
+        ],
+        "parameters": 1536
+      },
+      "blocks.1.up.weight": {
+        "shape": [
+          1536,
+          256
+        ],
+        "parameters": 393216
+      },
+      "blocks.2.down.bias": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "blocks.2.down.weight": {
+        "shape": [
+          256,
+          768
+        ],
+        "parameters": 196608
+      },
+      "blocks.2.norm.bias": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "blocks.2.norm.weight": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "blocks.2.up.bias": {
+        "shape": [
+          1536
+        ],
+        "parameters": 1536
+      },
+      "blocks.2.up.weight": {
+        "shape": [
+          1536,
+          256
+        ],
+        "parameters": 393216
+      },
+      "direction_head.bias": {
+        "shape": [
+          512
+        ],
+        "parameters": 512
+      },
+      "direction_head.weight": {
+        "shape": [
+          512,
+          256
+        ],
+        "parameters": 131072
+      },
+      "dose_head.bias": {
+        "shape": [
+          1
+        ],
+        "parameters": 1
+      },
+      "dose_head.weight": {
+        "shape": [
+          1,
+          256
+        ],
+        "parameters": 256
+      },
+      "fusion.0.bias": {
+        "shape": [
+          768
+        ],
+        "parameters": 768
+      },
+      "fusion.0.weight": {
+        "shape": [
+          768
+        ],
+        "parameters": 768
+      },
+      "fusion.1.bias": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "fusion.1.weight": {
+        "shape": [
+          256,
+          768
+        ],
+        "parameters": 196608
+      },
+      "hidden_proj.0.bias": {
+        "shape": [
+          4096
+        ],
+        "parameters": 4096
+      },
+      "hidden_proj.0.weight": {
+        "shape": [
+          4096
+        ],
+        "parameters": 4096
+      },
+      "hidden_proj.1.bias": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "hidden_proj.1.weight": {
+        "shape": [
+          256,
+          4096
+        ],
+        "parameters": 1048576
+      },
+      "output_norm.bias": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "output_norm.weight": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "previous_proj.0.bias": {
+        "shape": [
+          4096
+        ],
+        "parameters": 4096
+      },
+      "previous_proj.0.weight": {
+        "shape": [
+          4096
+        ],
+        "parameters": 4096
+      },
+      "previous_proj.1.bias": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "previous_proj.1.weight": {
+        "shape": [
+          256,
+          4096
+        ],
+        "parameters": 1048576
+      },
+      "q_proj.0.bias": {
+        "shape": [
+          512
+        ],
+        "parameters": 512
+      },
+      "q_proj.0.weight": {
+        "shape": [
+          512
+        ],
+        "parameters": 512
+      },
+      "q_proj.1.bias": {
+        "shape": [
+          256
+        ],
+        "parameters": 256
+      },
+      "q_proj.1.weight": {
+        "shape": [
+          256,
+          512
+        ],
+        "parameters": 131072
+      }
+    },
+    "checkpoint_sha256": "a1fb912ec56485516a82979d5cf30b8e384f1cd5ad34f8b03a4f861dbe75df3c"
+  },
+  "body_parameters": {
+    "total_parameters": 1048626432,
+    "by_module": {
+      "fc.weight": 83886080,
+      "hidden_norm.weight": 4096,
+      "layers.0": 192946432,
+      "layers.1": 192946432,
+      "layers.2": 192946432,
+      "layers.3": 192946432,
+      "layers.4": 192946432,
+      "norm.weight": 4096
+    },
+    "scope": "DFlash body checkpoint tensors; excludes shared frozen target embedding/LM head and separately stored mask embedding."
+  },
+  "isolated_components": {
+    "status": "complete",
+    "gpu_uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+    "rows": [
+      {
+        "N": 1,
+        "T": 0,
+        "isolated_component_ms": {
+          "raw_softmax": 0.09695232391357422,
+          "topk": 0.11005951881408692,
+          "basis_gather": 0.013434879779815674,
+          "hidden_encoder": 0.024145920276641846,
+          "hidden_scale": 0.020152320861816408,
+          "q_encoder": 0.0346726393699646,
+          "previous_encoder": 0.6092287826538086,
+          "fusion": 0.20115455627441406,
+          "swiglu_1": 0.33068031311035156,
+          "swiglu_2": 0.32707584381103516,
+          "swiglu_3": 0.3258572769165039,
+          "direction_dose": 0.5545779037475586,
+          "candidate_projection": 0.049397759437561035,
+          "candidate_update": 0.12159999847412109,
+          "full_vocab_scatter": 1.0151321411132812,
+          "stock_sampling": 0.15798272132873536
+        },
+        "component_samples": {
+          "raw_softmax": {
+            "median_ms": 0.09695232391357422,
+            "samples_ms": [
+              0.09694208145141602,
+              0.09704447746276855,
+              0.09695232391357422
+            ]
+          },
+          "topk": {
+            "median_ms": 0.11005951881408692,
+            "samples_ms": [
+              0.11008000373840332,
+              0.11004927635192871,
+              0.11005951881408692
+            ]
+          },
+          "basis_gather": {
+            "median_ms": 0.013434879779815674,
+            "samples_ms": [
+              0.013404159545898438,
+              0.013445119857788086,
+              0.013434879779815674
+            ]
+          },
+          "hidden_encoder": {
+            "median_ms": 0.024145920276641846,
+            "samples_ms": [
+              0.024135680198669435,
+              0.024145920276641846,
+              0.02416640043258667
+            ]
+          },
+          "hidden_scale": {
+            "median_ms": 0.020152320861816408,
+            "samples_ms": [
+              0.020152320861816408,
+              0.020142080783843993,
+              0.020152320861816408
+            ]
+          },
+          "q_encoder": {
+            "median_ms": 0.0346726393699646,
+            "samples_ms": [
+              0.03464191913604736,
+              0.035368959903717044,
+              0.0346726393699646
+            ]
+          },
+          "previous_encoder": {
+            "median_ms": 0.6092287826538086,
+            "samples_ms": [
+              0.6092287826538086,
+              0.6092390441894531,
+              0.5551411056518555
+            ]
+          },
+          "fusion": {
+            "median_ms": 0.20115455627441406,
+            "samples_ms": [
+              0.20113407135009764,
+              0.20119552612304686,
+              0.20115455627441406
+            ]
+          },
+          "swiglu_1": {
+            "median_ms": 0.33068031311035156,
+            "samples_ms": [
+              0.3306496047973633,
+              0.33068031311035156,
+              0.3307417678833008
+            ]
+          },
+          "swiglu_2": {
+            "median_ms": 0.32707584381103516,
+            "samples_ms": [
+              0.3270655822753906,
+              0.32707584381103516,
+              0.32724990844726565
+            ]
+          },
+          "swiglu_3": {
+            "median_ms": 0.3258572769165039,
+            "samples_ms": [
+              0.3257651138305664,
+              0.325928955078125,
+              0.3258572769165039
+            ]
+          },
+          "direction_dose": {
+            "median_ms": 0.5545779037475586,
+            "samples_ms": [
+              0.5545369720458985,
+              0.5546393585205078,
+              0.5545779037475586
+            ]
+          },
+          "candidate_projection": {
+            "median_ms": 0.049397759437561035,
+            "samples_ms": [
+              0.04935679912567139,
+              0.049397759437561035,
+              0.04946944236755371
+            ]
+          },
+          "candidate_update": {
+            "median_ms": 0.12159999847412109,
+            "samples_ms": [
+              0.12159999847412109,
+              0.12164095878601074,
+              0.12156928062438965
+            ]
+          },
+          "full_vocab_scatter": {
+            "median_ms": 1.0151321411132812,
+            "samples_ms": [
+              1.0150707244873047,
+              1.0151321411132812,
+              1.0155519866943359
+            ]
+          },
+          "stock_sampling": {
+            "median_ms": 0.15798272132873536,
+            "samples_ms": [
+              0.1579315185546875,
+              0.1580953598022461,
+              0.15798272132873536
+            ]
+          }
+        },
+        "full_head_by_mask": {
+          "111": {
+            "median_ms": 4.0566580200195315,
+            "samples_ms": [
+              4.056412048339844,
+              4.056893310546875,
+              4.0566580200195315
+            ]
+          },
+          "110": {
+            "median_ms": 3.714580383300781,
+            "samples_ms": [
+              3.7136795043945314,
+              3.714949035644531,
+              3.714580383300781
+            ]
+          },
+          "101": {
+            "median_ms": 3.7139047241210936,
+            "samples_ms": [
+              3.7138943481445312,
+              3.7139047241210936,
+              3.714580383300781
+            ]
+          },
+          "100": {
+            "median_ms": 3.3698919677734374,
+            "samples_ms": [
+              3.3698919677734374,
+              3.370178527832031,
+              3.3695233154296873
+            ]
+          }
+        },
+        "scope": "Independent component graphs on fixed same-weight synthetic sampled states; no fine-grained event overhead; isolated cache conditions mean component sum is not full head latency. Entire mask Graphs use actual sequential sampling."
+      },
+      {
+        "N": 1,
+        "T": 1,
+        "isolated_component_ms": {
+          "raw_softmax": 0.07963647842407226,
+          "topk": 0.09025535583496094,
+          "basis_gather": 0.010926079750061036,
+          "hidden_encoder": 0.019752960205078125,
+          "hidden_scale": 0.016558079719543456,
+          "q_encoder": 0.028579840660095213,
+          "previous_encoder": 0.49790977478027343,
+          "fusion": 0.20130815505981445,
+          "swiglu_1": 0.33030143737792966,
+          "swiglu_2": 0.32699390411376955,
+          "swiglu_3": 0.32659454345703126,
+          "direction_dose": 0.5547417449951172,
+          "candidate_projection": 0.0497049617767334,
+          "candidate_update": 0.12184576034545898,
+          "full_vocab_scatter": 1.0152243041992188,
+          "stock_sampling": 0.20719615936279298
+        },
+        "component_samples": {
+          "raw_softmax": {
+            "median_ms": 0.07963647842407226,
+            "samples_ms": [
+              0.07964672088623047,
+              0.07958528041839599,
+              0.07963647842407226
+            ]
+          },
+          "topk": {
+            "median_ms": 0.09025535583496094,
+            "samples_ms": [
+              0.09026559829711914,
+              0.09025535583496094,
+              0.0902451229095459
+            ]
+          },
+          "basis_gather": {
+            "median_ms": 0.010926079750061036,
+            "samples_ms": [
+              0.010936319828033447,
+              0.010926079750061036,
+              0.010895359516143798
+            ]
+          },
+          "hidden_encoder": {
+            "median_ms": 0.019752960205078125,
+            "samples_ms": [
+              0.019763200283050536,
+              0.019742720127105713,
+              0.019752960205078125
+            ]
+          },
+          "hidden_scale": {
+            "median_ms": 0.016558079719543456,
+            "samples_ms": [
+              0.016578559875488282,
+              0.016558079719543456,
+              0.016558079719543456
+            ]
+          },
+          "q_encoder": {
+            "median_ms": 0.028579840660095213,
+            "samples_ms": [
+              0.028569600582122802,
+              0.028579840660095213,
+              0.028590080738067628
+            ]
+          },
+          "previous_encoder": {
+            "median_ms": 0.49790977478027343,
+            "samples_ms": [
+              0.49788928985595704,
+              0.49790977478027343,
+              0.49790977478027343
+            ]
+          },
+          "fusion": {
+            "median_ms": 0.20130815505981445,
+            "samples_ms": [
+              0.20131839752197267,
+              0.20126720428466796,
+              0.20130815505981445
+            ]
+          },
+          "swiglu_1": {
+            "median_ms": 0.33030143737792966,
+            "samples_ms": [
+              0.33030143737792966,
+              0.3304140853881836,
+              0.3302809524536133
+            ]
+          },
+          "swiglu_2": {
+            "median_ms": 0.32699390411376955,
+            "samples_ms": [
+              0.32681983947753906,
+              0.32699390411376955,
+              0.32712703704833984
+            ]
+          },
+          "swiglu_3": {
+            "median_ms": 0.32659454345703126,
+            "samples_ms": [
+              0.32658432006835936,
+              0.32661502838134765,
+              0.32659454345703126
+            ]
+          },
+          "direction_dose": {
+            "median_ms": 0.5547417449951172,
+            "samples_ms": [
+              0.5547724914550781,
+              0.5547212982177734,
+              0.5547417449951172
+            ]
+          },
+          "candidate_projection": {
+            "median_ms": 0.0497049617767334,
+            "samples_ms": [
+              0.0497049617767334,
+              0.04973567962646484,
+              0.0497049617767334
+            ]
+          },
+          "candidate_update": {
+            "median_ms": 0.12184576034545898,
+            "samples_ms": [
+              0.12184576034545898,
+              0.12181504249572754,
+              0.12188672065734864
+            ]
+          },
+          "full_vocab_scatter": {
+            "median_ms": 1.0152243041992188,
+            "samples_ms": [
+              1.0152243041992188,
+              1.0150707244873047,
+              1.0154598236083985
+            ]
+          },
+          "stock_sampling": {
+            "median_ms": 0.20719615936279298,
+            "samples_ms": [
+              0.20719615936279298,
+              0.20712448120117188,
+              0.20721664428710937
+            ]
+          }
+        },
+        "full_head_by_mask": {
+          "111": {
+            "median_ms": 4.102041625976563,
+            "samples_ms": [
+              4.102041625976563,
+              4.102379455566406,
+              4.101846923828125
+            ]
+          },
+          "110": {
+            "median_ms": 3.7594317626953124,
+            "samples_ms": [
+              3.7592474365234376,
+              3.7594317626953124,
+              3.7604660034179687
+            ]
+          },
+          "101": {
+            "median_ms": 3.7589300537109374,
+            "samples_ms": [
+              3.7589300537109374,
+              3.7594009399414063,
+              3.758919677734375
+            ]
+          },
+          "100": {
+            "median_ms": 3.4152447509765627,
+            "samples_ms": [
+              3.4151321411132813,
+              3.415582580566406,
+              3.4152447509765627
+            ]
+          }
+        },
+        "scope": "Independent component graphs on fixed same-weight synthetic sampled states; no fine-grained event overhead; isolated cache conditions mean component sum is not full head latency. Entire mask Graphs use actual sequential sampling."
+      },
+      {
+        "N": 40,
+        "T": 0,
+        "isolated_component_ms": {
+          "raw_softmax": 1.5285043334960937,
+          "topk": 1.3044837951660155,
+          "basis_gather": 0.3770880126953125,
+          "hidden_encoder": 0.03405823945999145,
+          "hidden_scale": 0.03349503993988037,
+          "q_encoder": 0.14227456092834473,
+          "previous_encoder": 0.677232666015625,
+          "fusion": 0.2571776008605957,
+          "swiglu_1": 0.3975680160522461,
+          "swiglu_2": 0.39665664672851564,
+          "swiglu_3": 0.39795711517333987,
+          "direction_dose": 0.6155366516113281,
+          "candidate_projection": 0.17487871170043945,
+          "candidate_update": 0.25433088302612306,
+          "full_vocab_scatter": 2.3906509399414064,
+          "stock_sampling": 0.5317836761474609
+        },
+        "component_samples": {
+          "raw_softmax": {
+            "median_ms": 1.5285043334960937,
+            "samples_ms": [
+              1.5282278442382813,
+              1.5289036560058593,
+              1.5285043334960937
+            ]
+          },
+          "topk": {
+            "median_ms": 1.3044837951660155,
+            "samples_ms": [
+              1.3051084899902343,
+              1.3044837951660155,
+              1.3042483520507813
+            ]
+          },
+          "basis_gather": {
+            "median_ms": 0.3770880126953125,
+            "samples_ms": [
+              0.37730304718017577,
+              0.3770880126953125,
+              0.37696510314941406
+            ]
+          },
+          "hidden_encoder": {
+            "median_ms": 0.03405823945999145,
+            "samples_ms": [
+              0.03407871961593628,
+              0.03405823945999145,
+              0.034047999382019044
+            ]
+          },
+          "hidden_scale": {
+            "median_ms": 0.03349503993988037,
+            "samples_ms": [
+              0.033464319705963134,
+              0.03349503993988037,
+              0.03352576017379761
+            ]
+          },
+          "q_encoder": {
+            "median_ms": 0.14227456092834473,
+            "samples_ms": [
+              0.14249983787536621,
+              0.14227456092834473,
+              0.14223360061645507
+            ]
+          },
+          "previous_encoder": {
+            "median_ms": 0.677232666015625,
+            "samples_ms": [
+              0.6770995330810546,
+              0.677232666015625,
+              0.6772633361816406
+            ]
+          },
+          "fusion": {
+            "median_ms": 0.2571776008605957,
+            "samples_ms": [
+              0.2571673583984375,
+              0.2572492790222168,
+              0.2571776008605957
+            ]
+          },
+          "swiglu_1": {
+            "median_ms": 0.3975680160522461,
+            "samples_ms": [
+              0.39757823944091797,
+              0.3975577545166016,
+              0.3975680160522461
+            ]
+          },
+          "swiglu_2": {
+            "median_ms": 0.39665664672851564,
+            "samples_ms": [
+              0.3966361618041992,
+              0.39686145782470705,
+              0.39665664672851564
+            ]
+          },
+          "swiglu_3": {
+            "median_ms": 0.39795711517333987,
+            "samples_ms": [
+              0.3977830505371094,
+              0.39795711517333987,
+              0.39796737670898436
+            ]
+          },
+          "direction_dose": {
+            "median_ms": 0.6155366516113281,
+            "samples_ms": [
+              0.6154751968383789,
+              0.615731201171875,
+              0.6155366516113281
+            ]
+          },
+          "candidate_projection": {
+            "median_ms": 0.17487871170043945,
+            "samples_ms": [
+              0.17478656768798828,
+              0.17489919662475586,
+              0.17487871170043945
+            ]
+          },
+          "candidate_update": {
+            "median_ms": 0.25433088302612306,
+            "samples_ms": [
+              0.25433088302612306,
+              0.2544537544250488,
+              0.25423871994018554
+            ]
+          },
+          "full_vocab_scatter": {
+            "median_ms": 2.3906509399414064,
+            "samples_ms": [
+              2.3906509399414064,
+              2.3906405639648436,
+              2.3907225036621096
+            ]
+          },
+          "stock_sampling": {
+            "median_ms": 0.5317836761474609,
+            "samples_ms": [
+              0.5317836761474609,
+              0.5317734527587891,
+              0.5318348693847657
+            ]
+          }
+        },
+        "full_head_by_mask": {
+          "111": {
+            "median_ms": 9.714390869140624,
+            "samples_ms": [
+              9.715220336914063,
+              9.714390869140624,
+              9.713408203125
+            ]
+          },
+          "110": {
+            "median_ms": 9.271234741210938,
+            "samples_ms": [
+              9.271234741210938,
+              9.271213989257813,
+              9.271664428710938
+            ]
+          },
+          "101": {
+            "median_ms": 9.296854858398438,
+            "samples_ms": [
+              9.296650390625,
+              9.296854858398438,
+              9.296885986328125
+            ]
+          },
+          "100": {
+            "median_ms": 8.869017333984376,
+            "samples_ms": [
+              8.869580688476562,
+              8.869017333984376,
+              8.867225341796875
+            ]
+          }
+        },
+        "scope": "Independent component graphs on fixed same-weight synthetic sampled states; no fine-grained event overhead; isolated cache conditions mean component sum is not full head latency. Entire mask Graphs use actual sequential sampling."
+      },
+      {
+        "N": 40,
+        "T": 1,
+        "isolated_component_ms": {
+          "raw_softmax": 1.529344024658203,
+          "topk": 1.3046578979492187,
+          "basis_gather": 0.3767910385131836,
+          "hidden_encoder": 0.033945600986480716,
+          "hidden_scale": 0.03359744071960449,
+          "q_encoder": 0.14213120460510253,
+          "previous_encoder": 0.6779904174804687,
+          "fusion": 0.2572390365600586,
+          "swiglu_1": 0.3973632049560547,
+          "swiglu_2": 0.3963289642333984,
+          "swiglu_3": 0.3976192092895508,
+          "direction_dose": 0.6157823944091797,
+          "candidate_projection": 0.1745919990539551,
+          "candidate_update": 0.25616384506225587,
+          "full_vocab_scatter": 2.3767449951171873,
+          "stock_sampling": 1.2395929718017578
+        },
+        "component_samples": {
+          "raw_softmax": {
+            "median_ms": 1.529344024658203,
+            "samples_ms": [
+              1.5345663452148437,
+              1.529344024658203,
+              1.528678436279297
+            ]
+          },
+          "topk": {
+            "median_ms": 1.3046578979492187,
+            "samples_ms": [
+              1.3046578979492187,
+              1.3036236572265625,
+              1.305630645751953
+            ]
+          },
+          "basis_gather": {
+            "median_ms": 0.3767910385131836,
+            "samples_ms": [
+              0.3766579055786133,
+              0.3767910385131836,
+              0.3768524932861328
+            ]
+          },
+          "hidden_encoder": {
+            "median_ms": 0.033945600986480716,
+            "samples_ms": [
+              0.033945600986480716,
+              0.033945600986480716,
+              0.033925120830535886
+            ]
+          },
+          "hidden_scale": {
+            "median_ms": 0.03359744071960449,
+            "samples_ms": [
+              0.03359744071960449,
+              0.0336076807975769,
+              0.03358720064163208
+            ]
+          },
+          "q_encoder": {
+            "median_ms": 0.14213120460510253,
+            "samples_ms": [
+              0.14229503631591797,
+              0.14213120460510253,
+              0.14204928398132324
+            ]
+          },
+          "previous_encoder": {
+            "median_ms": 0.6779904174804687,
+            "samples_ms": [
+              0.6780210876464844,
+              0.6779084777832032,
+              0.6779904174804687
+            ]
+          },
+          "fusion": {
+            "median_ms": 0.2572390365600586,
+            "samples_ms": [
+              0.2571571159362793,
+              0.2572492790222168,
+              0.2572390365600586
+            ]
+          },
+          "swiglu_1": {
+            "median_ms": 0.3973632049560547,
+            "samples_ms": [
+              0.3973632049560547,
+              0.39737342834472655,
+              0.3973632049560547
+            ]
+          },
+          "swiglu_2": {
+            "median_ms": 0.3963289642333984,
+            "samples_ms": [
+              0.39630847930908203,
+              0.39643135070800783,
+              0.3963289642333984
+            ]
+          },
+          "swiglu_3": {
+            "median_ms": 0.3976192092895508,
+            "samples_ms": [
+              0.3975475311279297,
+              0.39768062591552733,
+              0.3976192092895508
+            ]
+          },
+          "direction_dose": {
+            "median_ms": 0.6157823944091797,
+            "samples_ms": [
+              0.6157823944091797,
+              0.6158335876464843,
+              0.6157823944091797
+            ]
+          },
+          "candidate_projection": {
+            "median_ms": 0.1745919990539551,
+            "samples_ms": [
+              0.17458175659179687,
+              0.1745919990539551,
+              0.17460224151611328
+            ]
+          },
+          "candidate_update": {
+            "median_ms": 0.25616384506225587,
+            "samples_ms": [
+              0.25619455337524416,
+              0.25613311767578123,
+              0.25616384506225587
+            ]
+          },
+          "full_vocab_scatter": {
+            "median_ms": 2.3767449951171873,
+            "samples_ms": [
+              2.3769906616210936,
+              2.3765093994140627,
+              2.3767449951171873
+            ]
+          },
+          "stock_sampling": {
+            "median_ms": 1.2395929718017578,
+            "samples_ms": [
+              1.239552001953125,
+              1.2415078735351563,
+              1.2395929718017578
+            ]
+          }
+        },
+        "full_head_by_mask": {
+          "111": {
+            "median_ms": 10.4759912109375,
+            "samples_ms": [
+              10.4759912109375,
+              10.475888671875,
+              10.476103515625
+            ]
+          },
+          "110": {
+            "median_ms": 10.036756591796875,
+            "samples_ms": [
+              10.035742797851562,
+              10.036756591796875,
+              10.037319946289063
+            ]
+          },
+          "101": {
+            "median_ms": 10.06445556640625,
+            "samples_ms": [
+              10.06445556640625,
+              10.065694580078125,
+              10.062776489257812
+            ]
+          },
+          "100": {
+            "median_ms": 9.626142578125,
+            "samples_ms": [
+              9.626142578125,
+              9.624647827148438,
+              9.62639892578125
+            ]
+          }
+        },
+        "scope": "Independent component graphs on fixed same-weight synthetic sampled states; no fine-grained event overhead; isolated cache conditions mean component sum is not full head latency. Entire mask Graphs use actual sequential sampling."
+      }
+    ],
+    "utc": "2026-10-09T00:37:23.856877+00:00"
+  },
+  "component_performance_contaminated": false,
+  "formal_rows": [
+    {
+      "C": 1,
+      "T": 0,
+      "arm": "FULL",
+      "mask": "111",
+      "AL": 8.414317610940554,
+      "AL_vs_FULL_percent": 0.0,
+      "TPS": 427.01027934140274,
+      "TPS_vs_FULL_percent": 0.0,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 7366,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 7166,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 1,
+      "T": 1,
+      "arm": "FULL",
+      "mask": "111",
+      "AL": 7.355847849271241,
+      "AL_vs_FULL_percent": 0.0,
+      "TPS": 377.0651154046454,
+      "TPS_vs_FULL_percent": 0.0,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 8639,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 8439,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 1,
+      "T": 0,
+      "arm": "SKIP3",
+      "mask": "110",
+      "AL": 8.342556723851688,
+      "AL_vs_FULL_percent": -0.8528426238101572,
+      "TPS": 432.5323963834371,
+      "TPS_vs_FULL_percent": 1.2932047093928034,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 7428,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 7228,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 1,
+      "T": 1,
+      "arm": "SKIP3",
+      "mask": "110",
+      "AL": 7.422148312392215,
+      "AL_vs_FULL_percent": 0.9013299959370835,
+      "TPS": 387.75390336837523,
+      "TPS_vs_FULL_percent": 2.8347326567877307,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 8318,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 8118,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 1,
+      "T": 0,
+      "arm": "SKIP2",
+      "mask": "101",
+      "AL": 8.309313860567649,
+      "AL_vs_FULL_percent": -1.247917599834547,
+      "TPS": 430.3800959134695,
+      "TPS_vs_FULL_percent": 0.7891652110258773,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 7458,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 7258,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 1,
+      "T": 1,
+      "arm": "SKIP2",
+      "mask": "101",
+      "AL": 7.4082262845849804,
+      "AL_vs_FULL_percent": 0.7120652355381285,
+      "TPS": 385.82181869002966,
+      "TPS_vs_FULL_percent": 2.3223318540053883,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 8296,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 8096,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 1,
+      "T": 0,
+      "arm": "SKIP23",
+      "mask": "100",
+      "AL": 8.035976015989341,
+      "AL_vs_FULL_percent": -4.496402589549042,
+      "TPS": 424.87290780118695,
+      "TPS_vs_FULL_percent": -0.5005433460553599,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 7705,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 7505,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 1,
+      "T": 1,
+      "arm": "SKIP23",
+      "mask": "100",
+      "AL": 6.843400687876183,
+      "AL_vs_FULL_percent": -6.966527474407014,
+      "TPS": 367.47569137969555,
+      "TPS_vs_FULL_percent": -2.5431745428528996,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 9504,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 9304,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 40,
+      "T": 0,
+      "arm": "FULL",
+      "mask": "111",
+      "AL": 8.545277218276265,
+      "AL_vs_FULL_percent": 0.0,
+      "TPS": 4160.16100149703,
+      "TPS_vs_FULL_percent": 0.0,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 1284,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 471,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 40,
+      "T": 1,
+      "arm": "FULL",
+      "mask": "111",
+      "AL": 7.611864055342972,
+      "AL_vs_FULL_percent": 0.0,
+      "TPS": 3677.244333873141,
+      "TPS_vs_FULL_percent": 0.0,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 1431,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 601,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 40,
+      "T": 0,
+      "arm": "SKIP3",
+      "mask": "110",
+      "AL": 8.44600602625424,
+      "AL_vs_FULL_percent": -1.1617082686294578,
+      "TPS": 4116.312122095638,
+      "TPS_vs_FULL_percent": -1.0540188080608637,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 1294,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 487,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 40,
+      "T": 1,
+      "arm": "SKIP3",
+      "mask": "110",
+      "AL": 7.552752164886752,
+      "AL_vs_FULL_percent": -0.7765757510438842,
+      "TPS": 3663.268093054379,
+      "TPS_vs_FULL_percent": -0.38007376039768115,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 1448,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 606,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 40,
+      "T": 0,
+      "arm": "SKIP2",
+      "mask": "101",
+      "AL": 8.424842635333613,
+      "AL_vs_FULL_percent": -1.4093701101360656,
+      "TPS": 4116.490731372504,
+      "TPS_vs_FULL_percent": -1.049725481990027,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 1286,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 472,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 40,
+      "T": 1,
+      "arm": "SKIP2",
+      "mask": "101",
+      "AL": 7.501440011891711,
+      "AL_vs_FULL_percent": -1.450683336544234,
+      "TPS": 3660.305212695307,
+      "TPS_vs_FULL_percent": -0.4606471487847097,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 1453,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 625,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 40,
+      "T": 0,
+      "arm": "SKIP23",
+      "mask": "100",
+      "AL": 8.20249303536206,
+      "AL_vs_FULL_percent": -4.0113875086588475,
+      "TPS": 4036.232705319436,
+      "TPS_vs_FULL_percent": -2.978930289789239,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 1335,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 520,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    },
+    {
+      "C": 40,
+      "T": 1,
+      "arm": "SKIP23",
+      "mask": "100",
+      "AL": 7.11904512250533,
+      "AL_vs_FULL_percent": -6.474352789993909,
+      "TPS": 3472.6353843605416,
+      "TPS_vs_FULL_percent": -5.564192393413525,
+      "performance_contaminated": false,
+      "isolation_errors": [],
+      "execution_counters": {
+        "captures": 0,
+        "replays": 1595,
+        "fallbacks": 0,
+        "eager": 0
+      },
+      "target_execution_counters": {
+        "captures": 0,
+        "replays": 721,
+        "fallbacks": 0,
+        "eager": 0
+      }
+    }
+  ],
+  "real_state_layer_effects": [
+    {
+      "C": 1,
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_component_depth_audit_20261009_v1/C1/formal_smoke/round_1/FULL/layer_effects_N1_T0.json",
+      "batch_size": 1,
+      "T": 0.0,
+      "proposals": 15,
+      "original_logits_bitwise_equal": true,
+      "layer_residual_ratio": {
+        "1": {
+          "mean": 0.39721838434537254,
+          "median": 0.39151468873023987,
+          "max": 0.5261213183403015
+        },
+        "2": {
+          "mean": 0.40250190893809,
+          "median": 0.37095609307289124,
+          "max": 0.6825860142707825
+        },
+        "3": {
+          "mean": 0.2942493826150894,
+          "median": 0.287998229265213,
+          "max": 0.4527471959590912
+        }
+      },
+      "bypass_effects": {
+        "110": {
+          "states": 15,
+          "greedy_flip_fraction": 0.06666666666666667,
+          "actual_sample_flip_fraction": 0.06666666666666667,
+          "candidate_delta_mean": 0.62734375,
+          "candidate_delta_max": 3.75
+        },
+        "101": {
+          "states": 15,
+          "greedy_flip_fraction": 0.13333333333333333,
+          "actual_sample_flip_fraction": 0.13333333333333333,
+          "candidate_delta_mean": 0.5978759765625,
+          "candidate_delta_max": 3.9375
+        },
+        "100": {
+          "states": 15,
+          "greedy_flip_fraction": 0.2,
+          "actual_sample_flip_fraction": 0.2,
+          "candidate_delta_mean": 1.4308430989583334,
+          "candidate_delta_max": 9.125
+        }
+      },
+      "scope": "Real native state, fixed FULL actual predecessor at each position; sensitivity is not acceptance benefit. Closed-loop formal layer bypass windows are separate.",
+      "real_state_component_profile": {
+        "reference_bitwise_equal": true,
+        "full_head_uninstrumented": {
+          "median_ms": 4.100915222167969,
+          "samples_ms": [
+            4.762808227539063,
+            4.100915222167969,
+            4.095713195800781
+          ]
+        },
+        "full_head_instrumented": {
+          "median_ms": 5.499945068359375,
+          "samples_ms": [
+            5.499043579101563,
+            5.500436401367187,
+            5.499945068359375
+          ]
+        },
+        "event_marker_overhead_percent": 34.11506384303653,
+        "component_event_ms": {
+          "raw_softmax": 0.08806400001049042,
+          "topk": 0.09676800295710564,
+          "basis_gather": 0.016383999958634377,
+          "hidden_encoder": 0.02969600073993206,
+          "hidden_scale": 0.02252800017595291,
+          "q_encoder": 0.03788800165057182,
+          "previous_encoder": 0.6737920045852661,
+          "fusion": 0.29286398738622665,
+          "swiglu_1": 0.43366400618106127,
+          "swiglu_2": 0.4300800058990717,
+          "swiglu_3": 0.4290560055524111,
+          "direction_dose": 0.6574079990386963,
+          "candidate_projection": 0.13158400263637304,
+          "candidate_update": 0.2303999960422516,
+          "full_vocab_scatter": 1.143808051943779,
+          "stock_sampling": 0.25292800180613995
+        },
+        "component_sum_ms": 4.966912066563964,
+        "timing_unit": "one entire block across the active batch, not per token or per request",
+        "scope": "input hidden/raw logits already available; excludes DFlash backbone/raw LM projection, target verification and HTTP. Event regions add timing overhead; uninstrumented full head is the latency reference."
+      }
+    },
+    {
+      "C": 1,
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_component_depth_audit_20261009_v1/C1/formal_smoke/round_1/FULL/layer_effects_N1_T1.json",
+      "batch_size": 1,
+      "T": 1.0,
+      "proposals": 15,
+      "original_logits_bitwise_equal": true,
+      "layer_residual_ratio": {
+        "1": {
+          "mean": 0.468865571419398,
+          "median": 0.4118373692035675,
+          "max": 0.8048921823501587
+        },
+        "2": {
+          "mean": 0.4667954047520955,
+          "median": 0.47883743047714233,
+          "max": 0.5695316195487976
+        },
+        "3": {
+          "mean": 0.362573629617691,
+          "median": 0.37557968497276306,
+          "max": 0.5201688408851624
+        }
+      },
+      "bypass_effects": {
+        "110": {
+          "states": 15,
+          "greedy_flip_fraction": 0.06666666666666667,
+          "actual_sample_flip_fraction": 0.2,
+          "candidate_delta_mean": 0.5789632161458333,
+          "candidate_delta_max": 4.25
+        },
+        "101": {
+          "states": 15,
+          "greedy_flip_fraction": 0.06666666666666667,
+          "actual_sample_flip_fraction": 0.26666666666666666,
+          "candidate_delta_mean": 0.5504313151041667,
+          "candidate_delta_max": 5.6875
+        },
+        "100": {
+          "states": 15,
+          "greedy_flip_fraction": 0.13333333333333333,
+          "actual_sample_flip_fraction": 0.26666666666666666,
+          "candidate_delta_mean": 1.0775797526041666,
+          "candidate_delta_max": 7.0
+        }
+      },
+      "scope": "Real native state, fixed FULL actual predecessor at each position; sensitivity is not acceptance benefit. Closed-loop formal layer bypass windows are separate.",
+      "real_state_component_profile": {
+        "reference_bitwise_equal": true,
+        "full_head_uninstrumented": {
+          "median_ms": 4.139356079101563,
+          "samples_ms": [
+            4.139519958496094,
+            4.139356079101563,
+            4.138823547363281
+          ]
+        },
+        "full_head_instrumented": {
+          "median_ms": 5.545779418945313,
+          "samples_ms": [
+            5.546843872070313,
+            5.545492553710938,
+            5.545779418945313
+          ]
+        },
+        "event_marker_overhead_percent": 33.97686289769519,
+        "component_event_ms": {
+          "raw_softmax": 0.08806400001049042,
+          "topk": 0.09676800295710564,
+          "basis_gather": 0.016383999958634377,
+          "hidden_encoder": 0.02969600073993206,
+          "hidden_scale": 0.021503999829292297,
+          "q_encoder": 0.03891199827194214,
+          "previous_encoder": 0.6784000061452389,
+          "fusion": 0.29439998883754015,
+          "swiglu_1": 0.43468800745904446,
+          "swiglu_2": 0.4290560055524111,
+          "swiglu_3": 0.4295680057257414,
+          "direction_dose": 0.6558719985187054,
+          "candidate_projection": 0.13209600280970335,
+          "candidate_update": 0.23193599609658122,
+          "full_vocab_scatter": 1.14585604891181,
+          "stock_sampling": 0.293887990526855
+        },
+        "component_sum_ms": 5.017088052351028,
+        "timing_unit": "one entire block across the active batch, not per token or per request",
+        "scope": "input hidden/raw logits already available; excludes DFlash backbone/raw LM projection, target verification and HTTP. Event regions add timing overhead; uninstrumented full head is the latency reference."
+      }
+    },
+    {
+      "C": 40,
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_component_depth_audit_20261009_v1/C40/formal_smoke/round_1/FULL/layer_effects_N1_T0.json",
+      "batch_size": 1,
+      "T": 0.0,
+      "proposals": 15,
+      "original_logits_bitwise_equal": true,
+      "layer_residual_ratio": {
+        "1": {
+          "mean": 0.3972986042499542,
+          "median": 0.3913210332393646,
+          "max": 0.5257857441902161
+        },
+        "2": {
+          "mean": 0.4026300013065338,
+          "median": 0.3701852262020111,
+          "max": 0.6823587417602539
+        },
+        "3": {
+          "mean": 0.2940210074186325,
+          "median": 0.2878935635089874,
+          "max": 0.4527471959590912
+        }
+      },
+      "bypass_effects": {
+        "110": {
+          "states": 15,
+          "greedy_flip_fraction": 0.06666666666666667,
+          "actual_sample_flip_fraction": 0.06666666666666667,
+          "candidate_delta_mean": 0.6263997395833333,
+          "candidate_delta_max": 3.625
+        },
+        "101": {
+          "states": 15,
+          "greedy_flip_fraction": 0.13333333333333333,
+          "actual_sample_flip_fraction": 0.13333333333333333,
+          "candidate_delta_mean": 0.5954182942708334,
+          "candidate_delta_max": 4.0
+        },
+        "100": {
+          "states": 15,
+          "greedy_flip_fraction": 0.2,
+          "actual_sample_flip_fraction": 0.2,
+          "candidate_delta_mean": 1.4361409505208333,
+          "candidate_delta_max": 9.25
+        }
+      },
+      "scope": "Real native state, fixed FULL actual predecessor at each position; sensitivity is not acceptance benefit. Closed-loop formal layer bypass windows are separate.",
+      "real_state_component_profile": {
+        "reference_bitwise_equal": true,
+        "full_head_uninstrumented": {
+          "median_ms": 4.011110534667969,
+          "samples_ms": [
+            4.488110046386719,
+            4.011110534667969,
+            4.0097998046875
+          ]
+        },
+        "full_head_instrumented": {
+          "median_ms": 5.464739990234375,
+          "samples_ms": [
+            5.464739990234375,
+            5.465252075195313,
+            5.46361328125
+          ]
+        },
+        "event_marker_overhead_percent": 36.240074737475034,
+        "component_event_ms": {
+          "raw_softmax": 0.0870399996638298,
+          "topk": 0.09523200243711472,
+          "basis_gather": 0.01740800030529499,
+          "hidden_encoder": 0.02969600073993206,
+          "hidden_scale": 0.02252800017595291,
+          "q_encoder": 0.03788800165057182,
+          "previous_encoder": 0.6778880059719086,
+          "fusion": 0.2928639920428395,
+          "swiglu_1": 0.43212800566107035,
+          "swiglu_2": 0.42649600468575954,
+          "swiglu_3": 0.42700800485908985,
+          "direction_dose": 0.6446079947054386,
+          "candidate_projection": 0.1361920041963458,
+          "candidate_update": 0.23142399499192834,
+          "full_vocab_scatter": 1.1125760413706303,
+          "stock_sampling": 0.25292800180613995
+        },
+        "component_sum_ms": 4.923904055263847,
+        "timing_unit": "one entire block across the active batch, not per token or per request",
+        "scope": "input hidden/raw logits already available; excludes DFlash backbone/raw LM projection, target verification and HTTP. Event regions add timing overhead; uninstrumented full head is the latency reference."
+      }
+    },
+    {
+      "C": 40,
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_component_depth_audit_20261009_v1/C40/formal_smoke/round_1/FULL/layer_effects_N1_T1.json",
+      "batch_size": 1,
+      "T": 1.0,
+      "proposals": 15,
+      "original_logits_bitwise_equal": true,
+      "layer_residual_ratio": {
+        "1": {
+          "mean": 0.468865571419398,
+          "median": 0.4118373692035675,
+          "max": 0.8048921823501587
+        },
+        "2": {
+          "mean": 0.4667954047520955,
+          "median": 0.47883743047714233,
+          "max": 0.5695316195487976
+        },
+        "3": {
+          "mean": 0.362573629617691,
+          "median": 0.37557968497276306,
+          "max": 0.5201688408851624
+        }
+      },
+      "bypass_effects": {
+        "110": {
+          "states": 15,
+          "greedy_flip_fraction": 0.06666666666666667,
+          "actual_sample_flip_fraction": 0.2,
+          "candidate_delta_mean": 0.5789632161458333,
+          "candidate_delta_max": 4.25
+        },
+        "101": {
+          "states": 15,
+          "greedy_flip_fraction": 0.06666666666666667,
+          "actual_sample_flip_fraction": 0.26666666666666666,
+          "candidate_delta_mean": 0.5504313151041667,
+          "candidate_delta_max": 5.6875
+        },
+        "100": {
+          "states": 15,
+          "greedy_flip_fraction": 0.13333333333333333,
+          "actual_sample_flip_fraction": 0.26666666666666666,
+          "candidate_delta_mean": 1.0775797526041666,
+          "candidate_delta_max": 7.0
+        }
+      },
+      "scope": "Real native state, fixed FULL actual predecessor at each position; sensitivity is not acceptance benefit. Closed-loop formal layer bypass windows are separate.",
+      "real_state_component_profile": {
+        "reference_bitwise_equal": true,
+        "full_head_uninstrumented": {
+          "median_ms": 4.099891052246094,
+          "samples_ms": [
+            4.099645385742187,
+            4.099891052246094,
+            4.100177917480469
+          ]
+        },
+        "full_head_instrumented": {
+          "median_ms": 5.5048193359375,
+          "samples_ms": [
+            5.5048193359375,
+            5.50381591796875,
+            5.505044555664062
+          ]
+        },
+        "event_marker_overhead_percent": 34.2674540808036,
+        "component_event_ms": {
+          "raw_softmax": 0.08806400001049042,
+          "topk": 0.09523200243711472,
+          "basis_gather": 0.01740800030529499,
+          "hidden_encoder": 0.02969600073993206,
+          "hidden_scale": 0.02252800017595291,
+          "q_encoder": 0.03788800165057182,
+          "previous_encoder": 0.6784000061452389,
+          "fusion": 0.29183998983353376,
+          "swiglu_1": 0.430592006072402,
+          "swiglu_2": 0.42700800485908985,
+          "swiglu_3": 0.42700800485908985,
+          "direction_dose": 0.636927992105484,
+          "candidate_projection": 0.1356800040230155,
+          "candidate_update": 0.2303999955765903,
+          "full_vocab_scatter": 1.1110400408506393,
+          "stock_sampling": 0.29491198994219303
+        },
+        "component_sum_ms": 4.954624039586633,
+        "timing_unit": "one entire block across the active batch, not per token or per request",
+        "scope": "input hidden/raw logits already available; excludes DFlash backbone/raw LM projection, target verification and HTTP. Event regions add timing overhead; uninstrumented full head is the latency reference."
+      }
+    },
+    {
+      "C": 40,
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_component_depth_audit_20261009_v1/C40/formal_smoke/round_1/FULL/layer_effects_N40_T0.json",
+      "batch_size": 40,
+      "T": 0.0,
+      "proposals": 15,
+      "original_logits_bitwise_equal": true,
+      "layer_residual_ratio": {
+        "1": {
+          "mean": 0.432412005836765,
+          "median": 0.4278021603822708,
+          "max": 0.7280201315879822
+        },
+        "2": {
+          "mean": 0.43704509946207204,
+          "median": 0.40092846751213074,
+          "max": 0.9114082455635071
+        },
+        "3": {
+          "mean": 0.327120930403471,
+          "median": 0.30560705065727234,
+          "max": 0.6621445417404175
+        }
+      },
+      "bypass_effects": {
+        "110": {
+          "states": 600,
+          "greedy_flip_fraction": 0.05,
+          "actual_sample_flip_fraction": 0.05,
+          "candidate_delta_mean": 0.6259216427803039,
+          "candidate_delta_max": 7.0625
+        },
+        "101": {
+          "states": 600,
+          "greedy_flip_fraction": 0.045,
+          "actual_sample_flip_fraction": 0.045,
+          "candidate_delta_mean": 0.5668798923492432,
+          "candidate_delta_max": 6.75
+        },
+        "100": {
+          "states": 600,
+          "greedy_flip_fraction": 0.11,
+          "actual_sample_flip_fraction": 0.11,
+          "candidate_delta_mean": 1.2316776593526204,
+          "candidate_delta_max": 11.40625
+        }
+      },
+      "scope": "Real native state, fixed FULL actual predecessor at each position; sensitivity is not acceptance benefit. Closed-loop formal layer bypass windows are separate.",
+      "real_state_component_profile": {
+        "reference_bitwise_equal": true,
+        "full_head_uninstrumented": {
+          "median_ms": 9.485025024414062,
+          "samples_ms": [
+            9.483960571289062,
+            9.485025024414062,
+            9.485721435546875
+          ]
+        },
+        "full_head_instrumented": {
+          "median_ms": 10.882620849609374,
+          "samples_ms": [
+            10.881700439453125,
+            10.883604736328126,
+            10.882620849609374
+          ]
+        },
+        "event_marker_overhead_percent": 14.73476160155569,
+        "component_event_ms": {
+          "raw_softmax": 1.516543984413147,
+          "topk": 1.222656011581421,
+          "basis_gather": 0.24063999950885773,
+          "hidden_encoder": 0.04403200000524521,
+          "hidden_scale": 0.04249599948525429,
+          "q_encoder": 0.14028799533843994,
+          "previous_encoder": 0.8468480072915554,
+          "fusion": 0.3532800078392029,
+          "swiglu_1": 0.4997120015323162,
+          "swiglu_2": 0.4986880011856556,
+          "swiglu_3": 0.5002240017056465,
+          "direction_dose": 0.7168000191450119,
+          "candidate_projection": 0.3056639935821295,
+          "candidate_update": 0.3901439942419529,
+          "full_vocab_scatter": 2.4596479907631874,
+          "stock_sampling": 0.55654401704669
+        },
+        "component_sum_ms": 10.334208024665713,
+        "timing_unit": "one entire block across the active batch, not per token or per request",
+        "scope": "input hidden/raw logits already available; excludes DFlash backbone/raw LM projection, target verification and HTTP. Event regions add timing overhead; uninstrumented full head is the latency reference."
+      }
+    },
+    {
+      "C": 40,
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/head_component_depth_audit_20261009_v1/C40/formal_smoke/round_1/FULL/layer_effects_N40_T1.json",
+      "batch_size": 40,
+      "T": 1.0,
+      "proposals": 15,
+      "original_logits_bitwise_equal": true,
+      "layer_residual_ratio": {
+        "1": {
+          "mean": 0.4388133431971073,
+          "median": 0.4308294653892517,
+          "max": 0.762873113155365
+        },
+        "2": {
+          "mean": 0.43899892168740434,
+          "median": 0.40696755051612854,
+          "max": 1.0065406560897827
+        },
+        "3": {
+          "mean": 0.3322321947167317,
+          "median": 0.3108024299144745,
+          "max": 0.7389185428619385
+        }
+      },
+      "bypass_effects": {
+        "110": {
+          "states": 600,
+          "greedy_flip_fraction": 0.08,
+          "actual_sample_flip_fraction": 0.07166666666666667,
+          "candidate_delta_mean": 0.6596247454484304,
+          "candidate_delta_max": 6.53125
+        },
+        "101": {
+          "states": 600,
+          "greedy_flip_fraction": 0.09166666666666666,
+          "actual_sample_flip_fraction": 0.06833333333333333,
+          "candidate_delta_mean": 0.5964485843976338,
+          "candidate_delta_max": 7.25
+        },
+        "100": {
+          "states": 600,
+          "greedy_flip_fraction": 0.185,
+          "actual_sample_flip_fraction": 0.17,
+          "candidate_delta_mean": 1.2979626576105754,
+          "candidate_delta_max": 13.75
+        }
+      },
+      "scope": "Real native state, fixed FULL actual predecessor at each position; sensitivity is not acceptance benefit. Closed-loop formal layer bypass windows are separate.",
+      "real_state_component_profile": {
+        "reference_bitwise_equal": true,
+        "full_head_uninstrumented": {
+          "median_ms": 10.21317138671875,
+          "samples_ms": [
+            10.213396606445313,
+            10.212946166992188,
+            10.21317138671875
+          ]
+        },
+        "full_head_instrumented": {
+          "median_ms": 11.63841552734375,
+          "samples_ms": [
+            11.6396240234375,
+            11.63841552734375,
+            11.637698974609375
+          ]
+        },
+        "event_marker_overhead_percent": 13.954961555608403,
+        "component_event_ms": {
+          "raw_softmax": 1.5180799961090088,
+          "topk": 1.2262400388717651,
+          "basis_gather": 0.24012800306081772,
+          "hidden_encoder": 0.04403200000524521,
+          "hidden_scale": 0.04249599948525429,
+          "q_encoder": 0.14131200313568115,
+          "previous_encoder": 0.8473600074648857,
+          "fusion": 0.35225600749254227,
+          "swiglu_1": 0.5002240017056465,
+          "swiglu_2": 0.4997120015323162,
+          "swiglu_3": 0.5012480020523071,
+          "direction_dose": 0.7178240176290274,
+          "candidate_projection": 0.3061759937554598,
+          "candidate_update": 0.3901439933106303,
+          "full_vocab_scatter": 2.461183987557888,
+          "stock_sampling": 1.3107199966907501
+        },
+        "component_sum_ms": 11.099136049859226,
+        "timing_unit": "one entire block across the active batch, not per token or per request",
+        "scope": "input hidden/raw logits already available; excludes DFlash backbone/raw LM projection, target verification and HTTP. Event regions add timing overhead; uninstrumented full head is the latency reference."
+      }
+    }
+  ],
+  "event_profile": {
+    "status": "complete",
+    "gpu_uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+    "synthetic": true,
+    "rows": [
+      {
+        "batch_size": 1,
+        "T": 0,
+        "reference_bitwise_equal": true,
+        "full_head_uninstrumented": {
+          "median_ms": 4.05612548828125,
+          "samples_ms": [
+            4.553830261230469,
+            4.05612548828125,
+            4.055941162109375
+          ]
+        },
+        "full_head_instrumented": {
+          "median_ms": 5.393367309570312,
+          "samples_ms": [
+            5.393367309570312,
+            5.39293701171875,
+            5.3935308837890625
+          ]
+        },
+        "event_marker_overhead_percent": 32.96845290296251,
+        "component_event_ms": {
+          "raw_softmax": 0.08601599931716919,
+          "topk": 0.09625600278377533,
+          "basis_gather": 0.01945599913597107,
+          "hidden_encoder": 0.02969600073993206,
+          "hidden_scale": 0.02252800017595291,
+          "q_encoder": 0.03891199827194214,
+          "previous_encoder": 0.6666239984333515,
+          "fusion": 0.29183998983353376,
+          "swiglu_1": 0.4249600041657686,
+          "swiglu_2": 0.423936003819108,
+          "swiglu_3": 0.4234240036457777,
+          "direction_dose": 0.6246399879455566,
+          "candidate_projection": 0.13312000315636396,
+          "candidate_update": 0.22681599715724587,
+          "full_vocab_scatter": 1.1074560396373272,
+          "stock_sampling": 0.24575999937951565
+        },
+        "component_sum_ms": 4.861440027598292,
+        "timing_unit": "one entire block across the active batch, not per token or per request",
+        "scope": "input hidden/raw logits already available; excludes DFlash backbone/raw LM projection, target verification and HTTP. Event regions add timing overhead; uninstrumented full head is the latency reference."
+      },
+      {
+        "batch_size": 1,
+        "T": 1,
+        "reference_bitwise_equal": true,
+        "full_head_uninstrumented": {
+          "median_ms": 4.107018127441406,
+          "samples_ms": [
+            4.107304992675782,
+            4.106915893554688,
+            4.107018127441406
+          ]
+        },
+        "full_head_instrumented": {
+          "median_ms": 5.463326416015625,
+          "samples_ms": [
+            5.463326416015625,
+            5.470105590820313,
+            5.4630194091796875
+          ]
+        },
+        "event_marker_overhead_percent": 33.02416124029073,
+        "component_event_ms": {
+          "raw_softmax": 0.08601599931716919,
+          "topk": 0.09625600278377533,
+          "basis_gather": 0.01945599913597107,
+          "hidden_encoder": 0.030719999223947525,
+          "hidden_scale": 0.02252800017595291,
+          "q_encoder": 0.03839999996125698,
+          "previous_encoder": 0.6758400052785873,
+          "fusion": 0.2908159922808409,
+          "swiglu_1": 0.423936003819108,
+          "swiglu_2": 0.423936003819108,
+          "swiglu_3": 0.4234240036457777,
+          "direction_dose": 0.6379519924521446,
+          "candidate_projection": 0.13209600280970335,
+          "candidate_update": 0.22988799586892128,
+          "full_vocab_scatter": 1.1110400408506393,
+          "stock_sampling": 0.2923519928008318
+        },
+        "component_sum_ms": 4.934656034223735,
+        "timing_unit": "one entire block across the active batch, not per token or per request",
+        "scope": "input hidden/raw logits already available; excludes DFlash backbone/raw LM projection, target verification and HTTP. Event regions add timing overhead; uninstrumented full head is the latency reference."
+      },
+      {
+        "batch_size": 40,
+        "T": 0,
+        "reference_bitwise_equal": true,
+        "full_head_uninstrumented": {
+          "median_ms": 9.692057495117188,
+          "samples_ms": [
+            9.692057495117188,
+            9.690214233398438,
+            9.693184204101563
+          ]
+        },
+        "full_head_instrumented": {
+          "median_ms": 11.037122802734375,
+          "samples_ms": [
+            11.03931396484375,
+            11.037122802734375,
+            11.037060546875
+          ]
+        },
+        "event_marker_overhead_percent": 13.878016182784968,
+        "component_event_ms": {
+          "raw_softmax": 1.5150079727172852,
+          "topk": 1.316864013671875,
+          "basis_gather": 0.35737600922584534,
+          "hidden_encoder": 0.043007999658584595,
+          "hidden_scale": 0.03993599861860275,
+          "q_encoder": 0.1510400027036667,
+          "previous_encoder": 0.8442880064249039,
+          "fusion": 0.3481600061058998,
+          "swiglu_1": 0.49664000049233437,
+          "swiglu_2": 0.49459199979901314,
+          "swiglu_3": 0.497664000838995,
+          "direction_dose": 0.7096320167183876,
+          "candidate_projection": 0.30310399271547794,
+          "candidate_update": 0.3952639950439334,
+          "full_vocab_scatter": 2.450431987643242,
+          "stock_sampling": 0.549376018345356
+        },
+        "component_sum_ms": 10.512384020723403,
+        "timing_unit": "one entire block across the active batch, not per token or per request",
+        "scope": "input hidden/raw logits already available; excludes DFlash backbone/raw LM projection, target verification and HTTP. Event regions add timing overhead; uninstrumented full head is the latency reference."
+      },
+      {
+        "batch_size": 40,
+        "T": 1,
+        "reference_bitwise_equal": true,
+        "full_head_uninstrumented": {
+          "median_ms": 10.467266845703126,
+          "samples_ms": [
+            10.467061767578125,
+            10.467593994140625,
+            10.467266845703126
+          ]
+        },
+        "full_head_instrumented": {
+          "median_ms": 11.815894775390625,
+          "samples_ms": [
+            11.81822998046875,
+            11.815894775390625,
+            11.8141748046875
+          ]
+        },
+        "event_marker_overhead_percent": 12.88424141246689,
+        "component_event_ms": {
+          "raw_softmax": 1.516543984413147,
+          "topk": 1.3153280019760132,
+          "basis_gather": 0.35737600922584534,
+          "hidden_encoder": 0.0435199998319149,
+          "hidden_scale": 0.03993599861860275,
+          "q_encoder": 0.1520640030503273,
+          "previous_encoder": 0.8437760062515736,
+          "fusion": 0.3481600061058998,
+          "swiglu_1": 0.49664000049233437,
+          "swiglu_2": 0.49612800031900406,
+          "swiglu_3": 0.4997120015323162,
+          "direction_dose": 0.7121920175850391,
+          "candidate_projection": 0.30310399271547794,
+          "candidate_update": 0.3952639941126108,
+          "full_vocab_scatter": 2.456063963472843,
+          "stock_sampling": 1.3107199966907501
+        },
+        "component_sum_ms": 11.2865279763937,
+        "timing_unit": "one entire block across the active batch, not per token or per request",
+        "scope": "input hidden/raw logits already available; excludes DFlash backbone/raw LM projection, target verification and HTTP. Event regions add timing overhead; uninstrumented full head is the latency reference."
+      }
+    ],
+    "utc": "2026-10-09T00:27:55.532554+00:00"
+  },
+  "checks": {
+    "source_files": 133,
+    "formal_artifact_hashes": 104,
+    "complete_formal_windows": 16,
+    "requests_per_window": {
+      "C1": 200,
+      "C40": 1319
+    },
+    "same_head_body_basis_weights": true,
+    "native_graphs_only": true
+  },
+  "initial_profile_failure_recovered": true,
+  "limitations": [
+    "Fixed current trained model; bypass is not a separately trained lower-depth model.",
+    "Isolated component Graph timings cannot be added to claim an exact full-head partition.",
+    "Head timing includes actual sequential native sampling; excludes body/raw LM and target verification.",
+    "Same-state sensitivity does not establish whether a token change improves acceptance.",
+    "One formal round on an inference development panel."
+  ]
+}

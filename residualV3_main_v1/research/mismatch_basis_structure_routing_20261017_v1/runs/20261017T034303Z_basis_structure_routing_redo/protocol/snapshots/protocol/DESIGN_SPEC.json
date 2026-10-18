@@ -1,0 +1,290 @@
+{
+  "schema": "basis_structure_routing.design.v1",
+  "date": "2026-10-17",
+  "status": "document_only_not_executed",
+  "questions": {
+    "Q1": "不同错误共用哪些修正方向",
+    "Q2": "调整组合幅度是否足够或现有E512是否受限",
+    "Q3": "可见上下文能否提供选择依据",
+    "Q4": "先聚类再建组是否出现折外任务偏好"
+  },
+  "scope": {
+    "mainline": "basis_internal_structure_and_context_selection",
+    "no_source_pairing_retest": true,
+    "no_original_head_outcome_filter": true,
+    "route_evaluation": "selection_only_with_oracle_coefficients",
+    "new_repair_head_fits": 0,
+    "new_ridge_fits": 18,
+    "LLM_forward": false,
+    "GPU_hours": 0
+  },
+  "assets": {
+    "R8": "../mismatch_theory_round8_20261015_v1/runs/20261015T110214Z_mismatch_r8",
+    "reuse": "../mismatch_basis_reuse_20261016_v1/runs/20261016T143529Z_basis_reuse",
+    "source_results": "../mismatch_basis_source_20261016_v1/runs/20261016T172105Z_basis_source/results/RESULTS_CN.md",
+    "old_runs_read_only": true
+  },
+  "panel": {
+    "pool": "fresh_eval",
+    "source": "P",
+    "raw_body": "J",
+    "positions": [
+      3,
+      8,
+      15
+    ],
+    "questions": 36,
+    "contexts": 69,
+    "C_i": 207,
+    "natural_slots": 9936,
+    "unique_C_target_rows": 2571,
+    "OOF_slots": [
+      3168,
+      3312,
+      3456
+    ],
+    "folds": 3,
+    "train_questions_per_fold": 24,
+    "test_questions_per_fold": 12,
+    "split": "within_domain_full_group_SHA_sorted_zero_based_mod3",
+    "weight_hierarchy": [
+      "natural_slot",
+      "C",
+      "position",
+      "question",
+      "domain"
+    ],
+    "natural_H_repeats": true,
+    "equal_H_sensitivity_evaluation_only": true,
+    "EOS_current_kept": true,
+    "data_previously_exposed": true
+  },
+  "cluster": {
+    "method": "deterministic_axial_power_iteration",
+    "K": 4,
+    "input": "unit((p-q)W)",
+    "sign_invariant_assignment": true,
+    "train_only": true,
+    "initial_first": "first_nonzero_in_canonical_order",
+    "initial_next": "argmax weight*(1-max squared_cosine)",
+    "outer_iterations": 50,
+    "stable_assignment_rounds": 2,
+    "inner_power_iterations": 200,
+    "axis_angle_tolerance": 1e-08,
+    "eigen_residual_tolerance": 1e-08,
+    "Rayleigh_drop_relative_tolerance": 1e-10,
+    "not_certified_top_eigenvector": true,
+    "zero_rule_relative": 1e-12,
+    "empty_cluster": "library_unavailable"
+  },
+  "spaces": {
+    "GLOBAL512": {
+      "rank": 512,
+      "count": 1,
+      "source": "old_fold_E"
+    },
+    "GLOBAL128": {
+      "rank": 128,
+      "count": 1,
+      "source": "first128_GLOBAL512"
+    },
+    "IN": {
+      "rank": 128,
+      "count": 4,
+      "source": "same_cluster_moment_inside_E512"
+    },
+    "OUT": {
+      "rank": 128,
+      "count": 4,
+      "source": "same_cluster_moment_full4096"
+    },
+    "RND": {
+      "rank": 128,
+      "count": 4,
+      "source": "weight_stratified_permuted_cluster_labels"
+    },
+    "OOF_basic_count": 14,
+    "OOF_single_axis_removals": 4,
+    "OOF_group_removals": 4,
+    "OOF_spaces_total": 22,
+    "train_label_spaces": 12,
+    "total_library_directions": 512,
+    "low_rank_action": "library_unavailable_no_padding_no_rank_change",
+    "data_matrix_SVD_rank_relative_threshold": 1e-10,
+    "orthogonality_max_error": 1e-08,
+    "axis_eigengap_relative_threshold": 1e-06
+  },
+  "random_control": {
+    "generator": "PCG64",
+    "seeds_by_fold": [
+      2026101731,
+      2026101732,
+      2026101733
+    ],
+    "unit": "unique_history_identity",
+    "strata": [
+      "domain",
+      "position",
+      "exact_Fraction_unique_history_weight"
+    ],
+    "preserve_repeated_H": true,
+    "preserve_cluster_count_weight_domain_position": true,
+    "minimum_changed_weight_fraction": 0.1,
+    "below_minimum": "control_uninformative_no_reseed"
+  },
+  "capacity": {
+    "objective": "full_vocabulary_forward_KL_gain_nats",
+    "candidate_count": 256,
+    "tail": "unmodified_logits_shared_normalizer",
+    "radius": "0.8*max(norm(h),1e-6)",
+    "solver": "projected_accelerated_gradient_zero_init",
+    "L": "max(spectral_norm(A)**2,1e-12)",
+    "restart_every": 50,
+    "main_max_steps": 2000,
+    "main_expanded_gap": 1e-06,
+    "direction_cumulative_max_steps": 4000,
+    "direction_expanded_gap": 1e-08,
+    "direction_cosine_min": 0.999,
+    "direction_norm_relative_change_max": 0.01,
+    "direction_near_zero_relative_R": 1e-08,
+    "SVD_relative_truncation": 1e-12,
+    "removed_direction_gain_guard": "2*R*norm(A_removed,2)",
+    "floating_guard": "1e-10*(1+abs(f)+abs(gap)+Gmax)",
+    "rigorous_directed_rounding_certificate": false,
+    "unresolved_rows_kept_in_bounds": true,
+    "base_solve_upper_count": 118266,
+    "GLOBAL512_direction_refinements": 2571,
+    "secondary_metrics": [
+      "full_TV",
+      "top1",
+      "TV_damage_rate"
+    ]
+  },
+  "router": {
+    "banks": [
+      "IN",
+      "OUT",
+      "RND"
+    ],
+    "features": [
+      "X0",
+      "X1"
+    ],
+    "fits": 18,
+    "X0_dims": 279,
+    "X1_dims": 407,
+    "projection_dim": 128,
+    "projection_seed": 2026101711,
+    "input_G": "fixed_old_G_qm_first128",
+    "X1_extra": "normalized_actual_previous_token_embedding_projected",
+    "forbidden_inputs": [
+      "p",
+      "full_H",
+      "residual",
+      "domain_label",
+      "group_identity",
+      "target_row",
+      "slot",
+      "cluster_label"
+    ],
+    "train_standardize": true,
+    "constant_std_cutoff": 1e-12,
+    "ridge_lambda": 0.001,
+    "intercept_column": 0,
+    "intercept_penalized": false,
+    "target": "per_space_feasible_gain_Glo_native_nats",
+    "minimum_reliable_train_weight": 0.99,
+    "argmax_tie": "smallest_group_id",
+    "raw_if_max_prediction_nonpositive": true,
+    "coefficients_oracle": true,
+    "no_hyperparameter_search": true
+  },
+  "evaluation": {
+    "error_types": [
+      "same_top1_q_over",
+      "same_top1_q_under",
+      "same_top1_equal",
+      "different_top1_target_in_rawTop16",
+      "different_top1_target_raw_rank17_256",
+      "target_top1_outside_rawTop256"
+    ],
+    "domains": [
+      "alpaca",
+      "gsm8k",
+      "humaneval"
+    ],
+    "domain_pairs": [
+      [
+        "alpaca",
+        "gsm8k"
+      ],
+      [
+        "alpaca",
+        "humaneval"
+      ],
+      [
+        "gsm8k",
+        "humaneval"
+      ]
+    ],
+    "cluster_ids_not_aligned_across_folds": true,
+    "same_chosen_group_fold_crossover": 0,
+    "bootstrap": {
+      "resamples": 5000,
+      "seed": 2026101741,
+      "unit": "whole_question_paired_within_domain",
+      "descriptive_only": true,
+      "refit_assets": false,
+      "interval_level": 0.95,
+      "quantiles": [
+        0.025,
+        0.975
+      ],
+      "numpy_quantile_method": "linear",
+      "decision_lower": "quantile_0.025_of_bootstrap_aggregate_numeric_lower_bounds",
+      "interval_upper": "quantile_0.975_of_bootstrap_aggregate_numeric_upper_bounds",
+      "zero_denominator": "NA_no_redraw_no_positive_admission_for_subset_interval"
+    },
+    "main_effect_floor_KL_nats": 0.001,
+    "direction_pair_near_parallel_cos": 0.99,
+    "direction_pair_near_antiparallel_cos": -0.99,
+    "direction_pair_amplitude_ratio": 1.1,
+    "logit_direction_near_zero": 1e-08,
+    "context_information_claim_levels": [
+      "over_constant",
+      "over_domain_selector",
+      "X1_over_X0"
+    ],
+    "question_answers_separate": true,
+    "figures": 4,
+    "examples_max": 6,
+    "example_identity_rule": "first2_full_SHA_questions_each_domain_min_anchor_position3_first_valid_slot",
+    "input_equivalence_key": [
+      "fold",
+      "bank",
+      "standardized_feature_bytes"
+    ]
+  },
+  "resource": {
+    "CPU_process_tree_hours_all_runs": 6,
+    "RSS_GiB": 16,
+    "new_disk_GiB": 8,
+    "numeric_workers": 1,
+    "all_numeric_threads": 1,
+    "performance_safety_multiplier": 1.5,
+    "max_fraction_remaining_CPU": 0.8,
+    "closure_reserve_CPU_seconds": 1200,
+    "RSS_disk_headroom_fraction": 0.2,
+    "python": "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "technical_repairs_per_stage": 2,
+    "performance_gate_measured": false,
+    "gate_uses_worst_iteration_bounds": true
+  },
+  "outputs": {
+    "run_template": "runs/<UTC>_basis_structure_routing/",
+    "first_page_max_Chinese_characters": 600,
+    "final_core_review_required": true,
+    "exit_owned_workers": true,
+    "no_automatic_next_round": true
+  }
+}

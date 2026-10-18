@@ -1,0 +1,53 @@
+2026-10-04 修复头代码审计与下一步安排
+
+本次：只读现有训练/native/诊断代码，在新目录做CPU数学和mask检查；没有启动GPU训练或修改旧实验源码、权重、日志。
+CHECKS.json记录159个冻结源文件校验通过；check_contracts.py可用llm_dflash_eval_v026环境python -B复现。只保存检查标量和代码，不保存hidden、logits或逐状态向量。
+
+直接阅读的主要代码
+1. nonlinear_predictable_basis_v1/paired_train.py，128条×3轮训练、逐anchor微批次累积、FP32 master AdamW。
+2. 其runtime_bundle/runtime/live_trainer.py：target导出层、draft context、anchor attention、位置与teacher label。
+3. repair/model.py及repair/native_launch.py：q输入、direction/dose、实际lag-1、完整词表stock sampler和verifier q。
+4. runtime/precision.py、runtime/master_optimizer.py、runtime/components.py、runtime/check_vllm_hidden.py。
+5. 冻结bundle中src/speculators/models/dflash/{attention.py,utils.py,model_definitions.py,core.py}。
+6. 本地已安装vLLM的qwen3_dflash.py、qwen2.py、DFlash speculator.py：context KV、aux层、anchor与mask token位置、7个proposal采样位置。
+7. 旧TargetHidden/Logits消融代码和正式报告、五问题实际Adam/PCGrad诊断、OUTPUT+margin native报告、Parallel_T0/T1重标teacher代码及五组正式报告、最新bottleneck probe结果。
+
+目前没有发现可确认的索引/优化器错误
+训练j=0的draft mask位置anchor+1，对应target hidden[anchor]预测答案[anchor+1]；后续lag-1取此前token。native的bonus/anchor与7个mask采样位置在代码语义上相符。
+训练base context严格位于anchor之前，只看同文档；synthetic query只看自己的块，块内非因果。CPU小mask检查排除了anchor/future base context及跨query块泄漏。
+训练累积的是当前提示内的anchor加权梯度，FP32 master执行AdamW并回写BF16；未见漏更新。旧gradient_sums有不适用于no-soft的分支名，但这里没有调用，不能拿死代码解释训练结果。
+修正后的分数进入stock sampler，实际q送入verifier；已有native合同检查通过。以上不构成整个backbone bitwise parity证明。
+
+按优先级区分问题
+
+P0：训练draft和native draft的完整数值/行为对齐还没有检查完。
+live_trainer.py:123-130使用HF/speculators层、编译FlexAttention、独立Q/K/V和显式残差相加；native使用vLLM层、预填context KV、融合投影/RMSNorm、KV-cache注意力。这些路径语义相近，数值舍入、batch形状、attention实现可能有差异。
+现有check_vllm_hidden.py:43-60只检查128-token target层/最后norm，门限相对L2<=0.10、平均cos>=0.995；argmax agreement记录而未作硬门禁。它明确声明不是native draft parity。
+修复头同输入重算与native完全相同，证明了“head执行”对齐，尚未证明“给head的训练hidden/q”与native一致。
+这是需要补的验证缺口；当前没有证据确认偏差足以造成瓶颈，不能直接写成训练实现bug。
+
+P1：q分支压缩及归一化没有显式保留一些置信度信息。
+repair/model.py:46-49先取TopK概率的embedding投影加权和，再送入q_proj里的LayerNorm（第27行）。当TopK条件比例不变、总概率一起缩放时，moment整体缩放，LayerNorm会大幅弱化这种差异；epsilon及BF16导致并非严格相等。
+CPU合成例：候选总质量0.30/0.80，top1概率0.01875/0.05，完整q的L1距离约1；q分支输出相对差异FP32约0.0801%，BF16约0.3757%。这个例子证明表示的近不变性，不是实际数据缺信息的证据。hidden分支仍可能编码置信度；不能说q聚合丢失全部候选信息或全模型无法辨别。
+旧Logits分支依然是候选聚合后LayerNorm，且正式结果没有稳定超过旧N。不能把“再加logits”当成未经尝试的新方案。
+
+P1：OUTPUT训练目标确实没有直接要求greedy正确或保护已正确状态。
+repair/model.py:109-111是teacher前缀上的overlap cumprod。paired_train.py:80-82明确用训练答案作前驱；native使用实际proposal。这是既有代理目标/训练设计，非新发现的实现bug。
+CPU反例：teacher p=[.50,.35,.15]；q由[.51,.10,.39]变为[.44,.45,.11]，overlap从.75升到.90，7位置OUTPUT loss约.6286降到.3292，但greedy由正确变错误。它只证明两目标不等价，不证明实际优化经历了这条路径。
+旧OUTPUT+margin小型native训练、方向辅助、PCGrad、on-policy Parallel_T0/T1已完成；没有一致native改进，不能再次简单重复并声称已解决。
+
+P2：最新oracle和延迟证据的适用范围。
+最新所选32错误状态的OLD/GG/RR/NL基底都找到正确动作，现有基底在这些状态已有可行解。它们看到teacher信息；不能据此证明部署输入充分或共享网络能学会。
+在NL/T1的571个到达状态上，SHORT修好132/200且误修7/371，LONG修好141且误修4，NL修好126且误修7。这是同状态反事实，非各头独立AL成绩。
+约3.76M可训练参数之外，仍有两张各约156MB的冻结投影表，以及7步串行预测、候选gather/scatter、全词表处理和采样。旧阶段微测试揭示了这些成本，尚未识别完整正式路径的唯一延迟瓶颈。
+
+下一步：优先做完整draft训练/native同前缀对齐的小诊断
+状态：本次已完成代码审计和CPU检查；以下GPU诊断是计划，尚未启动。
+固定旧no-soft2短训头和原基底，使用当前统一BF16合同。长训可作只读不同预算参考；不重训旧N，不重做已完成正式C1/C40。
+用8条已有开发诊断提示、T0/T1，每条最多3个实际块（首块、随后验证边界、较后块），最多48块。面板用于找实现问题，不能称独立最终测试。
+在native中在线取得同一实际已验证前缀的target aux、anchor、位置，送入训练draft路径；先统一前缀、原权重、learned mask row、RoPE、context边界、dtype。所有向量只在RAM/GPU当前步骤存在，处理后释放，只保存统计。
+逐层/逐7位置比较context投影、draft hidden、raw logits、Top256集合/Top1及同一旧N给出的direction、dose、修正后Top1/overlap。原始与修正后的目标margin都要记录，关注偏差是否会改变本来只有小margin的决策。
+分别记录bitwise equality、相对/最大数值误差、候选和决策分歧。不同算子间bitwise不等不自动意味着错误；通过同路径重复及batch形状控制确定正常数值差异，再检查是否改变修复行为。
+若发现实质偏差，先在新的隔离版本修复训练路径，复现同状态行为后再安排小训练；旧证据原样保留。
+若路径已对齐，再组织信息充分性小探针：对比当前完整输入与加入未聚合候选概率/差值、TopK总质量、entropy等可在线获得信息的版本，保持原输出基底，包含已正确状态。先看跨提示方向/误修预测有没有改善，再决定是否训练384步与正式测速。此探针须明确与已做过的聚合Logits、TOKEN_TV/TOKEN_NLA、oracle系数拟合区分，不先声称创新或有效。
+GPU诊断只用空卡，target vLLM与draft同卡；出现外部进程仅记录且不干预。诊断不出TPS结论。

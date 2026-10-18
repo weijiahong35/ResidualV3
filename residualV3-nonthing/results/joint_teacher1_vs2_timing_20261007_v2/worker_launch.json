@@ -1,0 +1,12 @@
+{
+  "pid": 3281218,
+  "gpu": 4,
+  "gpu_uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/joint_teacher1_vs2_timing_20261007_v2/bootstrap_worker.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/joint_teacher1_vs2_timing_20261007_v2"
+  ]
+}

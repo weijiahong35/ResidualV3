@@ -1,0 +1,32 @@
+{
+  "status": "passed_with_recorded_cross_run_RAW_difference",
+  "cross_run_RAW_differences": [
+    {
+      "source_index": 2745,
+      "anchor": 1827,
+      "position": 3,
+      "previous_raw_correct": true,
+      "current_raw_correct": false
+    }
+  ],
+  "within_run_RAW_shared_by_all_epochs": true,
+  "dev_epoch3_448_state_labels_and_correctness_reproduced": true,
+  "training_anchor_sets_verified": 48,
+  "train_prompts": 16,
+  "anchors_seen_each_epoch": 64,
+  "epoch3_equals_native": true,
+  "source_hashes_unchanged": true,
+  "checkpoint_hashes_unchanged": true,
+  "parameter_updates": 0,
+  "hidden_cleanup": {
+    "requests": 32,
+    "deleted": 32,
+    "remaining": []
+  },
+  "cleanup": {
+    "owned_processes_stopped": true,
+    "temporary_transfer_removed": true,
+    "remaining_before_cleanup": [],
+    "utc": "2026-10-01T05:10:05.683707+00:00"
+  }
+}

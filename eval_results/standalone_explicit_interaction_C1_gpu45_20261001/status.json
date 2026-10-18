@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "stage": "complete",
+  "orchestrator_pid": 148166,
+  "order": [
+    "RAW",
+    "E3",
+    "ADDITIVE",
+    "INTERACTION"
+  ],
+  "utc": "2026-10-01T08:04:34.090964+00:00",
+  "results": "/data/weijiahong/speculators-main-lora/eval_results/standalone_explicit_interaction_C1_gpu45_20261001/results.json"
+}

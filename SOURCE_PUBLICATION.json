@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-10-18T02:39:53.269299+00:00",
+  "repository": "weijiahong35/ResidualV3",
+  "mode": "reviewed_source_visible_in_git_large_weights_in_release",
+  "source_archive_sha256": "54728e1d9233915bc431e72e7df3a25153eb57b4bc6f7ea55e6c96a95e821546",
+  "copied_reviewed_files": 6350,
+  "preserved_relative_symlinks": 53,
+  "excluded_automation": [
+    ".coderabbit.yaml",
+    ".readthedocs.yaml"
+  ],
+  "entry_documents_adapted_for_git": [
+    "README.md",
+    ".gitignore",
+    "PROJECT_MAP_CN.md",
+    "PACKAGE_README_CN.md"
+  ],
+  "package_manifest_scope": "PACKAGE_MANIFEST.json describes the unchanged v2.0-archive Release payload, not modified Git entry documents",
+  "release": "https://github.com/weijiahong35/ResidualV3/releases/tag/v2.0-archive",
+  "llm_execution_performed": false,
+  "large_weights_added_to_git": false
+}

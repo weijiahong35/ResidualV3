@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "step": 8,
+  "arms": {
+    "OUTPUT": {
+      "master_parameters": 34,
+      "adam_states": 34,
+      "fp32_masters": true,
+      "fp32_moments": true,
+      "master_to_model_rounding_exact": true
+    },
+    "TARGET_KL": {
+      "master_parameters": 34,
+      "adam_states": 34,
+      "fp32_masters": true,
+      "fp32_moments": true,
+      "master_to_model_rounding_exact": true
+    },
+    "ORACLE_KL": {
+      "master_parameters": 34,
+      "adam_states": 34,
+      "fp32_masters": true,
+      "fp32_moments": true,
+      "master_to_model_rounding_exact": true
+    }
+  },
+  "contains_hidden_or_logits": false,
+  "scope": "validates new run snapshot only; original run masters not compared"
+}

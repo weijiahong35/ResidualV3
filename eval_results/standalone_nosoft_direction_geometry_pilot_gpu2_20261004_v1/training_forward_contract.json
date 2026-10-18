@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "old_tf_bf16_logits_bitwise": true,
+  "actual_teacher_sequence_predecessors": true,
+  "no_future_teacher_inputs": true,
+  "scope": "first real training microbatch; not backbone/native global parity",
+  "utc": "2026-10-04T16:15:37.871405+00:00"
+}

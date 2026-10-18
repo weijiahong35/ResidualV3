@@ -1,0 +1,31 @@
+{
+  "order": [
+    "RAW",
+    "PREFIX",
+    "TOKEN_TV",
+    "TOKEN_NLA"
+  ],
+  "training_gpus": {
+    "PREFIX": 4,
+    "TOKEN_TV": 5,
+    "TOKEN_NLA": 4
+  },
+  "test_gpu": 5,
+  "concurrency": 1,
+  "all_repair_initialization": "matched_fresh_random",
+  "reuse_repair_checkpoint": false,
+  "train128_epochs3_maxanchors1536": true,
+  "native": {
+    "temperatures": [
+      0,
+      1
+    ],
+    "prompts": 20,
+    "max_tokens": 4096,
+    "max_model_len": 8192,
+    "memory": 0.93,
+    "graphs": true,
+    "rounds": 1
+  },
+  "utc": "2026-10-01T09:16:56.898415+00:00"
+}

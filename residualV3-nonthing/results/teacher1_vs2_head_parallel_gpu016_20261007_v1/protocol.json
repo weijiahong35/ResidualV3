@@ -1,0 +1,32 @@
+{
+  "source_run": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2",
+  "source_protocol": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2/training_arms/CE_DPACE_OUTPUT/training_protocol.json",
+  "source_checkpoint": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/fused_output_dpace_20k_packed1536_2gpu_20261007_v2/training_arms/CE_DPACE_OUTPUT/training/epoch_03_resume.pt",
+  "teacher_gpus": [
+    0,
+    1
+  ],
+  "learner_gpu": 6,
+  "learner_uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+  "teacher_dp_sizes": [
+    1,
+    2
+  ],
+  "teacher_tp_size": 1,
+  "kv_gib_each": 48,
+  "teacher_max_seqs_each": 64,
+  "teacher_max_batched_tokens_each": 65536,
+  "request_concurrency": 128,
+  "pack_tokens": 65536,
+  "max_anchors": 1536,
+  "draft_chunk": 512,
+  "head_chunk": 1536,
+  "loss_arm": "CE_DPACE_OUTPUT",
+  "head_modes": [
+    "sequential",
+    "parallel_tf",
+    "parallel_position_bmm"
+  ],
+  "native_evaluation_untouched": true,
+  "scope": "Bounded independent throughput/numerical pilots; target/draft frozen, repair head only. Not full-data or joint-backbone training."
+}

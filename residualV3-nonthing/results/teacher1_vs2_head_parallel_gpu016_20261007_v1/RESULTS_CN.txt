@@ -1,0 +1,24 @@
+已完成：同一张A100 learner卡，单teacher/双teacher各48个真实在线短实验更新，总96次。
+原始权重未修改，8份新pilot头权重和完整Adam/master/RNG断点保留。
+65536输入token/包，整包1536 anchors，15预测位置；目标、DFlash冻结，只训练nosoft3头。
+每阶段12次更新，丢弃前3次；顺序头首尾各测一次。
+单teacher GPU0，双teacher GPU1/2，learner GPU6；TP1，每teacher真实48GiB KV缓存。
+
+顺序头：两轮顺序测量合并平均（18次更新/配置）：
+teacher DP1: 每次更新 3.548s，等hidden 1.341s，DFlash 1.060s，头及全词表投影/梯度转master 1.059s，18297 输入token/s。
+teacher DP2: 每次更新 3.169s，等hidden 0.635s，DFlash 0.847s，头及全词表投影/梯度转master 1.648s，20489 输入token/s。
+本轮单teacher时间平均多 11.98%，可见hidden等待多 0.706s。
+但顺序重复有明显波动，不能把该百分比当作稳定长期惩罚。9-pack探索性配对bootstrap差值区间：[-1.212797578631176, 1.5813114231633436]秒。
+
+完整1536头固定状态计时（不含target原始/teacher logits投影、Adam，也不等新hidden）：
+sequential: 总 0.1945s，前向+损失 0.1341s，反向 0.0603s。
+parallel_tf: 总 0.1522s，前向+损失 0.1088s，反向 0.0434s。
+parallel_position_bmm: 总 0.1554s，前向+损失 0.1105s，反向 0.0449s。
+直接TF合并头时间减少 21.73%，但本轮在线端到端没有显示稳定收益。
+完整1536三损失校验：直接TF合并 argmax 23040/23040一致，combined损失差2.384e-7，参数梯度relative L2 0.004684（0.4684%），不是bitwise等价，也未通过预设0.2%小误差门槛。
+分组BMM原型argmax差115/23040；其Linear将bmm输出和bias相加多了BF16舍入。单算子融合bias可恢复多数前向一致，梯度累加仍有差异。未替换生产源码。
+真实在线训练峰值torch allocated约53.16GiB；learner真实缓存预热67GiB/预算68GiB，nvidia-smi约67.7GiB。
+各主实验卡未记录到外部GPU进程。宿主仍有其他GPU任务，并非整机独占。
+旧C40控制器/client退出，仅残留idle vLLM；旧status evaluating已过期，本实验没有使用其TPS。
+
+查看完整原始数据：timing_comparison.csv、summary.json、AUDIT.json、training_benchmark.log。

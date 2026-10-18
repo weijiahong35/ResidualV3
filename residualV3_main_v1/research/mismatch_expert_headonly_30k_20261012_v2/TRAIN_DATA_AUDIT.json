@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "groups": 39216,
+  "head_train_groups": 30000,
+  "counts": {
+    "math/expert_train": 10000,
+    "code/expert_train": 10000,
+    "chat_instruction/expert_train": 10000,
+    "math/router_train": 2048,
+    "code/router_train": 2048,
+    "chat_instruction/router_train": 2048,
+    "math/selection": 1024,
+    "code/selection": 1024,
+    "chat_instruction/selection": 1024
+  },
+  "length_bins": {
+    "math/expert_train": {
+      "257-1024": 7772,
+      "<=256": 1581,
+      "1025-2048": 475,
+      "2049-4096": 172
+    },
+    "code/expert_train": {
+      "1025-2048": 3506,
+      "<=256": 418,
+      "257-1024": 5124,
+      "2049-4096": 952
+    },
+    "chat_instruction/expert_train": {
+      "1025-2048": 1900,
+      "2049-4096": 6107,
+      "257-1024": 1633,
+      "<=256": 360
+    },
+    "math/router_train": {
+      "257-1024": 1592,
+      "<=256": 323,
+      "1025-2048": 90,
+      "2049-4096": 43
+    },
+    "code/router_train": {
+      "257-1024": 1056,
+      "1025-2048": 714,
+      "2049-4096": 205,
+      "<=256": 73
+    },
+    "chat_instruction/router_train": {
+      "257-1024": 335,
+      "2049-4096": 1228,
+      "1025-2048": 419,
+      "<=256": 66
+    },
+    "math/selection": {
+      "257-1024": 809,
+      "<=256": 167,
+      "1025-2048": 38,
+      "2049-4096": 10
+    },
+    "code/selection": {
+      "257-1024": 545,
+      "1025-2048": 355,
+      "2049-4096": 87,
+      "<=256": 37
+    },
+    "chat_instruction/selection": {
+      "2049-4096": 617,
+      "1025-2048": 208,
+      "257-1024": 159,
+      "<=256": 40
+    }
+  },
+  "source_proxy_domain_labels": true,
+  "anchor_blocks": 78252,
+  "states": 1173780,
+  "panel_sha256": "54ed1ae28838f6eb7530707b911c02fa5bedb7949aac34b433fc65616637864f",
+  "old_96_groups_excluded": true,
+  "utc": "2026-10-12T07:37:49.533161+00:00"
+}

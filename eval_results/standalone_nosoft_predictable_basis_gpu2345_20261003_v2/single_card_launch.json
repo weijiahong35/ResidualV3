@@ -1,0 +1,9 @@
+{
+  "pid": 422147,
+  "sources": {
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/single_card_finish.py": "08a2dc97c4b390aecc29ac37b0c57e14bf1313e55601ec6d641b7d7b6a6afa2c",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/bounded_collect.py": "406c506d1bb74ae5a557fed239e8e2af0cc701b72ca95a8876a0a5242d7d549f",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_predictable_basis_gpu2345_20261003_v2/bounded_eval_entry.py": "b31b250dabcdb842155f3ee00b5a867a2889774cfd4887c27efefc81ee1cc130"
+  },
+  "utc": "2026-10-03T14:24:05.524013+00:00"
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "K1",
+    "label": "data_cannot_distinguish",
+    "reason": "P主场景0/36题有定义，必要预测未被检验；不是反证，不放宽全历史同意/0.9/两H条件。D2缺匹配干预。"
+  },
+  {
+    "id": "K2",
+    "label": "novelty_covered_by_prior_work",
+    "reason": "三域各12/12题欠量方向成立，但候选存在/条件重选的宽泛机制已经被DCOCO、Domino、DSpark覆盖；D2不能分离本地条件缺失与映射拟合。没有可定位的新增来源证据。"
+  },
+  {
+    "id": "K3",
+    "label": "necessary_prediction_not_observed",
+    "reason": "三域4/12、4/12、0/12满足冻结硬频数靠近方向；域均值均反向。只削弱此档案预测版本，不否定真实硬监督的所有影响。"
+  }
+]

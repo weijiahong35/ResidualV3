@@ -1,0 +1,20 @@
+{
+  "pid": 979118,
+  "identity": {
+    "physical_gpu": 5,
+    "uuid": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+    "pci_bus_id": "00000000:B1:00.0",
+    "name": "NVIDIA A100-SXM4-80GB",
+    "cuda_device": 0
+  },
+  "server_identity": {
+    "physical_gpu": 4,
+    "uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+    "pci_bus_id": "00000000:AD:00.0",
+    "name": "NVIDIA A100-SXM4-80GB",
+    "cuda_device": 0
+  },
+  "initial_free_mib": 81151,
+  "protocol_sha256": "409af1c68e88e9d196e841fe0a6886310f727f5dda1dda7fdcc937b9dceb1e8f",
+  "utc": "2026-09-30T04:29:24.169007+00:00"
+}

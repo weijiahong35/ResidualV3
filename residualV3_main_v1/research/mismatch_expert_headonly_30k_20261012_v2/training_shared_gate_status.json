@@ -1,0 +1,10 @@
+{
+  "status": "loading_cpu_cache",
+  "pid": 1279228,
+  "physical_gpu": 1,
+  "shared_gpu": true,
+  "gpu_memory_cap_gib": 8,
+  "seed": 6101202,
+  "arm": null,
+  "utc": "2026-10-12T08:49:20.446685+00:00"
+}

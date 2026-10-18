@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "stage": "C1_smoke",
+  "controller_pid": 4016527,
+  "gpu": 0,
+  "gpu_uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+  "utc": "2026-10-03T13:52:07.559578+00:00",
+  "error": "RuntimeError('C1_smoke failed; see /data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_basis_objective_short_gpu0_20261003_v3/C1_smoke.log')"
+}

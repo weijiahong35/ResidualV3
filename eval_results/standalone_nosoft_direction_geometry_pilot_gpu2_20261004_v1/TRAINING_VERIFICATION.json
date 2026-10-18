@@ -1,0 +1,123 @@
+{
+  "status": "passed",
+  "matched_anchor_answer_hashes_within_each_seed": true,
+  "old_checkpoint_unchanged": true,
+  "all18_epoch_weights_preserved": true,
+  "hidden_transport_read_and_deleted": true,
+  "rows": [
+    {
+      "arm": "OUTPUT",
+      "seed": 430002,
+      "updates": 48,
+      "weights": [
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/OUTPUT_seed430002/epoch_01.safetensors",
+          "sha256": "83e4c43b608cd7327e6b5118b57302419f5152438239f55181880c36f2d6b407"
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/OUTPUT_seed430002/epoch_02.safetensors",
+          "sha256": "ac00c27ae153933faa964a5b527e30dee1b13d8ee74112aeb1213431b7158519"
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/OUTPUT_seed430002/epoch_03.safetensors",
+          "sha256": "3c25b60fe347eb8ae8aec96fbac9aa59e391664f03b2d59ceb53bbb6fc9a6e8c"
+        }
+      ]
+    },
+    {
+      "arm": "EUCLIDEAN",
+      "seed": 430002,
+      "updates": 48,
+      "weights": [
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/EUCLIDEAN_seed430002/epoch_01.safetensors",
+          "sha256": "96eb5089bef68a00ee4fa647856aad449dfc42a85d1fea48a187995b376c75bb"
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/EUCLIDEAN_seed430002/epoch_02.safetensors",
+          "sha256": "d14bbdf3f948f0b75f788555c767ac5644202befab784739a6b3b3e62d97b255"
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/EUCLIDEAN_seed430002/epoch_03.safetensors",
+          "sha256": "a80f5d1febe622b4e659b70979a03ed35deedd4d74db7a6f6de4882a8b351288"
+        }
+      ]
+    },
+    {
+      "arm": "FISHER",
+      "seed": 430002,
+      "updates": 48,
+      "weights": [
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/FISHER_seed430002/epoch_01.safetensors",
+          "sha256": "73f54a075ae4e625cfb23b4dc6d8a6cfc201ed1bebb8f59530a6d630a0d744e3"
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/FISHER_seed430002/epoch_02.safetensors",
+          "sha256": "64f920b4b96cec79b08f2cefd2bb9ebbe6e712a7fdfed12ab09bc9ca2a07b0c4"
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/FISHER_seed430002/epoch_03.safetensors",
+          "sha256": "3e8df8b98805498ad47cd7ac080c3d5bfa5041f656599637f9f94d10a2f6990f"
+        }
+      ]
+    },
+    {
+      "arm": "OUTPUT",
+      "seed": 430003,
+      "updates": 48,
+      "weights": [
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/OUTPUT_seed430003/epoch_01.safetensors",
+          "sha256": "019e5d2382a6fda63b3335cfca4f0d2936a7094f3e6e7fc44bfa0376b29523a7"
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/OUTPUT_seed430003/epoch_02.safetensors",
+          "sha256": "569e60430e0e021b0552b6a0136c42262807e9e2dccb086d232a598542ef7257"
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/OUTPUT_seed430003/epoch_03.safetensors",
+          "sha256": "4c53c94cb79026815763616f8450f32b78924dcbfda05b6e02ba7f3375d8572f"
+        }
+      ]
+    },
+    {
+      "arm": "EUCLIDEAN",
+      "seed": 430003,
+      "updates": 48,
+      "weights": [
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/EUCLIDEAN_seed430003/epoch_01.safetensors",
+          "sha256": "d15f80558264e2f4d45551d4160f49889552d14481be448c636de2fbaecfad31"
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/EUCLIDEAN_seed430003/epoch_02.safetensors",
+          "sha256": "d16b9163c0d392b489bd1c8cb3bb5f43e3c502a8d810dc262cbf1c3bb826b353"
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/EUCLIDEAN_seed430003/epoch_03.safetensors",
+          "sha256": "20cde5463eb979df10c131c8cb607ccfa373dc3a5ec8206cffec8b20e273897f"
+        }
+      ]
+    },
+    {
+      "arm": "FISHER",
+      "seed": 430003,
+      "updates": 48,
+      "weights": [
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/FISHER_seed430003/epoch_01.safetensors",
+          "sha256": "b49cb5ce777ccde08984b46d3af257d1b24d4b28bea1103dbef3b0b6ffbe72ff"
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/FISHER_seed430003/epoch_02.safetensors",
+          "sha256": "d8666ba37676bddd6591d7f009f1ec8209b908ef0c4752b8516a14bf23c75c66"
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_direction_geometry_pilot_gpu2_20261004_v1/training/FISHER_seed430003/epoch_03.safetensors",
+          "sha256": "e2cba5d8ed805087c0f7b7fed56fe2b0e07fb2f02e42fffa81c8902f677658d2"
+        }
+      ]
+    }
+  ]
+}

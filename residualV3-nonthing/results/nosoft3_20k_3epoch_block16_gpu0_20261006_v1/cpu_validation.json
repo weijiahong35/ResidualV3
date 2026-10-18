@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "positions": 15,
+  "block_size": 16,
+  "no_soft3_parameter_count": 4353537,
+  "old_nosoft_head_initialization_exact": true,
+  "old_nosoft_logits_exact_at15_positions": true,
+  "old_nosoft_parameter_gradients_exact": true,
+  "hard_lag1_and_first_anchor_exact": true,
+  "outside_top256_logits_unchanged": true,
+  "nonthinking_request_contract": true,
+  "scope": "CPU head/15-position recurrence and request checks; not complete backbone/native bitwise proof"
+}

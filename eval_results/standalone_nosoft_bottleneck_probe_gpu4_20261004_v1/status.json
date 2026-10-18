@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "stage": "finished",
+  "pid": 3911323,
+  "gpu": 4,
+  "uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+  "utc": "2026-10-04T03:36:54.024340+00:00",
+  "results": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_bottleneck_probe_gpu4_20261004_v1/RESULTS_CN.txt"
+}

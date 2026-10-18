@@ -1,0 +1,8 @@
+{
+  "controller_pid": 733871,
+  "status": "paused_by_user",
+  "reason": "User requested review of DFlash/DSpark/DFlash-2 training before deciding; no new training start",
+  "source_code_unchanged": true,
+  "old_gpu0_training_continues": true,
+  "utc": "2026-10-06T13:18:27.439237+00:00"
+}

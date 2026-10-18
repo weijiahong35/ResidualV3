@@ -1,0 +1,51 @@
+{
+  "scope": "training wall time only; not native throughput or final performance",
+  "utc": "2026-10-02T06:00:28.310125+00:00",
+  "paired_updates": 5,
+  "old_seconds": [
+    82.442861398682,
+    145.33836157806218,
+    39.66632598824799,
+    121.41785147227347,
+    128.89634981378913
+  ],
+  "new_seconds": [
+    19.82786980830133,
+    22.410098869353533,
+    13.646756587550044,
+    18.295033879578114,
+    19.757750425487757
+  ],
+  "old_mean_seconds": 103.55235005021095,
+  "new_mean_seconds": 18.787501914054154,
+  "wall_time_speedup": 5.511767904212306,
+  "same_training_index_anchor_answer_hashes": true,
+  "old_Top256_reference_pairing_also_checked": true,
+  "all_completed_new_updates_have_finite_nonzero_parameter_gradients": true,
+  "training_config_preserved": {
+    "prompts": 128,
+    "epochs": 3,
+    "steps_per_model": 384,
+    "max_anchors": 1536,
+    "head_chunk": 32,
+    "temperatures": [
+      0,
+      1
+    ]
+  },
+  "T1_status": "queued, runtime not measured yet",
+  "teacher_transport": {
+    "client": "direct HTTP",
+    "relabel_concurrency": 32,
+    "base_prefetch": 4,
+    "server_max_sequences": 32,
+    "lock_poll_seconds": 0.001
+  },
+  "remaining_bottleneck": "teacher relabel requests; see phase_wall_seconds",
+  "limitations": [
+    "five initial paired updates only, sequence length dependent",
+    "v2 steps4/5 overlapped short read-only HTTP profiling probes",
+    "teacher BF16 results may differ with batch/cache kernel shape; online distribution/greedy parity gate passed",
+    "T1 and formal native C1/C40 results pending"
+  ]
+}

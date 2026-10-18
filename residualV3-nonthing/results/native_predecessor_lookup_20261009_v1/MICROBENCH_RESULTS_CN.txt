@@ -1,0 +1,24 @@
+固定权重推理头优化：已完成整头微测
+A100-SXM4-80GB；BF16；CUDA Graph；每 block 的 15 个实际递推 proposal，含 stock 采样。
+此处 N1/N40 是 batch 中 1/40 个请求；时间为整 batch 一次 block 的头耗时，不是每 token 或服务 TPS。
+不含 DFlash 主体、原始 LM projection、target 验证、HTTP。
+
+batch | T | 基线毫秒 | 优化毫秒 | 头耗时减少
+N1 | 0 | 3.024476 | 2.514586 | 16.86%
+N1 | 1 | 3.062917 | 2.558208 | 16.48%
+N40 | 0 | 7.869573 | 7.159562 | 9.02%
+N40 | 1 | 8.615710 | 7.903826 | 8.26%
+
+基线：triton_write；优化：prev_lookup_exact。每配置 3 组，每组 100 次 Graph replay，表列中位数。
+权重与基底不变。修复头 4,353,537 个可训练参数；当前仅优化推理，不训练。
+N1/N7/N40、7/11/15proposal、T0/T1、seed42/57 共24个配置，所采用版本24/24通过：logits、采样ID、实际硬前驱、verifier q逐位一致。
+覆盖范围是已测试状态及这些形状，不宣称所有未来输入均已形式证明。
+GPU4微测窗口未观测到额外进程；详见pilot_isolation.json。
+
+普通4096行批量预计算表：GPU校验0/24通过，已拒绝采用；CPU toy检查不能替代GPU校验。
+采用按原batch形状N独立建立的GPU前驱编码表；不同GEMM行数会改变BF16舍入。
+每张表约74.19MiB；C1仅N1约74MiB，C40为N1..N40建表约2.90GiB。
+这些是固定词表/固定参数派生特征；不持久化hidden/logits，不保存查表到磁盘或checkpoint。
+表在模型载入后、Graph capture前构建，启动成本不计入稳态微测。
+正式C1=200/C40=1319 GSM8K，最多2096生成token；两臂均开启target batch invariance；见single_card_C*_formal.log。
+正式结果尚在执行，以最终VERIFIED_RESULTS_CN.txt为准；smoke不作为TPS结论。

@@ -1,0 +1,992 @@
+{
+  "schema": "r8.completion.v1",
+  "UTC": "2026-10-15T12:58:31.893492+00:00",
+  "status": "complete",
+  "run_id": "20261015T110214Z_mismatch_r8",
+  "required_scientific_work_complete": true,
+  "required_work_remaining": [],
+  "new_test_prompts": 36,
+  "dev_old_prompts": 6,
+  "valid_contexts": 69,
+  "four_primary": {
+    "A_D": {
+      "estimate": 0.2847072574389615,
+      "domain_estimates": {
+        "gsm8k": 0.25280133116364717,
+        "humaneval": 0.33079452523461794,
+        "alpaca": 0.2705259159186195
+      },
+      "defined_prompts": {
+        "gsm8k": 12,
+        "humaneval": 12,
+        "alpaca": 11
+      },
+      "prompt_values": [
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:04ce139694b5d8900256",
+          "value": 0.36248467970595283
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:141c521796a45116e2fc",
+          "value": 0.3131592322112551
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:2f2c7f26f46d75a845a5",
+          "value": 0.37430002577805865
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:3831e7709c2d89249d46",
+          "value": 0.18319019309723167
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:4cc7641d09244a4ace7d",
+          "value": 0.18461384053358887
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:50b21448a07edd1f7796",
+          "value": 0.2935127294409974
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:7cc55b151b9b88ac66b2",
+          "value": 0.26658110829762677
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:cc454e121eff7333aad1",
+          "value": 0.2848124561659629
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:df993fac56b31cf22017",
+          "value": 0.1458753498391116
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:e078a4e2476c683dc68c",
+          "value": 0.17436229897061403
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:f510e3b394eafd535a46",
+          "value": 0.39289316106441463
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:0019309e83e7cf0e6e90",
+          "value": 0.3195394816024228
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:061501956468e82c7701",
+          "value": 0.2001269263458889
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:39fda382b145630d85ef",
+          "value": 0.26278431927856094
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:3aa8d4c8f02f9dcd55d4",
+          "value": 0.31203748409500354
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:4f749fa93e2847434af9",
+          "value": 0.09932634708380726
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:63c10e422dd934697d85",
+          "value": 0.42256453070187816
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:67ab79f900374ccf5223",
+          "value": 0.24847308694765202
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:67edeb0d4adcc8e0b94f",
+          "value": 0.4201887347012687
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:7f98592767830e2644d5",
+          "value": 0.2817524420856122
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:8db337a49418fd6f1f89",
+          "value": 0.14642824096955015
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:d002a3129a63c8dd2c3e",
+          "value": 0.3412070996642578
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:f16f3c13c4f786d48b25",
+          "value": -0.020812719512136035
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:17f6178e393cb29f00e1",
+          "value": 0.28732994585841914
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:18d5fc1fa5c042718343",
+          "value": 0.3818959553260664
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:2c604d6231f8160f7733",
+          "value": 0.33219652697857466
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:34aa525ccaced7f94dfc",
+          "value": 0.2065887010190876
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:676e1a983974c0f63794",
+          "value": 0.3512042526005982
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:7802c24617edd6b7a66c",
+          "value": 0.2781643568127304
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:7da8b33ed0ecdd0b14be",
+          "value": 0.4290293393641547
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:be3aaef0f47598ef333b",
+          "value": 0.230342773894377
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:c03e17a85d15f78bb370",
+          "value": 0.2918512972475372
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:c2d148cb2492a2cab87c",
+          "value": 0.4840941781640571
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:cc1e70ae45bc887b453f",
+          "value": 0.439662929047093
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:e22e0e1880a25a24cd76",
+          "value": 0.2571740465027198
+        }
+      ],
+      "CI98_75": [
+        0.24149510052544815,
+        0.3265544912117355
+      ],
+      "CI95": [
+        0.25150750278521816,
+        0.31720431327275916
+      ],
+      "bootstrap_replicates": 5000,
+      "population": "matched main new_to_P_fit; zero actions retained",
+      "conditional_on_fixed_finite_branch_banks": true,
+      "coverage": {
+        "natural_main_slots": 9936,
+        "matched_slots": 3248,
+        "new_to_P_fit_slots": 660,
+        "strict_slots": 635,
+        "reference_reached_new_slots": 0,
+        "nonzero_new_slots": 592,
+        "defined_prompts": {
+          "gsm8k": 12,
+          "humaneval": 12,
+          "alpaca": 11
+        },
+        "nonzero_prompts": {
+          "gsm8k": 12,
+          "humaneval": 12,
+          "alpaca": 11
+        },
+        "coverage_is_not_gain_fraction": true
+      },
+      "coverage_passed": true,
+      "positive_supported": true,
+      "material_001_supported": true,
+      "status": "supported"
+    },
+    "A_J": {
+      "estimate": 0.29259097201325024,
+      "domain_estimates": {
+        "gsm8k": 0.2812936988880411,
+        "humaneval": 0.32808155181832094,
+        "alpaca": 0.26839766533338855
+      },
+      "defined_prompts": {
+        "gsm8k": 12,
+        "humaneval": 12,
+        "alpaca": 11
+      },
+      "prompt_values": [
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:04ce139694b5d8900256",
+          "value": 0.3609209268764853
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:141c521796a45116e2fc",
+          "value": 0.30448669131173206
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:2f2c7f26f46d75a845a5",
+          "value": 0.3386041144570711
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:3831e7709c2d89249d46",
+          "value": 0.1774718313784821
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:4cc7641d09244a4ace7d",
+          "value": 0.18002484923057321
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:50b21448a07edd1f7796",
+          "value": 0.2989566524033019
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:7cc55b151b9b88ac66b2",
+          "value": 0.26995292764142287
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:cc454e121eff7333aad1",
+          "value": 0.2863860729892002
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:df993fac56b31cf22017",
+          "value": 0.14593394710738708
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:e078a4e2476c683dc68c",
+          "value": 0.19567296616918955
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:f510e3b394eafd535a46",
+          "value": 0.3939633391024284
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:0019309e83e7cf0e6e90",
+          "value": 0.2784288391108967
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:061501956468e82c7701",
+          "value": 0.16170736450571022
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:39fda382b145630d85ef",
+          "value": 0.3382767131588673
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:3aa8d4c8f02f9dcd55d4",
+          "value": 0.2924967020172176
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:4f749fa93e2847434af9",
+          "value": 0.10350102075851983
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:63c10e422dd934697d85",
+          "value": 0.4472568760831019
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:67ab79f900374ccf5223",
+          "value": 0.23543181209202463
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:67edeb0d4adcc8e0b94f",
+          "value": 0.43596011847519767
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:7f98592767830e2644d5",
+          "value": 0.34818525335705997
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:8db337a49418fd6f1f89",
+          "value": 0.4021154632933194
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:d002a3129a63c8dd2c3e",
+          "value": 0.34376721576390823
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:f16f3c13c4f786d48b25",
+          "value": -0.011602991959329567
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:17f6178e393cb29f00e1",
+          "value": 0.2577124934230071
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:18d5fc1fa5c042718343",
+          "value": 0.3901031242280746
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:2c604d6231f8160f7733",
+          "value": 0.3438142869238017
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:34aa525ccaced7f94dfc",
+          "value": 0.2066831931241444
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:676e1a983974c0f63794",
+          "value": 0.35044781897397465
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:7802c24617edd6b7a66c",
+          "value": 0.2719633396010346
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:7da8b33ed0ecdd0b14be",
+          "value": 0.4284991853336474
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:be3aaef0f47598ef333b",
+          "value": 0.25582834406519206
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:c03e17a85d15f78bb370",
+          "value": 0.2861601748368972
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:c2d148cb2492a2cab87c",
+          "value": 0.48724931973917807
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:cc1e70ae45bc887b453f",
+          "value": 0.42963945818430405
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:e22e0e1880a25a24cd76",
+          "value": 0.22887788338659534
+        }
+      ],
+      "CI98_75": [
+        0.24993820016477739,
+        0.3340370403729361
+      ],
+      "CI95": [
+        0.2586537474889493,
+        0.32565925886884994
+      ],
+      "bootstrap_replicates": 5000,
+      "population": "matched main new_to_P_fit; zero actions retained",
+      "conditional_on_fixed_finite_branch_banks": true,
+      "coverage": {
+        "natural_main_slots": 9936,
+        "matched_slots": 3248,
+        "new_to_P_fit_slots": 660,
+        "strict_slots": 635,
+        "reference_reached_new_slots": 0,
+        "nonzero_new_slots": 584,
+        "defined_prompts": {
+          "gsm8k": 12,
+          "humaneval": 12,
+          "alpaca": 11
+        },
+        "nonzero_prompts": {
+          "gsm8k": 12,
+          "humaneval": 12,
+          "alpaca": 11
+        },
+        "coverage_is_not_gain_fraction": true
+      },
+      "coverage_passed": true,
+      "positive_supported": true,
+      "material_001_supported": true,
+      "status": "supported"
+    },
+    "B_D": {
+      "estimate": 0.1161202937137761,
+      "domain_estimates": {
+        "gsm8k": 0.10436369497049781,
+        "humaneval": 0.11818067008289888,
+        "alpaca": 0.1258165160879316
+      },
+      "defined_prompts": {
+        "gsm8k": 11,
+        "humaneval": 12,
+        "alpaca": 11
+      },
+      "prompt_values": [
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:04ce139694b5d8900256",
+          "value": 0.26656029868882797
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:141c521796a45116e2fc",
+          "value": 0.13271935360679685
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:2f2c7f26f46d75a845a5",
+          "value": 0.21458002300159396
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:3831e7709c2d89249d46",
+          "value": 0.24070067489853458
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:4cc7641d09244a4ace7d",
+          "value": 0.17058685785513497
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:50b21448a07edd1f7796",
+          "value": 0.01875888764496096
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:7cc55b151b9b88ac66b2",
+          "value": 0.01670958225717742
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:cc454e121eff7333aad1",
+          "value": 0.0002981014116495706
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:df993fac56b31cf22017",
+          "value": 0.0038286434960181914
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:e078a4e2476c683dc68c",
+          "value": 0.06208219796275576
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:f510e3b394eafd535a46",
+          "value": 0.25715705614379736
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:0019309e83e7cf0e6e90",
+          "value": 0.20956861110282085
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:061501956468e82c7701",
+          "value": 0.11475146199446905
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:39fda382b145630d85ef",
+          "value": 0.0016449129156549391
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:3aa8d4c8f02f9dcd55d4",
+          "value": 0.027803646900670102
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:4f749fa93e2847434af9",
+          "value": 0.10873224763184366
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:63c10e422dd934697d85",
+          "value": 0.03595738990383075
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:67ab79f900374ccf5223",
+          "value": 0.13289120038233226
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:67edeb0d4adcc8e0b94f",
+          "value": 0.11742048480539319
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:7f98592767830e2644d5",
+          "value": 0.037196963038249126
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:8db337a49418fd6f1f89",
+          "value": 0.13934879908111222
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:d002a3129a63c8dd2c3e",
+          "value": 0.2226849269190998
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:17f6178e393cb29f00e1",
+          "value": 0.056498430777807196
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:18d5fc1fa5c042718343",
+          "value": 0.0002273276507239297
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:2c604d6231f8160f7733",
+          "value": 0.06769485946759422
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:34aa525ccaced7f94dfc",
+          "value": 0.08919294284281228
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:676e1a983974c0f63794",
+          "value": 0.10730188675299182
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:7802c24617edd6b7a66c",
+          "value": 0.15408025061260755
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:7da8b33ed0ecdd0b14be",
+          "value": 0.2285989046271275
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:be3aaef0f47598ef333b",
+          "value": 0.08486198012074062
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:c03e17a85d15f78bb370",
+          "value": 0.14549534603656092
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:c2d148cb2492a2cab87c",
+          "value": 0.22722697767088795
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:cc1e70ae45bc887b453f",
+          "value": 0.10042829552053407
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:e22e0e1880a25a24cd76",
+          "value": 0.1565608389143986
+        }
+      ],
+      "CI98_75": [
+        0.08189135033956124,
+        0.15095482578581212
+      ],
+      "CI95": [
+        0.08969268935388061,
+        0.14362271525141096
+      ],
+      "bootstrap_replicates": 5000,
+      "population": "matched main new_to_P_fit; zero actions retained",
+      "conditional_on_fixed_finite_branch_banks": true,
+      "coverage": {
+        "natural_main_slots": 9936,
+        "matched_slots": 1944,
+        "new_to_P_fit_slots": 1148,
+        "strict_slots": 851,
+        "reference_reached_new_slots": 11,
+        "nonzero_new_slots": 961,
+        "defined_prompts": {
+          "gsm8k": 11,
+          "humaneval": 12,
+          "alpaca": 11
+        },
+        "nonzero_prompts": {
+          "gsm8k": 11,
+          "humaneval": 12,
+          "alpaca": 11
+        },
+        "coverage_is_not_gain_fraction": true
+      },
+      "coverage_passed": true,
+      "positive_supported": true,
+      "material_001_supported": true,
+      "status": "supported"
+    },
+    "B_J": {
+      "estimate": 0.1848674035079707,
+      "domain_estimates": {
+        "gsm8k": 0.21318891844150464,
+        "humaneval": 0.20342968354161425,
+        "alpaca": 0.13798360854079325
+      },
+      "defined_prompts": {
+        "gsm8k": 12,
+        "humaneval": 12,
+        "alpaca": 11
+      },
+      "prompt_values": [
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:04ce139694b5d8900256",
+          "value": 0.15309471007718245
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:141c521796a45116e2fc",
+          "value": 0.11192616651704897
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:2f2c7f26f46d75a845a5",
+          "value": 0.18403611074224346
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:3831e7709c2d89249d46",
+          "value": 0.19640022273580687
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:4cc7641d09244a4ace7d",
+          "value": 0.11040721320169582
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:50b21448a07edd1f7796",
+          "value": 0.20520992789654285
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:7cc55b151b9b88ac66b2",
+          "value": 0.15196367782547848
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:cc454e121eff7333aad1",
+          "value": 0.00020901868594767428
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:df993fac56b31cf22017",
+          "value": 0.0008344272115796136
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:e078a4e2476c683dc68c",
+          "value": 0.11633808560628789
+        },
+        {
+          "domain": "alpaca",
+          "prompt_id": "alpaca:f510e3b394eafd535a46",
+          "value": 0.28740013344891163
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:0019309e83e7cf0e6e90",
+          "value": 0.12173055640761767
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:061501956468e82c7701",
+          "value": 0.17256060768209988
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:39fda382b145630d85ef",
+          "value": 0.34568073980279834
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:3aa8d4c8f02f9dcd55d4",
+          "value": 0.0530484364316065
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:4f749fa93e2847434af9",
+          "value": 0.15029885559348127
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:63c10e422dd934697d85",
+          "value": 0.17619426259955404
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:67ab79f900374ccf5223",
+          "value": 0.21589921342037752
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:67edeb0d4adcc8e0b94f",
+          "value": 0.3269408972083068
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:7f98592767830e2644d5",
+          "value": 0.3151270173791224
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:8db337a49418fd6f1f89",
+          "value": 0.264472170798255
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:d002a3129a63c8dd2c3e",
+          "value": 0.3162478075779443
+        },
+        {
+          "domain": "gsm8k",
+          "prompt_id": "gsm8k:f16f3c13c4f786d48b25",
+          "value": 0.1000664563968916
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:17f6178e393cb29f00e1",
+          "value": 0.04997601806062798
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:18d5fc1fa5c042718343",
+          "value": 0.0026056010136405665
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:2c604d6231f8160f7733",
+          "value": 0.23420237161811108
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:34aa525ccaced7f94dfc",
+          "value": 0.12289487759539491
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:676e1a983974c0f63794",
+          "value": 0.22584657896015783
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:7802c24617edd6b7a66c",
+          "value": 0.16150791467977116
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:7da8b33ed0ecdd0b14be",
+          "value": 0.15009562617661554
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:be3aaef0f47598ef333b",
+          "value": 0.3700246837222328
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:c03e17a85d15f78bb370",
+          "value": 0.2610128156257548
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:c2d148cb2492a2cab87c",
+          "value": 0.2641791717173313
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:cc1e70ae45bc887b453f",
+          "value": 0.32668544837656954
+        },
+        {
+          "domain": "humaneval",
+          "prompt_id": "humaneval:e22e0e1880a25a24cd76",
+          "value": 0.2721250949531635
+        }
+      ],
+      "CI98_75": [
+        0.14486004606988748,
+        0.22287748151397493
+      ],
+      "CI95": [
+        0.15361095267180402,
+        0.21546537276582933
+      ],
+      "bootstrap_replicates": 5000,
+      "population": "matched main new_to_P_fit; zero actions retained",
+      "conditional_on_fixed_finite_branch_banks": true,
+      "coverage": {
+        "natural_main_slots": 9936,
+        "matched_slots": 1817,
+        "new_to_P_fit_slots": 654,
+        "strict_slots": 458,
+        "reference_reached_new_slots": 18,
+        "nonzero_new_slots": 576,
+        "defined_prompts": {
+          "gsm8k": 12,
+          "humaneval": 12,
+          "alpaca": 11
+        },
+        "nonzero_prompts": {
+          "gsm8k": 12,
+          "humaneval": 12,
+          "alpaca": 11
+        },
+        "coverage_is_not_gain_fraction": true
+      },
+      "coverage_passed": true,
+      "positive_supported": true,
+      "material_001_supported": true,
+      "status": "supported"
+    }
+  },
+  "both_A_supported": true,
+  "both_B_supported": true,
+  "reference_reached_novel_confirmation": "inconclusive_sparse_or_missing_domains; D11/F18 slots",
+  "probability_probe_not_deployed": true,
+  "scientific_coverage_inconclusive_not_technical_partial": true,
+  "resources": {
+    "GPU_hours": 1.3879860799180137,
+    "GPU_limit_hours": 8,
+    "CPU_hours_booked": 1.8174279075000002,
+    "CPU_limit_hours": 24,
+    "CPU_includes_conservative_closure_seconds": 600,
+    "actual_allocated_disk_GiB_before_small_closure_files": 21.02373504638672,
+    "disk_limit_GiB": 700,
+    "gross_disk_conservative_upper_GiB": 46.223106384277344,
+    "own_peak_observed_GPU_MiB": 26796,
+    "GPU_jobs": [
+      {
+        "job_id": "dev6_f7b2680da9",
+        "status": "failed",
+        "GPU_UUID": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+        "GPU_index": 5,
+        "GPU_hours": 0.011800917519463433,
+        "reason": "worker_exit_1"
+      },
+      {
+        "job_id": "dev6_retry1_0e854eeba8",
+        "status": "complete",
+        "GPU_UUID": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+        "GPU_index": 7,
+        "GPU_hours": 0.0716380187537935,
+        "reason": null
+      },
+      {
+        "job_id": "fresh36_a220abf723",
+        "status": "complete",
+        "GPU_UUID": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+        "GPU_index": 5,
+        "GPU_hours": 1.3045471436447567,
+        "reason": null
+      }
+    ],
+    "one_GPU_at_a_time": true,
+    "shared_GPU_allowed_and_used": true,
+    "no_TPS_reported": true
+  },
+  "measurement_identity_passed": true,
+  "measurement_scope": "new R8 HF BF16-to-FP64 CPU-PCG64 reference; not production/native",
+  "old_native_passed_false_preserved": true,
+  "own_experiments_exited": true,
+  "shared_own_lease_released": true,
+  "archive_writer_exit_external_verification_pending": false,
+  "static_file_manifest_SHA256": "47abede5f676e99684833cfa4cb96165d2915d01f359bd0f247e6c93af61e049",
+  "static_core_SHA256": {
+    "results/RESULTS_CN.md": "98c127584d694f78cec55b503c584c429875e0aefa554784d97624bd6ea06d75",
+    "results/RUN_AUDIT.json": "f78c0ebe3e553931a53419c7f4bfa7aba2ee01ce5153182ff896ea396c5fa6ac",
+    "NEXT_CHAT.md": "5a3000a8e354a9229429285f39c5258cb44f5e8fd2ee367ac9a86a63e7f0944c",
+    "analysis/FINAL_SCIENCE_AUDIT.json": "1e1425c21b992ebc20cf5666b0f10fa3283dcc78b26b6f24c798827278ac87f2",
+    "analysis/ACTION_BANK_SEALED.json": "8b555c68193d31d88dfc6cb80043fa0504749682f9de75fda1760bdc07fae59d",
+    "protocol/LOCK.json": "d76961734b4f6aeb99b13c60a8c9d530800361bf923c4e930246bedd6baba83e"
+  },
+  "no_automatic_round9": true,
+  "integrity_scope": "every stable file inside this run; large frozen external weights stat/inherited identity, not new full target SHA",
+  "closure_exceptions": [
+    "COMPLETION.json",
+    "analysis/ARCHIVE_FINALIZER.log",
+    "analysis/ARCHIVE_VERIFICATION.json",
+    "analysis/CLOSURE_EXIT_AUDIT.json",
+    "analysis/CLOSURE_WRITER_CPU.json",
+    "logs/DISK_BUDGET.json",
+    "results/RUN_FILE_MANIFEST.json"
+  ],
+  "archive_full_static_verification": {
+    "UTC": "2026-10-15T13:00:04.559005+00:00",
+    "passed": true,
+    "all_static_files_rehashed": 5282,
+    "manifest_SHA256": "47abede5f676e99684833cfa4cb96165d2915d01f359bd0f247e6c93af61e049",
+    "verifier_CPU_seconds": 25.809524,
+    "writer_CPU_seconds": 25.958531,
+    "combined_measured_CPU_less_than_booked_600s": true,
+    "target_full_frozen_weight_SHA_not_claimed": true
+  },
+  "closure_SHA256": {
+    "analysis/CLOSURE_EXIT_AUDIT.json": "60da0e96d79269edbef476a72ab5b9547fc2e9884981926239c7e956545843d9",
+    "analysis/ARCHIVE_VERIFICATION.json": "f1d97b5c63d9cdb79ab9a2b64b8848f85fb6846412924cefdc58b14903a00bd3",
+    "analysis/CLOSURE_WRITER_CPU.json": "3c04c8fd5b6dc4aebf71bf3c1b1f94e814f4369a6da77f22a9fef758e2f8cd96",
+    "logs/DISK_BUDGET.json": "fcd9f90977aaf62cb7f44168ebbef3ffe0bb4ed8f2fea66c2557d1aef99e488c",
+    "analysis/ARCHIVE_FINALIZER.log": "d1e3fb1f9828b22ead16ac58b3f894e150b73582a7ae5a6a2a543682338dbf68"
+  }
+}

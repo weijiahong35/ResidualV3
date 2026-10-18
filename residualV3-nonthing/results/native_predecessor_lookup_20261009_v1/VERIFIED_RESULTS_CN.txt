@@ -1,0 +1,17 @@
+前驱查表：正式同权重对照完成
+两臂target均开启batch invariance；nonthinking；15proposal。
+基线及优化使用相同最终joint主体/头权重；权重、基底、冻结源码SHA已复核。
+
+配置 | AL基线→优化 | TPS基线→优化 | TPS变化 | 最终文本不同条数
+C1 T0 | 8.381226→8.381226 | 178.133→185.847 | +4.33% | 0/200
+C1 T1 | 7.429277→7.429277 | 158.978→154.519 | -2.80% | 0/200
+C40 T0 | 8.527201→8.527201 | 3135.172→3184.133 | +1.56% | 0/1319
+C40 T1 | 7.664765→7.664765 | 2823.957→2876.757 | +1.87% | 1/1319
+
+单轮正式对照；不把微小差异解释为稳定普遍提升。T1跨运行差异不代表固定状态q不一致。
+batch invariance改变target内核/性能；本轮TPS不可直接与早先默认target模式比较。
+AL=1+accepted/drafts，包含额外target token。C40仅1319个独立GSM8K test样本，不重复凑2000。
+所有正式窗口均通过proposal计数、请求数量、Graph覆盖及零eager/fallback检查；隔离状态见JSON，受污染窗口不作为吞吐结论。
+旧model_contract的graph_scope残留seven描述；实际命令、张量与num_draft_tokens/drafts均为15，以后者为准。
+
+微测详情：MICROBENCH_RESULTS_CN.txt；实际硬前驱串行递推保留。

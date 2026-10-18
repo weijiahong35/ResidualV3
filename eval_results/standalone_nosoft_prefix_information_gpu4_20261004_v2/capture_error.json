@@ -1,0 +1,6 @@
+{
+  "error": "AssertionError('Shadow teacher drift exceeds tolerance.')",
+  "request_key": "diagnostic_2",
+  "block": 3,
+  "utc": "2026-10-04T14:09:21.305141+00:00"
+}

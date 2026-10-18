@@ -1,0 +1,12 @@
+{
+  "status": "T0_formal_training_verified",
+  "controller_pid": 86086,
+  "utc": "2026-10-02T06:00:28.310125+00:00",
+  "fresh_reset": true,
+  "onpolicy_contract": true,
+  "causal_and_transport_gates": "passed",
+  "math_native_gates": "reused from v3 with SHA/source/architecture/seed proof",
+  "unchanged_source_files": 147,
+  "training_speed_audit": "/data/weijiahong/speculators-main-lora/eval_results/standalone_parallel_context_onpolicy_T0_T1_short_gpu0_eval04_20261002_v5/training_speed_audit.json",
+  "evaluation_pending": true
+}

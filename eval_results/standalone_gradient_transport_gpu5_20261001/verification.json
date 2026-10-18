@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "same_128_states_as_previous": true,
+  "previous_latent_gradient_norm_max_relative_difference": 0.01104470239850909,
+  "source_hashes_unchanged": true,
+  "parameter_hash_unchanged": true,
+  "numerical_validation": {
+    "status": "complete",
+    "frozen_and_grad_forward_bitwise_equal": true,
+    "latent_bitwise_equal": true,
+    "max_previous_relative_difference": 9.71573545198774e-16,
+    "max_original_style_vs_direct_relative": 0.0,
+    "max_FP64_factorization_relative": 4.103536625228282e-12,
+    "trained_parameters": 0
+  },
+  "initial_numerical_validation_attempt": {
+    "status": "failed",
+    "phase": "online_probe",
+    "utc": "2026-10-01T04:40:47.880070+00:00",
+    "error": "AssertionError('probe failed; see probe.log')"
+  },
+  "parameter_updates": 0,
+  "hidden_requests": 8,
+  "hidden_deleted": 8,
+  "cleanup": {
+    "owned_processes_stopped": true,
+    "temporary_transfer_removed": true,
+    "remaining_before_cleanup": [],
+    "utc": "2026-10-01T04:36:54.815829+00:00"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "-m",
+    "residualV3_d1_dual_feedback_c40_eval_v1.evaluate",
+    "--training",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_d1_dual_feedback_ab_gpu45_v1_20260930_attempt3/native",
+    "--gpu",
+    "4",
+    "--concurrency",
+    "40",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_d1_dual_feedback_C40_gpu4_300prompts_20260930/C40_smoke",
+    "--tokens",
+    "128",
+    "--prompts",
+    "300",
+    "--rounds",
+    "2",
+    "--smoke"
+  ],
+  "utc": "2026-09-30T05:38:46.144690+00:00"
+}

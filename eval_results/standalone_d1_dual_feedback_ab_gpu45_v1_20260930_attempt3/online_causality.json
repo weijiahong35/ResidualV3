@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "future_token_offset": 1,
+  "anchor_position": 62,
+  "all_seven_draft_hidden_exact": true,
+  "target_anchor_hidden_exact": true,
+  "later_target_changed": true,
+  "online_target": true,
+  "online_dflash": true,
+  "artificial_sequence_validation_only": true
+}

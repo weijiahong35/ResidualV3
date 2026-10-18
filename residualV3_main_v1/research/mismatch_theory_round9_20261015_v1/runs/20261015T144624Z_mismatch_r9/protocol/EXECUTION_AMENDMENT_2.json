@@ -1,0 +1,22 @@
+{
+  "UTC": "2026-10-15T16:20:16.988128+00:00",
+  "status": "accepted_before_resume2",
+  "reason": "externally enforce per-objective remaining wall limit after observed internal-HiGHS overrun",
+  "code_overrides": {
+    "code/oracles.py": "48275f4d63091412817d577b7cc964ed1ba9e1d06a6d10b27351a3c8b0d1ab28",
+    "code/core_workflow.py": "b0d3442ddc03399b0a18b93cb4366b8c1f858d9d81b3a70b1b58fe483f918d98",
+    "code/cpu_runner.py": "36db4adbeff445fb30333b79e0e21e62b043fbf9dff7f54583e23f77f2114d14",
+    "code/solver_wall.py": "7116167511efe15b949b30686a79f89bfe20c2388165a65232424609bde95b88",
+    "code/solver_child.py": "c6acfda2a7d1b73f0f24a7e4b8b406c7749eaf3cc1165ebda5e59929bd97aaf3"
+  },
+  "acceptance": "analysis/SOLVER_REPAIR_2_ACCEPTANCE.json",
+  "review": "qa/SOLVER_REPAIR_2_CORE_REVIEW_CN.md",
+  "completed_groups_reused": 1503,
+  "interrupted_groups_total_not_re_solved": 2,
+  "same_problem_data_solver_active_ladder_thresholds_seeds": true,
+  "resource_alarm_preserved": {
+    "per_objective_measured_seconds": 173.07583336089738,
+    "contract_seconds": 30
+  },
+  "one_active_numerical_worker": "one numerical child while parent waits; no overlapping numerical work"
+}

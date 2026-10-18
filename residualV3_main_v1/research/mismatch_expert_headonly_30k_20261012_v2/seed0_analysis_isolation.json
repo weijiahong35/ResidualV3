@@ -1,0 +1,18 @@
+{
+  "initial": {
+    "uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+    "used_mib": 17263,
+    "free_mib": 63891,
+    "pids": [
+      955925
+    ],
+    "utc": "2026-10-12T09:38:39.819450+00:00"
+  },
+  "pid": 2295712,
+  "physical_gpu": 0,
+  "checks": [],
+  "status": "running",
+  "shared_training": true,
+  "memory_cap_gib": 8,
+  "performance_evidence": false
+}

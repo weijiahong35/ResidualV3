@@ -1,0 +1,16 @@
+{
+  "pid": 1425899,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+    "-B",
+    "-m",
+    "runtime.check_vllm_hidden",
+    "--gpu",
+    "0",
+    "--protocol",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_nonlinear_basis_pilot_gpu5_20261004_v1/training_protocol.json",
+    "--output",
+    "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_nonlinear_basis_pilot_gpu5_20261004_v1/hidden_parity.json"
+  ],
+  "utc": "2026-10-03T17:37:34.157777+00:00"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "arm": "OUTPUT",
+    "loss_abs": 2.384185791015625e-07,
+    "relative_l2": 3.487417416181415e-05,
+    "cosine": 1.0,
+    "max_abs": 1.4901161193847656e-08,
+    "passed": true
+  },
+  {
+    "arm": "CE_DPACE",
+    "loss_abs": 0.0,
+    "relative_l2": 6.943018604488316e-09,
+    "cosine": 0.9999998807907104,
+    "max_abs": 1.1641532182693481e-10,
+    "passed": true
+  },
+  {
+    "arm": "CE_DPACE_OUTPUT",
+    "loss_abs": 2.384185791015625e-07,
+    "relative_l2": 2.398743390585878e-06,
+    "cosine": 0.9999999403953552,
+    "max_abs": 1.4901161193847656e-08,
+    "passed": true
+  }
+]

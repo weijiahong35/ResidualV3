@@ -1,0 +1,18 @@
+{
+  "pid": 1919259,
+  "command": [
+    "/data/weijiahong/miniconda3/envs/llm_dflash_eval_v026/bin/python",
+    "-B",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/native_candidate_write_triton_20261009_v1/pilot.py",
+    "--root",
+    "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/native_candidate_write_triton_20261009_v1"
+  ],
+  "assignment": {
+    "physical_gpu": 7,
+    "uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+    "pci_bus_id": "00000000:D3:00.0",
+    "name": "NVIDIA A100-SXM4-80GB",
+    "cuda_device": 0
+  },
+  "utc": "2026-10-09T01:13:01.573392+00:00"
+}

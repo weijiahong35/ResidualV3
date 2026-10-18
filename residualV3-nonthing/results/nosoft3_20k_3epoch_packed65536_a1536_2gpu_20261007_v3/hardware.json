@@ -1,0 +1,86 @@
+{
+  "learner": {
+    "physical_gpu": 3,
+    "uuid": "GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd",
+    "pci_bus_id": "00000000:67:00.0",
+    "name": "NVIDIA A100-SXM4-80GB",
+    "cuda_device": 0
+  },
+  "teacher": {
+    "physical_gpu": 7,
+    "uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+    "pci_bus_id": "00000000:D3:00.0",
+    "name": "NVIDIA A100-SXM4-80GB",
+    "cuda_device": 0
+  },
+  "initial_inventory": {
+    "0": {
+      "uuid": "GPU-6708ee11-1afa-f173-d74b-59daf320d901",
+      "free_mib": 26554,
+      "utilization": 65,
+      "host_pids": [
+        367631,
+        462751
+      ]
+    },
+    "1": {
+      "uuid": "GPU-250cd769-9b6a-e76d-92cb-681686776938",
+      "free_mib": 54093,
+      "utilization": 99,
+      "host_pids": [
+        1907656
+      ]
+    },
+    "2": {
+      "uuid": "GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824",
+      "free_mib": 61167,
+      "utilization": 96,
+      "host_pids": [
+        2018441
+      ]
+    },
+    "3": {
+      "uuid": "GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd",
+      "free_mib": 63891,
+      "utilization": 0,
+      "host_pids": [
+        869584
+      ]
+    },
+    "4": {
+      "uuid": "GPU-b69b3699-6c78-06df-49e1-81ef44cf415b",
+      "free_mib": 38397,
+      "utilization": 100,
+      "host_pids": [
+        1992664
+      ]
+    },
+    "5": {
+      "uuid": "GPU-6b9e070b-a9db-7515-5b45-999392d3bb49",
+      "free_mib": 41447,
+      "utilization": 100,
+      "host_pids": [
+        904238
+      ]
+    },
+    "6": {
+      "uuid": "GPU-16d48373-c956-39a9-3989-4676fb6aa22c",
+      "free_mib": 31261,
+      "utilization": 100,
+      "host_pids": [
+        1882578
+      ]
+    },
+    "7": {
+      "uuid": "GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f",
+      "free_mib": 63891,
+      "utilization": 0,
+      "host_pids": [
+        1263617
+      ]
+    }
+  },
+  "teacher_and_draft_colocated": false,
+  "shared_gpu_allowed": true,
+  "utc": "2026-10-06T16:55:47.120520+00:00"
+}

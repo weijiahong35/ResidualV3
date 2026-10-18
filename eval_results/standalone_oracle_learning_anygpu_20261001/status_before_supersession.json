@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "error": "CalledProcessError(-2, ['/data/weijiahong/miniconda3/envs/dflash/bin/python', '-u', '-B', '/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/oracle_learning_v1/session.py', '--output', '/data/weijiahong/speculators-main-lora/eval_results/standalone_oracle_learning_anygpu_20261001', '--gpu', '0', '--stage', 'training', '--execute'])",
+  "utc": "2026-10-01T12:22:17.604507+00:00"
+}

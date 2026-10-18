@@ -1,0 +1,303 @@
+{
+  "status": "complete",
+  "primary_head": "longtrain no-soft 2layer epoch3/30000",
+  "diagnosis_states": 336,
+  "reached_states": 211,
+  "wrong_reached_argmax_states": 39,
+  "full_head_greedy_witnesses": 38,
+  "dose_only_greedy_witnesses": 5,
+  "wrong_overlap_worse_than_raw": 30,
+  "hard_support_blockers": [
+    {
+      "temperature": 1,
+      "prompt_index": 4,
+      "raw_source_index": 20004,
+      "block": 30,
+      "position": 4,
+      "category": "accepted",
+      "target_rank": 391,
+      "topk": 256,
+      "reason": "More than256 raw logits are strictly larger than the outside target, so at least one other unchanged outside logit remains strictly larger under every allowed correction."
+    }
+  ],
+  "full_head_gradient_effects": {
+    "own_overlap_loss/helps": 39,
+    "own_overlap_loss/harms": 0,
+    "own_overlap_loss/near_zero": 0,
+    "same_block_prefix_proxy/helps": 37,
+    "same_block_prefix_proxy/harms": 2,
+    "same_block_prefix_proxy/near_zero": 0,
+    "same_block_equal_overlap/helps": 33,
+    "same_block_equal_overlap/harms": 6,
+    "same_block_equal_overlap/near_zero": 0,
+    "own_prompt_prefix_proxy/helps": 31,
+    "own_prompt_prefix_proxy/harms": 8,
+    "own_prompt_prefix_proxy/near_zero": 0,
+    "other_prompts_prefix_proxy/helps": 14,
+    "other_prompts_prefix_proxy/harms": 25,
+    "other_prompts_prefix_proxy/near_zero": 0,
+    "global_prefix_proxy/helps": 27,
+    "global_prefix_proxy/harms": 12,
+    "global_prefix_proxy/near_zero": 0,
+    "global_equal_overlap/helps": 27,
+    "global_equal_overlap/harms": 12,
+    "global_equal_overlap/near_zero": 0
+  },
+  "temperatures": {
+    "T0": {
+      "reached": 106,
+      "wrong": 18,
+      "error_categories": {
+        "first_rejection": 18
+      },
+      "full_head_greedy_witnesses": 18,
+      "dose_only_greedy_witnesses": 2,
+      "wrong_actual_overlap_median": 0.13481196016073227,
+      "wrong_actual_dose_median": 0.74609375,
+      "raw_correct_harmed": 0,
+      "mean_native_proxy_weights_all_positions": {
+        "1": 0.6118520538026964,
+        "2": 0.48207508259481957,
+        "3": 0.3393824366834122,
+        "4": 0.2603526911315005,
+        "5": 0.17855628870186863,
+        "6": 0.10896493858449639,
+        "7": 0.05110537802202394
+      },
+      "full_head_gradient_effects": {
+        "own_overlap_loss": {
+          "cases": 18,
+          "helps": 18,
+          "harms": 0,
+          "near_zero": 0
+        },
+        "same_block_prefix_proxy": {
+          "cases": 18,
+          "helps": 17,
+          "harms": 1,
+          "near_zero": 0
+        },
+        "same_block_equal_overlap": {
+          "cases": 18,
+          "helps": 14,
+          "harms": 4,
+          "near_zero": 0
+        },
+        "own_prompt_prefix_proxy": {
+          "cases": 18,
+          "helps": 14,
+          "harms": 4,
+          "near_zero": 0
+        },
+        "other_prompts_prefix_proxy": {
+          "cases": 18,
+          "helps": 5,
+          "harms": 13,
+          "near_zero": 0
+        },
+        "global_prefix_proxy": {
+          "cases": 18,
+          "helps": 14,
+          "harms": 4,
+          "near_zero": 0
+        },
+        "global_equal_overlap": {
+          "cases": 18,
+          "helps": 14,
+          "harms": 4,
+          "near_zero": 0
+        }
+      }
+    },
+    "T1": {
+      "reached": 105,
+      "wrong": 21,
+      "error_categories": {
+        "first_rejection": 16,
+        "accepted": 5
+      },
+      "full_head_greedy_witnesses": 20,
+      "dose_only_greedy_witnesses": 3,
+      "wrong_actual_overlap_median": 0.07768743485212326,
+      "wrong_actual_dose_median": 0.7578125,
+      "raw_correct_harmed": 1,
+      "mean_native_proxy_weights_all_positions": {
+        "1": 0.592039831368288,
+        "2": 0.4424588278880691,
+        "3": 0.326755368446064,
+        "4": 0.23181096780781432,
+        "5": 0.16376276182616975,
+        "6": 0.09942922293080629,
+        "7": 0.04658713860845211
+      },
+      "full_head_gradient_effects": {
+        "own_overlap_loss": {
+          "cases": 21,
+          "helps": 21,
+          "harms": 0,
+          "near_zero": 0
+        },
+        "same_block_prefix_proxy": {
+          "cases": 21,
+          "helps": 20,
+          "harms": 1,
+          "near_zero": 0
+        },
+        "same_block_equal_overlap": {
+          "cases": 21,
+          "helps": 19,
+          "harms": 2,
+          "near_zero": 0
+        },
+        "own_prompt_prefix_proxy": {
+          "cases": 21,
+          "helps": 17,
+          "harms": 4,
+          "near_zero": 0
+        },
+        "other_prompts_prefix_proxy": {
+          "cases": 21,
+          "helps": 9,
+          "harms": 12,
+          "near_zero": 0
+        },
+        "global_prefix_proxy": {
+          "cases": 21,
+          "helps": 13,
+          "harms": 8,
+          "near_zero": 0
+        },
+        "global_equal_overlap": {
+          "cases": 21,
+          "helps": 13,
+          "harms": 8,
+          "near_zero": 0
+        }
+      }
+    }
+  },
+  "formal_performance": [
+    {
+      "depth": 2,
+      "concurrency": 1,
+      "temperature": 0,
+      "raw_al": 4.041150407997417,
+      "repaired_al": 4.393811762854844,
+      "al_gain_pct": 8.726756474084985,
+      "tps_gain_pct": -0.18425494911027407,
+      "tps_gain_vs_short_pct": 4.5541384117088635,
+      "effective_wall_per_draft_ratio": 1.089202596198783,
+      "scope": "Prior formal windows only; wall/draft includes request, prefill and scheduling costs, not isolated kernel time.",
+      "source": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002/nosoft_2layer/C1/formal/summary.json"
+    },
+    {
+      "depth": 2,
+      "concurrency": 1,
+      "temperature": 1,
+      "raw_al": 3.3560272913225124,
+      "repaired_al": 4.1472019811810625,
+      "al_gain_pct": 23.574739451739426,
+      "tps_gain_pct": 13.175989858237624,
+      "tps_gain_vs_short_pct": 6.709010528574333,
+      "effective_wall_per_draft_ratio": 1.0917589565517805,
+      "scope": "Prior formal windows only; wall/draft includes request, prefill and scheduling costs, not isolated kernel time.",
+      "source": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002/nosoft_2layer/C1/formal/summary.json"
+    },
+    {
+      "depth": 2,
+      "concurrency": 40,
+      "temperature": 0,
+      "raw_al": 4.051360089918475,
+      "repaired_al": 4.400906238724673,
+      "al_gain_pct": 8.62787165416421,
+      "tps_gain_pct": 2.7105077713961423,
+      "tps_gain_vs_short_pct": 4.742744843473323,
+      "effective_wall_per_draft_ratio": 1.0575531805438214,
+      "scope": "Prior formal windows only; wall/draft includes request, prefill and scheduling costs, not isolated kernel time.",
+      "source": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002/nosoft_2layer/C40/formal/summary.json"
+    },
+    {
+      "depth": 2,
+      "concurrency": 40,
+      "temperature": 1,
+      "raw_al": 3.345456893887323,
+      "repaired_al": 4.127251265348537,
+      "al_gain_pct": 23.368837090373983,
+      "tps_gain_pct": 16.235183700891163,
+      "tps_gain_vs_short_pct": 6.784696257108247,
+      "effective_wall_per_draft_ratio": 1.0612677727755462,
+      "scope": "Prior formal windows only; wall/draft includes request, prefill and scheduling costs, not isolated kernel time.",
+      "source": "/data/weijiahong/speculators-main-lora/eval_results/standalone_nosoft_depth_10k_3epoch_prefetch6_gpu012_recovery_20261002/nosoft_2layer/C40/formal/summary.json"
+    }
+  ],
+  "validation": {
+    "standalone_longtrain_bottleneck_gpu45_20261003": {
+      "all_frozen_source_and_weight_hashes_unchanged": true,
+      "cleanup": {
+        "T0/smoke": {
+          "owned_server_stopped": true,
+          "hidden_files_created": 0,
+          "utc": "2026-10-03T07:49:41.888201+00:00"
+        },
+        "T0/formal": {
+          "owned_server_stopped": true,
+          "hidden_files_created": 0,
+          "utc": "2026-10-03T07:51:51.989237+00:00"
+        },
+        "T1/smoke": {
+          "owned_server_stopped": true,
+          "hidden_files_created": 0,
+          "utc": "2026-10-03T07:49:41.934318+00:00"
+        },
+        "T1/formal": {
+          "owned_server_stopped": true,
+          "hidden_files_created": 0,
+          "utc": "2026-10-03T07:51:54.087034+00:00"
+        }
+      },
+      "extra_process_annotations": []
+    },
+    "standalone_longtrain_fullgradient_gpu45_20261003": {
+      "all_frozen_source_and_weight_hashes_unchanged": true,
+      "cleanup": {
+        "T0/smoke": {
+          "owned_server_stopped": true,
+          "hidden_files_created": 0,
+          "utc": "2026-10-03T08:02:15.310319+00:00"
+        },
+        "T0/formal": {
+          "owned_server_stopped": true,
+          "hidden_files_created": 0,
+          "utc": "2026-10-03T08:04:23.396803+00:00"
+        },
+        "T1/smoke": {
+          "owned_server_stopped": true,
+          "hidden_files_created": 0,
+          "utc": "2026-10-03T08:02:12.683110+00:00"
+        },
+        "T1/formal": {
+          "owned_server_stopped": true,
+          "hidden_files_created": 0,
+          "utc": "2026-10-03T08:04:20.524373+00:00"
+        }
+      },
+      "extra_process_annotations": []
+    }
+  },
+  "parameter_updates": 0,
+  "persistent_hidden_or_logits": 0,
+  "conclusions": [
+    "在本次残余错误状态中，输出可行空间通常已有好解；只调当前direction的dose明显不够，学习出的修正相对关系仍有缺口。",
+    "实际整网VJP显示跨prompt共享更新干扰仍在；局部SGD输运不等价于真实Adam更新，也不能独立认定唯一原因。",
+    "正式T0 C1的接受长度收益被有效每轮成本几乎抵消；未定位唯一耗时kernel。",
+    "OUTPUT单状态梯度本次均有利，故没有证据把问题简单归咎于overlap目标天然反向；prefix代理仍不是精确native路径期望。",
+    "本次少数候选范围硬阻塞不能代表TopK是总体主因；历史TopK/rank/输入/auxCE试验已经做过，不能当新任务重启。"
+  ],
+  "limitations": [
+    "8 exploratory prompts; positions and blocks within prompts are correlated. Not an independent final performance test.",
+    "T1 argmax mismatch is not stochastic rejection: some such states are accepted. Greedy witnesses are local functional tests, not measured native AL gains.",
+    "Free pre-LayerNorm latent oracle is off-manifold and does not prove input sufficiency or shared-network learnability/generalization.",
+    "Shared-gradient effects are unpreconditioned first-order SGD estimates; no weights changed and no Adam update was tested.",
+    "No profiling throughput claims; all TPS conclusions use pre-existing verified formal windows."
+  ]
+}

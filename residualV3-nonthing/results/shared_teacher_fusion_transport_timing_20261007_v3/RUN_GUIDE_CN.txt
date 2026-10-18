@@ -1,0 +1,11 @@
+本轮是训练吞吐短测，不是全数据长训练，也不是native性能评测。
+头已按最新要求改为CE+D-PACE+OUTPUT：CE采用D-PACE前缀加权，再加OUTPUT；DFlash本体有独立raw CE+D-PACE。联合梯度同时更新本体与头。
+标准：65536输入token预算/包，1536anchor全块，15预测位置，每包一次更新，BF16大张量、FP32归约。
+卡1 teacher在线hidden，一份hidden同时供卡4联合训练与卡2纯DFlash；每个传输文件读取clone后unlink，未持久缓存hidden/logits。
+已完成：baseline和transport_optimized各24包。结果RESULTS_CN.txt，64请求并发方案没有提速，不采用。
+运行中：transport128_read16/status.json；联合训练log：transport128_read16/joint/training.log；纯DFlash log：transport128_read16/body/training.log；teacher log：transport128_read16/teacher/attempt_01/vllm.log。
+正在验证128请求并发、16读取线程、连接复用。只改供数组织，head仍逐位置执行，未替换旧的不合格15位置并行原型。
+之前所有权重和实验目录保留，短测新权重保存在各组joint_pilot_weights.safetensors。
+全数据长训继续暂停；没有启动80万数据训练。
+
+最新纠正：transport128_read16因HTTP连接提前关闭失败，未形成有效测速结果，证据保留。之后采用共享CPU内存注册版本v4，24包/组完成，最终结果在../shared_teacher_fusion_registered_timing_20261007_v4/RESULTS_CN.txt。

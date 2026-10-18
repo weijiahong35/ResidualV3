@@ -1,0 +1,1843 @@
+{
+  "snapshot_utc": "2026-10-11T11:29:28.516349+00:00",
+  "scope": "Documentation handoff refresh; completed formal/no-fill and iter28/29 evidence audited; no new GPU experiment, training, process stop, weight change or deletion in this handoff turn. Large binary hashes remain recorded metadata.",
+  "repository": "/data/weijiahong/speculators-main-lora",
+  "disk_snapshot": {
+    "user_directory_bytes": 531813081088,
+    "ceiling_bytes": 600000000000,
+    "scope": "du -x -s -B1 /data/weijiahong; decimal GB; allocation snapshot before small handoff edits",
+    "utc": "2026-10-11T11:25:14.843262+00:00"
+  },
+  "training": {
+    "1": {
+      "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1",
+      "status": {
+        "status": "complete",
+        "epochs": 1,
+        "training_rows": 833176,
+        "cursor": 15847,
+        "utc": "2026-10-08T15:37:36.193968+00:00"
+      },
+      "cursor": 15847,
+      "global_step": 15847,
+      "slot": 0,
+      "full_checkpoint": {
+        "joint": {
+          "file": {
+            "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/checkpoints/slot_0/joint.state.bin",
+            "exists": true,
+            "size_bytes": 8858370048,
+            "allocated_bytes": 8858370048,
+            "is_directory": false,
+            "symlink_target": null
+          },
+          "recorded_sha256": "b61b5677102bedd691a8310018b63992be3aaea06ec18c28d62bf367f0934365",
+          "logical_bytes": 8441662047,
+          "reserved_bytes": 8858370048,
+          "full_masters_optimizers_rng": true,
+          "protocol_sha256": "f21991779e3767f0f8668ad62fdc2582210a8366472f7724e36805878d76b160",
+          "order_sha256": "1d2cfebe5422aef0d06115838b169c665db89ea3774fa5cfcb76bcb7976ecfe9",
+          "plan_sha256": "383ac64b533a084489e93a4d6d32fbfe0a6c8f7e3bee3e77fc393b945d5f8908"
+        },
+        "body": {
+          "file": {
+            "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/checkpoints/slot_0/body.state.bin",
+            "exists": true,
+            "size_bytes": 8858370048,
+            "allocated_bytes": 8858370048,
+            "is_directory": false,
+            "symlink_target": null
+          },
+          "recorded_sha256": "8e3cc1c35abdbbd9b4f3af362b5521fe12613ca681b34f2c12dc499fc0319f91",
+          "logical_bytes": 8389350259,
+          "reserved_bytes": 8858370048,
+          "full_masters_optimizers_rng": true,
+          "protocol_sha256": "f21991779e3767f0f8668ad62fdc2582210a8366472f7724e36805878d76b160",
+          "order_sha256": "1d2cfebe5422aef0d06115838b169c665db89ea3774fa5cfcb76bcb7976ecfe9",
+          "plan_sha256": "383ac64b533a084489e93a4d6d32fbfe0a6c8f7e3bee3e77fc393b945d5f8908"
+        }
+      },
+      "final_artifacts": [
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/final/body_epoch_01.safetensors",
+          "exists": true,
+          "size_bytes": 2097267648,
+          "allocated_bytes": 2097270784,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/final/joint_epoch_01.safetensors",
+          "exists": true,
+          "size_bytes": 2105978602,
+          "allocated_bytes": 2105978880,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/final/body_manifest.json",
+          "exists": true,
+          "size_bytes": 420,
+          "allocated_bytes": 4096,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/final/joint_manifest.json",
+          "exists": true,
+          "size_bytes": 421,
+          "allocated_bytes": 4096,
+          "is_directory": false,
+          "symlink_target": null
+        }
+      ],
+      "protocol": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/protocol.json",
+        "exists": true,
+        "size_bytes": 4863,
+        "allocated_bytes": 8192,
+        "is_directory": false,
+        "symlink_target": null,
+        "sha256_computed_now": "f21991779e3767f0f8668ad62fdc2582210a8366472f7724e36805878d76b160"
+      },
+      "data_manifest": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/all_nonthinking_ctx4096_20261006_v1/manifest.json",
+        "exists": true,
+        "size_bytes": 107948,
+        "allocated_bytes": 110592,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "epoch_order": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/epoch_order.npy",
+        "exists": true,
+        "size_bytes": 3332832,
+        "allocated_bytes": 3334144,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "pack_offsets": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/pack_offsets.npy",
+        "exists": true,
+        "size_bytes": 63520,
+        "allocated_bytes": 65536,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "basis": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_then_dflash_1epoch_2gpu_20261006_v1/basis/initial_pretrained_basis_512.safetensors",
+        "exists": true,
+        "size_bytes": 8388696,
+        "allocated_bytes": 8392704,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "head_config": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_then_dflash_1epoch_2gpu_20261006_v1/head_config.json",
+        "exists": true,
+        "size_bytes": 255,
+        "allocated_bytes": 4096,
+        "is_directory": false,
+        "symlink_target": null
+      }
+    },
+    "2": {
+      "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4",
+      "status": {
+        "status": "complete",
+        "cursor": 15854,
+        "training_epoch": 2,
+        "utc": "2026-10-10T12:13:15.265265+00:00"
+      },
+      "cursor": 15854,
+      "global_step": 31701,
+      "slot": 0,
+      "full_checkpoint": {
+        "joint": {
+          "file": {
+            "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/checkpoints/slot_0/joint.state.bin",
+            "exists": true,
+            "size_bytes": 8858370048,
+            "allocated_bytes": 8858370048,
+            "is_directory": false,
+            "symlink_target": null
+          },
+          "recorded_sha256": "d21e5e8224f2bb045514aa852f6865b9b0d43f3b22d6f84604eb4148ad45a914",
+          "logical_bytes": 8441815795,
+          "reserved_bytes": 8858370048,
+          "full_masters_optimizers_rng": true,
+          "protocol_sha256": "e0fdf1b13d0a9d78be60be63688f99d57c6444b684cecea3edcdda0cf7bbc130",
+          "order_sha256": "05ea3fd9ef2d319d11b96be92fbed055d75b01fb562002d109d8fc46dade3d6f",
+          "plan_sha256": "5c7846662cd3cb7db43b1252cc2f021df47649f016e1daf11fbed497ddd0fd87"
+        },
+        "body": {
+          "file": {
+            "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/checkpoints/slot_0/body.state.bin",
+            "exists": true,
+            "size_bytes": 8858370048,
+            "allocated_bytes": 8858370048,
+            "is_directory": false,
+            "symlink_target": null
+          },
+          "recorded_sha256": "ebd09266deac6bcb588c785f9388306693462ee3a775cfe7c8d87c21f67c98fd",
+          "logical_bytes": 8389350323,
+          "reserved_bytes": 8858370048,
+          "full_masters_optimizers_rng": true,
+          "protocol_sha256": "e0fdf1b13d0a9d78be60be63688f99d57c6444b684cecea3edcdda0cf7bbc130",
+          "order_sha256": "05ea3fd9ef2d319d11b96be92fbed055d75b01fb562002d109d8fc46dade3d6f",
+          "plan_sha256": "5c7846662cd3cb7db43b1252cc2f021df47649f016e1daf11fbed497ddd0fd87"
+        }
+      },
+      "final_artifacts": [
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/post_repair_aux_comparison.pt",
+          "exists": true,
+          "size_bytes": 147901,
+          "allocated_bytes": 151552,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/post_repair_aux_comparison_manifest.json",
+          "exists": true,
+          "size_bytes": 414,
+          "allocated_bytes": 4096,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/body_epoch_02.safetensors",
+          "exists": true,
+          "size_bytes": 2097267648,
+          "allocated_bytes": 2097270784,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/joint_epoch_02.safetensors",
+          "exists": true,
+          "size_bytes": 2105978602,
+          "allocated_bytes": 2105978880,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/body_manifest.json",
+          "exists": true,
+          "size_bytes": 457,
+          "allocated_bytes": 4096,
+          "is_directory": false,
+          "symlink_target": null
+        },
+        {
+          "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/joint_manifest.json",
+          "exists": true,
+          "size_bytes": 458,
+          "allocated_bytes": 4096,
+          "is_directory": false,
+          "symlink_target": null
+        }
+      ],
+      "protocol": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/protocol.json",
+        "exists": true,
+        "size_bytes": 9257,
+        "allocated_bytes": 12288,
+        "is_directory": false,
+        "symlink_target": null,
+        "sha256_computed_now": "e0fdf1b13d0a9d78be60be63688f99d57c6444b684cecea3edcdda0cf7bbc130"
+      },
+      "data_manifest": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/data/all_nonthinking_ctx4096_20261006_v1/manifest.json",
+        "exists": true,
+        "size_bytes": 107948,
+        "allocated_bytes": 110592,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "epoch_order": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_teacher1_3gpu_20261009_v1/epoch_order.npy",
+        "exists": true,
+        "size_bytes": 3332832,
+        "allocated_bytes": 3334144,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "pack_offsets": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_epoch2_teacher1_3gpu_20261009_v1/pack_offsets.npy",
+        "exists": true,
+        "size_bytes": 126968,
+        "allocated_bytes": 126976,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "basis": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_then_dflash_1epoch_2gpu_20261006_v1/basis/initial_pretrained_basis_512.safetensors",
+        "exists": true,
+        "size_bytes": 8388696,
+        "allocated_bytes": 8392704,
+        "is_directory": false,
+        "symlink_target": null
+      },
+      "head_config": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_then_dflash_1epoch_2gpu_20261006_v1/head_config.json",
+        "exists": true,
+        "size_bytes": 255,
+        "allocated_bytes": 4096,
+        "is_directory": false,
+        "symlink_target": null
+      }
+    }
+  },
+  "formal_evaluation": {
+    "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch1_epoch2_native_compare_gsm8k_20261010_v1",
+    "status": {
+      "status": "complete",
+      "utc": "2026-10-10T13:21:58.785103+00:00"
+    },
+    "protocol": {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch1_epoch2_native_compare_gsm8k_20261010_v1/native_protocol.json",
+      "exists": true,
+      "size_bytes": 46656,
+      "allocated_bytes": 49152,
+      "is_directory": false,
+      "symlink_target": null,
+      "sha256_computed_now": "5fdc0ec994fa37602081b9d79cca1c30eaa8affbef8138615ec0294aebc71ffe"
+    },
+    "body_models": {
+      "E1_DFLASH": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/evaluation_native_20261008_v1/models/body",
+        "exists": true,
+        "size_bytes": 112,
+        "allocated_bytes": 0,
+        "is_directory": true,
+        "symlink_target": null
+      },
+      "E1_JOINT_HEAD": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/evaluation_dspark_gsm8k_recovery_20261009_v2/models/joint_native",
+        "exists": true,
+        "size_bytes": 112,
+        "allocated_bytes": 0,
+        "is_directory": true,
+        "symlink_target": null
+      },
+      "E2_DFLASH": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch1_epoch2_native_compare_gsm8k_20261010_v1/models/E2_DFLASH",
+        "exists": true,
+        "size_bytes": 112,
+        "allocated_bytes": 0,
+        "is_directory": true,
+        "symlink_target": null
+      },
+      "E2_JOINT_HEAD": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch1_epoch2_native_compare_gsm8k_20261010_v1/models/E2_JOINT_NATIVE",
+        "exists": true,
+        "size_bytes": 112,
+        "allocated_bytes": 0,
+        "is_directory": true,
+        "symlink_target": null
+      }
+    },
+    "head_files": {
+      "E1_DFLASH": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/evaluation_native_20261008_v1/models/joint/head.safetensors",
+        "exists": true,
+        "size_bytes": 8710506,
+        "allocated_bytes": 8712192,
+        "is_directory": false,
+        "symlink_target": null,
+        "enabled": false,
+        "recorded_sha256": "a1fb912ec56485516a82979d5cf30b8e384f1cd5ad34f8b03a4f861dbe75df3c"
+      },
+      "E1_JOINT_HEAD": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/evaluation_native_20261008_v1/models/joint/head.safetensors",
+        "exists": true,
+        "size_bytes": 8710506,
+        "allocated_bytes": 8712192,
+        "is_directory": false,
+        "symlink_target": null,
+        "enabled": true,
+        "recorded_sha256": "a1fb912ec56485516a82979d5cf30b8e384f1cd5ad34f8b03a4f861dbe75df3c"
+      },
+      "E2_DFLASH": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch1_epoch2_native_compare_gsm8k_20261010_v1/models/E2_JOINT_HEAD/head.safetensors",
+        "exists": true,
+        "size_bytes": 8710506,
+        "allocated_bytes": 8712192,
+        "is_directory": false,
+        "symlink_target": null,
+        "enabled": false,
+        "recorded_sha256": "6635f429a363ba9928da653f3337ce991e644c379cb7ac4e159ac1413b71944f"
+      },
+      "E2_JOINT_HEAD": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch1_epoch2_native_compare_gsm8k_20261010_v1/models/E2_JOINT_HEAD/head.safetensors",
+        "exists": true,
+        "size_bytes": 8710506,
+        "allocated_bytes": 8712192,
+        "is_directory": false,
+        "symlink_target": null,
+        "enabled": true,
+        "recorded_sha256": "6635f429a363ba9928da653f3337ce991e644c379cb7ac4e159ac1413b71944f"
+      }
+    },
+    "panel_files": {
+      "warmup": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/evaluation_dspark_gsm8k_recovery_20261009_v2/panels/warmup.jsonl",
+        "exists": true,
+        "size_bytes": 60599,
+        "allocated_bytes": 61440,
+        "is_directory": false,
+        "symlink_target": null,
+        "recorded_sha256": "3fce2254ef35ca04c8901a165532f34fd4b7ee4c948fb583c9ea9d354d5a0b65"
+      },
+      "final_C1": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/evaluation_dspark_gsm8k_recovery_20261009_v2/panels/final_C1.jsonl",
+        "exists": true,
+        "size_bytes": 302432,
+        "allocated_bytes": 303104,
+        "is_directory": false,
+        "symlink_target": null,
+        "recorded_sha256": "889e45aff237d4fa18995767568c087bf15054a8ee6fe0ec51b364bdc7622cf8"
+      },
+      "final_C40": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_joint_body_1epoch_teacher1_3gpu_20261008_v1/evaluation_dspark_gsm8k_recovery_20261009_v2/panels/final_C40.jsonl",
+        "exists": true,
+        "size_bytes": 2007885,
+        "allocated_bytes": 2011136,
+        "is_directory": false,
+        "symlink_target": null,
+        "recorded_sha256": "10081a913f38b64f56993d6ab1fe4ef9adfcc59924c31671bd3aa66373de877f"
+      }
+    },
+    "windows": [
+      {
+        "C": 1,
+        "T": 0,
+        "arm": "E1_DFLASH",
+        "requests": 200,
+        "AL": 7.384245562130178,
+        "TPS": 179.69106956814895,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 1,
+        "T": 1,
+        "arm": "E1_DFLASH",
+        "requests": 200,
+        "AL": 6.331329747970051,
+        "TPS": 154.7586367971108,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 1,
+        "T": 0,
+        "arm": "E1_JOINT_HEAD",
+        "requests": 200,
+        "AL": 8.381225517627309,
+        "TPS": 190.53192250564567,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 1,
+        "T": 1,
+        "arm": "E1_JOINT_HEAD",
+        "requests": 200,
+        "AL": 7.429277108433735,
+        "TPS": 169.21227947963973,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 1,
+        "T": 0,
+        "arm": "E2_DFLASH",
+        "requests": 200,
+        "AL": 7.478575890068707,
+        "TPS": 181.91947263164818,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 1,
+        "T": 1,
+        "arm": "E2_DFLASH",
+        "requests": 200,
+        "AL": 6.326140314992841,
+        "TPS": 154.7692536962377,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 1,
+        "T": 0,
+        "arm": "E2_JOINT_HEAD",
+        "requests": 200,
+        "AL": 8.515069661643446,
+        "TPS": 193.1906766434308,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 1,
+        "T": 1,
+        "arm": "E2_JOINT_HEAD",
+        "requests": 200,
+        "AL": 7.495969711773327,
+        "TPS": 170.6565199199253,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 40,
+        "T": 0,
+        "arm": "E1_DFLASH",
+        "requests": 1319,
+        "AL": 7.560735551005841,
+        "TPS": 3197.934719197488,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 40,
+        "T": 1,
+        "arm": "E1_DFLASH",
+        "requests": 1319,
+        "AL": 6.382049917013748,
+        "TPS": 2705.0244201982678,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 40,
+        "T": 0,
+        "arm": "E1_JOINT_HEAD",
+        "requests": 1319,
+        "AL": 8.527381734211808,
+        "TPS": 3347.1244349738386,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 40,
+        "T": 1,
+        "arm": "E1_JOINT_HEAD",
+        "requests": 1319,
+        "AL": 7.6665847480055955,
+        "TPS": 3017.241201422147,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 40,
+        "T": 0,
+        "arm": "E2_DFLASH",
+        "requests": 1319,
+        "AL": 7.609462194729773,
+        "TPS": 3217.679547808651,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 40,
+        "T": 1,
+        "arm": "E2_DFLASH",
+        "requests": 1319,
+        "AL": 6.483496647756575,
+        "TPS": 2751.452618601187,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 40,
+        "T": 0,
+        "arm": "E2_JOINT_HEAD",
+        "requests": 1319,
+        "AL": 8.65192621893542,
+        "TPS": 3400.5777641141563,
+        "isolated": true,
+        "speed_evidence": true
+      },
+      {
+        "C": 40,
+        "T": 1,
+        "arm": "E2_JOINT_HEAD",
+        "requests": 1319,
+        "AL": 7.709855782933364,
+        "TPS": 3032.4908306553475,
+        "isolated": true,
+        "speed_evidence": true
+      }
+    ],
+    "scope": "Historical original E1/E2 matched formal panel; latest NOFILL formal panel has separate key/root."
+  },
+  "tail_optimization": {
+    "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3",
+    "status": "short_iterations_complete_no_net_gain_claimed",
+    "active_iterations": {},
+    "selected_implementation": {
+      "utc": "2026-10-10T20:08:37.766475+00:00",
+      "selection": {
+        "C1": {
+          "protocol": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter20_fused_input_C1/native_protocol.json",
+          "protocol_sha256": "ddad6af4f06dab2a09a26ac87e7b7784e731873edce6091ffe73a6be0baad50f",
+          "runtime": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter20_fused_input_C1/native_runtime",
+          "summary": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter20_fused_input_C1/C1/short/summary.json",
+          "scope": "numeric-verified implementation; no end-to-end tail-cut gain claimed",
+          "flags": {
+            "fused_input": 1,
+            "fused_final": 1,
+            "reuse_sample_max": 1,
+            "fused_readout": 1,
+            "fused_scan": 1,
+            "cache_positions": 13,
+            "early_batch_size": 9,
+            "dense_guaranteed": 1
+          }
+        },
+        "C40": {
+          "protocol": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter21_fused_input_C40/native_protocol.json",
+          "protocol_sha256": "c40fec23d22b697161de19996e3e1ccc278df08c477bf5a9d328af30bf03ecc9",
+          "runtime": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter21_fused_input_C40/native_runtime",
+          "summary": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter21_fused_input_C40/C40/short/summary.json",
+          "scope": "numeric-verified implementation; no end-to-end tail-cut gain claimed",
+          "flags": {
+            "fused_input": 1,
+            "fused_final": 1,
+            "reuse_sample_max": 1,
+            "fused_readout": 1,
+            "fused_scan": 1,
+            "cache_positions": 13,
+            "early_batch_size": 9,
+            "dense_guaranteed": 1
+          }
+        }
+      },
+      "auxiliary_branch_verified": "Q45_MLP",
+      "weights_changed": false,
+      "training_code_changed": false,
+      "physical_target_compaction": false,
+      "state_copy_fusion_selected": false,
+      "latest_test_source_retained": true
+    },
+    "restoration_gate": {
+      "utc": "2026-10-10T20:09:06.406506+00:00",
+      "status": "verified",
+      "runtime_files": 177,
+      "reference": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter21_fused_input_C40",
+      "all_runtime_python_bytes_equal": true,
+      "evaluator_bytes_equal": true,
+      "no_new_gpu_test_required_for_exact_restoration": true,
+      "retired_prototype_archive": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_26_state_export/source",
+      "retired_component": "state copy fusion"
+    },
+    "selected_short_rows": [
+      {
+        "iteration": "iter20_fused_input_C1",
+        "C": 1,
+        "T": 0,
+        "full_AL": 8.01126126126126,
+        "cut_AL": 7.9552572706935125,
+        "full_TPS": 179.09564190706294,
+        "cut_TPS": 177.1508477940659,
+        "AL_percent": -0.6990658367185931,
+        "TPS_percent": -1.085896949969467,
+        "isolated": true,
+        "physical_target_compaction": false,
+        "source": "iterations/iter20_fused_input_C1/C1/short/summary.json"
+      },
+      {
+        "iteration": "iter20_fused_input_C1",
+        "C": 1,
+        "T": 1,
+        "full_AL": 7.446502057613169,
+        "cut_AL": 7.424180327868853,
+        "full_TPS": 166.84271278938738,
+        "cut_TPS": 165.55370367330812,
+        "AL_percent": -0.2997612781358905,
+        "TPS_percent": -0.7725894014360857,
+        "isolated": true,
+        "physical_target_compaction": false,
+        "source": "iterations/iter20_fused_input_C1/C1/short/summary.json"
+      },
+      {
+        "iteration": "iter21_fused_input_C40",
+        "C": 40,
+        "T": 0,
+        "full_AL": 8.540297163439892,
+        "cut_AL": 8.508299685957828,
+        "full_TPS": 2899.8207072399505,
+        "cut_TPS": 2864.693069383765,
+        "AL_percent": -0.37466468519433693,
+        "TPS_percent": -1.2113727503387683,
+        "isolated": true,
+        "physical_target_compaction": false,
+        "source": "iterations/iter21_fused_input_C40/C40/short/summary.json"
+      },
+      {
+        "iteration": "iter21_fused_input_C40",
+        "C": 40,
+        "T": 1,
+        "full_AL": 7.564585787200628,
+        "cut_AL": 7.5864928909952605,
+        "full_TPS": 2671.802613213975,
+        "cut_TPS": 2648.496015528154,
+        "AL_percent": 0.2896008375197434,
+        "TPS_percent": -0.8723173474923906,
+        "isolated": true,
+        "physical_target_compaction": false,
+        "source": "iterations/iter21_fused_input_C40/C40/short/summary.json"
+      }
+    ],
+    "root_log_links": {
+      "single_card_C1_short.log": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/single_card_C1_short.log",
+        "exists": true,
+        "size_bytes": 466,
+        "allocated_bytes": 4096,
+        "is_directory": false,
+        "symlink_target": "iterations/iter22_fused_export_C1/single_card_C1_short.log"
+      },
+      "single_card_C40_short.log": {
+        "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/single_card_C40_short.log",
+        "exists": true,
+        "size_bytes": 465,
+        "allocated_bytes": 4096,
+        "is_directory": false,
+        "symlink_target": "iterations/iter23_fused_export_C40/single_card_C40_short.log"
+      }
+    },
+    "aux_checkpoint": {
+      "path": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/full_nonthinking_epoch2_aux_q45_latent_20261010_v4/final/post_repair_aux_comparison.pt",
+      "exists": true,
+      "size_bytes": 147901,
+      "allocated_bytes": 151552,
+      "is_directory": false,
+      "symlink_target": null,
+      "sha256_computed_now": "b3609423acec1809041032b277355dba7f50eb92ebca5f05577f4dffa765fa42"
+    },
+    "frozen_policy": {
+      "format": "epoch2_frozen_readout_prefix_policy_v1",
+      "policies": {
+        "Q45_MLP": {
+          "minimum_repair": 8,
+          "patience": 2,
+          "thresholds": [
+            0.1,
+            0.1
+          ]
+        },
+        "Q45_REPAIR_LATENT_MLP": {
+          "minimum_repair": 8,
+          "patience": 2,
+          "thresholds": [
+            0.1,
+            0.15
+          ]
+        }
+      },
+      "calibration_policy": {
+        "minimum_repair": 8,
+        "patience": 2,
+        "thresholds": [
+          0.0,
+          0.0
+        ]
+      },
+      "auxiliary_checkpoint_sha256": "b3609423acec1809041032b277355dba7f50eb92ebca5f05577f4dffa765fa42",
+      "checkpoint_sha256": "6635f429a363ba9928da653f3337ce991e644c379cb7ac4e159ac1413b71944f",
+      "threshold_selection": "Minimize repaired prefix length subject to >=99.5% full-path prefix retention on calibration only",
+      "prediction_delay_positions": 1,
+      "calibration_source": "openai/gsm8k main/train, disjoint by normalized question from all formal test prompts",
+      "heldout_scope": "Native score readout check only; no additional predictor training",
+      "utc": "2026-10-10T14:24:14.839051+00:00"
+    },
+    "latest_completed_iterations": [
+      "iter28_fused_prepare_decision_C1",
+      "iter29_fused_prepare_prefetch_C40"
+    ],
+    "latest_short_rows": [
+      {
+        "C": 1,
+        "T": 0,
+        "treatment": "FULL15_PREPARED",
+        "control": "FULL15_NOFILL",
+        "treatment_AL": 8.01126126126126,
+        "control_AL": 8.01126126126126,
+        "treatment_TPS": 186.1519227778017,
+        "control_TPS": 187.0629067112767,
+        "AL_percent": 0.0,
+        "TPS_percent": -0.4869933593414477,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter28_fused_prepare_decision_C1/C1/short/summary.json"
+      },
+      {
+        "C": 1,
+        "T": 1,
+        "treatment": "FULL15_PREPARED",
+        "control": "FULL15_NOFILL",
+        "treatment_AL": 7.446502057613169,
+        "control_AL": 7.446502057613169,
+        "treatment_TPS": 173.19878520286883,
+        "control_TPS": 173.31186586321184,
+        "AL_percent": 0.0,
+        "TPS_percent": -0.06524692338852889,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter28_fused_prepare_decision_C1/C1/short/summary.json"
+      },
+      {
+        "C": 1,
+        "T": 0,
+        "treatment": "Q45_PREPARED_CUT",
+        "control": "FULL15_PREPARED",
+        "treatment_AL": 7.9552572706935125,
+        "control_AL": 8.01126126126126,
+        "treatment_TPS": 184.97308021667317,
+        "control_TPS": 186.1519227778017,
+        "AL_percent": -0.6990658367185931,
+        "TPS_percent": -0.6332690758911186,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter28_fused_prepare_decision_C1/C1/short/summary.json"
+      },
+      {
+        "C": 1,
+        "T": 1,
+        "treatment": "Q45_PREPARED_CUT",
+        "control": "FULL15_PREPARED",
+        "treatment_AL": 7.424180327868853,
+        "control_AL": 7.446502057613169,
+        "treatment_TPS": 172.95104806766955,
+        "control_TPS": 173.19878520286883,
+        "AL_percent": -0.2997612781358905,
+        "TPS_percent": -0.1430363006929336,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter28_fused_prepare_decision_C1/C1/short/summary.json"
+      },
+      {
+        "C": 40,
+        "T": 0,
+        "treatment": "FULL15_PREPARED",
+        "control": "FULL15_NOFILL",
+        "treatment_AL": 8.540297163439892,
+        "control_AL": 8.540297163439892,
+        "treatment_TPS": 2930.089228876125,
+        "control_TPS": 2928.4676418005774,
+        "AL_percent": 0.0,
+        "TPS_percent": 0.055373228387489704,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter29_fused_prepare_prefetch_C40/C40/short/summary.json"
+      },
+      {
+        "C": 40,
+        "T": 1,
+        "treatment": "FULL15_PREPARED",
+        "control": "FULL15_NOFILL",
+        "treatment_AL": 7.564585787200628,
+        "control_AL": 7.564585787200628,
+        "treatment_TPS": 2734.348029505278,
+        "control_TPS": 2698.035407940373,
+        "AL_percent": 0.0,
+        "TPS_percent": 1.3458912161803616,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter29_fused_prepare_prefetch_C40/C40/short/summary.json"
+      },
+      {
+        "C": 40,
+        "T": 0,
+        "treatment": "Q45_PREPARED_CUT",
+        "control": "FULL15_PREPARED",
+        "treatment_AL": 8.508299685957828,
+        "control_AL": 8.540297163439892,
+        "treatment_TPS": 2889.4034587752117,
+        "control_TPS": 2930.089228876125,
+        "AL_percent": -0.37466468519433693,
+        "TPS_percent": -1.3885505499270812,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter29_fused_prepare_prefetch_C40/C40/short/summary.json"
+      },
+      {
+        "C": 40,
+        "T": 1,
+        "treatment": "Q45_PREPARED_CUT",
+        "control": "FULL15_PREPARED",
+        "treatment_AL": 7.5864928909952605,
+        "control_AL": 7.564585787200628,
+        "treatment_TPS": 2686.7562327812825,
+        "control_TPS": 2734.348029505278,
+        "AL_percent": 0.2896008375197434,
+        "TPS_percent": -1.740517162060251,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter29_fused_prepare_prefetch_C40/C40/short/summary.json"
+      }
+    ],
+    "latest_contract_status": "verified",
+    "stable_tail_cut_gain": false,
+    "selection_changed": false
+  },
+  "missing_critical_paths": [],
+  "handoff_validation": {
+    "utc": "2026-10-11T11:29:28.516349+00:00",
+    "local": "2026-10-11T19:29:28.516349+08:00",
+    "new_iterations": {
+      "iter28_fused_prepare_decision_C1": {
+        "source_files": 182,
+        "protocol_sha256": "f36d0ddd54445d18ad7baf59bff40ed8dbcf1f423f97454a2140ef331af287cb",
+        "gpu": 0
+      },
+      "iter29_fused_prepare_prefetch_C40": {
+        "source_files": 182,
+        "protocol_sha256": "7084064c1a615a301b3e1969121b8b58ee6241a4943ce99ff3852b261c7379c1",
+        "gpu": 0
+      }
+    },
+    "restored_runtime_rechecked_now": {
+      "python_files": 177,
+      "all_reference_bytes_equal": true,
+      "evaluator_bytes_equal": true
+    },
+    "latest_formal_status": "verified",
+    "latest_short_contract_status": "verified",
+    "matching_live_commands": [],
+    "gpu_jobs_started": false,
+    "files_deleted": false,
+    "weights_changed": false,
+    "previous_documents_archive": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/maintenance/handoff_20261011_refresh_v2/before",
+    "missing_document_links": [],
+    "protected_paths_missing": [],
+    "final_artifact_sizes_rechecked": 10,
+    "aux_sha256_rechecked": "b3609423acec1809041032b277355dba7f50eb92ebca5f05577f4dffa765fa42",
+    "completed_at_utc": "2026-10-11T11:30:39.349283+00:00"
+  },
+  "latest_structure_reaudit_20261011": {
+    "status": "complete",
+    "head_optimization": "head-local removal of redundant empty-memory debug fill; deterministic algorithms remain enabled",
+    "candidate_iterations": [
+      "iter26_no_empty_fill_C1",
+      "iter27_no_empty_fill_C40"
+    ],
+    "selected_implementation_changed": false,
+    "short_comparison": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_29_no_empty_fill/IMPLEMENTATION_COMPARISON.json",
+    "native_cost_report": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_32_native_cost_snapshot/RESULTS_CN.md",
+    "integrity": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_29_no_empty_fill/FINAL_INTEGRITY.json",
+    "stable_tail_cut_gain": false
+  },
+  "latest_nofill_formal_comparison_20261011": {
+    "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1",
+    "status_file": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1/status.json",
+    "report": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1/RESULTS_CN.md",
+    "user_authorized_formal": true,
+    "instruction": "不是短测改成长测",
+    "settings": "C1=200/C40=1319,max2096/context4096,T0/T1",
+    "baseline": "E2 independently trained DFlash",
+    "treatment": "E2 jointly trained DFlash + FULL15_NOFILL",
+    "selected_implementation_unchanged": true,
+    "runtime_files_equal_iter26": 178,
+    "no_tail_cut_or_training": true,
+    "status": "complete_verified",
+    "results": [
+      {
+        "C": 1,
+        "T": 0,
+        "baseline_AL": 7.478575890068707,
+        "full_AL": 8.515069661643446,
+        "baseline_TPS": 178.41044909749007,
+        "full_TPS": 196.15166838727464,
+        "AL_percent": 13.859507302067598,
+        "TPS_percent": 9.944047212217999,
+        "baseline_acceptance_rate": 0.4319050593379138,
+        "full_acceptance_rate": 0.501004644109563,
+        "isolated": true,
+        "requests": 200,
+        "source": "C1/formal/summary.json"
+      },
+      {
+        "C": 1,
+        "T": 1,
+        "baseline_AL": 6.33593349071128,
+        "full_AL": 7.488576664630422,
+        "baseline_TPS": 151.85897905137176,
+        "full_TPS": 173.25330705418145,
+        "AL_percent": 18.192160249298084,
+        "TPS_percent": 14.088286472393774,
+        "baseline_acceptance_rate": 0.355728899380752,
+        "full_acceptance_rate": 0.4325717776420281,
+        "isolated": true,
+        "requests": 200,
+        "source": "C1/formal/summary.json"
+      },
+      {
+        "C": 40,
+        "T": 0,
+        "baseline_AL": 7.609462194729773,
+        "full_AL": 8.652090723422551,
+        "baseline_TPS": 3146.145005064303,
+        "full_TPS": 3365.700964921872,
+        "AL_percent": 13.701737416014637,
+        "TPS_percent": 6.978570901981729,
+        "baseline_acceptance_rate": 0.44063081298198487,
+        "full_acceptance_rate": 0.5101393815615034,
+        "isolated": true,
+        "requests": 1319,
+        "source": "C40/formal/summary.json"
+      },
+      {
+        "C": 40,
+        "T": 1,
+        "baseline_AL": 6.482781958522004,
+        "full_AL": 7.698109988436238,
+        "baseline_TPS": 2687.595135926696,
+        "full_TPS": 3011.2275425268795,
+        "AL_percent": 18.747013823542424,
+        "TPS_percent": 12.041709790064537,
+        "baseline_acceptance_rate": 0.36551879723480024,
+        "full_acceptance_rate": 0.4465406658957492,
+        "isolated": true,
+        "requests": 1319,
+        "source": "C40/formal/summary.json"
+      }
+    ],
+    "final_audit": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_nofill_vs_dflash_gsm8k_20261011_v1/FINAL_AUDIT.json",
+    "formal_requests": 6076
+  },
+  "concurrent_tail_optimization_candidates_20261011": {
+    "roots": [
+      "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_33_fused_tail_decision",
+      "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_34_fused_probability_prepare",
+      "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_35_sharded_histogram",
+      "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_36_early_cache_prefetch"
+    ],
+    "status": "micro_and_native_complete_no_tail_gain",
+    "formal_runtime_untouched": true,
+    "micro_report": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/PARALLEL_OPTIMIZATION_CN.md",
+    "rejected": "full_head_35_sharded_histogram",
+    "native_followup": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_37_native_fused_followup/progress.json",
+    "native_followup_gpu": 0,
+    "selected_runtime_unchanged": true,
+    "updated_utc": "2026-10-11T11:29:28.516349+00:00"
+  },
+  "latest_tail_native_followup_20261011": {
+    "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_37_native_fused_followup",
+    "live_status": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_37_native_fused_followup/progress.json",
+    "controller": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_37_native_fused_followup/gpu0_controller_launch.json",
+    "reporter": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_37_native_fused_followup/gpu0_reporter_launch.json",
+    "audit_watcher": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/probes/full_head_37_native_fused_followup/audit_watcher_launch.json",
+    "scope": "C1=16,C40=80,max256, same E2 joint weights. Common prepare vs nofill; fixed Q45 cutoff vs identically prepared FULL15.",
+    "initial_gpu7_wait_replaced_before_service": true,
+    "development_runtime_unchanged": true,
+    "status": "complete_verified_no_tail_gain",
+    "rows": [
+      {
+        "C": 1,
+        "T": 0,
+        "treatment": "FULL15_PREPARED",
+        "control": "FULL15_NOFILL",
+        "treatment_AL": 8.01126126126126,
+        "control_AL": 8.01126126126126,
+        "treatment_TPS": 186.1519227778017,
+        "control_TPS": 187.0629067112767,
+        "AL_percent": 0.0,
+        "TPS_percent": -0.4869933593414477,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter28_fused_prepare_decision_C1/C1/short/summary.json"
+      },
+      {
+        "C": 1,
+        "T": 1,
+        "treatment": "FULL15_PREPARED",
+        "control": "FULL15_NOFILL",
+        "treatment_AL": 7.446502057613169,
+        "control_AL": 7.446502057613169,
+        "treatment_TPS": 173.19878520286883,
+        "control_TPS": 173.31186586321184,
+        "AL_percent": 0.0,
+        "TPS_percent": -0.06524692338852889,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter28_fused_prepare_decision_C1/C1/short/summary.json"
+      },
+      {
+        "C": 1,
+        "T": 0,
+        "treatment": "Q45_PREPARED_CUT",
+        "control": "FULL15_PREPARED",
+        "treatment_AL": 7.9552572706935125,
+        "control_AL": 8.01126126126126,
+        "treatment_TPS": 184.97308021667317,
+        "control_TPS": 186.1519227778017,
+        "AL_percent": -0.6990658367185931,
+        "TPS_percent": -0.6332690758911186,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter28_fused_prepare_decision_C1/C1/short/summary.json"
+      },
+      {
+        "C": 1,
+        "T": 1,
+        "treatment": "Q45_PREPARED_CUT",
+        "control": "FULL15_PREPARED",
+        "treatment_AL": 7.424180327868853,
+        "control_AL": 7.446502057613169,
+        "treatment_TPS": 172.95104806766955,
+        "control_TPS": 173.19878520286883,
+        "AL_percent": -0.2997612781358905,
+        "TPS_percent": -0.1430363006929336,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter28_fused_prepare_decision_C1/C1/short/summary.json"
+      },
+      {
+        "C": 40,
+        "T": 0,
+        "treatment": "FULL15_PREPARED",
+        "control": "FULL15_NOFILL",
+        "treatment_AL": 8.540297163439892,
+        "control_AL": 8.540297163439892,
+        "treatment_TPS": 2930.089228876125,
+        "control_TPS": 2928.4676418005774,
+        "AL_percent": 0.0,
+        "TPS_percent": 0.055373228387489704,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter29_fused_prepare_prefetch_C40/C40/short/summary.json"
+      },
+      {
+        "C": 40,
+        "T": 1,
+        "treatment": "FULL15_PREPARED",
+        "control": "FULL15_NOFILL",
+        "treatment_AL": 7.564585787200628,
+        "control_AL": 7.564585787200628,
+        "treatment_TPS": 2734.348029505278,
+        "control_TPS": 2698.035407940373,
+        "AL_percent": 0.0,
+        "TPS_percent": 1.3458912161803616,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter29_fused_prepare_prefetch_C40/C40/short/summary.json"
+      },
+      {
+        "C": 40,
+        "T": 0,
+        "treatment": "Q45_PREPARED_CUT",
+        "control": "FULL15_PREPARED",
+        "treatment_AL": 8.508299685957828,
+        "control_AL": 8.540297163439892,
+        "treatment_TPS": 2889.4034587752117,
+        "control_TPS": 2930.089228876125,
+        "AL_percent": -0.37466468519433693,
+        "TPS_percent": -1.3885505499270812,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter29_fused_prepare_prefetch_C40/C40/short/summary.json"
+      },
+      {
+        "C": 40,
+        "T": 1,
+        "treatment": "Q45_PREPARED_CUT",
+        "control": "FULL15_PREPARED",
+        "treatment_AL": 7.5864928909952605,
+        "control_AL": 7.564585787200628,
+        "treatment_TPS": 2686.7562327812825,
+        "control_TPS": 2734.348029505278,
+        "AL_percent": 0.2896008375197434,
+        "TPS_percent": -1.740517162060251,
+        "isolated": true,
+        "source": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter29_fused_prepare_prefetch_C40/C40/short/summary.json"
+      }
+    ],
+    "contract_audit": {
+      "status": "verified",
+      "utc": "2026-10-11T06:03:08.177767+00:00",
+      "audits": [
+        {
+          "C": 1,
+          "iteration": "iter28_fused_prepare_decision_C1",
+          "source_files_verified": 182,
+          "witnesses": [
+            {
+              "arm": "FULL15_PREPARED",
+              "sampling": 79,
+              "head": 79
+            },
+            {
+              "arm": "Q45_PREPARED_CUT",
+              "sampling": 80,
+              "head": 80,
+              "prefix_bonus": 69,
+              "q45": 1040
+            }
+          ],
+          "common_preparation_output_parity": [
+            {
+              "T": 0,
+              "requests": 16,
+              "equal_outputs": 16,
+              "all_equal": true
+            },
+            {
+              "T": 1,
+              "requests": 16,
+              "equal_outputs": 16,
+              "all_equal": true
+            }
+          ],
+          "windows_verified": 6,
+          "all_isolated": true
+        },
+        {
+          "C": 40,
+          "iteration": "iter29_fused_prepare_prefetch_C40",
+          "source_files_verified": 182,
+          "witnesses": [
+            {
+              "arm": "FULL15_PREPARED",
+              "sampling": 98,
+              "head": 98
+            },
+            {
+              "arm": "Q45_PREPARED_CUT",
+              "sampling": 97,
+              "head": 97,
+              "prefix_bonus": 90,
+              "q45": 1261
+            }
+          ],
+          "common_preparation_output_parity": [
+            {
+              "T": 0,
+              "requests": 80,
+              "equal_outputs": 80,
+              "all_equal": true
+            },
+            {
+              "T": 1,
+              "requests": 80,
+              "equal_outputs": 80,
+              "all_equal": true
+            }
+          ],
+          "windows_verified": 6,
+          "all_isolated": true
+        }
+      ],
+      "branch": "Q45_MLP",
+      "latent_verified": false,
+      "physical_target_compaction": false,
+      "kv_contract": "Unchanged native KV update; emitted token/count match compact-prefix reference, padded_length-rejected=emitted for cut10..15. No independent KV byte comparison."
+    },
+    "process_snapshot": {
+      "utc": "2026-10-11T11:25:14.843262+00:00",
+      "local_time": "2026-10-11T19:25:14.843286+08:00",
+      "gpu_csv": "0, GPU-6708ee11-1afa-f173-d74b-59daf320d901, 4 MiB, 81151 MiB, 0 %\n1, GPU-250cd769-9b6a-e76d-92cb-681686776938, 67997 MiB, 13157 MiB, 0 %\n2, GPU-7422fda4-ef6a-796a-a6ea-1c24e3e92824, 76789 MiB, 4366 MiB, 0 %\n3, GPU-e2c0a9aa-5376-9fd2-4aff-5db3ae4260cd, 77099 MiB, 4056 MiB, 0 %\n4, GPU-b69b3699-6c78-06df-49e1-81ef44cf415b, 4 MiB, 81151 MiB, 0 %\n5, GPU-6b9e070b-a9db-7515-5b45-999392d3bb49, 43485 MiB, 37669 MiB, 0 %\n6, GPU-16d48373-c956-39a9-3989-4676fb6aa22c, 43889 MiB, 37265 MiB, 100 %\n7, GPU-d74003c2-c31c-a723-8de9-4b1e1a41cf3f, 58413 MiB, 22741 MiB, 1 %\n",
+      "tracked_processes": [
+        {
+          "role": "gpu0_controller",
+          "pid": 4049950,
+          "pid_exists": false
+        },
+        {
+          "role": "C1_controller",
+          "pid": 4049954,
+          "pid_exists": false
+        },
+        {
+          "role": "reporter",
+          "pid": 4049951,
+          "pid_exists": false
+        },
+        {
+          "role": "contract_auditor",
+          "pid": 4034575,
+          "pid_exists": false
+        },
+        {
+          "role": "formal_controller",
+          "pid": 3636012,
+          "pid_exists": false
+        }
+      ],
+      "matching_live_commands": []
+    },
+    "source_integrity_rechecked": {
+      "iter28_fused_prepare_decision_C1": {
+        "source_files": 182,
+        "protocol_sha256": "f36d0ddd54445d18ad7baf59bff40ed8dbcf1f423f97454a2140ef331af287cb",
+        "gpu": 0
+      },
+      "iter29_fused_prepare_prefetch_C40": {
+        "source_files": 182,
+        "protocol_sha256": "7084064c1a615a301b3e1969121b8b58ee6241a4943ce99ff3852b261c7379c1",
+        "gpu": 0
+      }
+    },
+    "active_owned_tasks": [],
+    "pending_work": "Future new optimization only: diagnose actual mixed-length native cost before changing implementation; no rerun of completed iter28/29.",
+    "completed_utc": "2026-10-11T06:02:21.721376+00:00"
+  },
+  "snapshot_local": "2026-10-11T19:29:28.516349+08:00",
+  "timezone": "Asia/Shanghai",
+  "previous_handoff_validation": {
+    "utc": "2026-10-11T02:24:21.352691+00:00",
+    "missing_document_links": [],
+    "formal_numeric_table_mismatches": [],
+    "formal_relative_deltas": [
+      {
+        "epoch": 1,
+        "C": 1,
+        "T": 0,
+        "AL_percent": 13.50144638485622,
+        "TPS_percent": 6.033050481334712
+      },
+      {
+        "epoch": 1,
+        "C": 1,
+        "T": 1,
+        "AL_percent": 17.341497034105767,
+        "TPS_percent": 9.33947402333204
+      },
+      {
+        "epoch": 2,
+        "C": 1,
+        "T": 0,
+        "AL_percent": 13.859507302067598,
+        "TPS_percent": 6.195710579375224
+      },
+      {
+        "epoch": 2,
+        "C": 1,
+        "T": 1,
+        "AL_percent": 18.49199256627316,
+        "TPS_percent": 10.265130731242778
+      },
+      {
+        "epoch": 1,
+        "C": 40,
+        "T": 0,
+        "AL_percent": 12.785081248839191,
+        "TPS_percent": 4.665189532505187
+      },
+      {
+        "epoch": 1,
+        "C": 40,
+        "T": 1,
+        "AL_percent": 20.12730780383647,
+        "TPS_percent": 11.542105826940908
+      },
+      {
+        "epoch": 2,
+        "C": 40,
+        "T": 0,
+        "AL_percent": 13.699575574836897,
+        "TPS_percent": 5.684165050869194
+      },
+      {
+        "epoch": 2,
+        "C": 40,
+        "T": 1,
+        "AL_percent": 18.915088598081308,
+        "TPS_percent": 10.214175964877704
+      }
+    ],
+    "restored_runtime_rechecked_now": {
+      "python_files": 177,
+      "all_reference_bytes_equal": true,
+      "evaluator_bytes_equal": true
+    },
+    "gpu_jobs_started": false,
+    "files_deleted": false
+  },
+  "research_directory_cleanup_20261011": {
+    "utc": "2026-10-11T12:23:34.448449+00:00",
+    "status": "complete",
+    "entry": "RESIDUALV3_START_HERE.txt",
+    "code_roots_archived_deleted": 75,
+    "diagnostic_roots_archived_deleted": 15,
+    "weight_files_deleted": 0,
+    "restore": "archives/residualV3_research_cleanup_20261011_v3/RESTORE.json",
+    "audit": "residualV3_main_v1/maintenance/research_cleanup_20261011_v3/PROTECTION_AUDIT.json",
+    "historical_disk_snapshot_preserved": true,
+    "disk_display": "du -sh /data/weijiahong: approximately 496G",
+    "final_audit": "residualV3_main_v1/maintenance/research_cleanup_20261011_v3/FINAL_AUDIT.json"
+  },
+  "disk_unit_clarification": "Historical decimal GB and ceiling_bytes are the previous agent's reporting convention, not an explicit user requirement; report current usage using du -sh.",
+  "cross_domain_evaluation_20261011": {
+    "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1",
+    "code": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1",
+    "status_file": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/status.json",
+    "controller_identity": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/parallel/controller_identity.json",
+    "counts": {
+      "humaneval": 164,
+      "mt-bench": 80
+    },
+    "first_turn_only": true,
+    "concurrency": [
+      1,
+      40
+    ],
+    "temperatures": [
+      0,
+      1
+    ],
+    "arms": [
+      "DFLASH",
+      "FULL15_NOFILL"
+    ],
+    "formal_windows_expected": 16,
+    "eligible_gpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "note": "New user-authorized queue; old completed queues must not be restarted",
+    "registered_utc": "2026-10-11T12:59:48.569701+00:00",
+    "startup_validation": {
+      "status_snapshot": {
+        "status": "running",
+        "dataset": "humaneval",
+        "concurrency": 1,
+        "gpu": 7,
+        "phase": "formal",
+        "evaluator_pid": 2948030,
+        "controller_pid": 2931390,
+        "command": [
+          "/data/weijiahong/miniconda3/envs/dflash/bin/python",
+          "-B",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/native_evaluate.py",
+          "--training",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/humaneval/C1",
+          "--gpu",
+          "7",
+          "--concurrency",
+          "1",
+          "--output",
+          "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/humaneval/C1/formal",
+          "--prompts",
+          "164",
+          "--tokens",
+          "2096",
+          "--rounds",
+          "1",
+          "--arms",
+          "DFLASH",
+          "FULL15_NOFILL"
+        ],
+        "utc": "2026-10-11T13:01:55.815348+00:00"
+      },
+      "C1_HumanEval_smoke": "passed: isolation, Graph, independent sampling q/feedback, optimized head actual logits/token/predecessor/verifier-q bitwise parity; T0/T1",
+      "snapshot_utc": "2026-10-11T13:03:08.602111+00:00"
+    },
+    "parallel_dispatch": {
+      "code": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_cross_domain_parallel_20261011_v3",
+      "controller_identity": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/parallel/controller_identity.json",
+      "dispatch_manifest": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/parallel/DISPATCH_MANIFEST.json",
+      "allocation_policy": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/parallel/allocation_policy.json",
+      "status_file": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/status.json",
+      "retired_serial_pid_historical": 2931390,
+      "previous_partial_C40_smoke": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/humaneval/C40/prior_attempts/GPU7_foreign_wait_before_migration",
+      "completed_humaneval_C1_preserved": true,
+      "old_serial_controller_restarts_forbidden": true,
+      "pending_GPU1_user_permission": false,
+      "snapshot_utc": "2026-10-11T14:27:20.791804+00:00",
+      "eligible_gpus": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "user_GPU_policy": "所有GPU只要空卡都可用，不按编号排除1/2",
+      "latest_controller_log": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/parallel/controller_v3.log",
+      "retired_parallel_v2_pid_historical": 3337403,
+      "historical_dispatch_metadata_only": true
+    },
+    "recovery_20261011_2311": {
+      "status": "HumanEval_C40_waiting_empty_GPU_MTBench_C1_formal_running",
+      "formal_windows_completed": 4,
+      "formal_windows_expected": 16,
+      "primary_dispatcher_pid_historical": 3439864,
+      "recovery_pid_historical": 3688127,
+      "recovery_manifest": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/parallel/RECOVERY_MANIFEST.json",
+      "recovery_log": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/parallel/controller_v4.log",
+      "preserved_failed_attempt": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/humaneval/C40/prior_attempts/occupation_2026-10-11T151046.423046_0000",
+      "completed_HumanEval_C1_preserved": true,
+      "MT_Bench_formal_uninterrupted": true,
+      "native_source_files_unchanged": 183,
+      "final_audit_pending": true,
+      "historical_snapshot_only": true
+    },
+    "status": "complete",
+    "formal_windows_completed": 16,
+    "final_audit": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_humaneval_mtbench_nofill_vs_dflash_20261011_v1/FINAL_AUDIT.json",
+    "complete_beijing": "2026-10-12 00:12:38",
+    "controllers_host_verified_exited": true,
+    "all_complete_formal_restarts_forbidden": true,
+    "three_domain_comparison": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/epoch2_three_domains_comparison_20261012/COMPARISON_CN.txt",
+    "last_completion_verification": "2026-10-12T00:19:40.420131+08:00"
+  },
+  "GPU_policy_user_correction_20261011": {
+    "user_instruction": "我什么时候说过避开GPU12，有空卡就能用",
+    "effective_eligible_gpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "must_check_host_empty_gpu": true,
+    "attribution": "Prior handoff restriction was not a user requirement",
+    "utc": "2026-10-11T14:27:20.791804+00:00"
+  },
+  "current_comparison_scope": {
+    "user_request": "我们的最新E2完全体与对方加头版本比较",
+    "report": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/epoch2_three_domains_comparison_20261012/COMPARISON_CN.txt",
+    "row_data": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/epoch2_three_domains_comparison_20261012/COMPLETE_VS_HEAD_COMPARISON.csv",
+    "our_variant": "E2 independent DFlash versus jointly trained FULL15_NOFILL",
+    "external_variants": [
+      "DSpark scheduler OFF",
+      "Domino Table6 head only",
+      "DFlash-2 selector no conv"
+    ]
+  },
+  "future_high_concurrency": 32,
+  "C32_additional_evaluation": {
+    "root": "residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1",
+    "status": "complete",
+    "formal_windows_expected": 12,
+    "counts": [
+      1319,
+      164,
+      80
+    ],
+    "controller_pid": 363250,
+    "formal_pairs_reported": 6,
+    "final_audit_passed": true,
+    "comparison": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/COMPARISON.json",
+    "final_process_snapshot": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_three_domains_C32_nofill_vs_dflash_20261012_v1/parallel/FINAL_PROCESS_SNAPSHOT.json",
+    "this_batch_processes_exited": true,
+    "disk_du_h": "496G"
+  },
+  "next_research_focus": {
+    "report": "residualV3_main_v1/research/target_draft_acceleration_20261012/REPORT_CN.md",
+    "priorities": [
+      "prepare at least 10000 unique actual repair-training prompts per math/code/chat domain, with source/length/group audits and separate validation/holdout",
+      "train only new repair-head projections/fusion/experts/router on frozen E2 joint body; compare capacity, training coverage, two generic heads and three seeds",
+      "compact frozen-hidden cache capped at 32 GiB; large run unstarted, no new GPU tasks before system update"
+    ],
+    "candidate_not_measured": false,
+    "training_started": true,
+    "mismatch_specific_report": "residualV3_main_v1/research/target_draft_acceleration_20261012/MISMATCH_BODY_CN.md",
+    "latest_user_constraint": "数学/代码/对话每领域至少10000条实际头训练样本，仅训练修复模块；E2主体冻结，系统更新前保持GPU停止",
+    "source_audit": "residualV3_main_v1/research/target_draft_acceleration_20261012/phase2_investigation/mismatch_focus_20261012/SCAN_AUDIT.json",
+    "top_level_design": "residualV3_main_v1/research/target_draft_acceleration_20261012/TOP_LEVEL_DESIGN_CN.txt",
+    "design_updated_utc": "2026-10-12T03:48:07.639578+00:00",
+    "candidate_implementation_started": true,
+    "candidate_gpu_test_started": true,
+    "validated_method": "E2 independent single-trained DFlash versus jointly trained body plus one FULL15_NOFILL repair head; not routed experts",
+    "epoch3_started": false,
+    "native_candidate_implementation_started": false,
+    "native_candidate_throughput_measured": false,
+    "expert_pilot": {
+      "root": "residualV3_main_v1/research/mismatch_expert_pilot_20261012_v1",
+      "status": "complete_offline_pilot",
+      "report": "residualV3_main_v1/research/mismatch_expert_pilot_20261012_v1/RESULTS_CN.txt",
+      "log": "residualV3_main_v1/research/mismatch_expert_pilot_20261012_v1/pilot.log",
+      "holdout_prompts": 24,
+      "states": 2880,
+      "original_overlap": 0.575019,
+      "general_overlap": 0.580302,
+      "learned_router_overlap": 0.578482,
+      "oracle_KEEP_A_B_overlap": 0.59171,
+      "two_expert_oracle_without_KEEP_overlap": 0.587428,
+      "native_AC_TPS": null,
+      "source_and_E2_weights_unchanged": true,
+      "gpu": 7,
+      "historical_pid": 1437038,
+      "process_exited": true,
+      "body_training": false,
+      "native_supervision": false,
+      "evidence_level": "pipeline_shakedown_only",
+      "insufficient_to_support_or_refute_route": true,
+      "actual_holdout_groups": 24,
+      "short_E2_seen_training_sequences": true
+    },
+    "large_sample_plan": {
+      "status": "plan_only_not_started",
+      "user_requirement": "每个领域至少1万条，只训练头",
+      "minimum_head_train_unique_groups_per_domain": 10000,
+      "domains": [
+        "math",
+        "code",
+        "chat_instruction"
+      ],
+      "target_expert_train_groups": 30000,
+      "target_router_train_groups": 6144,
+      "target_router_train_groups_per_domain": 2048,
+      "target_selection_groups": 3072,
+      "target_selection_groups_per_domain": 1024,
+      "target_locked_holdout_groups": 3072,
+      "target_each_holdout_domain": 1024,
+      "target_total_groups": 42288,
+      "seeds": 3,
+      "actual_large_label_groups": 0,
+      "gpu_started": false,
+      "train_body": false,
+      "train_target": false,
+      "train_embedding_lm_head_basis": false,
+      "train_new_head_shared_input_maps": true,
+      "train_new_experts": true,
+      "train_router_as_repair_module": true,
+      "freeze_old_q45_latent_auxiliary": true,
+      "compact_cache_cap_gib": 32,
+      "proposal_positions_per_group_max": 30,
+      "max_positions_base_plan": 1268640,
+      "formal_native_AC_TPS_measured": false,
+      "scope": "new head copies on frozen E2 joint body; original E2 head/checkpoints immutable",
+      "counts_are_targets_not_collected_data": true,
+      "report": "residualV3_main_v1/research/mismatch_expert_pilot_20261012_v1/LARGE_SAMPLE_PLAN_CN.txt",
+      "availability_audit": "residualV3_main_v1/research/mismatch_expert_pilot_20261012_v1/DATA_AVAILABILITY_AUDIT.json",
+      "no_restart_before_system_update": true,
+      "updated_utc": "2026-10-12T05:42:28.007037+00:00"
+    },
+    "sample_interpretation_corrected_utc": "2026-10-12T05:26:25.176208+00:00",
+    "superseded_large_sample_plans": [
+      {
+        "report": "residualV3_main_v1/research/mismatch_expert_pilot_20261012_v1/LARGE_SAMPLE_PLAN_CN.txt",
+        "availability_audit": "residualV3_main_v1/research/mismatch_expert_pilot_20261012_v1/DATA_AVAILABILITY_AUDIT.json",
+        "status": "plan_only_not_started",
+        "target_total_groups": 14336,
+        "target_expert_train_groups": 8192,
+        "target_router_train_groups": 2048,
+        "target_selection_groups": 1024,
+        "target_locked_holdout_groups": 3072,
+        "target_each_math_code_chat": 1024,
+        "seeds": 3,
+        "actual_large_label_groups": 0,
+        "actual_prepared_reserved_prompts": 2000,
+        "reserved_prompts_overlap_E1_E2_formal_training_groups": 0,
+        "GPU_started": false,
+        "source_data_catalog_training_groups": 833176,
+        "compact_cache_cap_gib": 16
+      }
+    ]
+  },
+  "system_update_user_deadline": {
+    "user_instruction": "2点钟前要停止，因为系统要更新",
+    "interpreted_deadline_local": "2026-10-12T14:00:00+08:00",
+    "current_pilot_gpu_stopped_local": "2026-10-12T12:47:05+08:00",
+    "no_new_gpu_jobs_before_update": true,
+    "stop_requested_before_deadline": true,
+    "updated_utc": "2026-10-12T04:54:09.931067+00:00"
+  },
+  "large_headonly_experiment_20261012": {
+    "root": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2",
+    "live_status": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/status.json",
+    "controller_log": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/controller_depth_comparison_retry_attempt00.log",
+    "state": "head_training_and_static_evaluation_complete",
+    "head_train_groups_per_domain": 10000,
+    "total_prepared_groups": 42288,
+    "train_body": false,
+    "train_target": false,
+    "default_gpu_limit": null,
+    "vllm_teacher_plus_two_trainers_limit": 3,
+    "current_gpus": [
+      0,
+      1
+    ],
+    "source_E2_SHA": "7fad88ba97c5fc424483eb56b78ca83a2ba806e79b2541f4e617bb985be8449d",
+    "formal_native_AC_TPS": false,
+    "utc": "2026-10-12T08:00:55.770653+00:00",
+    "gpu_role_exception": {
+      "vllm_service": 1,
+      "head_trainers": 2
+    },
+    "maximum_exception_gpus": 3,
+    "actual_captured_groups": 42288,
+    "updated_utc": "2026-10-12T14:43:02.446296+00:00",
+    "cache_audit": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/CACHE_COMPLETE_AUDIT.json",
+    "actual_head_training_started": true,
+    "maximum_gpu_slots": 8,
+    "shared_gpu_training_allowed_by_latest_user": true,
+    "active_implementation": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/implementations/shared_cpu_cache_v3",
+    "original_E2_unchanged": true,
+    "trained_models_complete": 12,
+    "full_passes_per_model": 3,
+    "optimizer_steps_per_model": 5613,
+    "routers_complete": 6,
+    "analysis_recovery": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/ANALYSIS_RECOVERY_PLAN.json",
+    "native_head2_test": "GPU1 GSM8K C1 formal running; remaining C1/C32 queued",
+    "seed_evaluations_complete": 3,
+    "current_training_gpus": [],
+    "evaluation_recovery_complete": true,
+    "recovery_audit": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/ANALYSIS_RECOVERY_AUDIT.json",
+    "results": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/RESULTS.json",
+    "positive_candidate_for_native_contract": false,
+    "controller_live": false,
+    "controller_retired_record": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/RETIRED_NATIVE_CONTROLLER_20261012.json"
+  },
+  "epoch2_head2_native_tests_20261012": {
+    "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head2_three_domains_C1_C32_20261012_v1",
+    "status": "waiting_empty_gpu_after_foreign_failure_archived",
+    "actual_started_group": "gsm8k C1 formal",
+    "physical_gpu": 1,
+    "new_expert_training_depth": 3,
+    "inference_depth": 2,
+    "source_trained_depth": 3,
+    "two_layer_retrained": false,
+    "max_default_owned_gpus": 2,
+    "formal_windows_expected": 24,
+    "utc": "2026-10-12T08:16:58.596567+00:00",
+    "gpu_role_exception": {
+      "vllm_service": 1,
+      "head_trainers": 2
+    },
+    "maximum_exception_gpus": 3,
+    "updated_utc": "2026-10-12T09:06:51.811245+00:00",
+    "failure_archive": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head2_three_domains_C1_C32_20261012_v1/gsm8k/C1/prior_attempts/foreign_startup_20261012_0829",
+    "native_shared_gpu_TPS_allowed": false
+  },
+  "native_depth2_vs_depth3_20261012": {
+    "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head2_vs_head3_three_domains_C1_C32_20261012_v1",
+    "status": "complete",
+    "same_E2_joint_body": true,
+    "arms": [
+      "HEAD3_NOFILL",
+      "HEAD2_NOFILL"
+    ],
+    "concurrency": [
+      1,
+      32
+    ],
+    "temperatures": [
+      0,
+      1
+    ],
+    "formal_windows_expected": 24,
+    "two_layer_retrained": false,
+    "preflight_passed": true,
+    "native_contract_pending": true,
+    "controller_log": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/controller_depth_comparison_retry_attempt00.log",
+    "utc": "2026-10-12T14:43:02.446266+00:00",
+    "formal_groups_complete": 6,
+    "formal_windows_complete": 24,
+    "gsm8k_direct_comparison": [
+      {
+        "dataset": "gsm8k",
+        "C": 1,
+        "T": 0,
+        "head3_AC": 8.515069661643446,
+        "head2_AC": 8.329485396383866,
+        "AC_change_pct": -2.1794802935735658,
+        "head3_TPS": 196.58112489635792,
+        "head2_TPS": 192.7868292458537,
+        "TPS_change_pct": -1.9301424043150939,
+        "same_window": true,
+        "same_body": true,
+        "gpu": 6
+      },
+      {
+        "dataset": "gsm8k",
+        "C": 1,
+        "T": 1,
+        "head3_AC": 7.488576664630422,
+        "head2_AC": 7.393987149957571,
+        "AC_change_pct": -1.263117397456992,
+        "head3_TPS": 173.83771295455077,
+        "head2_TPS": 171.75912518348235,
+        "TPS_change_pct": -1.1957058889815575,
+        "same_window": true,
+        "same_body": true,
+        "gpu": 6
+      },
+      {
+        "dataset": "gsm8k",
+        "C": 32,
+        "T": 0,
+        "head3_AC": 8.65206922498119,
+        "head2_AC": 8.529895508785316,
+        "AC_change_pct": -1.4120751119642172,
+        "head3_TPS": 3239.0226612215097,
+        "head2_TPS": 3194.480196487059,
+        "TPS_change_pct": -1.3751822507364841,
+        "same_window": true,
+        "same_body": true,
+        "gpu": 6
+      },
+      {
+        "dataset": "gsm8k",
+        "C": 32,
+        "T": 1,
+        "head3_AC": 7.699184679560106,
+        "head2_AC": 7.553910183757269,
+        "AC_change_pct": -1.8868815575824982,
+        "head3_TPS": 2876.611823443282,
+        "head2_TPS": 2838.1082468723685,
+        "TPS_change_pct": -1.3385044258361178,
+        "same_window": true,
+        "same_body": true,
+        "gpu": 6
+      }
+    ],
+    "final_audit": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head2_vs_head3_three_domains_C1_C32_20261012_v1/FINAL_AUDIT.json",
+    "TPS_positive_windows": 1,
+    "all_AC_changes_negative": true
+  },
+  "three_layer_module_latency_20261012": {
+    "root": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head3_module_latency_C1_C40_20261012_v1",
+    "status": "acquisition_complete_with_timing_coverage_limitations",
+    "conditions": 2,
+    "only_three_layer": true,
+    "kv_gib": {
+      "C1": 52,
+      "C40": 44
+    },
+    "memory_utilization": 0.92,
+    "no_memory_sweep": true,
+    "no_existing_formal_tests_repeated_for_memory": true,
+    "queue_log": "/data/weijiahong/speculators-main-lora/residualV3_main_v1/research/mismatch_expert_headonly_30k_20261012_v2/module_profile_queue_attempt00.log",
+    "native_contract_pending": true,
+    "utc": "2026-10-12T14:43:02.446286+00:00",
+    "conditions_complete": 2,
+    "coverage_audit": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_head3_module_latency_C1_C40_20261012_v1/TIMING_COVERAGE_AUDIT.json",
+    "full_C40_T1_body_raw_lm_head_missing": true,
+    "no_extra_GPU_runs_for_review": true,
+    "all_GPU_workers_exited": true
+  },
+  "latest_memory_policy": "Keep existing frozen tests; future three-layer C1/C40 timing uses fixed old formal KV52/44GiB and utilization .92; no memory sweep.",
+  "independent_DFLASH_vs_head2_humaneval_unfinished": {
+    "groups": [
+      "humaneval/C1",
+      "humaneval/C32"
+    ],
+    "reason": "Repeated foreign GPU-process contamination of smoke; no valid formal pair",
+    "automatic_retry": false,
+    "retained": true
+  },
+  "research_directory_cleanup_20261012": {
+    "utc": "2026-10-12T15:15:21.856496+00:00",
+    "status": "complete",
+    "entry": "RESIDUALV3_START_HERE.txt",
+    "deleted_root_count": 152,
+    "groups": {
+      "retired_code": 1,
+      "retired_tail_code": 23,
+      "retired_tail_results": 22,
+      "retired_tail_probes": 41,
+      "retired_diagnostics": 7,
+      "retired_research_code": 43,
+      "retired_historical_code": 15
+    },
+    "weights_deleted": 0,
+    "restore": "archives/residualV3_research_cleanup_20261012_v4/RESTORE.json",
+    "audit": "residualV3_main_v1/maintenance/research_cleanup_20261012_v4/FINAL_AUDIT.json",
+    "disk_before_human": "523G",
+    "gpu_jobs_started": 0,
+    "latest_result_links": 7
+  }
+}

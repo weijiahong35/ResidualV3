@@ -1,0 +1,28 @@
+{
+  "run_id": "20261015T050613Z_mismatch_r6",
+  "created_UTC": "2026-10-15T05:06:13.042488+00:00",
+  "status": "complete",
+  "authorized_round": 6,
+  "scope": [
+    "T1 novel full H common flow",
+    "T2 fixed risk predictors",
+    "T3 fixed secondary predictors",
+    "T4 at most12 relaxed pairs"
+  ],
+  "old_runs_readonly": true,
+  "budgets": {
+    "GPU_hours": 8,
+    "CPU_hours": 24,
+    "new_disk_GiB": 700,
+    "simultaneous_GPU": 1,
+    "CPU_workers": 4,
+    "compute_threads": 8
+  },
+  "no_automatic_round7": true,
+  "completed_UTC": "2026-10-15T06:43:33.443918+00:00",
+  "core_scientific_work_complete": true,
+  "required_work_remaining": [],
+  "results": "results/RESULTS_CN.md",
+  "run_audit": "results/RUN_AUDIT.json",
+  "static_file_manifest": "results/RUN_FILE_MANIFEST.json"
+}

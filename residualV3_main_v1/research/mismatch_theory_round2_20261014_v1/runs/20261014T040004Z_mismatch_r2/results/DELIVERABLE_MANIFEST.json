@@ -1,0 +1,88 @@
+{
+  "schema": "round2.deliverable_manifest.v1",
+  "created_utc": "2026-10-14T06:42:57.583971+00:00",
+  "status": "complete",
+  "lock_sha256": "8f0e641692524fc698a9c3a3659dc6279f7342a903b14295a5103e0377044c57",
+  "files": {
+    "results/RESULTS_CN.md": {
+      "bytes": 13273,
+      "sha256": "219074312713780d67d76190e1f6ba81eb49f14b16e72ec1e674f1f5ae3624d6"
+    },
+    "results/THEORY_CARD_CN.md": {
+      "bytes": 10970,
+      "sha256": "1dc27426f6ee14a89af48e2c328fea0cb278cf3598fef1b748ca3b1d5478e2f5"
+    },
+    "results/MEASURES_AND_IDENTITIES_CN.md": {
+      "bytes": 4025,
+      "sha256": "ecedb5c48bd59f480eede2aac6ad849514faebd48b23c70f782b63996adab546"
+    },
+    "results/NATIVE_PROBABILITY_BOUNDARY_CN.md": {
+      "bytes": 3000,
+      "sha256": "f111abe634654adc75ef1f4e4080f02960a6113eb76e1d94ccc29a551d3303b1"
+    },
+    "results/CLAIM_EVIDENCE.json": {
+      "bytes": 14624,
+      "sha256": "8dc27185069301343fed963c555babde1418fb60cbf54bce0fc0f38c5d4ec52a"
+    },
+    "results/RUN_AUDIT.json": {
+      "bytes": 31467,
+      "sha256": "fb499d12734ef7ff85534c6e4f3718f0e66624e7c955e6c69b932a28a6c7e073"
+    },
+    "NEXT_CHAT.md": {
+      "bytes": 5558,
+      "sha256": "1436a22250599b2dfa30cf988927a1271c9e39ad11768f809aff9896ed9cfd84"
+    },
+    "sources/ROUND2_LITERATURE_MATRIX.md": {
+      "bytes": 8557,
+      "sha256": "73778eb856a93630ab732eceb8d283ab0358e3d7eba741aae054ac09e96dc0b7"
+    },
+    "sources/RUNTIME_VERSION_RECEIPT.json": {
+      "bytes": 1248,
+      "sha256": "90e18a032a60d8bd18ab22446327d69a1077773577296efdaa7628f173900c6f"
+    },
+    "analysis/FINAL_THEORY_INTERPRETATION_REVIEW_CN.md": {
+      "bytes": 8777,
+      "sha256": "e1466b57f37e260613b14ea56b0cf27ff96ff4dfe7da2d42da4490fa40cdf2b4"
+    },
+    "analysis/FINAL_CLAIM_BOUNDARY_REVIEW_CN.md": {
+      "bytes": 11907,
+      "sha256": "ba297d8848df75c35b37c79cae0a62dc9385e3052eb258b9397de8f21a5d34ee"
+    },
+    "analysis/FRESH_MEASUREMENT_AUDIT.json": {
+      "bytes": 2739,
+      "sha256": "21acaa0158c4a3815883f2b3c91aad497201e7bc252438f1707db7a249e89b19"
+    },
+    "analysis/FINAL_ORIGINAL_PROTECTION_AUDIT.json": {
+      "bytes": 956240,
+      "sha256": "91bf21f6fef0e8ca683552ad125af267105f4561e921c50112519ea37c5dbc4c"
+    },
+    "analysis/OWN_PROCESS_EXIT_HOST_AUDIT.json": {
+      "bytes": 13769,
+      "sha256": "a68e83439fb730ae72124c01d8b18b6274809f325b6ff6efb78bd5b1b87b37a3"
+    },
+    "analysis/figures/fresh_test/FIGURE_CAPTIONS_CN.md": {
+      "bytes": 1716,
+      "sha256": "d3120ea06d85577ae1f1886650edfbcafcaf68b1a5ac35dbb9b9e33a8488d2e0"
+    },
+    "analysis/figures/fresh_test/GEOMETRY_MSE_AND_DISTRIBUTIONS.png": {
+      "bytes": 85577,
+      "sha256": "b4ac0dc09da8cfca51d28651ee99a92c2ea5e68762126795d35ecb3afa74401d"
+    },
+    "analysis/figures/fresh_test/GEOMETRY_PROMPT_RESIDUALS.png": {
+      "bytes": 63929,
+      "sha256": "bd7fb3ae2a8673424d8573d7a940e243b7842fe9d1c41f37b2968d40a9dcf0f8"
+    },
+    "analysis/figures/fresh_test/native/NATIVE_LOCAL_AND_ACCEPTANCE.png": {
+      "bytes": 97791,
+      "sha256": "ea920babfba14ed7a39445c7db386747ccf948e000e25e1bc79035bf3e3b256c"
+    },
+    "analysis/figures/fresh_test/native/NATIVE_PROBABILITY_TOTAL_DIAGNOSTICS.png": {
+      "bytes": 119692,
+      "sha256": "aab6b8c383dbc490866cc2adecdf433c5834aa3e3302007d74dd33801baa135b"
+    }
+  },
+  "all_local_report_links_valid": true,
+  "fixed_main_suite_openings": 1,
+  "joint_scientific_confirmation": false,
+  "ideal_native_Gproduct_law_established": false
+}

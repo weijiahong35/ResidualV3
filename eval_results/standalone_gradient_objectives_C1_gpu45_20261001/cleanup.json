@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "gpu_resources": {
+    "3": [
+      81151,
+      []
+    ],
+    "4": [
+      81151,
+      []
+    ],
+    "5": [
+      81151,
+      []
+    ]
+  },
+  "all_owned_pipelines_complete": true,
+  "utc": "2026-10-01T10:38:26.419529+00:00"
+}

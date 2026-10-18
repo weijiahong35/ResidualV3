@@ -1,0 +1,45 @@
+{
+  "utc": "2026-10-10T20:08:37.766475+00:00",
+  "selection": {
+    "C1": {
+      "protocol": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter20_fused_input_C1/native_protocol.json",
+      "protocol_sha256": "ddad6af4f06dab2a09a26ac87e7b7784e731873edce6091ffe73a6be0baad50f",
+      "runtime": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter20_fused_input_C1/native_runtime",
+      "summary": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter20_fused_input_C1/C1/short/summary.json",
+      "scope": "numeric-verified implementation; no end-to-end tail-cut gain claimed",
+      "flags": {
+        "fused_input": 1,
+        "fused_final": 1,
+        "reuse_sample_max": 1,
+        "fused_readout": 1,
+        "fused_scan": 1,
+        "cache_positions": 13,
+        "early_batch_size": 9,
+        "dense_guaranteed": 1
+      }
+    },
+    "C40": {
+      "protocol": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter21_fused_input_C40/native_protocol.json",
+      "protocol_sha256": "c40fec23d22b697161de19996e3e1ccc278df08c477bf5a9d328af30bf03ecc9",
+      "runtime": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/code/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter21_fused_input_C40/native_runtime",
+      "summary": "/data/weijiahong/speculators-main-lora/residualV3-nonthing/results/epoch2_tail_cut_short_iter_20261011_v3/iterations/iter21_fused_input_C40/C40/short/summary.json",
+      "scope": "numeric-verified implementation; no end-to-end tail-cut gain claimed",
+      "flags": {
+        "fused_input": 1,
+        "fused_final": 1,
+        "reuse_sample_max": 1,
+        "fused_readout": 1,
+        "fused_scan": 1,
+        "cache_positions": 13,
+        "early_batch_size": 9,
+        "dense_guaranteed": 1
+      }
+    }
+  },
+  "auxiliary_branch_verified": "Q45_MLP",
+  "weights_changed": false,
+  "training_code_changed": false,
+  "physical_target_compaction": false,
+  "state_copy_fusion_selected": false,
+  "latest_test_source_retained": true
+}

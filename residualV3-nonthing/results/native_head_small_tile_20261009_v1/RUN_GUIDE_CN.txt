@@ -1,0 +1,5 @@
+同一联合训练权重，仅优化头的矩阵乘法计算块。target仍启用batch invariance。
+C1卡5：200条；C40卡7：GSM8K全部1319条，nonthinking，block16，max2096，T0/T1。
+先32token smoke逐位校验，再正式窗口；不得把smoke或人工输入微测当吞吐成绩。
+原实现：前驱查表+融合SwiGLU；新实现：在原实现上改为头专用小计算块。
+不训练、不改已有权重或旧源码。正式C1/C40日志见single_card_C1_formal.log和single_card_C40_formal.log。

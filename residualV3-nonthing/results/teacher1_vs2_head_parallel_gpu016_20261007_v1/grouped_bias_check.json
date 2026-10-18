@@ -1,0 +1,246 @@
+{
+  "utc": "2026-10-07T12:27:24.138780+00:00",
+  "scope": "Isolated BF16 Linear arithmetic diagnosis, random data; not model parity or performance",
+  "rows": [
+    {
+      "din": 4096,
+      "dout": 256,
+      "mode": "sequential",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.0,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 4096,
+      "dout": 256,
+      "mode": "flat",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.005657221656292677,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 4096,
+      "dout": 256,
+      "mode": "bmm_add",
+      "forward_equal": false,
+      "forward_max_abs": 0.015625,
+      "forward_relative_l2": 0.0028094532899558544,
+      "gradient_relative_l2": 0.005149069242179394,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 4096,
+      "dout": 256,
+      "mode": "baddbmm",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.005149069242179394,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 768,
+      "dout": 256,
+      "mode": "sequential",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.0,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 768,
+      "dout": 256,
+      "mode": "flat",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.005657671019434929,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 768,
+      "dout": 256,
+      "mode": "bmm_add",
+      "forward_equal": false,
+      "forward_max_abs": 0.015625,
+      "forward_relative_l2": 0.002819779561832547,
+      "gradient_relative_l2": 0.005155807826668024,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 768,
+      "dout": 256,
+      "mode": "baddbmm",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.005155807826668024,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 256,
+      "dout": 512,
+      "mode": "sequential",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.0,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 256,
+      "dout": 512,
+      "mode": "flat",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.005663215182721615,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 256,
+      "dout": 512,
+      "mode": "bmm_add",
+      "forward_equal": false,
+      "forward_max_abs": 0.015625,
+      "forward_relative_l2": 0.0028468568343669176,
+      "gradient_relative_l2": 0.005152899771928787,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 256,
+      "dout": 512,
+      "mode": "baddbmm",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.005152899771928787,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 256,
+      "dout": 1,
+      "mode": "sequential",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.0,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 256,
+      "dout": 1,
+      "mode": "flat",
+      "forward_equal": false,
+      "forward_max_abs": 1.52587890625e-05,
+      "forward_relative_l2": 2.0459239635783888e-07,
+      "gradient_relative_l2": 0.0055554937571287155,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 256,
+      "dout": 1,
+      "mode": "bmm_add",
+      "forward_equal": false,
+      "forward_max_abs": 0.0078125,
+      "forward_relative_l2": 0.002810155972838402,
+      "gradient_relative_l2": 0.005356946960091591,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 256,
+      "dout": 1,
+      "mode": "baddbmm",
+      "forward_equal": false,
+      "forward_max_abs": 1.52587890625e-05,
+      "forward_relative_l2": 2.0459239635783888e-07,
+      "gradient_relative_l2": 0.005356946960091591,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 256,
+      "dout": 768,
+      "mode": "sequential",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.0,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 256,
+      "dout": 768,
+      "mode": "flat",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.005649101920425892,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 256,
+      "dout": 768,
+      "mode": "bmm_add",
+      "forward_equal": false,
+      "forward_max_abs": 0.015625,
+      "forward_relative_l2": 0.0028544047381728888,
+      "gradient_relative_l2": 0.005146532319486141,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 256,
+      "dout": 768,
+      "mode": "baddbmm",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.005146532319486141,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 768,
+      "dout": 256,
+      "mode": "sequential",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.0,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 768,
+      "dout": 256,
+      "mode": "flat",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.00568201532587409,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 768,
+      "dout": 256,
+      "mode": "bmm_add",
+      "forward_equal": false,
+      "forward_max_abs": 0.015625,
+      "forward_relative_l2": 0.0029364549554884434,
+      "gradient_relative_l2": 0.00517288688570261,
+      "peak_allocated_bytes": 1582309376
+    },
+    {
+      "din": 768,
+      "dout": 256,
+      "mode": "baddbmm",
+      "forward_equal": true,
+      "forward_max_abs": 0.0,
+      "forward_relative_l2": 0.0,
+      "gradient_relative_l2": 0.00517288688570261,
+      "peak_allocated_bytes": 1582309376
+    }
+  ]
+}

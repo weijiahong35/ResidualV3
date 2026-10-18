@@ -1,0 +1,42 @@
+{
+  "status": "incomplete_failed_humaneval_groups_no_active_workers",
+  "formal_groups_complete": 4,
+  "formal_windows_complete": 16,
+  "groups": {
+    "gsm8k/C1": {
+      "status": "complete",
+      "gpu": 1,
+      "utc": "2026-10-12T10:52:51.197851+00:00"
+    },
+    "gsm8k/C32": {
+      "status": "complete",
+      "gpu": 1,
+      "utc": "2026-10-12T11:09:05.375722+00:00"
+    },
+    "humaneval/C1": {
+      "status": "failed",
+      "error": "AssertionError()",
+      "utc": "2026-10-12T12:08:00.042734+00:00"
+    },
+    "humaneval/C32": {
+      "status": "failed",
+      "error": "AssertionError()",
+      "utc": "2026-10-12T12:11:37.008143+00:00"
+    },
+    "mt-bench/C1": {
+      "status": "complete",
+      "gpu": 5,
+      "utc": "2026-10-12T12:05:38.253700+00:00"
+    },
+    "mt-bench/C32": {
+      "status": "complete",
+      "gpu": 4,
+      "utc": "2026-10-12T12:21:39.293338+00:00"
+    }
+  },
+  "latest_training_gpu_limit": 8,
+  "native_evaluation_requires_exclusive_empty_gpu": true,
+  "utc": "2026-10-12T14:43:02.442106+00:00",
+  "running_workers": [],
+  "automatic_retry": false
+}
